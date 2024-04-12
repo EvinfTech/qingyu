@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "u-button": "../../node-modules/uview-plus/components/u-button/u-button"
+  }
+}

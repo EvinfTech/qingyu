@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "u-navbar": "../../node-modules/uview-plus/components/u-navbar/u-navbar",
+    "u-radio": "../../node-modules/uview-plus/components/u-radio/u-radio",
+    "u-radio-group": "../../node-modules/uview-plus/components/u-radio-group/u-radio-group",
+    "u--textarea": "../../node-modules/uview-plus/components/u-textarea/u-textarea",
+    "u-upload": "../../node-modules/uview-plus/components/u-upload/u-upload"
+  }
+}

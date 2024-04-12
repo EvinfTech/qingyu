@@ -1,0 +1,10 @@
+{
+  "component": true,
+  "usingComponents": {
+    "u-overlay": "../u-overlay/u-overlay",
+    "u-status-bar": "../u-status-bar/u-status-bar",
+    "u-icon": "../u-icon/u-icon",
+    "u-safe-bottom": "../u-safe-bottom/u-safe-bottom",
+    "u-transition": "../u-transition/u-transition"
+  }
+}

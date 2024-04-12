@@ -1,0 +1,40 @@
+
+	/* pages/settings/settings.wxss */
+.page.data-v-7fad0a1c {
+		width: 100%;
+		height: 100vh;
+		background-color: #fff;
+		position: relative;
+}
+.devide.data-v-7fad0a1c {
+		width: 100%;
+		height: 20rpx;
+		background: #f6f8fa;
+}
+.clearRight.data-v-7fad0a1c {
+		font-family: Alibaba PuHuiTi 2;
+		font-size: 28rpx;
+		color: #f44336;
+}
+.logoutBtn.data-v-7fad0a1c {
+		width: 686rpx;
+		height: 84rpx;
+		border-radius: 12rpx;
+		background: #ffe6e6;
+		font-family: Alibaba PuHuiTi 2;
+		font-size: 32rpx;
+		font-weight: 500;
+		color: #f44336;
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		bottom: 100rpx;
+		z-index: 9;
+}
+.specialBtn.data-v-7fad0a1c::after {
+		border: none;
+}
+.u-cell__title.data-v-7fad0a1c {
+		text-align: left;
+		font-size: 15px;
+}

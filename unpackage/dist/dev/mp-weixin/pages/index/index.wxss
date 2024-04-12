@@ -1,0 +1,13 @@
+
+	/**index.wxss**/
+.page.data-v-1cf27b2a {
+		width: 100vw;
+		height: 100vh;
+		box-sizing: border-box;
+}
+.homeTitle.data-v-1cf27b2a {
+		font-family: YouSheBiaoTiHei;
+		font-size: 48rpx;
+		line-height: 50rpx;
+		color: #000000;
+}

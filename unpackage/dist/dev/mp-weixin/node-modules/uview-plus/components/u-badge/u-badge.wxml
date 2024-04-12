@@ -1,0 +1,1 @@
+<text wx:if="{{a}}" class="{{[c, d, e, f, 'u-badge', 'data-v-aa9883b1']}}" style="{{g + ';' + h}}">{{b}}</text>

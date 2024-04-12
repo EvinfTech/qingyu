@@ -1,0 +1,166 @@
+
+	/* pages/reservationDetail/reservationDetail.wxss */
+.page.data-v-71ac0ae8 {
+		width: 100%;
+		height: 100vh;
+		background-color: #f6f8fa;
+}
+.customerTab.data-v-71ac0ae8 {
+		width: 100%;
+		height: 110rpx;
+		background-color: #fff;
+}
+.customerTabItem.data-v-71ac0ae8 {
+		width: 20%;
+		flex-shrink: 0;
+		position: relative;
+}
+.selected.data-v-71ac0ae8 {
+		position: absolute;
+		bottom: 0px;
+		z-index: 1;
+		width: 84rpx;
+		height: 6rpx;
+		background-color: #0077ff;
+		border-radius: 6rpx;
+		transition: all 0.5s;
+}
+.topItem.data-v-71ac0ae8 {
+		font-family: Alibaba PuHuiTi 2;
+		font-size: 28rpx;
+		font-weight: 500;
+		text-align: center;
+		font-feature-settings: 'kern' on;
+		color: #b1b4c3;
+}
+.bottomCon.data-v-71ac0ae8 {
+		padding: 0 24rpx 74rpx;
+		position: fixed;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		background-color: #fff;
+		height: 308rpx;
+		z-index: 99;
+		box-sizing: border-box;
+}
+.clearBox.data-v-71ac0ae8 {
+		position: absolute;
+		top: 8rpx;
+		right: 20rpx;
+		z-index: 99;
+		font-family: Alibaba PuHuiTi 2;
+		font-size: 20rpx;
+		height: 28rpx;
+		font-weight: normal;
+		line-height: 28rpx;
+		text-align: center;
+		letter-spacing: 0px;
+		text-decoration: underline;
+		font-feature-settings: 'kern' on;
+		color: #0077ff;
+}
+.rmbBox.data-v-71ac0ae8 {
+		font-family: Alibaba PuHuiTi 2;
+		font-weight: 400;
+		font-size: 36rpx;
+		color: #ff5634;
+}
+.priceBox.data-v-71ac0ae8 {
+		font-family: D-DIN-PRO-Medium-Medium;
+		font-weight: 400;
+		font-size: 36rpx;
+		color: #ff5634;
+}
+.choosedListBox.data-v-71ac0ae8 {
+		margin-top: 48rpx;
+		height: 100rpx;
+}
+.submitBtn.data-v-71ac0ae8 {
+		width: 200rpx;
+		height: 70rpx;
+		border-radius: 40rpx;
+		opacity: 1;
+		font-family: Alibaba PuHuiTi 2;
+		font-size: 32rpx;
+		font-weight: 500;
+		color: #ffffff;
+		background-color: #0077ff;
+		margin-top: 22rpx;
+}
+.choosedItem.data-v-71ac0ae8 {
+		width: 170rpx;
+		height: 100rpx;
+		border-radius: 6rpx;
+		opacity: 1;
+		box-sizing: border-box;
+		border: 1px solid #0077ff;
+		margin-right: 10rpx;
+		flex-shrink: 0;
+}
+.itemTop.data-v-71ac0ae8 {
+		height: 50rpx;
+		background-color: #0077ff;
+		font-family: D-DIN-PRO-Medium-Medium;
+		font-size: 28rpx;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: #ffffff;
+		flex-wrap: nowrap;
+}
+.leftTimeBox.data-v-71ac0ae8 {
+		margin-top: 20px;
+		padding-left: 32rpx;
+		/* position: absolute;
+    left: 0;
+    top: 20px;
+    background-color: #fff; */
+}
+.timeItem.data-v-71ac0ae8 {
+		font-family: D-DIN-PRO-Medium-Medium;
+		font-size: 28rpx;
+		height: 20px;
+		line-height: 20px;
+		color: #333333;
+		margin-bottom: 22px;
+}
+.selectable.data-v-71ac0ae8 {
+		/* 蓝色渐变 */
+		background: linear-gradient(180deg, #92c5ff 0%, #0077ff 100%), #d8d8d8;
+}
+.disSelected.data-v-71ac0ae8 {
+		background: #d8d8d8;
+}
+.freeSelect.data-v-71ac0ae8 {
+		background: #ffffff;
+		border: 1px solid #92c5ff;
+		color: #b1b4c3 !important;
+}
+.selectItem.data-v-71ac0ae8 {
+		width: 65px;
+		height: 35px;
+		border-radius: 6rpx;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-family: Alibaba PuHuiTi 2;
+		font-size: 24rpx;
+		font-feature-settings: 'kern' on;
+		color: #ffffff;
+		margin: 0rpx 12rpx 7px 0;
+		box-sizing: border-box;
+}
+.siteBox.data-v-71ac0ae8 {
+		font-family: Alibaba PuHuiTi 2;
+		font-size: 24rpx;
+		width: 130rpx;
+		height: 50rpx;
+		font-weight: normal;
+		text-align: center;
+		font-feature-settings: 'kern' on;
+		color: #333333;
+		text-align: center;
+		line-height: 50rpx;
+		margin-left: 12rpx;
+}

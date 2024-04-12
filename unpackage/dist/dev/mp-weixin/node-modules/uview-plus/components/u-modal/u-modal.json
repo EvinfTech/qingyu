@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "u-line": "../u-line/u-line",
+    "u-loading-icon": "../u-loading-icon/u-loading-icon",
+    "u-popup": "../u-popup/u-popup"
+  }
+}

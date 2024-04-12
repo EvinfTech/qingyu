@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "u-navbar": "../../node-modules/uview-plus/components/u-navbar/u-navbar",
+    "u-cell": "../../node-modules/uview-plus/components/u-cell/u-cell",
+    "u-cell-group": "../../node-modules/uview-plus/components/u-cell-group/u-cell-group",
+    "u-modal": "../../node-modules/uview-plus/components/u-modal/u-modal"
+  }
+}

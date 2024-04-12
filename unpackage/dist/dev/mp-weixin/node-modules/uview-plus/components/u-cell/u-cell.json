@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "u-icon": "../u-icon/u-icon",
+    "u-line": "../u-line/u-line"
+  }
+}

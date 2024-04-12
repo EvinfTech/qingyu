@@ -1,0 +1,14 @@
+
+.page.data-v-96203526 {
+		width: 100vw;
+		height: 100vh;
+		background-color: #fff;
+		box-sizing: border-box;
+}
+.content.data-v-96203526 {
+		padding: 30rpx;
+}
+.title.data-v-96203526{
+		font-weight: bold;
+		margin: 30rpx 0;
+}

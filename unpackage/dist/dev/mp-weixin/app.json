@@ -1,0 +1,35 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/login/login",
+    "pages/arrgement/arrgement",
+    "pages/home/home",
+    "pages/reservation/reservation",
+    "pages/mine/mine",
+    "pages/gymnasiumInfo/gymnasiumInfo",
+    "pages/album/album",
+    "pages/errorReport/errorReport",
+    "pages/reservationDetail/reservationDetail",
+    "pages/orderDetail/orderDetail",
+    "pages/infoEdit/infoEdit",
+    "pages/orderList/orderList",
+    "pages/feedback/feedback",
+    "pages/settings/settings",
+    "pages/aboutUs/aboutUs",
+    "pages/reservationList/reservationList",
+    "pages/reservationInfo/reservationInfo",
+    "pages/wechatLogin/wechatLogin",
+    "pages/dataDetail/dataDetail",
+    "pages/accountSecurity/accountSecurity",
+    "pages/userAgreement/userAgreement"
+  ],
+  "subPackages": [],
+  "usingComponents": {},
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "custom"
+  }
+}

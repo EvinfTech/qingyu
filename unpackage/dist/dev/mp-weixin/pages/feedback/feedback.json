@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "u-navbar": "../../node-modules/uview-plus/components/u-navbar/u-navbar",
+    "u--textarea": "../../node-modules/uview-plus/components/u-textarea/u-textarea",
+    "u-upload": "../../node-modules/uview-plus/components/u-upload/u-upload"
+  }
+}

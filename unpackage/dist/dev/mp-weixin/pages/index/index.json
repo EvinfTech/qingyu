@@ -1,0 +1,9 @@
+{
+  "backgroundColor": "#ffffff",
+  "usingComponents": {
+    "home": "../home/home",
+    "mine": "../mine/mine",
+    "u-tabbar-item": "../../node-modules/uview-plus/components/u-tabbar-item/u-tabbar-item",
+    "u-tabbar": "../../node-modules/uview-plus/components/u-tabbar/u-tabbar"
+  }
+}

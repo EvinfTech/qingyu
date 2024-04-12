@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "u-navbar": "../../node-modules/uview-plus/components/u-navbar/u-navbar",
+    "u-modal": "../../node-modules/uview-plus/components/u-modal/u-modal"
+  }
+}
