@@ -143,7 +143,9 @@
 			this.setAciveDate(this.currentDate);
 			// 获取tabItem宽度
 			this.$nextTick(() => {
-				this.getTabItemWidth();
+				setTimeout(()=>{
+					this.getTabItemWidth();
+				},500)
 			})
 		},
 		/**

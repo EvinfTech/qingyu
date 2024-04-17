@@ -48,7 +48,9 @@ const _sfc_main = {
   onReady() {
     this.setAciveDate(this.currentDate);
     this.$nextTick(() => {
-      this.getTabItemWidth();
+      setTimeout(() => {
+        this.getTabItemWidth();
+      }, 500);
     });
   },
   /**
