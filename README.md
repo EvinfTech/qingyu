@@ -1,106 +1,64 @@
-<p align="center">
-    <img alt="logo" src="https://uviewui.com/common/logo.png" width="120" height="120" style="margin-bottom: 10px;">
-</p>
-<h3 align="center" style="margin: 30px 0 30px;font-weight: bold;font-size:40px;">uView</h3>
-<h3 align="center">多平台快速开发的UI框架</h3>
+<h1 align="center" style="margin: 30px 0 30px; font-weight: bold;">QingYu v1.0.0</h1>
+<h4 align="center">羽毛球订场系统</h4>
 
 
-## 说明
+## 平台简介
 
-uView UI，是[uni-app](https://uniapp.dcloud.io/)生态优秀的UI框架，全面的组件和便捷的工具会让您信手拈来，如鱼得水
+轻羽是一套用于羽毛球订场的系统，包括客户端与管理端，毫无保留给个人及企业免费使用。
 
-## 特性
+* 轻羽客户端使用uniapp框架、uview组件库，支持h5与微信小程序两个终端使用。
+* 轻羽管理端采用Vue、Vant组件库，支持移动端h5使用。
+* 轻羽客户端与管理端皆采用单门店形式进行管理与操作。
 
-- 兼容安卓，iOS，微信小程序，H5，QQ小程序，百度小程序，支付宝小程序，头条小程序
-- 60+精选组件，功能丰富，多端兼容，让您快速集成，开箱即用
-- 众多贴心的JS利器，让您飞镖在手，召之即来，百步穿杨
-- 众多的常用页面和布局，让您专注逻辑，事半功倍
-- 详尽的文档支持，现代化的演示效果
-- 按需引入，精简打包体积
+## 内置功能
+
+客户端：
+
+1. 登录：手机验证码一键登录。
+2.  球馆订场：展示球馆详细信息、未来一周内的可用场地、订场订单的锁定与支付。
+3.  个人信息：对个人信息的一些展示以及修改。
+4.  订单管理：展示订单记录，并可以对订单进行支付取消等操作。
+5.  预约管理：展示预约记录，并可以对预约进行取消等操作。
+6.  运动记录：对于用户的运动时长、运动天数等的展示。
+7.  意见反馈：用户可以对球馆存在的一些问题进行反馈，同时支持在线联系客服。
+
+管理端：
+
+1. 登录：采用账号密码进行登录。
+2.  数据中心：对球馆场地预约情况、球馆收入等数据进行展示。
+3.  订场管理：展示未来一周内场地预定情况。
+4.  订单管理：展示订单记录，并可以对订单进行取消退款等操作。
+5.  场馆信息：对场馆信息的编辑与文件上传。
+
+## 在线体验
+
+- admin/admin123  
+- 陆陆续续收到一些打赏，为了更好的体验已用于演示服务器升级。谢谢各位小伙伴。
+
+演示地址：http://vue.ruoyi.vip  
+文档地址：http://doc.ruoyi.vip
+
+## 演示图
+
+<table>
+    <tr>
+        <td><img src="C:\Users\User\Desktop\轻羽文档\演示图片\登录.jpg"/></td>
+        <td><img src="C:\Users\User\Desktop\轻羽文档\演示图片\首页.jpg"/></td>
+    </tr>
+    <tr>
+        <td><img src="C:\Users\User\Desktop\轻羽文档\演示图片\球馆信息.jpg"/></td>
+        <td><img src="C:\Users\User\Desktop\轻羽文档\演示图片\预约订场.jpg"/></td>
+    </tr>
+     <tr>
+        <td><img src="C:\Users\User\Desktop\轻羽文档\演示图片\订单.jpg"/></td>
+        <td><img src="C:\Users\User\Desktop\轻羽文档\演示图片\预约.jpg"/></td>
+    </tr>
+     <tr>
+        <td><img src="C:\Users\User\Desktop\轻羽文档\演示图片\我的.jpg"/></td>
+        <td><img src="C:\Users\User\Desktop\轻羽文档\演示图片\意见反馈.jpg"/></td>
+    </tr>
 
 
-## 安装
 
-```bash
-# npm方式安装
-npm i uview-ui
-```
 
-## 快速上手
 
-1. `main.js`引入uView库
-```js
-// main.js
-import uView from 'uview-ui';
-Vue.use(uView);
-```
-
-2. `App.vue`引入基础样式(注意style标签需声明scss属性支持)
-```css
-/* App.vue */
-<style lang="scss">
-@import "uview-ui/index.scss";
-</style>
-```
-
-3. `uni.scss`引入全局scss变量文件
-```css
-/* uni.scss */
-@import "uview-ui/theme.scss";
-```
-
-4. `pages.json`配置easycom规则(按需引入)
-
-```js
-// pages.json
-{
-	"easycom": {
-		// npm安装的方式不需要前面的"@/"，下载安装的方式需要"@/"
-		// npm安装方式
-		"^u-(.*)": "uview-ui/components/u-$1/u-$1.vue"
-		// 下载安装方式
-		// "^u-(.*)": "@/uview-ui/components/u-$1/u-$1.vue"
-	},
-	// 此为本身已有的内容
-	"pages": [
-		// ......
-	]
-}
-```
-
-请通过[快速上手](https://uviewui.com/components/quickstart.html)了解更详细的内容 
-
-## 使用方法
-配置easycom规则后，自动按需引入，无需`import`组件，直接引用即可。
-
-```html
-<template>
-	<u-button>按钮</u-button>
-</template>
-```
-
-请通过[快速上手](https://uviewui.com/components/quickstart.html)了解更详细的内容 
-
-## 链接
-
-- [官方文档](https://uviewui.com/)
-- [更新日志](https://uviewui.com/components/changelog.html)
-- [升级指南](https://uviewui.com/components/changelog.html)
-- [关于我们](https://uviewui.com/cooperation/about.html)
-
-## 预览
-
-您可以通过**微信**扫码，查看最佳的演示效果。
-<br>
-<br>
-<img src="https://uviewui.com/common/weixin_mini_qrcode.png" width="220" height="220" >
-
-<!-- ## 捐赠uView的研发
-
-uView文档和源码全部开源免费，如果您认为uView帮到了您的开发工作，您可以捐赠uView的研发工作，捐赠无门槛，哪怕是一杯可乐也好(相信这比打赏主播更有意义)。
-
-<img src="https://uviewui.com/common/wechat.png" width="220" >
-<img style="margin-left: 100px;" src="https://uviewui.com/common/alipay.png" width="220" >
- -->
-## 版权信息
-uView遵循[MIT](https://en.wikipedia.org/wiki/MIT_License)开源协议，意味着您无需支付任何费用，也无需授权，即可将uView应用到您的产品中。
