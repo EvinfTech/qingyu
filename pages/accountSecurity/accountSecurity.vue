@@ -9,7 +9,7 @@
 			<u-cell title="绑定微信" :value="status" center custom-class="userinfo-cell"></u-cell>
 			<!-- #endif -->
         </u-cell-group>
-        <view class="logOffBtn flex align-center justify-center" @click="logOff">注销账号</view>
+        <!-- <view class="logOffBtn flex align-center justify-center" @click="logOff">注销账号</view> -->
 		<u-modal :show="show" title="提示" content="确定要注销账号吗？" :showCancelButton="true" @confirm="confirm" @cancel="cancel"></u-modal>
     </view>
 </template>
@@ -20,11 +20,19 @@ export default({
     data() {
         return {
             accountNo: '163987',
-            phone: '13583265886',
+            phone: '',
             status: '已绑定',
-			show:false
+			show:false,
+			app:getApp(),
+			userInfo:null
         };
     },
+	async onLoad() {
+		let userInfo = await this.app.getUserInfo()
+		this.userInfo = userInfo;
+		this.phone = userInfo.phone
+	
+	},
     methods: {
         onClickLeft() {
             uni.navigateBack();

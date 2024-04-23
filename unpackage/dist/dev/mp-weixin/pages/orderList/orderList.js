@@ -1,10 +1,11 @@
 "use strict";
 const common_vendor = require("../../common/vendor.js");
 const utils_request = require("../../utils/request.js");
-const app = getApp();
 const _sfc_main = {
   data() {
     return {
+      show: false,
+      app: getApp(),
       titleList: [{
         name: "全部"
       }, {
@@ -15,6 +16,7 @@ const _sfc_main = {
       active: 0,
       waitPayedList: [],
       waitUsedList: [],
+      order_no: "",
       orderList: [],
       scrollViewHeight: ""
     };
@@ -87,38 +89,40 @@ const _sfc_main = {
         url: "/pages/orderDetail/orderDetail?order_no=" + order_no
       });
     },
-    toCancel(e) {
-      Dialog.confirm({
-        title: "取消订单",
-        message: "确定要取消此订单?"
+    cancel() {
+      this.show = false;
+    },
+    confirm() {
+      utils_request.request({
+        url: "wx/cancel/order",
+        method: "POST",
+        data: {
+          order_no: this.order_no
+        }
       }).then(() => {
-        utils_request.request({
-          url: "wx/cancel/order",
-          method: "POST",
-          data: {
-            order_no: e.currentTarget.dataset.item.order_no
+        common_vendor.index.showToast({
+          title: "取消成功",
+          icon: "none",
+          duration: 2e3,
+          success: () => {
+            this.show = false;
+            setTimeout(() => {
+              this.initData();
+            }, 2e3);
           }
-        }).then(() => {
-          common_vendor.index.showToast({
-            title: "取消成功",
-            icon: "none",
-            duration: 2e3,
-            success: () => {
-              setTimeout(() => {
-                this.initData();
-              }, 2e3);
-            }
-          });
         });
-      }).catch(() => {
       });
+    },
+    toCancel(e) {
+      this.show = true;
+      this.order_no = e.currentTarget.dataset.item.order_no;
     },
     initData() {
       utils_request.request({
         url: "wx/get/order/list",
         method: "POST",
         data: {
-          user_ouid: app.globalData.userInfo.ouid
+          user_ouid: this.app.globalData.userInfo.ouid
         }
       }).then((res) => {
         let orderList = res.data.reverse();
@@ -142,16 +146,18 @@ const _sfc_main = {
 };
 if (!Array) {
   const _easycom_u_navbar2 = common_vendor.resolveComponent("u-navbar");
+  const _easycom_u_modal2 = common_vendor.resolveComponent("u-modal");
   const _easycom_u_tabs2 = common_vendor.resolveComponent("u-tabs");
   const _easycom_u_empty2 = common_vendor.resolveComponent("u-empty");
   const _component_van_dialog = common_vendor.resolveComponent("van-dialog");
-  (_easycom_u_navbar2 + _easycom_u_tabs2 + _easycom_u_empty2 + _component_van_dialog)();
+  (_easycom_u_navbar2 + _easycom_u_modal2 + _easycom_u_tabs2 + _easycom_u_empty2 + _component_van_dialog)();
 }
 const _easycom_u_navbar = () => "../../node-modules/uview-plus/components/u-navbar/u-navbar.js";
+const _easycom_u_modal = () => "../../node-modules/uview-plus/components/u-modal/u-modal.js";
 const _easycom_u_tabs = () => "../../node-modules/uview-plus/components/u-tabs/u-tabs.js";
 const _easycom_u_empty = () => "../../node-modules/uview-plus/components/u-empty/u-empty.js";
 if (!Math) {
-  (_easycom_u_navbar + _easycom_u_tabs + _easycom_u_empty)();
+  (_easycom_u_navbar + _easycom_u_modal + _easycom_u_tabs + _easycom_u_empty)();
 }
 function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
   return common_vendor.e({
@@ -161,21 +167,29 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
       autoBack: true,
       fixed: false
     }),
-    b: common_vendor.o($options.onChange),
-    c: common_vendor.p({
+    b: common_vendor.o($options.confirm),
+    c: common_vendor.o($options.cancel),
+    d: common_vendor.p({
+      show: $data.show,
+      title: "提示",
+      content: "确定要取消此订单？",
+      showCancelButton: true
+    }),
+    e: common_vendor.o($options.onChange),
+    f: common_vendor.p({
       list: $data.titleList,
       lineColor: "#0077FF",
       lineWidth: "40"
     }),
-    d: $data.active == 0
+    g: $data.active == 0
   }, $data.active == 0 ? common_vendor.e({
-    e: $data.orderList.length == 0
+    h: $data.orderList.length == 0
   }, $data.orderList.length == 0 ? {
-    f: common_vendor.p({
+    i: common_vendor.p({
       text: "暂无订单"
     })
   } : {
-    g: common_vendor.f($data.orderList, (item, index1, i0) => {
+    j: common_vendor.f($data.orderList, (item, index1, i0) => {
       return common_vendor.e({
         a: common_vendor.t(item.order_no),
         b: item.status == "N"
@@ -211,16 +225,16 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
       });
     })
   }, {
-    h: common_vendor.n($data.orderList.length == 0 ? "emptyFlex" : ""),
-    i: common_vendor.s("height: " + ($data.scrollViewHeight + "px") + ";")
+    k: common_vendor.n($data.orderList.length == 0 ? "emptyFlex" : ""),
+    l: common_vendor.s("height: " + ($data.scrollViewHeight + "px") + ";")
   }) : $data.active == 1 ? common_vendor.e({
-    k: $data.waitPayedList.length == 0
+    n: $data.waitPayedList.length == 0
   }, $data.waitPayedList.length == 0 ? {
-    l: common_vendor.p({
+    o: common_vendor.p({
       text: "暂无待支付订单"
     })
   } : {
-    m: common_vendor.f($data.waitPayedList, (item, index1, i0) => {
+    p: common_vendor.f($data.waitPayedList, (item, index1, i0) => {
       return common_vendor.e({
         a: common_vendor.t(item.order_no),
         b: item.status == "N"
@@ -250,16 +264,16 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
       });
     })
   }, {
-    n: common_vendor.s("height: " + ($data.scrollViewHeight + "px") + ";"),
-    o: common_vendor.n($data.waitPayedList.length == 0 ? "emptyFlex" : "")
+    q: common_vendor.s("height: " + ($data.scrollViewHeight + "px") + ";"),
+    r: common_vendor.n($data.waitPayedList.length == 0 ? "emptyFlex" : "")
   }) : common_vendor.e({
-    p: $data.waitUsedList.length == 0
+    s: $data.waitUsedList.length == 0
   }, $data.waitUsedList.length == 0 ? {
-    q: common_vendor.p({
+    t: common_vendor.p({
       text: "暂无待使用订单"
     })
   } : {
-    r: common_vendor.f($data.waitUsedList, (item, index1, i0) => {
+    v: common_vendor.f($data.waitUsedList, (item, index1, i0) => {
       return common_vendor.e({
         a: common_vendor.t(item.order_no),
         b: item.status == "N"
@@ -291,11 +305,11 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
       });
     })
   }, {
-    s: common_vendor.s("height: " + ($data.scrollViewHeight + "px") + ";"),
-    t: common_vendor.n($data.waitUsedList.length == 0 ? "emptyFlex" : "")
+    w: common_vendor.s("height: " + ($data.scrollViewHeight + "px") + ";"),
+    x: common_vendor.n($data.waitUsedList.length == 0 ? "emptyFlex" : "")
   }), {
-    j: $data.active == 1,
-    v: common_vendor.p({
+    m: $data.active == 1,
+    y: common_vendor.p({
       id: "van-dialog"
     })
   });

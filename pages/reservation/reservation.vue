@@ -78,10 +78,10 @@
 	import {
 		calcDistance
 	} from '../../utils/util';
-	const app = getApp()
 	export default ({
 		data() {
 			return {
+				app:getApp(),
 				active: 0,
 				viewHeight: 0,
 				gymnasiumList: [],
@@ -131,8 +131,8 @@
 				}).then((res) => {
 					let gymnasiumList = res.data;
 					gymnasiumList.forEach((item) => {
-						item.distance = calcDistance(item.latitude, item.longitude, app.globalData
-							.userInfo.latitude, app.globalData.userInfo.longitude);
+						item.distance = calcDistance(item.latitude, item.longitude, this.app.globalData
+							.userInfo.latitude, this.app.globalData.userInfo.longitude);
 					});
 					this.gymnasiumList = gymnasiumList
 				});

@@ -1,10 +1,10 @@
 "use strict";
 const common_vendor = require("../../common/vendor.js");
 const utils_request = require("../../utils/request.js");
-const app = getApp();
 const _sfc_main = {
   data() {
     return {
+      app: getApp(),
       phone: "",
       code: "",
       codeState: false,
@@ -135,7 +135,7 @@ const _sfc_main = {
       } else if (this.code.length != 6) {
         common_vendor.index.showToast({
           icon: "none",
-          title: "验证码错误"
+          title: "验证码长度为6位"
         });
         return false;
       }
@@ -148,8 +148,8 @@ const _sfc_main = {
         }
       }).then((res) => {
         if (res.code == 200) {
-          app.globalData.userInfo.ouid = res.data.ouid;
-          app.getUserInfo();
+          this.app.globalData.userInfo.ouid = res.data.ouid;
+          this.app.getUserInfo();
           common_vendor.index.showToast({
             icon: "none",
             title: "登录成功",

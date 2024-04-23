@@ -20,28 +20,27 @@ if (!Math) {
   "./pages/aboutUs/aboutUs.js";
   "./pages/reservationList/reservationList.js";
   "./pages/reservationInfo/reservationInfo.js";
-  "./pages/wechatLogin/wechatLogin.js";
   "./pages/dataDetail/dataDetail.js";
   "./pages/accountSecurity/accountSecurity.js";
   "./pages/userAgreement/userAgreement.js";
 }
 const _sfc_main = {
   globalData: {
-    httpUrl: "http://172.16.8.5:8002/",
+    httpUrl: "http://172.16.7.99:8002/",
     uploadUrl: "http://oss.sportguider.com/upload/common",
     iconObj: {
-      "培训": "/static/images/common/培训.svg",
-      "停车场": "/static/images/common/停车.svg",
+      "培训": "/static/images/common/training.svg",
+      "停车场": "/static/images/common/park.svg",
       "VIP": "/static/images/common/VIP.svg",
       "wifi": "/static/images/common/WIFI.svg",
-      "商店": "/static/images/common/商店.svg",
-      "淋浴房": "/static/images/common/淋浴.svg",
-      "储物柜": "/static/images/common/储物柜.svg",
-      "24小时": "/static/images/common/24小时.svg",
-      "茶水间": "/static/images/common/茶水间.svg",
-      "餐饮": "/static/images/common/餐饮.svg",
-      "洗手间": "/static/images/common/洗手间.svg",
-      "空调": "/static/images/common/空调.svg"
+      "商店": "/static/images/common/shop.svg",
+      "淋浴房": "/static/images/common/shower.svg",
+      "储物柜": "/static/images/common/storageCabinet.svg",
+      "24小时": "/static/images/common/allDay.svg",
+      "茶水间": "/static/images/common/tea.svg",
+      "餐饮": "/static/images/common/food.svg",
+      "洗手间": "/static/images/common/toilet.svg",
+      "空调": "/static/images/common/air-conditioning.svg"
     },
     userInfo: {
       longitude: "",
@@ -209,34 +208,38 @@ const _sfc_main = {
         latitude: "",
         ouid: ""
       };
-      this.globalData.enumInfo = {};
       common_vendor.index.removeStorageSync("userInfo");
       common_vendor.index.removeStorageSync("gymnasiumInfo");
+      common_vendor.index.removeStorageSync("tabbarIndex");
       common_vendor.index.reLaunch({
         url: "/pages/login/login"
       });
     },
     // 获取枚举信息
     getEnum() {
-      let enumInfo = common_vendor.index.getStorageSync("enumInfo");
-      enumInfo = enumInfo ? JSON.parse(enumInfo) : "";
-      if (enumInfo) {
-        this.globalData.enumInfo = enumInfo;
-        common_vendor.index.setStorageSync("enumInfo", JSON.stringify(enumInfo));
-        return;
-      }
-      common_vendor.index.request({
-        url: this.globalData.httpUrl + "common/get/enum",
-        method: "POST",
-        header: {
-          "content-type": "application/x-www-form-urlencoded"
-        },
-        success: (res) => {
-          if (res.statusCode == 200) {
-            this.globalData.enumInfo = res.data.data.time_enum;
-            common_vendor.index.setStorageSync("enumInfo", JSON.stringify(this.globalData.enumInfo));
-          }
+      return new Promise((resolve, reject) => {
+        let enumInfo = common_vendor.index.getStorageSync("enumInfo");
+        enumInfo = enumInfo ? JSON.parse(enumInfo) : "";
+        if (enumInfo) {
+          this.globalData.enumInfo = enumInfo;
+          common_vendor.index.setStorageSync("enumInfo", JSON.stringify(enumInfo));
+          resolve(enumInfo);
+          return false;
         }
+        common_vendor.index.request({
+          url: this.globalData.httpUrl + "common/get/enum",
+          method: "POST",
+          header: {
+            "content-type": "application/x-www-form-urlencoded"
+          },
+          success: (res) => {
+            if (res.statusCode == 200) {
+              this.globalData.enumInfo = res.data.data.time_enum;
+              common_vendor.index.setStorageSync("enumInfo", JSON.stringify(this.globalData.enumInfo));
+              resolve(res.data.data.time_enum);
+            }
+          }
+        });
       });
     }
   },

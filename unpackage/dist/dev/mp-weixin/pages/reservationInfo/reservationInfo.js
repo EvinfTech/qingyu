@@ -1,10 +1,10 @@
 "use strict";
 const common_vendor = require("../../common/vendor.js");
 const utils_request = require("../../utils/request.js");
-const app = getApp();
 const _sfc_main = {
   data() {
     return {
+      app: getApp(),
       show: false,
       order_no: "",
       code: 812356,
@@ -92,7 +92,7 @@ const _sfc_main = {
   },
   methods: {
     initData() {
-      let enumInfo = app.globalData.enumInfo;
+      let enumInfo = this.app.globalData.enumInfo;
       utils_request.request({
         url: "wx/get/reserve/detail",
         method: "POST",

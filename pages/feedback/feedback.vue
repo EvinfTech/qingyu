@@ -30,10 +30,10 @@
 	import {
 		request
 	} from '../../utils/request';
-	const app = getApp()
 	export default ({
 		data() {
 			return {
+				app:getApp(),
 				error: '',
 				fileList: []
 			};
@@ -49,7 +49,7 @@
 				} = event;
 				file.forEach((item) => {
 					uni.uploadFile({
-						url: app.globalData.uploadUrl,
+						url: this.app.globalData.uploadUrl,
 						filePath: item.url,
 						name: 'file',
 						success: (res) => {
@@ -81,7 +81,7 @@
 					url: 'wx/add/feedback',
 					method: 'POST',
 					data: {
-						user_ouid: app.globalData.userInfo.ouid,
+						user_ouid: this.app.globalData.userInfo.ouid,
 						content: this.error,
 						//反馈内容
 						photo: photos //照片

@@ -2,10 +2,10 @@
 const common_vendor = require("../../common/vendor.js");
 const utils_request = require("../../utils/request.js");
 const utils_util = require("../../utils/util.js");
-const app = getApp();
 const _sfc_main = {
   data() {
     return {
+      app: getApp(),
       active: 0,
       viewHeight: 0,
       gymnasiumList: [],
@@ -54,7 +54,7 @@ const _sfc_main = {
       }).then((res) => {
         let gymnasiumList = res.data;
         gymnasiumList.forEach((item) => {
-          item.distance = utils_util.calcDistance(item.latitude, item.longitude, app.globalData.userInfo.latitude, app.globalData.userInfo.longitude);
+          item.distance = utils_util.calcDistance(item.latitude, item.longitude, this.app.globalData.userInfo.latitude, this.app.globalData.userInfo.longitude);
         });
         this.gymnasiumList = gymnasiumList;
       });

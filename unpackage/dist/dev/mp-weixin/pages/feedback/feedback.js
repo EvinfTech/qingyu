@@ -1,10 +1,10 @@
 "use strict";
 const common_vendor = require("../../common/vendor.js");
 const utils_request = require("../../utils/request.js");
-const app = getApp();
 const _sfc_main = {
   data() {
     return {
+      app: getApp(),
       error: "",
       fileList: []
     };
@@ -20,7 +20,7 @@ const _sfc_main = {
       } = event;
       file.forEach((item) => {
         common_vendor.index.uploadFile({
-          url: app.globalData.uploadUrl,
+          url: this.app.globalData.uploadUrl,
           filePath: item.url,
           name: "file",
           success: (res) => {
@@ -51,7 +51,7 @@ const _sfc_main = {
         url: "wx/add/feedback",
         method: "POST",
         data: {
-          user_ouid: app.globalData.userInfo.ouid,
+          user_ouid: this.app.globalData.userInfo.ouid,
           content: this.error,
           //反馈内容
           photo: photos

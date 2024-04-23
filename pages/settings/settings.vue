@@ -36,10 +36,10 @@
 <script>
 	// pages/settings/settings.ts
 	// import Dialog from '@/wxcomponents/vant/dialog/dialog';
-	const app = getApp()
 	export default ({
 		data() {
 			return {
+				app:getApp(),
 				show:false
 			};
 		},
@@ -110,7 +110,7 @@
 			},
 			confirm(){
 				this.show = false
-				app.logout()
+				this.app.logout()
 			},
 			clearCache() {}
 		}

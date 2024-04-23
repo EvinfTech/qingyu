@@ -1,10 +1,11 @@
 "use strict";
 const common_vendor = require("../../common/vendor.js");
 const utils_request = require("../../utils/request.js");
-const app = getApp();
 const _sfc_main = {
   data() {
-    return {};
+    return {
+      app: getApp()
+    };
   },
   /**
    * 生命周期函数--监听页面加载
@@ -66,7 +67,7 @@ const _sfc_main = {
         method: "POST",
         data: {
           phone_code: code,
-          user_ouid: app.globalData.userInfo.ouid
+          user_ouid: this.app.globalData.userInfo.ouid
         }
       }).then((res) => {
         common_vendor.index.reLaunch({
@@ -88,8 +89,8 @@ const _sfc_main = {
           code
         }
       }).then((res) => {
-        app.globalData.userInfo.ouid = res.data.ouid;
-        app.globalData.getUserInfo("init");
+        this.app.globalData.userInfo.ouid = res.data.ouid;
+        this.app.globalData.getUserInfo("init");
         common_vendor.index.reLaunch({
           url: "/pages/index/index"
         });

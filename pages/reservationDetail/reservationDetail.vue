@@ -88,7 +88,6 @@
 
 <script>
 	// pages/reservationDetail/reservationDetail.ts
-	const app = getApp()
 	import {
 		groupBy,
 		formatNumber
@@ -99,6 +98,7 @@
 	export default ({
 		data() {
 			return {
+				app:getApp(),
 				active: 0,
 				//当前选中的日期索引
 				dateList: [],
@@ -181,7 +181,7 @@
 			},
 
 			initEnumInfo() {
-				let enumInfo = app.globalData.enumInfo;
+				let enumInfo = this.app.globalData.enumInfo;
 				let timeArr = [];	
 				let arr = [];
 				let dateItemSiteList = this.dateList[this.active].siteList;
@@ -277,7 +277,7 @@
 				this.active = index
 			},
 
-			submitOrder() {
+			async submitOrder() {
 				if (this.choosedList.length == 0) {
 					uni.showToast({
 						title: '未选择场地',
@@ -286,6 +286,7 @@
 					});
 					return;
 				}
+				let userInfo = await this.app.getUserInfo()
 				let site_detail = [];
 				let site_obj = groupBy(this.choosedList, 'siteId');
 				console.log(site_obj);
@@ -303,7 +304,7 @@
 					url: 'wx/add/order',
 					method: 'POST',
 					data: {
-						user_ouid: app.globalData.userInfo.ouid,
+						user_ouid: userInfo.ouid,
 						//用户ouid
 						site_detail: site_detail,
 						gmt_site_use: this.choosedList[0].date
@@ -404,6 +405,7 @@
 				let distance = index * this.tabWidth + this.widthDiff;
 				if (this.active != index) {
 					this.choosedList = []
+					this.totalPrice = 0
 				}
 				this.active = index
 				this.translateDistance = distance
@@ -445,7 +447,7 @@
 						siteTimeIndex: data.j //球场时间的索引，方便清空功能实现
 					};
 
-					let enumInfo = app.globalData.enumInfo;
+					let enumInfo = this.app.globalData.enumInfo;
 					for (var key in enumInfo) {
 						if (enumInfo[key] == objItem.startTime + '~' + objItem.endTime) {
 							objItem.enumInfoIndex = key;

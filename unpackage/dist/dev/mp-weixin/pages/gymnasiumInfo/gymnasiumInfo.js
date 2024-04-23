@@ -2,10 +2,10 @@
 const common_vendor = require("../../common/vendor.js");
 const utils_request = require("../../utils/request.js");
 const utils_util = require("../../utils/util.js");
-const app = getApp();
 const _sfc_main = {
   data() {
     return {
+      app: getApp(),
       gymnasiumInfo: {
         gymnasiumImg: "/static/images/home/gymnasiumPhoto.png",
         gymnasiumName: "我看看怎么个事",
@@ -73,7 +73,7 @@ const _sfc_main = {
   methods: {
     // 初始化数据
     async initData() {
-      this.gymnasiumInfo = await app.getStoreInfo();
+      this.gymnasiumInfo = await this.app.getStoreInfo();
       this.getReservationInfo();
     },
     // 获取近7天可约场地
@@ -163,25 +163,17 @@ const _sfc_main = {
       common_vendor.index.navigateTo({
         url: "/pages/reservationDetail/reservationDetail?date=" + date
       });
-    },
-    // 去报错
-    toErrorReport() {
-      common_vendor.index.navigateTo({
-        url: "/pages/errorReport/errorReport"
-      });
     }
   }
 };
 if (!Array) {
   const _easycom_u_navbar2 = common_vendor.resolveComponent("u-navbar");
   const _component_van_icon = common_vendor.resolveComponent("van-icon");
-  const _easycom_u_icon2 = common_vendor.resolveComponent("u-icon");
-  (_easycom_u_navbar2 + _component_van_icon + _easycom_u_icon2)();
+  (_easycom_u_navbar2 + _component_van_icon)();
 }
 const _easycom_u_navbar = () => "../../node-modules/uview-plus/components/u-navbar/u-navbar.js";
-const _easycom_u_icon = () => "../../node-modules/uview-plus/components/u-icon/u-icon.js";
 if (!Math) {
-  (_easycom_u_navbar + _easycom_u_icon)();
+  _easycom_u_navbar();
 }
 function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
   return {
@@ -231,12 +223,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
         h: common_vendor.o(($event) => $options.toDetail(item), index),
         i: index
       };
-    }),
-    m: common_vendor.p({
-      name: "arrow-right",
-      size: "16px"
-    }),
-    n: common_vendor.o((...args) => $options.toErrorReport && $options.toErrorReport(...args))
+    })
   };
 }
 const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-de38ef79"], ["__file", "C:/project/轻羽项目/qingyu-client/pages/gymnasiumInfo/gymnasiumInfo.vue"]]);

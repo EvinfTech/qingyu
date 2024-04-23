@@ -2,10 +2,10 @@
 const common_vendor = require("../../common/vendor.js");
 const utils_util = require("../../utils/util.js");
 const utils_request = require("../../utils/request.js");
-const app = getApp();
 const _sfc_main = {
   data() {
     return {
+      app: getApp(),
       active: 0,
       //当前选中的日期索引
       dateList: [],
@@ -91,7 +91,7 @@ const _sfc_main = {
       return [hour, minute];
     },
     initEnumInfo() {
-      let enumInfo = app.globalData.enumInfo;
+      let enumInfo = this.app.globalData.enumInfo;
       let timeArr = [];
       let arr = [];
       let dateItemSiteList = this.dateList[this.active].siteList;
@@ -177,7 +177,7 @@ const _sfc_main = {
       let index = this.dateList.findIndex((item) => item.date == date);
       this.active = index;
     },
-    submitOrder() {
+    async submitOrder() {
       if (this.choosedList.length == 0) {
         common_vendor.index.showToast({
           title: "未选择场地",
@@ -186,6 +186,7 @@ const _sfc_main = {
         });
         return;
       }
+      let userInfo = await this.app.getUserInfo();
       let site_detail = [];
       let site_obj = utils_util.groupBy(this.choosedList, "siteId");
       console.log(site_obj);
@@ -203,7 +204,7 @@ const _sfc_main = {
         url: "wx/add/order",
         method: "POST",
         data: {
-          user_ouid: app.globalData.userInfo.ouid,
+          user_ouid: userInfo.ouid,
           //用户ouid
           site_detail,
           gmt_site_use: this.choosedList[0].date
@@ -287,6 +288,7 @@ const _sfc_main = {
       let distance = index * this.tabWidth + this.widthDiff;
       if (this.active != index) {
         this.choosedList = [];
+        this.totalPrice = 0;
       }
       this.active = index;
       this.translateDistance = distance;
@@ -324,7 +326,7 @@ const _sfc_main = {
           siteTimeIndex: data.j
           //球场时间的索引，方便清空功能实现
         };
-        let enumInfo = app.globalData.enumInfo;
+        let enumInfo = this.app.globalData.enumInfo;
         for (var key in enumInfo) {
           if (enumInfo[key] == objItem.startTime + "~" + objItem.endTime) {
             objItem.enumInfoIndex = key;

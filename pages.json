@@ -115,12 +115,6 @@
 			}
 		},
 		{
-			"path": "pages/wechatLogin/wechatLogin",
-			"style": {
-				"usingComponents": {}
-			}
-		},
-		{
 			"path": "pages/dataDetail/dataDetail",
 			"style": {
 				"usingComponents": {}

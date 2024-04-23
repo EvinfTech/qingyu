@@ -85,10 +85,10 @@
 	import {
 		calcDistance
 	} from '../../utils/util';
-	const app = getApp()
 	export default ({
 		data() {
 			return {
+				app:getApp(),
 				indicatorDots: true,
 				vertical: false,
 				autoplay: false,
@@ -177,7 +177,7 @@
 		},
 		created: async function() {
 			// 获取门店信息
-			let gymnasiumInfo = await app.getStoreInfo()
+			let gymnasiumInfo = await this.app.getStoreInfo()
 			let serveList = [];
 			let facilityList = [];
 			if (gymnasiumInfo.facility.includes('设施:')) {

@@ -1,10 +1,9 @@
 "use strict";
 const common_vendor = require("./common/vendor.js");
-require("./utils/request.js");
-const app = getApp();
 const _sfc_main = {
   data() {
     return {
+      app: getApp(),
       indicatorDots: true,
       vertical: false,
       autoplay: false,
@@ -84,7 +83,7 @@ const _sfc_main = {
     }
   },
   created: async function() {
-    let gymnasiumInfo = await app.getStoreInfo();
+    let gymnasiumInfo = await this.app.getStoreInfo();
     if (gymnasiumInfo.facility.includes("设施:")) {
       gymnasiumInfo.facility = gymnasiumInfo.facility.split("设施:")[1];
     }

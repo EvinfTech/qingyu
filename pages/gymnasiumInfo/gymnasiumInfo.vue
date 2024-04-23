@@ -17,13 +17,7 @@
 				<!-- #endif -->
 
 			</view>
-			<view class="flex align-center" style="margin-top: 6rpx; margin-bottom: 20rpx">
-				<view class="commonTitleBox" style="background-color: #29cc65">订</view>
-				<view class="commonTitleBox" style="background-color: #ff5634">惠</view>
-				<view class="commonTitleBox" style="background-color: #5f2aff">赛</view>
-				<view class="commonTitleBox" style="background-color: #e3c377">活</view>
-				<view class="commonTitleBox" style="background-color: #fa3e3e">爆</view>
-			</view>
+			
 			<view class="imgScroll w-full">
 				<view class="w-full" style="position: relative">
 					<scroll-view :scroll-x="true" class="w-full h-full">
@@ -60,9 +54,7 @@
 					<text>场馆地址：</text>
 					<text>{{ gymnasiumInfo.location }}</text>
 				</view>
-				<!-- #ifdef MP-WEIXIN -->
 				<view class="commonRightOpe flex-shirnk" @tap="toMap">查看</view>
-				<!-- #endif -->
 			</view>
 			<view class="hardwareBox flex align-center flex-wrap justify-start">
 				<view class="hardwareItem flex align-center" v-for="(item, index) in gymnasiumInfo.hardwareFacilities"
@@ -109,15 +101,10 @@
 				</scroll-view>
 			</view>
 		</view>
-		<view class="errorReporting flex align-center justify-between" @tap="toErrorReport">
-			<view>场馆报错</view>
-			<u-icon name="arrow-right" size="16px" />
-		</view>
 	</view>
 </template>
 
 <script>
-	const app = getApp()
 	import {
 		request
 	} from '../../utils/request';
@@ -128,6 +115,7 @@
 	export default ({
 		data() {
 			return {
+				app:getApp(),
 				gymnasiumInfo: {
 					gymnasiumImg: '/static/images/home/gymnasiumPhoto.png',
 					gymnasiumName: '我看看怎么个事',
@@ -189,7 +177,7 @@
 			// 初始化数据
 			async initData() {
 				// 获取门店信息
-				this.gymnasiumInfo = await app.getStoreInfo()
+				this.gymnasiumInfo = await this.app.getStoreInfo()
 				this.getReservationInfo();
 			},
 			// 获取近7天可约场地
@@ -288,13 +276,6 @@
 					url: '/pages/reservationDetail/reservationDetail?date=' + date 
 				});
 			},
-
-			// 去报错
-			toErrorReport() {
-				uni.navigateTo({
-					url: '/pages/errorReport/errorReport'
-				});
-			}
 		}
 	});
 </script>

@@ -37,10 +37,10 @@
 	import {
 		request
 	} from '../../utils/request';
-	const app = getApp()
 	export default ({
 		data() {
 			return {
+				app:getApp(),
 				errorTypeList: ['信息错误', '暂停营业', '场馆不存在', '其他'],
 				error: '',
 				type: '',
@@ -99,7 +99,7 @@
 				} = event;
 				file.forEach((item) => {
 					uni.uploadFile({
-						url: app.globalData.uploadUrl,
+						url: this.app.globalData.uploadUrl,
 						filePath: item.url,
 						name: 'file',
 						success: (res) => {
@@ -142,7 +142,7 @@
 					url: 'wx/add/shop/error',
 					method: 'POST',
 					data: {
-						user_ouid: app.globalData.userInfo.ouid,
+						user_ouid: this.app.globalData.userInfo.ouid,
 						type: this.type,
 						detial: this.error,
 						photos: photos

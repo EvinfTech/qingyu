@@ -1,9 +1,9 @@
 "use strict";
 const common_vendor = require("../../common/vendor.js");
-const app = getApp();
 const _sfc_main = {
   data() {
     return {
+      app: getApp(),
       show: false
     };
   },
@@ -79,7 +79,7 @@ const _sfc_main = {
     },
     confirm() {
       this.show = false;
-      app.logout();
+      this.app.logout();
     },
     clearCache() {
     }

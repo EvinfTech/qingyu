@@ -2,7 +2,6 @@
 const common_vendor = require("../../common/vendor.js");
 const Home = () => "../home/home2.js";
 const Mine = () => "../mine/mine2.js";
-const app = getApp();
 const _sfc_main = {
   components: {
     Home,
@@ -10,6 +9,7 @@ const _sfc_main = {
   },
   data() {
     return {
+      app: getApp(),
       active: 0,
       scrollViewHeight: 0,
       tabbarList: [
@@ -55,8 +55,8 @@ const _sfc_main = {
       that.scrollViewHeight = screenHeight - 50 - (screenHeight - saveBottom);
     },
     async checkLoginState() {
-      app.getUserInfo();
-      if (!app.globalData.userInfo.ouid) {
+      this.app.getUserInfo();
+      if (!this.app.globalData.userInfo.ouid) {
         common_vendor.index.reLaunch({
           url: "/pages/login/login"
         });

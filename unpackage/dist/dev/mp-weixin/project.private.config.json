@@ -48,6 +48,13 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/gymnasiumInfo/gymnasiumInfo",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

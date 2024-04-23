@@ -1,10 +1,10 @@
 "use strict";
 const common_vendor = require("./common/vendor.js");
 const utils_request = require("./utils/request.js");
-const app = getApp();
 const _sfc_main = {
   data() {
     return {
+      app: getApp(),
       topHeight: 0,
       userInfo: {},
       nickName: "",
@@ -59,7 +59,7 @@ const _sfc_main = {
   },
   async mounted() {
     this.$nextTick(() => this.ready());
-    let userInfo = await app.getUserInfo();
+    let userInfo = await getApp().getUserInfo();
     this.userInfo = userInfo;
     this.statisticsList[0].num = userInfo.total_length;
     this.statisticsList[1].num = userInfo.sport_day;
@@ -93,12 +93,12 @@ const _sfc_main = {
     },
     // 获取最近的预约信息
     getRecentlyReserve() {
-      let enumInfo = app.globalData.enumInfo;
+      let enumInfo = this.app.globalData.enumInfo;
       utils_request.request({
         url: "wx/recently/reserve",
         method: "POST",
         data: {
-          user_ouid: app.globalData.userInfo.ouid
+          user_ouid: this.app.globalData.userInfo.ouid
         }
       }).then((res) => {
         let data = res.data;
@@ -110,10 +110,11 @@ const _sfc_main = {
         if (site_detail) {
           site_detail.forEach((item) => {
             item.time_enum.forEach((enumCon) => {
+              var _a, _b;
               siteList.push({
                 siteNo: item.site_name,
-                startTime: enumInfo[enumCon].split("~")[0],
-                endTime: enumInfo[enumCon].split("~")[1]
+                startTime: (_a = enumInfo[enumCon]) == null ? void 0 : _a.split("~")[0],
+                endTime: (_b = enumInfo[enumCon]) == null ? void 0 : _b.split("~")[1]
               });
             });
           });

@@ -3,6 +3,8 @@
 	<view class="page">
 		<u-navbar class="nav-bar" title="我的订单" :safeAreaInsetTop="true" :autoBack="true" :fixed="false">
 		</u-navbar>
+		<u-modal :show="show" title="提示" content="确定要取消此订单？" :showCancelButton="true" @confirm="confirm"
+			@cancel="cancel"></u-modal>
 		<u-tabs class="tabs" :list="titleList" @change="onChange" lineColor="#0077FF" lineWidth="40"></u-tabs>
 		<scroll-view :scroll-y="true" v-if="active == 0" class="orderList" :class="orderList.length == 0?'emptyFlex':''"
 			:style="'height: ' + (scrollViewHeight + 'px') + ';'">
@@ -56,7 +58,7 @@
 
 		<scroll-view :scroll-y="true" v-else-if="active == 1" class="orderList"
 			:style="'height: ' + (scrollViewHeight + 'px') + ';'" :class="waitPayedList.length == 0?'emptyFlex':''">
-			<u-empty  text="暂无待支付订单" v-if="waitPayedList.length == 0" />
+			<u-empty text="暂无待支付订单" v-if="waitPayedList.length == 0" />
 			<view v-else>
 				<view class="orderItem" :data-item="item" v-for="(item, index1) in waitPayedList" :key="index1">
 					<view class="flex align-center justify-between">
@@ -102,7 +104,8 @@
 			</view>
 		</scroll-view>
 
-		<scroll-view :scroll-y="true" v-else class="orderList" :style="'height: ' + (scrollViewHeight + 'px') + ';'"  :class="waitUsedList.length == 0?'emptyFlex':''">
+		<scroll-view :scroll-y="true" v-else class="orderList" :style="'height: ' + (scrollViewHeight + 'px') + ';'"
+			:class="waitUsedList.length == 0?'emptyFlex':''">
 			<u-empty text="暂无待使用订单" v-if="waitUsedList.length == 0" />
 			<view v-else>
 				<view class="orderItem" @tap="toDetail" :data-item="item" v-for="(item, index1) in waitUsedList"
@@ -159,10 +162,11 @@
 		request
 	} from '../../utils/request';
 	// import Dialog from '@/wxcomponents/vant/dialog/dialog';
-	const app = getApp()
 	export default ({
 		data() {
 			return {
+				show: false,
+				app: getApp(),
 				titleList: [{
 					name: '全部'
 				}, {
@@ -173,7 +177,7 @@
 				active: 0,
 				waitPayedList: [],
 				waitUsedList: [],
-
+				order_no: '',
 				orderList: [],
 
 				scrollViewHeight: ''
@@ -254,35 +258,34 @@
 					url: '/pages/orderDetail/orderDetail?order_no=' + order_no
 				});
 			},
-
-			toCancel(e) {
-				Dialog.confirm({
-						title: '取消订单',
-						message: '确定要取消此订单?'
-					})
-					.then(() => {
-						request({
-							url: 'wx/cancel/order',
-							method: 'POST',
-							data: {
-								order_no: e.currentTarget.dataset.item.order_no
-							}
-						}).then(() => {
-							uni.showToast({
-								title: '取消成功',
-								icon: 'none',
-								duration: 2000,
-								success: () => {
-									setTimeout(() => {
-										this.initData();
-									}, 2000);
-								}
-							});
-						});
-					})
-					.catch(() => {
-						// on cancel
+			cancel() {
+				this.show = false
+			},
+			confirm() {
+				request({
+					url: 'wx/cancel/order',
+					method: 'POST',
+					data: {
+						order_no: this.order_no
+					}
+				}).then(() => {
+					uni.showToast({
+						title: '取消成功',
+						icon: 'none',
+						duration: 2000,
+						success: () => {
+							this.show = false
+							setTimeout(() => {
+								this.initData();
+							}, 2000);
+						}
 					});
+				});
+			},
+			toCancel(e) {
+				this.show = true;
+				this.order_no =  e.currentTarget.dataset.item.order_no
+
 			},
 
 			initData() {
@@ -290,7 +293,7 @@
 					url: 'wx/get/order/list',
 					method: 'POST',
 					data: {
-						user_ouid: app.globalData.userInfo.ouid
+						user_ouid: this.app.globalData.userInfo.ouid
 					}
 				}).then((res) => {
 					let orderList = res.data.reverse();
@@ -325,10 +328,12 @@
 		padding: 10rpx 20rpx;
 		box-sizing: border-box;
 	}
-	.emptyFlex{
+
+	.emptyFlex {
 		padding-top: 100px;
 		box-sizing: border-box;
 	}
+
 	.orderItem {
 		height: 300rpx;
 		border-radius: 10rpx;

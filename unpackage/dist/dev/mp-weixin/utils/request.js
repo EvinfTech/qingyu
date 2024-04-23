@@ -1,13 +1,12 @@
 "use strict";
 const common_vendor = require("../common/vendor.js");
-const app = getApp();
 const request = (parmas) => {
   common_vendor.index.showLoading({
     title: "加载中"
   });
   return new Promise((resolve, reject) => {
     common_vendor.index.request({
-      url: app.globalData.httpUrl + parmas.url,
+      url: getApp().globalData.httpUrl + parmas.url,
       method: parmas.method,
       data: JSON.stringify(parmas.data),
       header: parmas.method === "POST" ? {

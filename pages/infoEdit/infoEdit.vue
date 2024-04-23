@@ -51,7 +51,6 @@
 
 <script>
 	// pages/infoEdit/infoEdit.ts
-	const app = getApp()
 	import {
 		request
 	} from '../../utils/request';
@@ -61,6 +60,7 @@
 	export default ({
 		data() {
 			return {
+				app:getApp(),
 				avatarUrl: '',
 				nickname: '',
 				sex: '',
@@ -78,8 +78,7 @@
 		 * 生命周期函数--监听页面加载
 		 */
 		async onLoad() {
-			let userInfo = await app.getUserInfo()
-			console.log(999, userInfo)
+			let userInfo = await this.app.getUserInfo()
 			this.maxDate = Date.now()
 			this.currentDate = Date.now()
 			this.nickname = userInfo.name
@@ -132,7 +131,7 @@
 					file
 				} = event;
 				uni.uploadFile({
-					url: app.globalData.uploadUrl,
+					url: this.app.globalData.uploadUrl,
 					filePath: file.url,
 					name: 'file',
 					success: (res) => {
@@ -167,7 +166,7 @@
 					url: 'wx/update/user/info',
 					method: 'POST',
 					data: {
-						user_ouid: app.globalData.userInfo.ouid,
+						user_ouid: this.app.globalData.userInfo.ouid,
 						name: this.nickname,
 						avatar: this.avatarUrl,
 						phone: '',
@@ -177,7 +176,7 @@
 					}
 				}).then(() => {
 					uni.removeStorageSync('userInfo')
-					app.getUserInfo()
+					this.app.getUserInfo()
 					uni.showToast({
 						title: '保存成功',
 						icon: 'none',

@@ -1,11 +1,10 @@
-const app =getApp()
 export const request = (parmas: any) => {
     uni.showLoading({
         title: '加载中'
     });
     return new Promise((resolve, reject) => {
         uni.request({
-            url: app.globalData.httpUrl + parmas.url,
+            url: getApp().globalData.httpUrl + parmas.url,
             method: parmas.method,
             data: JSON.stringify(parmas.data),
             header:

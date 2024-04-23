@@ -1,21 +1,21 @@
 <script>
 	export default {
 		globalData: {
-			httpUrl: 'http://172.16.8.5:8002/',
+			httpUrl: 'http://172.16.7.99:8002/',
 			uploadUrl: 'http://oss.sportguider.com/upload/common',
 			iconObj: {
-				'培训': '/static/images/common/培训.svg',
-				'停车场': '/static/images/common/停车.svg',
+				'培训': '/static/images/common/training.svg',
+				'停车场': '/static/images/common/park.svg',
 				'VIP': '/static/images/common/VIP.svg',
 				'wifi': '/static/images/common/WIFI.svg',
-				'商店': '/static/images/common/商店.svg',
-				'淋浴房': '/static/images/common/淋浴.svg',
-				'储物柜': '/static/images/common/储物柜.svg',
-				'24小时': '/static/images/common/24小时.svg',
-				'茶水间': '/static/images/common/茶水间.svg',
-				'餐饮': '/static/images/common/餐饮.svg',
-				'洗手间': '/static/images/common/洗手间.svg',
-				'空调': '/static/images/common/空调.svg'
+				'商店': '/static/images/common/shop.svg',
+				'淋浴房': '/static/images/common/shower.svg',
+				'储物柜': '/static/images/common/storageCabinet.svg',
+				'24小时': '/static/images/common/allDay.svg',
+				'茶水间': '/static/images/common/tea.svg',
+				'餐饮': '/static/images/common/food.svg',
+				'洗手间': '/static/images/common/toilet.svg',
+				'空调': '/static/images/common/air-conditioning.svg'
 			},
 			userInfo: {
 				longitude: '',
@@ -194,9 +194,9 @@
 					latitude: '',
 					ouid: ''
 				};
-				this.globalData.enumInfo = {};
 				uni.removeStorageSync('userInfo');
 				uni.removeStorageSync('gymnasiumInfo');
+				uni.removeStorageSync("tabbarIndex")
 				uni.reLaunch({
 					url: '/pages/login/login'
 				});
@@ -204,26 +204,33 @@
 
 			// 获取枚举信息
 			getEnum() {
-				let enumInfo = uni.getStorageSync('enumInfo');
-				enumInfo = enumInfo ? JSON.parse(enumInfo) : '';
-				if (enumInfo) {
-					this.globalData.enumInfo = enumInfo;
-					uni.setStorageSync('enumInfo', JSON.stringify(enumInfo));
-					return;
-				}
-				uni.request({
-					url: this.globalData.httpUrl + 'common/get/enum',
-					method: 'POST',
-					header: {
-						'content-type': 'application/x-www-form-urlencoded'
-					},
-					success: (res) => {
-						if (res.statusCode == 200) {
-							this.globalData.enumInfo = res.data.data.time_enum;
-							uni.setStorageSync('enumInfo', JSON.stringify(this.globalData.enumInfo));
-						}
+				return new Promise((resolve,reject)=>{
+					let enumInfo = uni.getStorageSync('enumInfo');
+					enumInfo = enumInfo ? JSON.parse(enumInfo) : '';
+					if (enumInfo) {
+						this.globalData.enumInfo = enumInfo;
+						uni.setStorageSync('enumInfo', JSON.stringify(enumInfo));
+						resolve(enumInfo)
+						return false;
 					}
-				});
+					uni.request({
+						url: this.globalData.httpUrl + 'common/get/enum',
+						method: 'POST',
+						header: {
+							'content-type': 'application/x-www-form-urlencoded'
+						},
+						success: (res) => {
+							if (res.statusCode == 200) {
+								this.globalData.enumInfo = res.data.data.time_enum;
+								uni.setStorageSync('enumInfo', JSON.stringify(this.globalData.enumInfo));
+								resolve(res.data.data.time_enum)
+							}
+						}
+					});
+					
+				})
+				
+				
 			}
 		},
 

@@ -18,7 +18,6 @@
     "pages/aboutUs/aboutUs",
     "pages/reservationList/reservationList",
     "pages/reservationInfo/reservationInfo",
-    "pages/wechatLogin/wechatLogin",
     "pages/dataDetail/dataDetail",
     "pages/accountSecurity/accountSecurity",
     "pages/userAgreement/userAgreement"

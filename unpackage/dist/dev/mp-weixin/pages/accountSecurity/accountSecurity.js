@@ -4,10 +4,17 @@ const _sfc_main = {
   data() {
     return {
       accountNo: "163987",
-      phone: "13583265886",
+      phone: "",
       status: "已绑定",
-      show: false
+      show: false,
+      app: getApp(),
+      userInfo: null
     };
+  },
+  async onLoad() {
+    let userInfo = await this.app.getUserInfo();
+    this.userInfo = userInfo;
+    this.phone = userInfo.phone;
   },
   methods: {
     onClickLeft() {
@@ -67,10 +74,9 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     e: common_vendor.p({
       ["custom-class"]: "userinfo-group"
     }),
-    f: common_vendor.o((...args) => $options.logOff && $options.logOff(...args)),
-    g: common_vendor.o($options.confirm),
-    h: common_vendor.o($options.cancel),
-    i: common_vendor.p({
+    f: common_vendor.o($options.confirm),
+    g: common_vendor.o($options.cancel),
+    h: common_vendor.p({
       show: $data.show,
       title: "提示",
       content: "确定要注销账号吗？",

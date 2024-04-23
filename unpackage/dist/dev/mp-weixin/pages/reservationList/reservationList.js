@@ -1,10 +1,10 @@
 "use strict";
 const common_vendor = require("../../common/vendor.js");
 const utils_request = require("../../utils/request.js");
-const app = getApp();
 const _sfc_main = {
   data() {
     return {
+      app: getApp(),
       titleList: [{
         name: "全部"
       }, {
@@ -92,15 +92,15 @@ const _sfc_main = {
       this.scrollViewHeight = screenHeight - 88;
     },
     initData() {
-      app.globalData.enumInfo;
+      this.app.globalData.enumInfo;
       utils_request.request({
         url: "wx/get/my/reserve/list",
         method: "POST",
         data: {
-          user_ouid: app.globalData.userInfo.ouid
+          user_ouid: this.app.globalData.userInfo.ouid
         }
       }).then((res) => {
-        let enumInfo = app.globalData.enumInfo;
+        let enumInfo = this.app.globalData.enumInfo;
         let reservationList = res.data.reverse();
         reservationList.forEach((con) => {
           let siteNum = 0;

@@ -2,10 +2,10 @@
 const common_vendor = require("../../common/vendor.js");
 const utils_request = require("../../utils/request.js");
 const utils_util = require("../../utils/util.js");
-const app = getApp();
 const _sfc_main = {
   data() {
     return {
+      app: getApp(),
       avatarUrl: "",
       nickname: "",
       sex: "",
@@ -23,8 +23,7 @@ const _sfc_main = {
    * 生命周期函数--监听页面加载
    */
   async onLoad() {
-    let userInfo = await app.getUserInfo();
-    console.log(999, userInfo);
+    let userInfo = await this.app.getUserInfo();
     this.maxDate = Date.now();
     this.currentDate = Date.now();
     this.nickname = userInfo.name;
@@ -83,7 +82,7 @@ const _sfc_main = {
         file
       } = event;
       common_vendor.index.uploadFile({
-        url: app.globalData.uploadUrl,
+        url: this.app.globalData.uploadUrl,
         filePath: file.url,
         name: "file",
         success: (res) => {
@@ -117,7 +116,7 @@ const _sfc_main = {
         url: "wx/update/user/info",
         method: "POST",
         data: {
-          user_ouid: app.globalData.userInfo.ouid,
+          user_ouid: this.app.globalData.userInfo.ouid,
           name: this.nickname,
           avatar: this.avatarUrl,
           phone: "",
@@ -128,7 +127,7 @@ const _sfc_main = {
         }
       }).then(() => {
         common_vendor.index.removeStorageSync("userInfo");
-        app.getUserInfo();
+        this.app.getUserInfo();
         common_vendor.index.showToast({
           title: "保存成功",
           icon: "none",

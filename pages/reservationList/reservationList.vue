@@ -127,13 +127,13 @@
 
 <script>
 	// pages/orderList/orderList.ts
-	const app = getApp()
 	import {
 		request
 	} from '../../utils/request';
 	export default ({
 		data() {
 			return {
+				app:getApp(),
 				titleList: [{
 					name: '全部'
 				}, {
@@ -232,15 +232,15 @@
 			},
 
 			initData() {
-				let enumInfo = app.globalData.enumInfo;
+				let enumInfo = this.app.globalData.enumInfo;
 				request({
 					url: 'wx/get/my/reserve/list',
 					method: 'POST',
 					data: {
-						user_ouid: app.globalData.userInfo.ouid
+						user_ouid: this.app.globalData.userInfo.ouid
 					}
 				}).then((res) => {
-					let enumInfo = app.globalData.enumInfo;
+					let enumInfo = this.app.globalData.enumInfo;
 					let reservationList = res.data.reverse();
 					reservationList.forEach((con) => {
 						let siteNum = 0; //预约场地数

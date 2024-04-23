@@ -36,10 +36,10 @@
 		request
 	} from '../../utils/request';
 	// pages/login.ts
-	const app = getApp()
 	export default ({
 		data() {
 			return {
+				app:getApp(),
 				phone: '',
 				code: '',
 				codeState: false,
@@ -163,10 +163,11 @@
 						title: '验证码不能为空'
 					})
 					return false
-				}else if(this.code.length!=6){
+				}
+				else if(this.code.length!=6){
 					uni.showToast({
 						icon: 'none',
-						title: '验证码错误'
+						title: '验证码长度为6位'
 					})
 					return false
 				}
@@ -179,8 +180,8 @@
 					}
 				}).then((res) => {
 					if (res.code == 200) {
-						app.globalData.userInfo.ouid = res.data.ouid;
-						app.getUserInfo()
+						this.app.globalData.userInfo.ouid = res.data.ouid;
+						this.app.getUserInfo()
 						uni.showToast({
 							icon: 'none',
 							title: '登录成功',

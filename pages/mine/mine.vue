@@ -84,13 +84,13 @@
 </template>
 
 <script>
-	const app = getApp()
 	import {
 		request
 	} from '../../utils/request';
 	export default ({
 		data() {
 			return {
+				app:getApp(),
 				topHeight: 0,
 				userInfo:{},
 				nickName: '',
@@ -145,12 +145,12 @@
 		async mounted() {
 			// 处理小程序 ready 生命周期
 			this.$nextTick(() => this.ready());
-			let userInfo = await app.getUserInfo()
+			let userInfo = await getApp().getUserInfo()
 			this.userInfo = userInfo;
 			this.statisticsList[0].num = userInfo.total_length
 			this.statisticsList[1].num = userInfo.sport_day
 			this.statisticsList[2].num = userInfo.total_count
-			// #ifdef H5
+			// #ifdef H5  || APP-PLUS
 			this.serviceList.pop()
 			// #endif
 		},
@@ -184,12 +184,12 @@
 
 			// 获取最近的预约信息
 			getRecentlyReserve() {
-				let enumInfo = app.globalData.enumInfo;
+				let enumInfo = this.app.globalData.enumInfo;
 				request({
 					url: 'wx/recently/reserve',
 					method: 'POST',
 					data: {
-						user_ouid: app.globalData.userInfo.ouid
+						user_ouid: this.app.globalData.userInfo.ouid
 					}
 				}).then((res) => {
 					let data = res.data;
@@ -203,8 +203,8 @@
 							item.time_enum.forEach((enumCon) => {
 								siteList.push({
 									siteNo: item.site_name,
-									startTime: enumInfo[enumCon].split('~')[0],
-									endTime: enumInfo[enumCon].split('~')[1]
+									startTime: enumInfo[enumCon]?.split('~')[0],
+									endTime: enumInfo[enumCon]?.split('~')[1]
 								});
 							});
 						});

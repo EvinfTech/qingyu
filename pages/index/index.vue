@@ -22,7 +22,6 @@
 <script>
 	import Home from '../home/home';
 	import Mine from '../mine/mine';
-	const app = getApp()
 	// index.ts
 	export default ({
 		components: {
@@ -31,6 +30,7 @@
 		},
 		data() {
 			return {
+				app:getApp(),
 				active: 0,
 				scrollViewHeight: 0,
 				tabbarList: [{
@@ -75,8 +75,8 @@
 				that.scrollViewHeight = screenHeight - 50 - (screenHeight - saveBottom)
 			},
 			async checkLoginState() {
-				app.getUserInfo();
-				if (!app.globalData.userInfo.ouid) {
+				this.app.getUserInfo();
+				if (!this.app.globalData.userInfo.ouid) {
 					uni.reLaunch({
 						url: '/pages/login/login'
 					});

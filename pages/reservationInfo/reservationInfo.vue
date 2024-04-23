@@ -57,13 +57,13 @@
 <script >
 	 
 	// pages/reservationInfo/reservationInfo.ts
-	const app =getApp()
 	import {
 		request
 	} from '../../utils/request';
 	export default  ({
 		data() {
 			return {
+				app:getApp(),
 				show:false,
 				order_no: '',
 				code: 812356,
@@ -145,7 +145,7 @@
 		onShareAppMessage() {},
 		methods: {
 			initData() {
-				let enumInfo = app.globalData.enumInfo;
+				let enumInfo = this.app.globalData.enumInfo;
 				request({
 					url: 'wx/get/reserve/detail',
 					method: 'POST',

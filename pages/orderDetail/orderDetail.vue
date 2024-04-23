@@ -110,7 +110,6 @@
 						</view>
 					</view>
 					<view class="flex align-center justify-end">
-						<!-- detailType == 'detail'&&payState == 'N' -->
 						<view class="cancelBtn" @tap="cancelOrder" v-if="payState == 'N'">取消订单</view>
 						<view class="payBtn" v-if="payState == 'N'">确认支付</view>
 						<view v-else-if="payState == 'C'" class="grayText" style="font-size: 32rpx">已取消</view>
@@ -128,10 +127,10 @@
 		request
 	} from '../../utils/request';
 	// import Dialog from '@/wxcomponents/vant/dialog/dialog';
-	const app = getApp()
 	export default ({
 		data() {
 			return {
+				app:getApp(),
 				order_no: '',
 				detailType: '',
 				//订单详情类型
@@ -214,7 +213,7 @@
 		onShareAppMessage() {},
 		methods: {
 			initData() {
-				let enumInfo = app.globalData.enumInfo;
+				let enumInfo = this.app.globalData.enumInfo;
 				request({
 					url: 'wx/get/order/detail',
 					method: 'POST',
