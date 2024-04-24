@@ -121,7 +121,7 @@
     background-color: #fff; */
 }
 .rightSiteBox.data-v-71ac0ae8 {
-		width: calc(100vw - 27px);
+		width: calc(100vw - 57px);
 		padding-right: 10px;
 		box-sizing: border-box;
 		overflow-x: auto;

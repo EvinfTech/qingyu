@@ -639,7 +639,7 @@
 	}
 
 	.rightSiteBox {
-		width: calc(100vw - 27px);
+		width: calc(100vw - 57px);
 		padding-right: 10px;
 		box-sizing: border-box;
 		overflow-x: auto;
