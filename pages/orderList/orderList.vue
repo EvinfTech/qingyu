@@ -45,7 +45,7 @@
 					</view>
 					<view class="w-full flex align-center" style="justify-content: flex-end" v-if="item.status == 'Y'">
 						<view class="borderBtn" @tap="toCancel" :data-item="item">取消订单</view>
-						<view class="useBtn">去使用</view>
+						<view class="useBtn"  @tap="toDetail" :data-item="item">去使用</view>
 					</view>
 
 					<view class="w-full flex align-center" style="justify-content: flex-end"
@@ -93,7 +93,7 @@
 
 					<view class="w-full flex align-center" style="justify-content: flex-end" v-if="item.status == 'Y'">
 						<view class="borderBtn" @tap="toCancel" :data-item="item">取消订单</view>
-						<view class="useBtn">去使用</view>
+						<view class="useBtn"  @tap="toDetail" :data-item="item">去使用</view>
 					</view>
 
 					<view class="w-full flex align-center" style="justify-content: flex-end"
@@ -132,7 +132,7 @@
 								</view>
 							</view>
 						</view>
-						<view class="priceText">￥ {{ item.price }}</view>
+						<view class="priceText">￥ {{ item.money }}</view>
 					</view>
 
 					<view class="w-full flex align-center" style="justify-content: flex-end" v-if="item.status == 'N'">
@@ -142,7 +142,7 @@
 
 					<view class="w-full flex align-center" style="justify-content: flex-end" v-if="item.status == 'Y'">
 						<view class="borderBtn" @tap="toCancel" :data-item="item">取消订单</view>
-						<view class="useBtn">去使用</view>
+						<view class="useBtn" @tap="toDetail" :data-item="item">去使用</view>
 					</view>
 
 					<view class="w-full flex align-center" style="justify-content: flex-end"
@@ -308,7 +308,7 @@
 					});
 					this.orderList = orderList
 					let waitPayedList = this.orderList.filter((item) => item.status == 'N');
-					let waitUsedList = this.orderList.filter((item) => item.state == 'Y');
+					let waitUsedList = this.orderList.filter((item) => item.status == 'Y');
 					this.waitPayedList = waitPayedList
 					this.waitUsedList = waitUsedList
 				});

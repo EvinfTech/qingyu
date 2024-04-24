@@ -11298,7 +11298,7 @@ if (uni.restoreGlobal) {
           });
           this.orderList = orderList;
           let waitPayedList = this.orderList.filter((item) => item.status == "N");
-          let waitUsedList = this.orderList.filter((item) => item.state == "Y");
+          let waitUsedList = this.orderList.filter((item) => item.status == "Y");
           this.waitPayedList = waitPayedList;
           this.waitUsedList = waitUsedList;
         });
@@ -11454,7 +11454,11 @@ if (uni.restoreGlobal) {
                           onClick: _cache[3] || (_cache[3] = (...args) => $options.toCancel && $options.toCancel(...args)),
                           "data-item": item
                         }, "取消订单", 8, ["data-item"]),
-                        vue.createElementVNode("view", { class: "useBtn" }, "去使用")
+                        vue.createElementVNode("view", {
+                          class: "useBtn",
+                          onClick: _cache[4] || (_cache[4] = (...args) => $options.toDetail && $options.toDetail(...args)),
+                          "data-item": item
+                        }, "去使用", 8, ["data-item"])
                       ])) : vue.createCommentVNode("v-if", true),
                       item.status == "finished" || item.status == "refunded" ? (vue.openBlock(), vue.createElementBlock("view", {
                         key: 3,
@@ -11554,12 +11558,12 @@ if (uni.restoreGlobal) {
                       }, [
                         vue.createElementVNode("view", {
                           class: "borderBtn",
-                          onClick: _cache[4] || (_cache[4] = (...args) => $options.toCancel && $options.toCancel(...args)),
+                          onClick: _cache[5] || (_cache[5] = (...args) => $options.toCancel && $options.toCancel(...args)),
                           "data-item": item
                         }, "取消订单", 8, ["data-item"]),
                         vue.createElementVNode("view", {
                           class: "payBtn",
-                          onClick: _cache[5] || (_cache[5] = (...args) => $options.toDetail && $options.toDetail(...args)),
+                          onClick: _cache[6] || (_cache[6] = (...args) => $options.toDetail && $options.toDetail(...args)),
                           "data-item": item
                         }, "去支付", 8, ["data-item"])
                       ])) : vue.createCommentVNode("v-if", true),
@@ -11570,10 +11574,14 @@ if (uni.restoreGlobal) {
                       }, [
                         vue.createElementVNode("view", {
                           class: "borderBtn",
-                          onClick: _cache[6] || (_cache[6] = (...args) => $options.toCancel && $options.toCancel(...args)),
+                          onClick: _cache[7] || (_cache[7] = (...args) => $options.toCancel && $options.toCancel(...args)),
                           "data-item": item
                         }, "取消订单", 8, ["data-item"]),
-                        vue.createElementVNode("view", { class: "useBtn" }, "去使用")
+                        vue.createElementVNode("view", {
+                          class: "useBtn",
+                          onClick: _cache[8] || (_cache[8] = (...args) => $options.toDetail && $options.toDetail(...args)),
+                          "data-item": item
+                        }, "去使用", 8, ["data-item"])
                       ])) : vue.createCommentVNode("v-if", true),
                       item.status == "finished" || item.status == "refunded" ? (vue.openBlock(), vue.createElementBlock("view", {
                         key: 2,
@@ -11610,7 +11618,7 @@ if (uni.restoreGlobal) {
                   vue.renderList($data.waitUsedList, (item, index1) => {
                     return vue.openBlock(), vue.createElementBlock("view", {
                       class: "orderItem",
-                      onClick: _cache[9] || (_cache[9] = (...args) => $options.toDetail && $options.toDetail(...args)),
+                      onClick: _cache[12] || (_cache[12] = (...args) => $options.toDetail && $options.toDetail(...args)),
                       "data-item": item,
                       key: index1
                     }, [
@@ -11668,7 +11676,7 @@ if (uni.restoreGlobal) {
                         vue.createElementVNode(
                           "view",
                           { class: "priceText" },
-                          "￥ " + vue.toDisplayString(item.price),
+                          "￥ " + vue.toDisplayString(item.money),
                           1
                           /* TEXT */
                         )
@@ -11680,7 +11688,7 @@ if (uni.restoreGlobal) {
                       }, [
                         vue.createElementVNode("view", {
                           class: "borderBtn",
-                          onClick: _cache[7] || (_cache[7] = (...args) => $options.toCancel && $options.toCancel(...args)),
+                          onClick: _cache[9] || (_cache[9] = (...args) => $options.toCancel && $options.toCancel(...args)),
                           "data-item": item
                         }, "取消订单", 8, ["data-item"]),
                         vue.createElementVNode("view", { class: "payBtn" }, "去支付")
@@ -11692,10 +11700,14 @@ if (uni.restoreGlobal) {
                       }, [
                         vue.createElementVNode("view", {
                           class: "borderBtn",
-                          onClick: _cache[8] || (_cache[8] = (...args) => $options.toCancel && $options.toCancel(...args)),
+                          onClick: _cache[10] || (_cache[10] = (...args) => $options.toCancel && $options.toCancel(...args)),
                           "data-item": item
                         }, "取消订单", 8, ["data-item"]),
-                        vue.createElementVNode("view", { class: "useBtn" }, "去使用")
+                        vue.createElementVNode("view", {
+                          class: "useBtn",
+                          onClick: _cache[11] || (_cache[11] = (...args) => $options.toDetail && $options.toDetail(...args)),
+                          "data-item": item
+                        }, "去使用", 8, ["data-item"])
                       ])) : vue.createCommentVNode("v-if", true),
                       item.status == "finished" || item.status == "refunded" ? (vue.openBlock(), vue.createElementBlock("view", {
                         key: 2,
@@ -12233,8 +12245,8 @@ if (uni.restoreGlobal) {
             con.timeList = timeList;
           });
           this.reservationList = reservationList;
-          let waitUsedList = this.reservationList.filter((item) => item.state == "Y");
-          let alreadyUsedList = this.reservationList.filter((item) => item.state == "finished");
+          let waitUsedList = this.reservationList.filter((item) => item.status == "Y");
+          let alreadyUsedList = this.reservationList.filter((item) => item.status == "finished");
           this.waitUsedList = waitUsedList;
           this.alreadyUsedList = alreadyUsedList;
         });
@@ -12402,7 +12414,13 @@ if (uni.restoreGlobal) {
                     }, [
                       vue.createElementVNode("view", { class: "flex align-center justify-between" }, [
                         vue.createElementVNode("view", { class: "flex align-center" }, [
-                          vue.createElementVNode("view", { class: "leftPhoto" }),
+                          vue.createElementVNode("view", { class: "leftPhoto" }, [
+                            vue.createElementVNode("image", {
+                              class: "w-full h-full",
+                              src: item.shop_avatar,
+                              mode: ""
+                            }, null, 8, ["src"])
+                          ]),
                           vue.createElementVNode("view", {
                             class: "flex flex-direction align-start justify-between",
                             style: { "height": "132rpx" }
@@ -12410,7 +12428,7 @@ if (uni.restoreGlobal) {
                             vue.createElementVNode(
                               "view",
                               { class: "gymnasiumName" },
-                              vue.toDisplayString(item.gymnasiumName),
+                              vue.toDisplayString(item.shop_name),
                               1
                               /* TEXT */
                             ),
@@ -12497,7 +12515,13 @@ if (uni.restoreGlobal) {
                     }, [
                       vue.createElementVNode("view", { class: "flex align-center justify-between" }, [
                         vue.createElementVNode("view", { class: "flex align-center" }, [
-                          vue.createElementVNode("view", { class: "leftPhoto" }),
+                          vue.createElementVNode("view", { class: "leftPhoto" }, [
+                            vue.createElementVNode("image", {
+                              class: "w-full h-full",
+                              src: item.shop_avatar,
+                              mode: ""
+                            }, null, 8, ["src"])
+                          ]),
                           vue.createElementVNode("view", {
                             class: "flex flex-direction align-start justify-between",
                             style: { "height": "132rpx" }
@@ -12505,7 +12529,7 @@ if (uni.restoreGlobal) {
                             vue.createElementVNode(
                               "view",
                               { class: "gymnasiumName" },
-                              vue.toDisplayString(item.gymnasiumName),
+                              vue.toDisplayString(item.shop_name),
                               1
                               /* TEXT */
                             ),

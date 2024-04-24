@@ -122,8 +122,8 @@ const _sfc_main = {
           con.timeList = timeList;
         });
         this.reservationList = reservationList;
-        let waitUsedList = this.reservationList.filter((item) => item.state == "Y");
-        let alreadyUsedList = this.reservationList.filter((item) => item.state == "finished");
+        let waitUsedList = this.reservationList.filter((item) => item.status == "Y");
+        let alreadyUsedList = this.reservationList.filter((item) => item.status == "finished");
         this.waitUsedList = waitUsedList;
         this.alreadyUsedList = alreadyUsedList;
       });
@@ -200,20 +200,21 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
   } : {
     m: common_vendor.f($data.waitUsedList, (item, index1, i0) => {
       return {
-        a: common_vendor.t(item.gymnasiumName),
-        b: common_vendor.t(item.siteNum),
-        c: common_vendor.t(item.hour),
-        d: common_vendor.f(item.timeList, (con, j, i1) => {
+        a: item.shop_avatar,
+        b: common_vendor.t(item.shop_name),
+        c: common_vendor.t(item.siteNum),
+        d: common_vendor.t(item.hour),
+        e: common_vendor.f(item.timeList, (con, j, i1) => {
           return {
             a: common_vendor.t(con.date),
             b: common_vendor.t(con.timeRange),
             c: j
           };
         }),
-        e: common_vendor.o((...args) => $options.toDetail && $options.toDetail(...args), index1),
-        f: item,
+        f: common_vendor.o((...args) => $options.toDetail && $options.toDetail(...args), index1),
         g: item,
-        h: index1
+        h: item,
+        i: index1
       };
     })
   }, {
@@ -228,14 +229,15 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
   } : {
     r: common_vendor.f($data.alreadyUsedList, (item, index1, i0) => {
       return {
-        a: common_vendor.t(item.gymnasiumName),
-        b: common_vendor.t(item.siteNum),
-        c: common_vendor.t(item.hour),
-        d: common_vendor.t(item.reservationTime),
-        e: common_vendor.o((...args) => $options.toDetail && $options.toDetail(...args), index1),
-        f: item,
+        a: item.shop_avatar,
+        b: common_vendor.t(item.shop_name),
+        c: common_vendor.t(item.siteNum),
+        d: common_vendor.t(item.hour),
+        e: common_vendor.t(item.reservationTime),
+        f: common_vendor.o((...args) => $options.toDetail && $options.toDetail(...args), index1),
         g: item,
-        h: index1
+        h: item,
+        i: index1
       };
     })
   }, {

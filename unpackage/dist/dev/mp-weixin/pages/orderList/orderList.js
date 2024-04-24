@@ -137,7 +137,7 @@ const _sfc_main = {
         });
         this.orderList = orderList;
         let waitPayedList = this.orderList.filter((item) => item.status == "N");
-        let waitUsedList = this.orderList.filter((item) => item.state == "Y");
+        let waitUsedList = this.orderList.filter((item) => item.status == "Y");
         this.waitPayedList = waitPayedList;
         this.waitUsedList = waitUsedList;
       });
@@ -216,12 +216,14 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
         r: item.status == "Y"
       }, item.status == "Y" ? {
         s: common_vendor.o((...args) => $options.toCancel && $options.toCancel(...args), index1),
-        t: item
+        t: item,
+        v: common_vendor.o((...args) => $options.toDetail && $options.toDetail(...args), index1),
+        w: item
       } : {}, {
-        v: item.status == "finished" || item.status == "refunded"
+        x: item.status == "finished" || item.status == "refunded"
       }, item.status == "finished" || item.status == "refunded" ? {} : {}, {
-        w: item,
-        x: index1
+        y: item,
+        z: index1
       });
     })
   }, {
@@ -255,12 +257,14 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
         n: item.status == "Y"
       }, item.status == "Y" ? {
         o: common_vendor.o((...args) => $options.toCancel && $options.toCancel(...args), index1),
-        p: item
+        p: item,
+        q: common_vendor.o((...args) => $options.toDetail && $options.toDetail(...args), index1),
+        r: item
       } : {}, {
-        q: item.status == "finished" || item.status == "refunded"
+        s: item.status == "finished" || item.status == "refunded"
       }, item.status == "finished" || item.status == "refunded" ? {} : {}, {
-        r: item,
-        s: index1
+        t: item,
+        v: index1
       });
     })
   }, {
@@ -286,7 +290,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
         g: common_vendor.t(item.shop_name),
         h: common_vendor.t(item.siteNum),
         i: common_vendor.t(item.hour),
-        j: common_vendor.t(item.price),
+        j: common_vendor.t(item.money),
         k: item.status == "N"
       }, item.status == "N" ? {
         l: common_vendor.o((...args) => $options.toCancel && $options.toCancel(...args), index1),
@@ -295,13 +299,15 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
         n: item.status == "Y"
       }, item.status == "Y" ? {
         o: common_vendor.o((...args) => $options.toCancel && $options.toCancel(...args), index1),
-        p: item
+        p: item,
+        q: common_vendor.o((...args) => $options.toDetail && $options.toDetail(...args), index1),
+        r: item
       } : {}, {
-        q: item.status == "finished" || item.status == "refunded"
+        s: item.status == "finished" || item.status == "refunded"
       }, item.status == "finished" || item.status == "refunded" ? {} : {}, {
-        r: common_vendor.o((...args) => $options.toDetail && $options.toDetail(...args), index1),
-        s: item,
-        t: index1
+        t: common_vendor.o((...args) => $options.toDetail && $options.toDetail(...args), index1),
+        v: item,
+        w: index1
       });
     })
   }, {

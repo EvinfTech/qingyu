@@ -57,10 +57,12 @@
 				<view class="orderItem" :data-item="item" v-for="(item, index1) in waitUsedList" :key="index1">
 					<view class="flex align-center justify-between">
 						<view class="flex align-center">
-							<view class="leftPhoto"></view>
+							<view class="leftPhoto">
+								<image class="w-full h-full" :src="item.shop_avatar" mode="" />
+							</view>
 							<view class="flex flex-direction align-start justify-between" style="height: 132rpx">
 								<view class="gymnasiumName">
-									{{ item.gymnasiumName }}
+									{{ item.shop_name }}
 								</view>
 								<view class="flex flex-direction align-start">
 									<view class="reservationInfo">预约场地： {{ item.siteNum }}场({{ item.hour }}小时）
@@ -97,10 +99,12 @@
 				<view class="orderItem" :data-item="item" v-for="(item, index1) in alreadyUsedList" :key="index1">
 					<view class="flex align-center justify-between">
 						<view class="flex align-center">
-							<view class="leftPhoto"></view>
+							<view class="leftPhoto">
+								<image class="w-full h-full" :src="item.shop_avatar" mode="" />
+							</view>
 							<view class="flex flex-direction align-start justify-between" style="height: 132rpx">
 								<view class="gymnasiumName">
-									{{ item.gymnasiumName }}
+									{{ item.shop_name }}
 								</view>
 								<view class="flex flex-direction align-start">
 									<view class="reservationInfo">预约场地： {{ item.siteNum }}场({{ item.hour }}小时）
@@ -262,8 +266,8 @@
 						con.timeList = timeList;
 					});
 					this.reservationList = reservationList
-					let waitUsedList = this.reservationList.filter((item) => item.state == 'Y');
-					let alreadyUsedList = this.reservationList.filter((item) => item.state == 'finished');
+					let waitUsedList = this.reservationList.filter((item) => item.status == 'Y');
+					let alreadyUsedList = this.reservationList.filter((item) => item.status == 'finished');
 					this.waitUsedList = waitUsedList
 					this.alreadyUsedList = alreadyUsedList
 				});

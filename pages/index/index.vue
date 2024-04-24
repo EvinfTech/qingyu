@@ -76,7 +76,7 @@
 				// #ifdef H5
 				that.scrollViewHeight = screenHeight - 60 - (screenHeight - saveBottom)
 				// #endif
-			},
+			}, 
 			async checkLoginState() {
 				this.app.getUserInfo();
 				if (!this.app.globalData.userInfo.ouid) {
