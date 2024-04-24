@@ -12,7 +12,7 @@
 						v-for="(item, index) in dateList" :key="index">
 						<view class="flex flex-direction align-center w-full topItem"
 							:style="'color: ' + (index == active ? '#0077FF' : '') + ';'">
-							<view> 
+							<view>
 								{{ item.day }}
 							</view>
 							<view style="line-height: 50rpx">
@@ -32,7 +32,7 @@
 							{{ item.value }}
 						</view>
 					</view>
-					<view class="flex-1" style="padding-right: 20rpx">
+					<view class="rightSiteBox" style="padding-right: 20rpx">
 						<view class="flex align-center">
 							<view class="siteBox" v-for="(item, index) in siteList" :key="index">
 								{{ item.siteName }}
@@ -98,7 +98,7 @@
 	export default ({
 		data() {
 			return {
-				app:getApp(),
+				app: getApp(),
 				active: 0,
 				//当前选中的日期索引
 				dateList: [],
@@ -143,9 +143,9 @@
 			this.setAciveDate(this.currentDate);
 			// 获取tabItem宽度
 			this.$nextTick(() => {
-				setTimeout(()=>{
+				setTimeout(() => {
 					this.getTabItemWidth();
-				},500)
+				}, 500)
 			})
 		},
 		/**
@@ -182,7 +182,7 @@
 
 			initEnumInfo() {
 				let enumInfo = this.app.globalData.enumInfo;
-				let timeArr = [];	
+				let timeArr = [];
 				let arr = [];
 				let dateItemSiteList = this.dateList[this.active].siteList;
 				dateItemSiteList.forEach((con) => {
@@ -628,11 +628,22 @@
 
 	.leftTimeBox {
 		margin-top: 20px;
-		padding-left: 32rpx;
+		width: 57px;
+		flex-shrink: 0;
+		text-align: center;
+		/* padding-left: 32rpx; */
 		/* position: absolute;
     left: 0;
     top: 20px;
     background-color: #fff; */
+	}
+
+	.rightSiteBox {
+		width: calc(100vw - 27px);
+		padding-right: 10px;
+		box-sizing: border-box;
+		overflow-x: auto;
+		padding-bottom:10px ;
 	}
 
 	.timeItem {

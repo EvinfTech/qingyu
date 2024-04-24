@@ -82,13 +82,13 @@ const _sfc_main = {
         file
       } = event;
       common_vendor.index.uploadFile({
-        url: this.app.globalData.uploadUrl,
+        url: this.app.globalData.httpUrl + "common/upload/avatar",
         filePath: file.url,
         name: "file",
         success: (res) => {
           let fileList = this.fileList;
           fileList.push({
-            url: JSON.parse(res.data).data
+            url: this.app.globalData.httpUrl + "avatar/" + JSON.parse(res.data).data
           });
           this.fileList = fileList;
           this.avatarUrl = fileList[0].url;

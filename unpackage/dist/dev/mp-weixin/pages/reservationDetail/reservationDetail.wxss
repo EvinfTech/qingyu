@@ -111,11 +111,21 @@
 }
 .leftTimeBox.data-v-71ac0ae8 {
 		margin-top: 20px;
-		padding-left: 32rpx;
+		width: 57px;
+		flex-shrink: 0;
+		text-align: center;
+		/* padding-left: 32rpx; */
 		/* position: absolute;
     left: 0;
     top: 20px;
     background-color: #fff; */
+}
+.rightSiteBox.data-v-71ac0ae8 {
+		width: calc(100vw - 27px);
+		padding-right: 10px;
+		box-sizing: border-box;
+		overflow-x: auto;
+		padding-bottom:10px ;
 }
 .timeItem.data-v-71ac0ae8 {
 		font-family: D-DIN-PRO-Medium-Medium;

@@ -60,7 +60,7 @@
 	export default ({
 		data() {
 			return {
-				app:getApp(),
+				app: getApp(),
 				avatarUrl: '',
 				nickname: '',
 				sex: '',
@@ -131,13 +131,14 @@
 					file
 				} = event;
 				uni.uploadFile({
-					url: this.app.globalData.uploadUrl,
+					url: this.app.globalData.httpUrl + "common/upload/avatar",
 					filePath: file.url,
 					name: 'file',
 					success: (res) => {
 						let fileList = this.fileList;
 						fileList.push({
-							url: JSON.parse(res.data).data
+							url: this.app.globalData.httpUrl + "avatar/" + JSON.parse(res.data)
+								.data
 						});
 						this.fileList = fileList
 						this.avatarUrl = fileList[0].url
@@ -172,7 +173,7 @@
 						phone: '',
 						birthday: Number(this.dealCurrentDate),
 						sex: Number(this.sex), //1男  2女
-						introduce:this.personalProfile
+						introduce: this.personalProfile
 					}
 				}).then(() => {
 					uni.removeStorageSync('userInfo')

@@ -201,7 +201,7 @@
 					if (site_detail) {
 						site_detail.forEach((item) => {
 							item.time_enum.forEach((enumCon) => {
-								siteList.push({
+								siteList.push({ 
 									siteNo: item.site_name,
 									startTime: enumInfo[enumCon]?.split('~')[0],
 									endTime: enumInfo[enumCon]?.split('~')[1]
