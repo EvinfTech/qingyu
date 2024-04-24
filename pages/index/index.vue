@@ -73,6 +73,9 @@
 				let info = uni.getSystemInfoSync();
 				let saveBottom = info.safeArea.bottom;
 				that.scrollViewHeight = screenHeight - 50 - (screenHeight - saveBottom)
+				// #ifdef H5
+				that.scrollViewHeight = screenHeight - 60 - (screenHeight - saveBottom)
+				// #endif
 			},
 			async checkLoginState() {
 				this.app.getUserInfo();
@@ -103,4 +106,11 @@
 		line-height: 50rpx;
 		color: #000000;
 	}
+	/* #ifdef H5 */
+	.u-tabbar{
+		height: 60px!important;
+		padding: 5px 0!important;
+		box-sizing: border-box!important;
+	}
+	/* #endif */
 </style>
