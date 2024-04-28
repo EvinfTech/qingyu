@@ -196,7 +196,12 @@ const _sfc_main = {
           gymnasiumInfo.facility = res.data.data.facility;
           gymnasiumInfo.serve = res.data.data.serve;
           gymnasiumInfo.hardwareFacilities = tagList;
-          gymnasiumInfo.gymnasiumImgList = JSON.parse(res.data.data.shop_photo);
+          let gymnasiumImgList = [];
+          let list = JSON.parse(res.data.data.shop_photo);
+          list.forEach((item) => {
+            gymnasiumImgList.push(this.globalData.httpUrl + item);
+          });
+          gymnasiumInfo.gymnasiumImgList = gymnasiumImgList;
           this.globalData.gymnasiumInfo = gymnasiumInfo;
           common_vendor.index.setStorageSync("gymnasiumInfo", JSON.stringify(gymnasiumInfo));
           resolve(gymnasiumInfo);

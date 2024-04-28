@@ -9,7 +9,7 @@ const _sfc_main = {
       autoplay: false,
       interval: 2e3,
       duration: 500,
-      swiperList: ["/static/images/home/topBanner1.png", "/static/images/home/topBanner2.png"],
+      swiperList: [],
       viewHeight: 0,
       storeInfo: {}
     };
@@ -91,6 +91,7 @@ const _sfc_main = {
       gymnasiumInfo.serve = gymnasiumInfo.serve.split("服务:")[1];
     }
     this.storeInfo = gymnasiumInfo;
+    this.swiperList = this.storeInfo.gymnasiumImgList;
   }
 };
 if (!Array) {

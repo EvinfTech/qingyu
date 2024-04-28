@@ -94,7 +94,7 @@
 				autoplay: false,
 				interval: 2000,
 				duration: 500,
-				swiperList: ['/static/images/home/topBanner1.png', '/static/images/home/topBanner2.png'],
+				swiperList: [],
 				viewHeight: 0,
 				storeInfo: {}
 			};
@@ -187,6 +187,7 @@
 				gymnasiumInfo.serve = gymnasiumInfo.serve.split('服务:')[1]
 			}
 			this.storeInfo = gymnasiumInfo
+			this.swiperList = this.storeInfo.gymnasiumImgList
 		},
 	});
 </script>

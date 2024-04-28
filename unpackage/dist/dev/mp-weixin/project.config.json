@@ -1,8 +1,7 @@
 {
   "description": "项目配置文件。",
   "packOptions": {
-    "ignore": [],
-    "include": []
+    "ignore": []
   },
   "setting": {
     "urlCheck": false,
@@ -10,16 +9,10 @@
     "postcss": false,
     "minified": false,
     "newFeature": true,
-    "bigPackageSizeSupport": true,
-    "babelSetting": {
-      "ignore": [],
-      "disablePlugins": [],
-      "outputPath": ""
-    },
-    "ignoreUploadUnusedFiles": false
+    "bigPackageSizeSupport": true
   },
   "compileType": "miniprogram",
-  "libVersion": "3.3.4",
+  "libVersion": "",
   "appid": "touristappid",
   "projectname": "qingyu-client",
   "condition": {
@@ -39,9 +32,5 @@
       "current": -1,
       "list": []
     }
-  },
-  "editorSetting": {
-    "tabIndent": "auto",
-    "tabSize": 2
   }
 }

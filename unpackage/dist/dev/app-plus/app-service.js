@@ -2899,7 +2899,7 @@ if (uni.restoreGlobal) {
         autoplay: false,
         interval: 2e3,
         duration: 500,
-        swiperList: ["/static/images/home/topBanner1.png", "/static/images/home/topBanner2.png"],
+        swiperList: [],
         viewHeight: 0,
         storeInfo: {}
       };
@@ -2981,6 +2981,7 @@ if (uni.restoreGlobal) {
         gymnasiumInfo.serve = gymnasiumInfo.serve.split("服务:")[1];
       }
       this.storeInfo = gymnasiumInfo;
+      this.swiperList = this.storeInfo.gymnasiumImgList;
     }
   };
   function _sfc_render$C(_ctx, _cache, $props, $setup, $data, $options) {
@@ -13622,7 +13623,12 @@ if (uni.restoreGlobal) {
             gymnasiumInfo.facility = res.data.data.facility;
             gymnasiumInfo.serve = res.data.data.serve;
             gymnasiumInfo.hardwareFacilities = tagList;
-            gymnasiumInfo.gymnasiumImgList = JSON.parse(res.data.data.shop_photo);
+            let gymnasiumImgList = [];
+            let list = JSON.parse(res.data.data.shop_photo);
+            list.forEach((item) => {
+              gymnasiumImgList.push(this.globalData.httpUrl + item);
+            });
+            gymnasiumInfo.gymnasiumImgList = gymnasiumImgList;
             this.globalData.gymnasiumInfo = gymnasiumInfo;
             uni.setStorageSync("gymnasiumInfo", JSON.stringify(gymnasiumInfo));
             resolve(gymnasiumInfo);
@@ -13683,13 +13689,13 @@ if (uni.restoreGlobal) {
     },
     onLaunch: function() {
       this.getEnum();
-      formatAppLog("log", "at App.vue:254", "App Launch");
+      formatAppLog("log", "at App.vue:259", "App Launch");
     },
     onShow: function() {
-      formatAppLog("log", "at App.vue:257", "App Show");
+      formatAppLog("log", "at App.vue:262", "App Show");
     },
     onHide: function() {
-      formatAppLog("log", "at App.vue:260", "App Hide");
+      formatAppLog("log", "at App.vue:265", "App Hide");
     }
   };
   const App = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "C:/project/轻羽项目/qingyu-client/App.vue"]]);
