@@ -177,7 +177,7 @@
 		},
 		created: async function() {
 			// 获取门店信息
-			let gymnasiumInfo = await this.app.getStoreInfo()
+			let gymnasiumInfo = await this.app.getStoreInfo('reGet')
 			let serveList = [];
 			let facilityList = [];
 			if (gymnasiumInfo.facility.includes('设施:')) {

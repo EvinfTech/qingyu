@@ -83,7 +83,7 @@ const _sfc_main = {
     }
   },
   created: async function() {
-    let gymnasiumInfo = await this.app.getStoreInfo();
+    let gymnasiumInfo = await this.app.getStoreInfo("reGet");
     if (gymnasiumInfo.facility.includes("设施:")) {
       gymnasiumInfo.facility = gymnasiumInfo.facility.split("设施:")[1];
     }

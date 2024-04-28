@@ -2973,7 +2973,7 @@ if (uni.restoreGlobal) {
       }
     },
     created: async function() {
-      let gymnasiumInfo = await this.app.getStoreInfo();
+      let gymnasiumInfo = await this.app.getStoreInfo("reGet");
       if (gymnasiumInfo.facility.includes("设施:")) {
         gymnasiumInfo.facility = gymnasiumInfo.facility.split("设施:")[1];
       }
@@ -13592,10 +13592,10 @@ if (uni.restoreGlobal) {
         });
       },
       // 获取门店信息
-      getStoreInfo() {
+      getStoreInfo(type = "") {
         return new Promise((resolve, reject) => {
           let storeInfo = uni.getStorageSync("gymnasiumInfo");
-          if (storeInfo) {
+          if (storeInfo && !type) {
             storeInfo = JSON.parse(storeInfo);
             this.globalData.gymnasiumInfo = storeInfo;
             resolve(storeInfo);
