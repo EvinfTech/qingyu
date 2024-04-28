@@ -1,7 +1,11 @@
 <template>
     <!-- pages/aboutUs/aboutUs.wxml -->
     <view class="page">
-      <u-navbar class="nav-bar" title="关于我们" :safeAreaInsetTop="true" :autoBack="true" :fixed="false"></u-navbar>
+      <u-navbar class="nav-bar" title="关于我们" :safeAreaInsetTop="true" :autoBack="false" :fixed="false">
+		  <template #left>
+		  	<up-icon name="arrow-left" @click="app.toBack"></up-icon>
+		  </template>
+	  </u-navbar>
         <view class="content">
             我觉得总体来说平台还是一个非常不错的平台，但是可能在用户反馈这一块还有一些欠缺。我觉得总体来说平台还是一个非常不错的平台，但是可能在用户反馈这一块还有一些欠缺。我觉得总体来说平台还是一个非常不错的平台，但是可能在用户反馈这一块还有一些欠缺。我觉得总体来说平台还是一个非常不错的平台，但是可能在用户反馈这一块还有一些欠缺。
         </view>
@@ -12,7 +16,9 @@
 // pages/aboutUs/aboutUs.ts
 export default({
     data() {
-        return {};
+        return {
+			app:getApp()
+		};
     },
     /**
      * 生命周期函数--监听页面加载

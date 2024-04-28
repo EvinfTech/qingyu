@@ -2,7 +2,10 @@
 	<!-- pages/orderDetail/orderDetail.wxml -->
 	<view class="page">
 		<u-navbar class="nav-bar" :title="detailType == 'add' ? '确认订单' : '订单详情'" :safeAreaInsetTop="true"
-			:autoBack="true" :fixed="false">
+			:autoBack="false" :fixed="false">
+			<template #left>
+				<up-icon name="arrow-left" @click="app.toBack"></up-icon>
+			</template>
 		</u-navbar>
 		<scroll-view :scroll-y="true" class="w-full" :style="'height: ' + (scrollViewHeight + 'px') + ';'">
 			<view class="payStateBox flex align-center justify-center"

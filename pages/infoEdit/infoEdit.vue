@@ -1,7 +1,10 @@
 <template>
 	<!-- pages/infoEdit/infoEdit.wxml -->
 	<view class="page">
-		<u-navbar class="nav-bar" :safeAreaInsetTop="true" :fixed="false" title="个人信息" :autoBack="true">
+		<u-navbar class="nav-bar" :safeAreaInsetTop="true" :fixed="false" title="个人信息" :autoBack="false">
+			<template #left>
+				<up-icon name="arrow-left" @click="app.toBack"></up-icon>
+			</template>
 		</u-navbar>
 		<u-cell-group custom-class="userinfo-group">
 			<u-cell title="头像" is-link>

@@ -1,7 +1,10 @@
 <template>
 	<!-- pages/errorReport/errorReport.wxml -->
 	<view class="page">
-		<u-navbar class="nav-bar" :safeAreaInsetTop="true" :fixed="false" title="场馆报错" :autoBack="true">
+		<u-navbar class="nav-bar" :safeAreaInsetTop="true" :fixed="false" title="场馆报错" :autoBack="false">
+			<template #left>
+				<up-icon name="arrow-left" @click="app.toBack"></up-icon>
+			</template>
 		</u-navbar>
 		<view class="errorBox">
 			<view class="title">场馆出错了？</view>

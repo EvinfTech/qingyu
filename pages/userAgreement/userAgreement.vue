@@ -1,6 +1,9 @@
 <template>
 	<view class="page">
-		<u-navbar class="nav-bar" :safeAreaInsetTop="true" :fixed="false" title="用户协议" :autoBack="true">
+		<u-navbar class="nav-bar" :safeAreaInsetTop="true" :fixed="false" title="用户协议" :autoBack="false">
+			<template #left>
+				<up-icon name="arrow-left" @click="app.toBack"></up-icon>
+			</template>
 		</u-navbar>
 		<view class="content">
 			<view>
@@ -19,7 +22,7 @@
 	export default {
 		data() {
 			return {
-
+				app:getApp()
 			}
 		},
 		methods: {

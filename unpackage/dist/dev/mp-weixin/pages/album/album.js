@@ -3,6 +3,7 @@ const common_vendor = require("../../common/vendor.js");
 const _sfc_main = {
   data() {
     return {
+      app: getApp(),
       currentIndex: 0,
       imgList: []
     };
@@ -13,7 +14,6 @@ const _sfc_main = {
   onLoad() {
     let imgList = common_vendor.index.getStorageSync("album");
     imgList = JSON.parse(imgList);
-    common_vendor.index.removeStorageSync("album");
     this.imgList = imgList;
   },
   /**
@@ -65,22 +65,28 @@ const _sfc_main = {
   }
 };
 if (!Array) {
+  const _easycom_up_icon2 = common_vendor.resolveComponent("up-icon");
   const _easycom_u_navbar2 = common_vendor.resolveComponent("u-navbar");
-  _easycom_u_navbar2();
+  (_easycom_up_icon2 + _easycom_u_navbar2)();
 }
+const _easycom_up_icon = () => "../../node-modules/uview-plus/components/u-icon/u-icon.js";
 const _easycom_u_navbar = () => "../../node-modules/uview-plus/components/u-navbar/u-navbar.js";
 if (!Math) {
-  _easycom_u_navbar();
+  (_easycom_up_icon + _easycom_u_navbar)();
 }
 function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
   return {
-    a: common_vendor.p({
+    a: common_vendor.o($data.app.toBack),
+    b: common_vendor.p({
+      name: "arrow-left"
+    }),
+    c: common_vendor.p({
       title: "相册",
       safeAreaInsetTop: true,
-      autoBack: true,
+      autoBack: false,
       fixed: false
     }),
-    b: common_vendor.f($data.imgList, (item, index, i0) => {
+    d: common_vendor.f($data.imgList, (item, index, i0) => {
       return {
         a: item,
         b: common_vendor.o((...args) => $options.previwImg && $options.previwImg(...args), index),

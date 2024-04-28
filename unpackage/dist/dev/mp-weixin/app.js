@@ -213,6 +213,7 @@ const _sfc_main = {
       common_vendor.index.removeStorageSync("userInfo");
       common_vendor.index.removeStorageSync("gymnasiumInfo");
       common_vendor.index.removeStorageSync("tabbarIndex");
+      common_vendor.index.removeStorageSync("album");
       common_vendor.index.reLaunch({
         url: "/pages/login/login"
       });
@@ -243,6 +244,15 @@ const _sfc_main = {
           }
         });
       });
+    },
+    // 返回
+    toBack() {
+      let canNavBack = getCurrentPages();
+      if (canNavBack && canNavBack.length > 1) {
+        common_vendor.index.navigateBack();
+      } else {
+        history.back();
+      }
     }
   },
   onLaunch: function() {

@@ -91,16 +91,16 @@ const _sfc_main = {
       var screenHeight = common_vendor.index.getSystemInfoSync().windowHeight;
       this.scrollViewHeight = screenHeight - 88;
     },
-    initData() {
-      this.app.globalData.enumInfo;
+    async initData() {
+      let userInfo = await this.app.getUserInfo();
       utils_request.request({
         url: "wx/get/my/reserve/list",
         method: "POST",
         data: {
-          user_ouid: this.app.globalData.userInfo.ouid
+          user_ouid: userInfo.ouid
         }
-      }).then((res) => {
-        let enumInfo = this.app.globalData.enumInfo;
+      }).then(async (res) => {
+        let enumInfo = await this.app.getEnum();
         let reservationList = res.data.reverse();
         reservationList.forEach((con) => {
           let siteNum = 0;
@@ -131,40 +131,46 @@ const _sfc_main = {
   }
 };
 if (!Array) {
+  const _easycom_up_icon2 = common_vendor.resolveComponent("up-icon");
   const _easycom_u_navbar2 = common_vendor.resolveComponent("u-navbar");
   const _easycom_u_tabs2 = common_vendor.resolveComponent("u-tabs");
   const _easycom_u_empty2 = common_vendor.resolveComponent("u-empty");
-  (_easycom_u_navbar2 + _easycom_u_tabs2 + _easycom_u_empty2)();
+  (_easycom_up_icon2 + _easycom_u_navbar2 + _easycom_u_tabs2 + _easycom_u_empty2)();
 }
+const _easycom_up_icon = () => "../../node-modules/uview-plus/components/u-icon/u-icon.js";
 const _easycom_u_navbar = () => "../../node-modules/uview-plus/components/u-navbar/u-navbar.js";
 const _easycom_u_tabs = () => "../../node-modules/uview-plus/components/u-tabs/u-tabs.js";
 const _easycom_u_empty = () => "../../node-modules/uview-plus/components/u-empty/u-empty.js";
 if (!Math) {
-  (_easycom_u_navbar + _easycom_u_tabs + _easycom_u_empty)();
+  (_easycom_up_icon + _easycom_u_navbar + _easycom_u_tabs + _easycom_u_empty)();
 }
 function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
   return common_vendor.e({
-    a: common_vendor.p({
+    a: common_vendor.o($data.app.toBack),
+    b: common_vendor.p({
+      name: "arrow-left"
+    }),
+    c: common_vendor.p({
       title: "我的预约",
       safeAreaInsetTop: true,
-      autoBack: true,
+      autoBack: false,
       fixed: false
     }),
-    b: common_vendor.o($options.onChange),
-    c: common_vendor.p({
+    d: common_vendor.o($options.onChange),
+    e: common_vendor.p({
       list: $data.titleList,
       lineColor: "#0077FF",
       lineWidth: "40"
     }),
-    d: $data.active == 0
+    f: $data.active == 0
   }, $data.active == 0 ? common_vendor.e({
-    e: $data.reservationList.length == 0
+    g: $data.reservationList.length == 0
   }, $data.reservationList.length == 0 ? {
-    f: common_vendor.p({
+    h: common_vendor.p({
       text: "暂无预约"
     })
   } : {
-    g: common_vendor.f($data.reservationList, (item, index1, i0) => {
+    i: common_vendor.f($data.reservationList, (item, index1, i0) => {
       return common_vendor.e({
         a: item.shop_avatar,
         b: common_vendor.t(item.shop_name),
@@ -189,16 +195,16 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
       });
     })
   }, {
-    h: common_vendor.s("height: " + ($data.scrollViewHeight + "px") + ";"),
-    i: common_vendor.n($data.reservationList.length == 0 ? "emptyFlex" : "")
+    j: common_vendor.s("height: " + ($data.scrollViewHeight + "px") + ";"),
+    k: common_vendor.n($data.reservationList.length == 0 ? "emptyFlex" : "")
   }) : $data.active == 1 ? common_vendor.e({
-    k: $data.waitUsedList.length == 0
+    m: $data.waitUsedList.length == 0
   }, $data.waitUsedList.length == 0 ? {
-    l: common_vendor.p({
+    n: common_vendor.p({
       text: "暂无待使用预约"
     })
   } : {
-    m: common_vendor.f($data.waitUsedList, (item, index1, i0) => {
+    o: common_vendor.f($data.waitUsedList, (item, index1, i0) => {
       return {
         a: item.shop_avatar,
         b: common_vendor.t(item.shop_name),
@@ -218,16 +224,16 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
       };
     })
   }, {
-    n: common_vendor.s("height: " + ($data.scrollViewHeight + "px") + ";"),
-    o: common_vendor.n($data.waitUsedList.length == 0 ? "emptyFlex" : "")
+    p: common_vendor.s("height: " + ($data.scrollViewHeight + "px") + ";"),
+    q: common_vendor.n($data.waitUsedList.length == 0 ? "emptyFlex" : "")
   }) : common_vendor.e({
-    p: $data.alreadyUsedList.length == 0
+    r: $data.alreadyUsedList.length == 0
   }, $data.alreadyUsedList.length == 0 ? {
-    q: common_vendor.p({
+    s: common_vendor.p({
       text: "暂无已使用预约"
     })
   } : {
-    r: common_vendor.f($data.alreadyUsedList, (item, index1, i0) => {
+    t: common_vendor.f($data.alreadyUsedList, (item, index1, i0) => {
       return {
         a: item.shop_avatar,
         b: common_vendor.t(item.shop_name),
@@ -241,10 +247,10 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
       };
     })
   }, {
-    s: common_vendor.s("height: " + ($data.scrollViewHeight + "px") + ";"),
-    t: common_vendor.n($data.alreadyUsedList.length == 0 ? "emptyFlex" : "")
+    v: common_vendor.s("height: " + ($data.scrollViewHeight + "px") + ";"),
+    w: common_vendor.n($data.alreadyUsedList.length == 0 ? "emptyFlex" : "")
   }), {
-    j: $data.active == 1
+    l: $data.active == 1
   });
 }
 const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-9e63185c"], ["__file", "C:/project/轻羽项目/qingyu-client/pages/reservationList/reservationList.vue"]]);

@@ -1,7 +1,10 @@
 <template>
 	<!-- pages/gymnasiumInfo/gymnasiumInfo.wxml -->
 	<view class="page">
-		<u-navbar class="nav-bar" :safeAreaInsetTop="true" :fixed="false" title="球馆信息" :autoBack="true">
+		<u-navbar class="nav-bar" :safeAreaInsetTop="true" :fixed="false" title="球馆信息" :autoBack="false">
+			<template #left>
+				<up-icon name="arrow-left" @click="app.toBack"></up-icon>
+			</template>
 		</u-navbar>
 		<view style="margin-top: 28rpx; padding: 0 20rpx 30rpx; background-color: #fff">
 			<view class="flex align-center justify-between w-full">

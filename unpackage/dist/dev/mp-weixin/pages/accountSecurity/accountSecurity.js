@@ -32,51 +32,57 @@ const _sfc_main = {
   }
 };
 if (!Array) {
+  const _easycom_up_icon2 = common_vendor.resolveComponent("up-icon");
   const _easycom_u_navbar2 = common_vendor.resolveComponent("u-navbar");
   const _easycom_u_cell2 = common_vendor.resolveComponent("u-cell");
   const _easycom_u_cell_group2 = common_vendor.resolveComponent("u-cell-group");
   const _easycom_u_modal2 = common_vendor.resolveComponent("u-modal");
-  (_easycom_u_navbar2 + _easycom_u_cell2 + _easycom_u_cell_group2 + _easycom_u_modal2)();
+  (_easycom_up_icon2 + _easycom_u_navbar2 + _easycom_u_cell2 + _easycom_u_cell_group2 + _easycom_u_modal2)();
 }
+const _easycom_up_icon = () => "../../node-modules/uview-plus/components/u-icon/u-icon.js";
 const _easycom_u_navbar = () => "../../node-modules/uview-plus/components/u-navbar/u-navbar.js";
 const _easycom_u_cell = () => "../../node-modules/uview-plus/components/u-cell/u-cell.js";
 const _easycom_u_cell_group = () => "../../node-modules/uview-plus/components/u-cell-group/u-cell-group.js";
 const _easycom_u_modal = () => "../../node-modules/uview-plus/components/u-modal/u-modal.js";
 if (!Math) {
-  (_easycom_u_navbar + _easycom_u_cell + _easycom_u_cell_group + _easycom_u_modal)();
+  (_easycom_up_icon + _easycom_u_navbar + _easycom_u_cell + _easycom_u_cell_group + _easycom_u_modal)();
 }
 function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
   return {
-    a: common_vendor.p({
+    a: common_vendor.o($data.app.toBack),
+    b: common_vendor.p({
+      name: "arrow-left"
+    }),
+    c: common_vendor.p({
       title: "账号与安全",
       safeAreaInsetTop: true,
-      autoBack: true,
+      autoBack: false,
       fixed: false
     }),
-    b: common_vendor.p({
+    d: common_vendor.p({
       title: "氢羽号",
       center: true,
       value: $data.accountNo,
       ["custom-class"]: "userinfo-cell"
     }),
-    c: common_vendor.p({
+    e: common_vendor.p({
       title: "手机号",
       value: $data.phone,
       center: true,
       ["custom-class"]: "userinfo-cell"
     }),
-    d: common_vendor.p({
+    f: common_vendor.p({
       title: "绑定微信",
       value: $data.status,
       center: true,
       ["custom-class"]: "userinfo-cell"
     }),
-    e: common_vendor.p({
+    g: common_vendor.p({
       ["custom-class"]: "userinfo-group"
     }),
-    f: common_vendor.o($options.confirm),
-    g: common_vendor.o($options.cancel),
-    h: common_vendor.p({
+    h: common_vendor.o($options.confirm),
+    i: common_vendor.o($options.cancel),
+    j: common_vendor.p({
       show: $data.show,
       title: "提示",
       content: "确定要注销账号吗？",

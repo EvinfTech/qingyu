@@ -1,7 +1,11 @@
 <template>
 	<!-- pages/errorReport/errorReport.wxml -->
 	<view class="page">
-		<u-navbar class="nav-bar" title="意见反馈" :safeAreaInsetTop="true" :autoBack="true" :fixed="false"></u-navbar>
+		<u-navbar class="nav-bar" title="意见反馈" :safeAreaInsetTop="true" :autoBack="false" :fixed="false">
+			<template #left>
+				<up-icon name="arrow-left" @click="app.toBack"></up-icon>
+			</template>
+		</u-navbar>
 		<view class="errorBox">
 			<view class="describeBox">
 				<view class="flex align-center justify-between">

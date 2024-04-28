@@ -1,7 +1,10 @@
 <template>
 	<!-- pages/orderList/orderList.wxml -->
 	<view class="page">
-		<u-navbar class="nav-bar" title="我的预约" :safeAreaInsetTop="true" :autoBack="true" :fixed="false">
+		<u-navbar class="nav-bar" title="我的预约" :safeAreaInsetTop="true" :autoBack="false" :fixed="false">
+			<template #left>
+				<up-icon name="arrow-left" @click="app.toBack"></up-icon>
+			</template>
 		</u-navbar>
 		<u-tabs class="tabs" :list="titleList" @change="onChange" lineColor="#0077FF" lineWidth="40"></u-tabs>
 		<scroll-view :scroll-y="true" v-if="active == 0" class="orderList"
@@ -92,7 +95,8 @@
 			</view>
 		</scroll-view>
 
-		<scroll-view :scroll-y="true" v-else class="orderList" :style="'height: ' + (scrollViewHeight + 'px') + ';'" :class="alreadyUsedList.length == 0?'emptyFlex':''">
+		<scroll-view :scroll-y="true" v-else class="orderList" :style="'height: ' + (scrollViewHeight + 'px') + ';'"
+			:class="alreadyUsedList.length == 0?'emptyFlex':''">
 			<u-empty text="暂无已使用预约" v-if="alreadyUsedList.length == 0" />
 			<view v-else>
 				<view class="orderItem" :data-item="item" v-for="(item, index1) in alreadyUsedList" :key="index1">
@@ -136,7 +140,7 @@
 	export default ({
 		data() {
 			return {
-				app:getApp(),
+				app: getApp(),
 				titleList: [{
 					name: '全部'
 				}, {
@@ -234,16 +238,16 @@
 				this.scrollViewHeight = screenHeight - 88
 			},
 
-			initData() {
-				let enumInfo = this.app.globalData.enumInfo;
+			async initData() {
+				let userInfo = await this.app.getUserInfo();
 				request({
 					url: 'wx/get/my/reserve/list',
 					method: 'POST',
 					data: {
-						user_ouid: this.app.globalData.userInfo.ouid
+						user_ouid: userInfo.ouid
 					}
-				}).then((res) => {
-					let enumInfo = this.app.globalData.enumInfo;
+				}).then(async (res) => {
+					let enumInfo = await this.app.getEnum();
 					let reservationList = res.data.reverse();
 					reservationList.forEach((con) => {
 						let siteNum = 0; //预约场地数
@@ -266,7 +270,8 @@
 					});
 					this.reservationList = reservationList
 					let waitUsedList = this.reservationList.filter((item) => item.status == 'Y');
-					let alreadyUsedList = this.reservationList.filter((item) => item.status == 'finished');
+					let alreadyUsedList = this.reservationList.filter((item) => item.status ==
+						'finished');
 					this.waitUsedList = waitUsedList
 					this.alreadyUsedList = alreadyUsedList
 				});

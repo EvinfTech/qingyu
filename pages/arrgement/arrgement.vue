@@ -1,7 +1,11 @@
 <template>
     <!-- pages/arrgement/arrgement.wxml -->
     <view class="page">
-		<u-navbar class="nav-bar" title="用户协议" :safeAreaInsetTop="true" :autoBack="true" :fixed="false"></u-navbar>
+		<u-navbar class="nav-bar" title="用户协议" :safeAreaInsetTop="true" :autoBack="false" :fixed="false">
+			<template #left>
+				<up-icon name="arrow-left" @click="app.toBack"></up-icon>
+			</template>
+		</u-navbar>
         <view class="arrgementBox">欢迎您使用服务（以下简称：本服务）请您仔细阅读下方条款，若您对本协议的任何条款有异议，您可以第一时间选择不进入。</view>
     </view>
 </template>
@@ -10,7 +14,9 @@
 // pages/arrgement/arrgement.ts
 export default({
     data() {
-        return {};
+        return {
+			app:getApp()
+		};
     },
     /**
      * 生命周期函数--监听页面加载

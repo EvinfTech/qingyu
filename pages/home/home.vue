@@ -137,7 +137,7 @@
 					latitude: that.storeInfo.latitude,
 					longitude: that.storeInfo.longitude,
 					scale: 18,
-					name: this.storeInfo.location
+					name: this.storeInfo.location,
 				});
 			},
 			ready() {

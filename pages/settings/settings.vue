@@ -1,7 +1,11 @@
 <template>
 	<!-- pages/settings/settings.wxml -->
 	<view class="page">
-		<u-navbar class="nav-bar" title="设置" :safeAreaInsetTop="true" :autoBack="true" :fixed="false"></u-navbar>
+		<u-navbar class="nav-bar" title="设置" :safeAreaInsetTop="true" :autoBack="false" :fixed="false">
+			<template #left>
+				<up-icon name="arrow-left" @click="app.toBack"></up-icon>
+			</template>
+		</u-navbar>
 		<u-cell-group custom-class="userinfo-group">
 			<u-cell title="账号与安全" center custom-class="userinfo-cell" is-link @tap.native="toAccountSecurity"></u-cell>
 			<u-cell title="用户协议" center custom-class="userinfo-cell" is-link @tap.native="toUserAgreement"></u-cell>
@@ -12,15 +16,14 @@
 			<u-cell title="使用帮助" center custom-class="userinfo-cell" is-link></u-cell>
 			<u-cell title="关于我们" center custom-class="userinfo-cell" is-link @tap.native="toAboutUs"></u-cell>
 			<u-cell title="意见反馈" center custom-class="userinfo-cell" is-link @tap.native="toFeedBack"></u-cell>
+			<!-- #ifdef MP-WEIXIN -->
 			<u-cell title="联系客服" is-link>
-				<!-- #ifdef MP-WEIXIN -->
 				<template #value>
 					<u-button :showMessageCard="true" openType="contact" :plain="true"
 						:customStyle="{'width':'100rpx','borderWidth':'0','backgroundColor':'transparent'}" class="btn"></u-button>
 				</template>
-				<!-- #endif -->
 			</u-cell>
-
+				<!-- #endif -->
 		</u-cell-group>
 		<!-- <view class="devide"></view>
 		<u-cell-group>

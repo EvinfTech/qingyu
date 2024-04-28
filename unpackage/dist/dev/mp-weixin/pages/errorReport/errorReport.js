@@ -129,58 +129,64 @@ const _sfc_main = {
   }
 };
 if (!Array) {
+  const _easycom_up_icon2 = common_vendor.resolveComponent("up-icon");
   const _easycom_u_navbar2 = common_vendor.resolveComponent("u-navbar");
   const _easycom_u_radio2 = common_vendor.resolveComponent("u-radio");
   const _easycom_u_radio_group2 = common_vendor.resolveComponent("u-radio-group");
   const _easycom_u__textarea2 = common_vendor.resolveComponent("u--textarea");
   const _easycom_u_upload2 = common_vendor.resolveComponent("u-upload");
-  (_easycom_u_navbar2 + _easycom_u_radio2 + _easycom_u_radio_group2 + _easycom_u__textarea2 + _easycom_u_upload2)();
+  (_easycom_up_icon2 + _easycom_u_navbar2 + _easycom_u_radio2 + _easycom_u_radio_group2 + _easycom_u__textarea2 + _easycom_u_upload2)();
 }
+const _easycom_up_icon = () => "../../node-modules/uview-plus/components/u-icon/u-icon.js";
 const _easycom_u_navbar = () => "../../node-modules/uview-plus/components/u-navbar/u-navbar.js";
 const _easycom_u_radio = () => "../../node-modules/uview-plus/components/u-radio/u-radio.js";
 const _easycom_u_radio_group = () => "../../node-modules/uview-plus/components/u-radio-group/u-radio-group.js";
 const _easycom_u__textarea = () => "../../node-modules/uview-plus/components/u-textarea/u-textarea.js";
 const _easycom_u_upload = () => "../../node-modules/uview-plus/components/u-upload/u-upload.js";
 if (!Math) {
-  (_easycom_u_navbar + _easycom_u_radio + _easycom_u_radio_group + _easycom_u__textarea + _easycom_u_upload)();
+  (_easycom_up_icon + _easycom_u_navbar + _easycom_u_radio + _easycom_u_radio_group + _easycom_u__textarea + _easycom_u_upload)();
 }
 function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
   return {
-    a: common_vendor.p({
+    a: common_vendor.o($data.app.toBack),
+    b: common_vendor.p({
+      name: "arrow-left"
+    }),
+    c: common_vendor.p({
       safeAreaInsetTop: true,
       fixed: false,
       title: "场馆报错",
-      autoBack: true
+      autoBack: false
     }),
-    b: common_vendor.f($data.errorTypeList, (item, index, i0) => {
+    d: common_vendor.f($data.errorTypeList, (item, index, i0) => {
       return {
         a: index,
-        b: "b6ca8dfc-2-" + i0 + ",b6ca8dfc-1",
+        b: "b6ca8dfc-3-" + i0 + ",b6ca8dfc-2",
         c: common_vendor.p({
           name: item,
           label: item
         })
       };
     }),
-    c: common_vendor.o(($event) => $data.type = $event),
-    d: common_vendor.p({
+    e: common_vendor.o(($event) => $data.type = $event),
+    f: common_vendor.p({
       placement: "row",
       modelValue: $data.type
     }),
-    e: common_vendor.o(($event) => $data.error = $event),
-    f: common_vendor.p({
+    g: common_vendor.o(($event) => $data.error = $event),
+    h: common_vendor.p({
       placeholder: "请输入...",
       modelValue: $data.error
     }),
-    g: common_vendor.o($options.afterRead),
-    h: common_vendor.o($options.deleteImg),
-    i: common_vendor.p({
+    i: common_vendor.o($options.afterRead),
+    j: common_vendor.o($options.deleteImg),
+    k: common_vendor.p({
       fileList: $data.fileList,
       name: "1",
       multiple: true,
       maxCount: 9
     }),
-    j: common_vendor.o((...args) => $options.submit && $options.submit(...args))
+    l: common_vendor.o((...args) => $options.submit && $options.submit(...args))
   };
 }
 const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-b6ca8dfc"], ["__file", "C:/project/轻羽项目/qingyu-client/pages/errorReport/errorReport.vue"]]);

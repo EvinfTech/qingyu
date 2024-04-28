@@ -2118,7 +2118,7 @@ if (uni.restoreGlobal) {
       /* CLASS */
     );
   }
-  const __easycom_1$6 = /* @__PURE__ */ _export_sfc(_sfc_main$K, [["render", _sfc_render$J], ["__scopeId", "data-v-1c933a9a"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-icon/u-icon.vue"]]);
+  const __easycom_0$7 = /* @__PURE__ */ _export_sfc(_sfc_main$K, [["render", _sfc_render$J], ["__scopeId", "data-v-1c933a9a"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-icon/u-icon.vue"]]);
   const props$n = {
     props: {
       // 是否显示圆点
@@ -2252,7 +2252,7 @@ if (uni.restoreGlobal) {
       /* TEXT, CLASS, STYLE */
     )) : vue.createCommentVNode("v-if", true);
   }
-  const __easycom_0$7 = /* @__PURE__ */ _export_sfc(_sfc_main$J, [["render", _sfc_render$I], ["__scopeId", "data-v-aa9883b1"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-badge/u-badge.vue"]]);
+  const __easycom_0$6 = /* @__PURE__ */ _export_sfc(_sfc_main$J, [["render", _sfc_render$I], ["__scopeId", "data-v-aa9883b1"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-badge/u-badge.vue"]]);
   const props$m = {
     props: {
       // item标签的名称，作为与u-tabbar的value参数匹配的标识符
@@ -2339,8 +2339,8 @@ if (uni.restoreGlobal) {
     }
   };
   function _sfc_render$H(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_icon = resolveEasycom(vue.resolveDynamicComponent("u-icon"), __easycom_1$6);
-    const _component_u_badge = resolveEasycom(vue.resolveDynamicComponent("u-badge"), __easycom_0$7);
+    const _component_u_icon = resolveEasycom(vue.resolveDynamicComponent("u-icon"), __easycom_0$7);
+    const _component_u_badge = resolveEasycom(vue.resolveDynamicComponent("u-badge"), __easycom_0$6);
     return vue.openBlock(), vue.createElementBlock(
       "view",
       {
@@ -2392,7 +2392,7 @@ if (uni.restoreGlobal) {
       /* STYLE */
     );
   }
-  const __easycom_0$6 = /* @__PURE__ */ _export_sfc(_sfc_main$I, [["render", _sfc_render$H], ["__scopeId", "data-v-a54be951"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-tabbar-item/u-tabbar-item.vue"]]);
+  const __easycom_0$5 = /* @__PURE__ */ _export_sfc(_sfc_main$I, [["render", _sfc_render$H], ["__scopeId", "data-v-a54be951"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-tabbar-item/u-tabbar-item.vue"]]);
   const props$l = {
     props: {}
   };
@@ -2426,7 +2426,7 @@ if (uni.restoreGlobal) {
       /* CLASS, STYLE */
     );
   }
-  const __easycom_3$1 = /* @__PURE__ */ _export_sfc(_sfc_main$H, [["render", _sfc_render$G], ["__scopeId", "data-v-3ec581de"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-safe-bottom/u-safe-bottom.vue"]]);
+  const __easycom_3$3 = /* @__PURE__ */ _export_sfc(_sfc_main$H, [["render", _sfc_render$G], ["__scopeId", "data-v-3ec581de"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-safe-bottom/u-safe-bottom.vue"]]);
   const props$k = {
     props: {
       // 当前匹配项的name
@@ -2524,7 +2524,7 @@ if (uni.restoreGlobal) {
     }
   };
   function _sfc_render$F(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_safe_bottom = resolveEasycom(vue.resolveDynamicComponent("u-safe-bottom"), __easycom_3$1);
+    const _component_u_safe_bottom = resolveEasycom(vue.resolveDynamicComponent("u-safe-bottom"), __easycom_3$3);
     return vue.openBlock(), vue.createElementBlock("view", { class: "u-tabbar" }, [
       vue.createElementVNode(
         "view",
@@ -2558,7 +2558,7 @@ if (uni.restoreGlobal) {
       )) : vue.createCommentVNode("v-if", true)
     ]);
   }
-  const __easycom_1$5 = /* @__PURE__ */ _export_sfc(_sfc_main$G, [["render", _sfc_render$F], ["__scopeId", "data-v-d5be2d5d"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-tabbar/u-tabbar.vue"]]);
+  const __easycom_1$3 = /* @__PURE__ */ _export_sfc(_sfc_main$G, [["render", _sfc_render$F], ["__scopeId", "data-v-d5be2d5d"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-tabbar/u-tabbar.vue"]]);
   const props$j = {
     props: {
       bgColor: {
@@ -2596,7 +2596,7 @@ if (uni.restoreGlobal) {
       /* STYLE */
     );
   }
-  const __easycom_1$4 = /* @__PURE__ */ _export_sfc(_sfc_main$F, [["render", _sfc_render$E], ["__scopeId", "data-v-c0b45a48"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-status-bar/u-status-bar.vue"]]);
+  const __easycom_1$2 = /* @__PURE__ */ _export_sfc(_sfc_main$F, [["render", _sfc_render$E], ["__scopeId", "data-v-c0b45a48"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-status-bar/u-status-bar.vue"]]);
   const props$i = {
     props: {
       // 是否开启顶部安全区适配
@@ -2703,8 +2703,8 @@ if (uni.restoreGlobal) {
     }
   };
   function _sfc_render$D(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_status_bar = resolveEasycom(vue.resolveDynamicComponent("u-status-bar"), __easycom_1$4);
-    const _component_u_icon = resolveEasycom(vue.resolveDynamicComponent("u-icon"), __easycom_1$6);
+    const _component_u_status_bar = resolveEasycom(vue.resolveDynamicComponent("u-status-bar"), __easycom_1$2);
+    const _component_u_icon = resolveEasycom(vue.resolveDynamicComponent("u-icon"), __easycom_0$7);
     return vue.openBlock(), vue.createElementBlock("view", { class: "u-navbar" }, [
       _ctx.fixed && _ctx.placeholder ? (vue.openBlock(), vue.createElementBlock(
         "view",
@@ -2814,7 +2814,7 @@ if (uni.restoreGlobal) {
       )
     ]);
   }
-  const __easycom_0$5 = /* @__PURE__ */ _export_sfc(_sfc_main$E, [["render", _sfc_render$D], ["__scopeId", "data-v-9d9e7ee2"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-navbar/u-navbar.vue"]]);
+  const __easycom_1$1 = /* @__PURE__ */ _export_sfc(_sfc_main$E, [["render", _sfc_render$D], ["__scopeId", "data-v-9d9e7ee2"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-navbar/u-navbar.vue"]]);
   const request = (parmas) => {
     uni.showLoading({
       title: "加载中"
@@ -2984,8 +2984,8 @@ if (uni.restoreGlobal) {
     }
   };
   function _sfc_render$C(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0$5);
-    const _component_u_icon = resolveEasycom(vue.resolveDynamicComponent("u-icon"), __easycom_1$6);
+    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_1$1);
+    const _component_u_icon = resolveEasycom(vue.resolveDynamicComponent("u-icon"), __easycom_0$7);
     return vue.openBlock(), vue.createElementBlock("view", { class: "page" }, [
       vue.createVNode(_component_u_navbar, {
         class: "nav-bar",
@@ -3656,8 +3656,8 @@ if (uni.restoreGlobal) {
   function _sfc_render$A(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_Home = vue.resolveComponent("Home");
     const _component_Mine = vue.resolveComponent("Mine");
-    const _component_u_tabbar_item = resolveEasycom(vue.resolveDynamicComponent("u-tabbar-item"), __easycom_0$6);
-    const _component_u_tabbar = resolveEasycom(vue.resolveDynamicComponent("u-tabbar"), __easycom_1$5);
+    const _component_u_tabbar_item = resolveEasycom(vue.resolveDynamicComponent("u-tabbar-item"), __easycom_0$5);
+    const _component_u_tabbar = resolveEasycom(vue.resolveDynamicComponent("u-tabbar"), __easycom_1$3);
     return vue.openBlock(), vue.createElementBlock(
       vue.Fragment,
       null,
@@ -3921,7 +3921,7 @@ if (uni.restoreGlobal) {
       /* CLASS, STYLE */
     )) : vue.createCommentVNode("v-if", true);
   }
-  const __easycom_1$3 = /* @__PURE__ */ _export_sfc(_sfc_main$A, [["render", _sfc_render$z], ["__scopeId", "data-v-00752c6d"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-loading-icon/u-loading-icon.vue"]]);
+  const __easycom_1 = /* @__PURE__ */ _export_sfc(_sfc_main$A, [["render", _sfc_render$z], ["__scopeId", "data-v-00752c6d"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-loading-icon/u-loading-icon.vue"]]);
   const props$g = {
     props: {
       // 是否细边框
@@ -4199,8 +4199,8 @@ if (uni.restoreGlobal) {
     }
   };
   function _sfc_render$y(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_loading_icon = resolveEasycom(vue.resolveDynamicComponent("u-loading-icon"), __easycom_1$3);
-    const _component_u_icon = resolveEasycom(vue.resolveDynamicComponent("u-icon"), __easycom_1$6);
+    const _component_u_loading_icon = resolveEasycom(vue.resolveDynamicComponent("u-loading-icon"), __easycom_1);
+    const _component_u_icon = resolveEasycom(vue.resolveDynamicComponent("u-icon"), __easycom_0$7);
     return vue.openBlock(), vue.createElementBlock("button", {
       "hover-start-time": Number(_ctx.hoverStartTime),
       "hover-stay-time": Number(_ctx.hoverStayTime),
@@ -4548,7 +4548,9 @@ if (uni.restoreGlobal) {
   const PagesLoginLogin = /* @__PURE__ */ _export_sfc(_sfc_main$y, [["render", _sfc_render$x], ["__scopeId", "data-v-e4e4508d"], ["__file", "C:/project/轻羽项目/qingyu-client/pages/login/login.vue"]]);
   const _sfc_main$x = {
     data() {
-      return {};
+      return {
+        app: getApp()
+      };
     },
     /**
      * 生命周期函数--监听页面加载
@@ -4597,7 +4599,8 @@ if (uni.restoreGlobal) {
     }
   };
   function _sfc_render$w(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0$5);
+    const _component_up_icon = resolveEasycom(vue.resolveDynamicComponent("up-icon"), __easycom_0$7);
+    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_1$1);
     return vue.openBlock(), vue.createElementBlock(
       vue.Fragment,
       null,
@@ -4608,8 +4611,17 @@ if (uni.restoreGlobal) {
             class: "nav-bar",
             title: "用户协议",
             safeAreaInsetTop: true,
-            autoBack: true,
+            autoBack: false,
             fixed: false
+          }, {
+            left: vue.withCtx(() => [
+              vue.createVNode(_component_up_icon, {
+                name: "arrow-left",
+                onClick: $data.app.toBack
+              }, null, 8, ["onClick"])
+            ]),
+            _: 1
+            /* STABLE */
           }),
           vue.createElementVNode("view", { class: "arrgementBox" }, "欢迎您使用服务（以下简称：本服务）请您仔细阅读下方条款，若您对本协议的任何条款有异议，您可以第一时间选择不进入。")
         ])
@@ -4830,7 +4842,7 @@ if (uni.restoreGlobal) {
     }
   };
   function _sfc_render$v(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_badge = resolveEasycom(vue.resolveDynamicComponent("u-badge"), __easycom_0$7);
+    const _component_u_badge = resolveEasycom(vue.resolveDynamicComponent("u-badge"), __easycom_0$6);
     return vue.openBlock(), vue.createElementBlock("view", { class: "u-tabs" }, [
       vue.createElementVNode("view", { class: "u-tabs__wrapper" }, [
         vue.renderSlot(_ctx.$slots, "left", {}, void 0, true),
@@ -4919,7 +4931,7 @@ if (uni.restoreGlobal) {
       ])
     ]);
   }
-  const __easycom_1$2 = /* @__PURE__ */ _export_sfc(_sfc_main$w, [["render", _sfc_render$v], ["__scopeId", "data-v-0546c3e4"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-tabs/u-tabs.vue"]]);
+  const __easycom_2$3 = /* @__PURE__ */ _export_sfc(_sfc_main$w, [["render", _sfc_render$v], ["__scopeId", "data-v-0546c3e4"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-tabs/u-tabs.vue"]]);
   const props$e = {
     props: {
       // 内置图标名称，或图片路径，建议绝对路径
@@ -5024,7 +5036,7 @@ if (uni.restoreGlobal) {
     }
   };
   function _sfc_render$u(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_icon = resolveEasycom(vue.resolveDynamicComponent("u-icon"), __easycom_1$6);
+    const _component_u_icon = resolveEasycom(vue.resolveDynamicComponent("u-icon"), __easycom_0$7);
     return _ctx.show ? (vue.openBlock(), vue.createElementBlock(
       "view",
       {
@@ -5069,7 +5081,7 @@ if (uni.restoreGlobal) {
       /* STYLE */
     )) : vue.createCommentVNode("v-if", true);
   }
-  const __easycom_2$3 = /* @__PURE__ */ _export_sfc(_sfc_main$v, [["render", _sfc_render$u], ["__scopeId", "data-v-bd84101d"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-empty/u-empty.vue"]]);
+  const __easycom_3$2 = /* @__PURE__ */ _export_sfc(_sfc_main$v, [["render", _sfc_render$u], ["__scopeId", "data-v-bd84101d"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-empty/u-empty.vue"]]);
   const _sfc_main$u = {
     data() {
       return {
@@ -5149,9 +5161,9 @@ if (uni.restoreGlobal) {
     }
   };
   function _sfc_render$t(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0$5);
-    const _component_u_tabs = resolveEasycom(vue.resolveDynamicComponent("u-tabs"), __easycom_1$2);
-    const _component_u_empty = resolveEasycom(vue.resolveDynamicComponent("u-empty"), __easycom_2$3);
+    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_1$1);
+    const _component_u_tabs = resolveEasycom(vue.resolveDynamicComponent("u-tabs"), __easycom_2$3);
+    const _component_u_empty = resolveEasycom(vue.resolveDynamicComponent("u-empty"), __easycom_3$2);
     return vue.openBlock(), vue.createElementBlock(
       vue.Fragment,
       null,
@@ -5498,7 +5510,8 @@ if (uni.restoreGlobal) {
     }
   };
   function _sfc_render$s(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0$5);
+    const _component_up_icon = resolveEasycom(vue.resolveDynamicComponent("up-icon"), __easycom_0$7);
+    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_1$1);
     const _component_van_icon = vue.resolveComponent("van-icon");
     return vue.openBlock(), vue.createElementBlock(
       vue.Fragment,
@@ -5511,7 +5524,16 @@ if (uni.restoreGlobal) {
             safeAreaInsetTop: true,
             fixed: false,
             title: "球馆信息",
-            autoBack: true
+            autoBack: false
+          }, {
+            left: vue.withCtx(() => [
+              vue.createVNode(_component_up_icon, {
+                name: "arrow-left",
+                onClick: $data.app.toBack
+              }, null, 8, ["onClick"])
+            ]),
+            _: 1
+            /* STABLE */
           }),
           vue.createElementVNode("view", { style: { "margin-top": "28rpx", "padding": "0 20rpx 30rpx", "background-color": "#fff" } }, [
             vue.createElementVNode("view", { class: "flex align-center justify-between w-full" }, [
@@ -5749,6 +5771,7 @@ if (uni.restoreGlobal) {
   const _sfc_main$s = {
     data() {
       return {
+        app: getApp(),
         currentIndex: 0,
         imgList: []
       };
@@ -5759,7 +5782,6 @@ if (uni.restoreGlobal) {
     onLoad() {
       let imgList = uni.getStorageSync("album");
       imgList = JSON.parse(imgList);
-      uni.removeStorageSync("album");
       this.imgList = imgList;
     },
     /**
@@ -5811,7 +5833,8 @@ if (uni.restoreGlobal) {
     }
   };
   function _sfc_render$r(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0$5);
+    const _component_up_icon = resolveEasycom(vue.resolveDynamicComponent("up-icon"), __easycom_0$7);
+    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_1$1);
     return vue.openBlock(), vue.createElementBlock(
       vue.Fragment,
       null,
@@ -5822,8 +5845,17 @@ if (uni.restoreGlobal) {
             class: "nav-bar",
             title: "相册",
             safeAreaInsetTop: true,
-            autoBack: true,
+            autoBack: false,
             fixed: false
+          }, {
+            left: vue.withCtx(() => [
+              vue.createVNode(_component_up_icon, {
+                name: "arrow-left",
+                onClick: $data.app.toBack
+              }, null, 8, ["onClick"])
+            ]),
+            _: 1
+            /* STABLE */
           }),
           vue.createCommentVNode(' <van-nav-bar>\r\n            <view slot="left" @tap="onClickLeft">\r\n                <van-icon name="arrow-left" size="20px" />\r\n            </view>\r\n            <view slot="title" class="pageTitle">相册</view>\r\n        </van-nav-bar> '),
           vue.createElementVNode("view", {
@@ -6083,7 +6115,7 @@ if (uni.restoreGlobal) {
     }
   };
   function _sfc_render$q(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_icon = resolveEasycom(vue.resolveDynamicComponent("u-icon"), __easycom_1$6);
+    const _component_u_icon = resolveEasycom(vue.resolveDynamicComponent("u-icon"), __easycom_0$7);
     return vue.openBlock(), vue.createElementBlock(
       "view",
       {
@@ -6132,7 +6164,7 @@ if (uni.restoreGlobal) {
       /* CLASS, STYLE */
     );
   }
-  const __easycom_4$1 = /* @__PURE__ */ _export_sfc(_sfc_main$r, [["render", _sfc_render$q], ["__scopeId", "data-v-edf95844"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-radio/u-radio.vue"]]);
+  const __easycom_5 = /* @__PURE__ */ _export_sfc(_sfc_main$r, [["render", _sfc_render$q], ["__scopeId", "data-v-edf95844"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-radio/u-radio.vue"]]);
   const props$c = {
     props: {
       // 绑定的值
@@ -6288,7 +6320,7 @@ if (uni.restoreGlobal) {
       /* CLASS */
     );
   }
-  const __easycom_5 = /* @__PURE__ */ _export_sfc(_sfc_main$q, [["render", _sfc_render$p], ["__scopeId", "data-v-272bb654"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-radio-group/u-radio-group.vue"]]);
+  const __easycom_6 = /* @__PURE__ */ _export_sfc(_sfc_main$q, [["render", _sfc_render$p], ["__scopeId", "data-v-272bb654"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-radio-group/u-radio-group.vue"]]);
   const props$b = {
     props: {
       // 输入框的内容
@@ -6559,7 +6591,7 @@ if (uni.restoreGlobal) {
       /* CLASS, STYLE */
     );
   }
-  const __easycom_1$1 = /* @__PURE__ */ _export_sfc(_sfc_main$p, [["render", _sfc_render$o], ["__scopeId", "data-v-31706dd7"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-textarea/u-textarea.vue"]]);
+  const __easycom_2$2 = /* @__PURE__ */ _export_sfc(_sfc_main$p, [["render", _sfc_render$o], ["__scopeId", "data-v-31706dd7"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-textarea/u-textarea.vue"]]);
   function pickExclude(obj, keys) {
     if (!["[object Object]", "[object File]"].includes(Object.prototype.toString.call(obj))) {
       return {};
@@ -6949,8 +6981,8 @@ if (uni.restoreGlobal) {
     }
   };
   function _sfc_render$n(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_icon = resolveEasycom(vue.resolveDynamicComponent("u-icon"), __easycom_1$6);
-    const _component_u_loading_icon = resolveEasycom(vue.resolveDynamicComponent("u-loading-icon"), __easycom_1$3);
+    const _component_u_icon = resolveEasycom(vue.resolveDynamicComponent("u-icon"), __easycom_0$7);
+    const _component_u_loading_icon = resolveEasycom(vue.resolveDynamicComponent("u-loading-icon"), __easycom_1);
     return vue.openBlock(), vue.createElementBlock(
       "view",
       {
@@ -7098,7 +7130,7 @@ if (uni.restoreGlobal) {
       /* STYLE */
     );
   }
-  const __easycom_2$2 = /* @__PURE__ */ _export_sfc(_sfc_main$o, [["render", _sfc_render$n], ["__scopeId", "data-v-cafe0b2a"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-upload/u-upload.vue"]]);
+  const __easycom_3$1 = /* @__PURE__ */ _export_sfc(_sfc_main$o, [["render", _sfc_render$n], ["__scopeId", "data-v-cafe0b2a"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-upload/u-upload.vue"]]);
   const _sfc_main$n = {
     data() {
       return {
@@ -7227,11 +7259,12 @@ if (uni.restoreGlobal) {
     }
   };
   function _sfc_render$m(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0$5);
-    const _component_u_radio = resolveEasycom(vue.resolveDynamicComponent("u-radio"), __easycom_4$1);
-    const _component_u_radio_group = resolveEasycom(vue.resolveDynamicComponent("u-radio-group"), __easycom_5);
-    const _component_u__textarea = resolveEasycom(vue.resolveDynamicComponent("u--textarea"), __easycom_1$1);
-    const _component_u_upload = resolveEasycom(vue.resolveDynamicComponent("u-upload"), __easycom_2$2);
+    const _component_up_icon = resolveEasycom(vue.resolveDynamicComponent("up-icon"), __easycom_0$7);
+    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_1$1);
+    const _component_u_radio = resolveEasycom(vue.resolveDynamicComponent("u-radio"), __easycom_5);
+    const _component_u_radio_group = resolveEasycom(vue.resolveDynamicComponent("u-radio-group"), __easycom_6);
+    const _component_u__textarea = resolveEasycom(vue.resolveDynamicComponent("u--textarea"), __easycom_2$2);
+    const _component_u_upload = resolveEasycom(vue.resolveDynamicComponent("u-upload"), __easycom_3$1);
     return vue.openBlock(), vue.createElementBlock(
       vue.Fragment,
       null,
@@ -7243,7 +7276,16 @@ if (uni.restoreGlobal) {
             safeAreaInsetTop: true,
             fixed: false,
             title: "场馆报错",
-            autoBack: true
+            autoBack: false
+          }, {
+            left: vue.withCtx(() => [
+              vue.createVNode(_component_up_icon, {
+                name: "arrow-left",
+                onClick: $data.app.toBack
+              }, null, 8, ["onClick"])
+            ]),
+            _: 1
+            /* STABLE */
           }),
           vue.createElementVNode("view", { class: "errorBox" }, [
             vue.createElementVNode("view", { class: "title" }, "场馆出错了？"),
@@ -7498,7 +7540,7 @@ if (uni.restoreGlobal) {
         let userInfo = await this.app.getUserInfo();
         let site_detail = [];
         let site_obj = groupBy(this.choosedList, "siteId");
-        formatAppLog("log", "at pages/reservationDetail/reservationDetail.vue:292", site_obj);
+        formatAppLog("log", "at pages/reservationDetail/reservationDetail.vue:295", site_obj);
         for (var key in site_obj) {
           let time_enum = [];
           for (var item of site_obj[key]) {
@@ -7685,7 +7727,8 @@ if (uni.restoreGlobal) {
     }
   };
   function _sfc_render$l(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0$5);
+    const _component_up_icon = resolveEasycom(vue.resolveDynamicComponent("up-icon"), __easycom_0$7);
+    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_1$1);
     return vue.openBlock(), vue.createElementBlock(
       vue.Fragment,
       null,
@@ -7697,7 +7740,16 @@ if (uni.restoreGlobal) {
             safeAreaInsetTop: true,
             fixed: false,
             title: "预约",
-            autoBack: true
+            autoBack: false
+          }, {
+            left: vue.withCtx(() => [
+              vue.createVNode(_component_up_icon, {
+                name: "arrow-left",
+                onClick: $data.app.toBack
+              }, null, 8, ["onClick"])
+            ]),
+            _: 1
+            /* STABLE */
           }),
           vue.createElementVNode("view", { class: "customerTab" }, [
             vue.createElementVNode("scroll-view", {
@@ -8137,7 +8189,8 @@ if (uni.restoreGlobal) {
     }
   };
   function _sfc_render$k(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0$5);
+    const _component_up_icon = resolveEasycom(vue.resolveDynamicComponent("up-icon"), __easycom_0$7);
+    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_1$1);
     const _component_van_dialog = vue.resolveComponent("van-dialog");
     return vue.openBlock(), vue.createElementBlock(
       vue.Fragment,
@@ -8149,9 +8202,18 @@ if (uni.restoreGlobal) {
             class: "nav-bar",
             title: $data.detailType == "add" ? "确认订单" : "订单详情",
             safeAreaInsetTop: true,
-            autoBack: true,
+            autoBack: false,
             fixed: false
-          }, null, 8, ["title"]),
+          }, {
+            left: vue.withCtx(() => [
+              vue.createVNode(_component_up_icon, {
+                name: "arrow-left",
+                onClick: $data.app.toBack
+              }, null, 8, ["onClick"])
+            ]),
+            _: 1
+            /* STABLE */
+          }, 8, ["title"]),
           vue.createElementVNode(
             "scroll-view",
             {
@@ -8659,7 +8721,7 @@ if (uni.restoreGlobal) {
     }
   };
   function _sfc_render$i(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_icon = resolveEasycom(vue.resolveDynamicComponent("u-icon"), __easycom_1$6);
+    const _component_u_icon = resolveEasycom(vue.resolveDynamicComponent("u-icon"), __easycom_0$7);
     const _component_u_line = resolveEasycom(vue.resolveDynamicComponent("u-line"), __easycom_0$3);
     return vue.openBlock(), vue.createElementBlock("view", {
       class: vue.normalizeClass(["u-cell", [_ctx.customClass]]),
@@ -8751,7 +8813,7 @@ if (uni.restoreGlobal) {
       _ctx.border ? (vue.openBlock(), vue.createBlock(_component_u_line, { key: 0 })) : vue.createCommentVNode("v-if", true)
     ], 14, ["hover-class"]);
   }
-  const __easycom_1 = /* @__PURE__ */ _export_sfc(_sfc_main$j, [["render", _sfc_render$i], ["__scopeId", "data-v-b4243719"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-cell/u-cell.vue"]]);
+  const __easycom_2$1 = /* @__PURE__ */ _export_sfc(_sfc_main$j, [["render", _sfc_render$i], ["__scopeId", "data-v-b4243719"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-cell/u-cell.vue"]]);
   const props$7 = {
     props: {
       // 分组标题
@@ -8802,7 +8864,7 @@ if (uni.restoreGlobal) {
       /* CLASS, STYLE */
     );
   }
-  const __easycom_2$1 = /* @__PURE__ */ _export_sfc(_sfc_main$i, [["render", _sfc_render$h], ["__scopeId", "data-v-30c8e4c7"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-cell-group/u-cell-group.vue"]]);
+  const __easycom_3 = /* @__PURE__ */ _export_sfc(_sfc_main$i, [["render", _sfc_render$h], ["__scopeId", "data-v-30c8e4c7"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-cell-group/u-cell-group.vue"]]);
   const props$6 = {
     props: {
       // 是否展示工具条
@@ -9056,7 +9118,7 @@ if (uni.restoreGlobal) {
       /* CLASS, STYLE, HYDRATE_EVENTS */
     )) : vue.createCommentVNode("v-if", true);
   }
-  const __easycom_4 = /* @__PURE__ */ _export_sfc(_sfc_main$g, [["render", _sfc_render$f], ["__scopeId", "data-v-0573594d"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-transition/u-transition.vue"]]);
+  const __easycom_4$1 = /* @__PURE__ */ _export_sfc(_sfc_main$g, [["render", _sfc_render$f], ["__scopeId", "data-v-0573594d"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-transition/u-transition.vue"]]);
   const props$4 = {
     props: {
       // 是否显示遮罩
@@ -9106,7 +9168,7 @@ if (uni.restoreGlobal) {
     }
   };
   function _sfc_render$e(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_transition = resolveEasycom(vue.resolveDynamicComponent("u-transition"), __easycom_4);
+    const _component_u_transition = resolveEasycom(vue.resolveDynamicComponent("u-transition"), __easycom_4$1);
     return vue.openBlock(), vue.createBlock(_component_u_transition, {
       show: _ctx.show,
       "custom-class": "u-overlay",
@@ -9317,10 +9379,10 @@ if (uni.restoreGlobal) {
   };
   function _sfc_render$d(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_u_overlay = resolveEasycom(vue.resolveDynamicComponent("u-overlay"), __easycom_0$1);
-    const _component_u_status_bar = resolveEasycom(vue.resolveDynamicComponent("u-status-bar"), __easycom_1$4);
-    const _component_u_icon = resolveEasycom(vue.resolveDynamicComponent("u-icon"), __easycom_1$6);
-    const _component_u_safe_bottom = resolveEasycom(vue.resolveDynamicComponent("u-safe-bottom"), __easycom_3$1);
-    const _component_u_transition = resolveEasycom(vue.resolveDynamicComponent("u-transition"), __easycom_4);
+    const _component_u_status_bar = resolveEasycom(vue.resolveDynamicComponent("u-status-bar"), __easycom_1$2);
+    const _component_u_icon = resolveEasycom(vue.resolveDynamicComponent("u-icon"), __easycom_0$7);
+    const _component_u_safe_bottom = resolveEasycom(vue.resolveDynamicComponent("u-safe-bottom"), __easycom_3$3);
+    const _component_u_transition = resolveEasycom(vue.resolveDynamicComponent("u-transition"), __easycom_4$1);
     return vue.openBlock(), vue.createElementBlock("view", { class: "u-popup" }, [
       _ctx.overlay ? (vue.openBlock(), vue.createBlock(_component_u_overlay, {
         key: 0,
@@ -9605,7 +9667,7 @@ if (uni.restoreGlobal) {
   };
   function _sfc_render$c(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_u_toolbar = resolveEasycom(vue.resolveDynamicComponent("u-toolbar"), __easycom_0$2);
-    const _component_u_loading_icon = resolveEasycom(vue.resolveDynamicComponent("u-loading-icon"), __easycom_1$3);
+    const _component_u_loading_icon = resolveEasycom(vue.resolveDynamicComponent("u-loading-icon"), __easycom_1);
     const _component_u_popup = resolveEasycom(vue.resolveDynamicComponent("u-popup"), __easycom_2);
     return vue.openBlock(), vue.createBlock(_component_u_popup, {
       show: _ctx.show,
@@ -10581,7 +10643,7 @@ if (uni.restoreGlobal) {
       onChange: $options.change
     }, null, 8, ["show", "popupMode", "closeOnClickOverlay", "columns", "title", "itemHeight", "showToolbar", "visibleItemCount", "defaultIndex", "cancelText", "confirmText", "cancelColor", "confirmColor", "onClose", "onCancel", "onConfirm", "onChange"]);
   }
-  const __easycom_7 = /* @__PURE__ */ _export_sfc(_sfc_main$c, [["render", _sfc_render$b], ["__scopeId", "data-v-e39cc2d0"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-datetime-picker/u-datetime-picker.vue"]]);
+  const __easycom_8 = /* @__PURE__ */ _export_sfc(_sfc_main$c, [["render", _sfc_render$b], ["__scopeId", "data-v-e39cc2d0"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-datetime-picker/u-datetime-picker.vue"]]);
   const _sfc_main$b = {
     data() {
       return {
@@ -10723,15 +10785,16 @@ if (uni.restoreGlobal) {
     }
   };
   function _sfc_render$a(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0$5);
-    const _component_u_icon = resolveEasycom(vue.resolveDynamicComponent("u-icon"), __easycom_1$6);
-    const _component_u_upload = resolveEasycom(vue.resolveDynamicComponent("u-upload"), __easycom_2$2);
-    const _component_u_cell = resolveEasycom(vue.resolveDynamicComponent("u-cell"), __easycom_1);
-    const _component_u_radio = resolveEasycom(vue.resolveDynamicComponent("u-radio"), __easycom_4$1);
-    const _component_u_radio_group = resolveEasycom(vue.resolveDynamicComponent("u-radio-group"), __easycom_5);
-    const _component_u_cell_group = resolveEasycom(vue.resolveDynamicComponent("u-cell-group"), __easycom_2$1);
-    const _component_u_datetime_picker = resolveEasycom(vue.resolveDynamicComponent("u-datetime-picker"), __easycom_7);
-    const _component_u_textarea = resolveEasycom(vue.resolveDynamicComponent("u-textarea"), __easycom_1$1);
+    const _component_up_icon = resolveEasycom(vue.resolveDynamicComponent("up-icon"), __easycom_0$7);
+    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_1$1);
+    const _component_u_icon = resolveEasycom(vue.resolveDynamicComponent("u-icon"), __easycom_0$7);
+    const _component_u_upload = resolveEasycom(vue.resolveDynamicComponent("u-upload"), __easycom_3$1);
+    const _component_u_cell = resolveEasycom(vue.resolveDynamicComponent("u-cell"), __easycom_2$1);
+    const _component_u_radio = resolveEasycom(vue.resolveDynamicComponent("u-radio"), __easycom_5);
+    const _component_u_radio_group = resolveEasycom(vue.resolveDynamicComponent("u-radio-group"), __easycom_6);
+    const _component_u_cell_group = resolveEasycom(vue.resolveDynamicComponent("u-cell-group"), __easycom_3);
+    const _component_u_datetime_picker = resolveEasycom(vue.resolveDynamicComponent("u-datetime-picker"), __easycom_8);
+    const _component_u_textarea = resolveEasycom(vue.resolveDynamicComponent("u-textarea"), __easycom_2$2);
     return vue.openBlock(), vue.createElementBlock(
       vue.Fragment,
       null,
@@ -10743,7 +10806,16 @@ if (uni.restoreGlobal) {
             safeAreaInsetTop: true,
             fixed: false,
             title: "个人信息",
-            autoBack: true
+            autoBack: false
+          }, {
+            left: vue.withCtx(() => [
+              vue.createVNode(_component_up_icon, {
+                name: "arrow-left",
+                onClick: $data.app.toBack
+              }, null, 8, ["onClick"])
+            ]),
+            _: 1
+            /* STABLE */
           }),
           vue.createVNode(_component_u_cell_group, { "custom-class": "userinfo-group" }, {
             default: vue.withCtx(() => [
@@ -10998,7 +11070,7 @@ if (uni.restoreGlobal) {
   };
   function _sfc_render$9(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_u_line = resolveEasycom(vue.resolveDynamicComponent("u-line"), __easycom_0$3);
-    const _component_u_loading_icon = resolveEasycom(vue.resolveDynamicComponent("u-loading-icon"), __easycom_1$3);
+    const _component_u_loading_icon = resolveEasycom(vue.resolveDynamicComponent("u-loading-icon"), __easycom_1);
     const _component_u_popup = resolveEasycom(vue.resolveDynamicComponent("u-popup"), __easycom_2);
     return vue.openBlock(), vue.createBlock(_component_u_popup, {
       mode: "center",
@@ -11149,7 +11221,7 @@ if (uni.restoreGlobal) {
       /* FORWARDED */
     }, 8, ["zoom", "show", "customStyle", "closeOnClickOverlay", "onClick"]);
   }
-  const __easycom_3 = /* @__PURE__ */ _export_sfc(_sfc_main$a, [["render", _sfc_render$9], ["__scopeId", "data-v-12b77a26"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-modal/u-modal.vue"]]);
+  const __easycom_4 = /* @__PURE__ */ _export_sfc(_sfc_main$a, [["render", _sfc_render$9], ["__scopeId", "data-v-12b77a26"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-modal/u-modal.vue"]]);
   const _sfc_main$9 = {
     data() {
       return {
@@ -11266,12 +11338,13 @@ if (uni.restoreGlobal) {
         this.show = true;
         this.order_no = e.currentTarget.dataset.item.order_no;
       },
-      initData() {
+      async initData() {
+        let userInfo = await this.app.getUserInfo();
         request({
           url: "wx/get/order/list",
           method: "POST",
           data: {
-            user_ouid: this.app.globalData.userInfo.ouid
+            user_ouid: userInfo.ouid
           }
         }).then((res) => {
           let orderList = res.data.reverse();
@@ -11294,10 +11367,11 @@ if (uni.restoreGlobal) {
     }
   };
   function _sfc_render$8(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0$5);
-    const _component_u_modal = resolveEasycom(vue.resolveDynamicComponent("u-modal"), __easycom_3);
-    const _component_u_tabs = resolveEasycom(vue.resolveDynamicComponent("u-tabs"), __easycom_1$2);
-    const _component_u_empty = resolveEasycom(vue.resolveDynamicComponent("u-empty"), __easycom_2$3);
+    const _component_up_icon = resolveEasycom(vue.resolveDynamicComponent("up-icon"), __easycom_0$7);
+    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_1$1);
+    const _component_u_modal = resolveEasycom(vue.resolveDynamicComponent("u-modal"), __easycom_4);
+    const _component_u_tabs = resolveEasycom(vue.resolveDynamicComponent("u-tabs"), __easycom_2$3);
+    const _component_u_empty = resolveEasycom(vue.resolveDynamicComponent("u-empty"), __easycom_3$2);
     const _component_van_dialog = vue.resolveComponent("van-dialog");
     return vue.openBlock(), vue.createElementBlock(
       vue.Fragment,
@@ -11309,8 +11383,17 @@ if (uni.restoreGlobal) {
             class: "nav-bar",
             title: "我的订单",
             safeAreaInsetTop: true,
-            autoBack: true,
+            autoBack: false,
             fixed: false
+          }, {
+            left: vue.withCtx(() => [
+              vue.createVNode(_component_up_icon, {
+                name: "arrow-left",
+                onClick: $data.app.toBack
+              }, null, 8, ["onClick"])
+            ]),
+            _: 1
+            /* STABLE */
           }),
           vue.createVNode(_component_u_modal, {
             show: $data.show,
@@ -11804,9 +11887,10 @@ if (uni.restoreGlobal) {
     }
   };
   function _sfc_render$7(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0$5);
-    const _component_u__textarea = resolveEasycom(vue.resolveDynamicComponent("u--textarea"), __easycom_1$1);
-    const _component_u_upload = resolveEasycom(vue.resolveDynamicComponent("u-upload"), __easycom_2$2);
+    const _component_up_icon = resolveEasycom(vue.resolveDynamicComponent("up-icon"), __easycom_0$7);
+    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_1$1);
+    const _component_u__textarea = resolveEasycom(vue.resolveDynamicComponent("u--textarea"), __easycom_2$2);
+    const _component_u_upload = resolveEasycom(vue.resolveDynamicComponent("u-upload"), __easycom_3$1);
     return vue.openBlock(), vue.createElementBlock(
       vue.Fragment,
       null,
@@ -11817,8 +11901,17 @@ if (uni.restoreGlobal) {
             class: "nav-bar",
             title: "意见反馈",
             safeAreaInsetTop: true,
-            autoBack: true,
+            autoBack: false,
             fixed: false
+          }, {
+            left: vue.withCtx(() => [
+              vue.createVNode(_component_up_icon, {
+                name: "arrow-left",
+                onClick: $data.app.toBack
+              }, null, 8, ["onClick"])
+            ]),
+            _: 1
+            /* STABLE */
           }),
           vue.createElementVNode("view", { class: "errorBox" }, [
             vue.createElementVNode("view", { class: "describeBox" }, [
@@ -11945,10 +12038,11 @@ if (uni.restoreGlobal) {
     }
   };
   function _sfc_render$6(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0$5);
-    const _component_u_cell = resolveEasycom(vue.resolveDynamicComponent("u-cell"), __easycom_1);
-    const _component_u_cell_group = resolveEasycom(vue.resolveDynamicComponent("u-cell-group"), __easycom_2$1);
-    const _component_u_modal = resolveEasycom(vue.resolveDynamicComponent("u-modal"), __easycom_3);
+    const _component_up_icon = resolveEasycom(vue.resolveDynamicComponent("up-icon"), __easycom_0$7);
+    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_1$1);
+    const _component_u_cell = resolveEasycom(vue.resolveDynamicComponent("u-cell"), __easycom_2$1);
+    const _component_u_cell_group = resolveEasycom(vue.resolveDynamicComponent("u-cell-group"), __easycom_3);
+    const _component_u_modal = resolveEasycom(vue.resolveDynamicComponent("u-modal"), __easycom_4);
     return vue.openBlock(), vue.createElementBlock(
       vue.Fragment,
       null,
@@ -11959,8 +12053,17 @@ if (uni.restoreGlobal) {
             class: "nav-bar",
             title: "设置",
             safeAreaInsetTop: true,
-            autoBack: true,
+            autoBack: false,
             fixed: false
+          }, {
+            left: vue.withCtx(() => [
+              vue.createVNode(_component_up_icon, {
+                name: "arrow-left",
+                onClick: $data.app.toBack
+              }, null, 8, ["onClick"])
+            ]),
+            _: 1
+            /* STABLE */
           }),
           vue.createVNode(_component_u_cell_group, { "custom-class": "userinfo-group" }, {
             default: vue.withCtx(() => [
@@ -12010,11 +12113,7 @@ if (uni.restoreGlobal) {
                 "custom-class": "userinfo-cell",
                 "is-link": "",
                 onClick: $options.toFeedBack
-              }, null, 8, ["onClick"]),
-              vue.createVNode(_component_u_cell, {
-                title: "联系客服",
-                "is-link": ""
-              })
+              }, null, 8, ["onClick"])
             ]),
             _: 1
             /* STABLE */
@@ -12041,7 +12140,9 @@ if (uni.restoreGlobal) {
   const PagesSettingsSettings = /* @__PURE__ */ _export_sfc(_sfc_main$7, [["render", _sfc_render$6], ["__scopeId", "data-v-7fad0a1c"], ["__file", "C:/project/轻羽项目/qingyu-client/pages/settings/settings.vue"]]);
   const _sfc_main$6 = {
     data() {
-      return {};
+      return {
+        app: getApp()
+      };
     },
     /**
      * 生命周期函数--监听页面加载
@@ -12090,7 +12191,8 @@ if (uni.restoreGlobal) {
     }
   };
   function _sfc_render$5(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0$5);
+    const _component_up_icon = resolveEasycom(vue.resolveDynamicComponent("up-icon"), __easycom_0$7);
+    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_1$1);
     return vue.openBlock(), vue.createElementBlock(
       vue.Fragment,
       null,
@@ -12101,8 +12203,17 @@ if (uni.restoreGlobal) {
             class: "nav-bar",
             title: "关于我们",
             safeAreaInsetTop: true,
-            autoBack: true,
+            autoBack: false,
             fixed: false
+          }, {
+            left: vue.withCtx(() => [
+              vue.createVNode(_component_up_icon, {
+                name: "arrow-left",
+                onClick: $data.app.toBack
+              }, null, 8, ["onClick"])
+            ]),
+            _: 1
+            /* STABLE */
           }),
           vue.createElementVNode("view", { class: "content" }, " 我觉得总体来说平台还是一个非常不错的平台，但是可能在用户反馈这一块还有一些欠缺。我觉得总体来说平台还是一个非常不错的平台，但是可能在用户反馈这一块还有一些欠缺。我觉得总体来说平台还是一个非常不错的平台，但是可能在用户反馈这一块还有一些欠缺。我觉得总体来说平台还是一个非常不错的平台，但是可能在用户反馈这一块还有一些欠缺。 ")
         ])
@@ -12202,16 +12313,16 @@ if (uni.restoreGlobal) {
         var screenHeight = uni.getSystemInfoSync().windowHeight;
         this.scrollViewHeight = screenHeight - 88;
       },
-      initData() {
-        this.app.globalData.enumInfo;
+      async initData() {
+        let userInfo = await this.app.getUserInfo();
         request({
           url: "wx/get/my/reserve/list",
           method: "POST",
           data: {
-            user_ouid: this.app.globalData.userInfo.ouid
+            user_ouid: userInfo.ouid
           }
-        }).then((res) => {
-          let enumInfo = this.app.globalData.enumInfo;
+        }).then(async (res) => {
+          let enumInfo = await this.app.getEnum();
           let reservationList = res.data.reverse();
           reservationList.forEach((con) => {
             let siteNum = 0;
@@ -12242,9 +12353,10 @@ if (uni.restoreGlobal) {
     }
   };
   function _sfc_render$4(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0$5);
-    const _component_u_tabs = resolveEasycom(vue.resolveDynamicComponent("u-tabs"), __easycom_1$2);
-    const _component_u_empty = resolveEasycom(vue.resolveDynamicComponent("u-empty"), __easycom_2$3);
+    const _component_up_icon = resolveEasycom(vue.resolveDynamicComponent("up-icon"), __easycom_0$7);
+    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_1$1);
+    const _component_u_tabs = resolveEasycom(vue.resolveDynamicComponent("u-tabs"), __easycom_2$3);
+    const _component_u_empty = resolveEasycom(vue.resolveDynamicComponent("u-empty"), __easycom_3$2);
     return vue.openBlock(), vue.createElementBlock(
       vue.Fragment,
       null,
@@ -12255,8 +12367,17 @@ if (uni.restoreGlobal) {
             class: "nav-bar",
             title: "我的预约",
             safeAreaInsetTop: true,
-            autoBack: true,
+            autoBack: false,
             fixed: false
+          }, {
+            left: vue.withCtx(() => [
+              vue.createVNode(_component_up_icon, {
+                name: "arrow-left",
+                onClick: $data.app.toBack
+              }, null, 8, ["onClick"])
+            ]),
+            _: 1
+            /* STABLE */
           }),
           vue.createVNode(_component_u_tabs, {
             class: "tabs",
@@ -12743,8 +12864,9 @@ if (uni.restoreGlobal) {
     }
   };
   function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0$5);
-    const _component_u_modal = resolveEasycom(vue.resolveDynamicComponent("u-modal"), __easycom_3);
+    const _component_up_icon = resolveEasycom(vue.resolveDynamicComponent("up-icon"), __easycom_0$7);
+    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_1$1);
+    const _component_u_modal = resolveEasycom(vue.resolveDynamicComponent("u-modal"), __easycom_4);
     return vue.openBlock(), vue.createElementBlock(
       vue.Fragment,
       null,
@@ -12755,8 +12877,17 @@ if (uni.restoreGlobal) {
             class: "nav-bar",
             title: "预约信息",
             safeAreaInsetTop: true,
-            autoBack: true,
+            autoBack: false,
             fixed: false
+          }, {
+            left: vue.withCtx(() => [
+              vue.createVNode(_component_up_icon, {
+                name: "arrow-left",
+                onClick: $data.app.toBack
+              }, null, 8, ["onClick"])
+            ]),
+            _: 1
+            /* STABLE */
           }),
           vue.createElementVNode(
             "scroll-view",
@@ -13201,10 +13332,11 @@ if (uni.restoreGlobal) {
     }
   };
   function _sfc_render$1(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0$5);
-    const _component_u_cell = resolveEasycom(vue.resolveDynamicComponent("u-cell"), __easycom_1);
-    const _component_u_cell_group = resolveEasycom(vue.resolveDynamicComponent("u-cell-group"), __easycom_2$1);
-    const _component_u_modal = resolveEasycom(vue.resolveDynamicComponent("u-modal"), __easycom_3);
+    const _component_up_icon = resolveEasycom(vue.resolveDynamicComponent("up-icon"), __easycom_0$7);
+    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_1$1);
+    const _component_u_cell = resolveEasycom(vue.resolveDynamicComponent("u-cell"), __easycom_2$1);
+    const _component_u_cell_group = resolveEasycom(vue.resolveDynamicComponent("u-cell-group"), __easycom_3);
+    const _component_u_modal = resolveEasycom(vue.resolveDynamicComponent("u-modal"), __easycom_4);
     return vue.openBlock(), vue.createElementBlock(
       vue.Fragment,
       null,
@@ -13215,8 +13347,17 @@ if (uni.restoreGlobal) {
             class: "nav-bar",
             title: "账号与安全",
             safeAreaInsetTop: true,
-            autoBack: true,
+            autoBack: false,
             fixed: false
+          }, {
+            left: vue.withCtx(() => [
+              vue.createVNode(_component_up_icon, {
+                name: "arrow-left",
+                onClick: $data.app.toBack
+              }, null, 8, ["onClick"])
+            ]),
+            _: 1
+            /* STABLE */
           }),
           vue.createVNode(_component_u_cell_group, { "custom-class": "userinfo-group" }, {
             default: vue.withCtx(() => [
@@ -13254,19 +13395,31 @@ if (uni.restoreGlobal) {
   const PagesAccountSecurityAccountSecurity = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["render", _sfc_render$1], ["__scopeId", "data-v-ee0a2e80"], ["__file", "C:/project/轻羽项目/qingyu-client/pages/accountSecurity/accountSecurity.vue"]]);
   const _sfc_main$1 = {
     data() {
-      return {};
+      return {
+        app: getApp()
+      };
     },
     methods: {}
   };
   function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0$5);
+    const _component_up_icon = resolveEasycom(vue.resolveDynamicComponent("up-icon"), __easycom_0$7);
+    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_1$1);
     return vue.openBlock(), vue.createElementBlock("view", { class: "page" }, [
       vue.createVNode(_component_u_navbar, {
         class: "nav-bar",
         safeAreaInsetTop: true,
         fixed: false,
         title: "用户协议",
-        autoBack: true
+        autoBack: false
+      }, {
+        left: vue.withCtx(() => [
+          vue.createVNode(_component_up_icon, {
+            name: "arrow-left",
+            onClick: $data.app.toBack
+          }, null, 8, ["onClick"])
+        ]),
+        _: 1
+        /* STABLE */
       }),
       vue.createElementVNode("view", { class: "content" }, [
         vue.createElementVNode("view", null, " 欢迎您使用服务（以下简称：本服务）请您仔细阅读下方条款，若您对本协议的任何条款有异议，您可以第一时间选择不进入。 "),
@@ -13486,6 +13639,7 @@ if (uni.restoreGlobal) {
         uni.removeStorageSync("userInfo");
         uni.removeStorageSync("gymnasiumInfo");
         uni.removeStorageSync("tabbarIndex");
+        uni.removeStorageSync("album");
         uni.reLaunch({
           url: "/pages/login/login"
         });
@@ -13516,17 +13670,26 @@ if (uni.restoreGlobal) {
             }
           });
         });
+      },
+      // 返回
+      toBack() {
+        let canNavBack = getCurrentPages();
+        if (canNavBack && canNavBack.length > 1) {
+          uni.navigateBack();
+        } else {
+          history.back();
+        }
       }
     },
     onLaunch: function() {
       this.getEnum();
-      formatAppLog("log", "at App.vue:241", "App Launch");
+      formatAppLog("log", "at App.vue:254", "App Launch");
     },
     onShow: function() {
-      formatAppLog("log", "at App.vue:244", "App Show");
+      formatAppLog("log", "at App.vue:257", "App Show");
     },
     onHide: function() {
-      formatAppLog("log", "at App.vue:247", "App Hide");
+      formatAppLog("log", "at App.vue:260", "App Hide");
     }
   };
   const App = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "C:/project/轻羽项目/qingyu-client/App.vue"]]);

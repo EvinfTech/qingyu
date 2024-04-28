@@ -143,6 +143,7 @@ const _sfc_main = {
   }
 };
 if (!Array) {
+  const _easycom_up_icon2 = common_vendor.resolveComponent("up-icon");
   const _easycom_u_navbar2 = common_vendor.resolveComponent("u-navbar");
   const _easycom_u_icon2 = common_vendor.resolveComponent("u-icon");
   const _easycom_u_upload2 = common_vendor.resolveComponent("u-upload");
@@ -152,8 +153,9 @@ if (!Array) {
   const _easycom_u_cell_group2 = common_vendor.resolveComponent("u-cell-group");
   const _easycom_u_datetime_picker2 = common_vendor.resolveComponent("u-datetime-picker");
   const _easycom_u_textarea2 = common_vendor.resolveComponent("u-textarea");
-  (_easycom_u_navbar2 + _easycom_u_icon2 + _easycom_u_upload2 + _easycom_u_cell2 + _easycom_u_radio2 + _easycom_u_radio_group2 + _easycom_u_cell_group2 + _easycom_u_datetime_picker2 + _easycom_u_textarea2)();
+  (_easycom_up_icon2 + _easycom_u_navbar2 + _easycom_u_icon2 + _easycom_u_upload2 + _easycom_u_cell2 + _easycom_u_radio2 + _easycom_u_radio_group2 + _easycom_u_cell_group2 + _easycom_u_datetime_picker2 + _easycom_u_textarea2)();
 }
+const _easycom_up_icon = () => "../../node-modules/uview-plus/components/u-icon/u-icon.js";
 const _easycom_u_navbar = () => "../../node-modules/uview-plus/components/u-navbar/u-navbar.js";
 const _easycom_u_icon = () => "../../node-modules/uview-plus/components/u-icon/u-icon.js";
 const _easycom_u_upload = () => "../../node-modules/uview-plus/components/u-upload/u-upload.js";
@@ -164,79 +166,83 @@ const _easycom_u_cell_group = () => "../../node-modules/uview-plus/components/u-
 const _easycom_u_datetime_picker = () => "../../node-modules/uview-plus/components/u-datetime-picker/u-datetime-picker.js";
 const _easycom_u_textarea = () => "../../node-modules/uview-plus/components/u-textarea/u-textarea.js";
 if (!Math) {
-  (_easycom_u_navbar + _easycom_u_icon + _easycom_u_upload + _easycom_u_cell + _easycom_u_radio + _easycom_u_radio_group + _easycom_u_cell_group + _easycom_u_datetime_picker + _easycom_u_textarea)();
+  (_easycom_up_icon + _easycom_u_navbar + _easycom_u_icon + _easycom_u_upload + _easycom_u_cell + _easycom_u_radio + _easycom_u_radio_group + _easycom_u_cell_group + _easycom_u_datetime_picker + _easycom_u_textarea)();
 }
 function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
   return common_vendor.e({
-    a: common_vendor.p({
+    a: common_vendor.o($data.app.toBack),
+    b: common_vendor.p({
+      name: "arrow-left"
+    }),
+    c: common_vendor.p({
       safeAreaInsetTop: true,
       fixed: false,
       title: "个人信息",
-      autoBack: true
+      autoBack: false
     }),
-    b: !$data.avatarUrl
+    d: !$data.avatarUrl
   }, !$data.avatarUrl ? {
-    c: common_vendor.p({
+    e: common_vendor.p({
       name: "plus"
     })
   } : {
-    d: $data.avatarUrl
+    f: $data.avatarUrl
   }, {
-    e: common_vendor.o($options.afterRead),
-    f: common_vendor.o($options.deleteImg),
-    g: common_vendor.p({
+    g: common_vendor.o($options.afterRead),
+    h: common_vendor.o($options.deleteImg),
+    i: common_vendor.p({
       fileList: $data.fileList,
       maxCount: 1
     }),
-    h: common_vendor.p({
+    j: common_vendor.p({
       title: "头像",
       ["is-link"]: true
     }),
-    i: $data.nickname,
-    j: common_vendor.o(($event) => $data.nickname = $event.detail.value),
-    k: common_vendor.p({
+    k: $data.nickname,
+    l: common_vendor.o(($event) => $data.nickname = $event.detail.value),
+    m: common_vendor.p({
       title: "昵称"
     }),
-    l: common_vendor.p({
+    n: common_vendor.p({
       name: "1",
       label: "男"
     }),
-    m: common_vendor.p({
+    o: common_vendor.p({
       name: "2",
       label: "女"
     }),
-    n: common_vendor.o(($event) => $data.sex = $event),
-    o: common_vendor.p({
+    p: common_vendor.o(($event) => $data.sex = $event),
+    q: common_vendor.p({
       modelValue: $data.sex
     }),
-    p: common_vendor.p({
+    r: common_vendor.p({
       title: "性别"
     }),
-    q: common_vendor.t(!$data.dealCurrentDate ? "请选择" : $data.dealCurrentDate),
-    r: common_vendor.o($options.chooseAge),
-    s: common_vendor.p({
+    s: common_vendor.t(!$data.dealCurrentDate ? "请选择" : $data.dealCurrentDate),
+    t: common_vendor.o($options.chooseAge),
+    v: common_vendor.p({
       title: "生日",
       ["is-link"]: true
     }),
-    t: common_vendor.p({
+    w: common_vendor.p({
       ["custom-class"]: "userinfo-group"
     }),
-    v: common_vendor.o($options.onConfirm),
-    w: common_vendor.o($options.onCancel),
-    x: common_vendor.o(($event) => $data.currentDate = $event),
-    y: common_vendor.p({
+    x: common_vendor.o($options.onConfirm),
+    y: common_vendor.o($options.onCancel),
+    z: common_vendor.o(($event) => $data.currentDate = $event),
+    A: common_vendor.p({
       show: $data.show,
       mode: "date",
       ["min-date"]: $data.minDate,
       ["max-date"]: $data.maxDate,
       modelValue: $data.currentDate
     }),
-    z: common_vendor.o(($event) => $data.personalProfile = $event),
-    A: common_vendor.p({
+    B: common_vendor.o(($event) => $data.personalProfile = $event),
+    C: common_vendor.p({
       placeholder: "请输入...",
       modelValue: $data.personalProfile
     }),
-    B: common_vendor.o((...args) => $options.save && $options.save(...args))
+    D: common_vendor.o((...args) => $options.save && $options.save(...args))
   });
 }
 const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-516de732"], ["__file", "C:/project/轻羽项目/qingyu-client/pages/infoEdit/infoEdit.vue"]]);

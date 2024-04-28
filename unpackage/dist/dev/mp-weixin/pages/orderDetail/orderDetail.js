@@ -203,37 +203,43 @@ const _sfc_main = {
   }
 };
 if (!Array) {
+  const _easycom_up_icon2 = common_vendor.resolveComponent("up-icon");
   const _easycom_u_navbar2 = common_vendor.resolveComponent("u-navbar");
   const _component_van_dialog = common_vendor.resolveComponent("van-dialog");
-  (_easycom_u_navbar2 + _component_van_dialog)();
+  (_easycom_up_icon2 + _easycom_u_navbar2 + _component_van_dialog)();
 }
+const _easycom_up_icon = () => "../../node-modules/uview-plus/components/u-icon/u-icon.js";
 const _easycom_u_navbar = () => "../../node-modules/uview-plus/components/u-navbar/u-navbar.js";
 if (!Math) {
-  _easycom_u_navbar();
+  (_easycom_up_icon + _easycom_u_navbar)();
 }
 function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
   return common_vendor.e({
-    a: common_vendor.p({
+    a: common_vendor.o($data.app.toBack),
+    b: common_vendor.p({
+      name: "arrow-left"
+    }),
+    c: common_vendor.p({
       title: $data.detailType == "add" ? "确认订单" : "订单详情",
       safeAreaInsetTop: true,
-      autoBack: true,
+      autoBack: false,
       fixed: false
     }),
-    b: $data.detailType == "detail" && $data.payState == "wait"
+    d: $data.detailType == "detail" && $data.payState == "wait"
   }, $data.detailType == "detail" && $data.payState == "wait" ? {} : {}, {
-    c: $data.payState == "payed" || $data.payState == "justPayed"
+    e: $data.payState == "payed" || $data.payState == "justPayed"
   }, $data.payState == "payed" || $data.payState == "justPayed" ? common_vendor.e({
-    d: $data.payState == "justPayed"
+    f: $data.payState == "justPayed"
   }, $data.payState == "justPayed" ? {} : {}, {
-    e: common_vendor.t($data.code),
-    f: common_vendor.s("height: " + ($data.payState == "payed" ? "400rpx" : "484rpx") + ";")
+    g: common_vendor.t($data.code),
+    h: common_vendor.s("height: " + ($data.payState == "payed" ? "400rpx" : "484rpx") + ";")
   }) : {}, {
-    g: common_vendor.t($data.gymnasiumInfo.name),
-    h: common_vendor.t($data.gymnasiumInfo.phone),
-    i: common_vendor.o((...args) => $options.toCall && $options.toCall(...args)),
-    j: common_vendor.t($data.gymnasiumInfo.location),
-    k: common_vendor.o((...args) => $options.toMap && $options.toMap(...args)),
-    l: common_vendor.f($data.sessionList, (item, index, i0) => {
+    i: common_vendor.t($data.gymnasiumInfo.name),
+    j: common_vendor.t($data.gymnasiumInfo.phone),
+    k: common_vendor.o((...args) => $options.toCall && $options.toCall(...args)),
+    l: common_vendor.t($data.gymnasiumInfo.location),
+    m: common_vendor.o((...args) => $options.toMap && $options.toMap(...args)),
+    n: common_vendor.f($data.sessionList, (item, index, i0) => {
       return {
         a: common_vendor.t(item.siteName),
         b: common_vendor.t(item.hour),
@@ -248,30 +254,30 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
         e: index
       };
     }),
-    m: common_vendor.t($data.sessionList.length),
-    n: common_vendor.t($data.totalPrice / 100),
-    o: common_vendor.t($data.order_no),
-    p: common_vendor.o((...args) => $options.tocopy && $options.tocopy(...args)),
-    q: common_vendor.t($data.orderTime),
-    r: $data.payState == "payed"
+    o: common_vendor.t($data.sessionList.length),
+    p: common_vendor.t($data.totalPrice / 100),
+    q: common_vendor.t($data.order_no),
+    r: common_vendor.o((...args) => $options.tocopy && $options.tocopy(...args)),
+    s: common_vendor.t($data.orderTime),
+    t: $data.payState == "payed"
   }, $data.payState == "payed" ? {
-    s: common_vendor.t($data.orderTime)
+    v: common_vendor.t($data.orderTime)
   } : {}, {
-    t: $data.payState != "payed" && $data.payState != "justPayed"
+    w: $data.payState != "payed" && $data.payState != "justPayed"
   }, $data.payState != "payed" && $data.payState != "justPayed" ? {} : {}, {
-    v: $data.payState != "payed" && $data.payState != "justPayed"
+    x: $data.payState != "payed" && $data.payState != "justPayed"
   }, $data.payState != "payed" && $data.payState != "justPayed" ? common_vendor.e({
-    w: common_vendor.t($data.totalPrice / 100),
-    x: $data.payState == "N"
-  }, $data.payState == "N" ? {
-    y: common_vendor.o((...args) => $options.cancelOrder && $options.cancelOrder(...args))
-  } : {}, {
+    y: common_vendor.t($data.totalPrice / 100),
     z: $data.payState == "N"
+  }, $data.payState == "N" ? {
+    A: common_vendor.o((...args) => $options.cancelOrder && $options.cancelOrder(...args))
+  } : {}, {
+    B: $data.payState == "N"
   }, $data.payState == "N" ? {} : $data.payState == "C" ? {} : {}, {
-    A: $data.payState == "C"
+    C: $data.payState == "C"
   }) : {}, {
-    B: common_vendor.s("height: " + ($data.scrollViewHeight + "px") + ";"),
-    C: common_vendor.p({
+    D: common_vendor.s("height: " + ($data.scrollViewHeight + "px") + ";"),
+    E: common_vendor.p({
       id: "van-dialog"
     })
   });

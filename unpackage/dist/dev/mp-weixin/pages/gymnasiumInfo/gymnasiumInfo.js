@@ -167,24 +167,30 @@ const _sfc_main = {
   }
 };
 if (!Array) {
+  const _easycom_up_icon2 = common_vendor.resolveComponent("up-icon");
   const _easycom_u_navbar2 = common_vendor.resolveComponent("u-navbar");
   const _component_van_icon = common_vendor.resolveComponent("van-icon");
-  (_easycom_u_navbar2 + _component_van_icon)();
+  (_easycom_up_icon2 + _easycom_u_navbar2 + _component_van_icon)();
 }
+const _easycom_up_icon = () => "../../node-modules/uview-plus/components/u-icon/u-icon.js";
 const _easycom_u_navbar = () => "../../node-modules/uview-plus/components/u-navbar/u-navbar.js";
 if (!Math) {
-  _easycom_u_navbar();
+  (_easycom_up_icon + _easycom_u_navbar)();
 }
 function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
   return {
-    a: common_vendor.p({
+    a: common_vendor.o($data.app.toBack),
+    b: common_vendor.p({
+      name: "arrow-left"
+    }),
+    c: common_vendor.p({
       safeAreaInsetTop: true,
       fixed: false,
       title: "球馆信息",
-      autoBack: true
+      autoBack: false
     }),
-    b: common_vendor.t($data.gymnasiumInfo.gymnasiumName),
-    c: common_vendor.f($data.gymnasiumInfo.gymnasiumImgList, (item, index, i0) => {
+    d: common_vendor.t($data.gymnasiumInfo.gymnasiumName),
+    e: common_vendor.f($data.gymnasiumInfo.gymnasiumImgList, (item, index, i0) => {
       return {
         a: item,
         b: index,
@@ -192,16 +198,16 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
         d: index
       };
     }),
-    d: common_vendor.p({
+    f: common_vendor.p({
       name: "arrow"
     }),
-    e: common_vendor.o((...args) => $options.toAlbum && $options.toAlbum(...args)),
-    f: common_vendor.t($data.gymnasiumInfo.phone),
-    g: common_vendor.o((...args) => $options.toCall && $options.toCall(...args)),
-    h: common_vendor.t($data.gymnasiumInfo.businessHours),
-    i: common_vendor.t($data.gymnasiumInfo.location),
-    j: common_vendor.o((...args) => $options.toMap && $options.toMap(...args)),
-    k: common_vendor.f($data.gymnasiumInfo.hardwareFacilities, (item, index, i0) => {
+    g: common_vendor.o((...args) => $options.toAlbum && $options.toAlbum(...args)),
+    h: common_vendor.t($data.gymnasiumInfo.phone),
+    i: common_vendor.o((...args) => $options.toCall && $options.toCall(...args)),
+    j: common_vendor.t($data.gymnasiumInfo.businessHours),
+    k: common_vendor.t($data.gymnasiumInfo.location),
+    l: common_vendor.o((...args) => $options.toMap && $options.toMap(...args)),
+    m: common_vendor.f($data.gymnasiumInfo.hardwareFacilities, (item, index, i0) => {
       return common_vendor.e({
         a: item.icon
       }, item.icon ? {
@@ -211,7 +217,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
         d: index
       });
     }),
-    l: common_vendor.f($data.gymnasiumInfo.venueReservationList, (item, index, i0) => {
+    n: common_vendor.f($data.gymnasiumInfo.venueReservationList, (item, index, i0) => {
       return {
         a: common_vendor.t(item.day),
         b: common_vendor.t(item.date),

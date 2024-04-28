@@ -376,23 +376,29 @@ const _sfc_main = {
   }
 };
 if (!Array) {
+  const _easycom_up_icon2 = common_vendor.resolveComponent("up-icon");
   const _easycom_u_navbar2 = common_vendor.resolveComponent("u-navbar");
-  _easycom_u_navbar2();
+  (_easycom_up_icon2 + _easycom_u_navbar2)();
 }
+const _easycom_up_icon = () => "../../node-modules/uview-plus/components/u-icon/u-icon.js";
 const _easycom_u_navbar = () => "../../node-modules/uview-plus/components/u-navbar/u-navbar.js";
 if (!Math) {
-  _easycom_u_navbar();
+  (_easycom_up_icon + _easycom_u_navbar)();
 }
 function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
   return common_vendor.e({
-    a: common_vendor.p({
+    a: common_vendor.o($data.app.toBack),
+    b: common_vendor.p({
+      name: "arrow-left"
+    }),
+    c: common_vendor.p({
       safeAreaInsetTop: true,
       fixed: false,
       title: "预约",
-      autoBack: true
+      autoBack: false
     }),
-    b: common_vendor.s("transform: translateX(" + ($data.translateDistance + "px") + ");"),
-    c: common_vendor.f($data.dateList, (item, index, i0) => {
+    d: common_vendor.s("transform: translateX(" + ($data.translateDistance + "px") + ");"),
+    e: common_vendor.f($data.dateList, (item, index, i0) => {
       return {
         a: common_vendor.t(item.day),
         b: common_vendor.t(item.date),
@@ -402,14 +408,14 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
         f: index
       };
     }),
-    d: $data.scrollLeft,
-    e: common_vendor.f($data.timeList, (item, index, i0) => {
+    f: $data.scrollLeft,
+    g: common_vendor.f($data.timeList, (item, index, i0) => {
       return {
         a: common_vendor.t(item.value),
         b: index
       };
     }),
-    f: common_vendor.f($data.siteList, (item, index, i0) => {
+    h: common_vendor.f($data.siteList, (item, index, i0) => {
       return {
         a: common_vendor.t(item.siteName),
         b: common_vendor.f(item.timeList, (con, j, i1) => {
@@ -426,14 +432,14 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
         d: index
       };
     }),
-    g: common_vendor.s("height: " + ($data.centerHeight + "px") + ";"),
-    h: $data.totalPrice > 0
+    i: common_vendor.s("height: " + ($data.centerHeight + "px") + ";"),
+    j: $data.totalPrice > 0
   }, $data.totalPrice > 0 ? {
-    i: common_vendor.o((...args) => $options.clearChoosedList && $options.clearChoosedList(...args))
+    k: common_vendor.o((...args) => $options.clearChoosedList && $options.clearChoosedList(...args))
   } : {}, {
-    j: $data.choosedList.length == 0
+    l: $data.choosedList.length == 0
   }, $data.choosedList.length == 0 ? {} : {
-    k: common_vendor.f($data.choosedList, (item, index, i0) => {
+    m: common_vendor.f($data.choosedList, (item, index, i0) => {
       return {
         a: common_vendor.t(item.startTime),
         b: common_vendor.t(item.endTime),
@@ -442,8 +448,8 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
       };
     })
   }, {
-    l: common_vendor.t($data.totalPrice),
-    m: common_vendor.o((...args) => $options.submitOrder && $options.submitOrder(...args))
+    n: common_vendor.t($data.totalPrice),
+    o: common_vendor.o((...args) => $options.submitOrder && $options.submitOrder(...args))
   });
 }
 const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-71ac0ae8"], ["__file", "C:/project/轻羽项目/qingyu-client/pages/reservationDetail/reservationDetail.vue"]]);

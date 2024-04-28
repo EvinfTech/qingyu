@@ -2,7 +2,10 @@
     <!-- pages/album/album.wxml -->
     <view class="page">
 		<u-navbar class="nav-bar" title="相册" :safeAreaInsetTop="true"
-			:autoBack="true" :fixed="false">
+			:autoBack="false" :fixed="false">
+			<template #left>
+				<up-icon name="arrow-left" @click="app.toBack"></up-icon>
+			</template>
 		</u-navbar>
         <!-- <van-nav-bar>
             <view slot="left" @tap="onClickLeft">
@@ -23,6 +26,7 @@
 export default({
     data() {
         return {
+			app:getApp(),
             currentIndex: 0,
             imgList: []
         };
@@ -33,7 +37,6 @@ export default({
     onLoad() {
         let imgList = uni.getStorageSync('album');
         imgList = JSON.parse(imgList);
-        uni.removeStorageSync('album');
         this.imgList = imgList;
     },
     /**

@@ -117,12 +117,13 @@ const _sfc_main = {
       this.show = true;
       this.order_no = e.currentTarget.dataset.item.order_no;
     },
-    initData() {
+    async initData() {
+      let userInfo = await this.app.getUserInfo();
       utils_request.request({
         url: "wx/get/order/list",
         method: "POST",
         data: {
-          user_ouid: this.app.globalData.userInfo.ouid
+          user_ouid: userInfo.ouid
         }
       }).then((res) => {
         let orderList = res.data.reverse();
@@ -145,51 +146,57 @@ const _sfc_main = {
   }
 };
 if (!Array) {
+  const _easycom_up_icon2 = common_vendor.resolveComponent("up-icon");
   const _easycom_u_navbar2 = common_vendor.resolveComponent("u-navbar");
   const _easycom_u_modal2 = common_vendor.resolveComponent("u-modal");
   const _easycom_u_tabs2 = common_vendor.resolveComponent("u-tabs");
   const _easycom_u_empty2 = common_vendor.resolveComponent("u-empty");
   const _component_van_dialog = common_vendor.resolveComponent("van-dialog");
-  (_easycom_u_navbar2 + _easycom_u_modal2 + _easycom_u_tabs2 + _easycom_u_empty2 + _component_van_dialog)();
+  (_easycom_up_icon2 + _easycom_u_navbar2 + _easycom_u_modal2 + _easycom_u_tabs2 + _easycom_u_empty2 + _component_van_dialog)();
 }
+const _easycom_up_icon = () => "../../node-modules/uview-plus/components/u-icon/u-icon.js";
 const _easycom_u_navbar = () => "../../node-modules/uview-plus/components/u-navbar/u-navbar.js";
 const _easycom_u_modal = () => "../../node-modules/uview-plus/components/u-modal/u-modal.js";
 const _easycom_u_tabs = () => "../../node-modules/uview-plus/components/u-tabs/u-tabs.js";
 const _easycom_u_empty = () => "../../node-modules/uview-plus/components/u-empty/u-empty.js";
 if (!Math) {
-  (_easycom_u_navbar + _easycom_u_modal + _easycom_u_tabs + _easycom_u_empty)();
+  (_easycom_up_icon + _easycom_u_navbar + _easycom_u_modal + _easycom_u_tabs + _easycom_u_empty)();
 }
 function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
   return common_vendor.e({
-    a: common_vendor.p({
+    a: common_vendor.o($data.app.toBack),
+    b: common_vendor.p({
+      name: "arrow-left"
+    }),
+    c: common_vendor.p({
       title: "我的订单",
       safeAreaInsetTop: true,
-      autoBack: true,
+      autoBack: false,
       fixed: false
     }),
-    b: common_vendor.o($options.confirm),
-    c: common_vendor.o($options.cancel),
-    d: common_vendor.p({
+    d: common_vendor.o($options.confirm),
+    e: common_vendor.o($options.cancel),
+    f: common_vendor.p({
       show: $data.show,
       title: "提示",
       content: "确定要取消此订单？",
       showCancelButton: true
     }),
-    e: common_vendor.o($options.onChange),
-    f: common_vendor.p({
+    g: common_vendor.o($options.onChange),
+    h: common_vendor.p({
       list: $data.titleList,
       lineColor: "#0077FF",
       lineWidth: "40"
     }),
-    g: $data.active == 0
+    i: $data.active == 0
   }, $data.active == 0 ? common_vendor.e({
-    h: $data.orderList.length == 0
+    j: $data.orderList.length == 0
   }, $data.orderList.length == 0 ? {
-    i: common_vendor.p({
+    k: common_vendor.p({
       text: "暂无订单"
     })
   } : {
-    j: common_vendor.f($data.orderList, (item, index1, i0) => {
+    l: common_vendor.f($data.orderList, (item, index1, i0) => {
       return common_vendor.e({
         a: common_vendor.t(item.order_no),
         b: item.status == "N"
@@ -227,16 +234,16 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
       });
     })
   }, {
-    k: common_vendor.n($data.orderList.length == 0 ? "emptyFlex" : ""),
-    l: common_vendor.s("height: " + ($data.scrollViewHeight + "px") + ";")
+    m: common_vendor.n($data.orderList.length == 0 ? "emptyFlex" : ""),
+    n: common_vendor.s("height: " + ($data.scrollViewHeight + "px") + ";")
   }) : $data.active == 1 ? common_vendor.e({
-    n: $data.waitPayedList.length == 0
+    p: $data.waitPayedList.length == 0
   }, $data.waitPayedList.length == 0 ? {
-    o: common_vendor.p({
+    q: common_vendor.p({
       text: "暂无待支付订单"
     })
   } : {
-    p: common_vendor.f($data.waitPayedList, (item, index1, i0) => {
+    r: common_vendor.f($data.waitPayedList, (item, index1, i0) => {
       return common_vendor.e({
         a: common_vendor.t(item.order_no),
         b: item.status == "N"
@@ -268,16 +275,16 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
       });
     })
   }, {
-    q: common_vendor.s("height: " + ($data.scrollViewHeight + "px") + ";"),
-    r: common_vendor.n($data.waitPayedList.length == 0 ? "emptyFlex" : "")
+    s: common_vendor.s("height: " + ($data.scrollViewHeight + "px") + ";"),
+    t: common_vendor.n($data.waitPayedList.length == 0 ? "emptyFlex" : "")
   }) : common_vendor.e({
-    s: $data.waitUsedList.length == 0
+    v: $data.waitUsedList.length == 0
   }, $data.waitUsedList.length == 0 ? {
-    t: common_vendor.p({
+    w: common_vendor.p({
       text: "暂无待使用订单"
     })
   } : {
-    v: common_vendor.f($data.waitUsedList, (item, index1, i0) => {
+    x: common_vendor.f($data.waitUsedList, (item, index1, i0) => {
       return common_vendor.e({
         a: common_vendor.t(item.order_no),
         b: item.status == "N"
@@ -311,11 +318,11 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
       });
     })
   }, {
-    w: common_vendor.s("height: " + ($data.scrollViewHeight + "px") + ";"),
-    x: common_vendor.n($data.waitUsedList.length == 0 ? "emptyFlex" : "")
+    y: common_vendor.s("height: " + ($data.scrollViewHeight + "px") + ";"),
+    z: common_vendor.n($data.waitUsedList.length == 0 ? "emptyFlex" : "")
   }), {
-    m: $data.active == 1,
-    y: common_vendor.p({
+    o: $data.active == 1,
+    A: common_vendor.p({
       id: "van-dialog"
     })
   });

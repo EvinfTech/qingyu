@@ -1,5 +1,6 @@
 {
   "usingComponents": {
+    "up-icon": "../../node-modules/uview-plus/components/u-icon/u-icon",
     "u-navbar": "../../node-modules/uview-plus/components/u-navbar/u-navbar",
     "u-modal": "../../node-modules/uview-plus/components/u-modal/u-modal",
     "u-tabs": "../../node-modules/uview-plus/components/u-tabs/u-tabs",

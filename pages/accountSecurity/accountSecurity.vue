@@ -1,7 +1,11 @@
 <template>
     <!-- pages/accountSecurity/accountSecurity.wxml -->
     <view class="page">
-		<u-navbar class="nav-bar" title="账号与安全" :safeAreaInsetTop="true" :autoBack="true" :fixed="false"></u-navbar>
+		<u-navbar class="nav-bar" title="账号与安全" :safeAreaInsetTop="true" :autoBack="false" :fixed="false">
+			<template #left>
+				<up-icon name="arrow-left" @click="app.toBack"></up-icon>
+			</template>
+		</u-navbar>
         <u-cell-group custom-class="userinfo-group">
             <u-cell title="氢羽号" center :value="accountNo" custom-class="userinfo-cell"></u-cell>
             <u-cell title="手机号" :value="phone" center custom-class="userinfo-cell"></u-cell>

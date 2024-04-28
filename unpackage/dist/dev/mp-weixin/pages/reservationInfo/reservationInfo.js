@@ -172,30 +172,36 @@ const _sfc_main = {
   }
 };
 if (!Array) {
+  const _easycom_up_icon2 = common_vendor.resolveComponent("up-icon");
   const _easycom_u_navbar2 = common_vendor.resolveComponent("u-navbar");
   const _easycom_u_modal2 = common_vendor.resolveComponent("u-modal");
-  (_easycom_u_navbar2 + _easycom_u_modal2)();
+  (_easycom_up_icon2 + _easycom_u_navbar2 + _easycom_u_modal2)();
 }
+const _easycom_up_icon = () => "../../node-modules/uview-plus/components/u-icon/u-icon.js";
 const _easycom_u_navbar = () => "../../node-modules/uview-plus/components/u-navbar/u-navbar.js";
 const _easycom_u_modal = () => "../../node-modules/uview-plus/components/u-modal/u-modal.js";
 if (!Math) {
-  (_easycom_u_navbar + _easycom_u_modal)();
+  (_easycom_up_icon + _easycom_u_navbar + _easycom_u_modal)();
 }
 function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
   return common_vendor.e({
-    a: common_vendor.p({
+    a: common_vendor.o($data.app.toBack),
+    b: common_vendor.p({
+      name: "arrow-left"
+    }),
+    c: common_vendor.p({
       title: "预约信息",
       safeAreaInsetTop: true,
-      autoBack: true,
+      autoBack: false,
       fixed: false
     }),
-    b: common_vendor.t($data.code),
-    c: $data.gymnasiumInfo.img,
-    d: common_vendor.t($data.gymnasiumInfo.name),
-    e: common_vendor.t($data.gymnasiumInfo.address),
-    f: common_vendor.t($data.gymnasiumInfo.siteNum),
-    g: common_vendor.t($data.gymnasiumInfo.hour),
-    h: common_vendor.f($data.gymnasiumInfo.siteList, (item, index, i0) => {
+    d: common_vendor.t($data.code),
+    e: $data.gymnasiumInfo.img,
+    f: common_vendor.t($data.gymnasiumInfo.name),
+    g: common_vendor.t($data.gymnasiumInfo.address),
+    h: common_vendor.t($data.gymnasiumInfo.siteNum),
+    i: common_vendor.t($data.gymnasiumInfo.hour),
+    j: common_vendor.f($data.gymnasiumInfo.siteList, (item, index, i0) => {
       return {
         a: common_vendor.t(item.siteName),
         b: common_vendor.t(item.date),
@@ -204,17 +210,17 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
         e: index
       };
     }),
-    i: common_vendor.t($data.gymnasiumInfo.person),
-    j: common_vendor.t($data.gymnasiumInfo.phone),
-    k: common_vendor.t($data.gymnasiumInfo.createTime),
-    l: common_vendor.s("height: " + ($data.scrollViewHeight + "px") + ";"),
-    m: $data.gymnasiumInfo.status == "C"
+    k: common_vendor.t($data.gymnasiumInfo.person),
+    l: common_vendor.t($data.gymnasiumInfo.phone),
+    m: common_vendor.t($data.gymnasiumInfo.createTime),
+    n: common_vendor.s("height: " + ($data.scrollViewHeight + "px") + ";"),
+    o: $data.gymnasiumInfo.status == "C"
   }, $data.gymnasiumInfo.status == "C" ? {} : {
-    n: common_vendor.o((...args) => $options.toCancel && $options.toCancel(...args))
+    p: common_vendor.o((...args) => $options.toCancel && $options.toCancel(...args))
   }, {
-    o: common_vendor.o($options.confirm),
-    p: common_vendor.o($options.cancel),
-    q: common_vendor.p({
+    q: common_vendor.o($options.confirm),
+    r: common_vendor.o($options.cancel),
+    s: common_vendor.p({
       show: $data.show,
       title: "提示",
       content: "确定要取消预约吗？",

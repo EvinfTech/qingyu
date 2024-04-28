@@ -1,7 +1,10 @@
 <template>
 	<!-- pages/orderList/orderList.wxml -->
 	<view class="page">
-		<u-navbar class="nav-bar" title="我的订单" :safeAreaInsetTop="true" :autoBack="true" :fixed="false">
+		<u-navbar class="nav-bar" title="我的订单" :safeAreaInsetTop="true" :autoBack="false" :fixed="false">
+			<template #left>
+				<up-icon name="arrow-left" @click="app.toBack"></up-icon>
+			</template>
 		</u-navbar>
 		<u-modal :show="show" title="提示" content="确定要取消此订单？" :showCancelButton="true" @confirm="confirm"
 			@cancel="cancel"></u-modal>
@@ -45,7 +48,7 @@
 					</view>
 					<view class="w-full flex align-center" style="justify-content: flex-end" v-if="item.status == 'Y'">
 						<view class="borderBtn" @tap="toCancel" :data-item="item">取消订单</view>
-						<view class="useBtn"  @tap="toDetail" :data-item="item">去使用</view>
+						<view class="useBtn" @tap="toDetail" :data-item="item">去使用</view>
 					</view>
 
 					<view class="w-full flex align-center" style="justify-content: flex-end"
@@ -93,7 +96,7 @@
 
 					<view class="w-full flex align-center" style="justify-content: flex-end" v-if="item.status == 'Y'">
 						<view class="borderBtn" @tap="toCancel" :data-item="item">取消订单</view>
-						<view class="useBtn"  @tap="toDetail" :data-item="item">去使用</view>
+						<view class="useBtn" @tap="toDetail" :data-item="item">去使用</view>
 					</view>
 
 					<view class="w-full flex align-center" style="justify-content: flex-end"
@@ -284,16 +287,17 @@
 			},
 			toCancel(e) {
 				this.show = true;
-				this.order_no =  e.currentTarget.dataset.item.order_no
+				this.order_no = e.currentTarget.dataset.item.order_no
 
 			},
 
-			initData() {
+			async initData() {
+				let userInfo = await this.app.getUserInfo();
 				request({
 					url: 'wx/get/order/list',
 					method: 'POST',
 					data: {
-						user_ouid: this.app.globalData.userInfo.ouid
+						user_ouid: userInfo.ouid
 					}
 				}).then((res) => {
 					let orderList = res.data.reverse();

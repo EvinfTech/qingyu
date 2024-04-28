@@ -1,7 +1,10 @@
 <template>
 	<!-- pages/reservationDetail/reservationDetail.wxml -->
 	<view class="page">
-		<u-navbar class="nav-bar" :safeAreaInsetTop="true" :fixed="false" title="预约" :autoBack="true">
+		<u-navbar class="nav-bar" :safeAreaInsetTop="true" :fixed="false" title="预约" :autoBack="false">
+			<template #left>
+				<up-icon name="arrow-left" @click="app.toBack"></up-icon>
+			</template>
 		</u-navbar>
 		<view class="customerTab">
 			<scroll-view :scroll-x="true" class="h-full w-full" :scroll-left="scrollLeft">

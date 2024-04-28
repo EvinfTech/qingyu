@@ -198,7 +198,8 @@
 				};
 				uni.removeStorageSync('userInfo');
 				uni.removeStorageSync('gymnasiumInfo');
-				uni.removeStorageSync("tabbarIndex")
+				uni.removeStorageSync("tabbarIndex");
+				uni.removeStorageSync('album');
 				uni.reLaunch({
 					url: '/pages/login/login'
 				});
@@ -206,7 +207,7 @@
 
 			// 获取枚举信息
 			getEnum() {
-				return new Promise((resolve,reject)=>{
+				return new Promise((resolve, reject) => {
 					let enumInfo = uni.getStorageSync('enumInfo');
 					enumInfo = enumInfo ? JSON.parse(enumInfo) : '';
 					if (enumInfo) {
@@ -224,15 +225,27 @@
 						success: (res) => {
 							if (res.statusCode == 200) {
 								this.globalData.enumInfo = res.data.data.time_enum;
-								uni.setStorageSync('enumInfo', JSON.stringify(this.globalData.enumInfo));
+								uni.setStorageSync('enumInfo', JSON.stringify(this.globalData
+									.enumInfo));
 								resolve(res.data.data.time_enum)
 							}
 						}
 					});
-					
+
 				})
-				
-				
+
+
+			},
+			// 返回
+			toBack() {
+				let canNavBack = getCurrentPages()
+				if (canNavBack && canNavBack.length > 1) {
+					uni.navigateBack()
+				} else {
+					history.back();
+				}
+
+
 			}
 		},
 
