@@ -65,18 +65,22 @@ const _sfc_main = {
   }
 };
 if (!Array) {
-  const _component_van_icon = common_vendor.resolveComponent("van-icon");
-  const _component_van_nav_bar = common_vendor.resolveComponent("van-nav-bar");
-  (_component_van_icon + _component_van_nav_bar)();
+  const _easycom_u_navbar2 = common_vendor.resolveComponent("u-navbar");
+  _easycom_u_navbar2();
+}
+const _easycom_u_navbar = () => "../../node-modules/uview-plus/components/u-navbar/u-navbar.js";
+if (!Math) {
+  _easycom_u_navbar();
 }
 function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
   return {
     a: common_vendor.p({
-      name: "arrow-left",
-      size: "20px"
+      title: "相册",
+      safeAreaInsetTop: true,
+      autoBack: true,
+      fixed: false
     }),
-    b: common_vendor.o((...args) => $options.onClickLeft && $options.onClickLeft(...args)),
-    c: common_vendor.f($data.imgList, (item, index, i0) => {
+    b: common_vendor.f($data.imgList, (item, index, i0) => {
       return {
         a: item,
         b: common_vendor.o((...args) => $options.previwImg && $options.previwImg(...args), index),

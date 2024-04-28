@@ -200,7 +200,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
         f: common_vendor.t(item.shop_name),
         g: common_vendor.t(item.siteNum),
         h: common_vendor.t(item.hour),
-        i: common_vendor.t(item.money),
+        i: common_vendor.t(item.money / 100),
         j: item.status == "C"
       }, item.status == "C" ? {
         k: common_vendor.o((...args) => $options.toDetail && $options.toDetail(...args), index1),
@@ -246,7 +246,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
         e: common_vendor.t(item.shop_name),
         f: common_vendor.t(item.siteNum),
         g: common_vendor.t(item.hour),
-        h: common_vendor.t(item.money),
+        h: common_vendor.t(item.money / 100),
         i: item.status == "N"
       }, item.status == "N" ? {
         j: common_vendor.o((...args) => $options.toCancel && $options.toCancel(...args), index1),
@@ -290,7 +290,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
         g: common_vendor.t(item.shop_name),
         h: common_vendor.t(item.siteNum),
         i: common_vendor.t(item.hour),
-        j: common_vendor.t(item.money),
+        j: common_vendor.t(item.money / 100),
         k: item.status == "N"
       }, item.status == "N" ? {
         l: common_vendor.o((...args) => $options.toCancel && $options.toCancel(...args), index1),

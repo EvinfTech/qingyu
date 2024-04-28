@@ -41,7 +41,6 @@
 						<view v-else-if="item.status == 'N'" class="redText">待支付</view>
 						<view v-else-if="item.status == 'C'" class="grayText">已取消</view>
 					</view>
-
 					<view class="detailBox flex align-center" @tap="toDetail" :data-item="item">
 						查看预约
 						<image src="/static/images/mine/rightArrow.svg" style="width: 28rpx; height: 28rpx" mode="" />

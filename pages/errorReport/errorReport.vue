@@ -99,13 +99,14 @@
 				} = event;
 				file.forEach((item) => {
 					uni.uploadFile({
-						url: this.app.globalData.uploadUrl,
+						url: this.app.globalData.uploadImgUrl,
 						filePath: item.url,
 						name: 'file',
 						success: (res) => {
 							let fileList = this.fileList;
 							fileList.push({
-								url: JSON.parse(res.data).data
+								url: this.app.globalData.httpUrl  + JSON.parse(res.data)
+									.data
 							});
 							this.fileList = fileList
 						}

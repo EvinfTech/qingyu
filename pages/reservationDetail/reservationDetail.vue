@@ -42,7 +42,7 @@
 										v-for="(con, j) in item.timeList" :key="j">
 										<view
 											:class="' ' + (con.already ? 'disSelected' : con.checked ? 'selectable' : 'freeSelect') + ' selectItem'">
-											{{ con.price == '不可订' ? con.price : ' ￥' + con.price }}
+											{{ con.price == '不可订' ? con.price : ' ￥' + (con.price/100) }}
 										</view>
 									</view>
 								</view>
@@ -457,14 +457,14 @@
 					let choosedList = this.choosedList;
 					choosedList.push(objItem);
 					this.choosedList = choosedList
-					this.totalPrice = this.totalPrice + objItem.price
+					this.totalPrice = this.totalPrice+ objItem.price/100
 				} else {
 					// 取消选中
 					let index = this.choosedList.findIndex((con) => con.startTime == this.timeList[data.j]);
 					let dataList = this.choosedList;
 					dataList.splice(index, 1);
 					this.choosedList = dataList
-					this.totalPrice = this.totalPrice - data.item.price
+					this.totalPrice = this.totalPrice - data.item.price/100
 				}
 			},
 

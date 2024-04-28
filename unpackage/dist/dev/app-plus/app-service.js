@@ -5420,7 +5420,7 @@ if (uni.restoreGlobal) {
           let obj = res.data;
           list.forEach((item) => {
             item.residue = obj[`${item.date}`].count;
-            item.basicPrice = obj[`${item.date}`].money;
+            item.basicPrice = obj[`${item.date}`].money / 100;
           });
           this.gymnasiumInfo.venueReservationList = list;
         });
@@ -5811,33 +5811,21 @@ if (uni.restoreGlobal) {
     }
   };
   function _sfc_render$r(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_van_icon = vue.resolveComponent("van-icon");
-    const _component_van_nav_bar = vue.resolveComponent("van-nav-bar");
+    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0$5);
     return vue.openBlock(), vue.createElementBlock(
       vue.Fragment,
       null,
       [
         vue.createCommentVNode(" pages/album/album.wxml "),
         vue.createElementVNode("view", { class: "page" }, [
-          vue.createVNode(_component_van_nav_bar, null, {
-            default: vue.withCtx(() => [
-              vue.createElementVNode("view", {
-                slot: "left",
-                onClick: _cache[0] || (_cache[0] = (...args) => $options.onClickLeft && $options.onClickLeft(...args))
-              }, [
-                vue.createVNode(_component_van_icon, {
-                  name: "arrow-left",
-                  size: "20px"
-                })
-              ]),
-              vue.createElementVNode("view", {
-                slot: "title",
-                class: "pageTitle"
-              }, "相册")
-            ]),
-            _: 1
-            /* STABLE */
+          vue.createVNode(_component_u_navbar, {
+            class: "nav-bar",
+            title: "相册",
+            safeAreaInsetTop: true,
+            autoBack: true,
+            fixed: false
           }),
+          vue.createCommentVNode(' <van-nav-bar>\r\n            <view slot="left" @tap="onClickLeft">\r\n                <van-icon name="arrow-left" size="20px" />\r\n            </view>\r\n            <view slot="title" class="pageTitle">相册</view>\r\n        </van-nav-bar> '),
           vue.createElementVNode("view", {
             class: "w-full flex flex-wrap",
             style: { "padding": "20rpx", "box-sizing": "border-box" }
@@ -5848,7 +5836,7 @@ if (uni.restoreGlobal) {
               vue.renderList($data.imgList, (item, index2) => {
                 return vue.openBlock(), vue.createElementBlock("view", {
                   class: "imgBox",
-                  onClick: _cache[1] || (_cache[1] = (...args) => $options.previwImg && $options.previwImg(...args)),
+                  onClick: _cache[0] || (_cache[0] = (...args) => $options.previwImg && $options.previwImg(...args)),
                   "data-item": item,
                   key: index2
                 }, [
@@ -7177,13 +7165,13 @@ if (uni.restoreGlobal) {
         } = event;
         file.forEach((item) => {
           uni.uploadFile({
-            url: this.app.globalData.uploadUrl,
+            url: this.app.globalData.uploadImgUrl,
             filePath: item.url,
             name: "file",
             success: (res) => {
               let fileList = this.fileList;
               fileList.push({
-                url: JSON.parse(res.data).data
+                url: this.app.globalData.httpUrl + JSON.parse(res.data).data
               });
               this.fileList = fileList;
             }
@@ -7657,13 +7645,13 @@ if (uni.restoreGlobal) {
           let choosedList = this.choosedList;
           choosedList.push(objItem);
           this.choosedList = choosedList;
-          this.totalPrice = this.totalPrice + objItem.price;
+          this.totalPrice = this.totalPrice + objItem.price / 100;
         } else {
           let index2 = this.choosedList.findIndex((con) => con.startTime == this.timeList[data.j]);
           let dataList = this.choosedList;
           dataList.splice(index2, 1);
           this.choosedList = dataList;
-          this.totalPrice = this.totalPrice - data.item.price;
+          this.totalPrice = this.totalPrice - data.item.price / 100;
         }
       },
       clearChoosedList() {
@@ -7846,7 +7834,7 @@ if (uni.restoreGlobal) {
                                       {
                                         class: vue.normalizeClass(" " + (con.already ? "disSelected" : con.checked ? "selectable" : "freeSelect") + " selectItem")
                                       },
-                                      vue.toDisplayString(con.price == "不可订" ? con.price : " ￥" + con.price),
+                                      vue.toDisplayString(con.price == "不可订" ? con.price : " ￥" + con.price / 100),
                                       3
                                       /* TEXT, CLASS */
                                     )
@@ -8323,7 +8311,7 @@ if (uni.restoreGlobal) {
                           vue.createElementVNode(
                             "view",
                             { class: "blackText" },
-                            "￥ " + vue.toDisplayString(item.price),
+                            "￥ " + vue.toDisplayString(item.price / 100),
                             1
                             /* TEXT */
                           )
@@ -8348,7 +8336,7 @@ if (uni.restoreGlobal) {
                   vue.createElementVNode(
                     "view",
                     { class: "priceText" },
-                    "￥" + vue.toDisplayString($data.totalPrice),
+                    "￥" + vue.toDisplayString($data.totalPrice / 100),
                     1
                     /* TEXT */
                   )
@@ -8429,7 +8417,7 @@ if (uni.restoreGlobal) {
                       vue.createElementVNode(
                         "text",
                         null,
-                        vue.toDisplayString($data.totalPrice),
+                        vue.toDisplayString($data.totalPrice / 100),
                         1
                         /* TEXT */
                       )
@@ -10674,13 +10662,13 @@ if (uni.restoreGlobal) {
           file
         } = event;
         uni.uploadFile({
-          url: this.app.globalData.httpUrl + "common/upload/avatar",
+          url: this.app.globalData.uploadAvatarUrl,
           filePath: file.url,
           name: "file",
           success: (res) => {
             let fileList = this.fileList;
             fileList.push({
-              url: this.app.globalData.httpUrl + "avatar/" + JSON.parse(res.data).data
+              url: this.app.globalData.httpUrl + JSON.parse(res.data).data
             });
             this.fileList = fileList;
             this.avatarUrl = fileList[0].url;
@@ -11412,7 +11400,7 @@ if (uni.restoreGlobal) {
                         vue.createElementVNode(
                           "view",
                           { class: "priceText" },
-                          "￥ " + vue.toDisplayString(item.money),
+                          "￥ " + vue.toDisplayString(item.money / 100),
                           1
                           /* TEXT */
                         )
@@ -11546,7 +11534,7 @@ if (uni.restoreGlobal) {
                         vue.createElementVNode(
                           "view",
                           { class: "priceText" },
-                          "￥ " + vue.toDisplayString(item.money),
+                          "￥ " + vue.toDisplayString(item.money / 100),
                           1
                           /* TEXT */
                         )
@@ -11676,7 +11664,7 @@ if (uni.restoreGlobal) {
                         vue.createElementVNode(
                           "view",
                           { class: "priceText" },
-                          "￥ " + vue.toDisplayString(item.money),
+                          "￥ " + vue.toDisplayString(item.money / 100),
                           1
                           /* TEXT */
                         )
@@ -11753,13 +11741,13 @@ if (uni.restoreGlobal) {
         } = event;
         file.forEach((item) => {
           uni.uploadFile({
-            url: this.app.globalData.uploadUrl,
+            url: this.app.globalData.uploadImgUrl,
             filePath: item.url,
             name: "file",
             success: (res) => {
               let fileList = this.fileList;
               fileList.push({
-                url: JSON.parse(res.data).data
+                url: this.app.globalData.httpUrl + JSON.parse(res.data).data
               });
               this.fileList = fileList;
             }
@@ -11805,7 +11793,7 @@ if (uni.restoreGlobal) {
       },
       deleteImg(event) {
         let fileList = this.fileList;
-        fileList.splice(event.detail.index, 1);
+        fileList.splice(event.index, 1);
         this.fileList = fileList;
       },
       toFeedbackList() {
@@ -12704,7 +12692,7 @@ if (uni.restoreGlobal) {
           this.gymnasiumInfo.img = data.shop_avatar;
           this.gymnasiumInfo.person = data.user_name;
           this.gymnasiumInfo.phone = data.user_phone;
-          this.gymnasiumInfo.createTime = data.gmt_create_order;
+          this.gymnasiumInfo.createTime = data.gmt_creat_order;
           this.gymnasiumInfo.siteList = siteList;
           this.gymnasiumInfo.siteNum = siteNum;
           this.gymnasiumInfo.hour = hour;
@@ -13311,9 +13299,10 @@ if (uni.restoreGlobal) {
   __definePage("pages/userAgreement/userAgreement", PagesUserAgreementUserAgreement);
   const _sfc_main = {
     globalData: {
-      // httpUrl: 'http://172.16.7.99:8002/',
-      httpUrl: "http://172.16.8.5:8002/",
-      uploadUrl: "http://oss.sportguider.com/upload/common",
+      httpUrl: "http://172.16.7.99:8002/",
+      // httpUrl: 'http://172.16.8.5:8002/',
+      uploadAvatarUrl: "http://172.16.7.99:8002/common/upload/avatar",
+      uploadImgUrl: "http://172.16.7.99:8002/common/upload/photo",
       iconObj: {
         "培训": "/static/images/common/training.svg",
         "停车场": "/static/images/common/park.svg",
@@ -13531,13 +13520,13 @@ if (uni.restoreGlobal) {
     },
     onLaunch: function() {
       this.getEnum();
-      formatAppLog("log", "at App.vue:240", "App Launch");
+      formatAppLog("log", "at App.vue:241", "App Launch");
     },
     onShow: function() {
-      formatAppLog("log", "at App.vue:243", "App Show");
+      formatAppLog("log", "at App.vue:244", "App Show");
     },
     onHide: function() {
-      formatAppLog("log", "at App.vue:246", "App Hide");
+      formatAppLog("log", "at App.vue:247", "App Hide");
     }
   };
   const App = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "C:/project/轻羽项目/qingyu-client/App.vue"]]);

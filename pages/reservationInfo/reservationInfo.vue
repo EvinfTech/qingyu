@@ -174,7 +174,7 @@
 					this.gymnasiumInfo.img = data.shop_avatar
 					this.gymnasiumInfo.person = data.user_name
 					this.gymnasiumInfo.phone = data.user_phone
-					this.gymnasiumInfo.createTime = data.gmt_create_order
+					this.gymnasiumInfo.createTime = data.gmt_creat_order
 					this.gymnasiumInfo.siteList = siteList
 					this.gymnasiumInfo.siteNum = siteNum
 					this.gymnasiumInfo.hour = hour

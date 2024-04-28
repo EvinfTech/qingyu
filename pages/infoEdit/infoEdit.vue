@@ -131,13 +131,13 @@
 					file
 				} = event;
 				uni.uploadFile({
-					url: this.app.globalData.httpUrl + "common/upload/avatar",
+					url: this.app.globalData.uploadAvatarUrl,
 					filePath: file.url,
 					name: 'file',
 					success: (res) => {
 						let fileList = this.fileList;
 						fileList.push({
-							url: this.app.globalData.httpUrl + "avatar/" + JSON.parse(res.data)
+							url: this.app.globalData.httpUrl  + JSON.parse(res.data)
 								.data
 						});
 						this.fileList = fileList

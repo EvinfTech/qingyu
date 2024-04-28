@@ -20,7 +20,7 @@
   },
   "compileType": "miniprogram",
   "libVersion": "3.3.4",
-  "appid": "wx00fb6cbcfab5e4b1",
+  "appid": "touristappid",
   "projectname": "qingyu-client",
   "condition": {
     "search": {

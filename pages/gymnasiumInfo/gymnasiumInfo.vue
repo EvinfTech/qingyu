@@ -193,7 +193,7 @@
 					let obj = res.data;
 					list.forEach((item) => {
 						item.residue = obj[`${item.date}`].count;
-						item.basicPrice = obj[`${item.date}`].money;
+						item.basicPrice = obj[`${item.date}`].money/100;
 					});
 					this.gymnasiumInfo.venueReservationList = list
 				});

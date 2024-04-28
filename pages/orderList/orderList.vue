@@ -33,7 +33,7 @@
 								</view>
 							</view>
 						</view>
-						<view class="priceText">￥ {{ item.money }}</view>
+						<view class="priceText">￥ {{ item.money/100 }}</view>
 					</view>
 
 					<view class="w-full flex align-center" style="justify-content: flex-end" v-if="item.status == 'C'">
@@ -83,7 +83,7 @@
 								</view>
 							</view>
 						</view>
-						<view class="priceText">￥ {{ item.money }}</view>
+						<view class="priceText">￥ {{ item.money/100 }}</view>
 					</view>
 
 					<view class="w-full flex align-center" style="justify-content: flex-end" v-if="item.status == 'N'">
@@ -132,7 +132,7 @@
 								</view>
 							</view>
 						</view>
-						<view class="priceText">￥ {{ item.money }}</view>
+						<view class="priceText">￥ {{ item.money/100 }}</view>
 					</view>
 
 					<view class="w-full flex align-center" style="justify-content: flex-end" v-if="item.status == 'N'">

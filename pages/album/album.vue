@@ -1,12 +1,15 @@
 <template>
     <!-- pages/album/album.wxml -->
     <view class="page">
-        <van-nav-bar>
+		<u-navbar class="nav-bar" title="相册" :safeAreaInsetTop="true"
+			:autoBack="true" :fixed="false">
+		</u-navbar>
+        <!-- <van-nav-bar>
             <view slot="left" @tap="onClickLeft">
                 <van-icon name="arrow-left" size="20px" />
             </view>
             <view slot="title" class="pageTitle">相册</view>
-        </van-nav-bar>
+        </van-nav-bar> -->
         <view class="w-full flex flex-wrap" style="padding: 20rpx; box-sizing: border-box">
             <view class="imgBox" @tap="previwImg" :data-item="item" v-for="(item, index) in imgList" :key="index">
                 <image :src="item" mode="" class="w-full h-full" />

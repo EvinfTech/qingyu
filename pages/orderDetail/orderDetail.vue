@@ -61,13 +61,13 @@
 									<text>{{ con.date }} {{ con.timeRange }}</text>
 								</view>
 							</view>
-							<view class="blackText">￥ {{ item.price }}</view>
+							<view class="blackText">￥ {{ item.price/100 }}</view>
 						</view>
 					</view>
 				</view>
 				<view class="flex align-center justify-between" style="padding: 24rpx 20rpx 16rpx">
 					<view class="methodText">小计(共{{ sessionList.length }}场)</view>
-					<view class="priceText">￥{{ totalPrice }}</view>
+					<view class="priceText">￥{{ totalPrice/100 }}</view>
 				</view>
 			</view>
 			<view class="orderInfoBox flex flex-direction justify-center">
@@ -106,7 +106,7 @@
 						<view class="totalText">总计：</view>
 						<view class="priceText">
 							<text>￥</text>
-							<text>{{ totalPrice }}</text>
+							<text>{{ totalPrice/100 }}</text>
 						</view>
 					</view>
 					<view class="flex align-center justify-end">

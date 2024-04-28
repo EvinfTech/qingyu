@@ -26,9 +26,10 @@ if (!Math) {
 }
 const _sfc_main = {
   globalData: {
-    // httpUrl: 'http://172.16.7.99:8002/',
-    httpUrl: "http://172.16.8.5:8002/",
-    uploadUrl: "http://oss.sportguider.com/upload/common",
+    httpUrl: "http://172.16.7.99:8002/",
+    // httpUrl: 'http://172.16.8.5:8002/',
+    uploadAvatarUrl: "http://172.16.7.99:8002/common/upload/avatar",
+    uploadImgUrl: "http://172.16.7.99:8002/common/upload/photo",
     iconObj: {
       "培训": "/static/images/common/training.svg",
       "停车场": "/static/images/common/park.svg",

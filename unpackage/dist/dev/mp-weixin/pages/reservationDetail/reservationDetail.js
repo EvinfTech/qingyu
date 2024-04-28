@@ -336,13 +336,13 @@ const _sfc_main = {
         let choosedList = this.choosedList;
         choosedList.push(objItem);
         this.choosedList = choosedList;
-        this.totalPrice = this.totalPrice + objItem.price;
+        this.totalPrice = this.totalPrice + objItem.price / 100;
       } else {
         let index = this.choosedList.findIndex((con) => con.startTime == this.timeList[data.j]);
         let dataList = this.choosedList;
         dataList.splice(index, 1);
         this.choosedList = dataList;
-        this.totalPrice = this.totalPrice - data.item.price;
+        this.totalPrice = this.totalPrice - data.item.price / 100;
       }
     },
     clearChoosedList() {
@@ -414,7 +414,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
         a: common_vendor.t(item.siteName),
         b: common_vendor.f(item.timeList, (con, j, i1) => {
           return {
-            a: common_vendor.t(con.price == "不可订" ? con.price : " ￥" + con.price),
+            a: common_vendor.t(con.price == "不可订" ? con.price : " ￥" + con.price / 100),
             b: common_vendor.n(" " + (con.already ? "disSelected" : con.checked ? "selectable" : "freeSelect") + " selectItem"),
             c: con,
             d: j,

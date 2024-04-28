@@ -244,12 +244,12 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
             c: j
           };
         }),
-        d: common_vendor.t(item.price),
+        d: common_vendor.t(item.price / 100),
         e: index
       };
     }),
     m: common_vendor.t($data.sessionList.length),
-    n: common_vendor.t($data.totalPrice),
+    n: common_vendor.t($data.totalPrice / 100),
     o: common_vendor.t($data.order_no),
     p: common_vendor.o((...args) => $options.tocopy && $options.tocopy(...args)),
     q: common_vendor.t($data.orderTime),
@@ -261,7 +261,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
   }, $data.payState != "payed" && $data.payState != "justPayed" ? {} : {}, {
     v: $data.payState != "payed" && $data.payState != "justPayed"
   }, $data.payState != "payed" && $data.payState != "justPayed" ? common_vendor.e({
-    w: common_vendor.t($data.totalPrice),
+    w: common_vendor.t($data.totalPrice / 100),
     x: $data.payState == "N"
   }, $data.payState == "N" ? {
     y: common_vendor.o((...args) => $options.cancelOrder && $options.cancelOrder(...args))
