@@ -3205,7 +3205,7 @@ if (uni.restoreGlobal) {
     },
     async mounted() {
       this.$nextTick(() => this.ready());
-      let userInfo = await getApp().getUserInfo();
+      let userInfo = await getApp().getUserInfo("reGet");
       this.userInfo = userInfo;
       this.statisticsList[0].num = userInfo.total_length;
       this.statisticsList[1].num = userInfo.sport_day;
@@ -13552,11 +13552,11 @@ if (uni.restoreGlobal) {
         });
       },
       // 获取用户信息
-      getUserInfo() {
+      getUserInfo(type = "") {
         return new Promise((resolve, reject) => {
           let userInfo = uni.getStorageSync("userInfo");
           userInfo = userInfo ? JSON.parse(userInfo) : "";
-          if (userInfo) {
+          if (userInfo && !type) {
             this.globalData.userInfo = userInfo;
             uni.setStorageSync("userInfo", JSON.stringify(userInfo));
             resolve(userInfo);
@@ -13689,13 +13689,13 @@ if (uni.restoreGlobal) {
     },
     onLaunch: function() {
       this.getEnum();
-      formatAppLog("log", "at App.vue:259", "App Launch");
+      formatAppLog("log", "at App.vue:258", "App Launch");
     },
     onShow: function() {
-      formatAppLog("log", "at App.vue:262", "App Show");
+      formatAppLog("log", "at App.vue:261", "App Show");
     },
     onHide: function() {
-      formatAppLog("log", "at App.vue:265", "App Hide");
+      formatAppLog("log", "at App.vue:264", "App Hide");
     }
   };
   const App = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "C:/project/轻羽项目/qingyu-client/App.vue"]]);

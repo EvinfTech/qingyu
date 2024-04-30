@@ -59,7 +59,7 @@ const _sfc_main = {
   },
   async mounted() {
     this.$nextTick(() => this.ready());
-    let userInfo = await getApp().getUserInfo();
+    let userInfo = await getApp().getUserInfo("reGet");
     this.userInfo = userInfo;
     this.statisticsList[0].num = userInfo.total_length;
     this.statisticsList[1].num = userInfo.sport_day;

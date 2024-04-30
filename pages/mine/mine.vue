@@ -145,7 +145,7 @@
 		async mounted() {
 			// 处理小程序 ready 生命周期
 			this.$nextTick(() => this.ready());
-			let userInfo = await getApp().getUserInfo()
+			let userInfo = await getApp().getUserInfo('reGet')
 			this.userInfo = userInfo;
 			this.statisticsList[0].num = userInfo.total_length
 			this.statisticsList[1].num = userInfo.sport_day

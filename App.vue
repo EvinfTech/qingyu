@@ -106,11 +106,11 @@
 				});
 			},
 			// 获取用户信息
-			getUserInfo() {
+			getUserInfo(type = '') {
 				return new Promise((resolve, reject) => {
 					let userInfo = uni.getStorageSync('userInfo');
 					userInfo = userInfo ? JSON.parse(userInfo) : '';
-					if (userInfo) {
+					if (userInfo && !type) {
 						this.globalData.userInfo = userInfo;
 						uni.setStorageSync('userInfo', JSON.stringify(userInfo));
 						resolve(userInfo)
@@ -149,7 +149,7 @@
 
 			},
 			// 获取门店信息
-			getStoreInfo(type='') {
+			getStoreInfo(type = '') {
 				return new Promise((resolve, reject) => {
 					let storeInfo = uni.getStorageSync("gymnasiumInfo")
 					if (storeInfo && !type) {
@@ -183,8 +183,8 @@
 						gymnasiumInfo.hardwareFacilities = tagList
 						let gymnasiumImgList = [];
 						let list = JSON.parse(res.data.data.shop_photo)
-						list.forEach(item=>{
-							gymnasiumImgList.push(this.globalData.httpUrl+item)
+						list.forEach(item => {
+							gymnasiumImgList.push(this.globalData.httpUrl + item)
 						})
 						gymnasiumInfo.gymnasiumImgList = gymnasiumImgList
 						this.globalData.gymnasiumInfo = gymnasiumInfo;
@@ -238,8 +238,6 @@
 					});
 
 				})
-
-
 			},
 			// 返回
 			toBack() {
@@ -249,13 +247,14 @@
 				} else {
 					history.back();
 				}
-
-
 			}
 		},
 
 		onLaunch: function() {
 			this.getEnum()
+			// #ifdef MP-WEIXIN
+			this.checkVersion()
+			// #endif
 			console.log('App Launch')
 		},
 		onShow: function() {

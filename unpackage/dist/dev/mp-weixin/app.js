@@ -125,11 +125,11 @@ const _sfc_main = {
       });
     },
     // 获取用户信息
-    getUserInfo() {
+    getUserInfo(type = "") {
       return new Promise((resolve, reject) => {
         let userInfo = common_vendor.index.getStorageSync("userInfo");
         userInfo = userInfo ? JSON.parse(userInfo) : "";
-        if (userInfo) {
+        if (userInfo && !type) {
           this.globalData.userInfo = userInfo;
           common_vendor.index.setStorageSync("userInfo", JSON.stringify(userInfo));
           resolve(userInfo);
@@ -262,6 +262,7 @@ const _sfc_main = {
   },
   onLaunch: function() {
     this.getEnum();
+    this.checkVersion();
     console.log("App Launch");
   },
   onShow: function() {
