@@ -668,11 +668,18 @@ uni-view[data-v-cafe0b2a], uni-scroll-view[data-v-cafe0b2a], uni-swiper-item[dat
 		min-height: 3.125rem !important;
 }
 .submitBtn[data-v-a24b82f2] {
-		width: 21.4375rem;border-radius:0.375rem;
-		position: absolute!important;
+		width: 21.4375rem;
+		border-radius: 0.375rem;
+		position: absolute !important;
 		left: 50%;
 		transform: translateX(-50%);
-		bottom: 4.0625rem!important;
+		bottom: 4.0625rem !important;
 		background-color: #0077ff;
 		color: #fff;
+}
+.uploadText[data-v-a24b82f2] {
+		font-family: Alibaba PuHuiTi 2;
+		font-size: 0.75rem;
+		margin-top: 0.625rem;
+		color: #b1b4c3
 }

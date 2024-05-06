@@ -59,11 +59,18 @@
 		min-height: 100rpx !important;
 }
 .submitBtn.data-v-a24b82f2 {
-		width: 686rpx;border-radius:12rpx;
-		position: absolute!important;
+		width: 686rpx;
+		border-radius: 12rpx;
+		position: absolute !important;
 		left: 50%;
 		transform: translateX(-50%);
-		bottom: 130rpx!important;
+		bottom: 130rpx !important;
 		background-color: #0077ff;
 		color: #fff;
+}
+.uploadText.data-v-a24b82f2 {
+		font-family: Alibaba PuHuiTi 2;
+		font-size: 24rpx;
+		margin-top: 20rpx;
+		color: #b1b4c3
 }

@@ -1,5 +1,4 @@
 <template>
-	<!-- pages/errorReport/errorReport.wxml -->
 	<view class="page">
 		<u-navbar class="nav-bar" title="意见反馈" :safeAreaInsetTop="true" :autoBack="false" :fixed="false">
 			<template #left>
@@ -10,7 +9,6 @@
 			<view class="describeBox">
 				<view class="flex align-center justify-between">
 					<view style="margin-bottom: 20rpx">反馈问题</view>
-					<!-- <image src="../../static/images/mine/feedbackIcon.svg" bindtap="toFeedbackList"  style="width: 36rpx;height: 36rpx;" mode=""/> -->
 				</view>
 				<u--textarea v-model="error" placeholder="请输入..." />
 			</view>
@@ -21,11 +19,10 @@
 						:maxCount="9">
 					</u-upload>
 				</view>
-				<view style="font-family: Alibaba PuHuiTi 2; font-size: 24rpx; margin-top: 20rpx; color: #b1b4c3">最多9张
+				<view class="uploadText">最多9张
 				</view>
 			</view>
-			<button type="info" class="submitBtn" @tap.native="submit"
-				>提交</button>
+			<button type="info" class="submitBtn" @tap.native="submit">提交</button>
 		</view>
 	</view>
 </template>
@@ -37,7 +34,7 @@
 	export default ({
 		data() {
 			return {
-				app:getApp(),
+				app: getApp(),
 				error: '',
 				fileList: []
 			};
@@ -59,7 +56,7 @@
 						success: (res) => {
 							let fileList = this.fileList;
 							fileList.push({
-								url: this.app.globalData.httpUrl  + JSON.parse(res.data)
+								url: this.app.globalData.httpUrl + JSON.parse(res.data)
 									.data
 							});
 							this.fileList = fileList
@@ -190,13 +187,22 @@
 		max-height: 100rpx !important;
 		min-height: 100rpx !important;
 	}
+
 	.submitBtn {
-		width: 686rpx;border-radius:12rpx;
-		position: absolute!important;
+		width: 686rpx;
+		border-radius: 12rpx;
+		position: absolute !important;
 		left: 50%;
 		transform: translateX(-50%);
-		bottom: 130rpx!important;
+		bottom: 130rpx !important;
 		background-color: #0077ff;
 		color: #fff;
+	}
+
+	.uploadText {
+		font-family: Alibaba PuHuiTi 2;
+		font-size: 24rpx;
+		margin-top: 20rpx;
+		color: #b1b4c3
 	}
 </style>

@@ -8,7 +8,6 @@ if (!Math) {
   "./pages/home/home.js";
   "./pages/reservation/reservation.js";
   "./pages/mine/mine.js";
-  "./pages/errorReport/errorReport.js";
   "./pages/reservationDetail/reservationDetail.js";
   "./pages/orderDetail/orderDetail.js";
   "./pages/infoEdit/infoEdit.js";

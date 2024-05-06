@@ -10888,283 +10888,6 @@ const props$i = {
     }
   }
 };
-const props$h = {
-  props: {
-    // radio的名称
-    name: {
-      type: [String, Number, Boolean],
-      default: defprops.radio.name
-    },
-    // 形状，square为方形，circle为圆型
-    shape: {
-      type: String,
-      default: defprops.radio.shape
-    },
-    // 是否禁用
-    disabled: {
-      type: [String, Boolean],
-      default: defprops.radio.disabled
-    },
-    // 是否禁止点击提示语选中单选框
-    labelDisabled: {
-      type: [String, Boolean],
-      default: defprops.radio.labelDisabled
-    },
-    // 选中状态下的颜色，如设置此值，将会覆盖parent的activeColor值
-    activeColor: {
-      type: String,
-      default: defprops.radio.activeColor
-    },
-    // 未选中的颜色
-    inactiveColor: {
-      type: String,
-      default: defprops.radio.inactiveColor
-    },
-    // 图标的大小，单位px
-    iconSize: {
-      type: [String, Number],
-      default: defprops.radio.iconSize
-    },
-    // label的字体大小，px单位
-    labelSize: {
-      type: [String, Number],
-      default: defprops.radio.labelSize
-    },
-    // label提示文字，因为nvue下，直接slot进来的文字，由于特殊的结构，无法修改样式
-    label: {
-      type: [String, Number],
-      default: defprops.radio.label
-    },
-    // 整体的大小
-    size: {
-      type: [String, Number],
-      default: defprops.radio.size
-    },
-    // 图标颜色
-    color: {
-      type: String,
-      default: defprops.radio.color
-    },
-    // label的颜色
-    labelColor: {
-      type: String,
-      default: defprops.radio.labelColor
-    },
-    // 图标颜色
-    iconColor: {
-      type: String,
-      default: defprops.radio.iconColor
-    }
-  }
-};
-const props$g = {
-  props: {
-    // 绑定的值
-    modelValue: {
-      type: [String, Number, Boolean],
-      default: defprops.radioGroup.value
-    },
-    // 是否禁用全部radio
-    disabled: {
-      type: Boolean,
-      default: defprops.radioGroup.disabled
-    },
-    // 形状，circle-圆形，square-方形
-    shape: {
-      type: String,
-      default: defprops.radioGroup.shape
-    },
-    // 选中状态下的颜色，如设置此值，将会覆盖parent的activeColor值
-    activeColor: {
-      type: String,
-      default: defprops.radioGroup.activeColor
-    },
-    // 未选中的颜色
-    inactiveColor: {
-      type: String,
-      default: defprops.radioGroup.inactiveColor
-    },
-    // 标识符
-    name: {
-      type: String,
-      default: defprops.radioGroup.name
-    },
-    // 整个组件的尺寸，默认px
-    size: {
-      type: [String, Number],
-      default: defprops.radioGroup.size
-    },
-    // 布局方式，row-横向，column-纵向
-    placement: {
-      type: String,
-      default: defprops.radioGroup.placement
-    },
-    // label的文本
-    label: {
-      type: [String],
-      default: defprops.radioGroup.label
-    },
-    // label的颜色 （默认 '#303133' ）
-    labelColor: {
-      type: [String],
-      default: defprops.radioGroup.labelColor
-    },
-    // label的字体大小，px单位
-    labelSize: {
-      type: [String, Number],
-      default: defprops.radioGroup.labelSize
-    },
-    // 是否禁止点击文本操作checkbox(默认 false )
-    labelDisabled: {
-      type: Boolean,
-      default: defprops.radioGroup.labelDisabled
-    },
-    // 图标颜色
-    iconColor: {
-      type: String,
-      default: defprops.radioGroup.iconColor
-    },
-    // 图标的大小，单位px
-    iconSize: {
-      type: [String, Number],
-      default: defprops.radioGroup.iconSize
-    },
-    // 竖向配列时，是否显示下划线
-    borderBottom: {
-      type: Boolean,
-      default: defprops.radioGroup.borderBottom
-    },
-    // 图标与文字的对齐方式
-    iconPlacement: {
-      type: String,
-      default: defprops.radio.iconPlacement
-    }
-  }
-};
-const props$f = {
-  props: {
-    // 输入框的内容
-    value: {
-      type: [String, Number],
-      default: defprops.textarea.value
-    },
-    // 输入框的内容
-    modelValue: {
-      type: [String, Number],
-      default: defprops.textarea.value
-    },
-    // 输入框为空时占位符
-    placeholder: {
-      type: [String, Number],
-      default: defprops.textarea.placeholder
-    },
-    // 指定placeholder的样式类，注意页面或组件的style中写了scoped时，需要在类名前写/deep/
-    placeholderClass: {
-      type: String,
-      default: defprops.input.placeholderClass
-    },
-    // 指定placeholder的样式
-    placeholderStyle: {
-      type: [String, Object],
-      default: defprops.input.placeholderStyle
-    },
-    // 输入框高度
-    height: {
-      type: [String, Number],
-      default: defprops.textarea.height
-    },
-    // 设置键盘右下角按钮的文字，仅微信小程序，App-vue和H5有效
-    confirmType: {
-      type: String,
-      default: defprops.textarea.confirmType
-    },
-    // 是否禁用
-    disabled: {
-      type: Boolean,
-      default: defprops.textarea.disabled
-    },
-    // 是否显示统计字数
-    count: {
-      type: Boolean,
-      default: defprops.textarea.count
-    },
-    // 是否自动获取焦点，nvue不支持，H5取决于浏览器的实现
-    focus: {
-      type: Boolean,
-      default: defprops.textarea.focus
-    },
-    // 是否自动增加高度
-    autoHeight: {
-      type: Boolean,
-      default: defprops.textarea.autoHeight
-    },
-    // 如果textarea是在一个position:fixed的区域，需要显示指定属性fixed为true
-    fixed: {
-      type: Boolean,
-      default: defprops.textarea.fixed
-    },
-    // 指定光标与键盘的距离
-    cursorSpacing: {
-      type: Number,
-      default: defprops.textarea.cursorSpacing
-    },
-    // 指定focus时的光标位置
-    cursor: {
-      type: [String, Number],
-      default: defprops.textarea.cursor
-    },
-    // 是否显示键盘上方带有”完成“按钮那一栏，
-    showConfirmBar: {
-      type: Boolean,
-      default: defprops.textarea.showConfirmBar
-    },
-    // 光标起始位置，自动聚焦时有效，需与selection-end搭配使用
-    selectionStart: {
-      type: Number,
-      default: defprops.textarea.selectionStart
-    },
-    // 光标结束位置，自动聚焦时有效，需与selection-start搭配使用
-    selectionEnd: {
-      type: Number,
-      default: defprops.textarea.selectionEnd
-    },
-    // 键盘弹起时，是否自动上推页面
-    adjustPosition: {
-      type: Boolean,
-      default: defprops.textarea.adjustPosition
-    },
-    // 是否去掉 iOS 下的默认内边距，只微信小程序有效
-    disableDefaultPadding: {
-      type: Boolean,
-      default: defprops.textarea.disableDefaultPadding
-    },
-    // focus时，点击页面的时候不收起键盘，只微信小程序有效
-    holdKeyboard: {
-      type: Boolean,
-      default: defprops.textarea.holdKeyboard
-    },
-    // 最大输入长度，设置为 -1 的时候不限制最大长度
-    maxlength: {
-      type: [String, Number],
-      default: defprops.textarea.maxlength
-    },
-    // 边框类型，surround-四周边框，bottom-底部边框
-    border: {
-      type: String,
-      default: defprops.textarea.border
-    },
-    // 用于处理或者过滤输入框内容的方法
-    formatter: {
-      type: [Function, null],
-      default: defprops.textarea.formatter
-    },
-    // 是否忽略组件内对文本合成系统事件的处理
-    ignoreCompositionEvent: {
-      type: Boolean,
-      default: true
-    }
-  }
-};
 function pickExclude(obj, keys) {
   if (!["[object Object]", "[object File]"].includes(Object.prototype.toString.call(obj))) {
     return {};
@@ -11283,7 +11006,7 @@ const mixinUp = {
     }
   }
 };
-const props$e = {
+const props$h = {
   props: {
     // 接受的文件类型, 可选值为all media image file video
     accept: {
@@ -11407,7 +11130,7 @@ const props$e = {
     }
   }
 };
-const props$d = {
+const props$g = {
   props: {
     // 标题
     title: {
@@ -11517,7 +11240,160 @@ const props$d = {
     }
   }
 };
-const props$c = {
+const props$f = {
+  props: {
+    // radio的名称
+    name: {
+      type: [String, Number, Boolean],
+      default: defprops.radio.name
+    },
+    // 形状，square为方形，circle为圆型
+    shape: {
+      type: String,
+      default: defprops.radio.shape
+    },
+    // 是否禁用
+    disabled: {
+      type: [String, Boolean],
+      default: defprops.radio.disabled
+    },
+    // 是否禁止点击提示语选中单选框
+    labelDisabled: {
+      type: [String, Boolean],
+      default: defprops.radio.labelDisabled
+    },
+    // 选中状态下的颜色，如设置此值，将会覆盖parent的activeColor值
+    activeColor: {
+      type: String,
+      default: defprops.radio.activeColor
+    },
+    // 未选中的颜色
+    inactiveColor: {
+      type: String,
+      default: defprops.radio.inactiveColor
+    },
+    // 图标的大小，单位px
+    iconSize: {
+      type: [String, Number],
+      default: defprops.radio.iconSize
+    },
+    // label的字体大小，px单位
+    labelSize: {
+      type: [String, Number],
+      default: defprops.radio.labelSize
+    },
+    // label提示文字，因为nvue下，直接slot进来的文字，由于特殊的结构，无法修改样式
+    label: {
+      type: [String, Number],
+      default: defprops.radio.label
+    },
+    // 整体的大小
+    size: {
+      type: [String, Number],
+      default: defprops.radio.size
+    },
+    // 图标颜色
+    color: {
+      type: String,
+      default: defprops.radio.color
+    },
+    // label的颜色
+    labelColor: {
+      type: String,
+      default: defprops.radio.labelColor
+    },
+    // 图标颜色
+    iconColor: {
+      type: String,
+      default: defprops.radio.iconColor
+    }
+  }
+};
+const props$e = {
+  props: {
+    // 绑定的值
+    modelValue: {
+      type: [String, Number, Boolean],
+      default: defprops.radioGroup.value
+    },
+    // 是否禁用全部radio
+    disabled: {
+      type: Boolean,
+      default: defprops.radioGroup.disabled
+    },
+    // 形状，circle-圆形，square-方形
+    shape: {
+      type: String,
+      default: defprops.radioGroup.shape
+    },
+    // 选中状态下的颜色，如设置此值，将会覆盖parent的activeColor值
+    activeColor: {
+      type: String,
+      default: defprops.radioGroup.activeColor
+    },
+    // 未选中的颜色
+    inactiveColor: {
+      type: String,
+      default: defprops.radioGroup.inactiveColor
+    },
+    // 标识符
+    name: {
+      type: String,
+      default: defprops.radioGroup.name
+    },
+    // 整个组件的尺寸，默认px
+    size: {
+      type: [String, Number],
+      default: defprops.radioGroup.size
+    },
+    // 布局方式，row-横向，column-纵向
+    placement: {
+      type: String,
+      default: defprops.radioGroup.placement
+    },
+    // label的文本
+    label: {
+      type: [String],
+      default: defprops.radioGroup.label
+    },
+    // label的颜色 （默认 '#303133' ）
+    labelColor: {
+      type: [String],
+      default: defprops.radioGroup.labelColor
+    },
+    // label的字体大小，px单位
+    labelSize: {
+      type: [String, Number],
+      default: defprops.radioGroup.labelSize
+    },
+    // 是否禁止点击文本操作checkbox(默认 false )
+    labelDisabled: {
+      type: Boolean,
+      default: defprops.radioGroup.labelDisabled
+    },
+    // 图标颜色
+    iconColor: {
+      type: String,
+      default: defprops.radioGroup.iconColor
+    },
+    // 图标的大小，单位px
+    iconSize: {
+      type: [String, Number],
+      default: defprops.radioGroup.iconSize
+    },
+    // 竖向配列时，是否显示下划线
+    borderBottom: {
+      type: Boolean,
+      default: defprops.radioGroup.borderBottom
+    },
+    // 图标与文字的对齐方式
+    iconPlacement: {
+      type: String,
+      default: defprops.radio.iconPlacement
+    }
+  }
+};
+const props$d = {
   props: {
     // 分组标题
     title: {
@@ -11531,7 +11407,7 @@ const props$c = {
     }
   }
 };
-const props$b = {
+const props$c = {
   props: {
     // 是否打开组件
     show: {
@@ -12130,6 +12006,130 @@ dayjs.unix = function(timestamp) {
 dayjs.en = Ls[L];
 dayjs.Ls = Ls;
 dayjs.p = {};
+const props$b = {
+  props: {
+    // 输入框的内容
+    value: {
+      type: [String, Number],
+      default: defprops.textarea.value
+    },
+    // 输入框的内容
+    modelValue: {
+      type: [String, Number],
+      default: defprops.textarea.value
+    },
+    // 输入框为空时占位符
+    placeholder: {
+      type: [String, Number],
+      default: defprops.textarea.placeholder
+    },
+    // 指定placeholder的样式类，注意页面或组件的style中写了scoped时，需要在类名前写/deep/
+    placeholderClass: {
+      type: String,
+      default: defprops.input.placeholderClass
+    },
+    // 指定placeholder的样式
+    placeholderStyle: {
+      type: [String, Object],
+      default: defprops.input.placeholderStyle
+    },
+    // 输入框高度
+    height: {
+      type: [String, Number],
+      default: defprops.textarea.height
+    },
+    // 设置键盘右下角按钮的文字，仅微信小程序，App-vue和H5有效
+    confirmType: {
+      type: String,
+      default: defprops.textarea.confirmType
+    },
+    // 是否禁用
+    disabled: {
+      type: Boolean,
+      default: defprops.textarea.disabled
+    },
+    // 是否显示统计字数
+    count: {
+      type: Boolean,
+      default: defprops.textarea.count
+    },
+    // 是否自动获取焦点，nvue不支持，H5取决于浏览器的实现
+    focus: {
+      type: Boolean,
+      default: defprops.textarea.focus
+    },
+    // 是否自动增加高度
+    autoHeight: {
+      type: Boolean,
+      default: defprops.textarea.autoHeight
+    },
+    // 如果textarea是在一个position:fixed的区域，需要显示指定属性fixed为true
+    fixed: {
+      type: Boolean,
+      default: defprops.textarea.fixed
+    },
+    // 指定光标与键盘的距离
+    cursorSpacing: {
+      type: Number,
+      default: defprops.textarea.cursorSpacing
+    },
+    // 指定focus时的光标位置
+    cursor: {
+      type: [String, Number],
+      default: defprops.textarea.cursor
+    },
+    // 是否显示键盘上方带有”完成“按钮那一栏，
+    showConfirmBar: {
+      type: Boolean,
+      default: defprops.textarea.showConfirmBar
+    },
+    // 光标起始位置，自动聚焦时有效，需与selection-end搭配使用
+    selectionStart: {
+      type: Number,
+      default: defprops.textarea.selectionStart
+    },
+    // 光标结束位置，自动聚焦时有效，需与selection-start搭配使用
+    selectionEnd: {
+      type: Number,
+      default: defprops.textarea.selectionEnd
+    },
+    // 键盘弹起时，是否自动上推页面
+    adjustPosition: {
+      type: Boolean,
+      default: defprops.textarea.adjustPosition
+    },
+    // 是否去掉 iOS 下的默认内边距，只微信小程序有效
+    disableDefaultPadding: {
+      type: Boolean,
+      default: defprops.textarea.disableDefaultPadding
+    },
+    // focus时，点击页面的时候不收起键盘，只微信小程序有效
+    holdKeyboard: {
+      type: Boolean,
+      default: defprops.textarea.holdKeyboard
+    },
+    // 最大输入长度，设置为 -1 的时候不限制最大长度
+    maxlength: {
+      type: [String, Number],
+      default: defprops.textarea.maxlength
+    },
+    // 边框类型，surround-四周边框，bottom-底部边框
+    border: {
+      type: String,
+      default: defprops.textarea.border
+    },
+    // 用于处理或者过滤输入框内容的方法
+    formatter: {
+      type: [Function, null],
+      default: defprops.textarea.formatter
+    },
+    // 是否忽略组件内对文本合成系统事件的处理
+    ignoreCompositionEvent: {
+      type: Boolean,
+      default: true
+    }
+  }
+};
 const props$a = {
   props: {
     // 是否展示modal

@@ -43,12 +43,6 @@
 			}
 		},
 		{
-			"path": "pages/errorReport/errorReport",
-			"style": {
-				"usingComponents": {}
-			}
-		},
-		{
 			"path": "pages/reservationDetail/reservationDetail",
 			"style": {
 				"usingComponents": {}

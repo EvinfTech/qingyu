@@ -2,7 +2,7 @@
 const common_vendor = require("../../../../common/vendor.js");
 const _sfc_main = {
   name: "u-textarea",
-  mixins: [common_vendor.mpMixin, common_vendor.mixin, common_vendor.props$9],
+  mixins: [common_vendor.mpMixin, common_vendor.mixin, common_vendor.props$13],
   data() {
     return {
       // 输入框的值

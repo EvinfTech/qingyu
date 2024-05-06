@@ -6,7 +6,6 @@
     "pages/home/home",
     "pages/reservation/reservation",
     "pages/mine/mine",
-    "pages/errorReport/errorReport",
     "pages/reservationDetail/reservationDetail",
     "pages/orderDetail/orderDetail",
     "pages/infoEdit/infoEdit",
