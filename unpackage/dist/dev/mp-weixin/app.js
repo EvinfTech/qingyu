@@ -8,8 +8,6 @@ if (!Math) {
   "./pages/home/home.js";
   "./pages/reservation/reservation.js";
   "./pages/mine/mine.js";
-  "./pages/gymnasiumInfo/gymnasiumInfo.js";
-  "./pages/album/album.js";
   "./pages/errorReport/errorReport.js";
   "./pages/reservationDetail/reservationDetail.js";
   "./pages/orderDetail/orderDetail.js";
@@ -20,7 +18,6 @@ if (!Math) {
   "./pages/aboutUs/aboutUs.js";
   "./pages/reservationList/reservationList.js";
   "./pages/reservationInfo/reservationInfo.js";
-  "./pages/dataDetail/dataDetail.js";
   "./pages/accountSecurity/accountSecurity.js";
   "./pages/userAgreement/userAgreement.js";
 }
@@ -147,6 +144,7 @@ const _sfc_main = {
           success: (res) => {
             if (res.statusCode == 200) {
               let userInfo2 = res.data.data;
+              userInfo2.avatar = this.globalData.httpUrl + userInfo2.avatar;
               this.globalData.userInfo.avatar = userInfo2.avatar;
               this.globalData.userInfo.birthday = userInfo2.birthday;
               this.globalData.userInfo.name = userInfo2.name;
@@ -178,7 +176,7 @@ const _sfc_main = {
           url: this.globalData.httpUrl + "wx/get/shop/detail",
           method: "POST"
         }).then((res) => {
-          let tag = res.data.data.tag;
+          let tag = res.data.data.tag ? res.data.data.tag : [];
           let tagList = [];
           tag.forEach((item) => {
             tagList.push({
@@ -196,6 +194,8 @@ const _sfc_main = {
           gymnasiumInfo.facility = res.data.data.facility;
           gymnasiumInfo.serve = res.data.data.serve;
           gymnasiumInfo.hardwareFacilities = tagList;
+          gymnasiumInfo.shop_avatar = this.globalData.httpUrl + res.data.data.shop_avatar;
+          gymnasiumInfo.desc = res.data.data.desc;
           let gymnasiumImgList = [];
           let list = JSON.parse(res.data.data.shop_photo);
           list.forEach((item) => {

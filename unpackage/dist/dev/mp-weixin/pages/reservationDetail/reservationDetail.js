@@ -25,7 +25,6 @@ const _sfc_main = {
       timeList: [],
       siteList: [],
       todayDeleteIndex: 0,
-      top: 0,
       con: {
         already: false,
         checked: false,
@@ -257,7 +256,8 @@ const _sfc_main = {
     },
     getTabItemWidth() {
       let that = this;
-      var screenHeight = common_vendor.index.getSystemInfoSync().windowHeight;
+      let sysInfo = common_vendor.index.getSystemInfoSync();
+      var screenHeight = sysInfo.windowHeight;
       let query = common_vendor.index.createSelectorQuery();
       query.select(".customerTabItem").boundingClientRect((navRect) => {
         let query2 = common_vendor.index.createSelectorQuery();
@@ -271,8 +271,7 @@ const _sfc_main = {
           query3.select(".bottomCon").boundingClientRect((item) => {
             let query4 = common_vendor.index.createSelectorQuery();
             query4.select(".nav-bar").boundingClientRect((bar) => {
-              that.centerHeight = screenHeight - bar.height - item.height - navRect.height;
-              that.top = bar.height + navRect.height + 40;
+              that.centerHeight = screenHeight - 44 - item.height - navRect.height - sysInfo.statusBarHeight;
             }).exec();
           }).exec();
         }).exec();

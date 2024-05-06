@@ -60,29 +60,23 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
       fixed: false
     }),
     d: common_vendor.p({
-      title: "氢羽号",
-      center: true,
-      value: $data.accountNo,
-      ["custom-class"]: "userinfo-cell"
-    }),
-    e: common_vendor.p({
       title: "手机号",
       value: $data.phone,
       center: true,
       ["custom-class"]: "userinfo-cell"
     }),
-    f: common_vendor.p({
+    e: common_vendor.p({
       title: "绑定微信",
       value: $data.status,
       center: true,
       ["custom-class"]: "userinfo-cell"
     }),
-    g: common_vendor.p({
+    f: common_vendor.p({
       ["custom-class"]: "userinfo-group"
     }),
-    h: common_vendor.o($options.confirm),
-    i: common_vendor.o($options.cancel),
-    j: common_vendor.p({
+    g: common_vendor.o($options.confirm),
+    h: common_vendor.o($options.cancel),
+    i: common_vendor.p({
       show: $data.show,
       title: "提示",
       content: "确定要注销账号吗？",

@@ -1,58 +1,61 @@
 <template>
 	<view class="page">
-		<u-navbar class="nav-bar" :safeAreaInsetTop="true" :fixed="false">
-			<template #left>
-				<image src="/static/images/home/qingyu.svg" mode="" style="width: 180px" />
-			</template>
-		</u-navbar>
 		<view class="banner">
 			<swiper :indicator-dots="indicatorDots" class="h-full" :autoplay="autoplay" :interval="interval"
 				:duration="duration">
 				<block v-for="(item, index) in swiperList" :key="index">
 					<swiper-item>
 						<view class="swiper-item h-full">
-							<image :src="item" class="w-full h-full" mode="" />
+							<image :src="item" class="w-full h-full" mode=""  @click="previewImg(item)"/>
 						</view>
 					</swiper-item>
 				</block>
 			</swiper>
 		</view>
-		<view class="flex align-center navBox justify-center">
-			<view class="navLeft" @tap="appointmentVenue">
-				<image src="/static/images/home/appointment.svg" mode="" class="leftText" />
-				<image src="/static/images/home/predetermine.svg" mode="" class="rightIcon" />
-				<view class="leftSubText">包场通场</view>
-			</view>
-			<view class="navRight flex align-center justify-center" @tap="toMine">
-				<image src="/static/images/home/mine.svg" mode="" class="leftText" />
-				<image src="/static/images/home/infoIcon.svg" mode="" class="rightIcon" />
-				<view class="leftSubText">个人信息</view>
-			</view>
-		</view>
 		<view class="indexInfo" :style="{'height':viewHeight+'px'}">
 			<view class="commonInfo">
-				<view class="gymnasiumName">
-					{{storeInfo.gymnasiumName}}
-				</view>
-				<view class="location">
-					{{storeInfo.location}}
-				</view>
-				<view class="location">
-					{{storeInfo.phone}}
-				</view>
-				<view class="flex align-center justify-between">
-					<view class="flex align-center operateItem1" @click="toMap">
-						<u-icon name="map-fill" color="#409EFF"></u-icon>
-						<view class="operateItem ">
-							地图/导航
+				<view class="flex align-center">
+					<image :src="storeInfo.shop_avatar" class="storeHeadPhoto"></image>
+					<view>
+						<view class="gymnasiumName">
+							{{storeInfo.gymnasiumName}}
+						</view>
+						<view class="location">
+							营业时间： {{storeInfo.businessHours}}
 						</view>
 					</view>
-					<view class="flex align-center operateItem2" @click="toCall">
-						<u-icon name="phone-fill" color="#409EFF"></u-icon>
+				</view>
+				<view class="flex align-start" @click="toMap" style="margin:10px 0 8px 0">
+					<view class="flex  operateItem1 align-center  flex-shirnk">
+						<u-icon name="map-fill"></u-icon>
 						<view class="operateItem">
-							联系商家
+							地址
 						</view>
 					</view>
+					<view class="location" style="color: #409EFF;">
+						{{storeInfo.location}}
+					</view>
+				</view>
+				<view class="flex align-start" @click="toCall">
+					<view class="flex align-center justify-between  flex-shirnk">
+						<view class="flex align-center operateItem1">
+							<u-icon name="phone-fill"></u-icon>
+							<view class="operateItem">
+								电话
+							</view>
+						</view>
+					</view>
+					<view class="location" style="color: #409EFF;">
+						{{storeInfo.phone}}
+					</view>
+				</view>
+			</view>
+			<view>
+				<view class="commonTitle">
+					场馆介绍
+				</view>
+				<view class="commonValue">
+					<text>{{ storeInfo.desc}}</text>
 				</view>
 			</view>
 			<view>
@@ -70,11 +73,37 @@
 				<view class="commonValue">
 					<text>{{ storeInfo.serve?(storeInfo.serve).replace(/\\n/,'\n'):'' }}</text>
 				</view>
-
+			</view>
+			<view class="venueReservationList w-full">
+				<scroll-view :scroll-x="true" class="h-full w-full">
+					<view class="w-full" style="white-space: nowrap">
+						<view :class="'venueReservationItem ' + (item.residue == 0 ? 'isFullBorder' : '')"
+							 @tap="toDetail(item)"
+							v-for="(item, index) in venueReservationList" :key="index">
+							<view
+								:class="'venueReservationItemTop flex flex-direction align-center justify-center ' + (item.residue == 0 ? 'isFullBg' : '')">
+								<view>
+									{{ item.day }}
+								</view>
+								<view>({{ item.date }})</view>
+							</view>
+			
+							<view class="venueReservationItemBottom">
+								<view class="w-full flex align-center justify-between"
+									:style="'margin-bottom: 12rpx;color: ' + (item.residue == 0 ? '#5F5F5F' : '#0077FF')">
+									<text>剩余</text>
+									<text>{{ item.residue }}</text>
+								</view>
+								<view class="w-full flex align-center justify-between">
+									<text>起订</text>
+									<text>￥{{ item.basicPrice }}</text>
+								</view>
+							</view>
+						</view>
+					</view>
+				</scroll-view>
 			</view>
 		</view>
-
-
 	</view>
 </template>
 
@@ -83,20 +112,24 @@
 		request
 	} from '../../utils/request';
 	import {
+		getNowDate,
+		formatNumber,
 		calcDistance
 	} from '../../utils/util';
 	export default ({
 		data() {
 			return {
-				app:getApp(),
+				app: getApp(),
 				indicatorDots: true,
 				vertical: false,
-				autoplay: false,
+				autoplay: true,
 				interval: 2000,
 				duration: 500,
 				swiperList: [],
 				viewHeight: 0,
-				storeInfo: {}
+				storeInfo: {},
+				venueReservationList: [],
+				currentImgIndex:-1,
 			};
 		},
 		/**
@@ -155,8 +188,7 @@
 						query2
 							.select('.navBox')
 							.boundingClientRect((navBoxRect) => {
-								that.viewHeight = that.scrollViewHeight - bannerRect.height - navBoxRect
-									.height - 54 - res.statusBarHeight
+								that.viewHeight = that.scrollViewHeight - bannerRect.height
 							})
 							.exec();
 					})
@@ -174,7 +206,72 @@
 					detail: 1
 				});
 			},
+			// 获取近7天可约场地
+			getReservationInfo() {
+				request({
+					url: 'wx/get/shop/surplus/count',
+					method: 'POST',
+					data: {
+						date: getNowDate('-')
+					}
+				}).then((res) => {
+					let list = this.et7Days();
+					let obj = res.data;
+					list.forEach((item) => {
+						item.residue = obj[`${item.date}`].count;
+						item.basicPrice = obj[`${item.date}`].money / 100;
+					});
+					this.venueReservationList = list
+				});
+			},
+			et7Days() {
+				//获取系统当前时间
+				let dateList = [];
+				var now = new Date();
+				var nowTime = now.getTime();
+				var oneDayTime = 86400 * 1000;
+				for (var i = 0; i < 7; i++) {
+					var ShowTime = nowTime + i * oneDayTime;
+					//初始化日期时间
+					var myDate = new Date(ShowTime);
+					var year = myDate.getFullYear();
+					var month = myDate.getMonth() + 1;
+					var date = myDate.getDate();
+					dateList.push({
+						year: year,
+						fullDate: year + '-' + formatNumber(month) + '-' + formatNumber(date),
+						date: formatNumber(month) + '-' + formatNumber(date),
+						day: i == 0 ? '今日' : '周' + '日一二三四五六'.charAt(myDate.getDay()),
+						residue: 5,
+						basicPrice: 20
+					});
+				}
+				return dateList;
+			},
+			// 去场地预约详情
+			toDetail(e) {
+				let date = e.fullDate;
+				if(e.residue==0){
+					uni.showToast({
+						icon:'none',
+						title:'暂无场地'
+					})
+					return false
+				}
+				uni.navigateTo({
+					url: '/pages/reservationDetail/reservationDetail?date=' + date 
+				});
+			},
+			// 预览图片
+			previewImg(e) {
+				this.currentImgIndex = e
+				uni.previewImage({
+					urls: this.swiperList,
+					current: e
+				});
+			},
 		},
+	
 		created: async function() {
 			// 获取门店信息
 			let gymnasiumInfo = await this.app.getStoreInfo('reGet')
@@ -188,6 +285,7 @@
 			}
 			this.storeInfo = gymnasiumInfo
 			this.swiperList = this.storeInfo.gymnasiumImgList
+			this.getReservationInfo();
 		},
 	});
 </script>
@@ -205,16 +303,22 @@
 		height: 211px;
 	}
 
+	.storeHeadPhoto {
+		width: 60px;
+		height: 60px;
+		border-radius: 6px;
+		margin-right: 8px;
+	}
+
 	.navBox {
-		margin: 10px 10rpx 0;
-		margin-top: 10px;
+		margin: 10px 10px 0;
 		height: 90px;
 		position: relative;
 		box-sizing: border-box;
 	}
 
 	.navLeft {
-		width: 170px;
+		flex: 1;
 		height: 90px;
 		background: #64b0ef;
 		border-radius: 10px;
@@ -223,7 +327,7 @@
 	}
 
 	.navRight {
-		width: 170px;
+		flex: 1;
 		height: 90px;
 		border-radius: 10px;
 		background: #65dd9e;
@@ -339,14 +443,6 @@
 		margin-right: 6rpx;
 	}
 
-	.location,
-	.distance {
-		font-family: Alibaba PuHuiTi 2;
-		font-size: 20rpx;
-		font-feature-settings: 'kern' on;
-		color: #b1b4c3;
-	}
-
 	.menuText {
 		font-family: YouSheBiaoTiHei;
 		font-size: 30px;
@@ -370,6 +466,7 @@
 		font-variation-settings: "opsz" auto;
 		color: #333333;
 		margin-bottom: 8rpx;
+		font-weight: bold;
 	}
 
 	.location {
@@ -377,7 +474,6 @@
 		font-size: 14px;
 		font-variation-settings: "opsz" auto;
 		color: #8A8A8A;
-		margin-bottom: 8rpx;
 	}
 
 	.operateItem {
@@ -385,15 +481,11 @@
 		font-size: 14px;
 		font-weight: 500;
 		font-variation-settings: "opsz" auto;
-		color: #409EFF;
+		margin-left: 2px;
 	}
 
 	.operateItem1 {
-		margin-left: 60rpx;
-	}
-
-	.operateItem2 {
-		margin-right: 60rpx;
+		margin-right: 4px;
 	}
 
 	.commonTitle {
@@ -403,6 +495,7 @@
 		font-variation-settings: "opsz" auto;
 		color: #333333;
 		margin-top: 30rpx;
+		font-weight: bold;
 	}
 
 	.commonValue {
@@ -412,5 +505,74 @@
 		font-variation-settings: "opsz" auto;
 		color: #9E9E9E;
 		margin-top: 10rpx;
+	}
+
+	.venueReservationList {
+		height: 208rpx;
+		margin-top: 20px;
+	}
+
+	.venueReservationItem {
+		width: 160rpx;
+		height: 208rpx;
+		margin-right: 16rpx;
+		border-radius: 10rpx;
+		border: 1px solid #0077ff;
+		box-sizing: border-box;
+		display: inline-block;
+	}
+
+	.venueReservationItemTop {
+		width: 100%;
+		height: 94rpx;
+		background-color: #0077ff;
+		color: #fff;
+		font-family: Alibaba PuHuiTi 2;
+		font-size: 28rpx;
+		font-weight: 500;
+		line-height: normal;
+		letter-spacing: 0em;
+		font-feature-settings: 'kern' on;
+		color: #ffffff;
+	}
+
+	.isFullBg {
+		background-color: #5f5f5f;
+	}
+
+	.isFullBorder {
+		border: 1px solid #5f5f5f;
+	}
+
+	.venueReservationItemBottom {
+		font-family: Alibaba PuHuiTi 2;
+		font-size: 24rpx;
+		font-weight: normal;
+		line-height: normal;
+		font-feature-settings: 'kern' on;
+		color: #5f5f5f;
+		padding: 14rpx 10rpx;
+	}
+
+	.errorReporting {
+		margin-top: 12rpx;
+		width: 100%;
+		height: 80rpx;
+		padding: 0 20rpx;
+		background-color: #fff;
+		font-family: Alibaba PuHuiTi 2;
+		font-size: 28rpx;
+		font-feature-settings: 'kern' on;
+		color: #121836;
+		box-sizing: border-box;
+	}
+
+	.specailBtn {
+		background-color: transparent;
+		padding: 0;
+	}
+
+	.specailBtn::after {
+		border: none;
 	}
 </style>

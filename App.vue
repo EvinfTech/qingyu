@@ -128,6 +128,7 @@
 						success: (res) => {
 							if (res.statusCode == 200) {
 								let userInfo = res.data.data;
+								userInfo.avatar = this.globalData.httpUrl +userInfo.avatar;
 								this.globalData.userInfo.avatar = userInfo.avatar; //头像
 								this.globalData.userInfo.birthday = userInfo.birthday; //生日
 								this.globalData.userInfo.name = userInfo.name; //昵称
@@ -162,7 +163,7 @@
 						url: this.globalData.httpUrl + 'wx/get/shop/detail',
 						method: 'POST'
 					}).then((res) => {
-						let tag = res.data.data.tag;
+						let tag = res.data.data.tag?res.data.data.tag:[];
 						let tagList = [];
 						tag.forEach((item) => {
 							tagList.push({
@@ -181,6 +182,8 @@
 						gymnasiumInfo.facility = res.data.data.facility
 						gymnasiumInfo.serve = res.data.data.serve
 						gymnasiumInfo.hardwareFacilities = tagList
+						gymnasiumInfo.shop_avatar = this.globalData.httpUrl+res.data.data.shop_avatar;
+						gymnasiumInfo.desc = res.data.data.desc
 						let gymnasiumImgList = [];
 						let list = JSON.parse(res.data.data.shop_photo)
 						list.forEach(item => {

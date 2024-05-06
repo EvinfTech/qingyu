@@ -10,15 +10,20 @@
 		width: 100%;
 		height: 211px;
 }
+.storeHeadPhoto.data-v-07e72d3c {
+		width: 60px;
+		height: 60px;
+		border-radius: 6px;
+		margin-right: 8px;
+}
 .navBox.data-v-07e72d3c {
-		margin: 10px 10rpx 0;
-		margin-top: 10px;
+		margin: 10px 10px 0;
 		height: 90px;
 		position: relative;
 		box-sizing: border-box;
 }
 .navLeft.data-v-07e72d3c {
-		width: 170px;
+		flex: 1;
 		height: 90px;
 		background: #64b0ef;
 		border-radius: 10px;
@@ -26,7 +31,7 @@
 		position: relative;
 }
 .navRight.data-v-07e72d3c {
-		width: 170px;
+		flex: 1;
 		height: 90px;
 		border-radius: 10px;
 		background: #65dd9e;
@@ -127,13 +132,6 @@
 		color: #b1b4c3;
 		margin-right: 6rpx;
 }
-.location.data-v-07e72d3c,
-	.distance.data-v-07e72d3c {
-		font-family: Alibaba PuHuiTi 2;
-		font-size: 20rpx;
-		font-feature-settings: 'kern' on;
-		color: #b1b4c3;
-}
 .menuText.data-v-07e72d3c {
 		font-family: YouSheBiaoTiHei;
 		font-size: 30px;
@@ -155,26 +153,23 @@
 		font-variation-settings: "opsz" auto;
 		color: #333333;
 		margin-bottom: 8rpx;
+		font-weight: bold;
 }
 .location.data-v-07e72d3c {
 		font-family: PingFang SC;
 		font-size: 14px;
 		font-variation-settings: "opsz" auto;
 		color: #8A8A8A;
-		margin-bottom: 8rpx;
 }
 .operateItem.data-v-07e72d3c {
 		font-family: PingFang SC;
 		font-size: 14px;
 		font-weight: 500;
 		font-variation-settings: "opsz" auto;
-		color: #409EFF;
+		margin-left: 2px;
 }
 .operateItem1.data-v-07e72d3c {
-		margin-left: 60rpx;
-}
-.operateItem2.data-v-07e72d3c {
-		margin-right: 60rpx;
+		margin-right: 4px;
 }
 .commonTitle.data-v-07e72d3c {
 		font-family: PingFang SC;
@@ -183,6 +178,7 @@
 		font-variation-settings: "opsz" auto;
 		color: #333333;
 		margin-top: 30rpx;
+		font-weight: bold;
 }
 .commonValue.data-v-07e72d3c {
 		/* 地板：架空实木地板+4.5厘米宝石专用塑胶 */
@@ -191,4 +187,64 @@
 		font-variation-settings: "opsz" auto;
 		color: #9E9E9E;
 		margin-top: 10rpx;
+}
+.venueReservationList.data-v-07e72d3c {
+		height: 208rpx;
+		margin-top: 20px;
+}
+.venueReservationItem.data-v-07e72d3c {
+		width: 160rpx;
+		height: 208rpx;
+		margin-right: 16rpx;
+		border-radius: 10rpx;
+		border: 1px solid #0077ff;
+		box-sizing: border-box;
+		display: inline-block;
+}
+.venueReservationItemTop.data-v-07e72d3c {
+		width: 100%;
+		height: 94rpx;
+		background-color: #0077ff;
+		color: #fff;
+		font-family: Alibaba PuHuiTi 2;
+		font-size: 28rpx;
+		font-weight: 500;
+		line-height: normal;
+		letter-spacing: 0em;
+		font-feature-settings: 'kern' on;
+		color: #ffffff;
+}
+.isFullBg.data-v-07e72d3c {
+		background-color: #5f5f5f;
+}
+.isFullBorder.data-v-07e72d3c {
+		border: 1px solid #5f5f5f;
+}
+.venueReservationItemBottom.data-v-07e72d3c {
+		font-family: Alibaba PuHuiTi 2;
+		font-size: 24rpx;
+		font-weight: normal;
+		line-height: normal;
+		font-feature-settings: 'kern' on;
+		color: #5f5f5f;
+		padding: 14rpx 10rpx;
+}
+.errorReporting.data-v-07e72d3c {
+		margin-top: 12rpx;
+		width: 100%;
+		height: 80rpx;
+		padding: 0 20rpx;
+		background-color: #fff;
+		font-family: Alibaba PuHuiTi 2;
+		font-size: 28rpx;
+		font-feature-settings: 'kern' on;
+		color: #121836;
+		box-sizing: border-box;
+}
+.specailBtn.data-v-07e72d3c {
+		background-color: transparent;
+		padding: 0;
+}
+.specailBtn.data-v-07e72d3c::after {
+		border: none;
 }

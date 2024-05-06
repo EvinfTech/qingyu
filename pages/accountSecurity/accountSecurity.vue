@@ -7,7 +7,6 @@
 			</template>
 		</u-navbar>
         <u-cell-group custom-class="userinfo-group">
-            <u-cell title="氢羽号" center :value="accountNo" custom-class="userinfo-cell"></u-cell>
             <u-cell title="手机号" :value="phone" center custom-class="userinfo-cell"></u-cell>
 			<!-- #ifdef MP-WEIXIN -->
 			<u-cell title="绑定微信" :value="status" center custom-class="userinfo-cell"></u-cell>

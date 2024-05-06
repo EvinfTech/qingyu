@@ -6,8 +6,6 @@
     "pages/home/home",
     "pages/reservation/reservation",
     "pages/mine/mine",
-    "pages/gymnasiumInfo/gymnasiumInfo",
-    "pages/album/album",
     "pages/errorReport/errorReport",
     "pages/reservationDetail/reservationDetail",
     "pages/orderDetail/orderDetail",
@@ -18,7 +16,6 @@
     "pages/aboutUs/aboutUs",
     "pages/reservationList/reservationList",
     "pages/reservationInfo/reservationInfo",
-    "pages/dataDetail/dataDetail",
     "pages/accountSecurity/accountSecurity",
     "pages/userAgreement/userAgreement"
   ],

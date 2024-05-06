@@ -125,7 +125,7 @@
 		padding-right: 10px;
 		box-sizing: border-box;
 		overflow-x: auto;
-		padding-bottom:10px ;
+		padding-bottom: 10px;
 }
 .timeItem.data-v-71ac0ae8 {
 		font-family: D-DIN-PRO-Medium-Medium;

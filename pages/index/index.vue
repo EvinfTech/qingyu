@@ -5,7 +5,7 @@
 			<Home v-if="active == 0" :scrollViewHeight="scrollViewHeight" @navigate="navigate" ></Home>
 			<Mine ref="mine" id="mine" v-else></Mine>
 		</scroll-view>
-		<u-tabbar :value="active" @change="tabbarChange" :border="false" :fixed="false" :placeholder="false">
+		<u-tabbar :value="active" @change="tabbarChange" :border="true" :fixed="false" :placeholder="false">
 			<u-tabbar-item :text="item.text" v-for="(item,index) in tabbarList" :key="index">
 				<template #active-icon>
 					<image class="u-page__item__slot-icon" :src="item.selectedIconPath"

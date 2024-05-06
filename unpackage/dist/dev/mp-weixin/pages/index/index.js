@@ -109,7 +109,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     h: common_vendor.o($options.tabbarChange),
     i: common_vendor.p({
       value: $data.active,
-      border: false,
+      border: true,
       fixed: false,
       placeholder: false
     })

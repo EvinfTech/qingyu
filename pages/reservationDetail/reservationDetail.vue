@@ -121,7 +121,6 @@
 				timeList: [],
 				siteList: [],
 				todayDeleteIndex: 0,
-				top: 0,
 				con: {
 					already: false,
 					checked: false,
@@ -364,7 +363,8 @@
 
 			getTabItemWidth() {
 				let that = this;
-				var screenHeight = uni.getSystemInfoSync().windowHeight;
+				let sysInfo = uni.getSystemInfoSync()
+				var screenHeight = sysInfo.windowHeight;
 				let query = uni.createSelectorQuery();
 				query.select('.customerTabItem').boundingClientRect((navRect) => {
 						let query2 = uni.createSelectorQuery();
@@ -384,10 +384,16 @@
 										query4
 											.select('.nav-bar')
 											.boundingClientRect((bar) => {
-												that.centerHeight = screenHeight - bar
-													.height - item.height - navRect
+												// #ifdef MP-WEIXIN || APP-PLUS
+												that.centerHeight = screenHeight - 44 - item
+													.height - navRect.height - sysInfo.statusBarHeight
+												// #endif
+												// #ifdef H5
+												that.centerHeight = screenHeight - bar.height - item
+													.height - navRect
 													.height
-												that.top = bar.height + navRect.height + 40
+												// #endif
+
 											})
 											.exec();
 									})
@@ -460,14 +466,14 @@
 					let choosedList = this.choosedList;
 					choosedList.push(objItem);
 					this.choosedList = choosedList
-					this.totalPrice = this.totalPrice+ objItem.price/100
+					this.totalPrice = this.totalPrice + objItem.price / 100
 				} else {
 					// 取消选中
 					let index = this.choosedList.findIndex((con) => con.startTime == this.timeList[data.j]);
 					let dataList = this.choosedList;
 					dataList.splice(index, 1);
 					this.choosedList = dataList
-					this.totalPrice = this.totalPrice - data.item.price/100
+					this.totalPrice = this.totalPrice - data.item.price / 100
 				}
 			},
 
@@ -646,7 +652,7 @@
 		padding-right: 10px;
 		box-sizing: border-box;
 		overflow-x: auto;
-		padding-bottom:10px ;
+		padding-bottom: 10px;
 	}
 
 	.timeItem {

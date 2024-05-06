@@ -6,6 +6,7 @@ const _sfc_main = {
   data() {
     return {
       app: getApp(),
+      initAvatarUrl: "",
       avatarUrl: "",
       nickname: "",
       sex: "",
@@ -90,6 +91,7 @@ const _sfc_main = {
           fileList.push({
             url: this.app.globalData.httpUrl + JSON.parse(res.data).data
           });
+          this.initAvatarUrl = JSON.parse(res.data).data;
           this.fileList = fileList;
           this.avatarUrl = fileList[0].url;
         }
@@ -118,7 +120,7 @@ const _sfc_main = {
         data: {
           user_ouid: this.app.globalData.userInfo.ouid,
           name: this.nickname,
-          avatar: this.avatarUrl,
+          avatar: this.initAvatarUrl,
           phone: "",
           birthday: Number(this.dealCurrentDate),
           sex: Number(this.sex),

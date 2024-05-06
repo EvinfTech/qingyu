@@ -43,18 +43,6 @@
 			}
 		},
 		{
-			"path": "pages/gymnasiumInfo/gymnasiumInfo",
-			"style": {
-				"usingComponents": {}
-			}
-		},
-		{
-			"path": "pages/album/album",
-			"style": {
-				"usingComponents": {}
-			}
-		},
-		{
 			"path": "pages/errorReport/errorReport",
 			"style": {
 				"usingComponents": {}
@@ -110,12 +98,6 @@
 		},
 		{
 			"path": "pages/reservationInfo/reservationInfo",
-			"style": {
-				"usingComponents": {}
-			}
-		},
-		{
-			"path": "pages/dataDetail/dataDetail",
 			"style": {
 				"usingComponents": {}
 			}

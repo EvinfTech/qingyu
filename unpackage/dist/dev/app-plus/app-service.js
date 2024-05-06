@@ -2024,7 +2024,7 @@ if (uni.restoreGlobal) {
     }
     return target;
   };
-  const _sfc_main$K = {
+  const _sfc_main$H = {
     name: "u-icon",
     data() {
       return {};
@@ -2074,7 +2074,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$J(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$G(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock(
       "view",
       {
@@ -2118,7 +2118,7 @@ if (uni.restoreGlobal) {
       /* CLASS */
     );
   }
-  const __easycom_0$7 = /* @__PURE__ */ _export_sfc(_sfc_main$K, [["render", _sfc_render$J], ["__scopeId", "data-v-1c933a9a"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-icon/u-icon.vue"]]);
+  const __easycom_0$7 = /* @__PURE__ */ _export_sfc(_sfc_main$H, [["render", _sfc_render$G], ["__scopeId", "data-v-1c933a9a"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-icon/u-icon.vue"]]);
   const props$n = {
     props: {
       // 是否显示圆点
@@ -2196,7 +2196,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  const _sfc_main$J = {
+  const _sfc_main$G = {
     name: "u-badge",
     mixins: [mpMixin, props$n, mixin],
     computed: {
@@ -2239,7 +2239,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$I(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$F(_ctx, _cache, $props, $setup, $data, $options) {
     return _ctx.show && ((Number(_ctx.value) === 0 ? _ctx.showZero : true) || _ctx.isDot) ? (vue.openBlock(), vue.createElementBlock(
       "text",
       {
@@ -2252,7 +2252,7 @@ if (uni.restoreGlobal) {
       /* TEXT, CLASS, STYLE */
     )) : vue.createCommentVNode("v-if", true);
   }
-  const __easycom_0$6 = /* @__PURE__ */ _export_sfc(_sfc_main$J, [["render", _sfc_render$I], ["__scopeId", "data-v-aa9883b1"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-badge/u-badge.vue"]]);
+  const __easycom_0$6 = /* @__PURE__ */ _export_sfc(_sfc_main$G, [["render", _sfc_render$F], ["__scopeId", "data-v-aa9883b1"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-badge/u-badge.vue"]]);
   const props$m = {
     props: {
       // item标签的名称，作为与u-tabbar的value参数匹配的标识符
@@ -2287,7 +2287,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  const _sfc_main$I = {
+  const _sfc_main$F = {
     name: "u-tabbar-item",
     mixins: [mpMixin, mixin, props$m],
     data() {
@@ -2338,7 +2338,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$H(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$E(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_u_icon = resolveEasycom(vue.resolveDynamicComponent("u-icon"), __easycom_0$7);
     const _component_u_badge = resolveEasycom(vue.resolveDynamicComponent("u-badge"), __easycom_0$6);
     return vue.openBlock(), vue.createElementBlock(
@@ -2392,11 +2392,11 @@ if (uni.restoreGlobal) {
       /* STYLE */
     );
   }
-  const __easycom_0$5 = /* @__PURE__ */ _export_sfc(_sfc_main$I, [["render", _sfc_render$H], ["__scopeId", "data-v-a54be951"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-tabbar-item/u-tabbar-item.vue"]]);
+  const __easycom_0$5 = /* @__PURE__ */ _export_sfc(_sfc_main$F, [["render", _sfc_render$E], ["__scopeId", "data-v-a54be951"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-tabbar-item/u-tabbar-item.vue"]]);
   const props$l = {
     props: {}
   };
-  const _sfc_main$H = {
+  const _sfc_main$E = {
     name: "u-safe-bottom",
     mixins: [mpMixin, mixin, props$l],
     data() {
@@ -2414,7 +2414,7 @@ if (uni.restoreGlobal) {
     mounted() {
     }
   };
-  function _sfc_render$G(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$D(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock(
       "view",
       {
@@ -2426,7 +2426,7 @@ if (uni.restoreGlobal) {
       /* CLASS, STYLE */
     );
   }
-  const __easycom_3$3 = /* @__PURE__ */ _export_sfc(_sfc_main$H, [["render", _sfc_render$G], ["__scopeId", "data-v-3ec581de"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-safe-bottom/u-safe-bottom.vue"]]);
+  const __easycom_3$3 = /* @__PURE__ */ _export_sfc(_sfc_main$E, [["render", _sfc_render$D], ["__scopeId", "data-v-3ec581de"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-safe-bottom/u-safe-bottom.vue"]]);
   const props$k = {
     props: {
       // 当前匹配项的name
@@ -2471,7 +2471,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  const _sfc_main$G = {
+  const _sfc_main$D = {
     name: "u-tabbar",
     mixins: [mpMixin, mixin, props$k],
     data() {
@@ -2523,7 +2523,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$F(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$C(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_u_safe_bottom = resolveEasycom(vue.resolveDynamicComponent("u-safe-bottom"), __easycom_3$3);
     return vue.openBlock(), vue.createElementBlock("view", { class: "u-tabbar" }, [
       vue.createElementVNode(
@@ -2558,263 +2558,7 @@ if (uni.restoreGlobal) {
       )) : vue.createCommentVNode("v-if", true)
     ]);
   }
-  const __easycom_1$3 = /* @__PURE__ */ _export_sfc(_sfc_main$G, [["render", _sfc_render$F], ["__scopeId", "data-v-d5be2d5d"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-tabbar/u-tabbar.vue"]]);
-  const props$j = {
-    props: {
-      bgColor: {
-        type: String,
-        default: props$p.statusBar.bgColor
-      }
-    }
-  };
-  const _sfc_main$F = {
-    name: "u-status-bar",
-    mixins: [mpMixin, mixin, props$j],
-    data() {
-      return {};
-    },
-    computed: {
-      style() {
-        const style = {};
-        style.height = uni.$u.addUnit(uni.$u.sys().statusBarHeight, "px");
-        style.backgroundColor = this.bgColor;
-        return uni.$u.deepMerge(style, uni.$u.addStyle(this.customStyle));
-      }
-    }
-  };
-  function _sfc_render$E(_ctx, _cache, $props, $setup, $data, $options) {
-    return vue.openBlock(), vue.createElementBlock(
-      "view",
-      {
-        style: vue.normalizeStyle([$options.style]),
-        class: "u-status-bar"
-      },
-      [
-        vue.renderSlot(_ctx.$slots, "default", {}, void 0, true)
-      ],
-      4
-      /* STYLE */
-    );
-  }
-  const __easycom_1$2 = /* @__PURE__ */ _export_sfc(_sfc_main$F, [["render", _sfc_render$E], ["__scopeId", "data-v-c0b45a48"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-status-bar/u-status-bar.vue"]]);
-  const props$i = {
-    props: {
-      // 是否开启顶部安全区适配
-      safeAreaInsetTop: {
-        type: Boolean,
-        default: props$p.navbar.safeAreaInsetTop
-      },
-      // 固定在顶部时，是否生成一个等高元素，以防止塌陷
-      placeholder: {
-        type: Boolean,
-        default: props$p.navbar.placeholder
-      },
-      // 是否固定在顶部
-      fixed: {
-        type: Boolean,
-        default: props$p.navbar.fixed
-      },
-      // 是否显示下边框
-      border: {
-        type: Boolean,
-        default: props$p.navbar.border
-      },
-      // 左边的图标
-      leftIcon: {
-        type: String,
-        default: props$p.navbar.leftIcon
-      },
-      // 左边的提示文字
-      leftText: {
-        type: String,
-        default: props$p.navbar.leftText
-      },
-      // 左右的提示文字
-      rightText: {
-        type: String,
-        default: props$p.navbar.rightText
-      },
-      // 右边的图标
-      rightIcon: {
-        type: String,
-        default: props$p.navbar.rightIcon
-      },
-      // 标题
-      title: {
-        type: [String, Number],
-        default: props$p.navbar.title
-      },
-      // 背景颜色
-      bgColor: {
-        type: String,
-        default: props$p.navbar.bgColor
-      },
-      // 标题的宽度
-      titleWidth: {
-        type: [String, Number],
-        default: props$p.navbar.titleWidth
-      },
-      // 导航栏高度
-      height: {
-        type: [String, Number],
-        default: props$p.navbar.height
-      },
-      // 左侧返回图标的大小
-      leftIconSize: {
-        type: [String, Number],
-        default: props$p.navbar.leftIconSize
-      },
-      // 左侧返回图标的颜色
-      leftIconColor: {
-        type: String,
-        default: props$p.navbar.leftIconColor
-      },
-      // 点击左侧区域(返回图标)，是否自动返回上一页
-      autoBack: {
-        type: Boolean,
-        default: props$p.navbar.autoBack
-      },
-      // 标题的样式，对象或字符串
-      titleStyle: {
-        type: [String, Object],
-        default: props$p.navbar.titleStyle
-      }
-    }
-  };
-  const _sfc_main$E = {
-    name: "u-navbar",
-    mixins: [mpMixin, mixin, props$i],
-    data() {
-      return {};
-    },
-    emits: ["leftClick", "rightClick"],
-    methods: {
-      // 点击左侧区域
-      leftClick() {
-        this.$emit("leftClick");
-        if (this.autoBack) {
-          uni.navigateBack();
-        }
-      },
-      // 点击右侧区域
-      rightClick() {
-        this.$emit("rightClick");
-      }
-    }
-  };
-  function _sfc_render$D(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_status_bar = resolveEasycom(vue.resolveDynamicComponent("u-status-bar"), __easycom_1$2);
-    const _component_u_icon = resolveEasycom(vue.resolveDynamicComponent("u-icon"), __easycom_0$7);
-    return vue.openBlock(), vue.createElementBlock("view", { class: "u-navbar" }, [
-      _ctx.fixed && _ctx.placeholder ? (vue.openBlock(), vue.createElementBlock(
-        "view",
-        {
-          key: 0,
-          class: "u-navbar__placeholder",
-          style: vue.normalizeStyle({
-            height: _ctx.$u.addUnit(_ctx.$u.getPx(_ctx.height) + _ctx.$u.sys().statusBarHeight, "px")
-          })
-        },
-        null,
-        4
-        /* STYLE */
-      )) : vue.createCommentVNode("v-if", true),
-      vue.createElementVNode(
-        "view",
-        {
-          class: vue.normalizeClass([_ctx.fixed && "u-navbar--fixed"])
-        },
-        [
-          _ctx.safeAreaInsetTop ? (vue.openBlock(), vue.createBlock(_component_u_status_bar, {
-            key: 0,
-            bgColor: _ctx.bgColor
-          }, null, 8, ["bgColor"])) : vue.createCommentVNode("v-if", true),
-          vue.createElementVNode(
-            "view",
-            {
-              class: vue.normalizeClass(["u-navbar__content", [_ctx.border && "u-border-bottom"]]),
-              style: vue.normalizeStyle({
-                height: _ctx.$u.addUnit(_ctx.height),
-                backgroundColor: _ctx.bgColor
-              })
-            },
-            [
-              vue.createElementVNode("view", {
-                class: "u-navbar__content__left",
-                "hover-class": "u-navbar__content__left--hover",
-                "hover-start-time": "150",
-                onClick: _cache[0] || (_cache[0] = (...args) => $options.leftClick && $options.leftClick(...args))
-              }, [
-                vue.renderSlot(_ctx.$slots, "left", {}, () => [
-                  _ctx.leftIcon ? (vue.openBlock(), vue.createBlock(_component_u_icon, {
-                    key: 0,
-                    name: _ctx.leftIcon,
-                    size: _ctx.leftIconSize,
-                    color: _ctx.leftIconColor
-                  }, null, 8, ["name", "size", "color"])) : vue.createCommentVNode("v-if", true),
-                  _ctx.leftText ? (vue.openBlock(), vue.createElementBlock(
-                    "text",
-                    {
-                      key: 1,
-                      style: vue.normalizeStyle({
-                        color: _ctx.leftIconColor
-                      }),
-                      class: "u-navbar__content__left__text"
-                    },
-                    vue.toDisplayString(_ctx.leftText),
-                    5
-                    /* TEXT, STYLE */
-                  )) : vue.createCommentVNode("v-if", true)
-                ], true)
-              ]),
-              vue.renderSlot(_ctx.$slots, "center", {}, () => [
-                vue.createElementVNode(
-                  "text",
-                  {
-                    class: "u-line-1 u-navbar__content__title",
-                    style: vue.normalizeStyle([{
-                      width: _ctx.$u.addUnit(_ctx.titleWidth)
-                    }, _ctx.$u.addStyle(_ctx.titleStyle)])
-                  },
-                  vue.toDisplayString(_ctx.title),
-                  5
-                  /* TEXT, STYLE */
-                )
-              ], true),
-              _ctx.$slots.right || _ctx.rightIcon || _ctx.rightText ? (vue.openBlock(), vue.createElementBlock("view", {
-                key: 0,
-                class: "u-navbar__content__right",
-                onClick: _cache[1] || (_cache[1] = (...args) => $options.rightClick && $options.rightClick(...args))
-              }, [
-                vue.renderSlot(_ctx.$slots, "right", {}, () => [
-                  _ctx.rightIcon ? (vue.openBlock(), vue.createBlock(_component_u_icon, {
-                    key: 0,
-                    name: _ctx.rightIcon,
-                    size: "20"
-                  }, null, 8, ["name"])) : vue.createCommentVNode("v-if", true),
-                  _ctx.rightText ? (vue.openBlock(), vue.createElementBlock(
-                    "text",
-                    {
-                      key: 1,
-                      class: "u-navbar__content__right__text"
-                    },
-                    vue.toDisplayString(_ctx.rightText),
-                    1
-                    /* TEXT */
-                  )) : vue.createCommentVNode("v-if", true)
-                ], true)
-              ])) : vue.createCommentVNode("v-if", true)
-            ],
-            6
-            /* CLASS, STYLE */
-          )
-        ],
-        2
-        /* CLASS */
-      )
-    ]);
-  }
-  const __easycom_1$1 = /* @__PURE__ */ _export_sfc(_sfc_main$E, [["render", _sfc_render$D], ["__scopeId", "data-v-9d9e7ee2"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-navbar/u-navbar.vue"]]);
+  const __easycom_1$3 = /* @__PURE__ */ _export_sfc(_sfc_main$D, [["render", _sfc_render$C], ["__scopeId", "data-v-d5be2d5d"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-tabbar/u-tabbar.vue"]]);
   const request = (parmas) => {
     uni.showLoading({
       title: "加载中"
@@ -2890,18 +2634,20 @@ if (uni.restoreGlobal) {
       return cur;
     }, {});
   };
-  const _sfc_main$D = {
+  const _sfc_main$C = {
     data() {
       return {
         app: getApp(),
         indicatorDots: true,
         vertical: false,
-        autoplay: false,
+        autoplay: true,
         interval: 2e3,
         duration: 500,
         swiperList: [],
         viewHeight: 0,
-        storeInfo: {}
+        storeInfo: {},
+        venueReservationList: [],
+        currentImgIndex: -1
       };
     },
     /**
@@ -2950,12 +2696,12 @@ if (uni.restoreGlobal) {
       // 计算页面高度
       calculatePageHeight() {
         var that = this;
-        let res = uni.getSystemInfoSync();
+        uni.getSystemInfoSync();
         let query1 = uni.createSelectorQuery().in(that);
         query1.select(".banner").boundingClientRect((bannerRect) => {
           let query2 = uni.createSelectorQuery().in(that);
           query2.select(".navBox").boundingClientRect((navBoxRect) => {
-            that.viewHeight = that.scrollViewHeight - bannerRect.height - navBoxRect.height - 54 - res.statusBarHeight;
+            that.viewHeight = that.scrollViewHeight - bannerRect.height;
           }).exec();
         }).exec();
       },
@@ -2970,6 +2716,68 @@ if (uni.restoreGlobal) {
         this.$emit("navigate", {
           detail: 1
         });
+      },
+      // 获取近7天可约场地
+      getReservationInfo() {
+        request({
+          url: "wx/get/shop/surplus/count",
+          method: "POST",
+          data: {
+            date: getNowDate("-")
+          }
+        }).then((res) => {
+          let list = this.et7Days();
+          let obj = res.data;
+          list.forEach((item) => {
+            item.residue = obj[`${item.date}`].count;
+            item.basicPrice = obj[`${item.date}`].money / 100;
+          });
+          this.venueReservationList = list;
+        });
+      },
+      et7Days() {
+        let dateList = [];
+        var now = /* @__PURE__ */ new Date();
+        var nowTime = now.getTime();
+        var oneDayTime = 86400 * 1e3;
+        for (var i = 0; i < 7; i++) {
+          var ShowTime = nowTime + i * oneDayTime;
+          var myDate = new Date(ShowTime);
+          var year = myDate.getFullYear();
+          var month = myDate.getMonth() + 1;
+          var date2 = myDate.getDate();
+          dateList.push({
+            year,
+            fullDate: year + "-" + formatNumber(month) + "-" + formatNumber(date2),
+            date: formatNumber(month) + "-" + formatNumber(date2),
+            day: i == 0 ? "今日" : "周" + "日一二三四五六".charAt(myDate.getDay()),
+            residue: 5,
+            basicPrice: 20
+          });
+        }
+        return dateList;
+      },
+      // 去场地预约详情
+      toDetail(e) {
+        let date2 = e.fullDate;
+        if (e.residue == 0) {
+          uni.showToast({
+            icon: "none",
+            title: "暂无场地"
+          });
+          return false;
+        }
+        uni.navigateTo({
+          url: "/pages/reservationDetail/reservationDetail?date=" + date2
+        });
+      },
+      // 预览图片
+      previewImg(e) {
+        this.currentImgIndex = e;
+        uni.previewImage({
+          urls: this.swiperList,
+          current: e
+        });
       }
     },
     created: async function() {
@@ -2982,27 +2790,12 @@ if (uni.restoreGlobal) {
       }
       this.storeInfo = gymnasiumInfo;
       this.swiperList = this.storeInfo.gymnasiumImgList;
+      this.getReservationInfo();
     }
   };
-  function _sfc_render$C(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_1$1);
+  function _sfc_render$B(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_u_icon = resolveEasycom(vue.resolveDynamicComponent("u-icon"), __easycom_0$7);
     return vue.openBlock(), vue.createElementBlock("view", { class: "page" }, [
-      vue.createVNode(_component_u_navbar, {
-        class: "nav-bar",
-        safeAreaInsetTop: true,
-        fixed: false
-      }, {
-        left: vue.withCtx(() => [
-          vue.createElementVNode("image", {
-            src: "/static/images/home/qingyu.svg",
-            mode: "",
-            style: { "width": "180px" }
-          })
-        ]),
-        _: 1
-        /* STABLE */
-      }),
       vue.createElementVNode("view", { class: "banner" }, [
         vue.createElementVNode("swiper", {
           "indicator-dots": $data.indicatorDots,
@@ -3020,8 +2813,9 @@ if (uni.restoreGlobal) {
                   vue.createElementVNode("image", {
                     src: item,
                     class: "w-full h-full",
-                    mode: ""
-                  }, null, 8, ["src"])
+                    mode: "",
+                    onClick: ($event) => $options.previewImg(item)
+                  }, null, 8, ["src", "onClick"])
                 ])
               ]);
             }),
@@ -3029,40 +2823,6 @@ if (uni.restoreGlobal) {
             /* KEYED_FRAGMENT */
           ))
         ], 8, ["indicator-dots", "autoplay", "interval", "duration"])
-      ]),
-      vue.createElementVNode("view", { class: "flex align-center navBox justify-center" }, [
-        vue.createElementVNode("view", {
-          class: "navLeft",
-          onClick: _cache[0] || (_cache[0] = (...args) => $options.appointmentVenue && $options.appointmentVenue(...args))
-        }, [
-          vue.createElementVNode("image", {
-            src: "/static/images/home/appointment.svg",
-            mode: "",
-            class: "leftText"
-          }),
-          vue.createElementVNode("image", {
-            src: "/static/images/home/predetermine.svg",
-            mode: "",
-            class: "rightIcon"
-          }),
-          vue.createElementVNode("view", { class: "leftSubText" }, "包场通场")
-        ]),
-        vue.createElementVNode("view", {
-          class: "navRight flex align-center justify-center",
-          onClick: _cache[1] || (_cache[1] = (...args) => $options.toMine && $options.toMine(...args))
-        }, [
-          vue.createElementVNode("image", {
-            src: "/static/images/home/mine.svg",
-            mode: "",
-            class: "leftText"
-          }),
-          vue.createElementVNode("image", {
-            src: "/static/images/home/infoIcon.svg",
-            mode: "",
-            class: "rightIcon"
-          }),
-          vue.createElementVNode("view", { class: "leftSubText" }, "个人信息")
-        ])
       ]),
       vue.createElementVNode(
         "view",
@@ -3072,48 +2832,80 @@ if (uni.restoreGlobal) {
         },
         [
           vue.createElementVNode("view", { class: "commonInfo" }, [
-            vue.createElementVNode(
-              "view",
-              { class: "gymnasiumName" },
-              vue.toDisplayString($data.storeInfo.gymnasiumName),
-              1
-              /* TEXT */
-            ),
-            vue.createElementVNode(
-              "view",
-              { class: "location" },
-              vue.toDisplayString($data.storeInfo.location),
-              1
-              /* TEXT */
-            ),
-            vue.createElementVNode(
-              "view",
-              { class: "location" },
-              vue.toDisplayString($data.storeInfo.phone),
-              1
-              /* TEXT */
-            ),
-            vue.createElementVNode("view", { class: "flex align-center justify-between" }, [
-              vue.createElementVNode("view", {
-                class: "flex align-center operateItem1",
-                onClick: _cache[2] || (_cache[2] = (...args) => $options.toMap && $options.toMap(...args))
-              }, [
-                vue.createVNode(_component_u_icon, {
-                  name: "map-fill",
-                  color: "#409EFF"
-                }),
-                vue.createElementVNode("view", { class: "operateItem" }, " 地图/导航 ")
-              ]),
-              vue.createElementVNode("view", {
-                class: "flex align-center operateItem2",
-                onClick: _cache[3] || (_cache[3] = (...args) => $options.toCall && $options.toCall(...args))
-              }, [
-                vue.createVNode(_component_u_icon, {
-                  name: "phone-fill",
-                  color: "#409EFF"
-                }),
-                vue.createElementVNode("view", { class: "operateItem" }, " 联系商家 ")
+            vue.createElementVNode("view", { class: "flex align-center" }, [
+              vue.createElementVNode("image", {
+                src: $data.storeInfo.shop_avatar,
+                class: "storeHeadPhoto"
+              }, null, 8, ["src"]),
+              vue.createElementVNode("view", null, [
+                vue.createElementVNode(
+                  "view",
+                  { class: "gymnasiumName" },
+                  vue.toDisplayString($data.storeInfo.gymnasiumName),
+                  1
+                  /* TEXT */
+                ),
+                vue.createElementVNode(
+                  "view",
+                  { class: "location" },
+                  " 营业时间： " + vue.toDisplayString($data.storeInfo.businessHours),
+                  1
+                  /* TEXT */
+                )
               ])
+            ]),
+            vue.createElementVNode("view", {
+              class: "flex align-start",
+              onClick: _cache[0] || (_cache[0] = (...args) => $options.toMap && $options.toMap(...args)),
+              style: { "margin": "10px 0 8px 0" }
+            }, [
+              vue.createElementVNode("view", { class: "flex operateItem1 align-center flex-shirnk" }, [
+                vue.createVNode(_component_u_icon, { name: "map-fill" }),
+                vue.createElementVNode("view", { class: "operateItem" }, " 地址 ")
+              ]),
+              vue.createElementVNode(
+                "view",
+                {
+                  class: "location",
+                  style: { "color": "#409EFF" }
+                },
+                vue.toDisplayString($data.storeInfo.location),
+                1
+                /* TEXT */
+              )
+            ]),
+            vue.createElementVNode("view", {
+              class: "flex align-start",
+              onClick: _cache[1] || (_cache[1] = (...args) => $options.toCall && $options.toCall(...args))
+            }, [
+              vue.createElementVNode("view", { class: "flex align-center justify-between flex-shirnk" }, [
+                vue.createElementVNode("view", { class: "flex align-center operateItem1" }, [
+                  vue.createVNode(_component_u_icon, { name: "phone-fill" }),
+                  vue.createElementVNode("view", { class: "operateItem" }, " 电话 ")
+                ])
+              ]),
+              vue.createElementVNode(
+                "view",
+                {
+                  class: "location",
+                  style: { "color": "#409EFF" }
+                },
+                vue.toDisplayString($data.storeInfo.phone),
+                1
+                /* TEXT */
+              )
+            ])
+          ]),
+          vue.createElementVNode("view", null, [
+            vue.createElementVNode("view", { class: "commonTitle" }, " 场馆介绍 "),
+            vue.createElementVNode("view", { class: "commonValue" }, [
+              vue.createElementVNode(
+                "text",
+                null,
+                vue.toDisplayString($data.storeInfo.desc),
+                1
+                /* TEXT */
+              )
             ])
           ]),
           vue.createElementVNode("view", null, [
@@ -3139,6 +2931,87 @@ if (uni.restoreGlobal) {
                 /* TEXT */
               )
             ])
+          ]),
+          vue.createElementVNode("view", { class: "venueReservationList w-full" }, [
+            vue.createElementVNode("scroll-view", {
+              "scroll-x": true,
+              class: "h-full w-full"
+            }, [
+              vue.createElementVNode("view", {
+                class: "w-full",
+                style: { "white-space": "nowrap" }
+              }, [
+                (vue.openBlock(true), vue.createElementBlock(
+                  vue.Fragment,
+                  null,
+                  vue.renderList($data.venueReservationList, (item, index2) => {
+                    return vue.openBlock(), vue.createElementBlock("view", {
+                      class: vue.normalizeClass("venueReservationItem " + (item.residue == 0 ? "isFullBorder" : "")),
+                      onClick: ($event) => $options.toDetail(item),
+                      key: index2
+                    }, [
+                      vue.createElementVNode(
+                        "view",
+                        {
+                          class: vue.normalizeClass("venueReservationItemTop flex flex-direction align-center justify-center " + (item.residue == 0 ? "isFullBg" : ""))
+                        },
+                        [
+                          vue.createElementVNode(
+                            "view",
+                            null,
+                            vue.toDisplayString(item.day),
+                            1
+                            /* TEXT */
+                          ),
+                          vue.createElementVNode(
+                            "view",
+                            null,
+                            "(" + vue.toDisplayString(item.date) + ")",
+                            1
+                            /* TEXT */
+                          )
+                        ],
+                        2
+                        /* CLASS */
+                      ),
+                      vue.createElementVNode("view", { class: "venueReservationItemBottom" }, [
+                        vue.createElementVNode(
+                          "view",
+                          {
+                            class: "w-full flex align-center justify-between",
+                            style: vue.normalizeStyle("margin-bottom: 12rpx;color: " + (item.residue == 0 ? "#5F5F5F" : "#0077FF"))
+                          },
+                          [
+                            vue.createElementVNode("text", null, "剩余"),
+                            vue.createElementVNode(
+                              "text",
+                              null,
+                              vue.toDisplayString(item.residue),
+                              1
+                              /* TEXT */
+                            )
+                          ],
+                          4
+                          /* STYLE */
+                        ),
+                        vue.createElementVNode("view", { class: "w-full flex align-center justify-between" }, [
+                          vue.createElementVNode("text", null, "起订"),
+                          vue.createElementVNode(
+                            "text",
+                            null,
+                            "￥" + vue.toDisplayString(item.basicPrice),
+                            1
+                            /* TEXT */
+                          )
+                        ])
+                      ])
+                    ], 10, ["onClick"]);
+                  }),
+                  128
+                  /* KEYED_FRAGMENT */
+                ))
+              ])
+            ])
           ])
         ],
         4
@@ -3146,8 +3019,8 @@ if (uni.restoreGlobal) {
       )
     ]);
   }
-  const PagesHomeHome = /* @__PURE__ */ _export_sfc(_sfc_main$D, [["render", _sfc_render$C], ["__scopeId", "data-v-07e72d3c"], ["__file", "C:/project/轻羽项目/qingyu-client/pages/home/home.vue"]]);
-  const _sfc_main$C = {
+  const PagesHomeHome = /* @__PURE__ */ _export_sfc(_sfc_main$C, [["render", _sfc_render$B], ["__scopeId", "data-v-07e72d3c"], ["__file", "C:/project/轻羽项目/qingyu-client/pages/home/home.vue"]]);
+  const _sfc_main$B = {
     data() {
       return {
         app: getApp(),
@@ -3356,7 +3229,7 @@ if (uni.restoreGlobal) {
     created: function() {
     }
   };
-  function _sfc_render$B(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$A(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock(
       vue.Fragment,
       null,
@@ -3587,8 +3460,8 @@ if (uni.restoreGlobal) {
       /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */
     );
   }
-  const PagesMineMine = /* @__PURE__ */ _export_sfc(_sfc_main$C, [["render", _sfc_render$B], ["__scopeId", "data-v-7c2ebfa5"], ["__file", "C:/project/轻羽项目/qingyu-client/pages/mine/mine.vue"]]);
-  const _sfc_main$B = {
+  const PagesMineMine = /* @__PURE__ */ _export_sfc(_sfc_main$B, [["render", _sfc_render$A], ["__scopeId", "data-v-7c2ebfa5"], ["__file", "C:/project/轻羽项目/qingyu-client/pages/mine/mine.vue"]]);
+  const _sfc_main$A = {
     components: {
       Home: PagesHomeHome,
       Mine: PagesMineMine
@@ -3654,7 +3527,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$A(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$z(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_Home = vue.resolveComponent("Home");
     const _component_Mine = vue.resolveComponent("Mine");
     const _component_u_tabbar_item = resolveEasycom(vue.resolveDynamicComponent("u-tabbar-item"), __easycom_0$5);
@@ -3695,7 +3568,7 @@ if (uni.restoreGlobal) {
           vue.createVNode(_component_u_tabbar, {
             value: $data.active,
             onChange: $options.tabbarChange,
-            border: false,
+            border: true,
             fixed: false,
             placeholder: false
           }, {
@@ -3739,8 +3612,8 @@ if (uni.restoreGlobal) {
       /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */
     );
   }
-  const PagesIndexIndex = /* @__PURE__ */ _export_sfc(_sfc_main$B, [["render", _sfc_render$A], ["__scopeId", "data-v-1cf27b2a"], ["__file", "C:/project/轻羽项目/qingyu-client/pages/index/index.vue"]]);
-  const props$h = {
+  const PagesIndexIndex = /* @__PURE__ */ _export_sfc(_sfc_main$A, [["render", _sfc_render$z], ["__scopeId", "data-v-1cf27b2a"], ["__file", "C:/project/轻羽项目/qingyu-client/pages/index/index.vue"]]);
+  const props$j = {
     props: {
       // 是否显示组件
       show: {
@@ -3799,9 +3672,9 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  const _sfc_main$A = {
+  const _sfc_main$z = {
     name: "u-loading-icon",
-    mixins: [mpMixin, mixin, props$h],
+    mixins: [mpMixin, mixin, props$j],
     data() {
       return {
         // Array.form可以通过一个伪数组对象创建指定长度的数组
@@ -3859,7 +3732,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$z(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$y(_ctx, _cache, $props, $setup, $data, $options) {
     return _ctx.show ? (vue.openBlock(), vue.createElementBlock(
       "view",
       {
@@ -3922,8 +3795,8 @@ if (uni.restoreGlobal) {
       /* CLASS, STYLE */
     )) : vue.createCommentVNode("v-if", true);
   }
-  const __easycom_1 = /* @__PURE__ */ _export_sfc(_sfc_main$A, [["render", _sfc_render$z], ["__scopeId", "data-v-00752c6d"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-loading-icon/u-loading-icon.vue"]]);
-  const props$g = {
+  const __easycom_1$2 = /* @__PURE__ */ _export_sfc(_sfc_main$z, [["render", _sfc_render$y], ["__scopeId", "data-v-00752c6d"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-loading-icon/u-loading-icon.vue"]]);
+  const props$i = {
     props: {
       // 是否细边框
       hairline: {
@@ -4075,9 +3948,9 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  const _sfc_main$z = {
+  const _sfc_main$y = {
     name: "u-button",
-    mixins: [mpMixin, mixin, props$g],
+    mixins: [mpMixin, mixin, props$i],
     data() {
       return {};
     },
@@ -4199,8 +4072,8 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$y(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_loading_icon = resolveEasycom(vue.resolveDynamicComponent("u-loading-icon"), __easycom_1);
+  function _sfc_render$x(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_u_loading_icon = resolveEasycom(vue.resolveDynamicComponent("u-loading-icon"), __easycom_1$2);
     const _component_u_icon = resolveEasycom(vue.resolveDynamicComponent("u-icon"), __easycom_0$7);
     return vue.openBlock(), vue.createElementBlock("button", {
       "hover-start-time": Number(_ctx.hoverStartTime),
@@ -4277,8 +4150,8 @@ if (uni.restoreGlobal) {
       ))
     ], 46, ["hover-start-time", "hover-stay-time", "form-type", "open-type", "app-parameter", "hover-stop-propagation", "send-message-title", "send-message-path", "lang", "data-name", "session-from", "send-message-img", "show-message-card", "hover-class"]);
   }
-  const __easycom_0$4 = /* @__PURE__ */ _export_sfc(_sfc_main$z, [["render", _sfc_render$y], ["__scopeId", "data-v-461e713c"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-button/u-button.vue"]]);
-  const _sfc_main$y = {
+  const __easycom_0$4 = /* @__PURE__ */ _export_sfc(_sfc_main$y, [["render", _sfc_render$x], ["__scopeId", "data-v-461e713c"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-button/u-button.vue"]]);
+  const _sfc_main$x = {
     data() {
       return {
         app: getApp(),
@@ -4458,7 +4331,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$x(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$w(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_u_button = resolveEasycom(vue.resolveDynamicComponent("u-button"), __easycom_0$4);
     return vue.openBlock(), vue.createElementBlock(
       vue.Fragment,
@@ -4546,8 +4419,264 @@ if (uni.restoreGlobal) {
       /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */
     );
   }
-  const PagesLoginLogin = /* @__PURE__ */ _export_sfc(_sfc_main$y, [["render", _sfc_render$x], ["__scopeId", "data-v-e4e4508d"], ["__file", "C:/project/轻羽项目/qingyu-client/pages/login/login.vue"]]);
-  const _sfc_main$x = {
+  const PagesLoginLogin = /* @__PURE__ */ _export_sfc(_sfc_main$x, [["render", _sfc_render$w], ["__scopeId", "data-v-e4e4508d"], ["__file", "C:/project/轻羽项目/qingyu-client/pages/login/login.vue"]]);
+  const props$h = {
+    props: {
+      bgColor: {
+        type: String,
+        default: props$p.statusBar.bgColor
+      }
+    }
+  };
+  const _sfc_main$w = {
+    name: "u-status-bar",
+    mixins: [mpMixin, mixin, props$h],
+    data() {
+      return {};
+    },
+    computed: {
+      style() {
+        const style = {};
+        style.height = uni.$u.addUnit(uni.$u.sys().statusBarHeight, "px");
+        style.backgroundColor = this.bgColor;
+        return uni.$u.deepMerge(style, uni.$u.addStyle(this.customStyle));
+      }
+    }
+  };
+  function _sfc_render$v(_ctx, _cache, $props, $setup, $data, $options) {
+    return vue.openBlock(), vue.createElementBlock(
+      "view",
+      {
+        style: vue.normalizeStyle([$options.style]),
+        class: "u-status-bar"
+      },
+      [
+        vue.renderSlot(_ctx.$slots, "default", {}, void 0, true)
+      ],
+      4
+      /* STYLE */
+    );
+  }
+  const __easycom_1$1 = /* @__PURE__ */ _export_sfc(_sfc_main$w, [["render", _sfc_render$v], ["__scopeId", "data-v-c0b45a48"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-status-bar/u-status-bar.vue"]]);
+  const props$g = {
+    props: {
+      // 是否开启顶部安全区适配
+      safeAreaInsetTop: {
+        type: Boolean,
+        default: props$p.navbar.safeAreaInsetTop
+      },
+      // 固定在顶部时，是否生成一个等高元素，以防止塌陷
+      placeholder: {
+        type: Boolean,
+        default: props$p.navbar.placeholder
+      },
+      // 是否固定在顶部
+      fixed: {
+        type: Boolean,
+        default: props$p.navbar.fixed
+      },
+      // 是否显示下边框
+      border: {
+        type: Boolean,
+        default: props$p.navbar.border
+      },
+      // 左边的图标
+      leftIcon: {
+        type: String,
+        default: props$p.navbar.leftIcon
+      },
+      // 左边的提示文字
+      leftText: {
+        type: String,
+        default: props$p.navbar.leftText
+      },
+      // 左右的提示文字
+      rightText: {
+        type: String,
+        default: props$p.navbar.rightText
+      },
+      // 右边的图标
+      rightIcon: {
+        type: String,
+        default: props$p.navbar.rightIcon
+      },
+      // 标题
+      title: {
+        type: [String, Number],
+        default: props$p.navbar.title
+      },
+      // 背景颜色
+      bgColor: {
+        type: String,
+        default: props$p.navbar.bgColor
+      },
+      // 标题的宽度
+      titleWidth: {
+        type: [String, Number],
+        default: props$p.navbar.titleWidth
+      },
+      // 导航栏高度
+      height: {
+        type: [String, Number],
+        default: props$p.navbar.height
+      },
+      // 左侧返回图标的大小
+      leftIconSize: {
+        type: [String, Number],
+        default: props$p.navbar.leftIconSize
+      },
+      // 左侧返回图标的颜色
+      leftIconColor: {
+        type: String,
+        default: props$p.navbar.leftIconColor
+      },
+      // 点击左侧区域(返回图标)，是否自动返回上一页
+      autoBack: {
+        type: Boolean,
+        default: props$p.navbar.autoBack
+      },
+      // 标题的样式，对象或字符串
+      titleStyle: {
+        type: [String, Object],
+        default: props$p.navbar.titleStyle
+      }
+    }
+  };
+  const _sfc_main$v = {
+    name: "u-navbar",
+    mixins: [mpMixin, mixin, props$g],
+    data() {
+      return {};
+    },
+    emits: ["leftClick", "rightClick"],
+    methods: {
+      // 点击左侧区域
+      leftClick() {
+        this.$emit("leftClick");
+        if (this.autoBack) {
+          uni.navigateBack();
+        }
+      },
+      // 点击右侧区域
+      rightClick() {
+        this.$emit("rightClick");
+      }
+    }
+  };
+  function _sfc_render$u(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_u_status_bar = resolveEasycom(vue.resolveDynamicComponent("u-status-bar"), __easycom_1$1);
+    const _component_u_icon = resolveEasycom(vue.resolveDynamicComponent("u-icon"), __easycom_0$7);
+    return vue.openBlock(), vue.createElementBlock("view", { class: "u-navbar" }, [
+      _ctx.fixed && _ctx.placeholder ? (vue.openBlock(), vue.createElementBlock(
+        "view",
+        {
+          key: 0,
+          class: "u-navbar__placeholder",
+          style: vue.normalizeStyle({
+            height: _ctx.$u.addUnit(_ctx.$u.getPx(_ctx.height) + _ctx.$u.sys().statusBarHeight, "px")
+          })
+        },
+        null,
+        4
+        /* STYLE */
+      )) : vue.createCommentVNode("v-if", true),
+      vue.createElementVNode(
+        "view",
+        {
+          class: vue.normalizeClass([_ctx.fixed && "u-navbar--fixed"])
+        },
+        [
+          _ctx.safeAreaInsetTop ? (vue.openBlock(), vue.createBlock(_component_u_status_bar, {
+            key: 0,
+            bgColor: _ctx.bgColor
+          }, null, 8, ["bgColor"])) : vue.createCommentVNode("v-if", true),
+          vue.createElementVNode(
+            "view",
+            {
+              class: vue.normalizeClass(["u-navbar__content", [_ctx.border && "u-border-bottom"]]),
+              style: vue.normalizeStyle({
+                height: _ctx.$u.addUnit(_ctx.height),
+                backgroundColor: _ctx.bgColor
+              })
+            },
+            [
+              vue.createElementVNode("view", {
+                class: "u-navbar__content__left",
+                "hover-class": "u-navbar__content__left--hover",
+                "hover-start-time": "150",
+                onClick: _cache[0] || (_cache[0] = (...args) => $options.leftClick && $options.leftClick(...args))
+              }, [
+                vue.renderSlot(_ctx.$slots, "left", {}, () => [
+                  _ctx.leftIcon ? (vue.openBlock(), vue.createBlock(_component_u_icon, {
+                    key: 0,
+                    name: _ctx.leftIcon,
+                    size: _ctx.leftIconSize,
+                    color: _ctx.leftIconColor
+                  }, null, 8, ["name", "size", "color"])) : vue.createCommentVNode("v-if", true),
+                  _ctx.leftText ? (vue.openBlock(), vue.createElementBlock(
+                    "text",
+                    {
+                      key: 1,
+                      style: vue.normalizeStyle({
+                        color: _ctx.leftIconColor
+                      }),
+                      class: "u-navbar__content__left__text"
+                    },
+                    vue.toDisplayString(_ctx.leftText),
+                    5
+                    /* TEXT, STYLE */
+                  )) : vue.createCommentVNode("v-if", true)
+                ], true)
+              ]),
+              vue.renderSlot(_ctx.$slots, "center", {}, () => [
+                vue.createElementVNode(
+                  "text",
+                  {
+                    class: "u-line-1 u-navbar__content__title",
+                    style: vue.normalizeStyle([{
+                      width: _ctx.$u.addUnit(_ctx.titleWidth)
+                    }, _ctx.$u.addStyle(_ctx.titleStyle)])
+                  },
+                  vue.toDisplayString(_ctx.title),
+                  5
+                  /* TEXT, STYLE */
+                )
+              ], true),
+              _ctx.$slots.right || _ctx.rightIcon || _ctx.rightText ? (vue.openBlock(), vue.createElementBlock("view", {
+                key: 0,
+                class: "u-navbar__content__right",
+                onClick: _cache[1] || (_cache[1] = (...args) => $options.rightClick && $options.rightClick(...args))
+              }, [
+                vue.renderSlot(_ctx.$slots, "right", {}, () => [
+                  _ctx.rightIcon ? (vue.openBlock(), vue.createBlock(_component_u_icon, {
+                    key: 0,
+                    name: _ctx.rightIcon,
+                    size: "20"
+                  }, null, 8, ["name"])) : vue.createCommentVNode("v-if", true),
+                  _ctx.rightText ? (vue.openBlock(), vue.createElementBlock(
+                    "text",
+                    {
+                      key: 1,
+                      class: "u-navbar__content__right__text"
+                    },
+                    vue.toDisplayString(_ctx.rightText),
+                    1
+                    /* TEXT */
+                  )) : vue.createCommentVNode("v-if", true)
+                ], true)
+              ])) : vue.createCommentVNode("v-if", true)
+            ],
+            6
+            /* CLASS, STYLE */
+          )
+        ],
+        2
+        /* CLASS */
+      )
+    ]);
+  }
+  const __easycom_1 = /* @__PURE__ */ _export_sfc(_sfc_main$v, [["render", _sfc_render$u], ["__scopeId", "data-v-9d9e7ee2"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-navbar/u-navbar.vue"]]);
+  const _sfc_main$u = {
     data() {
       return {
         app: getApp()
@@ -4599,9 +4728,9 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$w(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$t(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_up_icon = resolveEasycom(vue.resolveDynamicComponent("up-icon"), __easycom_0$7);
-    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_1$1);
+    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_1);
     return vue.openBlock(), vue.createElementBlock(
       vue.Fragment,
       null,
@@ -4631,7 +4760,7 @@ if (uni.restoreGlobal) {
       /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */
     );
   }
-  const PagesArrgementArrgement = /* @__PURE__ */ _export_sfc(_sfc_main$x, [["render", _sfc_render$w], ["__scopeId", "data-v-bec3e8f7"], ["__file", "C:/project/轻羽项目/qingyu-client/pages/arrgement/arrgement.vue"]]);
+  const PagesArrgementArrgement = /* @__PURE__ */ _export_sfc(_sfc_main$u, [["render", _sfc_render$t], ["__scopeId", "data-v-bec3e8f7"], ["__file", "C:/project/轻羽项目/qingyu-client/pages/arrgement/arrgement.vue"]]);
   const props$f = {
     props: {
       // 滑块的移动过渡时间，单位ms
@@ -4696,7 +4825,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  const _sfc_main$w = {
+  const _sfc_main$t = {
     name: "u-tabs",
     mixins: [mpMixin, mixin, props$f],
     data() {
@@ -4842,7 +4971,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$v(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$s(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_u_badge = resolveEasycom(vue.resolveDynamicComponent("u-badge"), __easycom_0$6);
     return vue.openBlock(), vue.createElementBlock("view", { class: "u-tabs" }, [
       vue.createElementVNode("view", { class: "u-tabs__wrapper" }, [
@@ -4932,7 +5061,7 @@ if (uni.restoreGlobal) {
       ])
     ]);
   }
-  const __easycom_2$3 = /* @__PURE__ */ _export_sfc(_sfc_main$w, [["render", _sfc_render$v], ["__scopeId", "data-v-0546c3e4"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-tabs/u-tabs.vue"]]);
+  const __easycom_2$3 = /* @__PURE__ */ _export_sfc(_sfc_main$t, [["render", _sfc_render$s], ["__scopeId", "data-v-0546c3e4"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-tabs/u-tabs.vue"]]);
   const props$e = {
     props: {
       // 内置图标名称，或图片路径，建议绝对路径
@@ -4992,7 +5121,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  const _sfc_main$v = {
+  const _sfc_main$s = {
     name: "u-empty",
     mixins: [mpMixin, mixin, props$e],
     data() {
@@ -5036,7 +5165,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$u(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$r(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_u_icon = resolveEasycom(vue.resolveDynamicComponent("u-icon"), __easycom_0$7);
     return _ctx.show ? (vue.openBlock(), vue.createElementBlock(
       "view",
@@ -5082,8 +5211,8 @@ if (uni.restoreGlobal) {
       /* STYLE */
     )) : vue.createCommentVNode("v-if", true);
   }
-  const __easycom_3$2 = /* @__PURE__ */ _export_sfc(_sfc_main$v, [["render", _sfc_render$u], ["__scopeId", "data-v-bd84101d"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-empty/u-empty.vue"]]);
-  const _sfc_main$u = {
+  const __easycom_3$2 = /* @__PURE__ */ _export_sfc(_sfc_main$s, [["render", _sfc_render$r], ["__scopeId", "data-v-bd84101d"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-empty/u-empty.vue"]]);
+  const _sfc_main$r = {
     data() {
       return {
         app: getApp(),
@@ -5161,8 +5290,8 @@ if (uni.restoreGlobal) {
     created: function() {
     }
   };
-  function _sfc_render$t(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_1$1);
+  function _sfc_render$q(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_1);
     const _component_u_tabs = resolveEasycom(vue.resolveDynamicComponent("u-tabs"), __easycom_2$3);
     const _component_u_empty = resolveEasycom(vue.resolveDynamicComponent("u-empty"), __easycom_3$2);
     return vue.openBlock(), vue.createElementBlock(
@@ -5345,552 +5474,7 @@ if (uni.restoreGlobal) {
       /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */
     );
   }
-  const PagesReservationReservation = /* @__PURE__ */ _export_sfc(_sfc_main$u, [["render", _sfc_render$t], ["__scopeId", "data-v-62da1e1c"], ["__file", "C:/project/轻羽项目/qingyu-client/pages/reservation/reservation.vue"]]);
-  const _sfc_main$t = {
-    data() {
-      return {
-        app: getApp(),
-        gymnasiumInfo: {
-          gymnasiumImg: "/static/images/home/gymnasiumPhoto.png",
-          gymnasiumName: "我看看怎么个事",
-          latitude: "",
-          longitude: "",
-          phone: "0532-8186886",
-          location: "青岛市黄岛区金石国际北楼1611",
-          businessHours: "周一至周日 07:00-22:00",
-          distance: 200,
-          siteNum: 10,
-          floor: "木龙骨地板",
-          facilities: ["停车场", "空调", "更衣室"],
-          currentImgIndex: -1,
-          gymnasiumImgList: [
-            "https://img1.baidu.com/it/u=1087984015,2094611444&fm=253&fmt=auto&app=138&f=JPEG?w=707&h=500",
-            "https://img2.baidu.com/it/u=2663528246,3127026870&fm=253&fmt=auto&app=138&f=JPEG?w=667&h=500",
-            "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fsafe-img.xhscdn.com%2Fbw1%2Ff775610c-310c-4f5a-9ae4-94bdc145c7e6%3FimageView2%2F2%2Fw%2F1080%2Fformat%2Fjpg&refer=http%3A%2F%2Fsafe-img.xhscdn.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1701845453&t=9030131f1e5a2ea40630a08433886371"
-          ],
-          hardwareFacilities: [],
-          venueReservationList: []
-        }
-      };
-    },
-    /**
-     * 生命周期函数--监听页面加载
-     */
-    onLoad() {
-      this.initData();
-    },
-    /**
-     * 生命周期函数--监听页面初次渲染完成
-     */
-    onReady() {
-    },
-    /**
-     * 生命周期函数--监听页面显示
-     */
-    onShow() {
-    },
-    /**
-     * 生命周期函数--监听页面隐藏
-     */
-    onHide() {
-    },
-    /**
-     * 生命周期函数--监听页面卸载
-     */
-    onUnload() {
-    },
-    /**
-     * 页面相关事件处理函数--监听用户下拉动作
-     */
-    onPullDownRefresh() {
-    },
-    /**
-     * 页面上拉触底事件的处理函数
-     */
-    onReachBottom() {
-    },
-    /**
-     * 用户点击右上角分享
-     */
-    onShareAppMessage() {
-    },
-    methods: {
-      // 初始化数据
-      async initData() {
-        this.gymnasiumInfo = await this.app.getStoreInfo();
-        this.getReservationInfo();
-      },
-      // 获取近7天可约场地
-      getReservationInfo() {
-        request({
-          url: "wx/get/shop/surplus/count",
-          method: "POST",
-          data: {
-            date: getNowDate("-")
-          }
-        }).then((res) => {
-          let list = this.et7Days();
-          let obj = res.data;
-          list.forEach((item) => {
-            item.residue = obj[`${item.date}`].count;
-            item.basicPrice = obj[`${item.date}`].money / 100;
-          });
-          this.gymnasiumInfo.venueReservationList = list;
-        });
-      },
-      et7Days() {
-        let dateList = [];
-        var now = /* @__PURE__ */ new Date();
-        var nowTime = now.getTime();
-        var oneDayTime = 86400 * 1e3;
-        for (var i = 0; i < 7; i++) {
-          var ShowTime = nowTime + i * oneDayTime;
-          var myDate = new Date(ShowTime);
-          var year = myDate.getFullYear();
-          var month = myDate.getMonth() + 1;
-          var date2 = myDate.getDate();
-          dateList.push({
-            year,
-            fullDate: year + "-" + formatNumber(month) + "-" + formatNumber(date2),
-            date: formatNumber(month) + "-" + formatNumber(date2),
-            day: i == 0 ? "今日" : "周" + "日一二三四五六".charAt(myDate.getDay()),
-            residue: 5,
-            basicPrice: 20
-          });
-        }
-        return dateList;
-      },
-      onClickLeft() {
-        uni.navigateBack();
-      },
-      // 预览图片
-      previewImg(e) {
-        this.gymnasiumInfo.currentImgIndex = e.currentTarget.dataset.item;
-        uni.previewImage({
-          urls: this.gymnasiumInfo.gymnasiumImgList,
-          current: e.currentTarget.dataset.item
-        });
-      },
-      // 去相册
-      toAlbum() {
-        uni.setStorageSync("album", JSON.stringify(this.gymnasiumInfo.gymnasiumImgList));
-        uni.navigateTo({
-          url: "/pages/album/album"
-        });
-      },
-      // 打电话
-      toCall() {
-        uni.makePhoneCall({
-          phoneNumber: this.gymnasiumInfo.phone
-        });
-      },
-      // 地图位置
-      toMap() {
-        var that = this;
-        uni.openLocation({
-          latitude: that.gymnasiumInfo.latitude,
-          longitude: that.gymnasiumInfo.longitude,
-          scale: 18,
-          name: this.gymnasiumInfo.location
-        });
-      },
-      // 去场地预约详情
-      toDetail(e) {
-        let date2 = e.fullDate;
-        if (e.residue == 0) {
-          uni.showToast({
-            icon: "none",
-            title: "暂无场地"
-          });
-          return false;
-        }
-        uni.navigateTo({
-          url: "/pages/reservationDetail/reservationDetail?date=" + date2
-        });
-      }
-    }
-  };
-  function _sfc_render$s(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_up_icon = resolveEasycom(vue.resolveDynamicComponent("up-icon"), __easycom_0$7);
-    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_1$1);
-    const _component_van_icon = vue.resolveComponent("van-icon");
-    return vue.openBlock(), vue.createElementBlock(
-      vue.Fragment,
-      null,
-      [
-        vue.createCommentVNode(" pages/gymnasiumInfo/gymnasiumInfo.wxml "),
-        vue.createElementVNode("view", { class: "page" }, [
-          vue.createVNode(_component_u_navbar, {
-            class: "nav-bar",
-            safeAreaInsetTop: true,
-            fixed: false,
-            title: "球馆信息",
-            autoBack: false
-          }, {
-            left: vue.withCtx(() => [
-              vue.createVNode(_component_up_icon, {
-                name: "arrow-left",
-                onClick: $data.app.toBack
-              }, null, 8, ["onClick"])
-            ]),
-            _: 1
-            /* STABLE */
-          }),
-          vue.createElementVNode("view", { style: { "margin-top": "28rpx", "padding": "0 20rpx 30rpx", "background-color": "#fff" } }, [
-            vue.createElementVNode("view", { class: "flex align-center justify-between w-full" }, [
-              vue.createElementVNode(
-                "view",
-                { class: "gymnasiumName" },
-                vue.toDisplayString($data.gymnasiumInfo.gymnasiumName),
-                1
-                /* TEXT */
-              )
-            ]),
-            vue.createElementVNode("view", { class: "imgScroll w-full" }, [
-              vue.createElementVNode("view", {
-                class: "w-full",
-                style: { "position": "relative" }
-              }, [
-                vue.createElementVNode("scroll-view", {
-                  "scroll-x": true,
-                  class: "w-full h-full"
-                }, [
-                  vue.createElementVNode("view", {
-                    class: "flex align-center",
-                    style: { "position": "relative" }
-                  }, [
-                    (vue.openBlock(true), vue.createElementBlock(
-                      vue.Fragment,
-                      null,
-                      vue.renderList($data.gymnasiumInfo.gymnasiumImgList, (item, index2) => {
-                        return vue.openBlock(), vue.createElementBlock("view", {
-                          class: "imgScrollItem",
-                          "data-item": index2,
-                          onClick: _cache[0] || (_cache[0] = (...args) => $options.previewImg && $options.previewImg(...args)),
-                          key: index2
-                        }, [
-                          vue.createElementVNode("image", {
-                            src: item,
-                            mode: "",
-                            style: { "width": "260rpx", "height": "164rpx" }
-                          }, null, 8, ["src"])
-                        ], 8, ["data-item"]);
-                      }),
-                      128
-                      /* KEYED_FRAGMENT */
-                    ))
-                  ])
-                ]),
-                vue.createElementVNode("view", {
-                  class: "album flex align-center justify-center",
-                  onClick: _cache[1] || (_cache[1] = (...args) => $options.toAlbum && $options.toAlbum(...args))
-                }, [
-                  vue.createElementVNode("view", { style: { "margin-left": "8rpx", "margin-right": "2rpx" } }, "相册"),
-                  vue.createElementVNode("view", null, [
-                    vue.createVNode(_component_van_icon, { name: "arrow" })
-                  ])
-                ])
-              ])
-            ]),
-            vue.createElementVNode("view", {
-              class: "flex align-center justify-between",
-              style: { "margin-bottom": "20rpx" }
-            }, [
-              vue.createElementVNode("view", { class: "commonLeftLabel" }, [
-                vue.createElementVNode("text", null, "场馆电话："),
-                vue.createElementVNode(
-                  "text",
-                  null,
-                  vue.toDisplayString($data.gymnasiumInfo.phone),
-                  1
-                  /* TEXT */
-                )
-              ]),
-              vue.createElementVNode("view", {
-                class: "commonRightOpe",
-                onClick: _cache[2] || (_cache[2] = (...args) => $options.toCall && $options.toCall(...args))
-              }, "拨打")
-            ]),
-            vue.createElementVNode("view", {
-              class: "flex align-center",
-              style: { "margin-bottom": "20rpx" }
-            }, [
-              vue.createElementVNode("view", { class: "commonLeftLabel" }, [
-                vue.createElementVNode("text", null, "营业时间："),
-                vue.createElementVNode(
-                  "text",
-                  null,
-                  vue.toDisplayString($data.gymnasiumInfo.businessHours),
-                  1
-                  /* TEXT */
-                )
-              ])
-            ]),
-            vue.createElementVNode("view", { class: "flex align-center justify-between" }, [
-              vue.createElementVNode("view", { class: "commonLeftLabel" }, [
-                vue.createElementVNode("text", null, "场馆地址："),
-                vue.createElementVNode(
-                  "text",
-                  null,
-                  vue.toDisplayString($data.gymnasiumInfo.location),
-                  1
-                  /* TEXT */
-                )
-              ]),
-              vue.createElementVNode("view", {
-                class: "commonRightOpe flex-shirnk",
-                onClick: _cache[3] || (_cache[3] = (...args) => $options.toMap && $options.toMap(...args))
-              }, "查看")
-            ]),
-            vue.createElementVNode("view", { class: "hardwareBox flex align-center flex-wrap justify-start" }, [
-              (vue.openBlock(true), vue.createElementBlock(
-                vue.Fragment,
-                null,
-                vue.renderList($data.gymnasiumInfo.hardwareFacilities, (item, index2) => {
-                  return vue.openBlock(), vue.createElementBlock("view", {
-                    class: "hardwareItem flex align-center",
-                    key: index2
-                  }, [
-                    vue.createElementVNode("view", { class: "flex align-center w-full h-full justify-center" }, [
-                      item.icon ? (vue.openBlock(), vue.createElementBlock("image", {
-                        key: 0,
-                        src: item.icon,
-                        mode: "",
-                        style: { "width": "25px", "height": "25px", "margin-right": "4px" }
-                      }, null, 8, ["src"])) : (vue.openBlock(), vue.createElementBlock("image", {
-                        key: 1,
-                        src: "/static/static/images/common/wifi.svg",
-                        mode: "",
-                        style: { "width": "25px", "height": "25px", "margin-right": "4px" }
-                      })),
-                      vue.createElementVNode(
-                        "text",
-                        { class: "iconText" },
-                        vue.toDisplayString(item.text),
-                        1
-                        /* TEXT */
-                      )
-                    ])
-                  ]);
-                }),
-                128
-                /* KEYED_FRAGMENT */
-              ))
-            ])
-          ]),
-          vue.createElementVNode("view", { class: "venueReservation" }, [
-            vue.createElementVNode("view", { class: "venueReservationTitle" }, "场地预定"),
-            vue.createElementVNode("view", { class: "venueReservationList w-full" }, [
-              vue.createElementVNode("scroll-view", {
-                "scroll-x": true,
-                class: "h-full w-full"
-              }, [
-                vue.createElementVNode("view", {
-                  class: "w-full",
-                  style: { "white-space": "nowrap" }
-                }, [
-                  (vue.openBlock(true), vue.createElementBlock(
-                    vue.Fragment,
-                    null,
-                    vue.renderList($data.gymnasiumInfo.venueReservationList, (item, index2) => {
-                      return vue.openBlock(), vue.createElementBlock("view", {
-                        class: vue.normalizeClass("venueReservationItem " + (item.residue == 0 ? "isFullBorder" : "")),
-                        onClick: ($event) => $options.toDetail(item),
-                        key: index2
-                      }, [
-                        vue.createElementVNode(
-                          "view",
-                          {
-                            class: vue.normalizeClass("venueReservationItemTop flex flex-direction align-center justify-center " + (item.residue == 0 ? "isFullBg" : ""))
-                          },
-                          [
-                            vue.createElementVNode(
-                              "view",
-                              null,
-                              vue.toDisplayString(item.day),
-                              1
-                              /* TEXT */
-                            ),
-                            vue.createElementVNode(
-                              "view",
-                              null,
-                              "(" + vue.toDisplayString(item.date) + ")",
-                              1
-                              /* TEXT */
-                            )
-                          ],
-                          2
-                          /* CLASS */
-                        ),
-                        vue.createElementVNode("view", { class: "venueReservationItemBottom" }, [
-                          vue.createElementVNode(
-                            "view",
-                            {
-                              class: "w-full flex align-center justify-between",
-                              style: vue.normalizeStyle("margin-bottom: 12rpx;color: " + (item.residue == 0 ? "#5F5F5F" : "#0077FF"))
-                            },
-                            [
-                              vue.createElementVNode("text", null, "剩余"),
-                              vue.createElementVNode(
-                                "text",
-                                null,
-                                vue.toDisplayString(item.residue),
-                                1
-                                /* TEXT */
-                              )
-                            ],
-                            4
-                            /* STYLE */
-                          ),
-                          vue.createElementVNode("view", { class: "w-full flex align-center justify-between" }, [
-                            vue.createElementVNode("text", null, "起订"),
-                            vue.createElementVNode(
-                              "text",
-                              null,
-                              "￥" + vue.toDisplayString(item.basicPrice),
-                              1
-                              /* TEXT */
-                            )
-                          ])
-                        ])
-                      ], 10, ["onClick"]);
-                    }),
-                    128
-                    /* KEYED_FRAGMENT */
-                  ))
-                ])
-              ])
-            ])
-          ])
-        ])
-      ],
-      2112
-      /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */
-    );
-  }
-  const PagesGymnasiumInfoGymnasiumInfo = /* @__PURE__ */ _export_sfc(_sfc_main$t, [["render", _sfc_render$s], ["__scopeId", "data-v-de38ef79"], ["__file", "C:/project/轻羽项目/qingyu-client/pages/gymnasiumInfo/gymnasiumInfo.vue"]]);
-  const _sfc_main$s = {
-    data() {
-      return {
-        app: getApp(),
-        currentIndex: 0,
-        imgList: []
-      };
-    },
-    /**
-     * 生命周期函数--监听页面加载
-     */
-    onLoad() {
-      let imgList = uni.getStorageSync("album");
-      imgList = JSON.parse(imgList);
-      this.imgList = imgList;
-    },
-    /**
-     * 生命周期函数--监听页面初次渲染完成
-     */
-    onReady() {
-    },
-    /**
-     * 生命周期函数--监听页面显示
-     */
-    onShow() {
-    },
-    /**
-     * 生命周期函数--监听页面隐藏
-     */
-    onHide() {
-    },
-    /**
-     * 生命周期函数--监听页面卸载
-     */
-    onUnload() {
-    },
-    /**
-     * 页面相关事件处理函数--监听用户下拉动作
-     */
-    onPullDownRefresh() {
-    },
-    /**
-     * 页面上拉触底事件的处理函数
-     */
-    onReachBottom() {
-    },
-    /**
-     * 用户点击右上角分享
-     */
-    onShareAppMessage() {
-    },
-    methods: {
-      onClickLeft() {
-        uni.navigateBack();
-      },
-      previwImg(e) {
-        this.currentIndex = e.currentTarget.dataset.item;
-        uni.previewImage({
-          urls: this.imgList,
-          current: e.currentTarget.dataset.item
-        });
-      }
-    }
-  };
-  function _sfc_render$r(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_up_icon = resolveEasycom(vue.resolveDynamicComponent("up-icon"), __easycom_0$7);
-    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_1$1);
-    return vue.openBlock(), vue.createElementBlock(
-      vue.Fragment,
-      null,
-      [
-        vue.createCommentVNode(" pages/album/album.wxml "),
-        vue.createElementVNode("view", { class: "page" }, [
-          vue.createVNode(_component_u_navbar, {
-            class: "nav-bar",
-            title: "相册",
-            safeAreaInsetTop: true,
-            autoBack: false,
-            fixed: false
-          }, {
-            left: vue.withCtx(() => [
-              vue.createVNode(_component_up_icon, {
-                name: "arrow-left",
-                onClick: $data.app.toBack
-              }, null, 8, ["onClick"])
-            ]),
-            _: 1
-            /* STABLE */
-          }),
-          vue.createCommentVNode(' <van-nav-bar>\r\n            <view slot="left" @tap="onClickLeft">\r\n                <van-icon name="arrow-left" size="20px" />\r\n            </view>\r\n            <view slot="title" class="pageTitle">相册</view>\r\n        </van-nav-bar> '),
-          vue.createElementVNode("view", {
-            class: "w-full flex flex-wrap",
-            style: { "padding": "20rpx", "box-sizing": "border-box" }
-          }, [
-            (vue.openBlock(true), vue.createElementBlock(
-              vue.Fragment,
-              null,
-              vue.renderList($data.imgList, (item, index2) => {
-                return vue.openBlock(), vue.createElementBlock("view", {
-                  class: "imgBox",
-                  onClick: _cache[0] || (_cache[0] = (...args) => $options.previwImg && $options.previwImg(...args)),
-                  "data-item": item,
-                  key: index2
-                }, [
-                  vue.createElementVNode("image", {
-                    src: item,
-                    mode: "",
-                    class: "w-full h-full"
-                  }, null, 8, ["src"])
-                ], 8, ["data-item"]);
-              }),
-              128
-              /* KEYED_FRAGMENT */
-            ))
-          ])
-        ])
-      ],
-      2112
-      /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */
-    );
-  }
-  const PagesAlbumAlbum = /* @__PURE__ */ _export_sfc(_sfc_main$s, [["render", _sfc_render$r], ["__scopeId", "data-v-7c8b231e"], ["__file", "C:/project/轻羽项目/qingyu-client/pages/album/album.vue"]]);
+  const PagesReservationReservation = /* @__PURE__ */ _export_sfc(_sfc_main$r, [["render", _sfc_render$q], ["__scopeId", "data-v-62da1e1c"], ["__file", "C:/project/轻羽项目/qingyu-client/pages/reservation/reservation.vue"]]);
   const props$d = {
     props: {
       // radio的名称
@@ -5960,7 +5544,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  const _sfc_main$r = {
+  const _sfc_main$q = {
     name: "u-radio",
     mixins: [mpMixin, mixin, props$d],
     data() {
@@ -6115,7 +5699,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$q(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$p(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_u_icon = resolveEasycom(vue.resolveDynamicComponent("u-icon"), __easycom_0$7);
     return vue.openBlock(), vue.createElementBlock(
       "view",
@@ -6165,7 +5749,7 @@ if (uni.restoreGlobal) {
       /* CLASS, STYLE */
     );
   }
-  const __easycom_5 = /* @__PURE__ */ _export_sfc(_sfc_main$r, [["render", _sfc_render$q], ["__scopeId", "data-v-edf95844"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-radio/u-radio.vue"]]);
+  const __easycom_5 = /* @__PURE__ */ _export_sfc(_sfc_main$q, [["render", _sfc_render$p], ["__scopeId", "data-v-edf95844"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-radio/u-radio.vue"]]);
   const props$c = {
     props: {
       // 绑定的值
@@ -6250,7 +5834,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  const _sfc_main$q = {
+  const _sfc_main$p = {
     name: "u-radio-group",
     mixins: [mpMixin, mixin, props$c],
     computed: {
@@ -6308,7 +5892,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$p(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$o(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock(
       "view",
       {
@@ -6321,7 +5905,7 @@ if (uni.restoreGlobal) {
       /* CLASS */
     );
   }
-  const __easycom_6 = /* @__PURE__ */ _export_sfc(_sfc_main$q, [["render", _sfc_render$p], ["__scopeId", "data-v-272bb654"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-radio-group/u-radio-group.vue"]]);
+  const __easycom_6 = /* @__PURE__ */ _export_sfc(_sfc_main$p, [["render", _sfc_render$o], ["__scopeId", "data-v-272bb654"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-radio-group/u-radio-group.vue"]]);
   const props$b = {
     props: {
       // 输入框的内容
@@ -6446,7 +6030,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  const _sfc_main$p = {
+  const _sfc_main$o = {
     name: "u-textarea",
     mixins: [mpMixin, mixin, props$b],
     data() {
@@ -6537,7 +6121,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$o(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$n(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock(
       "view",
       {
@@ -6592,7 +6176,7 @@ if (uni.restoreGlobal) {
       /* CLASS, STYLE */
     );
   }
-  const __easycom_2$2 = /* @__PURE__ */ _export_sfc(_sfc_main$p, [["render", _sfc_render$o], ["__scopeId", "data-v-31706dd7"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-textarea/u-textarea.vue"]]);
+  const __easycom_2$2 = /* @__PURE__ */ _export_sfc(_sfc_main$o, [["render", _sfc_render$n], ["__scopeId", "data-v-31706dd7"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-textarea/u-textarea.vue"]]);
   function pickExclude(obj, keys) {
     if (!["[object Object]", "[object File]"].includes(Object.prototype.toString.call(obj))) {
       return {};
@@ -6799,7 +6383,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  const _sfc_main$o = {
+  const _sfc_main$n = {
     name: "u-upload",
     mixins: [mpMixin, mixin, mixinUp, props$a],
     data() {
@@ -6981,9 +6565,9 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$n(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$m(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_u_icon = resolveEasycom(vue.resolveDynamicComponent("u-icon"), __easycom_0$7);
-    const _component_u_loading_icon = resolveEasycom(vue.resolveDynamicComponent("u-loading-icon"), __easycom_1);
+    const _component_u_loading_icon = resolveEasycom(vue.resolveDynamicComponent("u-loading-icon"), __easycom_1$2);
     return vue.openBlock(), vue.createElementBlock(
       "view",
       {
@@ -7131,8 +6715,8 @@ if (uni.restoreGlobal) {
       /* STYLE */
     );
   }
-  const __easycom_3$1 = /* @__PURE__ */ _export_sfc(_sfc_main$o, [["render", _sfc_render$n], ["__scopeId", "data-v-cafe0b2a"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-upload/u-upload.vue"]]);
-  const _sfc_main$n = {
+  const __easycom_3$1 = /* @__PURE__ */ _export_sfc(_sfc_main$n, [["render", _sfc_render$m], ["__scopeId", "data-v-cafe0b2a"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-upload/u-upload.vue"]]);
+  const _sfc_main$m = {
     data() {
       return {
         app: getApp(),
@@ -7259,9 +6843,9 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$m(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$l(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_up_icon = resolveEasycom(vue.resolveDynamicComponent("up-icon"), __easycom_0$7);
-    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_1$1);
+    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_1);
     const _component_u_radio = resolveEasycom(vue.resolveDynamicComponent("u-radio"), __easycom_5);
     const _component_u_radio_group = resolveEasycom(vue.resolveDynamicComponent("u-radio-group"), __easycom_6);
     const _component_u__textarea = resolveEasycom(vue.resolveDynamicComponent("u--textarea"), __easycom_2$2);
@@ -7353,8 +6937,8 @@ if (uni.restoreGlobal) {
       /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */
     );
   }
-  const PagesErrorReportErrorReport = /* @__PURE__ */ _export_sfc(_sfc_main$n, [["render", _sfc_render$m], ["__scopeId", "data-v-b6ca8dfc"], ["__file", "C:/project/轻羽项目/qingyu-client/pages/errorReport/errorReport.vue"]]);
-  const _sfc_main$m = {
+  const PagesErrorReportErrorReport = /* @__PURE__ */ _export_sfc(_sfc_main$m, [["render", _sfc_render$l], ["__scopeId", "data-v-b6ca8dfc"], ["__file", "C:/project/轻羽项目/qingyu-client/pages/errorReport/errorReport.vue"]]);
+  const _sfc_main$l = {
     data() {
       return {
         app: getApp(),
@@ -7377,7 +6961,6 @@ if (uni.restoreGlobal) {
         timeList: [],
         siteList: [],
         todayDeleteIndex: 0,
-        top: 0,
         con: {
           already: false,
           checked: false,
@@ -7541,7 +7124,7 @@ if (uni.restoreGlobal) {
         let userInfo = await this.app.getUserInfo();
         let site_detail = [];
         let site_obj = groupBy(this.choosedList, "siteId");
-        formatAppLog("log", "at pages/reservationDetail/reservationDetail.vue:295", site_obj);
+        formatAppLog("log", "at pages/reservationDetail/reservationDetail.vue:294", site_obj);
         for (var key in site_obj) {
           let time_enum = [];
           for (var item of site_obj[key]) {
@@ -7609,7 +7192,8 @@ if (uni.restoreGlobal) {
       },
       getTabItemWidth() {
         let that = this;
-        var screenHeight = uni.getSystemInfoSync().windowHeight;
+        let sysInfo = uni.getSystemInfoSync();
+        var screenHeight = sysInfo.windowHeight;
         let query = uni.createSelectorQuery();
         query.select(".customerTabItem").boundingClientRect((navRect) => {
           let query2 = uni.createSelectorQuery();
@@ -7623,8 +7207,7 @@ if (uni.restoreGlobal) {
             query3.select(".bottomCon").boundingClientRect((item) => {
               let query4 = uni.createSelectorQuery();
               query4.select(".nav-bar").boundingClientRect((bar) => {
-                that.centerHeight = screenHeight - bar.height - item.height - navRect.height;
-                that.top = bar.height + navRect.height + 40;
+                that.centerHeight = screenHeight - 44 - item.height - navRect.height - sysInfo.statusBarHeight;
               }).exec();
             }).exec();
           }).exec();
@@ -7727,9 +7310,9 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$l(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$k(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_up_icon = resolveEasycom(vue.resolveDynamicComponent("up-icon"), __easycom_0$7);
-    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_1$1);
+    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_1);
     return vue.openBlock(), vue.createElementBlock(
       vue.Fragment,
       null,
@@ -7987,8 +7570,8 @@ if (uni.restoreGlobal) {
       /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */
     );
   }
-  const PagesReservationDetailReservationDetail = /* @__PURE__ */ _export_sfc(_sfc_main$m, [["render", _sfc_render$l], ["__scopeId", "data-v-71ac0ae8"], ["__file", "C:/project/轻羽项目/qingyu-client/pages/reservationDetail/reservationDetail.vue"]]);
-  const _sfc_main$l = {
+  const PagesReservationDetailReservationDetail = /* @__PURE__ */ _export_sfc(_sfc_main$l, [["render", _sfc_render$k], ["__scopeId", "data-v-71ac0ae8"], ["__file", "C:/project/轻羽项目/qingyu-client/pages/reservationDetail/reservationDetail.vue"]]);
+  const _sfc_main$k = {
     data() {
       return {
         app: getApp(),
@@ -8189,9 +7772,9 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$k(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$j(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_up_icon = resolveEasycom(vue.resolveDynamicComponent("up-icon"), __easycom_0$7);
-    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_1$1);
+    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_1);
     const _component_van_dialog = vue.resolveComponent("van-dialog");
     return vue.openBlock(), vue.createElementBlock(
       vue.Fragment,
@@ -8514,7 +8097,7 @@ if (uni.restoreGlobal) {
       /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */
     );
   }
-  const PagesOrderDetailOrderDetail = /* @__PURE__ */ _export_sfc(_sfc_main$l, [["render", _sfc_render$k], ["__scopeId", "data-v-1353b6cf"], ["__file", "C:/project/轻羽项目/qingyu-client/pages/orderDetail/orderDetail.vue"]]);
+  const PagesOrderDetailOrderDetail = /* @__PURE__ */ _export_sfc(_sfc_main$k, [["render", _sfc_render$j], ["__scopeId", "data-v-1353b6cf"], ["__file", "C:/project/轻羽项目/qingyu-client/pages/orderDetail/orderDetail.vue"]]);
   const props$9 = {
     props: {
       color: {
@@ -8548,7 +8131,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  const _sfc_main$k = {
+  const _sfc_main$j = {
     name: "u-line",
     mixins: [mpMixin, mixin, props$9],
     computed: {
@@ -8573,7 +8156,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$j(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$i(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock(
       "view",
       {
@@ -8585,7 +8168,7 @@ if (uni.restoreGlobal) {
       /* STYLE */
     );
   }
-  const __easycom_0$3 = /* @__PURE__ */ _export_sfc(_sfc_main$k, [["render", _sfc_render$j], ["__scopeId", "data-v-bbd9963c"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-line/u-line.vue"]]);
+  const __easycom_0$3 = /* @__PURE__ */ _export_sfc(_sfc_main$j, [["render", _sfc_render$i], ["__scopeId", "data-v-bbd9963c"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-line/u-line.vue"]]);
   const props$8 = {
     props: {
       // 标题
@@ -8696,7 +8279,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  const _sfc_main$j = {
+  const _sfc_main$i = {
     name: "u-cell",
     data() {
       return {};
@@ -8721,7 +8304,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$i(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$h(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_u_icon = resolveEasycom(vue.resolveDynamicComponent("u-icon"), __easycom_0$7);
     const _component_u_line = resolveEasycom(vue.resolveDynamicComponent("u-line"), __easycom_0$3);
     return vue.openBlock(), vue.createElementBlock("view", {
@@ -8814,7 +8397,7 @@ if (uni.restoreGlobal) {
       _ctx.border ? (vue.openBlock(), vue.createBlock(_component_u_line, { key: 0 })) : vue.createCommentVNode("v-if", true)
     ], 14, ["hover-class"]);
   }
-  const __easycom_2$1 = /* @__PURE__ */ _export_sfc(_sfc_main$j, [["render", _sfc_render$i], ["__scopeId", "data-v-b4243719"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-cell/u-cell.vue"]]);
+  const __easycom_2$1 = /* @__PURE__ */ _export_sfc(_sfc_main$i, [["render", _sfc_render$h], ["__scopeId", "data-v-b4243719"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-cell/u-cell.vue"]]);
   const props$7 = {
     props: {
       // 分组标题
@@ -8829,11 +8412,11 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  const _sfc_main$i = {
+  const _sfc_main$h = {
     name: "u-cell-group",
     mixins: [mpMixin, mixin, props$7]
   };
-  function _sfc_render$h(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$g(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_u_line = resolveEasycom(vue.resolveDynamicComponent("u-line"), __easycom_0$3);
     return vue.openBlock(), vue.createElementBlock(
       "view",
@@ -8865,7 +8448,7 @@ if (uni.restoreGlobal) {
       /* CLASS, STYLE */
     );
   }
-  const __easycom_3 = /* @__PURE__ */ _export_sfc(_sfc_main$i, [["render", _sfc_render$h], ["__scopeId", "data-v-30c8e4c7"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-cell-group/u-cell-group.vue"]]);
+  const __easycom_3 = /* @__PURE__ */ _export_sfc(_sfc_main$h, [["render", _sfc_render$g], ["__scopeId", "data-v-30c8e4c7"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-cell-group/u-cell-group.vue"]]);
   const props$6 = {
     props: {
       // 是否展示工具条
@@ -8900,7 +8483,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  const _sfc_main$h = {
+  const _sfc_main$g = {
     name: "u-toolbar",
     mixins: [mpMixin, mixin, props$6],
     emits: ["confirm", "cancel"],
@@ -8915,7 +8498,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$g(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$f(_ctx, _cache, $props, $setup, $data, $options) {
     return _ctx.show ? (vue.openBlock(), vue.createElementBlock(
       "view",
       {
@@ -8975,7 +8558,7 @@ if (uni.restoreGlobal) {
       /* HYDRATE_EVENTS */
     )) : vue.createCommentVNode("v-if", true);
   }
-  const __easycom_0$2 = /* @__PURE__ */ _export_sfc(_sfc_main$h, [["render", _sfc_render$g], ["__scopeId", "data-v-3fd495d6"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-toolbar/u-toolbar.vue"]]);
+  const __easycom_0$2 = /* @__PURE__ */ _export_sfc(_sfc_main$g, [["render", _sfc_render$f], ["__scopeId", "data-v-3fd495d6"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-toolbar/u-toolbar.vue"]]);
   const props$5 = {
     props: {
       // 是否展示组件
@@ -9057,7 +8640,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  const _sfc_main$g = {
+  const _sfc_main$f = {
     name: "u-transition",
     data() {
       return {
@@ -9101,7 +8684,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$f(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$e(_ctx, _cache, $props, $setup, $data, $options) {
     return $data.inited ? (vue.openBlock(), vue.createElementBlock(
       "view",
       {
@@ -9119,7 +8702,7 @@ if (uni.restoreGlobal) {
       /* CLASS, STYLE, HYDRATE_EVENTS */
     )) : vue.createCommentVNode("v-if", true);
   }
-  const __easycom_4$1 = /* @__PURE__ */ _export_sfc(_sfc_main$g, [["render", _sfc_render$f], ["__scopeId", "data-v-0573594d"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-transition/u-transition.vue"]]);
+  const __easycom_4$1 = /* @__PURE__ */ _export_sfc(_sfc_main$f, [["render", _sfc_render$e], ["__scopeId", "data-v-0573594d"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-transition/u-transition.vue"]]);
   const props$4 = {
     props: {
       // 是否显示遮罩
@@ -9144,7 +8727,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  const _sfc_main$f = {
+  const _sfc_main$e = {
     name: "u-overlay",
     mixins: [mpMixin, mixin, props$4],
     computed: {
@@ -9168,7 +8751,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$e(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$d(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_u_transition = resolveEasycom(vue.resolveDynamicComponent("u-transition"), __easycom_4$1);
     return vue.openBlock(), vue.createBlock(_component_u_transition, {
       show: _ctx.show,
@@ -9184,7 +8767,7 @@ if (uni.restoreGlobal) {
       /* FORWARDED */
     }, 8, ["show", "duration", "custom-style", "onClick"]);
   }
-  const __easycom_0$1 = /* @__PURE__ */ _export_sfc(_sfc_main$f, [["render", _sfc_render$e], ["__scopeId", "data-v-35f7c3e5"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-overlay/u-overlay.vue"]]);
+  const __easycom_0$1 = /* @__PURE__ */ _export_sfc(_sfc_main$e, [["render", _sfc_render$d], ["__scopeId", "data-v-35f7c3e5"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-overlay/u-overlay.vue"]]);
   const props$3 = {
     props: {
       // 是否展示弹窗
@@ -9264,7 +8847,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  const _sfc_main$e = {
+  const _sfc_main$d = {
     name: "u-popup",
     mixins: [mpMixin, mixin, props$3],
     data() {
@@ -9378,9 +8961,9 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$d(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$c(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_u_overlay = resolveEasycom(vue.resolveDynamicComponent("u-overlay"), __easycom_0$1);
-    const _component_u_status_bar = resolveEasycom(vue.resolveDynamicComponent("u-status-bar"), __easycom_1$2);
+    const _component_u_status_bar = resolveEasycom(vue.resolveDynamicComponent("u-status-bar"), __easycom_1$1);
     const _component_u_icon = resolveEasycom(vue.resolveDynamicComponent("u-icon"), __easycom_0$7);
     const _component_u_safe_bottom = resolveEasycom(vue.resolveDynamicComponent("u-safe-bottom"), __easycom_3$3);
     const _component_u_transition = resolveEasycom(vue.resolveDynamicComponent("u-transition"), __easycom_4$1);
@@ -9443,7 +9026,7 @@ if (uni.restoreGlobal) {
       }, 8, ["show", "customStyle", "mode", "duration", "onAfterEnter", "onClick"])
     ]);
   }
-  const __easycom_2 = /* @__PURE__ */ _export_sfc(_sfc_main$e, [["render", _sfc_render$d], ["__scopeId", "data-v-74921bef"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-popup/u-popup.vue"]]);
+  const __easycom_2 = /* @__PURE__ */ _export_sfc(_sfc_main$d, [["render", _sfc_render$c], ["__scopeId", "data-v-74921bef"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-popup/u-popup.vue"]]);
   const props$2 = {
     props: {
       // 是否展示picker弹窗
@@ -9528,7 +9111,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  const _sfc_main$d = {
+  const _sfc_main$c = {
     name: "u-picker",
     mixins: [mpMixin, mixin, props$2],
     data() {
@@ -9666,9 +9249,9 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$c(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$b(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_u_toolbar = resolveEasycom(vue.resolveDynamicComponent("u-toolbar"), __easycom_0$2);
-    const _component_u_loading_icon = resolveEasycom(vue.resolveDynamicComponent("u-loading-icon"), __easycom_1);
+    const _component_u_loading_icon = resolveEasycom(vue.resolveDynamicComponent("u-loading-icon"), __easycom_1$2);
     const _component_u_popup = resolveEasycom(vue.resolveDynamicComponent("u-popup"), __easycom_2);
     return vue.openBlock(), vue.createBlock(_component_u_popup, {
       show: _ctx.show,
@@ -9746,7 +9329,7 @@ if (uni.restoreGlobal) {
       /* STABLE */
     }, 8, ["show", "mode", "onClose"]);
   }
-  const __easycom_0 = /* @__PURE__ */ _export_sfc(_sfc_main$d, [["render", _sfc_render$c], ["__scopeId", "data-v-1500ce68"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-picker/u-picker.vue"]]);
+  const __easycom_0 = /* @__PURE__ */ _export_sfc(_sfc_main$c, [["render", _sfc_render$b], ["__scopeId", "data-v-1500ce68"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-picker/u-picker.vue"]]);
   const props$1 = {
     props: {
       // 是否打开组件
@@ -10354,7 +9937,7 @@ if (uni.restoreGlobal) {
     }
     return result;
   }
-  const _sfc_main$c = {
+  const _sfc_main$b = {
     name: "datetime-picker",
     mixins: [mpMixin, mixin, props$1],
     data() {
@@ -10621,7 +10204,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$b(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$a(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_u_picker = resolveEasycom(vue.resolveDynamicComponent("u-picker"), __easycom_0);
     return vue.openBlock(), vue.createBlock(_component_u_picker, {
       ref: "picker",
@@ -10644,11 +10227,12 @@ if (uni.restoreGlobal) {
       onChange: $options.change
     }, null, 8, ["show", "popupMode", "closeOnClickOverlay", "columns", "title", "itemHeight", "showToolbar", "visibleItemCount", "defaultIndex", "cancelText", "confirmText", "cancelColor", "confirmColor", "onClose", "onCancel", "onConfirm", "onChange"]);
   }
-  const __easycom_8 = /* @__PURE__ */ _export_sfc(_sfc_main$c, [["render", _sfc_render$b], ["__scopeId", "data-v-e39cc2d0"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-datetime-picker/u-datetime-picker.vue"]]);
-  const _sfc_main$b = {
+  const __easycom_8 = /* @__PURE__ */ _export_sfc(_sfc_main$b, [["render", _sfc_render$a], ["__scopeId", "data-v-e39cc2d0"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-datetime-picker/u-datetime-picker.vue"]]);
+  const _sfc_main$a = {
     data() {
       return {
         app: getApp(),
+        initAvatarUrl: "",
         avatarUrl: "",
         nickname: "",
         sex: "",
@@ -10733,6 +10317,7 @@ if (uni.restoreGlobal) {
             fileList.push({
               url: this.app.globalData.httpUrl + JSON.parse(res.data).data
             });
+            this.initAvatarUrl = JSON.parse(res.data).data;
             this.fileList = fileList;
             this.avatarUrl = fileList[0].url;
           }
@@ -10761,7 +10346,7 @@ if (uni.restoreGlobal) {
           data: {
             user_ouid: this.app.globalData.userInfo.ouid,
             name: this.nickname,
-            avatar: this.avatarUrl,
+            avatar: this.initAvatarUrl,
             phone: "",
             birthday: Number(this.dealCurrentDate),
             sex: Number(this.sex),
@@ -10785,9 +10370,9 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$a(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$9(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_up_icon = resolveEasycom(vue.resolveDynamicComponent("up-icon"), __easycom_0$7);
-    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_1$1);
+    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_1);
     const _component_u_icon = resolveEasycom(vue.resolveDynamicComponent("u-icon"), __easycom_0$7);
     const _component_u_upload = resolveEasycom(vue.resolveDynamicComponent("u-upload"), __easycom_3$1);
     const _component_u_cell = resolveEasycom(vue.resolveDynamicComponent("u-cell"), __easycom_2$1);
@@ -10945,7 +10530,7 @@ if (uni.restoreGlobal) {
       /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */
     );
   }
-  const PagesInfoEditInfoEdit = /* @__PURE__ */ _export_sfc(_sfc_main$b, [["render", _sfc_render$a], ["__scopeId", "data-v-516de732"], ["__file", "C:/project/轻羽项目/qingyu-client/pages/infoEdit/infoEdit.vue"]]);
+  const PagesInfoEditInfoEdit = /* @__PURE__ */ _export_sfc(_sfc_main$a, [["render", _sfc_render$9], ["__scopeId", "data-v-516de732"], ["__file", "C:/project/轻羽项目/qingyu-client/pages/infoEdit/infoEdit.vue"]]);
   const props = {
     props: {
       // 是否展示modal
@@ -11030,7 +10615,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  const _sfc_main$a = {
+  const _sfc_main$9 = {
     name: "u-modal",
     mixins: [mpMixin, mixin, props],
     data() {
@@ -11069,9 +10654,9 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$9(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$8(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_u_line = resolveEasycom(vue.resolveDynamicComponent("u-line"), __easycom_0$3);
-    const _component_u_loading_icon = resolveEasycom(vue.resolveDynamicComponent("u-loading-icon"), __easycom_1);
+    const _component_u_loading_icon = resolveEasycom(vue.resolveDynamicComponent("u-loading-icon"), __easycom_1$2);
     const _component_u_popup = resolveEasycom(vue.resolveDynamicComponent("u-popup"), __easycom_2);
     return vue.openBlock(), vue.createBlock(_component_u_popup, {
       mode: "center",
@@ -11222,8 +10807,8 @@ if (uni.restoreGlobal) {
       /* FORWARDED */
     }, 8, ["zoom", "show", "customStyle", "closeOnClickOverlay", "onClick"]);
   }
-  const __easycom_4 = /* @__PURE__ */ _export_sfc(_sfc_main$a, [["render", _sfc_render$9], ["__scopeId", "data-v-12b77a26"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-modal/u-modal.vue"]]);
-  const _sfc_main$9 = {
+  const __easycom_4 = /* @__PURE__ */ _export_sfc(_sfc_main$9, [["render", _sfc_render$8], ["__scopeId", "data-v-12b77a26"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-modal/u-modal.vue"]]);
+  const _sfc_main$8 = {
     data() {
       return {
         show: false,
@@ -11367,9 +10952,9 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$8(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$7(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_up_icon = resolveEasycom(vue.resolveDynamicComponent("up-icon"), __easycom_0$7);
-    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_1$1);
+    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_1);
     const _component_u_modal = resolveEasycom(vue.resolveDynamicComponent("u-modal"), __easycom_4);
     const _component_u_tabs = resolveEasycom(vue.resolveDynamicComponent("u-tabs"), __easycom_2$3);
     const _component_u_empty = resolveEasycom(vue.resolveDynamicComponent("u-empty"), __easycom_3$2);
@@ -11805,8 +11390,8 @@ if (uni.restoreGlobal) {
       /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */
     );
   }
-  const PagesOrderListOrderList = /* @__PURE__ */ _export_sfc(_sfc_main$9, [["render", _sfc_render$8], ["__scopeId", "data-v-1d51308d"], ["__file", "C:/project/轻羽项目/qingyu-client/pages/orderList/orderList.vue"]]);
-  const _sfc_main$8 = {
+  const PagesOrderListOrderList = /* @__PURE__ */ _export_sfc(_sfc_main$8, [["render", _sfc_render$7], ["__scopeId", "data-v-1d51308d"], ["__file", "C:/project/轻羽项目/qingyu-client/pages/orderList/orderList.vue"]]);
+  const _sfc_main$7 = {
     data() {
       return {
         app: getApp(),
@@ -11887,9 +11472,9 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$7(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$6(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_up_icon = resolveEasycom(vue.resolveDynamicComponent("up-icon"), __easycom_0$7);
-    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_1$1);
+    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_1);
     const _component_u__textarea = resolveEasycom(vue.resolveDynamicComponent("u--textarea"), __easycom_2$2);
     const _component_u_upload = resolveEasycom(vue.resolveDynamicComponent("u-upload"), __easycom_3$1);
     return vue.openBlock(), vue.createElementBlock(
@@ -11952,8 +11537,8 @@ if (uni.restoreGlobal) {
       /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */
     );
   }
-  const PagesFeedbackFeedback = /* @__PURE__ */ _export_sfc(_sfc_main$8, [["render", _sfc_render$7], ["__scopeId", "data-v-a24b82f2"], ["__file", "C:/project/轻羽项目/qingyu-client/pages/feedback/feedback.vue"]]);
-  const _sfc_main$7 = {
+  const PagesFeedbackFeedback = /* @__PURE__ */ _export_sfc(_sfc_main$7, [["render", _sfc_render$6], ["__scopeId", "data-v-a24b82f2"], ["__file", "C:/project/轻羽项目/qingyu-client/pages/feedback/feedback.vue"]]);
+  const _sfc_main$6 = {
     data() {
       return {
         app: getApp(),
@@ -12038,9 +11623,9 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$6(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$5(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_up_icon = resolveEasycom(vue.resolveDynamicComponent("up-icon"), __easycom_0$7);
-    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_1$1);
+    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_1);
     const _component_u_cell = resolveEasycom(vue.resolveDynamicComponent("u-cell"), __easycom_2$1);
     const _component_u_cell_group = resolveEasycom(vue.resolveDynamicComponent("u-cell-group"), __easycom_3);
     const _component_u_modal = resolveEasycom(vue.resolveDynamicComponent("u-modal"), __easycom_4);
@@ -12138,8 +11723,8 @@ if (uni.restoreGlobal) {
       /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */
     );
   }
-  const PagesSettingsSettings = /* @__PURE__ */ _export_sfc(_sfc_main$7, [["render", _sfc_render$6], ["__scopeId", "data-v-7fad0a1c"], ["__file", "C:/project/轻羽项目/qingyu-client/pages/settings/settings.vue"]]);
-  const _sfc_main$6 = {
+  const PagesSettingsSettings = /* @__PURE__ */ _export_sfc(_sfc_main$6, [["render", _sfc_render$5], ["__scopeId", "data-v-7fad0a1c"], ["__file", "C:/project/轻羽项目/qingyu-client/pages/settings/settings.vue"]]);
+  const _sfc_main$5 = {
     data() {
       return {
         app: getApp()
@@ -12191,9 +11776,9 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$5(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$4(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_up_icon = resolveEasycom(vue.resolveDynamicComponent("up-icon"), __easycom_0$7);
-    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_1$1);
+    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_1);
     return vue.openBlock(), vue.createElementBlock(
       vue.Fragment,
       null,
@@ -12223,8 +11808,8 @@ if (uni.restoreGlobal) {
       /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */
     );
   }
-  const PagesAboutUsAboutUs = /* @__PURE__ */ _export_sfc(_sfc_main$6, [["render", _sfc_render$5], ["__scopeId", "data-v-d8855c81"], ["__file", "C:/project/轻羽项目/qingyu-client/pages/aboutUs/aboutUs.vue"]]);
-  const _sfc_main$5 = {
+  const PagesAboutUsAboutUs = /* @__PURE__ */ _export_sfc(_sfc_main$5, [["render", _sfc_render$4], ["__scopeId", "data-v-d8855c81"], ["__file", "C:/project/轻羽项目/qingyu-client/pages/aboutUs/aboutUs.vue"]]);
+  const _sfc_main$4 = {
     data() {
       return {
         app: getApp(),
@@ -12353,9 +11938,9 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$4(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_up_icon = resolveEasycom(vue.resolveDynamicComponent("up-icon"), __easycom_0$7);
-    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_1$1);
+    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_1);
     const _component_u_tabs = resolveEasycom(vue.resolveDynamicComponent("u-tabs"), __easycom_2$3);
     const _component_u_empty = resolveEasycom(vue.resolveDynamicComponent("u-empty"), __easycom_3$2);
     return vue.openBlock(), vue.createElementBlock(
@@ -12693,8 +12278,8 @@ if (uni.restoreGlobal) {
       /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */
     );
   }
-  const PagesReservationListReservationList = /* @__PURE__ */ _export_sfc(_sfc_main$5, [["render", _sfc_render$4], ["__scopeId", "data-v-9e63185c"], ["__file", "C:/project/轻羽项目/qingyu-client/pages/reservationList/reservationList.vue"]]);
-  const _sfc_main$4 = {
+  const PagesReservationListReservationList = /* @__PURE__ */ _export_sfc(_sfc_main$4, [["render", _sfc_render$3], ["__scopeId", "data-v-9e63185c"], ["__file", "C:/project/轻羽项目/qingyu-client/pages/reservationList/reservationList.vue"]]);
+  const _sfc_main$3 = {
     data() {
       return {
         app: getApp(),
@@ -12864,9 +12449,9 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$2(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_up_icon = resolveEasycom(vue.resolveDynamicComponent("up-icon"), __easycom_0$7);
-    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_1$1);
+    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_1);
     const _component_u_modal = resolveEasycom(vue.resolveDynamicComponent("u-modal"), __easycom_4);
     return vue.openBlock(), vue.createElementBlock(
       vue.Fragment,
@@ -13035,272 +12620,7 @@ if (uni.restoreGlobal) {
       /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */
     );
   }
-  const PagesReservationInfoReservationInfo = /* @__PURE__ */ _export_sfc(_sfc_main$4, [["render", _sfc_render$3], ["__scopeId", "data-v-ba7f838c"], ["__file", "C:/project/轻羽项目/qingyu-client/pages/reservationInfo/reservationInfo.vue"]]);
-  const _sfc_main$3 = {
-    data() {
-      return {
-        scrollViewHeight: 0,
-        pv: 0,
-        uv: 0,
-        registrationList: [
-          {
-            name: "昵称1",
-            sex: 2,
-            man_amount: 1,
-            woman_amount: 2,
-            state: 0
-          },
-          {
-            name: "昵称1",
-            sex: 1,
-            man_amount: 1,
-            woman_amount: 2,
-            state: 0
-          }
-        ],
-        waitingList: [{
-          name: "昵称1",
-          sex: 1,
-          state: 0
-        }]
-      };
-    },
-    /**
-     * 生命周期函数--监听页面加载
-     */
-    onLoad(options) {
-      this.calculate();
-      this.initData(options.id);
-    },
-    /**
-     * 生命周期函数--监听页面初次渲染完成
-     */
-    onReady() {
-    },
-    /**
-     * 生命周期函数--监听页面显示
-     */
-    onShow() {
-    },
-    /**
-     * 生命周期函数--监听页面隐藏
-     */
-    onHide() {
-    },
-    /**
-     * 生命周期函数--监听页面卸载
-     */
-    onUnload() {
-    },
-    /**
-     * 页面相关事件处理函数--监听用户下拉动作
-     */
-    onPullDownRefresh() {
-    },
-    /**
-     * 页面上拉触底事件的处理函数
-     */
-    onReachBottom() {
-    },
-    /**
-     * 用户点击右上角分享
-     */
-    onShareAppMessage() {
-    },
-    methods: {
-      onClickLeft() {
-        uni.navigateBack();
-      },
-      calculate() {
-        var that = this;
-        var screenHeight = uni.getSystemInfoSync().windowHeight;
-        let query = uni.createSelectorQuery();
-        query.select(".nav-bar").boundingClientRect((res) => {
-          that.scrollViewHeight = screenHeight - res.height - 20;
-        }).exec();
-      },
-      initData(id) {
-        request({
-          url: "wx/get/activity/apply/list",
-          method: "POST",
-          data: {
-            activity_id: Number(id)
-          }
-        }).then((res) => {
-          this.pv = res.data.browse;
-          this.uv = res.data.independent;
-          this.registrationList = res.data.success;
-          this.waitingList = res.data.wait ? res.data.wait : [];
-        });
-      }
-    }
-  };
-  function _sfc_render$2(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_van_icon = vue.resolveComponent("van-icon");
-    const _component_van_nav_bar = vue.resolveComponent("van-nav-bar");
-    return vue.openBlock(), vue.createElementBlock(
-      vue.Fragment,
-      null,
-      [
-        vue.createCommentVNode(" pages/dataDetail/dataDetail.wxml "),
-        vue.createElementVNode("view", { class: "page" }, [
-          vue.createVNode(_component_van_nav_bar, { class: "nav-bar" }, {
-            default: vue.withCtx(() => [
-              vue.createElementVNode("view", {
-                slot: "left",
-                onClick: _cache[0] || (_cache[0] = (...args) => $options.onClickLeft && $options.onClickLeft(...args))
-              }, [
-                vue.createVNode(_component_van_icon, {
-                  name: "arrow-left",
-                  size: "20px"
-                })
-              ]),
-              vue.createElementVNode("view", {
-                slot: "title",
-                class: "pageTitle"
-              }, "活动数据")
-            ]),
-            _: 1
-            /* STABLE */
-          }),
-          vue.createElementVNode(
-            "scroll-view",
-            {
-              "scroll-y": true,
-              style: vue.normalizeStyle("height: " + $data.scrollViewHeight + "px;")
-            },
-            [
-              vue.createElementVNode("view", { class: "commonTitle" }, "活动数据"),
-              vue.createElementVNode("view", { class: "flex align-center justify-around topBox" }, [
-                vue.createElementVNode("view", { class: "flex-1 flex flex-direction align-center" }, [
-                  vue.createElementVNode("view", { class: "topBoxTitle" }, "活动浏览量(PV)"),
-                  vue.createElementVNode(
-                    "view",
-                    { class: "topBoxCon" },
-                    vue.toDisplayString($data.pv),
-                    1
-                    /* TEXT */
-                  )
-                ]),
-                vue.createElementVNode("view", { class: "flex-1 flex flex-direction align-center" }, [
-                  vue.createElementVNode("view", { class: "topBoxTitle" }, "独立访客数(UV)"),
-                  vue.createElementVNode(
-                    "view",
-                    { class: "topBoxCon" },
-                    vue.toDisplayString($data.uv),
-                    1
-                    /* TEXT */
-                  )
-                ])
-              ]),
-              vue.createElementVNode("view", { class: "commonTitle" }, "报名名单"),
-              $data.registrationList.length > 0 ? (vue.openBlock(), vue.createElementBlock("view", { key: 0 }, [
-                (vue.openBlock(true), vue.createElementBlock(
-                  vue.Fragment,
-                  null,
-                  vue.renderList($data.registrationList, (item, index2) => {
-                    return vue.openBlock(), vue.createElementBlock("view", {
-                      class: "listItem flex align-center justify-between",
-                      key: index2
-                    }, [
-                      vue.createElementVNode("view", { class: "flex align-center" }, [
-                        vue.createElementVNode("image", {
-                          src: item.avatar,
-                          mode: "",
-                          style: { "width": "50px", "height": "50px", "border-radius": "50%", "margin-right": "5px" }
-                        }, null, 8, ["src"]),
-                        vue.createElementVNode("view", { class: "flex flex-direction align-start" }, [
-                          vue.createElementVNode("view", { class: "flex align-center" }, [
-                            vue.createElementVNode(
-                              "text",
-                              { class: "nameText" },
-                              vue.toDisplayString(item.name),
-                              1
-                              /* TEXT */
-                            ),
-                            vue.createElementVNode("image", {
-                              style: { "width": "18px", "height": "18px", "margin-left": "4px" },
-                              src: item.sex == 1 ? "../../static/images/mine/boyIcon.svg" : "../../static/images/mine/girlIcon.svg",
-                              mode: ""
-                            }, null, 8, ["src"])
-                          ]),
-                          vue.createElementVNode(
-                            "view",
-                            { class: "amountText" },
-                            "男： " + vue.toDisplayString(item.man_count) + " 女： " + vue.toDisplayString(item.woman_count),
-                            1
-                            /* TEXT */
-                          )
-                        ])
-                      ]),
-                      vue.createElementVNode("view", null, [
-                        vue.createElementVNode("text", { class: "successText" }, "已报名")
-                      ])
-                    ]);
-                  }),
-                  128
-                  /* KEYED_FRAGMENT */
-                ))
-              ])) : (vue.openBlock(), vue.createElementBlock("view", {
-                key: 1,
-                class: "flex align-center justify-center emptyText"
-              }, "暂无报名")),
-              vue.createElementVNode("view", { class: "commonTitle" }, "候选名单"),
-              $data.waitingList.length > 0 ? (vue.openBlock(), vue.createElementBlock("view", { key: 2 }, [
-                (vue.openBlock(true), vue.createElementBlock(
-                  vue.Fragment,
-                  null,
-                  vue.renderList($data.waitingList, (item, index2) => {
-                    return vue.openBlock(), vue.createElementBlock("view", {
-                      class: "listItem flex align-center justify-between",
-                      key: index2
-                    }, [
-                      vue.createElementVNode("view", { class: "flex align-center" }, [
-                        vue.createElementVNode("image", {
-                          src: item.avatar,
-                          mode: "",
-                          style: { "width": "50px", "height": "50px", "border-radius": "50%", "margin-right": "5px" }
-                        }, null, 8, ["src"]),
-                        vue.createElementVNode("view", { class: "flex flex-direction align-start" }, [
-                          vue.createElementVNode("view", { class: "flex align-center" }, [
-                            vue.createElementVNode(
-                              "text",
-                              { class: "nameText" },
-                              vue.toDisplayString(item.name),
-                              1
-                              /* TEXT */
-                            ),
-                            vue.createElementVNode("image", {
-                              style: { "width": "18px", "height": "18px", "margin-left": "4px" },
-                              src: item.sex == 1 ? "../../static/images/mine/boyIcon.svg" : "../../static/images/mine/girlIcon.svg",
-                              mode: ""
-                            }, null, 8, ["src"])
-                          ])
-                        ])
-                      ]),
-                      vue.createElementVNode("view", null, [
-                        vue.createElementVNode("text", { class: "successText" }, "候选")
-                      ])
-                    ]);
-                  }),
-                  128
-                  /* KEYED_FRAGMENT */
-                ))
-              ])) : (vue.openBlock(), vue.createElementBlock("view", {
-                key: 3,
-                class: "flex align-center justify-center emptyText"
-              }, "暂无候选"))
-            ],
-            4
-            /* STYLE */
-          )
-        ])
-      ],
-      2112
-      /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */
-    );
-  }
-  const PagesDataDetailDataDetail = /* @__PURE__ */ _export_sfc(_sfc_main$3, [["render", _sfc_render$2], ["__scopeId", "data-v-3b44c5b1"], ["__file", "C:/project/轻羽项目/qingyu-client/pages/dataDetail/dataDetail.vue"]]);
+  const PagesReservationInfoReservationInfo = /* @__PURE__ */ _export_sfc(_sfc_main$3, [["render", _sfc_render$2], ["__scopeId", "data-v-ba7f838c"], ["__file", "C:/project/轻羽项目/qingyu-client/pages/reservationInfo/reservationInfo.vue"]]);
   const _sfc_main$2 = {
     data() {
       return {
@@ -13334,7 +12654,7 @@ if (uni.restoreGlobal) {
   };
   function _sfc_render$1(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_up_icon = resolveEasycom(vue.resolveDynamicComponent("up-icon"), __easycom_0$7);
-    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_1$1);
+    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_1);
     const _component_u_cell = resolveEasycom(vue.resolveDynamicComponent("u-cell"), __easycom_2$1);
     const _component_u_cell_group = resolveEasycom(vue.resolveDynamicComponent("u-cell-group"), __easycom_3);
     const _component_u_modal = resolveEasycom(vue.resolveDynamicComponent("u-modal"), __easycom_4);
@@ -13362,12 +12682,6 @@ if (uni.restoreGlobal) {
           }),
           vue.createVNode(_component_u_cell_group, { "custom-class": "userinfo-group" }, {
             default: vue.withCtx(() => [
-              vue.createVNode(_component_u_cell, {
-                title: "氢羽号",
-                center: "",
-                value: $data.accountNo,
-                "custom-class": "userinfo-cell"
-              }, null, 8, ["value"]),
               vue.createVNode(_component_u_cell, {
                 title: "手机号",
                 value: $data.phone,
@@ -13404,7 +12718,7 @@ if (uni.restoreGlobal) {
   };
   function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_up_icon = resolveEasycom(vue.resolveDynamicComponent("up-icon"), __easycom_0$7);
-    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_1$1);
+    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_1);
     return vue.openBlock(), vue.createElementBlock("view", { class: "page" }, [
       vue.createVNode(_component_u_navbar, {
         class: "nav-bar",
@@ -13436,8 +12750,6 @@ if (uni.restoreGlobal) {
   __definePage("pages/home/home", PagesHomeHome);
   __definePage("pages/reservation/reservation", PagesReservationReservation);
   __definePage("pages/mine/mine", PagesMineMine);
-  __definePage("pages/gymnasiumInfo/gymnasiumInfo", PagesGymnasiumInfoGymnasiumInfo);
-  __definePage("pages/album/album", PagesAlbumAlbum);
   __definePage("pages/errorReport/errorReport", PagesErrorReportErrorReport);
   __definePage("pages/reservationDetail/reservationDetail", PagesReservationDetailReservationDetail);
   __definePage("pages/orderDetail/orderDetail", PagesOrderDetailOrderDetail);
@@ -13448,7 +12760,6 @@ if (uni.restoreGlobal) {
   __definePage("pages/aboutUs/aboutUs", PagesAboutUsAboutUs);
   __definePage("pages/reservationList/reservationList", PagesReservationListReservationList);
   __definePage("pages/reservationInfo/reservationInfo", PagesReservationInfoReservationInfo);
-  __definePage("pages/dataDetail/dataDetail", PagesDataDetailDataDetail);
   __definePage("pages/accountSecurity/accountSecurity", PagesAccountSecurityAccountSecurity);
   __definePage("pages/userAgreement/userAgreement", PagesUserAgreementUserAgreement);
   const _sfc_main = {
@@ -13574,6 +12885,7 @@ if (uni.restoreGlobal) {
             success: (res) => {
               if (res.statusCode == 200) {
                 let userInfo2 = res.data.data;
+                userInfo2.avatar = this.globalData.httpUrl + userInfo2.avatar;
                 this.globalData.userInfo.avatar = userInfo2.avatar;
                 this.globalData.userInfo.birthday = userInfo2.birthday;
                 this.globalData.userInfo.name = userInfo2.name;
@@ -13605,7 +12917,7 @@ if (uni.restoreGlobal) {
             url: this.globalData.httpUrl + "wx/get/shop/detail",
             method: "POST"
           }).then((res) => {
-            let tag = res.data.data.tag;
+            let tag = res.data.data.tag ? res.data.data.tag : [];
             let tagList = [];
             tag.forEach((item) => {
               tagList.push({
@@ -13623,6 +12935,8 @@ if (uni.restoreGlobal) {
             gymnasiumInfo.facility = res.data.data.facility;
             gymnasiumInfo.serve = res.data.data.serve;
             gymnasiumInfo.hardwareFacilities = tagList;
+            gymnasiumInfo.shop_avatar = this.globalData.httpUrl + res.data.data.shop_avatar;
+            gymnasiumInfo.desc = res.data.data.desc;
             let gymnasiumImgList = [];
             let list = JSON.parse(res.data.data.shop_photo);
             list.forEach((item) => {
@@ -13689,13 +13003,13 @@ if (uni.restoreGlobal) {
     },
     onLaunch: function() {
       this.getEnum();
-      formatAppLog("log", "at App.vue:258", "App Launch");
+      formatAppLog("log", "at App.vue:261", "App Launch");
     },
     onShow: function() {
-      formatAppLog("log", "at App.vue:261", "App Show");
+      formatAppLog("log", "at App.vue:264", "App Show");
     },
     onHide: function() {
-      formatAppLog("log", "at App.vue:264", "App Hide");
+      formatAppLog("log", "at App.vue:267", "App Hide");
     }
   };
   const App = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "C:/project/轻羽项目/qingyu-client/App.vue"]]);
