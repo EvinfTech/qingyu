@@ -12531,7 +12531,8 @@ if (uni.restoreGlobal) {
   __definePage("pages/userAgreement/userAgreement", PagesUserAgreementUserAgreement);
   const _sfc_main = {
     globalData: {
-      httpUrl: "http://172.16.7.99:8002/",
+      // httpUrl: 'http://172.16.7.99:8002/',
+      httpUrl: "https://qingyu.evinf.cn/",
       // httpUrl: 'http://172.16.8.5:8002/',
       uploadAvatarUrl: "http://172.16.7.99:8002/common/upload/avatar",
       uploadImgUrl: "http://172.16.7.99:8002/common/upload/photo",
@@ -12770,13 +12771,13 @@ if (uni.restoreGlobal) {
     },
     onLaunch: function() {
       this.getEnum();
-      formatAppLog("log", "at App.vue:261", "App Launch");
+      formatAppLog("log", "at App.vue:262", "App Launch");
     },
     onShow: function() {
-      formatAppLog("log", "at App.vue:264", "App Show");
+      formatAppLog("log", "at App.vue:265", "App Show");
     },
     onHide: function() {
-      formatAppLog("log", "at App.vue:267", "App Hide");
+      formatAppLog("log", "at App.vue:268", "App Hide");
     }
   };
   const App = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "C:/project/轻羽项目/qingyu-client/App.vue"]]);
