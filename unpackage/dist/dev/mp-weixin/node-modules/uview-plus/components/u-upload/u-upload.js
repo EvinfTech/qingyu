@@ -2,7 +2,7 @@
 const common_vendor = require("../../../../common/vendor.js");
 const _sfc_main = {
   name: "u-upload",
-  mixins: [common_vendor.mpMixin, common_vendor.mixin, common_vendor.mixinUp, common_vendor.props$7],
+  mixins: [common_vendor.mpMixin, common_vendor.mixin, common_vendor.mixinUp, common_vendor.props$8],
   data() {
     return {
       lists: [],

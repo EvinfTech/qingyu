@@ -16,7 +16,8 @@
     "pages/reservationList/reservationList",
     "pages/reservationInfo/reservationInfo",
     "pages/accountSecurity/accountSecurity",
-    "pages/userAgreement/userAgreement"
+    "pages/userAgreement/userAgreement",
+    "pages/confirmAppointment/confirmAppointment"
   ],
   "subPackages": [],
   "usingComponents": {},

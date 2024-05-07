@@ -2,7 +2,7 @@
 const common_vendor = require("../../../../common/vendor.js");
 const _sfc_main = {
   name: "u-toolbar",
-  mixins: [common_vendor.mpMixin, common_vendor.mixin, common_vendor.props$22],
+  mixins: [common_vendor.mpMixin, common_vendor.mixin, common_vendor.props$24],
   emits: ["confirm", "cancel"],
   methods: {
     // 点击取消按钮

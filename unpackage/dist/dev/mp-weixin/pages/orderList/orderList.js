@@ -18,7 +18,19 @@ const _sfc_main = {
       waitUsedList: [],
       order_no: "",
       orderList: [],
-      scrollViewHeight: ""
+      scrollViewHeight: "",
+      searchInfo: {
+        pageObj: {
+          firstPage: 1,
+          secondPage: 1,
+          thirdPage: 1
+        },
+        size: 10,
+        status: ""
+      },
+      triggered: false,
+      triggered1: false,
+      triggered2: false
     };
   },
   /**
@@ -71,27 +83,46 @@ const _sfc_main = {
     },
     onChange(e) {
       this.active = e.index;
-      if (this.active == 0)
-        ;
-      else if (this.active == 1)
-        ;
-      else
-        ;
+      switch (e.index) {
+        case 0:
+          this.searchInfo.status = "";
+          break;
+        case 1:
+          this.searchInfo.status = "N";
+          if (this.waitPayedList.length == 0) {
+            this.initData();
+          }
+          break;
+        case 2:
+          this.searchInfo.status = "Y";
+          if (this.waitUsedList.length == 0) {
+            this.initData();
+          }
+          break;
+      }
     },
     calculate() {
-      var screenHeight = common_vendor.index.getSystemInfoSync().windowHeight;
-      let that = this;
-      that.scrollViewHeight = screenHeight - 88;
+      let sysInfo = common_vendor.index.getSystemInfoSync();
+      var screenHeight = sysInfo.windowHeight;
+      this.scrollViewHeight = screenHeight - 88 - sysInfo.statusBarHeight;
     },
     toDetail(e) {
       let order_no = e.currentTarget.dataset.item.order_no;
       common_vendor.index.navigateTo({
-        url: "/pages/orderDetail/orderDetail?order_no=" + order_no
+        url: "/pages/orderDetail/orderDetail?order_no=" + order_no,
+        events: {
+          toCancelOrder: (order_no2) => {
+            console.log(999, order_no2);
+            this.dealWithCancel(order_no2);
+          }
+        }
       });
     },
+    // 取消
     cancel() {
       this.show = false;
     },
+    // 确定取消
     confirm() {
       utils_request.request({
         url: "wx/cancel/order",
@@ -105,10 +136,8 @@ const _sfc_main = {
           icon: "none",
           duration: 2e3,
           success: () => {
+            this.dealWithCancel(this.order_no);
             this.show = false;
-            setTimeout(() => {
-              this.initData();
-            }, 2e3);
           }
         });
       });
@@ -117,16 +146,26 @@ const _sfc_main = {
       this.show = true;
       this.order_no = e.currentTarget.dataset.item.order_no;
     },
-    async initData() {
+    // 去使用
+    toUse(e) {
+      common_vendor.index.navigateTo({
+        url: "/pages/reservationInfo/reservationInfo?order_no=" + e.currentTarget.dataset.item.order_no
+      });
+    },
+    // 初始化数据
+    async initData(type = "") {
       let userInfo = await this.app.getUserInfo();
       utils_request.request({
         url: "wx/get/order/list",
         method: "POST",
         data: {
-          user_ouid: userInfo.ouid
+          user_ouid: userInfo.ouid,
+          page: this.active == 0 ? this.searchInfo.pageObj.firstPage : this.active == 1 ? this.searchInfo.pageObj.secondPage : this.searchInfo.pageObj.thirdPage,
+          size: this.searchInfo.size,
+          status: this.searchInfo.status
         }
       }).then((res) => {
-        let orderList = res.data.reverse();
+        let orderList = res.data.list ? res.data.list : [];
         orderList.forEach((con) => {
           con.siteNum = con.site_detail ? con.site_detail.length : 0;
           let hour = 0;
@@ -134,14 +173,88 @@ const _sfc_main = {
           con.site_detail.forEach((content) => {
             hour = hour + content.time_enum.length;
           });
+          con.shop_avatar = this.app.globalData.httpUrl + con.shop_avatar;
           con.hour = hour;
         });
-        this.orderList = orderList;
-        let waitPayedList = this.orderList.filter((item) => item.status == "N");
-        let waitUsedList = this.orderList.filter((item) => item.status == "Y");
-        this.waitPayedList = waitPayedList;
-        this.waitUsedList = waitUsedList;
+        if (orderList.length < 10 && type == "lower") {
+          common_vendor.index.showToast({
+            icon: "none",
+            title: "没有更多数据了"
+          });
+        }
+        switch (this.active) {
+          case 0:
+            this.orderList = type == "refresh" ? orderList : this.orderList.concat(
+              orderList
+            );
+            this.triggered = false;
+            break;
+          case 1:
+            this.waitPayedList = type == "refresh" ? orderList : this.waitPayedList.concat(orderList);
+            this.triggered1 = false;
+            break;
+          case 2:
+            this.waitUsedList = type == "refresh" ? orderList : this.waitUsedList.concat(
+              orderList
+            );
+            this.triggered2 = false;
+            break;
+        }
       });
+    },
+    // 下拉刷新
+    onRefresh() {
+      switch (this.active) {
+        case 0:
+          this.searchInfo.pageObj.firstPage = 1;
+          this.triggered = true;
+          break;
+        case 1:
+          this.searchInfo.pageObj.secondPage = 1;
+          this.triggered1 = true;
+          break;
+        case 2:
+          this.searchInfo.pageObj.thirdPage = 1;
+          this.triggered2 = true;
+          break;
+      }
+      this.initData("refresh");
+    },
+    // 上拉加载
+    lower() {
+      switch (this.active) {
+        case 0:
+          this.searchInfo.pageObj.firstPage = this.searchInfo.pageObj.firstPage + 1;
+          break;
+        case 1:
+          this.searchInfo.pageObj.secondPage = this.searchInfo.pageObj.secondPage + 1;
+          break;
+        case 2:
+          this.searchInfo.pageObj.thirdPage = this.searchInfo.pageObj.thirdPage + 1;
+          break;
+      }
+      this.initData("lower");
+    },
+    // 处理取消订单
+    dealWithCancel(order_no) {
+      let index = this.orderList.findIndex((item) => {
+        return item.order_no == this.order_no;
+      });
+      if (index > -1) {
+        this.orderList[index].status = "C";
+      }
+      let index1 = this.waitPayedList.findIndex((item) => {
+        return item.order_no == this.order_no;
+      });
+      if (index1 > -1) {
+        this.waitPayedList[index].status = "C";
+      }
+      let index2 = this.waitUsedList.findIndex((item) => {
+        return item.order_no == this.order_no;
+      });
+      if (index2 > -1) {
+        this.waitUsedList[index].status = "C";
+      }
     }
   }
 };
@@ -200,129 +313,132 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
       return common_vendor.e({
         a: common_vendor.t(item.order_no),
         b: item.status == "N"
-      }, item.status == "N" ? {} : item.status == "Y" ? {} : item.status == "C" ? {} : {}, {
+      }, item.status == "N" ? {} : item.status == "Y" ? {} : item.status == "C" ? {} : item.status == "U" ? {} : {}, {
         c: item.status == "Y",
         d: item.status == "C",
-        e: item.shop_avatar,
-        f: common_vendor.t(item.shop_name),
-        g: common_vendor.t(item.siteNum),
-        h: common_vendor.t(item.hour),
-        i: common_vendor.t(item.money / 100),
-        j: item.status == "C"
-      }, item.status == "C" ? {
-        k: common_vendor.o((...args) => $options.toDetail && $options.toDetail(...args), index1),
-        l: item
-      } : {}, {
-        m: item.status == "N"
-      }, item.status == "N" ? {
-        n: common_vendor.o((...args) => $options.toCancel && $options.toCancel(...args), index1),
-        o: item,
-        p: common_vendor.o((...args) => $options.toDetail && $options.toDetail(...args), index1),
-        q: item
-      } : {}, {
-        r: item.status == "Y"
-      }, item.status == "Y" ? {
-        s: common_vendor.o((...args) => $options.toCancel && $options.toCancel(...args), index1),
-        t: item,
-        v: common_vendor.o((...args) => $options.toDetail && $options.toDetail(...args), index1),
-        w: item
-      } : {}, {
-        x: item.status == "finished" || item.status == "refunded"
-      }, item.status == "finished" || item.status == "refunded" ? {} : {}, {
-        y: item,
-        z: index1
-      });
-    })
-  }, {
-    m: common_vendor.n($data.orderList.length == 0 ? "emptyFlex" : ""),
-    n: common_vendor.s("height: " + ($data.scrollViewHeight + "px") + ";")
-  }) : $data.active == 1 ? common_vendor.e({
-    p: $data.waitPayedList.length == 0
-  }, $data.waitPayedList.length == 0 ? {
-    q: common_vendor.p({
-      text: "暂无待支付订单"
-    })
-  } : {
-    r: common_vendor.f($data.waitPayedList, (item, index1, i0) => {
-      return common_vendor.e({
-        a: common_vendor.t(item.order_no),
-        b: item.status == "N"
-      }, item.status == "N" ? {} : item.status == "Y" ? {} : {}, {
-        c: item.status == "Y",
-        d: item.shop_avatar,
-        e: common_vendor.t(item.shop_name),
-        f: common_vendor.t(item.siteNum),
-        g: common_vendor.t(item.hour),
-        h: common_vendor.t(item.money / 100),
-        i: item.status == "N"
-      }, item.status == "N" ? {
-        j: common_vendor.o((...args) => $options.toCancel && $options.toCancel(...args), index1),
-        k: item,
-        l: common_vendor.o((...args) => $options.toDetail && $options.toDetail(...args), index1),
-        m: item
-      } : {}, {
-        n: item.status == "Y"
-      }, item.status == "Y" ? {
-        o: common_vendor.o((...args) => $options.toCancel && $options.toCancel(...args), index1),
-        p: item,
-        q: common_vendor.o((...args) => $options.toDetail && $options.toDetail(...args), index1),
-        r: item
-      } : {}, {
-        s: item.status == "finished" || item.status == "refunded"
-      }, item.status == "finished" || item.status == "refunded" ? {} : {}, {
-        t: item,
-        v: index1
-      });
-    })
-  }, {
-    s: common_vendor.s("height: " + ($data.scrollViewHeight + "px") + ";"),
-    t: common_vendor.n($data.waitPayedList.length == 0 ? "emptyFlex" : "")
-  }) : common_vendor.e({
-    v: $data.waitUsedList.length == 0
-  }, $data.waitUsedList.length == 0 ? {
-    w: common_vendor.p({
-      text: "暂无待使用订单"
-    })
-  } : {
-    x: common_vendor.f($data.waitUsedList, (item, index1, i0) => {
-      return common_vendor.e({
-        a: common_vendor.t(item.order_no),
-        b: item.status == "N"
-      }, item.status == "N" ? {} : item.status == "Y" ? {} : item.status == "finished" || item.status == "refunded" ? {
-        e: common_vendor.t(item.status == "finished" ? "已完成" : "已退款")
-      } : {}, {
-        c: item.status == "Y",
-        d: item.status == "finished" || item.status == "refunded",
+        e: item.status == "U",
         f: item.shop_avatar,
         g: common_vendor.t(item.shop_name),
         h: common_vendor.t(item.siteNum),
         i: common_vendor.t(item.hour),
         j: common_vendor.t(item.money / 100),
-        k: item.status == "N"
-      }, item.status == "N" ? {
-        l: common_vendor.o((...args) => $options.toCancel && $options.toCancel(...args), index1),
+        k: item.status == "C" || item.status == "U"
+      }, item.status == "C" || item.status == "U" ? {
+        l: common_vendor.o((...args) => $options.toDetail && $options.toDetail(...args), index1),
         m: item
       } : {}, {
-        n: item.status == "Y"
-      }, item.status == "Y" ? {
+        n: item.status == "N"
+      }, item.status == "N" ? {
         o: common_vendor.o((...args) => $options.toCancel && $options.toCancel(...args), index1),
         p: item,
         q: common_vendor.o((...args) => $options.toDetail && $options.toDetail(...args), index1),
         r: item
       } : {}, {
-        s: item.status == "finished" || item.status == "refunded"
-      }, item.status == "finished" || item.status == "refunded" ? {} : {}, {
-        t: common_vendor.o((...args) => $options.toDetail && $options.toDetail(...args), index1),
+        s: item.status == "Y"
+      }, item.status == "Y" ? {
+        t: common_vendor.o((...args) => $options.toCancel && $options.toCancel(...args), index1),
         v: item,
-        w: index1
+        w: common_vendor.o((...args) => $options.toUse && $options.toUse(...args), index1),
+        x: item
+      } : {}, {
+        y: item.status == "finished" || item.status == "refunded"
+      }, item.status == "finished" || item.status == "refunded" ? {} : {}, {
+        z: item,
+        A: index1,
+        B: common_vendor.o((...args) => $options.toDetail && $options.toDetail(...args), index1)
       });
     })
   }, {
-    y: common_vendor.s("height: " + ($data.scrollViewHeight + "px") + ";"),
-    z: common_vendor.n($data.waitUsedList.length == 0 ? "emptyFlex" : "")
+    m: common_vendor.n($data.orderList.length == 0 ? "emptyFlex" : ""),
+    n: common_vendor.s("height: " + ($data.scrollViewHeight + "px") + ";"),
+    o: $data.triggered,
+    p: common_vendor.o((...args) => $options.onRefresh && $options.onRefresh(...args)),
+    q: common_vendor.o((...args) => $options.lower && $options.lower(...args))
+  }) : $data.active == 1 ? common_vendor.e({
+    s: $data.waitPayedList.length == 0
+  }, $data.waitPayedList.length == 0 ? {
+    t: common_vendor.p({
+      text: "暂无待支付订单"
+    })
+  } : {
+    v: common_vendor.f($data.waitPayedList, (item, index1, i0) => {
+      return common_vendor.e({
+        a: common_vendor.t(item.order_no),
+        b: item.shop_avatar,
+        c: common_vendor.t(item.shop_name),
+        d: common_vendor.t(item.siteNum),
+        e: common_vendor.t(item.hour),
+        f: common_vendor.t(item.money / 100),
+        g: item.status == "N"
+      }, item.status == "N" ? {
+        h: common_vendor.o((...args) => $options.toCancel && $options.toCancel(...args), index1),
+        i: item,
+        j: common_vendor.o((...args) => $options.toDetail && $options.toDetail(...args), index1),
+        k: item
+      } : {}, {
+        l: item.status == "Y"
+      }, item.status == "Y" ? {
+        m: common_vendor.o((...args) => $options.toCancel && $options.toCancel(...args), index1),
+        n: item,
+        o: common_vendor.o((...args) => $options.toUse && $options.toUse(...args), index1),
+        p: item
+      } : {}, {
+        q: item.status == "finished" || item.status == "refunded"
+      }, item.status == "finished" || item.status == "refunded" ? {} : {}, {
+        r: item,
+        s: index1,
+        t: common_vendor.o((...args) => $options.toDetail && $options.toDetail(...args), index1)
+      });
+    })
+  }, {
+    w: common_vendor.s("height: " + ($data.scrollViewHeight + "px") + ";"),
+    x: common_vendor.n($data.waitPayedList.length == 0 ? "emptyFlex" : ""),
+    y: $data.triggered1,
+    z: common_vendor.o((...args) => $options.onRefresh && $options.onRefresh(...args)),
+    A: common_vendor.o((...args) => $options.lower && $options.lower(...args))
+  }) : common_vendor.e({
+    B: $data.waitUsedList.length == 0
+  }, $data.waitUsedList.length == 0 ? {
+    C: common_vendor.p({
+      text: "暂无待使用订单"
+    })
+  } : {
+    D: common_vendor.f($data.waitUsedList, (item, index1, i0) => {
+      return common_vendor.e({
+        a: common_vendor.t(item.order_no),
+        b: item.shop_avatar,
+        c: common_vendor.t(item.shop_name),
+        d: common_vendor.t(item.siteNum),
+        e: common_vendor.t(item.hour),
+        f: common_vendor.t(item.money / 100),
+        g: item.status == "N"
+      }, item.status == "N" ? {
+        h: common_vendor.o((...args) => $options.toCancel && $options.toCancel(...args), index1),
+        i: item
+      } : {}, {
+        j: item.status == "Y"
+      }, item.status == "Y" ? {
+        k: common_vendor.o((...args) => $options.toCancel && $options.toCancel(...args), index1),
+        l: item,
+        m: common_vendor.o((...args) => $options.toUse && $options.toUse(...args), index1),
+        n: item
+      } : {}, {
+        o: item.status == "finished" || item.status == "refunded"
+      }, item.status == "finished" || item.status == "refunded" ? {} : {}, {
+        p: common_vendor.o((...args) => $options.toDetail && $options.toDetail(...args), index1),
+        q: item,
+        r: index1
+      });
+    })
+  }, {
+    E: common_vendor.s("height: " + ($data.scrollViewHeight + "px") + ";"),
+    F: common_vendor.n($data.waitUsedList.length == 0 ? "emptyFlex" : ""),
+    G: $data.triggered2,
+    H: common_vendor.o((...args) => $options.onRefresh && $options.onRefresh(...args)),
+    I: common_vendor.o((...args) => $options.lower && $options.lower(...args))
   }), {
-    o: $data.active == 1,
-    A: common_vendor.p({
+    r: $data.active == 1,
+    J: common_vendor.p({
       id: "van-dialog"
     })
   });

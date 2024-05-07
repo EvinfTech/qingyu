@@ -1,0 +1,345 @@
+<template>
+	<view class="page">
+		<u-navbar class="nav-bar" :safeAreaInsetTop="true" :fixed="false" title="确认预约" :autoBack="false">
+			<template #left>
+				<up-icon name="arrow-left" @click="app.toBack"></up-icon>
+			</template>
+		</u-navbar>
+		<view class="centerContent" :style="'height: ' + (centerHeight + 'px') + ';'">
+			<view class="reservationInfo">
+				<view class="reservationInfoTitle">
+					预约信息
+				</view>
+				<view class="flex align-center" style="margin-top: 11px;">
+					<view class="commonInfoLabel">姓名</view>
+					<input type="text" placeholder="预约人姓名" v-model="userName" placeholder-style="font-size:14px;color:#9e9e9e">
+				</view>
+				<view class="flex align-center" style="margin-top: 11px;">
+					<view class="commonInfoLabel">手机</view>
+					<input type="text" placeholder="预约人手机号码" v-model="phone" placeholder-style="font-size:14px;color:#9e9e9e">
+				</view>
+				<view class="flex align-center" style="margin-top: 11px;">
+					<view class="commonInfoLabel">备注</view>
+					<input type="text" placeholder="备注信息" v-model="remark" placeholder-style="font-size:14px;color:#9e9e9e">
+				</view>
+			</view>
+			<view class="gymnasiumInfoBox">
+				<view class="gymnasiumInfoBoxName">{{gymnasiumInfo.gymnasiumName}}</view>
+				<view class="gymnasiumInfoBoxText">营业时间：{{gymnasiumInfo.businessHours}}</view>
+				<view class="gymnasiumInfoBoxText">电话：{{gymnasiumInfo.phone}}</view>
+				<view class="gymnasiumInfoBoxText">地址：{{gymnasiumInfo.location}}</view>
+			</view>
+			<view class="siteList">
+				<view class="siteListTitle">预约场次</view>
+				<view style="padding: 0 30rpx">
+					<view class="siteListItem" v-for="(item, index) in sessionList" :key="index">
+						<view class="flex align-center justify-between">
+							<view class="blackText">
+								{{ item.siteName }}
+							</view>
+							<view class="grayText">{{ item.hour }}小时</view>
+						</view>
+			
+						<view class="flex align-center justify-between" style="margin-top: 12rpx">
+							<view class="flex flex-direction">
+								<view class="grayText" v-for="(con, j) in item.timeList" :key="j">
+									<text>{{ con.date }} {{ con.timeRange }}</text>
+								</view>
+							</view>
+							<view class="blackText">￥ {{ item.price/100 }}</view>
+						</view>
+					</view>
+				</view>
+				<view class="flex align-center justify-between" style="padding: 24rpx 20rpx 16rpx">
+					<view class="methodText">小计(共{{ sessionList.length }}场)</view>
+					<view class="priceText">￥{{orderInfo.totalPrice }}</view>
+				</view>
+			</view>
+			<view class="flex align-center justify-between payMethodBox" >
+				<view class="methodText">支付方式</view>
+				<view class="flex align-center">
+					<image src="/static/images/order/wechatIcon.svg" mode=""
+						style="width: 36rpx; height: 36rpx; margin-right: 8rpx" />
+					<text class="wechatText">微信支付</text>
+				</view>
+			</view>
+		</view>
+		<view class="footer">
+			<view class="flex align-center justify-between h-full">
+				<view class="flex align-center">
+					<view class="totalText">总计：</view>
+					<view class="priceText">
+						<text>￥</text>
+						<text>{{ orderInfo.totalPrice }}</text>
+					</view>
+				</view>
+				<view class="flex align-center justify-end">
+					<view class="payBtn" @click="ensurePay">确认支付</view>
+				</view>
+			</view>
+		</view>
+		<u-modal :show="show" title="提示" content="确定支付订单？" :showCancelButton="true" @confirm="confirm"
+			@cancel="cancel"></u-modal>
+	</view>
+</template>
+
+<script>
+	import {
+		request
+	} from '../../utils/request';
+	export default {
+		data() {
+			return {
+				app: getApp(),
+				centerHeight: 0,
+				orderInfo: {},
+				gymnasiumInfo:{},
+				userName:'',
+				phone:'',
+				remark:'',
+				userInfo:{},
+				sessionList:[],
+				show:false,
+				order_no:''
+			}
+		},
+		async onLoad() {
+			let orderInfo = uni.getStorageSync('orderInfo')
+			orderInfo = JSON.parse(orderInfo)
+			this.orderInfo = orderInfo;
+			this.gymnasiumInfo = await this.app.getStoreInfo()
+			this.userInfo  = await this.app.getUserInfo()
+			let enumInfo = await this.app.getEnum();
+			this.userName = this.userInfo.name;
+			this.phone = this.userInfo.phone;
+			let sessionList = []
+			let site_detail = orderInfo.site_detail
+			site_detail.forEach((con) => {
+				let timeList = [];
+				con.time_enum.forEach((content) => {
+					timeList.push({
+						date: orderInfo.gmt_site_use,
+						timeRange: enumInfo[content]
+					});
+				});
+				sessionList.push({
+					hour: con.time_enum.length,
+					price: con.money,
+					siteName: con.site_name,
+					timeList: timeList
+				});
+			});
+			this.sessionList = sessionList;
+		},
+		onReady() {
+			this.$nextTick(() => {
+				this.calculate();
+			})
+
+		},
+		methods: {
+			calculate() {
+				let sysInfo = uni.getSystemInfoSync()
+				var screenHeight = sysInfo.windowHeight;
+				// 获取navbar的高度
+				// #ifdef H5
+				this.centerHeight = screenHeight - 122
+				// #endif
+				// #ifdef MP-WEIXIN || APP-PLUS
+				this.centerHeight = screenHeight - 122 - sysInfo.statusBarHeight
+				// #endif
+			},
+			// 确认支付
+			ensurePay() {
+				request({
+					url: 'wx/add/order',
+					method: 'POST',
+					data: {
+						user_ouid: this.userInfo.ouid,
+						//用户ouid
+						site_detail: this.orderInfo.site_detail,
+						gmt_site_use: this.orderInfo.gmt_site_use,
+						reserve_name:this.userName,
+						reserve_phone:this.phone,
+						remake:this.remark
+					}
+				}).then((res) => {
+					uni.showToast({
+						title: '提交成功',
+						icon: 'none',
+						duration: 2000,
+						success: () => {
+							setTimeout(() => {
+								this.show = true
+								this.order_no =  res.data.order
+							}, 2000);
+						}
+					});
+				});
+			},
+			// 确定支付订单
+			confirm(){
+				request({
+					url: 'wx/pay',
+					method: 'POST',
+					data: {
+						order_no: this.order_no,
+					}
+				}).then((res) => {
+					uni.showToast({
+						title: '支付成功',
+						icon: 'none',
+						duration: 2000,
+						success: () => {
+							this.show = false
+							setTimeout(() => {
+								uni.removeStorageSync('orderInfo')
+								uni.redirectTo({
+									url:'/pages/orderDetail/orderDetail?order_no=' + this.order_no
+								})
+							}, 2000);
+						}
+					});
+				});
+			},
+			cancel(){
+				this.show = false;
+				uni.removeStorageSync('orderInfo')
+				uni.redirectTo({
+					url:'/pages/orderDetail/orderDetail?order_no=' + this.order_no
+				})
+			}
+		}
+	}
+</script>
+
+<style scoped>
+	.page {
+		width: 100vw;
+		height: 100vh;
+		background-color: #fff;
+		position: relative;
+	}
+
+	.centerContent {
+		background-color: #f6f8fa;
+	}
+	.reservationInfo{
+		background-color: #fff;
+		padding: 10px;
+	}
+	.reservationInfoTitle{
+		font-family: Alibaba PuHuiTi 2.0;
+		font-size: 17px;
+		color: #000000;
+	}
+	.commonInfoLabel{
+		font-family: Alibaba PuHuiTi 2.0;
+		font-size: 14px;
+		color: #000000;
+		margin-right: 31px;
+	}
+	.gymnasiumInfoBox{
+		background-color: #fff;
+		padding: 10px;
+		margin-top: 8px;
+	}
+	.gymnasiumInfoBoxName{
+		font-size: 16px;
+	}
+	.gymnasiumInfoBoxText{
+		font-size: 12px;
+		margin-top: 6px;
+	}
+	
+	.payMethodBox {
+		height: 94rpx;
+		background-color: #fff;
+		padding: 0 20rpx;
+		margin-top: 20rpx;
+	}
+	
+	.footer {
+		height: 78px;
+		padding: 0 20rpx 0 32rpx;
+	}
+
+	.totalText {
+		font-family: Alibaba PuHuiTi 2;
+		font-size: 28rpx;
+		font-weight: normal;
+		line-height: normal;
+		font-feature-settings: 'kern' on;
+		color: #9e9e9e;
+	}
+
+	.priceText {
+		font-family: Alibaba PuHuiTi 2;
+		font-size: 36rpx;
+		font-feature-settings: 'kern' on;
+		color: #ff5634;
+	}
+	
+	.payBtn {
+		width: 200rpx;
+		height: 70rpx;
+		border-radius: 40rpx;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background: #ff5634;
+		font-family: Alibaba PuHuiTi 2;
+		font-size: 32rpx;
+		font-weight: 500;
+		color: #ffffff;
+	}
+	.siteList {
+		background-color: #fff;
+		margin-top: 14rpx;
+		box-sizing: border-box;
+	}
+	
+	.siteListTitle {
+		padding: 20rpx 20rpx 0;
+		font-family: Alibaba PuHuiTi 2;
+		font-size: 32rpx;
+		font-weight: 500;
+		line-height: normal;
+		letter-spacing: 0px;
+		font-feature-settings: 'kern' on;
+		color: #333333;
+		margin-bottom: 24rpx;
+	}
+	.blackText {
+		font-family: Alibaba PuHuiTi 2;
+		font-size: 28rpx;
+		font-weight: 500;
+		line-height: normal;
+		letter-spacing: 0px;
+		font-feature-settings: 'kern' on;
+		color: #333333;
+	}
+	
+	.grayText {
+		font-family: Alibaba PuHuiTi 2;
+		font-size: 24rpx;
+		font-weight: normal;
+		line-height: normal;
+		text-align: right;
+		letter-spacing: 0px;
+		font-feature-settings: 'kern' on;
+		color: #9e9e9e;
+	}
+	
+	.siteListItem {
+		width: 100%;
+		min-height: 140rpx;
+		height: auto;
+		border-radius: 10rpx;
+		opacity: 1;
+		background-color: #f6f8fa;
+		padding: 28rpx;
+		box-sizing: border-box;
+		margin-bottom: 10rpx;
+	}
+</style>

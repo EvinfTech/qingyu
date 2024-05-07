@@ -10888,6 +10888,90 @@ const props$i = {
     }
   }
 };
+const props$h = {
+  props: {
+    // 是否展示modal
+    show: {
+      type: Boolean,
+      default: defprops.modal.show
+    },
+    // 标题
+    title: {
+      type: [String],
+      default: defprops.modal.title
+    },
+    // 弹窗内容
+    content: {
+      type: String,
+      default: defprops.modal.content
+    },
+    // 确认文案
+    confirmText: {
+      type: String,
+      default: defprops.modal.confirmText
+    },
+    // 取消文案
+    cancelText: {
+      type: String,
+      default: defprops.modal.cancelText
+    },
+    // 是否显示确认按钮
+    showConfirmButton: {
+      type: Boolean,
+      default: defprops.modal.showConfirmButton
+    },
+    // 是否显示取消按钮
+    showCancelButton: {
+      type: Boolean,
+      default: defprops.modal.showCancelButton
+    },
+    // 确认按钮颜色
+    confirmColor: {
+      type: String,
+      default: defprops.modal.confirmColor
+    },
+    // 取消文字颜色
+    cancelColor: {
+      type: String,
+      default: defprops.modal.cancelColor
+    },
+    // 对调确认和取消的位置
+    buttonReverse: {
+      type: Boolean,
+      default: defprops.modal.buttonReverse
+    },
+    // 是否开启缩放效果
+    zoom: {
+      type: Boolean,
+      default: defprops.modal.zoom
+    },
+    // 是否异步关闭，只对确定按钮有效
+    asyncClose: {
+      type: Boolean,
+      default: defprops.modal.asyncClose
+    },
+    // 是否允许点击遮罩关闭modal
+    closeOnClickOverlay: {
+      type: Boolean,
+      default: defprops.modal.closeOnClickOverlay
+    },
+    // 给一个负的margin-top，往上偏移，避免和键盘重合的情况
+    negativeTop: {
+      type: [String, Number],
+      default: defprops.modal.negativeTop
+    },
+    // modal宽度，不支持百分比，可以数值，px，rpx单位
+    width: {
+      type: [String, Number],
+      default: defprops.modal.width
+    },
+    // 确认按钮的样式，circle-圆形，square-方形，如设置，将不会显示取消按钮
+    confirmButtonShape: {
+      type: String,
+      default: defprops.modal.confirmButtonShape
+    }
+  }
+};
 function pickExclude(obj, keys) {
   if (!["[object Object]", "[object File]"].includes(Object.prototype.toString.call(obj))) {
     return {};
@@ -11006,7 +11090,7 @@ const mixinUp = {
     }
   }
 };
-const props$h = {
+const props$g = {
   props: {
     // 接受的文件类型, 可选值为all media image file video
     accept: {
@@ -11130,7 +11214,7 @@ const props$h = {
     }
   }
 };
-const props$g = {
+const props$f = {
   props: {
     // 标题
     title: {
@@ -11240,7 +11324,7 @@ const props$g = {
     }
   }
 };
-const props$f = {
+const props$e = {
   props: {
     // radio的名称
     name: {
@@ -11309,7 +11393,7 @@ const props$f = {
     }
   }
 };
-const props$e = {
+const props$d = {
   props: {
     // 绑定的值
     modelValue: {
@@ -11393,7 +11477,7 @@ const props$e = {
     }
   }
 };
-const props$d = {
+const props$c = {
   props: {
     // 分组标题
     title: {
@@ -11407,7 +11491,7 @@ const props$d = {
     }
   }
 };
-const props$c = {
+const props$b = {
   props: {
     // 是否打开组件
     show: {
@@ -12006,7 +12090,7 @@ dayjs.unix = function(timestamp) {
 dayjs.en = Ls[L];
 dayjs.Ls = Ls;
 dayjs.p = {};
-const props$b = {
+const props$a = {
   props: {
     // 输入框的内容
     value: {
@@ -12127,90 +12211,6 @@ const props$b = {
     ignoreCompositionEvent: {
       type: Boolean,
       default: true
-    }
-  }
-};
-const props$a = {
-  props: {
-    // 是否展示modal
-    show: {
-      type: Boolean,
-      default: defprops.modal.show
-    },
-    // 标题
-    title: {
-      type: [String],
-      default: defprops.modal.title
-    },
-    // 弹窗内容
-    content: {
-      type: String,
-      default: defprops.modal.content
-    },
-    // 确认文案
-    confirmText: {
-      type: String,
-      default: defprops.modal.confirmText
-    },
-    // 取消文案
-    cancelText: {
-      type: String,
-      default: defprops.modal.cancelText
-    },
-    // 是否显示确认按钮
-    showConfirmButton: {
-      type: Boolean,
-      default: defprops.modal.showConfirmButton
-    },
-    // 是否显示取消按钮
-    showCancelButton: {
-      type: Boolean,
-      default: defprops.modal.showCancelButton
-    },
-    // 确认按钮颜色
-    confirmColor: {
-      type: String,
-      default: defprops.modal.confirmColor
-    },
-    // 取消文字颜色
-    cancelColor: {
-      type: String,
-      default: defprops.modal.cancelColor
-    },
-    // 对调确认和取消的位置
-    buttonReverse: {
-      type: Boolean,
-      default: defprops.modal.buttonReverse
-    },
-    // 是否开启缩放效果
-    zoom: {
-      type: Boolean,
-      default: defprops.modal.zoom
-    },
-    // 是否异步关闭，只对确定按钮有效
-    asyncClose: {
-      type: Boolean,
-      default: defprops.modal.asyncClose
-    },
-    // 是否允许点击遮罩关闭modal
-    closeOnClickOverlay: {
-      type: Boolean,
-      default: defprops.modal.closeOnClickOverlay
-    },
-    // 给一个负的margin-top，往上偏移，避免和键盘重合的情况
-    negativeTop: {
-      type: [String, Number],
-      default: defprops.modal.negativeTop
-    },
-    // modal宽度，不支持百分比，可以数值，px，rpx单位
-    width: {
-      type: [String, Number],
-      default: defprops.modal.width
-    },
-    // 确认按钮的样式，circle-圆形，square-方形，如设置，将不会显示取消按钮
-    confirmButtonShape: {
-      type: String,
-      default: defprops.modal.confirmButtonShape
     }
   }
 };
@@ -12396,6 +12396,85 @@ const props$5 = {
 };
 const props$4 = {
   props: {
+    // 是否展示弹窗
+    show: {
+      type: Boolean,
+      default: defprops.popup.show
+    },
+    // 是否显示遮罩
+    overlay: {
+      type: Boolean,
+      default: defprops.popup.overlay
+    },
+    // 弹出的方向，可选值为 top bottom right left center
+    mode: {
+      type: String,
+      default: defprops.popup.mode
+    },
+    // 动画时长，单位ms
+    duration: {
+      type: [String, Number],
+      default: defprops.popup.duration
+    },
+    // 是否显示关闭图标
+    closeable: {
+      type: Boolean,
+      default: defprops.popup.closeable
+    },
+    // 自定义遮罩的样式
+    overlayStyle: {
+      type: [Object, String],
+      default: defprops.popup.overlayStyle
+    },
+    // 点击遮罩是否关闭弹窗
+    closeOnClickOverlay: {
+      type: Boolean,
+      default: defprops.popup.closeOnClickOverlay
+    },
+    // 层级
+    zIndex: {
+      type: [String, Number],
+      default: defprops.popup.zIndex
+    },
+    // 是否为iPhoneX留出底部安全距离
+    safeAreaInsetBottom: {
+      type: Boolean,
+      default: defprops.popup.safeAreaInsetBottom
+    },
+    // 是否留出顶部安全距离（状态栏高度）
+    safeAreaInsetTop: {
+      type: Boolean,
+      default: defprops.popup.safeAreaInsetTop
+    },
+    // 自定义关闭图标位置，top-left为左上角，top-right为右上角，bottom-left为左下角，bottom-right为右下角
+    closeIconPos: {
+      type: String,
+      default: defprops.popup.closeIconPos
+    },
+    // 是否显示圆角
+    round: {
+      type: [Boolean, String, Number],
+      default: defprops.popup.round
+    },
+    // mode=center，也即中部弹出时，是否使用缩放模式
+    zoom: {
+      type: Boolean,
+      default: defprops.popup.zoom
+    },
+    // 弹窗背景色，设置为transparent可去除白色背景
+    bgColor: {
+      type: String,
+      default: defprops.popup.bgColor
+    },
+    // 遮罩的透明度，0-1之间
+    overlayOpacity: {
+      type: [Number, String],
+      default: defprops.popup.overlayOpacity
+    }
+  }
+};
+const props$3 = {
+  props: {
     // 是否展示picker弹窗
     show: {
       type: Boolean,
@@ -12478,120 +12557,7 @@ const props$4 = {
     }
   }
 };
-const props$3 = {
-  props: {
-    // 是否展示弹窗
-    show: {
-      type: Boolean,
-      default: defprops.popup.show
-    },
-    // 是否显示遮罩
-    overlay: {
-      type: Boolean,
-      default: defprops.popup.overlay
-    },
-    // 弹出的方向，可选值为 top bottom right left center
-    mode: {
-      type: String,
-      default: defprops.popup.mode
-    },
-    // 动画时长，单位ms
-    duration: {
-      type: [String, Number],
-      default: defprops.popup.duration
-    },
-    // 是否显示关闭图标
-    closeable: {
-      type: Boolean,
-      default: defprops.popup.closeable
-    },
-    // 自定义遮罩的样式
-    overlayStyle: {
-      type: [Object, String],
-      default: defprops.popup.overlayStyle
-    },
-    // 点击遮罩是否关闭弹窗
-    closeOnClickOverlay: {
-      type: Boolean,
-      default: defprops.popup.closeOnClickOverlay
-    },
-    // 层级
-    zIndex: {
-      type: [String, Number],
-      default: defprops.popup.zIndex
-    },
-    // 是否为iPhoneX留出底部安全距离
-    safeAreaInsetBottom: {
-      type: Boolean,
-      default: defprops.popup.safeAreaInsetBottom
-    },
-    // 是否留出顶部安全距离（状态栏高度）
-    safeAreaInsetTop: {
-      type: Boolean,
-      default: defprops.popup.safeAreaInsetTop
-    },
-    // 自定义关闭图标位置，top-left为左上角，top-right为右上角，bottom-left为左下角，bottom-right为右下角
-    closeIconPos: {
-      type: String,
-      default: defprops.popup.closeIconPos
-    },
-    // 是否显示圆角
-    round: {
-      type: [Boolean, String, Number],
-      default: defprops.popup.round
-    },
-    // mode=center，也即中部弹出时，是否使用缩放模式
-    zoom: {
-      type: Boolean,
-      default: defprops.popup.zoom
-    },
-    // 弹窗背景色，设置为transparent可去除白色背景
-    bgColor: {
-      type: String,
-      default: defprops.popup.bgColor
-    },
-    // 遮罩的透明度，0-1之间
-    overlayOpacity: {
-      type: [Number, String],
-      default: defprops.popup.overlayOpacity
-    }
-  }
-};
 const props$2 = {
-  props: {
-    // 是否展示工具条
-    show: {
-      type: Boolean,
-      default: defprops.toolbar.show
-    },
-    // 取消按钮的文字
-    cancelText: {
-      type: String,
-      default: defprops.toolbar.cancelText
-    },
-    // 确认按钮的文字
-    confirmText: {
-      type: String,
-      default: defprops.toolbar.confirmText
-    },
-    // 取消按钮的颜色
-    cancelColor: {
-      type: String,
-      default: defprops.toolbar.cancelColor
-    },
-    // 确认按钮的颜色
-    confirmColor: {
-      type: String,
-      default: defprops.toolbar.confirmColor
-    },
-    // 标题文字
-    title: {
-      type: String,
-      default: defprops.toolbar.title
-    }
-  }
-};
-const props$1 = {
   props: {
     // 是否显示遮罩
     show: {
@@ -12615,7 +12581,7 @@ const props$1 = {
     }
   }
 };
-const props = {
+const props$1 = {
   props: {
     // 是否展示组件
     show: {
@@ -12693,6 +12659,40 @@ const transition = {
         this.display = false;
         this.inited = false;
       }
+    }
+  }
+};
+const props = {
+  props: {
+    // 是否展示工具条
+    show: {
+      type: Boolean,
+      default: defprops.toolbar.show
+    },
+    // 取消按钮的文字
+    cancelText: {
+      type: String,
+      default: defprops.toolbar.cancelText
+    },
+    // 确认按钮的文字
+    confirmText: {
+      type: String,
+      default: defprops.toolbar.confirmText
+    },
+    // 取消按钮的颜色
+    cancelColor: {
+      type: String,
+      default: defprops.toolbar.cancelColor
+    },
+    // 确认按钮的颜色
+    confirmColor: {
+      type: String,
+      default: defprops.toolbar.confirmColor
+    },
+    // 标题文字
+    title: {
+      type: String,
+      default: defprops.toolbar.title
     }
   }
 };

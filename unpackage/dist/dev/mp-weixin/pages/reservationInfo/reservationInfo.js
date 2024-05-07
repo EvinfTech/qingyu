@@ -7,37 +7,19 @@ const _sfc_main = {
       app: getApp(),
       show: false,
       order_no: "",
-      code: 812356,
+      code: "",
+      codeImg: "",
       scrollViewHeight: 0,
       gymnasiumInfo: {
-        name: "一家球馆",
-        address: "中南金石国际广场",
-        img: "/static/images/home/gymnasiumPhoto.png",
-        sizteNo: 2,
-        hour: 4,
-        siteList: [
-          {
-            siteNo: 1,
-            date: "08-08",
-            startTime: "11:00",
-            endTime: "14:00"
-          },
-          {
-            siteNo: 1,
-            date: "08-08",
-            startTime: "11:00",
-            endTime: "14:00"
-          },
-          {
-            siteNo: 1,
-            date: "08-08",
-            startTime: "11:00",
-            endTime: "14:00"
-          }
-        ],
-        person: "哈哈",
-        phone: "135****6936",
-        createTime: "2023-08-08 12:23:36",
+        name: "",
+        address: "",
+        img: "",
+        sizteNo: 0,
+        hour: 0,
+        siteList: [],
+        person: "",
+        phone: "",
+        createTime: "",
         status: "",
         siteNum: ""
       }
@@ -105,6 +87,8 @@ const _sfc_main = {
         let siteList = [];
         let hour = 0;
         let siteNum = site_detail ? site_detail.length : 0;
+        this.code = data.check_no;
+        this.codeImg = this.app.globalData.httpUrl + data.check_qr;
         site_detail.forEach((item) => {
           item.time_enum.forEach((con) => {
             siteList.push({
@@ -118,7 +102,7 @@ const _sfc_main = {
         });
         this.gymnasiumInfo.name = data.shop_name;
         this.gymnasiumInfo.address = data.shop_address;
-        this.gymnasiumInfo.img = data.shop_avatar;
+        this.gymnasiumInfo.img = this.app.globalData.httpUrl + data.shop_avatar;
         this.gymnasiumInfo.person = data.user_name;
         this.gymnasiumInfo.phone = data.user_phone;
         this.gymnasiumInfo.createTime = data.gmt_creat_order;
@@ -159,14 +143,12 @@ const _sfc_main = {
       });
     },
     getNavBarHeight() {
-      var screenHeight = common_vendor.index.getSystemInfoSync().windowHeight;
+      let sysInfo = common_vendor.index.getSystemInfoSync();
+      var screenHeight = sysInfo.windowHeight;
       let that = this;
       let query = common_vendor.index.createSelectorQuery();
-      query.select(".nav-bar").boundingClientRect((navRect) => {
-        let query2 = common_vendor.index.createSelectorQuery();
-        query2.select(".bottomBox").boundingClientRect((bottomRect) => {
-          that.scrollViewHeight = screenHeight - navRect.height - bottomRect.height;
-        }).exec();
+      query.select(".bottomBox").boundingClientRect((bottomRect) => {
+        that.scrollViewHeight = screenHeight - 44 - bottomRect.height - sysInfo.statusBarHeight;
       }).exec();
     }
   }
@@ -195,13 +177,14 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
       autoBack: false,
       fixed: false
     }),
-    d: common_vendor.t($data.code),
-    e: $data.gymnasiumInfo.img,
-    f: common_vendor.t($data.gymnasiumInfo.name),
-    g: common_vendor.t($data.gymnasiumInfo.address),
-    h: common_vendor.t($data.gymnasiumInfo.siteNum),
-    i: common_vendor.t($data.gymnasiumInfo.hour),
-    j: common_vendor.f($data.gymnasiumInfo.siteList, (item, index, i0) => {
+    d: $data.codeImg,
+    e: common_vendor.t($data.code),
+    f: $data.gymnasiumInfo.img,
+    g: common_vendor.t($data.gymnasiumInfo.name),
+    h: common_vendor.t($data.gymnasiumInfo.address),
+    i: common_vendor.t($data.gymnasiumInfo.siteNum),
+    j: common_vendor.t($data.gymnasiumInfo.hour),
+    k: common_vendor.f($data.gymnasiumInfo.siteList, (item, index, i0) => {
       return {
         a: common_vendor.t(item.siteName),
         b: common_vendor.t(item.date),
@@ -210,17 +193,17 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
         e: index
       };
     }),
-    k: common_vendor.t($data.gymnasiumInfo.person),
-    l: common_vendor.t($data.gymnasiumInfo.phone),
-    m: common_vendor.t($data.gymnasiumInfo.createTime),
-    n: common_vendor.s("height: " + ($data.scrollViewHeight + "px") + ";"),
-    o: $data.gymnasiumInfo.status == "C"
+    l: common_vendor.t($data.gymnasiumInfo.person),
+    m: common_vendor.t($data.gymnasiumInfo.phone),
+    n: common_vendor.t($data.gymnasiumInfo.createTime),
+    o: common_vendor.s("height: " + ($data.scrollViewHeight + "px") + ";"),
+    p: $data.gymnasiumInfo.status == "C"
   }, $data.gymnasiumInfo.status == "C" ? {} : {
-    p: common_vendor.o((...args) => $options.toCancel && $options.toCancel(...args))
+    q: common_vendor.o((...args) => $options.toCancel && $options.toCancel(...args))
   }, {
-    q: common_vendor.o($options.confirm),
-    r: common_vendor.o($options.cancel),
-    s: common_vendor.p({
+    r: common_vendor.o($options.confirm),
+    s: common_vendor.o($options.cancel),
+    t: common_vendor.p({
       show: $data.show,
       title: "提示",
       content: "确定要取消预约吗？",

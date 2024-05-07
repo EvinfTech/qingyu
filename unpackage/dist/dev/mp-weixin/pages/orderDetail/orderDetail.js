@@ -9,35 +9,20 @@ const _sfc_main = {
       detailType: "",
       //订单详情类型
       gymnasiumInfo: {
-        name: "我看看怎么个事",
-        phone: "0532-8186886",
-        location: "青岛市黄岛区金石国际北楼1611",
+        name: "",
+        phone: "",
+        location: "",
         latitude: "",
         longitude: ""
       },
-      sessionList: [
-        {
-          siteNo: 1,
-          date: "2023-08-08",
-          timeRange: "11:00-12:00",
-          hour: 3,
-          price: 300
-        },
-        {
-          siteNo: 3,
-          date: "2023-08-08",
-          timeRange: "11:00-12:00",
-          hour: 3,
-          price: 300
-        }
-      ],
-      orderTime: "2023-08-08 00:12:56",
+      show: false,
+      sessionList: [],
+      orderTime: "",
       //下单时间
-      payTime: "2023-08-08 00:12:56",
-      totalPrice: 500,
+      payTime: "",
+      totalPrice: 0,
       //总价
       payState: "",
-      //支付状态 wait 等待支付  payed 已支付 justPayed 刚刚支付
       code: 812356,
       //验证码
       //scrollview高度
@@ -53,6 +38,7 @@ const _sfc_main = {
    */
   onLoad(options) {
     this.order_no = options.order_no;
+    this.detailType = options.type;
     this.$nextTick(() => {
       this.getNavBarHeight();
     });
@@ -94,8 +80,8 @@ const _sfc_main = {
   onShareAppMessage() {
   },
   methods: {
-    initData() {
-      let enumInfo = this.app.globalData.enumInfo;
+    async initData() {
+      let enumInfo = await this.app.getEnum();
       utils_request.request({
         url: "wx/get/order/detail",
         method: "POST",
@@ -138,14 +124,10 @@ const _sfc_main = {
       let that = this;
       let query = common_vendor.index.createSelectorQuery();
       query.select(".nav-bar").boundingClientRect((navRect) => {
-        if (this.payState != "payed" && this.payState != "justPayed") {
-          let query2 = common_vendor.index.createSelectorQuery();
-          query2.select(".bottomBox").boundingClientRect((bottomRect) => {
-            that.scrollViewHeight = screenHeight - navRect.height - bottomRect.height;
-          }).exec();
-        } else {
-          that.scrollViewHeight = screenHeight - navRect.height;
-        }
+        let query2 = common_vendor.index.createSelectorQuery();
+        query2.select(".bottomBox").boundingClientRect((bottomRect) => {
+          that.scrollViewHeight = screenHeight - navRect.height - bottomRect.height;
+        }).exec();
       }).exec();
     },
     // 打电话
@@ -170,31 +152,43 @@ const _sfc_main = {
         data: this.order_no
       });
     },
-    cancelOrder() {
-      Dialog.confirm({
-        title: "取消订单",
-        message: "确定要取消此订单?"
+    cancel() {
+      this.show = false;
+    },
+    confirm() {
+      utils_request.request({
+        url: "wx/cancel/order",
+        method: "POST",
+        data: {
+          order_no: this.order_no
+        }
       }).then(() => {
-        utils_request.request({
-          url: "wx/cancel/order",
-          method: "POST",
-          data: {
-            order_no: this.order_no
+        this.payState = "C";
+        common_vendor.index.showToast({
+          title: "取消成功",
+          icon: "none",
+          duration: 2e3,
+          success: () => {
+            this.show = false;
+            const eventChannel = this.getOpenerEventChannel();
+            eventChannel.emit("toCancelOrder", this.order_no);
+            setTimeout(() => {
+              this.initData();
+            }, 2e3);
           }
-        }).then(() => {
-          this.payState = "C";
-          common_vendor.index.showToast({
-            title: "取消成功",
-            icon: "none",
-            duration: 2e3,
-            success: () => {
-              setTimeout(() => {
-                this.initData();
-              }, 2e3);
-            }
-          });
         });
-      }).catch(() => {
+      });
+    },
+    cancelOrder() {
+      this.show = true;
+    },
+    // 去支付
+    toPay() {
+    },
+    // 去使用
+    toUse() {
+      common_vendor.index.navigateTo({
+        url: "/pages/reservationInfo/reservationInfo?order_no=" + this.order_no
       });
     },
     onClickLeft() {
@@ -205,13 +199,14 @@ const _sfc_main = {
 if (!Array) {
   const _easycom_up_icon2 = common_vendor.resolveComponent("up-icon");
   const _easycom_u_navbar2 = common_vendor.resolveComponent("u-navbar");
-  const _component_van_dialog = common_vendor.resolveComponent("van-dialog");
-  (_easycom_up_icon2 + _easycom_u_navbar2 + _component_van_dialog)();
+  const _easycom_u_modal2 = common_vendor.resolveComponent("u-modal");
+  (_easycom_up_icon2 + _easycom_u_navbar2 + _easycom_u_modal2)();
 }
 const _easycom_up_icon = () => "../../node-modules/uview-plus/components/u-icon/u-icon.js";
 const _easycom_u_navbar = () => "../../node-modules/uview-plus/components/u-navbar/u-navbar.js";
+const _easycom_u_modal = () => "../../node-modules/uview-plus/components/u-modal/u-modal.js";
 if (!Math) {
-  (_easycom_up_icon + _easycom_u_navbar)();
+  (_easycom_up_icon + _easycom_u_navbar + _easycom_u_modal)();
 }
 function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
   return common_vendor.e({
@@ -225,21 +220,22 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
       autoBack: false,
       fixed: false
     }),
-    d: $data.detailType == "detail" && $data.payState == "wait"
-  }, $data.detailType == "detail" && $data.payState == "wait" ? {} : {}, {
-    e: $data.payState == "payed" || $data.payState == "justPayed"
-  }, $data.payState == "payed" || $data.payState == "justPayed" ? common_vendor.e({
-    f: $data.payState == "justPayed"
-  }, $data.payState == "justPayed" ? {} : {}, {
-    g: common_vendor.t($data.code),
-    h: common_vendor.s("height: " + ($data.payState == "payed" ? "400rpx" : "484rpx") + ";")
-  }) : {}, {
-    i: common_vendor.t($data.gymnasiumInfo.name),
-    j: common_vendor.t($data.gymnasiumInfo.phone),
-    k: common_vendor.o((...args) => $options.toCall && $options.toCall(...args)),
-    l: common_vendor.t($data.gymnasiumInfo.location),
-    m: common_vendor.o((...args) => $options.toMap && $options.toMap(...args)),
-    n: common_vendor.f($data.sessionList, (item, index, i0) => {
+    d: common_vendor.o($options.confirm),
+    e: common_vendor.o($options.cancel),
+    f: common_vendor.p({
+      show: $data.show,
+      title: "提示",
+      content: "确定要取消此订单？",
+      showCancelButton: true
+    }),
+    g: $data.detailType == "detail" && $data.payState == "N"
+  }, $data.detailType == "detail" && $data.payState == "N" ? {} : {}, {
+    h: common_vendor.t($data.gymnasiumInfo.name),
+    i: common_vendor.t($data.gymnasiumInfo.phone),
+    j: common_vendor.o((...args) => $options.toCall && $options.toCall(...args)),
+    k: common_vendor.t($data.gymnasiumInfo.location),
+    l: common_vendor.o((...args) => $options.toMap && $options.toMap(...args)),
+    m: common_vendor.f($data.sessionList, (item, index, i0) => {
       return {
         a: common_vendor.t(item.siteName),
         b: common_vendor.t(item.hour),
@@ -254,32 +250,32 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
         e: index
       };
     }),
-    o: common_vendor.t($data.sessionList.length),
-    p: common_vendor.t($data.totalPrice / 100),
-    q: common_vendor.t($data.order_no),
-    r: common_vendor.o((...args) => $options.tocopy && $options.tocopy(...args)),
-    s: common_vendor.t($data.orderTime),
-    t: $data.payState == "payed"
-  }, $data.payState == "payed" ? {
-    v: common_vendor.t($data.orderTime)
+    n: common_vendor.t($data.sessionList.length),
+    o: common_vendor.t($data.totalPrice / 100),
+    p: common_vendor.t($data.order_no),
+    q: common_vendor.o((...args) => $options.tocopy && $options.tocopy(...args)),
+    r: common_vendor.t($data.orderTime),
+    s: $data.payState == "Y"
+  }, $data.payState == "Y" ? {
+    t: common_vendor.t($data.payTime)
   } : {}, {
-    w: $data.payState != "payed" && $data.payState != "justPayed"
-  }, $data.payState != "payed" && $data.payState != "justPayed" ? {} : {}, {
-    x: $data.payState != "payed" && $data.payState != "justPayed"
-  }, $data.payState != "payed" && $data.payState != "justPayed" ? common_vendor.e({
-    y: common_vendor.t($data.totalPrice / 100),
-    z: $data.payState == "N"
-  }, $data.payState == "N" ? {
-    A: common_vendor.o((...args) => $options.cancelOrder && $options.cancelOrder(...args))
+    v: $data.payState == "N"
+  }, $data.payState == "N" ? {} : {}, {
+    w: common_vendor.t($data.totalPrice / 100),
+    x: $data.payState == "N" || $data.payState == "Y"
+  }, $data.payState == "N" || $data.payState == "Y" ? {
+    y: common_vendor.o((...args) => $options.cancelOrder && $options.cancelOrder(...args))
+  } : {}, {
+    z: $data.payState == "Y"
+  }, $data.payState == "Y" ? {
+    A: common_vendor.o((...args) => $options.toUse && $options.toUse(...args))
   } : {}, {
     B: $data.payState == "N"
-  }, $data.payState == "N" ? {} : $data.payState == "C" ? {} : {}, {
-    C: $data.payState == "C"
-  }) : {}, {
-    D: common_vendor.s("height: " + ($data.scrollViewHeight + "px") + ";"),
-    E: common_vendor.p({
-      id: "van-dialog"
-    })
+  }, $data.payState == "N" ? {
+    C: common_vendor.o((...args) => $options.toPay && $options.toPay(...args))
+  } : $data.payState == "C" ? {} : {}, {
+    D: $data.payState == "C",
+    E: common_vendor.s("height: " + ($data.scrollViewHeight + "px") + ";")
   });
 }
 const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-1353b6cf"], ["__file", "C:/project/轻羽项目/qingyu-client/pages/orderDetail/orderDetail.vue"]]);

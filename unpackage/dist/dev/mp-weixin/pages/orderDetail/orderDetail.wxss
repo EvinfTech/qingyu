@@ -51,7 +51,6 @@
 		margin-top: 40rpx;
 }
 .topBox.data-v-1353b6cf {
-		margin-top: 14rpx;
 		padding: 20rpx;
 		background-color: #fff;
 }
@@ -232,4 +231,17 @@
 		justify-content: center;
 		color: #b1b4c3;
 		margin-right: 8rpx;
+}
+.useBtn.data-v-1353b6cf {
+		width: 200rpx;
+		height: 70rpx;
+		border-radius: 40rpx;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-color: #0077ff;
+		font-family: Alibaba PuHuiTi 2;
+		font-size: 32rpx;
+		font-weight: 500;
+		color: #ffffff;
 }

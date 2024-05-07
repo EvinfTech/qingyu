@@ -56,14 +56,16 @@
 			</scroll-view>
 		</view>
 		<view class="bottomCon">
-			<view class="clearBox" @tap="clearChoosedList" v-if="totalPrice > 0">清空</view>
 			<view class="choosedListBox w-full">
-				<scroll-view :scroll-x="true" class="w-full h-full">
+				<view class="w-full h-full" style="overflow-x: auto;height: auto;">
 					<view class="w-full flex align-center">
 						<view v-if="choosedList.length == 0" style="color: #ccc; padding-left: 20rpx">暂未选择场地</view>
 						<view v-else class="w-full flex align-center">
 							<view class="choosedItem flex flex-direction" v-for="(item, index) in choosedList"
 								:key="index">
+								<view class="closeBox" @click="deleteItem(index)">
+									<up-icon name="close" color="#000" size="14"></up-icon>
+								</view>
 								<view class="itemTop">
 									<text>{{ item.startTime }}-{{ item.endTime }}</text>
 								</view>
@@ -74,7 +76,7 @@
 							</view>
 						</view>
 					</view>
-				</scroll-view>
+				</view>
 			</view>
 			<view class="flex align-center justify-between">
 				<view>
@@ -83,7 +85,7 @@
 						<text class="priceBox">{{ totalPrice }}</text>
 					</text>
 				</view>
-				<view class="submitBtn flex align-center justify-center" @tap="submitOrder">提交订单</view>
+				<view class="submitBtn flex align-center justify-center" @tap="submitOrder">确认预约</view>
 			</view>
 		</view>
 	</view>
@@ -196,6 +198,11 @@
 				});
 				// enumInfo[arrItem]
 				timeArr.forEach((arrItem) => {
+
+					if (!enumInfo[arrItem]) {
+						return false
+					}
+
 					let value = enumInfo[arrItem].split('~')[0];
 					let value1 = enumInfo[arrItem].split('~')[1];
 					let index1 = arr.findIndex((item) => item.value == value);
@@ -232,7 +239,12 @@
 				}
 				this.timeList = arr
 			},
-
+			deleteItem(index) {
+				this.siteList[this.choosedList[index].siteIndex].timeList[this.choosedList[index].siteTimeIndex]
+					.checked = false
+				this.totalPrice = this.totalPrice - (this.choosedList[index].price) / 100
+				this.choosedList.splice(index, 1)
+			},
 			initData(date) {
 				let siteList = [];
 				if (this.dateList[this.active].isRequest == false) {
@@ -278,7 +290,7 @@
 				let index = this.dateList.findIndex((item) => item.date == date);
 				this.active = index
 			},
-
+			// 确认预约
 			async submitOrder() {
 				if (this.choosedList.length == 0) {
 					uni.showToast({
@@ -291,41 +303,33 @@
 				let userInfo = await this.app.getUserInfo()
 				let site_detail = [];
 				let site_obj = groupBy(this.choosedList, 'siteId');
-				console.log(site_obj);
 				for (var key in site_obj) {
 					let time_enum = [];
+					let money = 0;
+					let site_name=''
 					for (var item of site_obj[key]) {
 						time_enum.push(Number(item.enumInfoIndex));
+						money = money + item.price
+						site_name = item.siteName
 					}
 					site_detail.push({
 						site_id: Number(key),
-						time_enum: time_enum
+						time_enum: time_enum,
+						money,
+						site_name:site_name
 					});
 				}
-				request({
-					url: 'wx/add/order',
-					method: 'POST',
-					data: {
-						user_ouid: userInfo.ouid,
-						//用户ouid
-						site_detail: site_detail,
-						gmt_site_use: this.choosedList[0].date
-					}
-				}).then((res) => {
-					uni.showToast({
-						title: '提交成功',
-						icon: 'none',
-						duration: 2000,
-						success: () => {
-							setTimeout(() => {
-								uni.redirectTo({
-									url: '/pages/orderDetail/orderDetail?type=add&order_no=' +
-										res.data.order
-								});
-							}, 2000);
-						}
-					});
-				});
+				uni.setStorageSync("orderInfo", JSON.stringify({
+					user_ouid: userInfo.ouid,
+					//用户ouid
+					site_detail: site_detail,
+					gmt_site_use: this.choosedList[0].date,
+					site_obj,
+					totalPrice: this.totalPrice
+				}))
+				uni.navigateTo({
+					url: '/pages/confirmAppointment/confirmAppointment'
+				})
 			},
 
 			// 设置预约场地列表
@@ -469,22 +473,13 @@
 					this.totalPrice = this.totalPrice + objItem.price / 100
 				} else {
 					// 取消选中
-					let index = this.choosedList.findIndex((con) => con.startTime == this.timeList[data.j]);
+					let index = this.choosedList.findIndex((con) => con.startTime == this.timeList[data.j].value);
 					let dataList = this.choosedList;
 					dataList.splice(index, 1);
 					this.choosedList = dataList
 					this.totalPrice = this.totalPrice - data.item.price / 100
 				}
 			},
-
-			clearChoosedList() {
-				this.choosedList.forEach((con) => {
-					this.siteList[con.siteIndex].timeList[con.siteTimeIndex].checked = false
-				});
-				this.choosedList = []
-				this.totalPrice = 0
-			},
-
 			et7Days() {
 				//获取系统当前时间
 				let dateList = [];
@@ -595,8 +590,9 @@
 	}
 
 	.choosedListBox {
-		margin-top: 48rpx;
-		height: 100rpx;
+		margin-top: 40rpx;
+		height: auto;
+
 	}
 
 	.submitBtn {
@@ -619,8 +615,23 @@
 		opacity: 1;
 		box-sizing: border-box;
 		border: 1px solid #0077ff;
-		margin-right: 10rpx;
+		margin-right: 20rpx;
 		flex-shrink: 0;
+		position: relative;
+		margin-top: 10px;
+	}
+
+	.closeBox {
+		position: absolute;
+		width: 20px;
+		height: 20px;
+		border-radius: 50%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-color: #d8d8d8;
+		right: -10px;
+		top: -10px;
 	}
 
 	.itemTop {

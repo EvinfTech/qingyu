@@ -6,9 +6,9 @@
 				<up-icon name="arrow-left" @click="app.toBack"></up-icon>
 			</template>
 		</u-navbar>
-		<scroll-view :scroll-y="true" :style="'height: ' + (scrollViewHeight + 'px') + ';'">
+		<scroll-view :scroll-y="true" :style="'height: ' + (scrollViewHeight + 'px') + ';'" style="padding-top: 14rpx;">
 			<view class="codeBox flex flex-direction align-center justify-center">
-				<image src="/static/images/order/codeDemo.png" style="width: 296rpx; height: 296rpx" mode="" />
+				<image :src="codeImg" style="width: 296rpx; height: 296rpx" mode="" />
 				<view class="codeText">
 					{{ code }}
 				</view>
@@ -53,54 +53,35 @@
 			<view class="cancelBtn flex align-center justify-center" v-if="gymnasiumInfo.status == 'C'">已取消</view>
 			<view v-else class="cancelBtn flex align-center justify-center" @tap="toCancel">取消预约</view>
 		</view>
-		<u-modal :show="show" title="提示" content="确定要取消预约吗？" :showCancelButton="true" @confirm="confirm" @cancel="cancel"></u-modal>
+		<u-modal :show="show" title="提示" content="确定要取消预约吗？" :showCancelButton="true" @confirm="confirm"
+			@cancel="cancel"></u-modal>
 	</view>
 </template>
 
-<script >
-	 
+<script>
 	// pages/reservationInfo/reservationInfo.ts
 	import {
 		request
 	} from '../../utils/request';
-	export default  ({
+	export default ({
 		data() {
 			return {
-				app:getApp(),
-				show:false,
+				app: getApp(),
+				show: false,
 				order_no: '',
-				code: 812356,
+				code: '',
+				codeImg:'',
 				scrollViewHeight: 0,
 				gymnasiumInfo: {
-					name: '一家球馆',
-					address: '中南金石国际广场',
-					img: '/static/images/home/gymnasiumPhoto.png',
-					sizteNo: 2,
-					hour: 4,
-
-					siteList: [{
-							siteNo: 1,
-							date: '08-08',
-							startTime: '11:00',
-							endTime: '14:00'
-						},
-						{
-							siteNo: 1,
-							date: '08-08',
-							startTime: '11:00',
-							endTime: '14:00'
-						},
-						{
-							siteNo: 1,
-							date: '08-08',
-							startTime: '11:00',
-							endTime: '14:00'
-						}
-					],
-
-					person: '哈哈',
-					phone: '135****6936',
-					createTime: '2023-08-08 12:23:36',
+					name: '',
+					address: '',
+					img: '',
+					sizteNo: 0,
+					hour: 0,
+					siteList: [],
+					person: '',
+					phone: '',
+					createTime: '',
 					status: '',
 					siteNum: ''
 				}
@@ -109,8 +90,8 @@
 		/**
 		 * 生命周期函数--监听页面加载
 		 */
-		onLoad(options ) {
-			this.$nextTick(()=>{
+		onLoad(options) {
+			this.$nextTick(() => {
 				this.getNavBarHeight();
 			})
 			if (options.order_no) {
@@ -155,14 +136,16 @@
 					data: {
 						order_no: this.order_no
 					}
-				}).then((res ) => {
+				}).then((res) => {
 					let data = res.data;
 					let site_detail = data.site_detail ? data.site_detail : [];
 					let siteList = [];
 					let hour = 0;
 					let siteNum = site_detail ? site_detail.length : 0;
-					site_detail.forEach((item ) => {
-						item.time_enum.forEach((con ) => {
+					this.code = data.check_no;
+					this.codeImg = this.app.globalData.httpUrl + data.check_qr
+					site_detail.forEach((item) => {
+						item.time_enum.forEach((con) => {
 							siteList.push({
 								siteName: item.site_name,
 								date: data.gmt_create,
@@ -174,7 +157,7 @@
 					});
 					this.gymnasiumInfo.name = data.shop_name
 					this.gymnasiumInfo.address = data.shop_address
-					this.gymnasiumInfo.img = data.shop_avatar
+					this.gymnasiumInfo.img = this.app.globalData.httpUrl + data.shop_avatar
 					this.gymnasiumInfo.person = data.user_name
 					this.gymnasiumInfo.phone = data.user_phone
 					this.gymnasiumInfo.createTime = data.gmt_creat_order
@@ -192,10 +175,10 @@
 			onClickLeft() {
 				uni.navigateBack();
 			},
-			cancel(){
+			cancel() {
 				this.show = false
 			},
-			confirm(){
+			confirm() {
 				request({
 					url: 'wx/cancel/order',
 					method: 'POST',
@@ -218,23 +201,26 @@
 			},
 
 			getNavBarHeight() {
-				var screenHeight = uni.getSystemInfoSync().windowHeight;
+				let sysInfo = uni.getSystemInfoSync()
+				var screenHeight = sysInfo.windowHeight;
 				let that = this;
 				// 获取navbar的高度
 				let query = uni.createSelectorQuery();
 				query
-					.select('.nav-bar')
-					.boundingClientRect((navRect) => {
-						let query2 = uni.createSelectorQuery();
-						query2
-							.select('.bottomBox')
-							.boundingClientRect((bottomRect) => {
-								that.scrollViewHeight= screenHeight - navRect.height - bottomRect
-										.height
-							})
-							.exec();
+					.select('.bottomBox')
+					.boundingClientRect((bottomRect) => {
+						// #ifdef H5
+						that.scrollViewHeight = screenHeight -44 - bottomRect
+							.height
+						// #endif
+						// #ifdef MP-WEIXIN || APP-PLUS
+						that.scrollViewHeight = screenHeight -44 - bottomRect
+							.height - sysInfo.statusBarHeight
+						// #endif
+						
 					})
 					.exec();
+
 			}
 		}
 	});
@@ -248,7 +234,6 @@
 	}
 
 	.codeBox {
-		margin-top: 14rpx;
 		height: 420rpx;
 		background-color: #fff;
 	}
@@ -257,7 +242,7 @@
 		font-family: Alibaba PuHuiTi 2;
 		font-size: 40rpx;
 		font-weight: 600;
-		font-feature-settings: 'kern'on;
+		font-feature-settings: 'kern' on;
 		color: #333333;
 	}
 
@@ -281,7 +266,7 @@
 		font-weight: 500;
 		line-height: 32rpx;
 		letter-spacing: 0px;
-		font-feature-settings: 'kern'on;
+		font-feature-settings: 'kern' on;
 		color: #333333;
 		margin-bottom: 18rpx;
 	}
@@ -289,7 +274,7 @@
 	.gymnasiumText {
 		font-family: Alibaba PuHuiTi 2;
 		font-size: 20rpx;
-		font-feature-settings: 'kern'on;
+		font-feature-settings: 'kern' on;
 		color: #9e9e9e;
 		margin-bottom: 6rpx;
 	}
@@ -305,7 +290,7 @@
 		font-family: Alibaba PuHuiTi 2;
 		font-size: 32rpx;
 		font-weight: 500;
-		font-feature-settings: 'kern'on;
+		font-feature-settings: 'kern' on;
 		color: #333333;
 	}
 
@@ -333,21 +318,21 @@
 		font-family: Alibaba PuHuiTi 2;
 		font-size: 28rpx;
 		font-weight: 500;
-		font-feature-settings: 'kern'on;
+		font-feature-settings: 'kern' on;
 		color: #333333;
 	}
 
 	.dateBox {
 		font-family: Alibaba PuHuiTi 2;
 		font-size: 24rpx;
-		font-feature-settings: 'kern'on;
+		font-feature-settings: 'kern' on;
 		color: #9e9e9e;
 	}
 
 	.timeRangeBox {
 		font-family: Alibaba PuHuiTi 2;
 		font-size: 24rpx;
-		font-feature-settings: 'kern'on;
+		font-feature-settings: 'kern' on;
 		color: #333333;
 		margin-left: 12rpx;
 	}
@@ -359,7 +344,7 @@
 		font-weight: normal;
 		line-height: normal;
 		letter-spacing: 0em;
-		font-feature-settings: 'kern'on;
+		font-feature-settings: 'kern' on;
 		color: #b1b4c3;
 		background-color: #fff;
 		box-sizing: border-box;

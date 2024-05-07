@@ -2024,7 +2024,7 @@ if (uni.restoreGlobal) {
     }
     return target;
   };
-  const _sfc_main$G = {
+  const _sfc_main$H = {
     name: "u-icon",
     data() {
       return {};
@@ -2074,7 +2074,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$F(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$G(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock(
       "view",
       {
@@ -2118,7 +2118,7 @@ if (uni.restoreGlobal) {
       /* CLASS */
     );
   }
-  const __easycom_0$7 = /* @__PURE__ */ _export_sfc(_sfc_main$G, [["render", _sfc_render$F], ["__scopeId", "data-v-1c933a9a"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-icon/u-icon.vue"]]);
+  const __easycom_0$7 = /* @__PURE__ */ _export_sfc(_sfc_main$H, [["render", _sfc_render$G], ["__scopeId", "data-v-1c933a9a"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-icon/u-icon.vue"]]);
   const props$n = {
     props: {
       // 是否显示圆点
@@ -2196,7 +2196,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  const _sfc_main$F = {
+  const _sfc_main$G = {
     name: "u-badge",
     mixins: [mpMixin, props$n, mixin],
     computed: {
@@ -2239,7 +2239,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$E(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$F(_ctx, _cache, $props, $setup, $data, $options) {
     return _ctx.show && ((Number(_ctx.value) === 0 ? _ctx.showZero : true) || _ctx.isDot) ? (vue.openBlock(), vue.createElementBlock(
       "text",
       {
@@ -2252,7 +2252,7 @@ if (uni.restoreGlobal) {
       /* TEXT, CLASS, STYLE */
     )) : vue.createCommentVNode("v-if", true);
   }
-  const __easycom_0$6 = /* @__PURE__ */ _export_sfc(_sfc_main$F, [["render", _sfc_render$E], ["__scopeId", "data-v-aa9883b1"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-badge/u-badge.vue"]]);
+  const __easycom_0$6 = /* @__PURE__ */ _export_sfc(_sfc_main$G, [["render", _sfc_render$F], ["__scopeId", "data-v-aa9883b1"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-badge/u-badge.vue"]]);
   const props$m = {
     props: {
       // item标签的名称，作为与u-tabbar的value参数匹配的标识符
@@ -2287,7 +2287,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  const _sfc_main$E = {
+  const _sfc_main$F = {
     name: "u-tabbar-item",
     mixins: [mpMixin, mixin, props$m],
     data() {
@@ -2338,7 +2338,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$D(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$E(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_u_icon = resolveEasycom(vue.resolveDynamicComponent("u-icon"), __easycom_0$7);
     const _component_u_badge = resolveEasycom(vue.resolveDynamicComponent("u-badge"), __easycom_0$6);
     return vue.openBlock(), vue.createElementBlock(
@@ -2392,11 +2392,11 @@ if (uni.restoreGlobal) {
       /* STYLE */
     );
   }
-  const __easycom_0$5 = /* @__PURE__ */ _export_sfc(_sfc_main$E, [["render", _sfc_render$D], ["__scopeId", "data-v-a54be951"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-tabbar-item/u-tabbar-item.vue"]]);
+  const __easycom_0$5 = /* @__PURE__ */ _export_sfc(_sfc_main$F, [["render", _sfc_render$E], ["__scopeId", "data-v-a54be951"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-tabbar-item/u-tabbar-item.vue"]]);
   const props$l = {
     props: {}
   };
-  const _sfc_main$D = {
+  const _sfc_main$E = {
     name: "u-safe-bottom",
     mixins: [mpMixin, mixin, props$l],
     data() {
@@ -2414,7 +2414,7 @@ if (uni.restoreGlobal) {
     mounted() {
     }
   };
-  function _sfc_render$C(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$D(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock(
       "view",
       {
@@ -2426,7 +2426,7 @@ if (uni.restoreGlobal) {
       /* CLASS, STYLE */
     );
   }
-  const __easycom_3$3 = /* @__PURE__ */ _export_sfc(_sfc_main$D, [["render", _sfc_render$C], ["__scopeId", "data-v-3ec581de"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-safe-bottom/u-safe-bottom.vue"]]);
+  const __easycom_3$3 = /* @__PURE__ */ _export_sfc(_sfc_main$E, [["render", _sfc_render$D], ["__scopeId", "data-v-3ec581de"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-safe-bottom/u-safe-bottom.vue"]]);
   const props$k = {
     props: {
       // 当前匹配项的name
@@ -2471,7 +2471,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  const _sfc_main$C = {
+  const _sfc_main$D = {
     name: "u-tabbar",
     mixins: [mpMixin, mixin, props$k],
     data() {
@@ -2523,7 +2523,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$B(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$C(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_u_safe_bottom = resolveEasycom(vue.resolveDynamicComponent("u-safe-bottom"), __easycom_3$3);
     return vue.openBlock(), vue.createElementBlock("view", { class: "u-tabbar" }, [
       vue.createElementVNode(
@@ -2558,7 +2558,7 @@ if (uni.restoreGlobal) {
       )) : vue.createCommentVNode("v-if", true)
     ]);
   }
-  const __easycom_1$3 = /* @__PURE__ */ _export_sfc(_sfc_main$C, [["render", _sfc_render$B], ["__scopeId", "data-v-d5be2d5d"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-tabbar/u-tabbar.vue"]]);
+  const __easycom_1$3 = /* @__PURE__ */ _export_sfc(_sfc_main$D, [["render", _sfc_render$C], ["__scopeId", "data-v-d5be2d5d"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-tabbar/u-tabbar.vue"]]);
   const request = (parmas) => {
     uni.showLoading({
       title: "加载中"
@@ -2634,7 +2634,7 @@ if (uni.restoreGlobal) {
       return cur;
     }, {});
   };
-  const _sfc_main$B = {
+  const _sfc_main$C = {
     data() {
       return {
         app: getApp(),
@@ -2793,7 +2793,7 @@ if (uni.restoreGlobal) {
       this.getReservationInfo();
     }
   };
-  function _sfc_render$A(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$B(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_u_icon = resolveEasycom(vue.resolveDynamicComponent("u-icon"), __easycom_0$7);
     return vue.openBlock(), vue.createElementBlock("view", { class: "page" }, [
       vue.createElementVNode("view", { class: "banner" }, [
@@ -3019,8 +3019,8 @@ if (uni.restoreGlobal) {
       )
     ]);
   }
-  const PagesHomeHome = /* @__PURE__ */ _export_sfc(_sfc_main$B, [["render", _sfc_render$A], ["__scopeId", "data-v-07e72d3c"], ["__file", "C:/project/轻羽项目/qingyu-client/pages/home/home.vue"]]);
-  const _sfc_main$A = {
+  const PagesHomeHome = /* @__PURE__ */ _export_sfc(_sfc_main$C, [["render", _sfc_render$B], ["__scopeId", "data-v-07e72d3c"], ["__file", "C:/project/轻羽项目/qingyu-client/pages/home/home.vue"]]);
+  const _sfc_main$B = {
     data() {
       return {
         app: getApp(),
@@ -3078,11 +3078,11 @@ if (uni.restoreGlobal) {
     },
     async mounted() {
       this.$nextTick(() => this.ready());
-      let userInfo = await getApp().getUserInfo("reGet");
-      this.userInfo = userInfo;
-      this.statisticsList[0].num = userInfo.total_length;
-      this.statisticsList[1].num = userInfo.sport_day;
-      this.statisticsList[2].num = userInfo.total_count;
+      let userInfo2 = await getApp().getUserInfo("reGet");
+      this.userInfo = userInfo2;
+      this.statisticsList[0].num = userInfo2.total_length;
+      this.statisticsList[1].num = userInfo2.sport_day;
+      this.statisticsList[2].num = userInfo2.total_count;
       this.serviceList.pop();
     },
     methods: {
@@ -3126,9 +3126,9 @@ if (uni.restoreGlobal) {
           let dateInfo = this.dealWithDate(date2);
           let reservationInfo = [];
           let siteList = [];
-          let site_detail = data.site_detail;
-          if (site_detail) {
-            site_detail.forEach((item) => {
+          let site_detail2 = data.site_detail;
+          if (site_detail2) {
+            site_detail2.forEach((item) => {
               item.time_enum.forEach((enumCon) => {
                 var _a, _b;
                 siteList.push({
@@ -3229,7 +3229,7 @@ if (uni.restoreGlobal) {
     created: function() {
     }
   };
-  function _sfc_render$z(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$A(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock(
       vue.Fragment,
       null,
@@ -3460,8 +3460,8 @@ if (uni.restoreGlobal) {
       /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */
     );
   }
-  const PagesMineMine = /* @__PURE__ */ _export_sfc(_sfc_main$A, [["render", _sfc_render$z], ["__scopeId", "data-v-7c2ebfa5"], ["__file", "C:/project/轻羽项目/qingyu-client/pages/mine/mine.vue"]]);
-  const _sfc_main$z = {
+  const PagesMineMine = /* @__PURE__ */ _export_sfc(_sfc_main$B, [["render", _sfc_render$A], ["__scopeId", "data-v-7c2ebfa5"], ["__file", "C:/project/轻羽项目/qingyu-client/pages/mine/mine.vue"]]);
+  const _sfc_main$A = {
     components: {
       Home: PagesHomeHome,
       Mine: PagesMineMine
@@ -3527,7 +3527,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$y(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$z(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_Home = vue.resolveComponent("Home");
     const _component_Mine = vue.resolveComponent("Mine");
     const _component_u_tabbar_item = resolveEasycom(vue.resolveDynamicComponent("u-tabbar-item"), __easycom_0$5);
@@ -3612,7 +3612,7 @@ if (uni.restoreGlobal) {
       /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */
     );
   }
-  const PagesIndexIndex = /* @__PURE__ */ _export_sfc(_sfc_main$z, [["render", _sfc_render$y], ["__scopeId", "data-v-1cf27b2a"], ["__file", "C:/project/轻羽项目/qingyu-client/pages/index/index.vue"]]);
+  const PagesIndexIndex = /* @__PURE__ */ _export_sfc(_sfc_main$A, [["render", _sfc_render$z], ["__scopeId", "data-v-1cf27b2a"], ["__file", "C:/project/轻羽项目/qingyu-client/pages/index/index.vue"]]);
   const props$j = {
     props: {
       // 是否显示组件
@@ -3672,7 +3672,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  const _sfc_main$y = {
+  const _sfc_main$z = {
     name: "u-loading-icon",
     mixins: [mpMixin, mixin, props$j],
     data() {
@@ -3732,7 +3732,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$x(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$y(_ctx, _cache, $props, $setup, $data, $options) {
     return _ctx.show ? (vue.openBlock(), vue.createElementBlock(
       "view",
       {
@@ -3795,7 +3795,7 @@ if (uni.restoreGlobal) {
       /* CLASS, STYLE */
     )) : vue.createCommentVNode("v-if", true);
   }
-  const __easycom_1$2 = /* @__PURE__ */ _export_sfc(_sfc_main$y, [["render", _sfc_render$x], ["__scopeId", "data-v-00752c6d"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-loading-icon/u-loading-icon.vue"]]);
+  const __easycom_1$2 = /* @__PURE__ */ _export_sfc(_sfc_main$z, [["render", _sfc_render$y], ["__scopeId", "data-v-00752c6d"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-loading-icon/u-loading-icon.vue"]]);
   const props$i = {
     props: {
       // 是否细边框
@@ -3948,7 +3948,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  const _sfc_main$x = {
+  const _sfc_main$y = {
     name: "u-button",
     mixins: [mpMixin, mixin, props$i],
     data() {
@@ -4072,7 +4072,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$w(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$x(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_u_loading_icon = resolveEasycom(vue.resolveDynamicComponent("u-loading-icon"), __easycom_1$2);
     const _component_u_icon = resolveEasycom(vue.resolveDynamicComponent("u-icon"), __easycom_0$7);
     return vue.openBlock(), vue.createElementBlock("button", {
@@ -4150,8 +4150,8 @@ if (uni.restoreGlobal) {
       ))
     ], 46, ["hover-start-time", "hover-stay-time", "form-type", "open-type", "app-parameter", "hover-stop-propagation", "send-message-title", "send-message-path", "lang", "data-name", "session-from", "send-message-img", "show-message-card", "hover-class"]);
   }
-  const __easycom_0$4 = /* @__PURE__ */ _export_sfc(_sfc_main$x, [["render", _sfc_render$w], ["__scopeId", "data-v-461e713c"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-button/u-button.vue"]]);
-  const _sfc_main$w = {
+  const __easycom_0$4 = /* @__PURE__ */ _export_sfc(_sfc_main$y, [["render", _sfc_render$x], ["__scopeId", "data-v-461e713c"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-button/u-button.vue"]]);
+  const _sfc_main$x = {
     data() {
       return {
         app: getApp(),
@@ -4331,7 +4331,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$v(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$w(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_u_button = resolveEasycom(vue.resolveDynamicComponent("u-button"), __easycom_0$4);
     return vue.openBlock(), vue.createElementBlock(
       vue.Fragment,
@@ -4419,7 +4419,7 @@ if (uni.restoreGlobal) {
       /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */
     );
   }
-  const PagesLoginLogin = /* @__PURE__ */ _export_sfc(_sfc_main$w, [["render", _sfc_render$v], ["__scopeId", "data-v-e4e4508d"], ["__file", "C:/project/轻羽项目/qingyu-client/pages/login/login.vue"]]);
+  const PagesLoginLogin = /* @__PURE__ */ _export_sfc(_sfc_main$x, [["render", _sfc_render$w], ["__scopeId", "data-v-e4e4508d"], ["__file", "C:/project/轻羽项目/qingyu-client/pages/login/login.vue"]]);
   const props$h = {
     props: {
       bgColor: {
@@ -4428,7 +4428,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  const _sfc_main$v = {
+  const _sfc_main$w = {
     name: "u-status-bar",
     mixins: [mpMixin, mixin, props$h],
     data() {
@@ -4443,7 +4443,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$u(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$v(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock(
       "view",
       {
@@ -4457,7 +4457,7 @@ if (uni.restoreGlobal) {
       /* STYLE */
     );
   }
-  const __easycom_1$1 = /* @__PURE__ */ _export_sfc(_sfc_main$v, [["render", _sfc_render$u], ["__scopeId", "data-v-c0b45a48"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-status-bar/u-status-bar.vue"]]);
+  const __easycom_1$1 = /* @__PURE__ */ _export_sfc(_sfc_main$w, [["render", _sfc_render$v], ["__scopeId", "data-v-c0b45a48"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-status-bar/u-status-bar.vue"]]);
   const props$g = {
     props: {
       // 是否开启顶部安全区适配
@@ -4542,7 +4542,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  const _sfc_main$u = {
+  const _sfc_main$v = {
     name: "u-navbar",
     mixins: [mpMixin, mixin, props$g],
     data() {
@@ -4563,7 +4563,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$t(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$u(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_u_status_bar = resolveEasycom(vue.resolveDynamicComponent("u-status-bar"), __easycom_1$1);
     const _component_u_icon = resolveEasycom(vue.resolveDynamicComponent("u-icon"), __easycom_0$7);
     return vue.openBlock(), vue.createElementBlock("view", { class: "u-navbar" }, [
@@ -4675,8 +4675,8 @@ if (uni.restoreGlobal) {
       )
     ]);
   }
-  const __easycom_1 = /* @__PURE__ */ _export_sfc(_sfc_main$u, [["render", _sfc_render$t], ["__scopeId", "data-v-9d9e7ee2"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-navbar/u-navbar.vue"]]);
-  const _sfc_main$t = {
+  const __easycom_1 = /* @__PURE__ */ _export_sfc(_sfc_main$v, [["render", _sfc_render$u], ["__scopeId", "data-v-9d9e7ee2"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-navbar/u-navbar.vue"]]);
+  const _sfc_main$u = {
     data() {
       return {
         app: getApp()
@@ -4728,7 +4728,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$s(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$t(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_up_icon = resolveEasycom(vue.resolveDynamicComponent("up-icon"), __easycom_0$7);
     const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_1);
     return vue.openBlock(), vue.createElementBlock(
@@ -4760,7 +4760,7 @@ if (uni.restoreGlobal) {
       /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */
     );
   }
-  const PagesArrgementArrgement = /* @__PURE__ */ _export_sfc(_sfc_main$t, [["render", _sfc_render$s], ["__scopeId", "data-v-bec3e8f7"], ["__file", "C:/project/轻羽项目/qingyu-client/pages/arrgement/arrgement.vue"]]);
+  const PagesArrgementArrgement = /* @__PURE__ */ _export_sfc(_sfc_main$u, [["render", _sfc_render$t], ["__scopeId", "data-v-bec3e8f7"], ["__file", "C:/project/轻羽项目/qingyu-client/pages/arrgement/arrgement.vue"]]);
   const props$f = {
     props: {
       // 滑块的移动过渡时间，单位ms
@@ -4825,7 +4825,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  const _sfc_main$s = {
+  const _sfc_main$t = {
     name: "u-tabs",
     mixins: [mpMixin, mixin, props$f],
     data() {
@@ -4971,7 +4971,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$r(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$s(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_u_badge = resolveEasycom(vue.resolveDynamicComponent("u-badge"), __easycom_0$6);
     return vue.openBlock(), vue.createElementBlock("view", { class: "u-tabs" }, [
       vue.createElementVNode("view", { class: "u-tabs__wrapper" }, [
@@ -5061,7 +5061,7 @@ if (uni.restoreGlobal) {
       ])
     ]);
   }
-  const __easycom_2$3 = /* @__PURE__ */ _export_sfc(_sfc_main$s, [["render", _sfc_render$r], ["__scopeId", "data-v-0546c3e4"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-tabs/u-tabs.vue"]]);
+  const __easycom_2$3 = /* @__PURE__ */ _export_sfc(_sfc_main$t, [["render", _sfc_render$s], ["__scopeId", "data-v-0546c3e4"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-tabs/u-tabs.vue"]]);
   const props$e = {
     props: {
       // 内置图标名称，或图片路径，建议绝对路径
@@ -5121,7 +5121,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  const _sfc_main$r = {
+  const _sfc_main$s = {
     name: "u-empty",
     mixins: [mpMixin, mixin, props$e],
     data() {
@@ -5165,7 +5165,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$q(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$r(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_u_icon = resolveEasycom(vue.resolveDynamicComponent("u-icon"), __easycom_0$7);
     return _ctx.show ? (vue.openBlock(), vue.createElementBlock(
       "view",
@@ -5211,8 +5211,8 @@ if (uni.restoreGlobal) {
       /* STYLE */
     )) : vue.createCommentVNode("v-if", true);
   }
-  const __easycom_3$2 = /* @__PURE__ */ _export_sfc(_sfc_main$r, [["render", _sfc_render$q], ["__scopeId", "data-v-bd84101d"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-empty/u-empty.vue"]]);
-  const _sfc_main$q = {
+  const __easycom_3$2 = /* @__PURE__ */ _export_sfc(_sfc_main$s, [["render", _sfc_render$r], ["__scopeId", "data-v-bd84101d"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-empty/u-empty.vue"]]);
+  const _sfc_main$r = {
     data() {
       return {
         app: getApp(),
@@ -5290,7 +5290,7 @@ if (uni.restoreGlobal) {
     created: function() {
     }
   };
-  function _sfc_render$p(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$q(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_1);
     const _component_u_tabs = resolveEasycom(vue.resolveDynamicComponent("u-tabs"), __easycom_2$3);
     const _component_u_empty = resolveEasycom(vue.resolveDynamicComponent("u-empty"), __easycom_3$2);
@@ -5474,8 +5474,8 @@ if (uni.restoreGlobal) {
       /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */
     );
   }
-  const PagesReservationReservation = /* @__PURE__ */ _export_sfc(_sfc_main$q, [["render", _sfc_render$p], ["__scopeId", "data-v-62da1e1c"], ["__file", "C:/project/轻羽项目/qingyu-client/pages/reservation/reservation.vue"]]);
-  const _sfc_main$p = {
+  const PagesReservationReservation = /* @__PURE__ */ _export_sfc(_sfc_main$r, [["render", _sfc_render$q], ["__scopeId", "data-v-62da1e1c"], ["__file", "C:/project/轻羽项目/qingyu-client/pages/reservation/reservation.vue"]]);
+  const _sfc_main$q = {
     data() {
       return {
         app: getApp(),
@@ -5609,6 +5609,11 @@ if (uni.restoreGlobal) {
         }
         this.timeList = arr;
       },
+      deleteItem(index2) {
+        this.siteList[this.choosedList[index2].siteIndex].timeList[this.choosedList[index2].siteTimeIndex].checked = false;
+        this.totalPrice = this.totalPrice - this.choosedList[index2].price / 100;
+        this.choosedList.splice(index2, 1);
+      },
       initData(date2) {
         let siteList = [];
         if (this.dateList[this.active].isRequest == false) {
@@ -5649,6 +5654,7 @@ if (uni.restoreGlobal) {
         let index2 = this.dateList.findIndex((item) => item.date == date2);
         this.active = index2;
       },
+      // 确认预约
       async submitOrder() {
         if (this.choosedList.length == 0) {
           uni.showToast({
@@ -5658,42 +5664,29 @@ if (uni.restoreGlobal) {
           });
           return;
         }
-        let userInfo = await this.app.getUserInfo();
-        let site_detail = [];
+        let userInfo2 = await this.app.getUserInfo();
+        let site_detail2 = [];
         let site_obj = groupBy(this.choosedList, "siteId");
-        formatAppLog("log", "at pages/reservationDetail/reservationDetail.vue:294", site_obj);
         for (var key in site_obj) {
           let time_enum = [];
           for (var item of site_obj[key]) {
             time_enum.push(Number(item.enumInfoIndex));
           }
-          site_detail.push({
+          site_detail2.push({
             site_id: Number(key),
             time_enum
           });
         }
-        request({
-          url: "wx/add/order",
-          method: "POST",
-          data: {
-            user_ouid: userInfo.ouid,
-            //用户ouid
-            site_detail,
-            gmt_site_use: this.choosedList[0].date
-          }
-        }).then((res) => {
-          uni.showToast({
-            title: "提交成功",
-            icon: "none",
-            duration: 2e3,
-            success: () => {
-              setTimeout(() => {
-                uni.redirectTo({
-                  url: "/pages/orderDetail/orderDetail?type=add&order_no=" + res.data.order
-                });
-              }, 2e3);
-            }
-          });
+        uni.setStorageSync("orderInfo", JSON.stringify({
+          user_ouid: userInfo2.ouid,
+          //用户ouid
+          site_detail: site_detail2,
+          gmt_site_use: this.choosedList[0].date,
+          site_obj,
+          totalPrice: this.totalPrice
+        }));
+        uni.navigateTo({
+          url: "/pages/confirmAppointment/confirmAppointment"
         });
       },
       // 设置预约场地列表
@@ -5810,19 +5803,12 @@ if (uni.restoreGlobal) {
           this.choosedList = choosedList;
           this.totalPrice = this.totalPrice + objItem.price / 100;
         } else {
-          let index2 = this.choosedList.findIndex((con) => con.startTime == this.timeList[data.j]);
+          let index2 = this.choosedList.findIndex((con) => con.startTime == this.timeList[data.j].value);
           let dataList = this.choosedList;
           dataList.splice(index2, 1);
           this.choosedList = dataList;
           this.totalPrice = this.totalPrice - data.item.price / 100;
         }
-      },
-      clearChoosedList() {
-        this.choosedList.forEach((con) => {
-          this.siteList[con.siteIndex].timeList[con.siteTimeIndex].checked = false;
-        });
-        this.choosedList = [];
-        this.totalPrice = 0;
       },
       et7Days() {
         let dateList = [];
@@ -5847,7 +5833,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$o(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$p(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_up_icon = resolveEasycom(vue.resolveDynamicComponent("up-icon"), __easycom_0$7);
     const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_1);
     return vue.openBlock(), vue.createElementBlock(
@@ -6031,15 +6017,10 @@ if (uni.restoreGlobal) {
             /* STYLE */
           ),
           vue.createElementVNode("view", { class: "bottomCon" }, [
-            $data.totalPrice > 0 ? (vue.openBlock(), vue.createElementBlock("view", {
-              key: 0,
-              class: "clearBox",
-              onClick: _cache[2] || (_cache[2] = (...args) => $options.clearChoosedList && $options.clearChoosedList(...args))
-            }, "清空")) : vue.createCommentVNode("v-if", true),
             vue.createElementVNode("view", { class: "choosedListBox w-full" }, [
-              vue.createElementVNode("scroll-view", {
-                "scroll-x": true,
-                class: "w-full h-full"
+              vue.createElementVNode("view", {
+                class: "w-full h-full",
+                style: { "overflow-x": "auto", "height": "auto" }
               }, [
                 vue.createElementVNode("view", { class: "w-full flex align-center" }, [
                   $data.choosedList.length == 0 ? (vue.openBlock(), vue.createElementBlock("view", {
@@ -6057,6 +6038,16 @@ if (uni.restoreGlobal) {
                           class: "choosedItem flex flex-direction",
                           key: index2
                         }, [
+                          vue.createElementVNode("view", {
+                            class: "closeBox",
+                            onClick: ($event) => $options.deleteItem(index2)
+                          }, [
+                            vue.createVNode(_component_up_icon, {
+                              name: "close",
+                              color: "#000",
+                              size: "14"
+                            })
+                          ], 8, ["onClick"]),
                           vue.createElementVNode("view", { class: "itemTop" }, [
                             vue.createElementVNode(
                               "text",
@@ -6097,8 +6088,8 @@ if (uni.restoreGlobal) {
               ]),
               vue.createElementVNode("view", {
                 class: "submitBtn flex align-center justify-center",
-                onClick: _cache[3] || (_cache[3] = (...args) => $options.submitOrder && $options.submitOrder(...args))
-              }, "提交订单")
+                onClick: _cache[2] || (_cache[2] = (...args) => $options.submitOrder && $options.submitOrder(...args))
+              }, "确认预约")
             ])
           ])
         ])
@@ -6107,8 +6098,824 @@ if (uni.restoreGlobal) {
       /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */
     );
   }
-  const PagesReservationDetailReservationDetail = /* @__PURE__ */ _export_sfc(_sfc_main$p, [["render", _sfc_render$o], ["__scopeId", "data-v-71ac0ae8"], ["__file", "C:/project/轻羽项目/qingyu-client/pages/reservationDetail/reservationDetail.vue"]]);
+  const PagesReservationDetailReservationDetail = /* @__PURE__ */ _export_sfc(_sfc_main$q, [["render", _sfc_render$p], ["__scopeId", "data-v-71ac0ae8"], ["__file", "C:/project/轻羽项目/qingyu-client/pages/reservationDetail/reservationDetail.vue"]]);
+  const props$d = {
+    props: {
+      color: {
+        type: String,
+        default: props$p.line.color
+      },
+      // 长度，竖向时表现为高度，横向时表现为长度，可以为百分比，带px单位的值等
+      length: {
+        type: [String, Number],
+        default: props$p.line.length
+      },
+      // 线条方向，col-竖向，row-横向
+      direction: {
+        type: String,
+        default: props$p.line.direction
+      },
+      // 是否显示细边框
+      hairline: {
+        type: Boolean,
+        default: props$p.line.hairline
+      },
+      // 线条与上下左右元素的间距，字符串形式，如"30px"、"20px 30px"
+      margin: {
+        type: [String, Number],
+        default: props$p.line.margin
+      },
+      // 是否虚线，true-虚线，false-实线
+      dashed: {
+        type: Boolean,
+        default: props$p.line.dashed
+      }
+    }
+  };
+  const _sfc_main$p = {
+    name: "u-line",
+    mixins: [mpMixin, mixin, props$d],
+    computed: {
+      lineStyle() {
+        const style = {};
+        style.margin = this.margin;
+        if (this.direction === "row") {
+          style.borderBottomWidth = "1px";
+          style.borderBottomStyle = this.dashed ? "dashed" : "solid";
+          style.width = uni.$u.addUnit(this.length);
+          if (this.hairline)
+            style.transform = "scaleY(0.5)";
+        } else {
+          style.borderLeftWidth = "1px";
+          style.borderLeftStyle = this.dashed ? "dashed" : "solid";
+          style.height = uni.$u.addUnit(this.length);
+          if (this.hairline)
+            style.transform = "scaleX(0.5)";
+        }
+        style.borderColor = this.color;
+        return uni.$u.deepMerge(style, uni.$u.addStyle(this.customStyle));
+      }
+    }
+  };
+  function _sfc_render$o(_ctx, _cache, $props, $setup, $data, $options) {
+    return vue.openBlock(), vue.createElementBlock(
+      "view",
+      {
+        class: "u-line",
+        style: vue.normalizeStyle([$options.lineStyle])
+      },
+      null,
+      4
+      /* STYLE */
+    );
+  }
+  const __easycom_0$3 = /* @__PURE__ */ _export_sfc(_sfc_main$p, [["render", _sfc_render$o], ["__scopeId", "data-v-bbd9963c"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-line/u-line.vue"]]);
+  const props$c = {
+    props: {
+      // 是否展示组件
+      show: {
+        type: Boolean,
+        default: props$p.transition.show
+      },
+      // 使用的动画模式
+      mode: {
+        type: String,
+        default: props$p.transition.mode
+      },
+      // 动画的执行时间，单位ms
+      duration: {
+        type: [String, Number],
+        default: props$p.transition.duration
+      },
+      // 使用的动画过渡函数
+      timingFunction: {
+        type: String,
+        default: props$p.transition.timingFunction
+      }
+    }
+  };
+  const getClassNames = (name) => ({
+    enter: `u-${name}-enter u-${name}-enter-active`,
+    "enter-to": `u-${name}-enter-to u-${name}-enter-active`,
+    leave: `u-${name}-leave u-${name}-leave-active`,
+    "leave-to": `u-${name}-leave-to u-${name}-leave-active`
+  });
+  const transition = {
+    methods: {
+      // 组件被点击发出事件
+      clickHandler() {
+        this.$emit("click");
+      },
+      // vue版本的组件进场处理
+      async vueEnter() {
+        const classNames = getClassNames(this.mode);
+        this.status = "enter";
+        this.$emit("beforeEnter");
+        this.inited = true;
+        this.display = true;
+        this.classes = classNames.enter;
+        await vue.nextTick();
+        {
+          this.$emit("enter");
+          this.transitionEnded = false;
+          this.$emit("afterEnter");
+          this.classes = classNames["enter-to"];
+        }
+      },
+      // 动画离场处理
+      async vueLeave() {
+        if (!this.display)
+          return;
+        const classNames = getClassNames(this.mode);
+        this.status = "leave";
+        this.$emit("beforeLeave");
+        this.classes = classNames.leave;
+        await vue.nextTick();
+        {
+          this.transitionEnded = false;
+          this.$emit("leave");
+          setTimeout(this.onTransitionEnd, this.duration);
+          this.classes = classNames["leave-to"];
+        }
+      },
+      // 完成过渡后触发
+      onTransitionEnd() {
+        if (this.transitionEnded)
+          return;
+        this.transitionEnded = true;
+        this.$emit(this.status === "leave" ? "afterLeave" : "afterEnter");
+        if (!this.show && this.display) {
+          this.display = false;
+          this.inited = false;
+        }
+      }
+    }
+  };
   const _sfc_main$o = {
+    name: "u-transition",
+    data() {
+      return {
+        inited: false,
+        // 是否显示/隐藏组件
+        viewStyle: {},
+        // 组件内部的样式
+        status: "",
+        // 记录组件动画的状态
+        transitionEnded: false,
+        // 组件是否结束的标记
+        display: false,
+        // 组件是否展示
+        classes: ""
+        // 应用的类名
+      };
+    },
+    emits: ["click", "beforeEnter", "enter", "afterEnter", "beforeLeave", "leave", "afterLeave"],
+    computed: {
+      mergeStyle() {
+        const { viewStyle, customStyle } = this;
+        return {
+          transitionDuration: `${this.duration}ms`,
+          // display: `${this.display ? '' : 'none'}`,
+          transitionTimingFunction: this.timingFunction,
+          // 避免自定义样式影响到动画属性，所以写在viewStyle前面
+          ...uni.$u.addStyle(customStyle),
+          ...viewStyle
+        };
+      }
+    },
+    // 将mixin挂在到组件中，uni.$u.mixin实际上为一个vue格式对象
+    mixins: [mpMixin, mixin, transition, props$c],
+    watch: {
+      show: {
+        handler(newVal) {
+          newVal ? this.vueEnter() : this.vueLeave();
+        },
+        // 表示同时监听初始化时的props的show的意思
+        immediate: true
+      }
+    }
+  };
+  function _sfc_render$n(_ctx, _cache, $props, $setup, $data, $options) {
+    return $data.inited ? (vue.openBlock(), vue.createElementBlock(
+      "view",
+      {
+        key: 0,
+        class: vue.normalizeClass(["u-transition", $data.classes]),
+        ref: "u-transition",
+        onClick: _cache[0] || (_cache[0] = (...args) => _ctx.clickHandler && _ctx.clickHandler(...args)),
+        style: vue.normalizeStyle([$options.mergeStyle]),
+        onTouchmove: _cache[1] || (_cache[1] = (...args) => _ctx.noop && _ctx.noop(...args))
+      },
+      [
+        vue.renderSlot(_ctx.$slots, "default", {}, void 0, true)
+      ],
+      38
+      /* CLASS, STYLE, HYDRATE_EVENTS */
+    )) : vue.createCommentVNode("v-if", true);
+  }
+  const __easycom_4$1 = /* @__PURE__ */ _export_sfc(_sfc_main$o, [["render", _sfc_render$n], ["__scopeId", "data-v-0573594d"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-transition/u-transition.vue"]]);
+  const props$b = {
+    props: {
+      // 是否显示遮罩
+      show: {
+        type: Boolean,
+        default: props$p.overlay.show
+      },
+      // 层级z-index
+      zIndex: {
+        type: [String, Number],
+        default: props$p.overlay.zIndex
+      },
+      // 遮罩的过渡时间，单位为ms
+      duration: {
+        type: [String, Number],
+        default: props$p.overlay.duration
+      },
+      // 不透明度值，当做rgba的第四个参数
+      opacity: {
+        type: [String, Number],
+        default: props$p.overlay.opacity
+      }
+    }
+  };
+  const _sfc_main$n = {
+    name: "u-overlay",
+    mixins: [mpMixin, mixin, props$b],
+    computed: {
+      overlayStyle() {
+        const style = {
+          position: "fixed",
+          top: 0,
+          left: 0,
+          right: 0,
+          zIndex: this.zIndex,
+          bottom: 0,
+          "background-color": `rgba(0, 0, 0, ${this.opacity})`
+        };
+        return uni.$u.deepMerge(style, uni.$u.addStyle(this.customStyle));
+      }
+    },
+    emits: ["click"],
+    methods: {
+      clickHandler() {
+        this.$emit("click");
+      }
+    }
+  };
+  function _sfc_render$m(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_u_transition = resolveEasycom(vue.resolveDynamicComponent("u-transition"), __easycom_4$1);
+    return vue.openBlock(), vue.createBlock(_component_u_transition, {
+      show: _ctx.show,
+      "custom-class": "u-overlay",
+      duration: _ctx.duration,
+      "custom-style": $options.overlayStyle,
+      onClick: $options.clickHandler
+    }, {
+      default: vue.withCtx(() => [
+        vue.renderSlot(_ctx.$slots, "default", {}, void 0, true)
+      ]),
+      _: 3
+      /* FORWARDED */
+    }, 8, ["show", "duration", "custom-style", "onClick"]);
+  }
+  const __easycom_0$2 = /* @__PURE__ */ _export_sfc(_sfc_main$n, [["render", _sfc_render$m], ["__scopeId", "data-v-35f7c3e5"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-overlay/u-overlay.vue"]]);
+  const props$a = {
+    props: {
+      // 是否展示弹窗
+      show: {
+        type: Boolean,
+        default: props$p.popup.show
+      },
+      // 是否显示遮罩
+      overlay: {
+        type: Boolean,
+        default: props$p.popup.overlay
+      },
+      // 弹出的方向，可选值为 top bottom right left center
+      mode: {
+        type: String,
+        default: props$p.popup.mode
+      },
+      // 动画时长，单位ms
+      duration: {
+        type: [String, Number],
+        default: props$p.popup.duration
+      },
+      // 是否显示关闭图标
+      closeable: {
+        type: Boolean,
+        default: props$p.popup.closeable
+      },
+      // 自定义遮罩的样式
+      overlayStyle: {
+        type: [Object, String],
+        default: props$p.popup.overlayStyle
+      },
+      // 点击遮罩是否关闭弹窗
+      closeOnClickOverlay: {
+        type: Boolean,
+        default: props$p.popup.closeOnClickOverlay
+      },
+      // 层级
+      zIndex: {
+        type: [String, Number],
+        default: props$p.popup.zIndex
+      },
+      // 是否为iPhoneX留出底部安全距离
+      safeAreaInsetBottom: {
+        type: Boolean,
+        default: props$p.popup.safeAreaInsetBottom
+      },
+      // 是否留出顶部安全距离（状态栏高度）
+      safeAreaInsetTop: {
+        type: Boolean,
+        default: props$p.popup.safeAreaInsetTop
+      },
+      // 自定义关闭图标位置，top-left为左上角，top-right为右上角，bottom-left为左下角，bottom-right为右下角
+      closeIconPos: {
+        type: String,
+        default: props$p.popup.closeIconPos
+      },
+      // 是否显示圆角
+      round: {
+        type: [Boolean, String, Number],
+        default: props$p.popup.round
+      },
+      // mode=center，也即中部弹出时，是否使用缩放模式
+      zoom: {
+        type: Boolean,
+        default: props$p.popup.zoom
+      },
+      // 弹窗背景色，设置为transparent可去除白色背景
+      bgColor: {
+        type: String,
+        default: props$p.popup.bgColor
+      },
+      // 遮罩的透明度，0-1之间
+      overlayOpacity: {
+        type: [Number, String],
+        default: props$p.popup.overlayOpacity
+      }
+    }
+  };
+  const _sfc_main$m = {
+    name: "u-popup",
+    mixins: [mpMixin, mixin, props$a],
+    data() {
+      return {
+        overlayDuration: this.duration + 50
+      };
+    },
+    watch: {
+      show(newValue, oldValue) {
+      }
+    },
+    computed: {
+      transitionStyle() {
+        const style = {
+          zIndex: this.zIndex,
+          position: "fixed",
+          display: "flex"
+        };
+        style[this.mode] = 0;
+        if (this.mode === "left") {
+          return uni.$u.deepMerge(style, {
+            bottom: 0,
+            top: 0
+          });
+        } else if (this.mode === "right") {
+          return uni.$u.deepMerge(style, {
+            bottom: 0,
+            top: 0
+          });
+        } else if (this.mode === "top") {
+          return uni.$u.deepMerge(style, {
+            left: 0,
+            right: 0
+          });
+        } else if (this.mode === "bottom") {
+          return uni.$u.deepMerge(style, {
+            left: 0,
+            right: 0
+          });
+        } else if (this.mode === "center") {
+          return uni.$u.deepMerge(style, {
+            alignItems: "center",
+            "justify-content": "center",
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0
+          });
+        }
+      },
+      contentStyle() {
+        const style = {};
+        uni.$u.sys();
+        if (this.mode !== "center") {
+          style.flex = 1;
+        }
+        if (this.bgColor) {
+          style.backgroundColor = this.bgColor;
+        }
+        if (this.round) {
+          const value = uni.$u.addUnit(this.round);
+          if (this.mode === "top") {
+            style.borderBottomLeftRadius = value;
+            style.borderBottomRightRadius = value;
+          } else if (this.mode === "bottom") {
+            style.borderTopLeftRadius = value;
+            style.borderTopRightRadius = value;
+          } else if (this.mode === "center") {
+            style.borderRadius = value;
+          }
+        }
+        return uni.$u.deepMerge(style, uni.$u.addStyle(this.customStyle));
+      },
+      position() {
+        if (this.mode === "center") {
+          return this.zoom ? "fade-zoom" : "fade";
+        }
+        if (this.mode === "left") {
+          return "slide-left";
+        }
+        if (this.mode === "right") {
+          return "slide-right";
+        }
+        if (this.mode === "bottom") {
+          return "slide-up";
+        }
+        if (this.mode === "top") {
+          return "slide-down";
+        }
+      }
+    },
+    emits: ["open", "close", "click"],
+    methods: {
+      // 点击遮罩
+      overlayClick() {
+        if (this.closeOnClickOverlay) {
+          this.$emit("close");
+        }
+      },
+      close(e) {
+        this.$emit("close");
+      },
+      afterEnter() {
+        this.$emit("open");
+      },
+      clickHandler() {
+        if (this.mode === "center") {
+          this.overlayClick();
+        }
+        this.$emit("click");
+      }
+    }
+  };
+  function _sfc_render$l(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_u_overlay = resolveEasycom(vue.resolveDynamicComponent("u-overlay"), __easycom_0$2);
+    const _component_u_status_bar = resolveEasycom(vue.resolveDynamicComponent("u-status-bar"), __easycom_1$1);
+    const _component_u_icon = resolveEasycom(vue.resolveDynamicComponent("u-icon"), __easycom_0$7);
+    const _component_u_safe_bottom = resolveEasycom(vue.resolveDynamicComponent("u-safe-bottom"), __easycom_3$3);
+    const _component_u_transition = resolveEasycom(vue.resolveDynamicComponent("u-transition"), __easycom_4$1);
+    return vue.openBlock(), vue.createElementBlock("view", { class: "u-popup" }, [
+      _ctx.overlay ? (vue.openBlock(), vue.createBlock(_component_u_overlay, {
+        key: 0,
+        show: _ctx.show,
+        onClick: $options.overlayClick,
+        duration: $data.overlayDuration,
+        customStyle: _ctx.overlayStyle,
+        opacity: _ctx.overlayOpacity
+      }, null, 8, ["show", "onClick", "duration", "customStyle", "opacity"])) : vue.createCommentVNode("v-if", true),
+      vue.createVNode(_component_u_transition, {
+        show: _ctx.show,
+        customStyle: $options.transitionStyle,
+        mode: $options.position,
+        duration: _ctx.duration,
+        onAfterEnter: $options.afterEnter,
+        onClick: $options.clickHandler
+      }, {
+        default: vue.withCtx(() => [
+          vue.createElementVNode(
+            "view",
+            {
+              class: "u-popup__content",
+              style: vue.normalizeStyle([$options.contentStyle]),
+              onClick: _cache[1] || (_cache[1] = vue.withModifiers((...args) => _ctx.noop && _ctx.noop(...args), ["stop"]))
+            },
+            [
+              _ctx.safeAreaInsetTop ? (vue.openBlock(), vue.createBlock(_component_u_status_bar, { key: 0 })) : vue.createCommentVNode("v-if", true),
+              vue.renderSlot(_ctx.$slots, "default", {}, void 0, true),
+              _ctx.closeable ? (vue.openBlock(), vue.createElementBlock(
+                "view",
+                {
+                  key: 1,
+                  onClick: _cache[0] || (_cache[0] = vue.withModifiers((...args) => $options.close && $options.close(...args), ["stop"])),
+                  class: vue.normalizeClass(["u-popup__content__close", ["u-popup__content__close--" + _ctx.closeIconPos]]),
+                  "hover-class": "u-popup__content__close--hover",
+                  "hover-stay-time": "150"
+                },
+                [
+                  vue.createVNode(_component_u_icon, {
+                    name: "close",
+                    color: "#909399",
+                    size: "18",
+                    bold: ""
+                  })
+                ],
+                2
+                /* CLASS */
+              )) : vue.createCommentVNode("v-if", true),
+              _ctx.safeAreaInsetBottom ? (vue.openBlock(), vue.createBlock(_component_u_safe_bottom, { key: 2 })) : vue.createCommentVNode("v-if", true)
+            ],
+            4
+            /* STYLE */
+          )
+        ]),
+        _: 3
+        /* FORWARDED */
+      }, 8, ["show", "customStyle", "mode", "duration", "onAfterEnter", "onClick"])
+    ]);
+  }
+  const __easycom_2$2 = /* @__PURE__ */ _export_sfc(_sfc_main$m, [["render", _sfc_render$l], ["__scopeId", "data-v-74921bef"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-popup/u-popup.vue"]]);
+  const props$9 = {
+    props: {
+      // 是否展示modal
+      show: {
+        type: Boolean,
+        default: props$p.modal.show
+      },
+      // 标题
+      title: {
+        type: [String],
+        default: props$p.modal.title
+      },
+      // 弹窗内容
+      content: {
+        type: String,
+        default: props$p.modal.content
+      },
+      // 确认文案
+      confirmText: {
+        type: String,
+        default: props$p.modal.confirmText
+      },
+      // 取消文案
+      cancelText: {
+        type: String,
+        default: props$p.modal.cancelText
+      },
+      // 是否显示确认按钮
+      showConfirmButton: {
+        type: Boolean,
+        default: props$p.modal.showConfirmButton
+      },
+      // 是否显示取消按钮
+      showCancelButton: {
+        type: Boolean,
+        default: props$p.modal.showCancelButton
+      },
+      // 确认按钮颜色
+      confirmColor: {
+        type: String,
+        default: props$p.modal.confirmColor
+      },
+      // 取消文字颜色
+      cancelColor: {
+        type: String,
+        default: props$p.modal.cancelColor
+      },
+      // 对调确认和取消的位置
+      buttonReverse: {
+        type: Boolean,
+        default: props$p.modal.buttonReverse
+      },
+      // 是否开启缩放效果
+      zoom: {
+        type: Boolean,
+        default: props$p.modal.zoom
+      },
+      // 是否异步关闭，只对确定按钮有效
+      asyncClose: {
+        type: Boolean,
+        default: props$p.modal.asyncClose
+      },
+      // 是否允许点击遮罩关闭modal
+      closeOnClickOverlay: {
+        type: Boolean,
+        default: props$p.modal.closeOnClickOverlay
+      },
+      // 给一个负的margin-top，往上偏移，避免和键盘重合的情况
+      negativeTop: {
+        type: [String, Number],
+        default: props$p.modal.negativeTop
+      },
+      // modal宽度，不支持百分比，可以数值，px，rpx单位
+      width: {
+        type: [String, Number],
+        default: props$p.modal.width
+      },
+      // 确认按钮的样式，circle-圆形，square-方形，如设置，将不会显示取消按钮
+      confirmButtonShape: {
+        type: String,
+        default: props$p.modal.confirmButtonShape
+      }
+    }
+  };
+  const _sfc_main$l = {
+    name: "u-modal",
+    mixins: [mpMixin, mixin, props$9],
+    data() {
+      return {
+        loading: false
+      };
+    },
+    watch: {
+      show(n) {
+        if (n && this.loading)
+          this.loading = false;
+      }
+    },
+    emits: ["confirm", "cancel", "close"],
+    methods: {
+      // 点击确定按钮
+      confirmHandler() {
+        if (this.asyncClose) {
+          this.loading = true;
+        }
+        this.$emit("confirm");
+      },
+      // 点击取消按钮
+      cancelHandler() {
+        this.$emit("cancel");
+      },
+      // 点击遮罩
+      // 从原理上来说，modal的遮罩点击，并不是真的点击到了遮罩
+      // 因为modal依赖于popup的中部弹窗类型，中部弹窗比较特殊，虽有然遮罩，但是为了让弹窗内容能flex居中
+      // 多了一个透明的遮罩，此透明的遮罩会覆盖在灰色的遮罩上，所以实际上是点击不到灰色遮罩的，popup内部在
+      // 透明遮罩的子元素做了.stop处理，所以点击内容区，也不会导致误触发
+      clickHandler() {
+        if (this.closeOnClickOverlay) {
+          this.$emit("close");
+        }
+      }
+    }
+  };
+  function _sfc_render$k(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_u_line = resolveEasycom(vue.resolveDynamicComponent("u-line"), __easycom_0$3);
+    const _component_u_loading_icon = resolveEasycom(vue.resolveDynamicComponent("u-loading-icon"), __easycom_1$2);
+    const _component_u_popup = resolveEasycom(vue.resolveDynamicComponent("u-popup"), __easycom_2$2);
+    return vue.openBlock(), vue.createBlock(_component_u_popup, {
+      mode: "center",
+      zoom: _ctx.zoom,
+      show: _ctx.show,
+      customStyle: {
+        borderRadius: "6px",
+        overflow: "hidden",
+        marginTop: `-${_ctx.$u.addUnit(_ctx.negativeTop)}`
+      },
+      closeOnClickOverlay: _ctx.closeOnClickOverlay,
+      safeAreaInsetBottom: false,
+      duration: 400,
+      onClick: $options.clickHandler
+    }, {
+      default: vue.withCtx(() => [
+        vue.createElementVNode(
+          "view",
+          {
+            class: "u-modal",
+            style: vue.normalizeStyle({
+              width: _ctx.$u.addUnit(_ctx.width)
+            })
+          },
+          [
+            _ctx.title ? (vue.openBlock(), vue.createElementBlock(
+              "text",
+              {
+                key: 0,
+                class: "u-modal__title"
+              },
+              vue.toDisplayString(_ctx.title),
+              1
+              /* TEXT */
+            )) : vue.createCommentVNode("v-if", true),
+            vue.createElementVNode(
+              "view",
+              {
+                class: "u-modal__content",
+                style: vue.normalizeStyle({
+                  paddingTop: `${_ctx.title ? 12 : 25}px`
+                })
+              },
+              [
+                vue.renderSlot(_ctx.$slots, "default", {}, () => [
+                  vue.createElementVNode(
+                    "text",
+                    { class: "u-modal__content__text" },
+                    vue.toDisplayString(_ctx.content),
+                    1
+                    /* TEXT */
+                  )
+                ], true)
+              ],
+              4
+              /* STYLE */
+            ),
+            _ctx.$slots.confirmButton ? (vue.openBlock(), vue.createElementBlock("view", {
+              key: 1,
+              class: "u-modal__button-group--confirm-button"
+            }, [
+              vue.renderSlot(_ctx.$slots, "confirmButton", {}, void 0, true)
+            ])) : (vue.openBlock(), vue.createElementBlock(
+              vue.Fragment,
+              { key: 2 },
+              [
+                vue.createVNode(_component_u_line),
+                vue.createElementVNode(
+                  "view",
+                  {
+                    class: "u-modal__button-group",
+                    style: vue.normalizeStyle({
+                      flexDirection: _ctx.buttonReverse ? "row-reverse" : "row"
+                    })
+                  },
+                  [
+                    _ctx.showCancelButton ? (vue.openBlock(), vue.createElementBlock(
+                      "view",
+                      {
+                        key: 0,
+                        class: vue.normalizeClass(["u-modal__button-group__wrapper u-modal__button-group__wrapper--cancel", [_ctx.showCancelButton && !_ctx.showConfirmButton && "u-modal__button-group__wrapper--only-cancel"]]),
+                        "hover-stay-time": 150,
+                        "hover-class": "u-modal__button-group__wrapper--hover",
+                        onClick: _cache[0] || (_cache[0] = (...args) => $options.cancelHandler && $options.cancelHandler(...args))
+                      },
+                      [
+                        vue.createElementVNode(
+                          "text",
+                          {
+                            class: "u-modal__button-group__wrapper__text",
+                            style: vue.normalizeStyle({
+                              color: _ctx.cancelColor
+                            })
+                          },
+                          vue.toDisplayString(_ctx.cancelText),
+                          5
+                          /* TEXT, STYLE */
+                        )
+                      ],
+                      2
+                      /* CLASS */
+                    )) : vue.createCommentVNode("v-if", true),
+                    _ctx.showConfirmButton && _ctx.showCancelButton ? (vue.openBlock(), vue.createBlock(_component_u_line, {
+                      key: 1,
+                      direction: "column"
+                    })) : vue.createCommentVNode("v-if", true),
+                    _ctx.showConfirmButton ? (vue.openBlock(), vue.createElementBlock(
+                      "view",
+                      {
+                        key: 2,
+                        class: vue.normalizeClass(["u-modal__button-group__wrapper u-modal__button-group__wrapper--confirm", [!_ctx.showCancelButton && _ctx.showConfirmButton && "u-modal__button-group__wrapper--only-confirm"]]),
+                        "hover-stay-time": 150,
+                        "hover-class": "u-modal__button-group__wrapper--hover",
+                        onClick: _cache[1] || (_cache[1] = (...args) => $options.confirmHandler && $options.confirmHandler(...args))
+                      },
+                      [
+                        $data.loading ? (vue.openBlock(), vue.createBlock(_component_u_loading_icon, { key: 0 })) : (vue.openBlock(), vue.createElementBlock(
+                          "text",
+                          {
+                            key: 1,
+                            class: "u-modal__button-group__wrapper__text",
+                            style: vue.normalizeStyle({
+                              color: _ctx.confirmColor
+                            })
+                          },
+                          vue.toDisplayString(_ctx.confirmText),
+                          5
+                          /* TEXT, STYLE */
+                        ))
+                      ],
+                      2
+                      /* CLASS */
+                    )) : vue.createCommentVNode("v-if", true)
+                  ],
+                  4
+                  /* STYLE */
+                )
+              ],
+              64
+              /* STABLE_FRAGMENT */
+            ))
+          ],
+          4
+          /* STYLE */
+        )
+      ]),
+      _: 3
+      /* FORWARDED */
+    }, 8, ["zoom", "show", "customStyle", "closeOnClickOverlay", "onClick"]);
+  }
+  const __easycom_4 = /* @__PURE__ */ _export_sfc(_sfc_main$l, [["render", _sfc_render$k], ["__scopeId", "data-v-12b77a26"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-modal/u-modal.vue"]]);
+  const _sfc_main$k = {
     data() {
       return {
         app: getApp(),
@@ -6116,35 +6923,20 @@ if (uni.restoreGlobal) {
         detailType: "",
         //订单详情类型
         gymnasiumInfo: {
-          name: "我看看怎么个事",
-          phone: "0532-8186886",
-          location: "青岛市黄岛区金石国际北楼1611",
+          name: "",
+          phone: "",
+          location: "",
           latitude: "",
           longitude: ""
         },
-        sessionList: [
-          {
-            siteNo: 1,
-            date: "2023-08-08",
-            timeRange: "11:00-12:00",
-            hour: 3,
-            price: 300
-          },
-          {
-            siteNo: 3,
-            date: "2023-08-08",
-            timeRange: "11:00-12:00",
-            hour: 3,
-            price: 300
-          }
-        ],
-        orderTime: "2023-08-08 00:12:56",
+        show: false,
+        sessionList: [],
+        orderTime: "",
         //下单时间
-        payTime: "2023-08-08 00:12:56",
-        totalPrice: 500,
+        payTime: "",
+        totalPrice: 0,
         //总价
         payState: "",
-        //支付状态 wait 等待支付  payed 已支付 justPayed 刚刚支付
         code: 812356,
         //验证码
         //scrollview高度
@@ -6160,6 +6952,7 @@ if (uni.restoreGlobal) {
      */
     onLoad(options) {
       this.order_no = options.order_no;
+      this.detailType = options.type;
       this.$nextTick(() => {
         this.getNavBarHeight();
       });
@@ -6211,9 +7004,9 @@ if (uni.restoreGlobal) {
           }
         }).then((res) => {
           let data = res.data;
-          let site_detail = data.site_detail ? data.site_detail : [];
+          let site_detail2 = data.site_detail ? data.site_detail : [];
           let sessionList = [];
-          site_detail.forEach((con) => {
+          site_detail2.forEach((con) => {
             let timeList = [];
             con.time_enum.forEach((content) => {
               timeList.push({
@@ -6245,14 +7038,10 @@ if (uni.restoreGlobal) {
         let that = this;
         let query = uni.createSelectorQuery();
         query.select(".nav-bar").boundingClientRect((navRect) => {
-          if (this.payState != "payed" && this.payState != "justPayed") {
-            let query2 = uni.createSelectorQuery();
-            query2.select(".bottomBox").boundingClientRect((bottomRect) => {
-              that.scrollViewHeight = screenHeight - navRect.height - bottomRect.height;
-            }).exec();
-          } else {
-            that.scrollViewHeight = screenHeight - navRect.height;
-          }
+          let query2 = uni.createSelectorQuery();
+          query2.select(".bottomBox").boundingClientRect((bottomRect) => {
+            that.scrollViewHeight = screenHeight - navRect.height - bottomRect.height;
+          }).exec();
         }).exec();
       },
       // 打电话
@@ -6277,31 +7066,43 @@ if (uni.restoreGlobal) {
           data: this.order_no
         });
       },
-      cancelOrder() {
-        Dialog.confirm({
-          title: "取消订单",
-          message: "确定要取消此订单?"
+      cancel() {
+        this.show = false;
+      },
+      confirm() {
+        request({
+          url: "wx/cancel/order",
+          method: "POST",
+          data: {
+            order_no: this.order_no
+          }
         }).then(() => {
-          request({
-            url: "wx/cancel/order",
-            method: "POST",
-            data: {
-              order_no: this.order_no
+          this.payState = "C";
+          uni.showToast({
+            title: "取消成功",
+            icon: "none",
+            duration: 2e3,
+            success: () => {
+              this.show = false;
+              const eventChannel = this.getOpenerEventChannel();
+              eventChannel.emit("toCancelOrder", this.order_no);
+              setTimeout(() => {
+                this.initData();
+              }, 2e3);
             }
-          }).then(() => {
-            this.payState = "C";
-            uni.showToast({
-              title: "取消成功",
-              icon: "none",
-              duration: 2e3,
-              success: () => {
-                setTimeout(() => {
-                  this.initData();
-                }, 2e3);
-              }
-            });
           });
-        }).catch(() => {
+        });
+      },
+      cancelOrder() {
+        this.show = true;
+      },
+      // 去支付
+      toPay() {
+      },
+      // 去使用
+      toUse() {
+        uni.navigateTo({
+          url: "/pages/reservationInfo/reservationInfo?order_no=" + this.order_no
         });
       },
       onClickLeft() {
@@ -6309,10 +7110,10 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$n(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$j(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_up_icon = resolveEasycom(vue.resolveDynamicComponent("up-icon"), __easycom_0$7);
     const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_1);
-    const _component_van_dialog = vue.resolveComponent("van-dialog");
+    const _component_u_modal = resolveEasycom(vue.resolveDynamicComponent("u-modal"), __easycom_4);
     return vue.openBlock(), vue.createElementBlock(
       vue.Fragment,
       null,
@@ -6335,15 +7136,23 @@ if (uni.restoreGlobal) {
             _: 1
             /* STABLE */
           }, 8, ["title"]),
+          vue.createVNode(_component_u_modal, {
+            show: $data.show,
+            title: "提示",
+            content: "确定要取消此订单？",
+            showCancelButton: true,
+            onConfirm: $options.confirm,
+            onCancel: $options.cancel
+          }, null, 8, ["show", "onConfirm", "onCancel"]),
           vue.createElementVNode(
             "scroll-view",
             {
               "scroll-y": true,
               class: "w-full",
-              style: vue.normalizeStyle("height: " + ($data.scrollViewHeight + "px") + ";")
+              style: vue.normalizeStyle(["height: " + ($data.scrollViewHeight + "px") + ";", { "padding-top": "14rpx" }])
             },
             [
-              $data.detailType == "detail" && $data.payState == "wait" ? (vue.openBlock(), vue.createElementBlock("view", {
+              $data.detailType == "detail" && $data.payState == "N" ? (vue.openBlock(), vue.createElementBlock("view", {
                 key: 0,
                 class: "payStateBox flex align-center justify-center"
               }, [
@@ -6357,40 +7166,17 @@ if (uni.restoreGlobal) {
                   vue.createElementVNode("view", { class: "waitPayTitle" }, "订单已生成，请在15分钟之内支付完成")
                 ])
               ])) : vue.createCommentVNode("v-if", true),
-              $data.payState == "payed" || $data.payState == "justPayed" ? (vue.openBlock(), vue.createElementBlock(
-                "view",
-                {
-                  key: 1,
-                  class: "codeBox flex flex-direction align-center",
-                  style: vue.normalizeStyle("height: " + ($data.payState == "payed" ? "400rpx" : "484rpx") + ";")
-                },
-                [
-                  $data.payState == "justPayed" ? (vue.openBlock(), vue.createElementBlock("view", {
-                    key: 0,
-                    class: "paySuccessText"
-                  }, "支付成功")) : vue.createCommentVNode("v-if", true),
-                  vue.createElementVNode("view", { class: "codeImgBox" }, [
-                    vue.createElementVNode("image", {
-                      src: "/static/images/order/codeDemo.png",
-                      style: { "width": "296rpx", "height": "296rpx" },
-                      mode: ""
-                    })
-                  ]),
-                  vue.createElementVNode("view", { class: "codeTextBox" }, [
-                    vue.createElementVNode("text", {
-                      class: "codeLabel",
-                      style: { "color": "#333333 !important" }
-                    }, "验证码:"),
-                    vue.createTextVNode(
-                      " " + vue.toDisplayString($data.code),
-                      1
-                      /* TEXT */
-                    )
-                  ])
-                ],
-                4
-                /* STYLE */
-              )) : vue.createCommentVNode("v-if", true),
+              vue.createCommentVNode(` <view class="codeBox flex flex-direction align-center" v-if="payState == 'Y'"\r
+				:style="'height: ' + (payState == 'Y' ? '400rpx' : '484rpx') + ';'">\r
+				<view class="paySuccessText" v-if="payState == 'justPayed'">支付成功</view>\r
+				<view class="codeImgBox">\r
+					<image src="/static/images/order/codeDemo.png" style="width: 296rpx; height: 296rpx" mode="" />\r
+				</view>\r
+				<view class="codeTextBox">\r
+					<text class="codeLabel" style="color: #333333 !important ">验证码:</text>\r
+					{{ code }}\r
+				</view>\r
+			</view> `),
               vue.createElementVNode("view", { class: "topBox" }, [
                 vue.createElementVNode(
                   "view",
@@ -6557,7 +7343,7 @@ if (uni.restoreGlobal) {
                     )
                   ])
                 ]),
-                $data.payState == "payed" ? (vue.openBlock(), vue.createElementBlock("view", {
+                $data.payState == "Y" ? (vue.openBlock(), vue.createElementBlock("view", {
                   key: 0,
                   class: "flex align-center",
                   style: { "margin-top": "12rpx" }
@@ -6567,15 +7353,15 @@ if (uni.restoreGlobal) {
                     vue.createElementVNode(
                       "text",
                       null,
-                      vue.toDisplayString($data.orderTime),
+                      vue.toDisplayString($data.payTime),
                       1
                       /* TEXT */
                     )
                   ])
                 ])) : vue.createCommentVNode("v-if", true)
               ]),
-              $data.payState != "payed" && $data.payState != "justPayed" ? (vue.openBlock(), vue.createElementBlock("view", {
-                key: 2,
+              $data.payState == "N" ? (vue.openBlock(), vue.createElementBlock("view", {
+                key: 1,
                 class: "flex align-center justify-between payMethodBox"
               }, [
                 vue.createElementVNode("view", { class: "methodText" }, "支付方式"),
@@ -6588,10 +7374,7 @@ if (uni.restoreGlobal) {
                   vue.createElementVNode("text", { class: "wechatText" }, "微信支付")
                 ])
               ])) : vue.createCommentVNode("v-if", true),
-              $data.payState != "payed" && $data.payState != "justPayed" ? (vue.openBlock(), vue.createElementBlock("view", {
-                key: 3,
-                class: "bottomBox w-full"
-              }, [
+              vue.createElementVNode("view", { class: "bottomBox w-full" }, [
                 vue.createElementVNode("view", { class: "flex align-center justify-between h-full" }, [
                   vue.createElementVNode("view", { class: "flex align-center" }, [
                     vue.createElementVNode("view", { class: "totalText" }, "总计："),
@@ -6607,34 +7390,39 @@ if (uni.restoreGlobal) {
                     ])
                   ]),
                   vue.createElementVNode("view", { class: "flex align-center justify-end" }, [
-                    $data.payState == "N" ? (vue.openBlock(), vue.createElementBlock("view", {
+                    $data.payState == "N" || $data.payState == "Y" ? (vue.openBlock(), vue.createElementBlock("view", {
                       key: 0,
                       class: "cancelBtn",
                       onClick: _cache[3] || (_cache[3] = (...args) => $options.cancelOrder && $options.cancelOrder(...args))
                     }, "取消订单")) : vue.createCommentVNode("v-if", true),
-                    $data.payState == "N" ? (vue.openBlock(), vue.createElementBlock("view", {
+                    $data.payState == "Y" ? (vue.openBlock(), vue.createElementBlock("view", {
                       key: 1,
-                      class: "payBtn"
-                    }, "确认支付")) : $data.payState == "C" ? (vue.openBlock(), vue.createElementBlock("view", {
+                      class: "useBtn",
+                      onClick: _cache[4] || (_cache[4] = (...args) => $options.toUse && $options.toUse(...args))
+                    }, "去使用")) : vue.createCommentVNode("v-if", true),
+                    $data.payState == "N" ? (vue.openBlock(), vue.createElementBlock("view", {
                       key: 2,
+                      class: "payBtn",
+                      onClick: _cache[5] || (_cache[5] = (...args) => $options.toPay && $options.toPay(...args))
+                    }, "确认支付")) : $data.payState == "C" ? (vue.openBlock(), vue.createElementBlock("view", {
+                      key: 3,
                       class: "grayText",
                       style: { "font-size": "32rpx" }
                     }, "已取消")) : vue.createCommentVNode("v-if", true)
                   ])
                 ])
-              ])) : vue.createCommentVNode("v-if", true)
+              ])
             ],
             4
             /* STYLE */
-          ),
-          vue.createVNode(_component_van_dialog, { id: "van-dialog" })
+          )
         ])
       ],
       2112
       /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */
     );
   }
-  const PagesOrderDetailOrderDetail = /* @__PURE__ */ _export_sfc(_sfc_main$o, [["render", _sfc_render$n], ["__scopeId", "data-v-1353b6cf"], ["__file", "C:/project/轻羽项目/qingyu-client/pages/orderDetail/orderDetail.vue"]]);
+  const PagesOrderDetailOrderDetail = /* @__PURE__ */ _export_sfc(_sfc_main$k, [["render", _sfc_render$j], ["__scopeId", "data-v-1353b6cf"], ["__file", "C:/project/轻羽项目/qingyu-client/pages/orderDetail/orderDetail.vue"]]);
   function pickExclude(obj, keys) {
     if (!["[object Object]", "[object File]"].includes(Object.prototype.toString.call(obj))) {
       return {};
@@ -6717,7 +7505,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  const props$d = {
+  const props$8 = {
     props: {
       // 接受的文件类型, 可选值为all media image file video
       accept: {
@@ -6841,9 +7629,9 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  const _sfc_main$n = {
+  const _sfc_main$j = {
     name: "u-upload",
-    mixins: [mpMixin, mixin, mixinUp, props$d],
+    mixins: [mpMixin, mixin, mixinUp, props$8],
     data() {
       return {
         lists: [],
@@ -7023,7 +7811,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$m(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$i(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_u_icon = resolveEasycom(vue.resolveDynamicComponent("u-icon"), __easycom_0$7);
     const _component_u_loading_icon = resolveEasycom(vue.resolveDynamicComponent("u-loading-icon"), __easycom_1$2);
     return vue.openBlock(), vue.createElementBlock(
@@ -7173,79 +7961,8 @@ if (uni.restoreGlobal) {
       /* STYLE */
     );
   }
-  const __easycom_3$1 = /* @__PURE__ */ _export_sfc(_sfc_main$n, [["render", _sfc_render$m], ["__scopeId", "data-v-cafe0b2a"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-upload/u-upload.vue"]]);
-  const props$c = {
-    props: {
-      color: {
-        type: String,
-        default: props$p.line.color
-      },
-      // 长度，竖向时表现为高度，横向时表现为长度，可以为百分比，带px单位的值等
-      length: {
-        type: [String, Number],
-        default: props$p.line.length
-      },
-      // 线条方向，col-竖向，row-横向
-      direction: {
-        type: String,
-        default: props$p.line.direction
-      },
-      // 是否显示细边框
-      hairline: {
-        type: Boolean,
-        default: props$p.line.hairline
-      },
-      // 线条与上下左右元素的间距，字符串形式，如"30px"、"20px 30px"
-      margin: {
-        type: [String, Number],
-        default: props$p.line.margin
-      },
-      // 是否虚线，true-虚线，false-实线
-      dashed: {
-        type: Boolean,
-        default: props$p.line.dashed
-      }
-    }
-  };
-  const _sfc_main$m = {
-    name: "u-line",
-    mixins: [mpMixin, mixin, props$c],
-    computed: {
-      lineStyle() {
-        const style = {};
-        style.margin = this.margin;
-        if (this.direction === "row") {
-          style.borderBottomWidth = "1px";
-          style.borderBottomStyle = this.dashed ? "dashed" : "solid";
-          style.width = uni.$u.addUnit(this.length);
-          if (this.hairline)
-            style.transform = "scaleY(0.5)";
-        } else {
-          style.borderLeftWidth = "1px";
-          style.borderLeftStyle = this.dashed ? "dashed" : "solid";
-          style.height = uni.$u.addUnit(this.length);
-          if (this.hairline)
-            style.transform = "scaleX(0.5)";
-        }
-        style.borderColor = this.color;
-        return uni.$u.deepMerge(style, uni.$u.addStyle(this.customStyle));
-      }
-    }
-  };
-  function _sfc_render$l(_ctx, _cache, $props, $setup, $data, $options) {
-    return vue.openBlock(), vue.createElementBlock(
-      "view",
-      {
-        class: "u-line",
-        style: vue.normalizeStyle([$options.lineStyle])
-      },
-      null,
-      4
-      /* STYLE */
-    );
-  }
-  const __easycom_0$3 = /* @__PURE__ */ _export_sfc(_sfc_main$m, [["render", _sfc_render$l], ["__scopeId", "data-v-bbd9963c"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-line/u-line.vue"]]);
-  const props$b = {
+  const __easycom_3$1 = /* @__PURE__ */ _export_sfc(_sfc_main$j, [["render", _sfc_render$i], ["__scopeId", "data-v-cafe0b2a"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-upload/u-upload.vue"]]);
+  const props$7 = {
     props: {
       // 标题
       title: {
@@ -7355,12 +8072,12 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  const _sfc_main$l = {
+  const _sfc_main$i = {
     name: "u-cell",
     data() {
       return {};
     },
-    mixins: [mpMixin, mixin, props$b],
+    mixins: [mpMixin, mixin, props$7],
     computed: {
       titleTextStyle() {
         return uni.$u.addStyle(this.titleStyle);
@@ -7380,7 +8097,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$k(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$h(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_u_icon = resolveEasycom(vue.resolveDynamicComponent("u-icon"), __easycom_0$7);
     const _component_u_line = resolveEasycom(vue.resolveDynamicComponent("u-line"), __easycom_0$3);
     return vue.openBlock(), vue.createElementBlock("view", {
@@ -7473,8 +8190,8 @@ if (uni.restoreGlobal) {
       _ctx.border ? (vue.openBlock(), vue.createBlock(_component_u_line, { key: 0 })) : vue.createCommentVNode("v-if", true)
     ], 14, ["hover-class"]);
   }
-  const __easycom_2$2 = /* @__PURE__ */ _export_sfc(_sfc_main$l, [["render", _sfc_render$k], ["__scopeId", "data-v-b4243719"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-cell/u-cell.vue"]]);
-  const props$a = {
+  const __easycom_2$1 = /* @__PURE__ */ _export_sfc(_sfc_main$i, [["render", _sfc_render$h], ["__scopeId", "data-v-b4243719"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-cell/u-cell.vue"]]);
+  const props$6 = {
     props: {
       // radio的名称
       name: {
@@ -7543,9 +8260,9 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  const _sfc_main$k = {
+  const _sfc_main$h = {
     name: "u-radio",
-    mixins: [mpMixin, mixin, props$a],
+    mixins: [mpMixin, mixin, props$6],
     data() {
       return {
         checked: false,
@@ -7698,7 +8415,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$j(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$g(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_u_icon = resolveEasycom(vue.resolveDynamicComponent("u-icon"), __easycom_0$7);
     return vue.openBlock(), vue.createElementBlock(
       "view",
@@ -7748,8 +8465,8 @@ if (uni.restoreGlobal) {
       /* CLASS, STYLE */
     );
   }
-  const __easycom_5 = /* @__PURE__ */ _export_sfc(_sfc_main$k, [["render", _sfc_render$j], ["__scopeId", "data-v-edf95844"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-radio/u-radio.vue"]]);
-  const props$9 = {
+  const __easycom_5 = /* @__PURE__ */ _export_sfc(_sfc_main$h, [["render", _sfc_render$g], ["__scopeId", "data-v-edf95844"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-radio/u-radio.vue"]]);
+  const props$5 = {
     props: {
       // 绑定的值
       modelValue: {
@@ -7833,9 +8550,9 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  const _sfc_main$j = {
+  const _sfc_main$g = {
     name: "u-radio-group",
-    mixins: [mpMixin, mixin, props$9],
+    mixins: [mpMixin, mixin, props$5],
     computed: {
       // 这里computed的变量，都是子组件u-radio需要用到的，由于头条小程序的兼容性差异，子组件无法实时监听父组件参数的变化
       // 所以需要手动通知子组件，这里返回一个parentData变量，供watch监听，在其中去通知每一个子组件重新从父组件(u-radio-group)
@@ -7891,7 +8608,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$i(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$f(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock(
       "view",
       {
@@ -7904,8 +8621,8 @@ if (uni.restoreGlobal) {
       /* CLASS */
     );
   }
-  const __easycom_6 = /* @__PURE__ */ _export_sfc(_sfc_main$j, [["render", _sfc_render$i], ["__scopeId", "data-v-272bb654"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-radio-group/u-radio-group.vue"]]);
-  const props$8 = {
+  const __easycom_6 = /* @__PURE__ */ _export_sfc(_sfc_main$g, [["render", _sfc_render$f], ["__scopeId", "data-v-272bb654"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-radio-group/u-radio-group.vue"]]);
+  const props$4 = {
     props: {
       // 分组标题
       title: {
@@ -7919,11 +8636,11 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  const _sfc_main$i = {
+  const _sfc_main$f = {
     name: "u-cell-group",
-    mixins: [mpMixin, mixin, props$8]
+    mixins: [mpMixin, mixin, props$4]
   };
-  function _sfc_render$h(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$e(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_u_line = resolveEasycom(vue.resolveDynamicComponent("u-line"), __easycom_0$3);
     return vue.openBlock(), vue.createElementBlock(
       "view",
@@ -7955,8 +8672,8 @@ if (uni.restoreGlobal) {
       /* CLASS, STYLE */
     );
   }
-  const __easycom_3 = /* @__PURE__ */ _export_sfc(_sfc_main$i, [["render", _sfc_render$h], ["__scopeId", "data-v-30c8e4c7"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-cell-group/u-cell-group.vue"]]);
-  const props$7 = {
+  const __easycom_3 = /* @__PURE__ */ _export_sfc(_sfc_main$f, [["render", _sfc_render$e], ["__scopeId", "data-v-30c8e4c7"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-cell-group/u-cell-group.vue"]]);
+  const props$3 = {
     props: {
       // 是否展示工具条
       show: {
@@ -7990,9 +8707,9 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  const _sfc_main$h = {
+  const _sfc_main$e = {
     name: "u-toolbar",
-    mixins: [mpMixin, mixin, props$7],
+    mixins: [mpMixin, mixin, props$3],
     emits: ["confirm", "cancel"],
     methods: {
       // 点击取消按钮
@@ -8005,7 +8722,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$g(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$d(_ctx, _cache, $props, $setup, $data, $options) {
     return _ctx.show ? (vue.openBlock(), vue.createElementBlock(
       "view",
       {
@@ -8065,476 +8782,8 @@ if (uni.restoreGlobal) {
       /* HYDRATE_EVENTS */
     )) : vue.createCommentVNode("v-if", true);
   }
-  const __easycom_0$2 = /* @__PURE__ */ _export_sfc(_sfc_main$h, [["render", _sfc_render$g], ["__scopeId", "data-v-3fd495d6"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-toolbar/u-toolbar.vue"]]);
-  const props$6 = {
-    props: {
-      // 是否展示组件
-      show: {
-        type: Boolean,
-        default: props$p.transition.show
-      },
-      // 使用的动画模式
-      mode: {
-        type: String,
-        default: props$p.transition.mode
-      },
-      // 动画的执行时间，单位ms
-      duration: {
-        type: [String, Number],
-        default: props$p.transition.duration
-      },
-      // 使用的动画过渡函数
-      timingFunction: {
-        type: String,
-        default: props$p.transition.timingFunction
-      }
-    }
-  };
-  const getClassNames = (name) => ({
-    enter: `u-${name}-enter u-${name}-enter-active`,
-    "enter-to": `u-${name}-enter-to u-${name}-enter-active`,
-    leave: `u-${name}-leave u-${name}-leave-active`,
-    "leave-to": `u-${name}-leave-to u-${name}-leave-active`
-  });
-  const transition = {
-    methods: {
-      // 组件被点击发出事件
-      clickHandler() {
-        this.$emit("click");
-      },
-      // vue版本的组件进场处理
-      async vueEnter() {
-        const classNames = getClassNames(this.mode);
-        this.status = "enter";
-        this.$emit("beforeEnter");
-        this.inited = true;
-        this.display = true;
-        this.classes = classNames.enter;
-        await vue.nextTick();
-        {
-          this.$emit("enter");
-          this.transitionEnded = false;
-          this.$emit("afterEnter");
-          this.classes = classNames["enter-to"];
-        }
-      },
-      // 动画离场处理
-      async vueLeave() {
-        if (!this.display)
-          return;
-        const classNames = getClassNames(this.mode);
-        this.status = "leave";
-        this.$emit("beforeLeave");
-        this.classes = classNames.leave;
-        await vue.nextTick();
-        {
-          this.transitionEnded = false;
-          this.$emit("leave");
-          setTimeout(this.onTransitionEnd, this.duration);
-          this.classes = classNames["leave-to"];
-        }
-      },
-      // 完成过渡后触发
-      onTransitionEnd() {
-        if (this.transitionEnded)
-          return;
-        this.transitionEnded = true;
-        this.$emit(this.status === "leave" ? "afterLeave" : "afterEnter");
-        if (!this.show && this.display) {
-          this.display = false;
-          this.inited = false;
-        }
-      }
-    }
-  };
-  const _sfc_main$g = {
-    name: "u-transition",
-    data() {
-      return {
-        inited: false,
-        // 是否显示/隐藏组件
-        viewStyle: {},
-        // 组件内部的样式
-        status: "",
-        // 记录组件动画的状态
-        transitionEnded: false,
-        // 组件是否结束的标记
-        display: false,
-        // 组件是否展示
-        classes: ""
-        // 应用的类名
-      };
-    },
-    emits: ["click", "beforeEnter", "enter", "afterEnter", "beforeLeave", "leave", "afterLeave"],
-    computed: {
-      mergeStyle() {
-        const { viewStyle, customStyle } = this;
-        return {
-          transitionDuration: `${this.duration}ms`,
-          // display: `${this.display ? '' : 'none'}`,
-          transitionTimingFunction: this.timingFunction,
-          // 避免自定义样式影响到动画属性，所以写在viewStyle前面
-          ...uni.$u.addStyle(customStyle),
-          ...viewStyle
-        };
-      }
-    },
-    // 将mixin挂在到组件中，uni.$u.mixin实际上为一个vue格式对象
-    mixins: [mpMixin, mixin, transition, props$6],
-    watch: {
-      show: {
-        handler(newVal) {
-          newVal ? this.vueEnter() : this.vueLeave();
-        },
-        // 表示同时监听初始化时的props的show的意思
-        immediate: true
-      }
-    }
-  };
-  function _sfc_render$f(_ctx, _cache, $props, $setup, $data, $options) {
-    return $data.inited ? (vue.openBlock(), vue.createElementBlock(
-      "view",
-      {
-        key: 0,
-        class: vue.normalizeClass(["u-transition", $data.classes]),
-        ref: "u-transition",
-        onClick: _cache[0] || (_cache[0] = (...args) => _ctx.clickHandler && _ctx.clickHandler(...args)),
-        style: vue.normalizeStyle([$options.mergeStyle]),
-        onTouchmove: _cache[1] || (_cache[1] = (...args) => _ctx.noop && _ctx.noop(...args))
-      },
-      [
-        vue.renderSlot(_ctx.$slots, "default", {}, void 0, true)
-      ],
-      38
-      /* CLASS, STYLE, HYDRATE_EVENTS */
-    )) : vue.createCommentVNode("v-if", true);
-  }
-  const __easycom_4$1 = /* @__PURE__ */ _export_sfc(_sfc_main$g, [["render", _sfc_render$f], ["__scopeId", "data-v-0573594d"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-transition/u-transition.vue"]]);
-  const props$5 = {
-    props: {
-      // 是否显示遮罩
-      show: {
-        type: Boolean,
-        default: props$p.overlay.show
-      },
-      // 层级z-index
-      zIndex: {
-        type: [String, Number],
-        default: props$p.overlay.zIndex
-      },
-      // 遮罩的过渡时间，单位为ms
-      duration: {
-        type: [String, Number],
-        default: props$p.overlay.duration
-      },
-      // 不透明度值，当做rgba的第四个参数
-      opacity: {
-        type: [String, Number],
-        default: props$p.overlay.opacity
-      }
-    }
-  };
-  const _sfc_main$f = {
-    name: "u-overlay",
-    mixins: [mpMixin, mixin, props$5],
-    computed: {
-      overlayStyle() {
-        const style = {
-          position: "fixed",
-          top: 0,
-          left: 0,
-          right: 0,
-          zIndex: this.zIndex,
-          bottom: 0,
-          "background-color": `rgba(0, 0, 0, ${this.opacity})`
-        };
-        return uni.$u.deepMerge(style, uni.$u.addStyle(this.customStyle));
-      }
-    },
-    emits: ["click"],
-    methods: {
-      clickHandler() {
-        this.$emit("click");
-      }
-    }
-  };
-  function _sfc_render$e(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_transition = resolveEasycom(vue.resolveDynamicComponent("u-transition"), __easycom_4$1);
-    return vue.openBlock(), vue.createBlock(_component_u_transition, {
-      show: _ctx.show,
-      "custom-class": "u-overlay",
-      duration: _ctx.duration,
-      "custom-style": $options.overlayStyle,
-      onClick: $options.clickHandler
-    }, {
-      default: vue.withCtx(() => [
-        vue.renderSlot(_ctx.$slots, "default", {}, void 0, true)
-      ]),
-      _: 3
-      /* FORWARDED */
-    }, 8, ["show", "duration", "custom-style", "onClick"]);
-  }
-  const __easycom_0$1 = /* @__PURE__ */ _export_sfc(_sfc_main$f, [["render", _sfc_render$e], ["__scopeId", "data-v-35f7c3e5"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-overlay/u-overlay.vue"]]);
-  const props$4 = {
-    props: {
-      // 是否展示弹窗
-      show: {
-        type: Boolean,
-        default: props$p.popup.show
-      },
-      // 是否显示遮罩
-      overlay: {
-        type: Boolean,
-        default: props$p.popup.overlay
-      },
-      // 弹出的方向，可选值为 top bottom right left center
-      mode: {
-        type: String,
-        default: props$p.popup.mode
-      },
-      // 动画时长，单位ms
-      duration: {
-        type: [String, Number],
-        default: props$p.popup.duration
-      },
-      // 是否显示关闭图标
-      closeable: {
-        type: Boolean,
-        default: props$p.popup.closeable
-      },
-      // 自定义遮罩的样式
-      overlayStyle: {
-        type: [Object, String],
-        default: props$p.popup.overlayStyle
-      },
-      // 点击遮罩是否关闭弹窗
-      closeOnClickOverlay: {
-        type: Boolean,
-        default: props$p.popup.closeOnClickOverlay
-      },
-      // 层级
-      zIndex: {
-        type: [String, Number],
-        default: props$p.popup.zIndex
-      },
-      // 是否为iPhoneX留出底部安全距离
-      safeAreaInsetBottom: {
-        type: Boolean,
-        default: props$p.popup.safeAreaInsetBottom
-      },
-      // 是否留出顶部安全距离（状态栏高度）
-      safeAreaInsetTop: {
-        type: Boolean,
-        default: props$p.popup.safeAreaInsetTop
-      },
-      // 自定义关闭图标位置，top-left为左上角，top-right为右上角，bottom-left为左下角，bottom-right为右下角
-      closeIconPos: {
-        type: String,
-        default: props$p.popup.closeIconPos
-      },
-      // 是否显示圆角
-      round: {
-        type: [Boolean, String, Number],
-        default: props$p.popup.round
-      },
-      // mode=center，也即中部弹出时，是否使用缩放模式
-      zoom: {
-        type: Boolean,
-        default: props$p.popup.zoom
-      },
-      // 弹窗背景色，设置为transparent可去除白色背景
-      bgColor: {
-        type: String,
-        default: props$p.popup.bgColor
-      },
-      // 遮罩的透明度，0-1之间
-      overlayOpacity: {
-        type: [Number, String],
-        default: props$p.popup.overlayOpacity
-      }
-    }
-  };
-  const _sfc_main$e = {
-    name: "u-popup",
-    mixins: [mpMixin, mixin, props$4],
-    data() {
-      return {
-        overlayDuration: this.duration + 50
-      };
-    },
-    watch: {
-      show(newValue, oldValue) {
-      }
-    },
-    computed: {
-      transitionStyle() {
-        const style = {
-          zIndex: this.zIndex,
-          position: "fixed",
-          display: "flex"
-        };
-        style[this.mode] = 0;
-        if (this.mode === "left") {
-          return uni.$u.deepMerge(style, {
-            bottom: 0,
-            top: 0
-          });
-        } else if (this.mode === "right") {
-          return uni.$u.deepMerge(style, {
-            bottom: 0,
-            top: 0
-          });
-        } else if (this.mode === "top") {
-          return uni.$u.deepMerge(style, {
-            left: 0,
-            right: 0
-          });
-        } else if (this.mode === "bottom") {
-          return uni.$u.deepMerge(style, {
-            left: 0,
-            right: 0
-          });
-        } else if (this.mode === "center") {
-          return uni.$u.deepMerge(style, {
-            alignItems: "center",
-            "justify-content": "center",
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0
-          });
-        }
-      },
-      contentStyle() {
-        const style = {};
-        uni.$u.sys();
-        if (this.mode !== "center") {
-          style.flex = 1;
-        }
-        if (this.bgColor) {
-          style.backgroundColor = this.bgColor;
-        }
-        if (this.round) {
-          const value = uni.$u.addUnit(this.round);
-          if (this.mode === "top") {
-            style.borderBottomLeftRadius = value;
-            style.borderBottomRightRadius = value;
-          } else if (this.mode === "bottom") {
-            style.borderTopLeftRadius = value;
-            style.borderTopRightRadius = value;
-          } else if (this.mode === "center") {
-            style.borderRadius = value;
-          }
-        }
-        return uni.$u.deepMerge(style, uni.$u.addStyle(this.customStyle));
-      },
-      position() {
-        if (this.mode === "center") {
-          return this.zoom ? "fade-zoom" : "fade";
-        }
-        if (this.mode === "left") {
-          return "slide-left";
-        }
-        if (this.mode === "right") {
-          return "slide-right";
-        }
-        if (this.mode === "bottom") {
-          return "slide-up";
-        }
-        if (this.mode === "top") {
-          return "slide-down";
-        }
-      }
-    },
-    emits: ["open", "close", "click"],
-    methods: {
-      // 点击遮罩
-      overlayClick() {
-        if (this.closeOnClickOverlay) {
-          this.$emit("close");
-        }
-      },
-      close(e) {
-        this.$emit("close");
-      },
-      afterEnter() {
-        this.$emit("open");
-      },
-      clickHandler() {
-        if (this.mode === "center") {
-          this.overlayClick();
-        }
-        this.$emit("click");
-      }
-    }
-  };
-  function _sfc_render$d(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_overlay = resolveEasycom(vue.resolveDynamicComponent("u-overlay"), __easycom_0$1);
-    const _component_u_status_bar = resolveEasycom(vue.resolveDynamicComponent("u-status-bar"), __easycom_1$1);
-    const _component_u_icon = resolveEasycom(vue.resolveDynamicComponent("u-icon"), __easycom_0$7);
-    const _component_u_safe_bottom = resolveEasycom(vue.resolveDynamicComponent("u-safe-bottom"), __easycom_3$3);
-    const _component_u_transition = resolveEasycom(vue.resolveDynamicComponent("u-transition"), __easycom_4$1);
-    return vue.openBlock(), vue.createElementBlock("view", { class: "u-popup" }, [
-      _ctx.overlay ? (vue.openBlock(), vue.createBlock(_component_u_overlay, {
-        key: 0,
-        show: _ctx.show,
-        onClick: $options.overlayClick,
-        duration: $data.overlayDuration,
-        customStyle: _ctx.overlayStyle,
-        opacity: _ctx.overlayOpacity
-      }, null, 8, ["show", "onClick", "duration", "customStyle", "opacity"])) : vue.createCommentVNode("v-if", true),
-      vue.createVNode(_component_u_transition, {
-        show: _ctx.show,
-        customStyle: $options.transitionStyle,
-        mode: $options.position,
-        duration: _ctx.duration,
-        onAfterEnter: $options.afterEnter,
-        onClick: $options.clickHandler
-      }, {
-        default: vue.withCtx(() => [
-          vue.createElementVNode(
-            "view",
-            {
-              class: "u-popup__content",
-              style: vue.normalizeStyle([$options.contentStyle]),
-              onClick: _cache[1] || (_cache[1] = vue.withModifiers((...args) => _ctx.noop && _ctx.noop(...args), ["stop"]))
-            },
-            [
-              _ctx.safeAreaInsetTop ? (vue.openBlock(), vue.createBlock(_component_u_status_bar, { key: 0 })) : vue.createCommentVNode("v-if", true),
-              vue.renderSlot(_ctx.$slots, "default", {}, void 0, true),
-              _ctx.closeable ? (vue.openBlock(), vue.createElementBlock(
-                "view",
-                {
-                  key: 1,
-                  onClick: _cache[0] || (_cache[0] = vue.withModifiers((...args) => $options.close && $options.close(...args), ["stop"])),
-                  class: vue.normalizeClass(["u-popup__content__close", ["u-popup__content__close--" + _ctx.closeIconPos]]),
-                  "hover-class": "u-popup__content__close--hover",
-                  "hover-stay-time": "150"
-                },
-                [
-                  vue.createVNode(_component_u_icon, {
-                    name: "close",
-                    color: "#909399",
-                    size: "18",
-                    bold: ""
-                  })
-                ],
-                2
-                /* CLASS */
-              )) : vue.createCommentVNode("v-if", true),
-              _ctx.safeAreaInsetBottom ? (vue.openBlock(), vue.createBlock(_component_u_safe_bottom, { key: 2 })) : vue.createCommentVNode("v-if", true)
-            ],
-            4
-            /* STYLE */
-          )
-        ]),
-        _: 3
-        /* FORWARDED */
-      }, 8, ["show", "customStyle", "mode", "duration", "onAfterEnter", "onClick"])
-    ]);
-  }
-  const __easycom_2$1 = /* @__PURE__ */ _export_sfc(_sfc_main$e, [["render", _sfc_render$d], ["__scopeId", "data-v-74921bef"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-popup/u-popup.vue"]]);
-  const props$3 = {
+  const __easycom_0$1 = /* @__PURE__ */ _export_sfc(_sfc_main$e, [["render", _sfc_render$d], ["__scopeId", "data-v-3fd495d6"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-toolbar/u-toolbar.vue"]]);
+  const props$2 = {
     props: {
       // 是否展示picker弹窗
       show: {
@@ -8620,7 +8869,7 @@ if (uni.restoreGlobal) {
   };
   const _sfc_main$d = {
     name: "u-picker",
-    mixins: [mpMixin, mixin, props$3],
+    mixins: [mpMixin, mixin, props$2],
     data() {
       return {
         // 上一次选择的列索引
@@ -8757,9 +9006,9 @@ if (uni.restoreGlobal) {
     }
   };
   function _sfc_render$c(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_toolbar = resolveEasycom(vue.resolveDynamicComponent("u-toolbar"), __easycom_0$2);
+    const _component_u_toolbar = resolveEasycom(vue.resolveDynamicComponent("u-toolbar"), __easycom_0$1);
     const _component_u_loading_icon = resolveEasycom(vue.resolveDynamicComponent("u-loading-icon"), __easycom_1$2);
-    const _component_u_popup = resolveEasycom(vue.resolveDynamicComponent("u-popup"), __easycom_2$1);
+    const _component_u_popup = resolveEasycom(vue.resolveDynamicComponent("u-popup"), __easycom_2$2);
     return vue.openBlock(), vue.createBlock(_component_u_popup, {
       show: _ctx.show,
       mode: _ctx.popupMode,
@@ -8837,7 +9086,7 @@ if (uni.restoreGlobal) {
     }, 8, ["show", "mode", "onClose"]);
   }
   const __easycom_0 = /* @__PURE__ */ _export_sfc(_sfc_main$d, [["render", _sfc_render$c], ["__scopeId", "data-v-1500ce68"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-picker/u-picker.vue"]]);
-  const props$2 = {
+  const props$1 = {
     props: {
       // 是否打开组件
       show: {
@@ -9446,7 +9695,7 @@ if (uni.restoreGlobal) {
   }
   const _sfc_main$c = {
     name: "datetime-picker",
-    mixins: [mpMixin, mixin, props$2],
+    mixins: [mpMixin, mixin, props$1],
     data() {
       return {
         columns: [],
@@ -9735,7 +9984,7 @@ if (uni.restoreGlobal) {
     }, null, 8, ["show", "popupMode", "closeOnClickOverlay", "columns", "title", "itemHeight", "showToolbar", "visibleItemCount", "defaultIndex", "cancelText", "confirmText", "cancelColor", "confirmColor", "onClose", "onCancel", "onConfirm", "onChange"]);
   }
   const __easycom_8 = /* @__PURE__ */ _export_sfc(_sfc_main$c, [["render", _sfc_render$b], ["__scopeId", "data-v-e39cc2d0"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-datetime-picker/u-datetime-picker.vue"]]);
-  const props$1 = {
+  const props = {
     props: {
       // 输入框的内容
       value: {
@@ -9861,7 +10110,7 @@ if (uni.restoreGlobal) {
   };
   const _sfc_main$b = {
     name: "u-textarea",
-    mixins: [mpMixin, mixin, props$1],
+    mixins: [mpMixin, mixin, props],
     data() {
       return {
         // 输入框的值
@@ -10028,14 +10277,14 @@ if (uni.restoreGlobal) {
      * 生命周期函数--监听页面加载
      */
     async onLoad() {
-      let userInfo = await this.app.getUserInfo();
+      let userInfo2 = await this.app.getUserInfo();
       this.maxDate = Date.now();
       this.currentDate = Date.now();
-      this.nickname = userInfo.name;
-      this.avatarUrl = userInfo.avatar;
-      this.sex = String(userInfo.sex);
-      this.dealCurrentDate = userInfo.birthday;
-      this.personalProfile = userInfo.introduce;
+      this.nickname = userInfo2.name;
+      this.avatarUrl = userInfo2.avatar;
+      this.sex = String(userInfo2.sex);
+      this.dealCurrentDate = userInfo2.birthday;
+      this.personalProfile = userInfo2.introduce;
     },
     /**
      * 生命周期函数--监听页面初次渲染完成
@@ -10153,7 +10402,7 @@ if (uni.restoreGlobal) {
     const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_1);
     const _component_u_icon = resolveEasycom(vue.resolveDynamicComponent("u-icon"), __easycom_0$7);
     const _component_u_upload = resolveEasycom(vue.resolveDynamicComponent("u-upload"), __easycom_3$1);
-    const _component_u_cell = resolveEasycom(vue.resolveDynamicComponent("u-cell"), __easycom_2$2);
+    const _component_u_cell = resolveEasycom(vue.resolveDynamicComponent("u-cell"), __easycom_2$1);
     const _component_u_radio = resolveEasycom(vue.resolveDynamicComponent("u-radio"), __easycom_5);
     const _component_u_radio_group = resolveEasycom(vue.resolveDynamicComponent("u-radio-group"), __easycom_6);
     const _component_u_cell_group = resolveEasycom(vue.resolveDynamicComponent("u-cell-group"), __easycom_3);
@@ -10309,284 +10558,7 @@ if (uni.restoreGlobal) {
     );
   }
   const PagesInfoEditInfoEdit = /* @__PURE__ */ _export_sfc(_sfc_main$a, [["render", _sfc_render$9], ["__scopeId", "data-v-516de732"], ["__file", "C:/project/轻羽项目/qingyu-client/pages/infoEdit/infoEdit.vue"]]);
-  const props = {
-    props: {
-      // 是否展示modal
-      show: {
-        type: Boolean,
-        default: props$p.modal.show
-      },
-      // 标题
-      title: {
-        type: [String],
-        default: props$p.modal.title
-      },
-      // 弹窗内容
-      content: {
-        type: String,
-        default: props$p.modal.content
-      },
-      // 确认文案
-      confirmText: {
-        type: String,
-        default: props$p.modal.confirmText
-      },
-      // 取消文案
-      cancelText: {
-        type: String,
-        default: props$p.modal.cancelText
-      },
-      // 是否显示确认按钮
-      showConfirmButton: {
-        type: Boolean,
-        default: props$p.modal.showConfirmButton
-      },
-      // 是否显示取消按钮
-      showCancelButton: {
-        type: Boolean,
-        default: props$p.modal.showCancelButton
-      },
-      // 确认按钮颜色
-      confirmColor: {
-        type: String,
-        default: props$p.modal.confirmColor
-      },
-      // 取消文字颜色
-      cancelColor: {
-        type: String,
-        default: props$p.modal.cancelColor
-      },
-      // 对调确认和取消的位置
-      buttonReverse: {
-        type: Boolean,
-        default: props$p.modal.buttonReverse
-      },
-      // 是否开启缩放效果
-      zoom: {
-        type: Boolean,
-        default: props$p.modal.zoom
-      },
-      // 是否异步关闭，只对确定按钮有效
-      asyncClose: {
-        type: Boolean,
-        default: props$p.modal.asyncClose
-      },
-      // 是否允许点击遮罩关闭modal
-      closeOnClickOverlay: {
-        type: Boolean,
-        default: props$p.modal.closeOnClickOverlay
-      },
-      // 给一个负的margin-top，往上偏移，避免和键盘重合的情况
-      negativeTop: {
-        type: [String, Number],
-        default: props$p.modal.negativeTop
-      },
-      // modal宽度，不支持百分比，可以数值，px，rpx单位
-      width: {
-        type: [String, Number],
-        default: props$p.modal.width
-      },
-      // 确认按钮的样式，circle-圆形，square-方形，如设置，将不会显示取消按钮
-      confirmButtonShape: {
-        type: String,
-        default: props$p.modal.confirmButtonShape
-      }
-    }
-  };
   const _sfc_main$9 = {
-    name: "u-modal",
-    mixins: [mpMixin, mixin, props],
-    data() {
-      return {
-        loading: false
-      };
-    },
-    watch: {
-      show(n) {
-        if (n && this.loading)
-          this.loading = false;
-      }
-    },
-    emits: ["confirm", "cancel", "close"],
-    methods: {
-      // 点击确定按钮
-      confirmHandler() {
-        if (this.asyncClose) {
-          this.loading = true;
-        }
-        this.$emit("confirm");
-      },
-      // 点击取消按钮
-      cancelHandler() {
-        this.$emit("cancel");
-      },
-      // 点击遮罩
-      // 从原理上来说，modal的遮罩点击，并不是真的点击到了遮罩
-      // 因为modal依赖于popup的中部弹窗类型，中部弹窗比较特殊，虽有然遮罩，但是为了让弹窗内容能flex居中
-      // 多了一个透明的遮罩，此透明的遮罩会覆盖在灰色的遮罩上，所以实际上是点击不到灰色遮罩的，popup内部在
-      // 透明遮罩的子元素做了.stop处理，所以点击内容区，也不会导致误触发
-      clickHandler() {
-        if (this.closeOnClickOverlay) {
-          this.$emit("close");
-        }
-      }
-    }
-  };
-  function _sfc_render$8(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_line = resolveEasycom(vue.resolveDynamicComponent("u-line"), __easycom_0$3);
-    const _component_u_loading_icon = resolveEasycom(vue.resolveDynamicComponent("u-loading-icon"), __easycom_1$2);
-    const _component_u_popup = resolveEasycom(vue.resolveDynamicComponent("u-popup"), __easycom_2$1);
-    return vue.openBlock(), vue.createBlock(_component_u_popup, {
-      mode: "center",
-      zoom: _ctx.zoom,
-      show: _ctx.show,
-      customStyle: {
-        borderRadius: "6px",
-        overflow: "hidden",
-        marginTop: `-${_ctx.$u.addUnit(_ctx.negativeTop)}`
-      },
-      closeOnClickOverlay: _ctx.closeOnClickOverlay,
-      safeAreaInsetBottom: false,
-      duration: 400,
-      onClick: $options.clickHandler
-    }, {
-      default: vue.withCtx(() => [
-        vue.createElementVNode(
-          "view",
-          {
-            class: "u-modal",
-            style: vue.normalizeStyle({
-              width: _ctx.$u.addUnit(_ctx.width)
-            })
-          },
-          [
-            _ctx.title ? (vue.openBlock(), vue.createElementBlock(
-              "text",
-              {
-                key: 0,
-                class: "u-modal__title"
-              },
-              vue.toDisplayString(_ctx.title),
-              1
-              /* TEXT */
-            )) : vue.createCommentVNode("v-if", true),
-            vue.createElementVNode(
-              "view",
-              {
-                class: "u-modal__content",
-                style: vue.normalizeStyle({
-                  paddingTop: `${_ctx.title ? 12 : 25}px`
-                })
-              },
-              [
-                vue.renderSlot(_ctx.$slots, "default", {}, () => [
-                  vue.createElementVNode(
-                    "text",
-                    { class: "u-modal__content__text" },
-                    vue.toDisplayString(_ctx.content),
-                    1
-                    /* TEXT */
-                  )
-                ], true)
-              ],
-              4
-              /* STYLE */
-            ),
-            _ctx.$slots.confirmButton ? (vue.openBlock(), vue.createElementBlock("view", {
-              key: 1,
-              class: "u-modal__button-group--confirm-button"
-            }, [
-              vue.renderSlot(_ctx.$slots, "confirmButton", {}, void 0, true)
-            ])) : (vue.openBlock(), vue.createElementBlock(
-              vue.Fragment,
-              { key: 2 },
-              [
-                vue.createVNode(_component_u_line),
-                vue.createElementVNode(
-                  "view",
-                  {
-                    class: "u-modal__button-group",
-                    style: vue.normalizeStyle({
-                      flexDirection: _ctx.buttonReverse ? "row-reverse" : "row"
-                    })
-                  },
-                  [
-                    _ctx.showCancelButton ? (vue.openBlock(), vue.createElementBlock(
-                      "view",
-                      {
-                        key: 0,
-                        class: vue.normalizeClass(["u-modal__button-group__wrapper u-modal__button-group__wrapper--cancel", [_ctx.showCancelButton && !_ctx.showConfirmButton && "u-modal__button-group__wrapper--only-cancel"]]),
-                        "hover-stay-time": 150,
-                        "hover-class": "u-modal__button-group__wrapper--hover",
-                        onClick: _cache[0] || (_cache[0] = (...args) => $options.cancelHandler && $options.cancelHandler(...args))
-                      },
-                      [
-                        vue.createElementVNode(
-                          "text",
-                          {
-                            class: "u-modal__button-group__wrapper__text",
-                            style: vue.normalizeStyle({
-                              color: _ctx.cancelColor
-                            })
-                          },
-                          vue.toDisplayString(_ctx.cancelText),
-                          5
-                          /* TEXT, STYLE */
-                        )
-                      ],
-                      2
-                      /* CLASS */
-                    )) : vue.createCommentVNode("v-if", true),
-                    _ctx.showConfirmButton && _ctx.showCancelButton ? (vue.openBlock(), vue.createBlock(_component_u_line, {
-                      key: 1,
-                      direction: "column"
-                    })) : vue.createCommentVNode("v-if", true),
-                    _ctx.showConfirmButton ? (vue.openBlock(), vue.createElementBlock(
-                      "view",
-                      {
-                        key: 2,
-                        class: vue.normalizeClass(["u-modal__button-group__wrapper u-modal__button-group__wrapper--confirm", [!_ctx.showCancelButton && _ctx.showConfirmButton && "u-modal__button-group__wrapper--only-confirm"]]),
-                        "hover-stay-time": 150,
-                        "hover-class": "u-modal__button-group__wrapper--hover",
-                        onClick: _cache[1] || (_cache[1] = (...args) => $options.confirmHandler && $options.confirmHandler(...args))
-                      },
-                      [
-                        $data.loading ? (vue.openBlock(), vue.createBlock(_component_u_loading_icon, { key: 0 })) : (vue.openBlock(), vue.createElementBlock(
-                          "text",
-                          {
-                            key: 1,
-                            class: "u-modal__button-group__wrapper__text",
-                            style: vue.normalizeStyle({
-                              color: _ctx.confirmColor
-                            })
-                          },
-                          vue.toDisplayString(_ctx.confirmText),
-                          5
-                          /* TEXT, STYLE */
-                        ))
-                      ],
-                      2
-                      /* CLASS */
-                    )) : vue.createCommentVNode("v-if", true)
-                  ],
-                  4
-                  /* STYLE */
-                )
-              ],
-              64
-              /* STABLE_FRAGMENT */
-            ))
-          ],
-          4
-          /* STYLE */
-        )
-      ]),
-      _: 3
-      /* FORWARDED */
-    }, 8, ["zoom", "show", "customStyle", "closeOnClickOverlay", "onClick"]);
-  }
-  const __easycom_4 = /* @__PURE__ */ _export_sfc(_sfc_main$9, [["render", _sfc_render$8], ["__scopeId", "data-v-12b77a26"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-modal/u-modal.vue"]]);
-  const _sfc_main$8 = {
     data() {
       return {
         show: false,
@@ -10603,7 +10575,19 @@ if (uni.restoreGlobal) {
         waitUsedList: [],
         order_no: "",
         orderList: [],
-        scrollViewHeight: ""
+        scrollViewHeight: "",
+        searchInfo: {
+          pageObj: {
+            firstPage: 1,
+            secondPage: 1,
+            thirdPage: 1
+          },
+          size: 10,
+          status: ""
+        },
+        triggered: false,
+        triggered1: false,
+        triggered2: false
       };
     },
     /**
@@ -10656,27 +10640,46 @@ if (uni.restoreGlobal) {
       },
       onChange(e) {
         this.active = e.index;
-        if (this.active == 0)
-          ;
-        else if (this.active == 1)
-          ;
-        else
-          ;
+        switch (e.index) {
+          case 0:
+            this.searchInfo.status = "";
+            break;
+          case 1:
+            this.searchInfo.status = "N";
+            if (this.waitPayedList.length == 0) {
+              this.initData();
+            }
+            break;
+          case 2:
+            this.searchInfo.status = "Y";
+            if (this.waitUsedList.length == 0) {
+              this.initData();
+            }
+            break;
+        }
       },
       calculate() {
-        var screenHeight = uni.getSystemInfoSync().windowHeight;
-        let that = this;
-        that.scrollViewHeight = screenHeight - 88;
+        let sysInfo = uni.getSystemInfoSync();
+        var screenHeight = sysInfo.windowHeight;
+        this.scrollViewHeight = screenHeight - 88 - sysInfo.statusBarHeight;
       },
       toDetail(e) {
         let order_no = e.currentTarget.dataset.item.order_no;
         uni.navigateTo({
-          url: "/pages/orderDetail/orderDetail?order_no=" + order_no
+          url: "/pages/orderDetail/orderDetail?order_no=" + order_no,
+          events: {
+            toCancelOrder: (order_no2) => {
+              formatAppLog("log", "at pages/orderList/orderList.vue:281", 999, order_no2);
+              this.dealWithCancel(order_no2);
+            }
+          }
         });
       },
+      // 取消
       cancel() {
         this.show = false;
       },
+      // 确定取消
       confirm() {
         request({
           url: "wx/cancel/order",
@@ -10690,10 +10693,8 @@ if (uni.restoreGlobal) {
             icon: "none",
             duration: 2e3,
             success: () => {
+              this.dealWithCancel(this.order_no);
               this.show = false;
-              setTimeout(() => {
-                this.initData();
-              }, 2e3);
             }
           });
         });
@@ -10702,16 +10703,26 @@ if (uni.restoreGlobal) {
         this.show = true;
         this.order_no = e.currentTarget.dataset.item.order_no;
       },
-      async initData() {
-        let userInfo = await this.app.getUserInfo();
+      // 去使用
+      toUse(e) {
+        uni.navigateTo({
+          url: "/pages/reservationInfo/reservationInfo?order_no=" + e.currentTarget.dataset.item.order_no
+        });
+      },
+      // 初始化数据
+      async initData(type = "") {
+        let userInfo2 = await this.app.getUserInfo();
         request({
           url: "wx/get/order/list",
           method: "POST",
           data: {
-            user_ouid: userInfo.ouid
+            user_ouid: userInfo2.ouid,
+            page: this.active == 0 ? this.searchInfo.pageObj.firstPage : this.active == 1 ? this.searchInfo.pageObj.secondPage : this.searchInfo.pageObj.thirdPage,
+            size: this.searchInfo.size,
+            status: this.searchInfo.status
           }
         }).then((res) => {
-          let orderList = res.data.reverse();
+          let orderList = res.data.list ? res.data.list : [];
           orderList.forEach((con) => {
             con.siteNum = con.site_detail ? con.site_detail.length : 0;
             let hour = 0;
@@ -10719,18 +10730,92 @@ if (uni.restoreGlobal) {
             con.site_detail.forEach((content) => {
               hour = hour + content.time_enum.length;
             });
+            con.shop_avatar = this.app.globalData.httpUrl + con.shop_avatar;
             con.hour = hour;
           });
-          this.orderList = orderList;
-          let waitPayedList = this.orderList.filter((item) => item.status == "N");
-          let waitUsedList = this.orderList.filter((item) => item.status == "Y");
-          this.waitPayedList = waitPayedList;
-          this.waitUsedList = waitUsedList;
+          if (orderList.length < 10 && type == "lower") {
+            uni.showToast({
+              icon: "none",
+              title: "没有更多数据了"
+            });
+          }
+          switch (this.active) {
+            case 0:
+              this.orderList = type == "refresh" ? orderList : this.orderList.concat(
+                orderList
+              );
+              this.triggered = false;
+              break;
+            case 1:
+              this.waitPayedList = type == "refresh" ? orderList : this.waitPayedList.concat(orderList);
+              this.triggered1 = false;
+              break;
+            case 2:
+              this.waitUsedList = type == "refresh" ? orderList : this.waitUsedList.concat(
+                orderList
+              );
+              this.triggered2 = false;
+              break;
+          }
         });
+      },
+      // 下拉刷新
+      onRefresh() {
+        switch (this.active) {
+          case 0:
+            this.searchInfo.pageObj.firstPage = 1;
+            this.triggered = true;
+            break;
+          case 1:
+            this.searchInfo.pageObj.secondPage = 1;
+            this.triggered1 = true;
+            break;
+          case 2:
+            this.searchInfo.pageObj.thirdPage = 1;
+            this.triggered2 = true;
+            break;
+        }
+        this.initData("refresh");
+      },
+      // 上拉加载
+      lower() {
+        switch (this.active) {
+          case 0:
+            this.searchInfo.pageObj.firstPage = this.searchInfo.pageObj.firstPage + 1;
+            break;
+          case 1:
+            this.searchInfo.pageObj.secondPage = this.searchInfo.pageObj.secondPage + 1;
+            break;
+          case 2:
+            this.searchInfo.pageObj.thirdPage = this.searchInfo.pageObj.thirdPage + 1;
+            break;
+        }
+        this.initData("lower");
+      },
+      // 处理取消订单
+      dealWithCancel(order_no) {
+        let index2 = this.orderList.findIndex((item) => {
+          return item.order_no == this.order_no;
+        });
+        if (index2 > -1) {
+          this.orderList[index2].status = "C";
+        }
+        let index1 = this.waitPayedList.findIndex((item) => {
+          return item.order_no == this.order_no;
+        });
+        if (index1 > -1) {
+          this.waitPayedList[index2].status = "C";
+        }
+        let index22 = this.waitUsedList.findIndex((item) => {
+          return item.order_no == this.order_no;
+        });
+        if (index22 > -1) {
+          this.waitUsedList[index2].status = "C";
+        }
       }
     }
   };
-  function _sfc_render$7(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$8(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_up_icon = resolveEasycom(vue.resolveDynamicComponent("up-icon"), __easycom_0$7);
     const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_1);
     const _component_u_modal = resolveEasycom(vue.resolveDynamicComponent("u-modal"), __easycom_4);
@@ -10774,393 +10859,368 @@ if (uni.restoreGlobal) {
             lineColor: "#0077FF",
             lineWidth: "40"
           }, null, 8, ["list", "onChange"]),
-          $data.active == 0 ? (vue.openBlock(), vue.createElementBlock(
-            "scroll-view",
-            {
+          $data.active == 0 ? (vue.openBlock(), vue.createElementBlock("scroll-view", {
+            key: 0,
+            "scroll-y": true,
+            class: vue.normalizeClass(["orderList", $data.orderList.length == 0 ? "emptyFlex" : ""]),
+            style: vue.normalizeStyle("height: " + ($data.scrollViewHeight + "px") + ";"),
+            "refresher-enabled": "",
+            "refresher-triggered": $data.triggered,
+            onRefresherrefresh: _cache[6] || (_cache[6] = (...args) => $options.onRefresh && $options.onRefresh(...args)),
+            onScrolltolower: _cache[7] || (_cache[7] = (...args) => $options.lower && $options.lower(...args))
+          }, [
+            $data.orderList.length == 0 ? (vue.openBlock(), vue.createBlock(_component_u_empty, {
               key: 0,
-              "scroll-y": true,
-              class: vue.normalizeClass(["orderList", $data.orderList.length == 0 ? "emptyFlex" : ""]),
-              style: vue.normalizeStyle("height: " + ($data.scrollViewHeight + "px") + ";")
-            },
-            [
-              $data.orderList.length == 0 ? (vue.openBlock(), vue.createBlock(_component_u_empty, {
-                key: 0,
-                text: "暂无订单"
-              })) : (vue.openBlock(), vue.createElementBlock("view", { key: 1 }, [
-                (vue.openBlock(true), vue.createElementBlock(
-                  vue.Fragment,
-                  null,
-                  vue.renderList($data.orderList, (item, index1) => {
-                    return vue.openBlock(), vue.createElementBlock("view", {
-                      class: "orderItem",
-                      "data-item": item,
-                      key: index1
-                    }, [
-                      vue.createElementVNode("view", { class: "flex align-center justify-between" }, [
-                        vue.createElementVNode(
-                          "view",
-                          { class: "orderNoText" },
-                          "订单编号： " + vue.toDisplayString(item.order_no),
-                          1
-                          /* TEXT */
-                        ),
-                        item.status == "N" ? (vue.openBlock(), vue.createElementBlock("view", {
-                          key: 0,
-                          class: "redText"
-                        }, "待支付")) : item.status == "Y" ? (vue.openBlock(), vue.createElementBlock("view", {
-                          key: 1,
-                          class: "blueText"
-                        }, "待使用")) : item.status == "C" ? (vue.openBlock(), vue.createElementBlock("view", {
-                          key: 2,
-                          class: "grayText"
-                        }, "已取消")) : vue.createCommentVNode("v-if", true),
-                        vue.createCommentVNode(` <view wx:elif="{{item.status == 'finished' || item.status == 'refunded'}}" class="grayText">\r
-                            {{item.status == 'finished'?'已完成':'已退款'}}\r
-                        </view> `)
-                      ]),
-                      vue.createElementVNode("view", { class: "flex align-center justify-between" }, [
-                        vue.createElementVNode("view", { class: "flex align-center" }, [
-                          vue.createElementVNode("view", { class: "leftPhoto" }, [
-                            vue.createElementVNode("image", {
-                              src: item.shop_avatar,
-                              mode: "",
-                              class: "w-full h-full"
-                            }, null, 8, ["src"])
-                          ]),
-                          vue.createElementVNode("view", { class: "flex flex-direction align-start" }, [
-                            vue.createElementVNode(
-                              "view",
-                              { class: "gymnasiumName" },
-                              vue.toDisplayString(item.shop_name),
-                              1
-                              /* TEXT */
-                            ),
-                            vue.createElementVNode(
-                              "view",
-                              { class: "reservationInfo" },
-                              "预约场地： " + vue.toDisplayString(item.siteNum) + "场(" + vue.toDisplayString(item.hour) + "小时） ",
-                              1
-                              /* TEXT */
-                            )
-                          ])
-                        ]),
-                        vue.createElementVNode(
-                          "view",
-                          { class: "priceText" },
-                          "￥ " + vue.toDisplayString(item.money / 100),
-                          1
-                          /* TEXT */
-                        )
-                      ]),
-                      item.status == "C" ? (vue.openBlock(), vue.createElementBlock("view", {
-                        key: 0,
-                        class: "w-full flex align-center",
-                        style: { "justify-content": "flex-end" }
-                      }, [
-                        vue.createElementVNode("view", {
-                          class: "borderBtn",
-                          onClick: _cache[0] || (_cache[0] = (...args) => $options.toDetail && $options.toDetail(...args)),
-                          "data-item": item
-                        }, "查看详情", 8, ["data-item"])
-                      ])) : vue.createCommentVNode("v-if", true),
+              text: "暂无订单"
+            })) : (vue.openBlock(), vue.createElementBlock("view", { key: 1 }, [
+              (vue.openBlock(true), vue.createElementBlock(
+                vue.Fragment,
+                null,
+                vue.renderList($data.orderList, (item, index1) => {
+                  return vue.openBlock(), vue.createElementBlock("view", {
+                    class: "orderItem",
+                    "data-item": item,
+                    key: index1,
+                    onClick: _cache[5] || (_cache[5] = (...args) => $options.toDetail && $options.toDetail(...args))
+                  }, [
+                    vue.createElementVNode("view", { class: "flex align-center justify-between" }, [
+                      vue.createElementVNode(
+                        "view",
+                        { class: "orderNoText" },
+                        "订单编号： " + vue.toDisplayString(item.order_no),
+                        1
+                        /* TEXT */
+                      ),
                       item.status == "N" ? (vue.openBlock(), vue.createElementBlock("view", {
+                        key: 0,
+                        class: "redText"
+                      }, "待支付")) : item.status == "Y" ? (vue.openBlock(), vue.createElementBlock("view", {
                         key: 1,
-                        class: "w-full flex align-center",
-                        style: { "justify-content": "flex-end" }
-                      }, [
-                        vue.createElementVNode("view", {
-                          class: "borderBtn",
-                          onClick: _cache[1] || (_cache[1] = (...args) => $options.toCancel && $options.toCancel(...args)),
-                          "data-item": item
-                        }, "取消订单", 8, ["data-item"]),
-                        vue.createElementVNode("view", {
-                          class: "payBtn",
-                          onClick: _cache[2] || (_cache[2] = (...args) => $options.toDetail && $options.toDetail(...args)),
-                          "data-item": item
-                        }, "去支付", 8, ["data-item"])
-                      ])) : vue.createCommentVNode("v-if", true),
-                      item.status == "Y" ? (vue.openBlock(), vue.createElementBlock("view", {
+                        class: "blueText"
+                      }, "待使用")) : item.status == "C" ? (vue.openBlock(), vue.createElementBlock("view", {
                         key: 2,
-                        class: "w-full flex align-center",
-                        style: { "justify-content": "flex-end" }
-                      }, [
-                        vue.createElementVNode("view", {
-                          class: "borderBtn",
-                          onClick: _cache[3] || (_cache[3] = (...args) => $options.toCancel && $options.toCancel(...args)),
-                          "data-item": item
-                        }, "取消订单", 8, ["data-item"]),
-                        vue.createElementVNode("view", {
-                          class: "useBtn",
-                          onClick: _cache[4] || (_cache[4] = (...args) => $options.toDetail && $options.toDetail(...args)),
-                          "data-item": item
-                        }, "去使用", 8, ["data-item"])
-                      ])) : vue.createCommentVNode("v-if", true),
-                      item.status == "finished" || item.status == "refunded" ? (vue.openBlock(), vue.createElementBlock("view", {
+                        class: "grayText"
+                      }, "已取消")) : item.status == "U" ? (vue.openBlock(), vue.createElementBlock("view", {
                         key: 3,
-                        class: "w-full flex align-center",
-                        style: { "justify-content": "flex-end" }
-                      }, [
-                        vue.createElementVNode("view", { class: "borderBtn" }, "再次预定")
-                      ])) : vue.createCommentVNode("v-if", true)
-                    ], 8, ["data-item"]);
-                  }),
-                  128
-                  /* KEYED_FRAGMENT */
-                ))
-              ]))
-            ],
-            6
-            /* CLASS, STYLE */
-          )) : $data.active == 1 ? (vue.openBlock(), vue.createElementBlock(
-            "scroll-view",
-            {
-              key: 1,
-              "scroll-y": true,
-              class: vue.normalizeClass(["orderList", $data.waitPayedList.length == 0 ? "emptyFlex" : ""]),
-              style: vue.normalizeStyle("height: " + ($data.scrollViewHeight + "px") + ";")
-            },
-            [
-              $data.waitPayedList.length == 0 ? (vue.openBlock(), vue.createBlock(_component_u_empty, {
-                key: 0,
-                text: "暂无待支付订单"
-              })) : (vue.openBlock(), vue.createElementBlock("view", { key: 1 }, [
-                (vue.openBlock(true), vue.createElementBlock(
-                  vue.Fragment,
-                  null,
-                  vue.renderList($data.waitPayedList, (item, index1) => {
-                    return vue.openBlock(), vue.createElementBlock("view", {
-                      class: "orderItem",
-                      "data-item": item,
-                      key: index1
-                    }, [
-                      vue.createElementVNode("view", { class: "flex align-center justify-between" }, [
-                        vue.createElementVNode(
-                          "view",
-                          { class: "orderNoText" },
-                          "订单编号： " + vue.toDisplayString(item.order_no),
-                          1
-                          /* TEXT */
-                        ),
-                        item.status == "N" ? (vue.openBlock(), vue.createElementBlock("view", {
-                          key: 0,
-                          class: "redText"
-                        }, "待支付")) : item.status == "Y" ? (vue.openBlock(), vue.createElementBlock("view", {
-                          key: 1,
-                          class: "blueText"
-                        }, "待使用")) : vue.createCommentVNode("v-if", true),
-                        vue.createCommentVNode(` <view wx:elif="{{item.status == 'finished' || item.status == 'refunded'}}" class="grayText">\r
+                        class: "blueText"
+                      }, "已使用")) : vue.createCommentVNode("v-if", true),
+                      vue.createCommentVNode(` <view wx:elif="{{item.status == 'finished' || item.status == 'refunded'}}" class="grayText">\r
                             {{item.status == 'finished'?'已完成':'已退款'}}\r
                         </view> `)
-                      ]),
-                      vue.createElementVNode("view", { class: "flex align-center justify-between" }, [
-                        vue.createElementVNode("view", { class: "flex align-center" }, [
-                          vue.createElementVNode("view", { class: "leftPhoto" }, [
-                            vue.createElementVNode("image", {
-                              src: item.shop_avatar,
-                              mode: "",
-                              class: "w-full h-full"
-                            }, null, 8, ["src"])
-                          ]),
-                          vue.createElementVNode("view", { class: "flex flex-direction align-start" }, [
-                            vue.createElementVNode(
-                              "view",
-                              { class: "gymnasiumName" },
-                              vue.toDisplayString(item.shop_name),
-                              1
-                              /* TEXT */
-                            ),
-                            vue.createElementVNode(
-                              "view",
-                              { class: "reservationInfo" },
-                              "预约场地： " + vue.toDisplayString(item.siteNum) + "场(" + vue.toDisplayString(item.hour) + "小时） ",
-                              1
-                              /* TEXT */
-                            )
-                          ])
+                    ]),
+                    vue.createElementVNode("view", { class: "flex align-center justify-between" }, [
+                      vue.createElementVNode("view", { class: "flex align-center" }, [
+                        vue.createElementVNode("view", { class: "leftPhoto" }, [
+                          vue.createElementVNode("image", {
+                            src: item.shop_avatar,
+                            mode: "",
+                            class: "w-full h-full"
+                          }, null, 8, ["src"])
                         ]),
-                        vue.createElementVNode(
-                          "view",
-                          { class: "priceText" },
-                          "￥ " + vue.toDisplayString(item.money / 100),
-                          1
-                          /* TEXT */
-                        )
+                        vue.createElementVNode("view", { class: "flex flex-direction align-start" }, [
+                          vue.createElementVNode(
+                            "view",
+                            { class: "gymnasiumName" },
+                            vue.toDisplayString(item.shop_name),
+                            1
+                            /* TEXT */
+                          ),
+                          vue.createElementVNode(
+                            "view",
+                            { class: "reservationInfo" },
+                            "预约场地： " + vue.toDisplayString(item.siteNum) + "场(" + vue.toDisplayString(item.hour) + "小时） ",
+                            1
+                            /* TEXT */
+                          )
+                        ])
                       ]),
-                      item.status == "N" ? (vue.openBlock(), vue.createElementBlock("view", {
-                        key: 0,
-                        class: "w-full flex align-center",
-                        style: { "justify-content": "flex-end" }
-                      }, [
-                        vue.createElementVNode("view", {
-                          class: "borderBtn",
-                          onClick: _cache[5] || (_cache[5] = (...args) => $options.toCancel && $options.toCancel(...args)),
-                          "data-item": item
-                        }, "取消订单", 8, ["data-item"]),
-                        vue.createElementVNode("view", {
-                          class: "payBtn",
-                          onClick: _cache[6] || (_cache[6] = (...args) => $options.toDetail && $options.toDetail(...args)),
-                          "data-item": item
-                        }, "去支付", 8, ["data-item"])
-                      ])) : vue.createCommentVNode("v-if", true),
-                      item.status == "Y" ? (vue.openBlock(), vue.createElementBlock("view", {
-                        key: 1,
-                        class: "w-full flex align-center",
-                        style: { "justify-content": "flex-end" }
-                      }, [
-                        vue.createElementVNode("view", {
-                          class: "borderBtn",
-                          onClick: _cache[7] || (_cache[7] = (...args) => $options.toCancel && $options.toCancel(...args)),
-                          "data-item": item
-                        }, "取消订单", 8, ["data-item"]),
-                        vue.createElementVNode("view", {
-                          class: "useBtn",
-                          onClick: _cache[8] || (_cache[8] = (...args) => $options.toDetail && $options.toDetail(...args)),
-                          "data-item": item
-                        }, "去使用", 8, ["data-item"])
-                      ])) : vue.createCommentVNode("v-if", true),
-                      item.status == "finished" || item.status == "refunded" ? (vue.openBlock(), vue.createElementBlock("view", {
-                        key: 2,
-                        class: "w-full flex align-center",
-                        style: { "justify-content": "flex-end" }
-                      }, [
-                        vue.createElementVNode("view", { class: "borderBtn" }, "再次预定")
-                      ])) : vue.createCommentVNode("v-if", true)
-                    ], 8, ["data-item"]);
-                  }),
-                  128
-                  /* KEYED_FRAGMENT */
-                ))
-              ]))
-            ],
-            6
-            /* CLASS, STYLE */
-          )) : (vue.openBlock(), vue.createElementBlock(
-            "scroll-view",
-            {
-              key: 2,
-              "scroll-y": true,
-              class: vue.normalizeClass(["orderList", $data.waitUsedList.length == 0 ? "emptyFlex" : ""]),
-              style: vue.normalizeStyle("height: " + ($data.scrollViewHeight + "px") + ";")
-            },
-            [
-              $data.waitUsedList.length == 0 ? (vue.openBlock(), vue.createBlock(_component_u_empty, {
-                key: 0,
-                text: "暂无待使用订单"
-              })) : (vue.openBlock(), vue.createElementBlock("view", { key: 1 }, [
-                (vue.openBlock(true), vue.createElementBlock(
-                  vue.Fragment,
-                  null,
-                  vue.renderList($data.waitUsedList, (item, index1) => {
-                    return vue.openBlock(), vue.createElementBlock("view", {
-                      class: "orderItem",
-                      onClick: _cache[12] || (_cache[12] = (...args) => $options.toDetail && $options.toDetail(...args)),
-                      "data-item": item,
-                      key: index1
+                      vue.createElementVNode(
+                        "view",
+                        { class: "priceText" },
+                        "￥ " + vue.toDisplayString(item.money / 100),
+                        1
+                        /* TEXT */
+                      )
+                    ]),
+                    item.status == "C" || item.status == "U" ? (vue.openBlock(), vue.createElementBlock("view", {
+                      key: 0,
+                      class: "w-full flex align-center",
+                      style: { "justify-content": "flex-end" }
                     }, [
-                      vue.createElementVNode("view", { class: "flex align-center justify-between" }, [
-                        vue.createElementVNode(
-                          "view",
-                          { class: "orderNoText" },
-                          "订单编号： " + vue.toDisplayString(item.order_no),
-                          1
-                          /* TEXT */
-                        ),
-                        item.status == "N" ? (vue.openBlock(), vue.createElementBlock("view", {
-                          key: 0,
-                          class: "redText"
-                        }, "待支付")) : item.status == "Y" ? (vue.openBlock(), vue.createElementBlock("view", {
-                          key: 1,
-                          class: "blueText"
-                        }, "待使用")) : item.status == "finished" || item.status == "refunded" ? (vue.openBlock(), vue.createElementBlock(
-                          "view",
-                          {
-                            key: 2,
-                            class: "grayText"
-                          },
-                          vue.toDisplayString(item.status == "finished" ? "已完成" : "已退款"),
-                          1
-                          /* TEXT */
-                        )) : vue.createCommentVNode("v-if", true)
-                      ]),
-                      vue.createElementVNode("view", { class: "flex align-center justify-between" }, [
-                        vue.createElementVNode("view", { class: "flex align-center" }, [
-                          vue.createElementVNode("view", { class: "leftPhoto" }, [
-                            vue.createElementVNode("image", {
-                              src: item.shop_avatar,
-                              mode: "",
-                              class: "w-full h-full"
-                            }, null, 8, ["src"])
-                          ]),
-                          vue.createElementVNode("view", { class: "flex flex-direction align-start" }, [
-                            vue.createElementVNode(
-                              "view",
-                              { class: "gymnasiumName" },
-                              vue.toDisplayString(item.shop_name),
-                              1
-                              /* TEXT */
-                            ),
-                            vue.createElementVNode(
-                              "view",
-                              { class: "reservationInfo" },
-                              "预约场地： " + vue.toDisplayString(item.siteNum) + "场(" + vue.toDisplayString(item.hour) + "小时） ",
-                              1
-                              /* TEXT */
-                            )
-                          ])
+                      vue.createElementVNode("view", {
+                        class: "borderBtn",
+                        onClick: _cache[0] || (_cache[0] = vue.withModifiers((...args) => $options.toDetail && $options.toDetail(...args), ["stop"])),
+                        "data-item": item
+                      }, "查看详情", 8, ["data-item"])
+                    ])) : vue.createCommentVNode("v-if", true),
+                    item.status == "N" ? (vue.openBlock(), vue.createElementBlock("view", {
+                      key: 1,
+                      class: "w-full flex align-center",
+                      style: { "justify-content": "flex-end" }
+                    }, [
+                      vue.createElementVNode("view", {
+                        class: "borderBtn",
+                        onClick: _cache[1] || (_cache[1] = vue.withModifiers((...args) => $options.toCancel && $options.toCancel(...args), ["stop"])),
+                        "data-item": item
+                      }, "取消订单", 8, ["data-item"]),
+                      vue.createElementVNode("view", {
+                        class: "payBtn",
+                        onClick: _cache[2] || (_cache[2] = vue.withModifiers((...args) => $options.toDetail && $options.toDetail(...args), ["stop"])),
+                        "data-item": item
+                      }, "去支付", 8, ["data-item"])
+                    ])) : vue.createCommentVNode("v-if", true),
+                    item.status == "Y" ? (vue.openBlock(), vue.createElementBlock("view", {
+                      key: 2,
+                      class: "w-full flex align-center",
+                      style: { "justify-content": "flex-end" }
+                    }, [
+                      vue.createElementVNode("view", {
+                        class: "borderBtn",
+                        onClick: _cache[3] || (_cache[3] = vue.withModifiers((...args) => $options.toCancel && $options.toCancel(...args), ["stop"])),
+                        "data-item": item
+                      }, "取消订单", 8, ["data-item"]),
+                      vue.createElementVNode("view", {
+                        class: "useBtn",
+                        onClick: _cache[4] || (_cache[4] = vue.withModifiers((...args) => $options.toUse && $options.toUse(...args), ["stop"])),
+                        "data-item": item
+                      }, "去使用", 8, ["data-item"])
+                    ])) : vue.createCommentVNode("v-if", true),
+                    item.status == "finished" || item.status == "refunded" ? (vue.openBlock(), vue.createElementBlock("view", {
+                      key: 3,
+                      class: "w-full flex align-center",
+                      style: { "justify-content": "flex-end" }
+                    }, [
+                      vue.createElementVNode("view", { class: "borderBtn" }, "再次预定")
+                    ])) : vue.createCommentVNode("v-if", true)
+                  ], 8, ["data-item"]);
+                }),
+                128
+                /* KEYED_FRAGMENT */
+              ))
+            ]))
+          ], 46, ["refresher-triggered"])) : $data.active == 1 ? (vue.openBlock(), vue.createElementBlock("scroll-view", {
+            key: 1,
+            "scroll-y": true,
+            class: vue.normalizeClass(["orderList", $data.waitPayedList.length == 0 ? "emptyFlex" : ""]),
+            style: vue.normalizeStyle("height: " + ($data.scrollViewHeight + "px") + ";"),
+            "refresher-triggered": $data.triggered1,
+            "refresher-enabled": "",
+            onRefresherrefresh: _cache[13] || (_cache[13] = (...args) => $options.onRefresh && $options.onRefresh(...args)),
+            onScrolltolower: _cache[14] || (_cache[14] = (...args) => $options.lower && $options.lower(...args))
+          }, [
+            $data.waitPayedList.length == 0 ? (vue.openBlock(), vue.createBlock(_component_u_empty, {
+              key: 0,
+              text: "暂无待支付订单"
+            })) : (vue.openBlock(), vue.createElementBlock("view", { key: 1 }, [
+              (vue.openBlock(true), vue.createElementBlock(
+                vue.Fragment,
+                null,
+                vue.renderList($data.waitPayedList, (item, index1) => {
+                  return vue.openBlock(), vue.createElementBlock("view", {
+                    class: "orderItem",
+                    "data-item": item,
+                    key: index1,
+                    onClick: _cache[12] || (_cache[12] = (...args) => $options.toDetail && $options.toDetail(...args))
+                  }, [
+                    vue.createElementVNode("view", { class: "flex align-center justify-between" }, [
+                      vue.createElementVNode(
+                        "view",
+                        { class: "orderNoText" },
+                        "订单编号： " + vue.toDisplayString(item.order_no),
+                        1
+                        /* TEXT */
+                      ),
+                      vue.createElementVNode("view", { class: "redText" }, "待支付")
+                    ]),
+                    vue.createElementVNode("view", { class: "flex align-center justify-between" }, [
+                      vue.createElementVNode("view", { class: "flex align-center" }, [
+                        vue.createElementVNode("view", { class: "leftPhoto" }, [
+                          vue.createElementVNode("image", {
+                            src: item.shop_avatar,
+                            mode: "",
+                            class: "w-full h-full"
+                          }, null, 8, ["src"])
                         ]),
-                        vue.createElementVNode(
-                          "view",
-                          { class: "priceText" },
-                          "￥ " + vue.toDisplayString(item.money / 100),
-                          1
-                          /* TEXT */
-                        )
+                        vue.createElementVNode("view", { class: "flex flex-direction align-start" }, [
+                          vue.createElementVNode(
+                            "view",
+                            { class: "gymnasiumName" },
+                            vue.toDisplayString(item.shop_name),
+                            1
+                            /* TEXT */
+                          ),
+                          vue.createElementVNode(
+                            "view",
+                            { class: "reservationInfo" },
+                            "预约场地： " + vue.toDisplayString(item.siteNum) + "场(" + vue.toDisplayString(item.hour) + "小时） ",
+                            1
+                            /* TEXT */
+                          )
+                        ])
                       ]),
-                      item.status == "N" ? (vue.openBlock(), vue.createElementBlock("view", {
-                        key: 0,
-                        class: "w-full flex align-center",
-                        style: { "justify-content": "flex-end" }
-                      }, [
-                        vue.createElementVNode("view", {
-                          class: "borderBtn",
-                          onClick: _cache[9] || (_cache[9] = (...args) => $options.toCancel && $options.toCancel(...args)),
-                          "data-item": item
-                        }, "取消订单", 8, ["data-item"]),
-                        vue.createElementVNode("view", { class: "payBtn" }, "去支付")
-                      ])) : vue.createCommentVNode("v-if", true),
-                      item.status == "Y" ? (vue.openBlock(), vue.createElementBlock("view", {
-                        key: 1,
-                        class: "w-full flex align-center",
-                        style: { "justify-content": "flex-end" }
-                      }, [
-                        vue.createElementVNode("view", {
-                          class: "borderBtn",
-                          onClick: _cache[10] || (_cache[10] = (...args) => $options.toCancel && $options.toCancel(...args)),
-                          "data-item": item
-                        }, "取消订单", 8, ["data-item"]),
-                        vue.createElementVNode("view", {
-                          class: "useBtn",
-                          onClick: _cache[11] || (_cache[11] = (...args) => $options.toDetail && $options.toDetail(...args)),
-                          "data-item": item
-                        }, "去使用", 8, ["data-item"])
-                      ])) : vue.createCommentVNode("v-if", true),
-                      item.status == "finished" || item.status == "refunded" ? (vue.openBlock(), vue.createElementBlock("view", {
-                        key: 2,
-                        class: "w-full flex align-center",
-                        style: { "justify-content": "flex-end" }
-                      }, [
-                        vue.createElementVNode("view", { class: "borderBtn" }, "再次预定")
-                      ])) : vue.createCommentVNode("v-if", true)
-                    ], 8, ["data-item"]);
-                  }),
-                  128
-                  /* KEYED_FRAGMENT */
-                ))
-              ]))
-            ],
-            6
-            /* CLASS, STYLE */
-          )),
+                      vue.createElementVNode(
+                        "view",
+                        { class: "priceText" },
+                        "￥ " + vue.toDisplayString(item.money / 100),
+                        1
+                        /* TEXT */
+                      )
+                    ]),
+                    item.status == "N" ? (vue.openBlock(), vue.createElementBlock("view", {
+                      key: 0,
+                      class: "w-full flex align-center",
+                      style: { "justify-content": "flex-end" }
+                    }, [
+                      vue.createElementVNode("view", {
+                        class: "borderBtn",
+                        onClick: _cache[8] || (_cache[8] = vue.withModifiers((...args) => $options.toCancel && $options.toCancel(...args), ["stop"])),
+                        "data-item": item
+                      }, "取消订单", 8, ["data-item"]),
+                      vue.createElementVNode("view", {
+                        class: "payBtn",
+                        onClick: _cache[9] || (_cache[9] = vue.withModifiers((...args) => $options.toDetail && $options.toDetail(...args), ["stop"])),
+                        "data-item": item
+                      }, "去支付", 8, ["data-item"])
+                    ])) : vue.createCommentVNode("v-if", true),
+                    item.status == "Y" ? (vue.openBlock(), vue.createElementBlock("view", {
+                      key: 1,
+                      class: "w-full flex align-center",
+                      style: { "justify-content": "flex-end" }
+                    }, [
+                      vue.createElementVNode("view", {
+                        class: "borderBtn",
+                        onClick: _cache[10] || (_cache[10] = vue.withModifiers((...args) => $options.toCancel && $options.toCancel(...args), ["stop"])),
+                        "data-item": item
+                      }, "取消订单", 8, ["data-item"]),
+                      vue.createElementVNode("view", {
+                        class: "useBtn",
+                        onClick: _cache[11] || (_cache[11] = vue.withModifiers((...args) => $options.toUse && $options.toUse(...args), ["stop"])),
+                        "data-item": item
+                      }, "去使用", 8, ["data-item"])
+                    ])) : vue.createCommentVNode("v-if", true),
+                    item.status == "finished" || item.status == "refunded" ? (vue.openBlock(), vue.createElementBlock("view", {
+                      key: 2,
+                      class: "w-full flex align-center",
+                      style: { "justify-content": "flex-end" }
+                    }, [
+                      vue.createElementVNode("view", { class: "borderBtn" }, "再次预定")
+                    ])) : vue.createCommentVNode("v-if", true)
+                  ], 8, ["data-item"]);
+                }),
+                128
+                /* KEYED_FRAGMENT */
+              ))
+            ]))
+          ], 46, ["refresher-triggered"])) : (vue.openBlock(), vue.createElementBlock("scroll-view", {
+            key: 2,
+            "scroll-y": true,
+            class: vue.normalizeClass(["orderList", $data.waitUsedList.length == 0 ? "emptyFlex" : ""]),
+            style: vue.normalizeStyle("height: " + ($data.scrollViewHeight + "px") + ";"),
+            "refresher-triggered": $data.triggered2,
+            "refresher-enabled": "",
+            onRefresherrefresh: _cache[19] || (_cache[19] = (...args) => $options.onRefresh && $options.onRefresh(...args)),
+            onScrolltolower: _cache[20] || (_cache[20] = (...args) => $options.lower && $options.lower(...args))
+          }, [
+            $data.waitUsedList.length == 0 ? (vue.openBlock(), vue.createBlock(_component_u_empty, {
+              key: 0,
+              text: "暂无待使用订单"
+            })) : (vue.openBlock(), vue.createElementBlock("view", { key: 1 }, [
+              (vue.openBlock(true), vue.createElementBlock(
+                vue.Fragment,
+                null,
+                vue.renderList($data.waitUsedList, (item, index1) => {
+                  return vue.openBlock(), vue.createElementBlock("view", {
+                    class: "orderItem",
+                    onClick: _cache[18] || (_cache[18] = (...args) => $options.toDetail && $options.toDetail(...args)),
+                    "data-item": item,
+                    key: index1
+                  }, [
+                    vue.createElementVNode("view", { class: "flex align-center justify-between" }, [
+                      vue.createElementVNode(
+                        "view",
+                        { class: "orderNoText" },
+                        "订单编号： " + vue.toDisplayString(item.order_no),
+                        1
+                        /* TEXT */
+                      ),
+                      vue.createElementVNode("view", { class: "blueText" }, "待使用")
+                    ]),
+                    vue.createElementVNode("view", { class: "flex align-center justify-between" }, [
+                      vue.createElementVNode("view", { class: "flex align-center" }, [
+                        vue.createElementVNode("view", { class: "leftPhoto" }, [
+                          vue.createElementVNode("image", {
+                            src: item.shop_avatar,
+                            mode: "",
+                            class: "w-full h-full"
+                          }, null, 8, ["src"])
+                        ]),
+                        vue.createElementVNode("view", { class: "flex flex-direction align-start" }, [
+                          vue.createElementVNode(
+                            "view",
+                            { class: "gymnasiumName" },
+                            vue.toDisplayString(item.shop_name),
+                            1
+                            /* TEXT */
+                          ),
+                          vue.createElementVNode(
+                            "view",
+                            { class: "reservationInfo" },
+                            "预约场地： " + vue.toDisplayString(item.siteNum) + "场(" + vue.toDisplayString(item.hour) + "小时） ",
+                            1
+                            /* TEXT */
+                          )
+                        ])
+                      ]),
+                      vue.createElementVNode(
+                        "view",
+                        { class: "priceText" },
+                        "￥ " + vue.toDisplayString(item.money / 100),
+                        1
+                        /* TEXT */
+                      )
+                    ]),
+                    item.status == "N" ? (vue.openBlock(), vue.createElementBlock("view", {
+                      key: 0,
+                      class: "w-full flex align-center",
+                      style: { "justify-content": "flex-end" }
+                    }, [
+                      vue.createElementVNode("view", {
+                        class: "borderBtn",
+                        onClick: _cache[15] || (_cache[15] = vue.withModifiers((...args) => $options.toCancel && $options.toCancel(...args), ["stop"])),
+                        "data-item": item
+                      }, "取消订单", 8, ["data-item"]),
+                      vue.createElementVNode("view", { class: "payBtn" }, "去支付")
+                    ])) : vue.createCommentVNode("v-if", true),
+                    item.status == "Y" ? (vue.openBlock(), vue.createElementBlock("view", {
+                      key: 1,
+                      class: "w-full flex align-center",
+                      style: { "justify-content": "flex-end" }
+                    }, [
+                      vue.createElementVNode("view", {
+                        class: "borderBtn",
+                        onClick: _cache[16] || (_cache[16] = vue.withModifiers((...args) => $options.toCancel && $options.toCancel(...args), ["stop"])),
+                        "data-item": item
+                      }, "取消订单", 8, ["data-item"]),
+                      vue.createElementVNode("view", {
+                        class: "useBtn",
+                        onClick: _cache[17] || (_cache[17] = vue.withModifiers((...args) => $options.toUse && $options.toUse(...args), ["stop"])),
+                        "data-item": item
+                      }, "去使用", 8, ["data-item"])
+                    ])) : vue.createCommentVNode("v-if", true),
+                    item.status == "finished" || item.status == "refunded" ? (vue.openBlock(), vue.createElementBlock("view", {
+                      key: 2,
+                      class: "w-full flex align-center",
+                      style: { "justify-content": "flex-end" }
+                    }, [
+                      vue.createElementVNode("view", { class: "borderBtn" }, "再次预定")
+                    ])) : vue.createCommentVNode("v-if", true)
+                  ], 8, ["data-item"]);
+                }),
+                128
+                /* KEYED_FRAGMENT */
+              ))
+            ]))
+          ], 46, ["refresher-triggered"])),
           vue.createVNode(_component_van_dialog, { id: "van-dialog" })
         ])
       ],
@@ -11168,8 +11228,8 @@ if (uni.restoreGlobal) {
       /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */
     );
   }
-  const PagesOrderListOrderList = /* @__PURE__ */ _export_sfc(_sfc_main$8, [["render", _sfc_render$7], ["__scopeId", "data-v-1d51308d"], ["__file", "C:/project/轻羽项目/qingyu-client/pages/orderList/orderList.vue"]]);
-  const _sfc_main$7 = {
+  const PagesOrderListOrderList = /* @__PURE__ */ _export_sfc(_sfc_main$9, [["render", _sfc_render$8], ["__scopeId", "data-v-1d51308d"], ["__file", "C:/project/轻羽项目/qingyu-client/pages/orderList/orderList.vue"]]);
+  const _sfc_main$8 = {
     data() {
       return {
         app: getApp(),
@@ -11250,7 +11310,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$6(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$7(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_up_icon = resolveEasycom(vue.resolveDynamicComponent("up-icon"), __easycom_0$7);
     const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_1);
     const _component_u__textarea = resolveEasycom(vue.resolveDynamicComponent("u--textarea"), __easycom_2);
@@ -11305,8 +11365,8 @@ if (uni.restoreGlobal) {
       ])
     ]);
   }
-  const PagesFeedbackFeedback = /* @__PURE__ */ _export_sfc(_sfc_main$7, [["render", _sfc_render$6], ["__scopeId", "data-v-a24b82f2"], ["__file", "C:/project/轻羽项目/qingyu-client/pages/feedback/feedback.vue"]]);
-  const _sfc_main$6 = {
+  const PagesFeedbackFeedback = /* @__PURE__ */ _export_sfc(_sfc_main$8, [["render", _sfc_render$7], ["__scopeId", "data-v-a24b82f2"], ["__file", "C:/project/轻羽项目/qingyu-client/pages/feedback/feedback.vue"]]);
+  const _sfc_main$7 = {
     data() {
       return {
         app: getApp(),
@@ -11391,10 +11451,10 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$5(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$6(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_up_icon = resolveEasycom(vue.resolveDynamicComponent("up-icon"), __easycom_0$7);
     const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_1);
-    const _component_u_cell = resolveEasycom(vue.resolveDynamicComponent("u-cell"), __easycom_2$2);
+    const _component_u_cell = resolveEasycom(vue.resolveDynamicComponent("u-cell"), __easycom_2$1);
     const _component_u_cell_group = resolveEasycom(vue.resolveDynamicComponent("u-cell-group"), __easycom_3);
     const _component_u_modal = resolveEasycom(vue.resolveDynamicComponent("u-modal"), __easycom_4);
     return vue.openBlock(), vue.createElementBlock(
@@ -11491,8 +11551,8 @@ if (uni.restoreGlobal) {
       /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */
     );
   }
-  const PagesSettingsSettings = /* @__PURE__ */ _export_sfc(_sfc_main$6, [["render", _sfc_render$5], ["__scopeId", "data-v-7fad0a1c"], ["__file", "C:/project/轻羽项目/qingyu-client/pages/settings/settings.vue"]]);
-  const _sfc_main$5 = {
+  const PagesSettingsSettings = /* @__PURE__ */ _export_sfc(_sfc_main$7, [["render", _sfc_render$6], ["__scopeId", "data-v-7fad0a1c"], ["__file", "C:/project/轻羽项目/qingyu-client/pages/settings/settings.vue"]]);
+  const _sfc_main$6 = {
     data() {
       return {
         app: getApp()
@@ -11544,7 +11604,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$4(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$5(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_up_icon = resolveEasycom(vue.resolveDynamicComponent("up-icon"), __easycom_0$7);
     const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_1);
     return vue.openBlock(), vue.createElementBlock(
@@ -11576,8 +11636,8 @@ if (uni.restoreGlobal) {
       /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */
     );
   }
-  const PagesAboutUsAboutUs = /* @__PURE__ */ _export_sfc(_sfc_main$5, [["render", _sfc_render$4], ["__scopeId", "data-v-d8855c81"], ["__file", "C:/project/轻羽项目/qingyu-client/pages/aboutUs/aboutUs.vue"]]);
-  const _sfc_main$4 = {
+  const PagesAboutUsAboutUs = /* @__PURE__ */ _export_sfc(_sfc_main$6, [["render", _sfc_render$5], ["__scopeId", "data-v-d8855c81"], ["__file", "C:/project/轻羽项目/qingyu-client/pages/aboutUs/aboutUs.vue"]]);
+  const _sfc_main$5 = {
     data() {
       return {
         app: getApp(),
@@ -11664,16 +11724,17 @@ if (uni.restoreGlobal) {
           ;
       },
       calculate() {
-        var screenHeight = uni.getSystemInfoSync().windowHeight;
-        this.scrollViewHeight = screenHeight - 88;
+        let sysInfo = uni.getSystemInfoSync();
+        var screenHeight = sysInfo.windowHeight;
+        this.scrollViewHeight = screenHeight - 88 - sysInfo.statusBarHeight;
       },
       async initData() {
-        let userInfo = await this.app.getUserInfo();
+        let userInfo2 = await this.app.getUserInfo();
         request({
           url: "wx/get/my/reserve/list",
           method: "POST",
           data: {
-            user_ouid: userInfo.ouid
+            user_ouid: userInfo2.ouid
           }
         }).then(async (res) => {
           let enumInfo = await this.app.getEnum();
@@ -11696,6 +11757,7 @@ if (uni.restoreGlobal) {
             con.siteNum = siteNum;
             con.hour = hour;
             con.timeList = timeList;
+            con.shop_avatar = this.app.globalData.httpUrl + con.shop_avatar;
           });
           this.reservationList = reservationList;
           let waitUsedList = this.reservationList.filter((item) => item.status == "Y");
@@ -11706,7 +11768,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$4(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_up_icon = resolveEasycom(vue.resolveDynamicComponent("up-icon"), __easycom_0$7);
     const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_1);
     const _component_u_tabs = resolveEasycom(vue.resolveDynamicComponent("u-tabs"), __easycom_2$3);
@@ -12046,44 +12108,26 @@ if (uni.restoreGlobal) {
       /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */
     );
   }
-  const PagesReservationListReservationList = /* @__PURE__ */ _export_sfc(_sfc_main$4, [["render", _sfc_render$3], ["__scopeId", "data-v-9e63185c"], ["__file", "C:/project/轻羽项目/qingyu-client/pages/reservationList/reservationList.vue"]]);
-  const _sfc_main$3 = {
+  const PagesReservationListReservationList = /* @__PURE__ */ _export_sfc(_sfc_main$5, [["render", _sfc_render$4], ["__scopeId", "data-v-9e63185c"], ["__file", "C:/project/轻羽项目/qingyu-client/pages/reservationList/reservationList.vue"]]);
+  const _sfc_main$4 = {
     data() {
       return {
         app: getApp(),
         show: false,
         order_no: "",
-        code: 812356,
+        code: "",
+        codeImg: "",
         scrollViewHeight: 0,
         gymnasiumInfo: {
-          name: "一家球馆",
-          address: "中南金石国际广场",
-          img: "/static/images/home/gymnasiumPhoto.png",
-          sizteNo: 2,
-          hour: 4,
-          siteList: [
-            {
-              siteNo: 1,
-              date: "08-08",
-              startTime: "11:00",
-              endTime: "14:00"
-            },
-            {
-              siteNo: 1,
-              date: "08-08",
-              startTime: "11:00",
-              endTime: "14:00"
-            },
-            {
-              siteNo: 1,
-              date: "08-08",
-              startTime: "11:00",
-              endTime: "14:00"
-            }
-          ],
-          person: "哈哈",
-          phone: "135****6936",
-          createTime: "2023-08-08 12:23:36",
+          name: "",
+          address: "",
+          img: "",
+          sizteNo: 0,
+          hour: 0,
+          siteList: [],
+          person: "",
+          phone: "",
+          createTime: "",
           status: "",
           siteNum: ""
         }
@@ -12147,11 +12191,13 @@ if (uni.restoreGlobal) {
           }
         }).then((res) => {
           let data = res.data;
-          let site_detail = data.site_detail ? data.site_detail : [];
+          let site_detail2 = data.site_detail ? data.site_detail : [];
           let siteList = [];
           let hour = 0;
-          let siteNum = site_detail ? site_detail.length : 0;
-          site_detail.forEach((item) => {
+          let siteNum = site_detail2 ? site_detail2.length : 0;
+          this.code = data.check_no;
+          this.codeImg = this.app.globalData.httpUrl + data.check_qr;
+          site_detail2.forEach((item) => {
             item.time_enum.forEach((con) => {
               siteList.push({
                 siteName: item.site_name,
@@ -12164,7 +12210,7 @@ if (uni.restoreGlobal) {
           });
           this.gymnasiumInfo.name = data.shop_name;
           this.gymnasiumInfo.address = data.shop_address;
-          this.gymnasiumInfo.img = data.shop_avatar;
+          this.gymnasiumInfo.img = this.app.globalData.httpUrl + data.shop_avatar;
           this.gymnasiumInfo.person = data.user_name;
           this.gymnasiumInfo.phone = data.user_phone;
           this.gymnasiumInfo.createTime = data.gmt_creat_order;
@@ -12205,19 +12251,17 @@ if (uni.restoreGlobal) {
         });
       },
       getNavBarHeight() {
-        var screenHeight = uni.getSystemInfoSync().windowHeight;
+        let sysInfo = uni.getSystemInfoSync();
+        var screenHeight = sysInfo.windowHeight;
         let that = this;
         let query = uni.createSelectorQuery();
-        query.select(".nav-bar").boundingClientRect((navRect) => {
-          let query2 = uni.createSelectorQuery();
-          query2.select(".bottomBox").boundingClientRect((bottomRect) => {
-            that.scrollViewHeight = screenHeight - navRect.height - bottomRect.height;
-          }).exec();
+        query.select(".bottomBox").boundingClientRect((bottomRect) => {
+          that.scrollViewHeight = screenHeight - 44 - bottomRect.height - sysInfo.statusBarHeight;
         }).exec();
       }
     }
   };
-  function _sfc_render$2(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_up_icon = resolveEasycom(vue.resolveDynamicComponent("up-icon"), __easycom_0$7);
     const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_1);
     const _component_u_modal = resolveEasycom(vue.resolveDynamicComponent("u-modal"), __easycom_4);
@@ -12247,15 +12291,15 @@ if (uni.restoreGlobal) {
             "scroll-view",
             {
               "scroll-y": true,
-              style: vue.normalizeStyle("height: " + ($data.scrollViewHeight + "px") + ";")
+              style: vue.normalizeStyle(["height: " + ($data.scrollViewHeight + "px") + ";", { "padding-top": "14rpx" }])
             },
             [
               vue.createElementVNode("view", { class: "codeBox flex flex-direction align-center justify-center" }, [
                 vue.createElementVNode("image", {
-                  src: "/static/images/order/codeDemo.png",
+                  src: $data.codeImg,
                   style: { "width": "296rpx", "height": "296rpx" },
                   mode: ""
-                }),
+                }, null, 8, ["src"]),
                 vue.createElementVNode(
                   "view",
                   { class: "codeText" },
@@ -12388,8 +12432,8 @@ if (uni.restoreGlobal) {
       /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */
     );
   }
-  const PagesReservationInfoReservationInfo = /* @__PURE__ */ _export_sfc(_sfc_main$3, [["render", _sfc_render$2], ["__scopeId", "data-v-ba7f838c"], ["__file", "C:/project/轻羽项目/qingyu-client/pages/reservationInfo/reservationInfo.vue"]]);
-  const _sfc_main$2 = {
+  const PagesReservationInfoReservationInfo = /* @__PURE__ */ _export_sfc(_sfc_main$4, [["render", _sfc_render$3], ["__scopeId", "data-v-ba7f838c"], ["__file", "C:/project/轻羽项目/qingyu-client/pages/reservationInfo/reservationInfo.vue"]]);
+  const _sfc_main$3 = {
     data() {
       return {
         accountNo: "163987",
@@ -12401,9 +12445,9 @@ if (uni.restoreGlobal) {
       };
     },
     async onLoad() {
-      let userInfo = await this.app.getUserInfo();
-      this.userInfo = userInfo;
-      this.phone = userInfo.phone;
+      let userInfo2 = await this.app.getUserInfo();
+      this.userInfo = userInfo2;
+      this.phone = userInfo2.phone;
     },
     methods: {
       onClickLeft() {
@@ -12420,10 +12464,10 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$1(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$2(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_up_icon = resolveEasycom(vue.resolveDynamicComponent("up-icon"), __easycom_0$7);
     const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_1);
-    const _component_u_cell = resolveEasycom(vue.resolveDynamicComponent("u-cell"), __easycom_2$2);
+    const _component_u_cell = resolveEasycom(vue.resolveDynamicComponent("u-cell"), __easycom_2$1);
     const _component_u_cell_group = resolveEasycom(vue.resolveDynamicComponent("u-cell-group"), __easycom_3);
     const _component_u_modal = resolveEasycom(vue.resolveDynamicComponent("u-modal"), __easycom_4);
     return vue.openBlock(), vue.createElementBlock(
@@ -12475,8 +12519,8 @@ if (uni.restoreGlobal) {
       /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */
     );
   }
-  const PagesAccountSecurityAccountSecurity = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["render", _sfc_render$1], ["__scopeId", "data-v-ee0a2e80"], ["__file", "C:/project/轻羽项目/qingyu-client/pages/accountSecurity/accountSecurity.vue"]]);
-  const _sfc_main$1 = {
+  const PagesAccountSecurityAccountSecurity = /* @__PURE__ */ _export_sfc(_sfc_main$3, [["render", _sfc_render$2], ["__scopeId", "data-v-ee0a2e80"], ["__file", "C:/project/轻羽项目/qingyu-client/pages/accountSecurity/accountSecurity.vue"]]);
+  const _sfc_main$2 = {
     data() {
       return {
         app: getApp()
@@ -12484,7 +12528,7 @@ if (uni.restoreGlobal) {
     },
     methods: {}
   };
-  function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$1(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_up_icon = resolveEasycom(vue.resolveDynamicComponent("up-icon"), __easycom_0$7);
     const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_1);
     return vue.openBlock(), vue.createElementBlock("view", { class: "page" }, [
@@ -12511,7 +12555,206 @@ if (uni.restoreGlobal) {
       ])
     ]);
   }
-  const PagesUserAgreementUserAgreement = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["render", _sfc_render], ["__scopeId", "data-v-96203526"], ["__file", "C:/project/轻羽项目/qingyu-client/pages/userAgreement/userAgreement.vue"]]);
+  const PagesUserAgreementUserAgreement = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["render", _sfc_render$1], ["__scopeId", "data-v-96203526"], ["__file", "C:/project/轻羽项目/qingyu-client/pages/userAgreement/userAgreement.vue"]]);
+  const _sfc_main$1 = {
+    data() {
+      return {
+        app: getApp(),
+        centerHeight: 0,
+        orderInfo: {},
+        gymnasiumInfo: {},
+        userName: "",
+        phone: "",
+        remark: "",
+        userInfo: {}
+      };
+    },
+    async onLoad() {
+      let orderInfo = uni.getStorageSync("orderInfo");
+      orderInfo = JSON.parse(orderInfo);
+      this.orderInfo = orderInfo;
+      this.gymnasiumInfo = await this.app.getStoreInfo();
+      this.userInfo = await this.app.getUserInfo();
+      this.userName = this.userInfo.name;
+      this.phone = this.userInfo.phone;
+    },
+    onReady() {
+      this.$nextTick(() => {
+        this.calculate();
+      });
+    },
+    methods: {
+      calculate() {
+        let sysInfo = uni.getSystemInfoSync();
+        var screenHeight = sysInfo.windowHeight;
+        this.centerHeight = screenHeight - 122 - sysInfo.statusBarHeight;
+      },
+      // 确认支付
+      ensurePay() {
+        request({
+          url: "wx/add/order",
+          method: "POST",
+          data: {
+            user_ouid: userInfo.ouid,
+            //用户ouid
+            site_detail,
+            gmt_site_use: this.choosedList[0].date
+          }
+        }).then((res) => {
+          uni.showToast({
+            title: "提交成功",
+            icon: "none",
+            duration: 2e3,
+            success: () => {
+              setTimeout(() => {
+                uni.redirectTo({
+                  url: "/pages/orderDetail/orderDetail?type=add&order_no=" + res.data.order
+                });
+              }, 2e3);
+            }
+          });
+        });
+      }
+    }
+  };
+  function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_up_icon = resolveEasycom(vue.resolveDynamicComponent("up-icon"), __easycom_0$7);
+    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_1);
+    return vue.openBlock(), vue.createElementBlock("view", { class: "page" }, [
+      vue.createVNode(_component_u_navbar, {
+        class: "nav-bar",
+        safeAreaInsetTop: true,
+        fixed: false,
+        title: "确认预约",
+        autoBack: false
+      }, {
+        left: vue.withCtx(() => [
+          vue.createVNode(_component_up_icon, {
+            name: "arrow-left",
+            onClick: $data.app.toBack
+          }, null, 8, ["onClick"])
+        ]),
+        _: 1
+        /* STABLE */
+      }),
+      vue.createElementVNode(
+        "view",
+        {
+          class: "centerContent",
+          style: vue.normalizeStyle("height: " + ($data.centerHeight + "px") + ";")
+        },
+        [
+          vue.createElementVNode("view", { class: "reservationInfo" }, [
+            vue.createElementVNode("view", { class: "reservationInfoTitle" }, " 预约信息 "),
+            vue.createElementVNode("view", { class: "flex align-center" }, [
+              vue.createElementVNode("view", { class: "commonInfoLabel" }, "姓名"),
+              vue.withDirectives(vue.createElementVNode(
+                "input",
+                {
+                  type: "text",
+                  placeholder: "预约人姓名",
+                  "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => $data.userName = $event)
+                },
+                null,
+                512
+                /* NEED_PATCH */
+              ), [
+                [vue.vModelText, $data.userName]
+              ])
+            ]),
+            vue.createElementVNode("view", { class: "flex align-center" }, [
+              vue.createElementVNode("view", { class: "commonInfoLabel" }, "手机"),
+              vue.withDirectives(vue.createElementVNode(
+                "input",
+                {
+                  type: "text",
+                  placeholder: "预约人手机号码",
+                  "onUpdate:modelValue": _cache[1] || (_cache[1] = ($event) => $data.phone = $event)
+                },
+                null,
+                512
+                /* NEED_PATCH */
+              ), [
+                [vue.vModelText, $data.phone]
+              ])
+            ]),
+            vue.createElementVNode("view", { class: "flex align-center" }, [
+              vue.createElementVNode("view", { class: "commonInfoLabel" }, "备注"),
+              vue.withDirectives(vue.createElementVNode(
+                "input",
+                {
+                  type: "text",
+                  placeholder: "备注信息",
+                  "onUpdate:modelValue": _cache[2] || (_cache[2] = ($event) => $data.remark = $event)
+                },
+                null,
+                512
+                /* NEED_PATCH */
+              ), [
+                [vue.vModelText, $data.remark]
+              ])
+            ])
+          ]),
+          vue.createElementVNode("view", { class: "gymnasiumInfoBox" }, [
+            vue.createElementVNode(
+              "view",
+              { class: "gymnasiumInfoBoxName" },
+              vue.toDisplayString($data.gymnasiumInfo.gymnasiumName),
+              1
+              /* TEXT */
+            ),
+            vue.createElementVNode(
+              "view",
+              { class: "gymnasiumInfoBoxText" },
+              "营业时间：" + vue.toDisplayString($data.gymnasiumInfo.businessHours),
+              1
+              /* TEXT */
+            ),
+            vue.createElementVNode(
+              "view",
+              { class: "gymnasiumInfoBoxText" },
+              "电话：" + vue.toDisplayString($data.gymnasiumInfo.phone),
+              1
+              /* TEXT */
+            ),
+            vue.createElementVNode(
+              "view",
+              { class: "gymnasiumInfoBoxText" },
+              "地址：" + vue.toDisplayString($data.gymnasiumInfo.location),
+              1
+              /* TEXT */
+            )
+          ])
+        ],
+        4
+        /* STYLE */
+      ),
+      vue.createElementVNode("view", { class: "footer" }, [
+        vue.createElementVNode("view", { class: "flex align-center justify-between h-full" }, [
+          vue.createElementVNode("view", { class: "flex align-center" }, [
+            vue.createElementVNode("view", { class: "totalText" }, "总计："),
+            vue.createElementVNode("view", { class: "priceText" }, [
+              vue.createElementVNode("text", null, "￥"),
+              vue.createElementVNode(
+                "text",
+                null,
+                vue.toDisplayString($data.orderInfo.totalPrice),
+                1
+                /* TEXT */
+              )
+            ])
+          ]),
+          vue.createElementVNode("view", { class: "flex align-center justify-end" }, [
+            vue.createElementVNode("view", {
+              class: "payBtn",
+              onClick: _cache[3] || (_cache[3] = (...args) => $options.ensurePay && $options.ensurePay(...args))
+            }, "确认支付")
+          ])
+        ])
+      ])
+    ]);
+  }
+  const PagesConfirmAppointmentConfirmAppointment = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["render", _sfc_render], ["__scopeId", "data-v-2139706a"], ["__file", "C:/project/轻羽项目/qingyu-client/pages/confirmAppointment/confirmAppointment.vue"]]);
   __definePage("pages/index/index", PagesIndexIndex);
   __definePage("pages/login/login", PagesLoginLogin);
   __definePage("pages/arrgement/arrgement", PagesArrgementArrgement);
@@ -12529,13 +12772,14 @@ if (uni.restoreGlobal) {
   __definePage("pages/reservationInfo/reservationInfo", PagesReservationInfoReservationInfo);
   __definePage("pages/accountSecurity/accountSecurity", PagesAccountSecurityAccountSecurity);
   __definePage("pages/userAgreement/userAgreement", PagesUserAgreementUserAgreement);
+  __definePage("pages/confirmAppointment/confirmAppointment", PagesConfirmAppointmentConfirmAppointment);
   const _sfc_main = {
     globalData: {
       // httpUrl: 'http://172.16.7.99:8002/',
-      httpUrl: "https://qingyu.evinf.cn/",
-      // httpUrl: 'http://172.16.8.5:8002/',
-      uploadAvatarUrl: "http://172.16.7.99:8002/common/upload/avatar",
-      uploadImgUrl: "http://172.16.7.99:8002/common/upload/photo",
+      // httpUrl: 'https://qingyu.evinf.cn/',
+      httpUrl: "http://172.16.8.5:8002/",
+      uploadAvatarUrl: "https://qingyu.evinf.cn/common/upload/avatar",
+      uploadImgUrl: "https://qingyu.evinf.cn/common/upload/photo",
       iconObj: {
         "培训": "/static/images/common/training.svg",
         "停车场": "/static/images/common/park.svg",
@@ -12633,12 +12877,12 @@ if (uni.restoreGlobal) {
       // 获取用户信息
       getUserInfo(type = "") {
         return new Promise((resolve, reject) => {
-          let userInfo = uni.getStorageSync("userInfo");
-          userInfo = userInfo ? JSON.parse(userInfo) : "";
-          if (userInfo && !type) {
-            this.globalData.userInfo = userInfo;
-            uni.setStorageSync("userInfo", JSON.stringify(userInfo));
-            resolve(userInfo);
+          let userInfo2 = uni.getStorageSync("userInfo");
+          userInfo2 = userInfo2 ? JSON.parse(userInfo2) : "";
+          if (userInfo2 && !type) {
+            this.globalData.userInfo = userInfo2;
+            uni.setStorageSync("userInfo", JSON.stringify(userInfo2));
+            resolve(userInfo2);
             return;
           }
           uni.request({
@@ -12652,20 +12896,20 @@ if (uni.restoreGlobal) {
             },
             success: (res) => {
               if (res.statusCode == 200) {
-                let userInfo2 = res.data.data;
-                userInfo2.avatar = this.globalData.httpUrl + userInfo2.avatar;
-                this.globalData.userInfo.avatar = userInfo2.avatar;
-                this.globalData.userInfo.birthday = userInfo2.birthday;
-                this.globalData.userInfo.name = userInfo2.name;
-                this.globalData.userInfo.phone = userInfo2.phone;
-                this.globalData.userInfo.sex = userInfo2.sex;
-                this.globalData.userInfo.total_count = userInfo2.total_count;
-                this.globalData.userInfo.total_length = userInfo2.total_length;
-                this.globalData.userInfo.sport_day = userInfo2.sport_day;
-                this.globalData.userInfo.introduce = userInfo2.introduce;
+                let userInfo3 = res.data.data;
+                userInfo3.avatar = this.globalData.httpUrl + userInfo3.avatar;
+                this.globalData.userInfo.avatar = userInfo3.avatar;
+                this.globalData.userInfo.birthday = userInfo3.birthday;
+                this.globalData.userInfo.name = userInfo3.name;
+                this.globalData.userInfo.phone = userInfo3.phone;
+                this.globalData.userInfo.sex = userInfo3.sex;
+                this.globalData.userInfo.total_count = userInfo3.total_count;
+                this.globalData.userInfo.total_length = userInfo3.total_length;
+                this.globalData.userInfo.sport_day = userInfo3.sport_day;
+                this.globalData.userInfo.introduce = userInfo3.introduce;
                 uni.removeStorageSync("userInfo");
                 uni.setStorageSync("userInfo", JSON.stringify(this.globalData.userInfo));
-                resolve(userInfo2);
+                resolve(userInfo3);
               }
             }
           });

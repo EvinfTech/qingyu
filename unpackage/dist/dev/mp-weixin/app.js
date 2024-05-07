@@ -19,14 +19,15 @@ if (!Math) {
   "./pages/reservationInfo/reservationInfo.js";
   "./pages/accountSecurity/accountSecurity.js";
   "./pages/userAgreement/userAgreement.js";
+  "./pages/confirmAppointment/confirmAppointment.js";
 }
 const _sfc_main = {
   globalData: {
     // httpUrl: 'http://172.16.7.99:8002/',
-    httpUrl: "https://qingyu.evinf.cn/",
-    // httpUrl: 'http://172.16.8.5:8002/',
-    uploadAvatarUrl: "http://172.16.7.99:8002/common/upload/avatar",
-    uploadImgUrl: "http://172.16.7.99:8002/common/upload/photo",
+    // httpUrl: 'https://qingyu.evinf.cn/',
+    httpUrl: "http://172.16.8.5:8002/",
+    uploadAvatarUrl: "https://qingyu.evinf.cn/common/upload/avatar",
+    uploadImgUrl: "https://qingyu.evinf.cn/common/upload/photo",
     iconObj: {
       "培训": "/static/images/common/training.svg",
       "停车场": "/static/images/common/park.svg",

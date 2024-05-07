@@ -102,6 +102,9 @@ const _sfc_main = {
         return a - b;
       });
       timeArr.forEach((arrItem) => {
+        if (!enumInfo[arrItem]) {
+          return false;
+        }
         let value = enumInfo[arrItem].split("~")[0];
         let value1 = enumInfo[arrItem].split("~")[1];
         let index1 = arr.findIndex((item) => item.value == value);
@@ -135,6 +138,11 @@ const _sfc_main = {
         }
       }
       this.timeList = arr;
+    },
+    deleteItem(index) {
+      this.siteList[this.choosedList[index].siteIndex].timeList[this.choosedList[index].siteTimeIndex].checked = false;
+      this.totalPrice = this.totalPrice - this.choosedList[index].price / 100;
+      this.choosedList.splice(index, 1);
     },
     initData(date) {
       let siteList = [];
@@ -176,6 +184,7 @@ const _sfc_main = {
       let index = this.dateList.findIndex((item) => item.date == date);
       this.active = index;
     },
+    // 确认预约
     async submitOrder() {
       if (this.choosedList.length == 0) {
         common_vendor.index.showToast({
@@ -188,39 +197,32 @@ const _sfc_main = {
       let userInfo = await this.app.getUserInfo();
       let site_detail = [];
       let site_obj = utils_util.groupBy(this.choosedList, "siteId");
-      console.log(site_obj);
       for (var key in site_obj) {
         let time_enum = [];
+        let money = 0;
+        let site_name = "";
         for (var item of site_obj[key]) {
           time_enum.push(Number(item.enumInfoIndex));
+          money = money + item.price;
+          site_name = item.siteName;
         }
         site_detail.push({
           site_id: Number(key),
-          time_enum
+          time_enum,
+          money,
+          site_name
         });
       }
-      utils_request.request({
-        url: "wx/add/order",
-        method: "POST",
-        data: {
-          user_ouid: userInfo.ouid,
-          //用户ouid
-          site_detail,
-          gmt_site_use: this.choosedList[0].date
-        }
-      }).then((res) => {
-        common_vendor.index.showToast({
-          title: "提交成功",
-          icon: "none",
-          duration: 2e3,
-          success: () => {
-            setTimeout(() => {
-              common_vendor.index.redirectTo({
-                url: "/pages/orderDetail/orderDetail?type=add&order_no=" + res.data.order
-              });
-            }, 2e3);
-          }
-        });
+      common_vendor.index.setStorageSync("orderInfo", JSON.stringify({
+        user_ouid: userInfo.ouid,
+        //用户ouid
+        site_detail,
+        gmt_site_use: this.choosedList[0].date,
+        site_obj,
+        totalPrice: this.totalPrice
+      }));
+      common_vendor.index.navigateTo({
+        url: "/pages/confirmAppointment/confirmAppointment"
       });
     },
     // 设置预约场地列表
@@ -337,19 +339,12 @@ const _sfc_main = {
         this.choosedList = choosedList;
         this.totalPrice = this.totalPrice + objItem.price / 100;
       } else {
-        let index = this.choosedList.findIndex((con) => con.startTime == this.timeList[data.j]);
+        let index = this.choosedList.findIndex((con) => con.startTime == this.timeList[data.j].value);
         let dataList = this.choosedList;
         dataList.splice(index, 1);
         this.choosedList = dataList;
         this.totalPrice = this.totalPrice - data.item.price / 100;
       }
-    },
-    clearChoosedList() {
-      this.choosedList.forEach((con) => {
-        this.siteList[con.siteIndex].timeList[con.siteTimeIndex].checked = false;
-      });
-      this.choosedList = [];
-      this.totalPrice = 0;
     },
     et7Days() {
       let dateList = [];
@@ -432,23 +427,26 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
       };
     }),
     i: common_vendor.s("height: " + ($data.centerHeight + "px") + ";"),
-    j: $data.totalPrice > 0
-  }, $data.totalPrice > 0 ? {
-    k: common_vendor.o((...args) => $options.clearChoosedList && $options.clearChoosedList(...args))
-  } : {}, {
-    l: $data.choosedList.length == 0
+    j: $data.choosedList.length == 0
   }, $data.choosedList.length == 0 ? {} : {
-    m: common_vendor.f($data.choosedList, (item, index, i0) => {
+    k: common_vendor.f($data.choosedList, (item, index, i0) => {
       return {
-        a: common_vendor.t(item.startTime),
-        b: common_vendor.t(item.endTime),
-        c: common_vendor.t(item.siteName),
-        d: index
+        a: "71ac0ae8-2-" + i0,
+        b: common_vendor.o(($event) => $options.deleteItem(index), index),
+        c: common_vendor.t(item.startTime),
+        d: common_vendor.t(item.endTime),
+        e: common_vendor.t(item.siteName),
+        f: index
       };
+    }),
+    l: common_vendor.p({
+      name: "close",
+      color: "#000",
+      size: "14"
     })
   }, {
-    n: common_vendor.t($data.totalPrice),
-    o: common_vendor.o((...args) => $options.submitOrder && $options.submitOrder(...args))
+    m: common_vendor.t($data.totalPrice),
+    n: common_vendor.o((...args) => $options.submitOrder && $options.submitOrder(...args))
   });
 }
 const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-71ac0ae8"], ["__file", "C:/project/轻羽项目/qingyu-client/pages/reservationDetail/reservationDetail.vue"]]);

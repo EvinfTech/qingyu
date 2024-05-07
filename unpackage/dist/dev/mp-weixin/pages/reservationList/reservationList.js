@@ -88,8 +88,9 @@ const _sfc_main = {
         ;
     },
     calculate() {
-      var screenHeight = common_vendor.index.getSystemInfoSync().windowHeight;
-      this.scrollViewHeight = screenHeight - 88;
+      let sysInfo = common_vendor.index.getSystemInfoSync();
+      var screenHeight = sysInfo.windowHeight;
+      this.scrollViewHeight = screenHeight - 88 - sysInfo.statusBarHeight;
     },
     async initData() {
       let userInfo = await this.app.getUserInfo();
@@ -120,6 +121,7 @@ const _sfc_main = {
           con.siteNum = siteNum;
           con.hour = hour;
           con.timeList = timeList;
+          con.shop_avatar = this.app.globalData.httpUrl + con.shop_avatar;
         });
         this.reservationList = reservationList;
         let waitUsedList = this.reservationList.filter((item) => item.status == "Y");

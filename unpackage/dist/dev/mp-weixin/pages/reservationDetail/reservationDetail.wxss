@@ -73,8 +73,8 @@
 		color: #ff5634;
 }
 .choosedListBox.data-v-71ac0ae8 {
-		margin-top: 48rpx;
-		height: 100rpx;
+		margin-top: 40rpx;
+		height: auto;
 }
 .submitBtn.data-v-71ac0ae8 {
 		width: 200rpx;
@@ -95,8 +95,22 @@
 		opacity: 1;
 		box-sizing: border-box;
 		border: 1px solid #0077ff;
-		margin-right: 10rpx;
+		margin-right: 20rpx;
 		flex-shrink: 0;
+		position: relative;
+		margin-top: 10px;
+}
+.closeBox.data-v-71ac0ae8 {
+		position: absolute;
+		width: 20px;
+		height: 20px;
+		border-radius: 50%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-color: #d8d8d8;
+		right: -10px;
+		top: -10px;
 }
 .itemTop.data-v-71ac0ae8 {
 		height: 50rpx;

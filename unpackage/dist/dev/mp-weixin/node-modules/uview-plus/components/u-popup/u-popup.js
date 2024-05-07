@@ -2,7 +2,7 @@
 const common_vendor = require("../../../../common/vendor.js");
 const _sfc_main = {
   name: "u-popup",
-  mixins: [common_vendor.mpMixin, common_vendor.mixin, common_vendor.props$21],
+  mixins: [common_vendor.mpMixin, common_vendor.mixin, common_vendor.props$20],
   data() {
     return {
       overlayDuration: this.duration + 50

@@ -10,7 +10,7 @@ function times(n, iteratee) {
 }
 const _sfc_main = {
   name: "datetime-picker",
-  mixins: [common_vendor.mpMixin, common_vendor.mixin, common_vendor.props$12],
+  mixins: [common_vendor.mpMixin, common_vendor.mixin, common_vendor.props$13],
   data() {
     return {
       columns: [],

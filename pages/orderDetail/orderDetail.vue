@@ -7,9 +7,10 @@
 				<up-icon name="arrow-left" @click="app.toBack"></up-icon>
 			</template>
 		</u-navbar>
-		<scroll-view :scroll-y="true" class="w-full" :style="'height: ' + (scrollViewHeight + 'px') + ';'">
-			<view class="payStateBox flex align-center justify-center"
-				v-if="detailType == 'detail' && payState == 'wait'">
+		<u-modal :show="show" title="提示" content="确定要取消此订单？" :showCancelButton="true" @confirm="confirm"
+			@cancel="cancel"></u-modal>
+		<scroll-view :scroll-y="true" class="w-full" :style="'height: ' + (scrollViewHeight + 'px') + ';'" style="padding-top: 14rpx;">
+			<view class="payStateBox flex align-center justify-center" v-if="detailType == 'detail' && payState == 'N'">
 				<image src="/static/images/order/timeLine.svg" mode=""
 					style="width: 94rpx; height: 94rpx; margin-right: 20rpx" />
 				<view class="flex flex-direction align-start">
@@ -17,8 +18,8 @@
 					<view class="waitPayTitle">订单已生成，请在15分钟之内支付完成</view>
 				</view>
 			</view>
-			<view class="codeBox flex flex-direction align-center" v-if="payState == 'payed' || payState == 'justPayed'"
-				:style="'height: ' + (payState == 'payed' ? '400rpx' : '484rpx') + ';'">
+			<!-- <view class="codeBox flex flex-direction align-center" v-if="payState == 'Y'"
+				:style="'height: ' + (payState == 'Y' ? '400rpx' : '484rpx') + ';'">
 				<view class="paySuccessText" v-if="payState == 'justPayed'">支付成功</view>
 				<view class="codeImgBox">
 					<image src="/static/images/order/codeDemo.png" style="width: 296rpx; height: 296rpx" mode="" />
@@ -27,7 +28,7 @@
 					<text class="codeLabel" style="color: #333333 !important ">验证码:</text>
 					{{ code }}
 				</view>
-			</view>
+			</view> -->
 			<view class="topBox">
 				<view class="topName">
 					{{ gymnasiumInfo.name }}
@@ -87,15 +88,14 @@
 						<text>{{ orderTime }}</text>
 					</view>
 				</view>
-				<view class="flex align-center" style="margin-top: 12rpx" v-if="payState == 'payed'">
+				<view class="flex align-center" style="margin-top: 12rpx" v-if="payState == 'Y'">
 					<view class="leftLabel">支付时间：</view>
 					<view class="leftLabel flex align-center">
-						<text>{{ orderTime }}</text>
+						<text>{{ payTime }}</text>
 					</view>
 				</view>
 			</view>
-			<view class="flex align-center justify-between payMethodBox"
-				v-if="payState != 'payed' && payState != 'justPayed'">
+			<view class="flex align-center justify-between payMethodBox" v-if="payState == 'N'">
 				<view class="methodText">支付方式</view>
 				<view class="flex align-center">
 					<image src="/static/images/order/wechatIcon.svg" mode=""
@@ -103,7 +103,7 @@
 					<text class="wechatText">微信支付</text>
 				</view>
 			</view>
-			<view class="bottomBox w-full" v-if="payState != 'payed' && payState != 'justPayed'">
+			<view class="bottomBox w-full">
 				<view class="flex align-center justify-between h-full">
 					<view class="flex align-center">
 						<view class="totalText">总计：</view>
@@ -113,14 +113,14 @@
 						</view>
 					</view>
 					<view class="flex align-center justify-end">
-						<view class="cancelBtn" @tap="cancelOrder" v-if="payState == 'N'">取消订单</view>
-						<view class="payBtn" v-if="payState == 'N'">确认支付</view>
+						<view class="cancelBtn" @tap="cancelOrder" v-if="payState == 'N'||payState == 'Y'">取消订单</view>
+						<view class="useBtn" v-if="payState == 'Y'" @click="toUse">去使用</view>
+						<view class="payBtn" v-if="payState == 'N'" @click="toPay">确认支付</view>
 						<view v-else-if="payState == 'C'" class="grayText" style="font-size: 32rpx">已取消</view>
 					</view>
 				</view>
 			</view>
 		</scroll-view>
-		<van-dialog id="van-dialog" />
 	</view>
 </template>
 
@@ -133,39 +133,25 @@
 	export default ({
 		data() {
 			return {
-				app:getApp(),
+				app: getApp(),
 				order_no: '',
 				detailType: '',
 				//订单详情类型
 				gymnasiumInfo: {
-					name: '我看看怎么个事',
-					phone: '0532-8186886',
-					location: '青岛市黄岛区金石国际北楼1611',
+					name: '',
+					phone: '',
+					location: '',
 					latitude: '',
 					longitude: ''
 				},
-				sessionList: [{
-						siteNo: 1,
-						date: '2023-08-08',
-						timeRange: '11:00-12:00',
-						hour: 3,
-						price: 300
-					},
-					{
-						siteNo: 3,
-						date: '2023-08-08',
-						timeRange: '11:00-12:00',
-						hour: 3,
-						price: 300
-					}
-				],
-				orderTime: '2023-08-08 00:12:56',
+				show: false,
+				sessionList: [],
+				orderTime: '',
 				//下单时间
-				payTime: '2023-08-08 00:12:56',
-				totalPrice: 500,
+				payTime: '',
+				totalPrice: 0,
 				//总价
 				payState: '',
-				//支付状态 wait 等待支付  payed 已支付 justPayed 刚刚支付
 				code: 812356,
 				//验证码
 				//scrollview高度
@@ -179,9 +165,10 @@
 		/**
 		 * 生命周期函数--监听页面加载
 		 */
-		onLoad(options ) {
-			this.order_no = options.order_no
-			this.$nextTick(()=>{
+		onLoad(options) {
+			this.order_no = options.order_no;
+			this.detailType = options.type;
+			this.$nextTick(() => {
 				this.getNavBarHeight();
 			})
 			this.initData();
@@ -215,21 +202,21 @@
 		 */
 		onShareAppMessage() {},
 		methods: {
-			initData() {
-				let enumInfo = this.app.globalData.enumInfo;
+			async initData() {
+				let enumInfo = await this.app.getEnum();
 				request({
 					url: 'wx/get/order/detail',
 					method: 'POST',
 					data: {
 						order_no: this.order_no
 					}
-				}).then((res ) => {
+				}).then((res) => {
 					let data = res.data;
 					let site_detail = data.site_detail ? data.site_detail : [];
 					let sessionList = [];
-					site_detail.forEach((con ) => {
+					site_detail.forEach((con) => {
 						let timeList = [];
-						con.time_enum.forEach((content ) => {
+						con.time_enum.forEach((content) => {
 							timeList.push({
 								date: data.gmt_create,
 								timeRange: enumInfo[content]
@@ -263,17 +250,13 @@
 				query
 					.select('.nav-bar')
 					.boundingClientRect((navRect) => {
-						if (this.payState != 'payed' && this.payState != 'justPayed') {
-							let query2 = uni.createSelectorQuery();
-							query2
-								.select('.bottomBox')
-								.boundingClientRect((bottomRect) => {
-									that.scrollViewHeight = screenHeight - navRect.height - bottomRect.height
-								})
-								.exec();
-						} else {
-							that.scrollViewHeight = screenHeight - navRect.height
-						}
+						let query2 = uni.createSelectorQuery();
+						query2
+							.select('.bottomBox')
+							.boundingClientRect((bottomRect) => {
+								that.scrollViewHeight = screenHeight - navRect.height - bottomRect.height
+							})
+							.exec();
 					})
 					.exec();
 			},
@@ -301,38 +284,46 @@
 					data: this.order_no
 				});
 			},
-
-			cancelOrder() {
-				Dialog.confirm({
-						title: '取消订单',
-						message: '确定要取消此订单?'
-					})
-					.then(() => {
-						request({
-							url: 'wx/cancel/order',
-							method: 'POST',
-							data: {
-								order_no: this.order_no
-							}
-						}).then(() => {
-							this.payState = 'C'
-							uni.showToast({
-								title: '取消成功',
-								icon: 'none',
-								duration: 2000,
-								success: () => {
-									setTimeout(() => {
-										this.initData();
-									}, 2000);
-								}
-							});
-						});
-					})
-					.catch(() => {
-						// on cancel
-					});
+			cancel() {
+				this.show = false
 			},
+			confirm() {
+				request({
+					url: 'wx/cancel/order',
+					method: 'POST',
+					data: {
+						order_no: this.order_no
+					}
+				}).then(() => {
+					this.payState = 'C'
+					uni.showToast({
+						title: '取消成功',
+						icon: 'none',
+						duration: 2000,
+						success: () => {
+							this.show = false
+							const eventChannel = this.getOpenerEventChannel();
+							eventChannel.emit('toCancelOrder',this.order_no)
+							setTimeout(() => {
+								this.initData();
+							}, 2000);
+						}
+					});
+				});
+			},
+			cancelOrder() {
+				this.show = true;
+			},
+			// 去支付
+			toPay() {
 
+			},
+			// 去使用
+			toUse() {
+				uni.navigateTo({
+					url: '/pages/reservationInfo/reservationInfo?order_no=' + this.order_no
+				})
+			},
 			onClickLeft() {
 				uni.navigateBack();
 			}
@@ -399,7 +390,6 @@
 	}
 
 	.topBox {
-		margin-top: 14rpx;
 		padding: 20rpx;
 		background-color: #fff;
 	}
@@ -599,5 +589,19 @@
 		justify-content: center;
 		color: #b1b4c3;
 		margin-right: 8rpx;
+	}
+
+	.useBtn {
+		width: 200rpx;
+		height: 70rpx;
+		border-radius: 40rpx;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-color: #0077ff;
+		font-family: Alibaba PuHuiTi 2;
+		font-size: 32rpx;
+		font-weight: 500;
+		color: #ffffff;
 	}
 </style>

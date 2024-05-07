@@ -10,15 +10,18 @@
 			@cancel="cancel"></u-modal>
 		<u-tabs class="tabs" :list="titleList" @change="onChange" lineColor="#0077FF" lineWidth="40"></u-tabs>
 		<scroll-view :scroll-y="true" v-if="active == 0" class="orderList" :class="orderList.length == 0?'emptyFlex':''"
-			:style="'height: ' + (scrollViewHeight + 'px') + ';'">
+			:style="'height: ' + (scrollViewHeight + 'px') + ';'" refresher-enabled :refresher-triggered="triggered"
+			@refresherrefresh="onRefresh" @scrolltolower="lower">
 			<u-empty text="暂无订单" v-if="orderList.length == 0" />
 			<view v-else>
-				<view class="orderItem" :data-item="item" v-for="(item, index1) in orderList" :key="index1">
+				<view class="orderItem" :data-item="item" v-for="(item, index1) in orderList" :key="index1"
+					@tap="toDetail">
 					<view class="flex align-center justify-between">
 						<view class="orderNoText">订单编号： {{ item.order_no }}</view>
 						<view v-if="item.status == 'N'" class="redText">待支付</view>
 						<view v-else-if="item.status == 'Y'" class="blueText">待使用</view>
 						<view v-else-if="item.status == 'C'" class="grayText">已取消</view>
+						<view v-else-if="item.status == 'U'" class="blueText">已使用</view>
 						<!-- <view wx:elif="{{item.status == 'finished' || item.status == 'refunded'}}" class="grayText">
                             {{item.status == 'finished'?'已完成':'已退款'}}
                         </view> -->
@@ -39,16 +42,16 @@
 						<view class="priceText">￥ {{ item.money/100 }}</view>
 					</view>
 
-					<view class="w-full flex align-center" style="justify-content: flex-end" v-if="item.status == 'C'">
-						<view class="borderBtn" @tap="toDetail" :data-item="item">查看详情</view>
+					<view class="w-full flex align-center" style="justify-content: flex-end" v-if="item.status == 'C'||item.status == 'U'">
+						<view class="borderBtn" @tap.stop="toDetail" :data-item="item">查看详情</view>
 					</view>
 					<view class="w-full flex align-center" style="justify-content: flex-end" v-if="item.status == 'N'">
-						<view class="borderBtn" @tap="toCancel" :data-item="item">取消订单</view>
-						<view class="payBtn" @tap="toDetail" :data-item="item">去支付</view>
+						<view class="borderBtn" @tap.stop="toCancel" :data-item="item">取消订单</view>
+						<view class="payBtn" @tap.stop="toDetail" :data-item="item">去支付</view>
 					</view>
 					<view class="w-full flex align-center" style="justify-content: flex-end" v-if="item.status == 'Y'">
-						<view class="borderBtn" @tap="toCancel" :data-item="item">取消订单</view>
-						<view class="useBtn" @tap="toDetail" :data-item="item">去使用</view>
+						<view class="borderBtn" @tap.stop="toCancel" :data-item="item">取消订单</view>
+						<view class="useBtn" @tap.stop="toUse" :data-item="item">去使用</view>
 					</view>
 
 					<view class="w-full flex align-center" style="justify-content: flex-end"
@@ -60,17 +63,16 @@
 		</scroll-view>
 
 		<scroll-view :scroll-y="true" v-else-if="active == 1" class="orderList"
-			:style="'height: ' + (scrollViewHeight + 'px') + ';'" :class="waitPayedList.length == 0?'emptyFlex':''">
+			:style="'height: ' + (scrollViewHeight + 'px') + ';'" :class="waitPayedList.length == 0?'emptyFlex':''"
+			:refresher-triggered="triggered1" refresher-enabled
+			@refresherrefresh="onRefresh" @scrolltolower="lower">
 			<u-empty text="暂无待支付订单" v-if="waitPayedList.length == 0" />
 			<view v-else>
-				<view class="orderItem" :data-item="item" v-for="(item, index1) in waitPayedList" :key="index1">
+				<view class="orderItem" :data-item="item" v-for="(item, index1) in waitPayedList" :key="index1"
+					@tap="toDetail">
 					<view class="flex align-center justify-between">
 						<view class="orderNoText">订单编号： {{ item.order_no }}</view>
-						<view v-if="item.status == 'N'" class="redText">待支付</view>
-						<view v-else-if="item.status == 'Y'" class="blueText">待使用</view>
-						<!-- <view wx:elif="{{item.status == 'finished' || item.status == 'refunded'}}" class="grayText">
-                            {{item.status == 'finished'?'已完成':'已退款'}}
-                        </view> -->
+						<view class="redText">待支付</view>
 					</view>
 
 					<view class="flex align-center justify-between">
@@ -90,13 +92,13 @@
 					</view>
 
 					<view class="w-full flex align-center" style="justify-content: flex-end" v-if="item.status == 'N'">
-						<view class="borderBtn" @tap="toCancel" :data-item="item">取消订单</view>
-						<view class="payBtn" @tap="toDetail" :data-item="item">去支付</view>
+						<view class="borderBtn" @tap.stop="toCancel" :data-item="item">取消订单</view>
+						<view class="payBtn" @tap.stop="toDetail" :data-item="item">去支付</view>
 					</view>
 
 					<view class="w-full flex align-center" style="justify-content: flex-end" v-if="item.status == 'Y'">
-						<view class="borderBtn" @tap="toCancel" :data-item="item">取消订单</view>
-						<view class="useBtn" @tap="toDetail" :data-item="item">去使用</view>
+						<view class="borderBtn" @tap.stop="toCancel" :data-item="item">取消订单</view>
+						<view class="useBtn" @tap.stop="toUse" :data-item="item">去使用</view>
 					</view>
 
 					<view class="w-full flex align-center" style="justify-content: flex-end"
@@ -108,20 +110,17 @@
 		</scroll-view>
 
 		<scroll-view :scroll-y="true" v-else class="orderList" :style="'height: ' + (scrollViewHeight + 'px') + ';'"
-			:class="waitUsedList.length == 0?'emptyFlex':''">
+			:class="waitUsedList.length == 0?'emptyFlex':''"
+			:refresher-triggered="triggered2" refresher-enabled
+			@refresherrefresh="onRefresh" @scrolltolower="lower">
 			<u-empty text="暂无待使用订单" v-if="waitUsedList.length == 0" />
 			<view v-else>
 				<view class="orderItem" @tap="toDetail" :data-item="item" v-for="(item, index1) in waitUsedList"
 					:key="index1">
 					<view class="flex align-center justify-between">
 						<view class="orderNoText">订单编号： {{ item.order_no }}</view>
-						<view v-if="item.status == 'N'" class="redText">待支付</view>
-						<view v-else-if="item.status == 'Y'" class="blueText">待使用</view>
-						<view v-else-if="item.status == 'finished' || item.status == 'refunded'" class="grayText">
-							{{ item.status == 'finished' ? '已完成' : '已退款' }}
-						</view>
+						<view  class="blueText">待使用</view>
 					</view>
-
 					<view class="flex align-center justify-between">
 						<view class="flex align-center">
 							<view class="leftPhoto">
@@ -139,13 +138,13 @@
 					</view>
 
 					<view class="w-full flex align-center" style="justify-content: flex-end" v-if="item.status == 'N'">
-						<view class="borderBtn" @tap="toCancel" :data-item="item">取消订单</view>
+						<view class="borderBtn" @tap.stop="toCancel" :data-item="item">取消订单</view>
 						<view class="payBtn">去支付</view>
 					</view>
 
 					<view class="w-full flex align-center" style="justify-content: flex-end" v-if="item.status == 'Y'">
-						<view class="borderBtn" @tap="toCancel" :data-item="item">取消订单</view>
-						<view class="useBtn" @tap="toDetail" :data-item="item">去使用</view>
+						<view class="borderBtn" @tap.stop="toCancel" :data-item="item">取消订单</view>
+						<view class="useBtn" @tap.stop="toUse" :data-item="item">去使用</view>
 					</view>
 
 					<view class="w-full flex align-center" style="justify-content: flex-end"
@@ -182,8 +181,19 @@
 				waitUsedList: [],
 				order_no: '',
 				orderList: [],
-
-				scrollViewHeight: ''
+				scrollViewHeight: '',
+				searchInfo: {
+					pageObj: {
+						firstPage: 1,
+						secondPage: 1,
+						thirdPage: 1
+					},
+					size: 10,
+					status: ''
+				},
+				triggered: false,
+				triggered1: false,
+				triggered2: false
 			};
 		},
 		/**
@@ -231,39 +241,54 @@
 			},
 
 			onChange(e) {
-				this.active = e.index
-				if (this.active == 0) {
-					// this.setData({
-					//     processedList:this.data.orderList
-					// })
-				} else if (this.active == 1) {
-					// let arr = this.data.orderList.filter(con => con.state == 'wait')
-					// this.setData({
-					//     processedList:arr
-					// })
-				} else {
-					// let arr = this.data.orderList.filter(con => con.state == 'payed')
-					// this.setData({
-					//     processedList:arr
-					// })
+				this.active = e.index;
+				switch (e.index) {
+					case 0:
+						this.searchInfo.status = ''
+						break;
+					case 1:
+						this.searchInfo.status = 'N'
+						if(this.waitPayedList.length==0){
+							this.initData()
+						}
+						break;
+					case 2:
+						this.searchInfo.status = 'Y'
+						if(this.waitUsedList.length==0){
+							this.initData()
+						}
+						break;
 				}
 			},
 
 			calculate() {
-				var screenHeight = uni.getSystemInfoSync().windowHeight;
-				let that = this;
+				let sysInfo = uni.getSystemInfoSync()
+				var screenHeight = sysInfo.windowHeight;
 				// 获取navbar的高度
-				that.scrollViewHeight = screenHeight - 88
+				// #ifdef H5
+				this.scrollViewHeight = screenHeight - 88
+				// #endif
+				// #ifdef MP-WEIXIN || APP-PLUS
+				this.scrollViewHeight = screenHeight - 88 - sysInfo.statusBarHeight
+				// #endif
 			},
 			toDetail(e) {
 				let order_no = e.currentTarget.dataset.item.order_no;
 				uni.navigateTo({
-					url: '/pages/orderDetail/orderDetail?order_no=' + order_no
+					url: '/pages/orderDetail/orderDetail?order_no=' + order_no,
+					events:{
+						toCancelOrder:(order_no)=>{
+							console.log(999,order_no)
+							this.dealWithCancel(order_no)
+						}
+					}
 				});
 			},
+			// 取消
 			cancel() {
 				this.show = false
 			},
+			// 确定取消
 			confirm() {
 				request({
 					url: 'wx/cancel/order',
@@ -277,10 +302,8 @@
 						icon: 'none',
 						duration: 2000,
 						success: () => {
+							this.dealWithCancel(this.order_no)
 							this.show = false
-							setTimeout(() => {
-								this.initData();
-							}, 2000);
 						}
 					});
 				});
@@ -290,17 +313,27 @@
 				this.order_no = e.currentTarget.dataset.item.order_no
 
 			},
-
-			async initData() {
+			// 去使用
+			toUse(e) {
+				uni.navigateTo({
+					url: '/pages/reservationInfo/reservationInfo?order_no=' + e.currentTarget.dataset.item
+						.order_no
+				})
+			},
+			// 初始化数据
+			async initData(type = '') {
 				let userInfo = await this.app.getUserInfo();
 				request({
 					url: 'wx/get/order/list',
 					method: 'POST',
 					data: {
-						user_ouid: userInfo.ouid
+						user_ouid: userInfo.ouid,
+						page: this.active==0?this.searchInfo.pageObj.firstPage:(this.active==1?this.searchInfo.pageObj.secondPage:this.searchInfo.pageObj.thirdPage),
+						size: this.searchInfo.size,
+						status: this.searchInfo.status
 					}
 				}).then((res) => {
-					let orderList = res.data.reverse();
+					let orderList = res.data.list ? res.data.list : [];
 					orderList.forEach((con) => {
 						con.siteNum = con.site_detail ? con.site_detail.length : 0;
 						let hour = 0;
@@ -308,14 +341,88 @@
 						con.site_detail.forEach((content) => {
 							hour = hour + content.time_enum.length;
 						});
+						con.shop_avatar = this.app.globalData.httpUrl + con.shop_avatar
 						con.hour = hour;
 					});
-					this.orderList = orderList
-					let waitPayedList = this.orderList.filter((item) => item.status == 'N');
-					let waitUsedList = this.orderList.filter((item) => item.status == 'Y');
-					this.waitPayedList = waitPayedList
-					this.waitUsedList = waitUsedList
+					if (orderList.length < 10 && type == 'lower') {
+						uni.showToast({
+							icon: 'none',
+							title: '没有更多数据了'
+						})
+					}
+					switch (this.active) {
+						case 0:
+							this.orderList = (type == 'refresh' ? orderList : this.orderList.concat(
+								orderList))
+							this.triggered = false
+							break;
+						case 1:
+							this.waitPayedList = (type == 'refresh' ? orderList : this.waitPayedList
+								.concat(orderList))
+							this.triggered1 = false
+							break;
+						case 2:
+							this.waitUsedList = (type == 'refresh' ? orderList : this.waitUsedList.concat(
+								orderList))
+							this.triggered2 = false
+							break;
+					}
+
 				});
+			},
+			// 下拉刷新
+			onRefresh() {
+				switch (this.active) {
+					case 0:
+						this.searchInfo.pageObj.firstPage = 1;
+						this.triggered = true
+						break;
+					case 1:
+						this.searchInfo.pageObj.secondPage = 1;
+						this.triggered1 = true
+						break;
+					case 2:
+						this.searchInfo.pageObj.thirdPage = 1;
+						this.triggered2 = true
+						break;
+				}
+				this.initData('refresh');
+			},
+			// 上拉加载
+			lower() {
+				switch (this.active) {
+					case 0:
+						this.searchInfo.pageObj.firstPage = this.searchInfo.pageObj.firstPage + 1;
+						break;
+					case 1:
+						this.searchInfo.pageObj.secondPage = this.searchInfo.pageObj.secondPage + 1;
+						break;
+					case 2:
+						this.searchInfo.pageObj.thirdPage = this.searchInfo.pageObj.thirdPage + 1;
+						break;
+				}
+				this.initData('lower')
+			},
+			// 处理取消订单
+			dealWithCancel(order_no){
+				let index = this.orderList.findIndex((item)=>{
+					return item.order_no == this.order_no
+				})
+				if(index>-1){
+					this.orderList[index].status = 'C'
+				}
+				let index1 = this.waitPayedList.findIndex((item)=>{
+					return item.order_no == this.order_no
+				})
+				if(index1>-1){
+					this.waitPayedList[index].status = 'C'
+				}
+				let index2 = this.waitUsedList.findIndex((item)=>{
+					return item.order_no == this.order_no
+				})
+				if(index2>-1){
+					this.waitUsedList[index].status = 'C'
+				}
 			}
 		}
 	});

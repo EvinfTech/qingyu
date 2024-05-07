@@ -233,9 +233,15 @@
 			},
 
 			calculate() {
-				var screenHeight = uni.getSystemInfoSync().windowHeight;
+				let sysInfo = uni.getSystemInfoSync()
+				var screenHeight = sysInfo.windowHeight;
 				// 获取navbar的高度
+				// #ifdef H5
 				this.scrollViewHeight = screenHeight - 88
+				// #endif
+				// #ifdef MP-WEIXIN || APP-PLUS
+				this.scrollViewHeight = screenHeight - 88 - sysInfo.statusBarHeight
+				// #endif
 			},
 
 			async initData() {
@@ -267,6 +273,7 @@
 						con.siteNum = siteNum;
 						con.hour = hour;
 						con.timeList = timeList;
+						con.shop_avatar = this.app.globalData.httpUrl+con.shop_avatar
 					});
 					this.reservationList = reservationList
 					let waitUsedList = this.reservationList.filter((item) => item.status == 'Y');
