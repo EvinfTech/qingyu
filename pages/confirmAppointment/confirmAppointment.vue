@@ -161,7 +161,7 @@
 						gmt_site_use: this.orderInfo.gmt_site_use,
 						reserve_name:this.userName,
 						reserve_phone:this.phone,
-						remake:this.remark
+						remark:this.remark
 					}
 				}).then((res) => {
 					uni.showToast({
