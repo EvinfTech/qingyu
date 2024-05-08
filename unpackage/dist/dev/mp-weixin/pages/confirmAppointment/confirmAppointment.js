@@ -102,7 +102,7 @@ const _sfc_main = {
             setTimeout(() => {
               common_vendor.index.removeStorageSync("orderInfo");
               common_vendor.index.redirectTo({
-                url: "/pages/orderDetail/orderDetail?order_no=" + this.order_no
+                url: "/pages/orderDetail/orderDetail?order_no=" + this.order_no + "&type=new"
               });
             }, 2e3);
           }
@@ -113,7 +113,7 @@ const _sfc_main = {
       this.show = false;
       common_vendor.index.removeStorageSync("orderInfo");
       common_vendor.index.redirectTo({
-        url: "/pages/orderDetail/orderDetail?order_no=" + this.order_no
+        url: "/pages/orderDetail/orderDetail?order_no=" + this.order_no + "&type=new"
       });
     }
   }

@@ -102,9 +102,6 @@ const _sfc_main = {
         return a - b;
       });
       timeArr.forEach((arrItem) => {
-        if (!enumInfo[arrItem]) {
-          return false;
-        }
         let value = enumInfo[arrItem].split("~")[0];
         let value1 = enumInfo[arrItem].split("~")[1];
         let index1 = arr.findIndex((item) => item.value == value);

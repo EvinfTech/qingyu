@@ -111,9 +111,8 @@ const _sfc_main = {
       common_vendor.index.navigateTo({
         url: "/pages/orderDetail/orderDetail?order_no=" + order_no,
         events: {
-          toCancelOrder: (order_no2) => {
-            console.log(999, order_no2);
-            this.dealWithCancel(order_no2);
+          toChangeOrderState: (order_no2, type) => {
+            this.dealWithOrderState(order_no2, type);
           }
         }
       });
@@ -136,7 +135,7 @@ const _sfc_main = {
           icon: "none",
           duration: 2e3,
           success: () => {
-            this.dealWithCancel(this.order_no);
+            this.dealWithOrderState(this.order_no, "C");
             this.show = false;
           }
         });
@@ -145,6 +144,25 @@ const _sfc_main = {
     toCancel(e) {
       this.show = true;
       this.order_no = e.currentTarget.dataset.item.order_no;
+    },
+    // 去支付
+    toPay(e) {
+      utils_request.request({
+        url: "wx/pay",
+        method: "POST",
+        data: {
+          order_no: e.currentTarget.dataset.item.order_no
+        }
+      }).then((res) => {
+        common_vendor.index.showToast({
+          title: "支付成功",
+          icon: "none",
+          duration: 2e3,
+          success: () => {
+            this.dealWithOrderState(e.currentTarget.dataset.item.order_no, "Y");
+          }
+        });
+      });
     },
     // 去使用
     toUse(e) {
@@ -235,25 +253,71 @@ const _sfc_main = {
       }
       this.initData("lower");
     },
-    // 处理取消订单
-    dealWithCancel(order_no) {
-      let index = this.orderList.findIndex((item) => {
-        return item.order_no == this.order_no;
-      });
-      if (index > -1) {
-        this.orderList[index].status = "C";
-      }
-      let index1 = this.waitPayedList.findIndex((item) => {
-        return item.order_no == this.order_no;
-      });
-      if (index1 > -1) {
-        this.waitPayedList[index].status = "C";
-      }
-      let index2 = this.waitUsedList.findIndex((item) => {
-        return item.order_no == this.order_no;
-      });
-      if (index2 > -1) {
-        this.waitUsedList[index].status = "C";
+    // 处理订单  取消 或者 支付成功
+    dealWithOrderState(order_no, type) {
+      if (this.active == 0) {
+        let index = this.orderList.findIndex((item) => {
+          return item.order_no == order_no;
+        });
+        if (index > -1) {
+          if (type == "Y") {
+            this.waitUsedList.unshift(this.orderList[index]);
+            let resI = this.waitPayedList.findIndex((item) => {
+              return item.order_no == order_no;
+            });
+            if (resI > -1) {
+              this.waitPayedList.splice(resI, 1);
+            }
+          } else {
+            if (this.orderList[index].status == "N") {
+              let resI = this.waitPayedList.findIndex((item) => {
+                return item.order_no == order_no;
+              });
+              if (resI > -1) {
+                this.waitPayedList.splice(resI, 1);
+              }
+            } else if (this.orderList[index].status == "Y") {
+              let resI1 = this.waitUsedList.findIndex((item) => {
+                return item.order_no == order_no;
+              });
+              if (resI1 > -1) {
+                this.waitPayedList.splice(resI1, 1);
+              }
+            }
+          }
+          this.orderList[index].status = type;
+        }
+      } else if (this.active == 1) {
+        let index1 = this.waitPayedList.findIndex((item) => {
+          return item.order_no == order_no;
+        });
+        if (index1 > -1) {
+          this.waitPayedList[index1].status = type;
+          let deleteItem = this.waitPayedList.splice(index1, 1);
+          if (type == "Y") {
+            this.waitUsedList.unshift(deleteItem[0]);
+          } else {
+            let resI = this.orderList.findIndex((item) => {
+              return item.order_no == order_no;
+            });
+            if (resI > -1) {
+              this.orderList[resI].status = "C";
+            }
+          }
+        }
+      } else {
+        let index2 = this.waitUsedList.findIndex((item) => {
+          return item.order_no == order_no;
+        });
+        if (index2 > -1) {
+          this.waitUsedList.splice(index2, 1);
+          let resI = this.orderList.findIndex((item) => {
+            return item.order_no == order_no;
+          });
+          if (resI > -1) {
+            this.orderList[resI].status = "C";
+          }
+        }
       }
     }
   }
@@ -331,7 +395,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
       }, item.status == "N" ? {
         o: common_vendor.o((...args) => $options.toCancel && $options.toCancel(...args), index1),
         p: item,
-        q: common_vendor.o((...args) => $options.toDetail && $options.toDetail(...args), index1),
+        q: common_vendor.o((...args) => $options.toPay && $options.toPay(...args), index1),
         r: item
       } : {}, {
         s: item.status == "Y"
@@ -373,7 +437,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
       }, item.status == "N" ? {
         h: common_vendor.o((...args) => $options.toCancel && $options.toCancel(...args), index1),
         i: item,
-        j: common_vendor.o((...args) => $options.toDetail && $options.toDetail(...args), index1),
+        j: common_vendor.o((...args) => $options.toPay && $options.toPay(...args), index1),
         k: item
       } : {}, {
         l: item.status == "Y"
@@ -411,23 +475,15 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
         d: common_vendor.t(item.siteNum),
         e: common_vendor.t(item.hour),
         f: common_vendor.t(item.money / 100),
-        g: item.status == "N"
-      }, item.status == "N" ? {
-        h: common_vendor.o((...args) => $options.toCancel && $options.toCancel(...args), index1),
-        i: item
-      } : {}, {
-        j: item.status == "Y"
-      }, item.status == "Y" ? {
-        k: common_vendor.o((...args) => $options.toCancel && $options.toCancel(...args), index1),
-        l: item,
-        m: common_vendor.o((...args) => $options.toUse && $options.toUse(...args), index1),
-        n: item
-      } : {}, {
-        o: item.status == "finished" || item.status == "refunded"
+        g: common_vendor.o((...args) => $options.toCancel && $options.toCancel(...args), index1),
+        h: item,
+        i: common_vendor.o((...args) => $options.toUse && $options.toUse(...args), index1),
+        j: item,
+        k: item.status == "finished" || item.status == "refunded"
       }, item.status == "finished" || item.status == "refunded" ? {} : {}, {
-        p: common_vendor.o((...args) => $options.toDetail && $options.toDetail(...args), index1),
-        q: item,
-        r: index1
+        l: common_vendor.o((...args) => $options.toDetail && $options.toDetail(...args), index1),
+        m: item,
+        n: index1
       });
     })
   }, {

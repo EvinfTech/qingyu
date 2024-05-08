@@ -148,7 +148,7 @@
 						item.time_enum.forEach((con) => {
 							siteList.push({
 								siteName: item.site_name,
-								date: data.gmt_create,
+								date: data.reserve_date,
 								startTime: enumInfo[con].split('~')[0],
 								endTime: enumInfo[con].split('~')[1]
 							});
@@ -192,6 +192,8 @@
 						duration: 2000,
 						success: () => {
 							this.show = false
+							const eventChannel = this.getOpenerEventChannel();
+							eventChannel.emit('toChangeReservationState', this.order_no)
 							setTimeout(() => {
 								this.initData();
 							}, 2000);

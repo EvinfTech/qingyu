@@ -30,7 +30,8 @@ const _sfc_main = {
       con: {
         date: "",
         timeRange: ""
-      }
+      },
+      type: ""
     };
   },
   /**
@@ -38,6 +39,7 @@ const _sfc_main = {
    */
   onLoad(options) {
     this.order_no = options.order_no;
+    this.type = options.type ? options.type : "";
     this.detailType = options.type;
     this.$nextTick(() => {
       this.getNavBarHeight();
@@ -96,7 +98,7 @@ const _sfc_main = {
           let timeList = [];
           con.time_enum.forEach((content) => {
             timeList.push({
-              date: data.gmt_create,
+              date: data.reserve_date,
               timeRange: enumInfo[content]
             });
           });
@@ -170,8 +172,10 @@ const _sfc_main = {
           duration: 2e3,
           success: () => {
             this.show = false;
-            const eventChannel = this.getOpenerEventChannel();
-            eventChannel.emit("toCancelOrder", this.order_no);
+            if (!this.type) {
+              const eventChannel = this.getOpenerEventChannel();
+              eventChannel.emit("toChangeOrderState", this.order_no, "C");
+            }
             setTimeout(() => {
               this.initData();
             }, 2e3);
@@ -184,6 +188,28 @@ const _sfc_main = {
     },
     // 去支付
     toPay() {
+      utils_request.request({
+        url: "wx/pay",
+        method: "POST",
+        data: {
+          order_no: this.order_no
+        }
+      }).then((res) => {
+        common_vendor.index.showToast({
+          title: "支付成功",
+          icon: "none",
+          duration: 2e3,
+          success: () => {
+            if (!this.type) {
+              const eventChannel = this.getOpenerEventChannel();
+              eventChannel.emit("toChangeOrderState", this.order_no, "Y");
+            }
+            setTimeout(() => {
+              this.initData();
+            }, 2e3);
+          }
+        });
+      });
     },
     // 去使用
     toUse() {
@@ -210,7 +236,7 @@ if (!Math) {
 }
 function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
   return common_vendor.e({
-    a: common_vendor.o($data.app.toBack),
+    a: common_vendor.o(($event) => $data.app.toBack($data.type ? 2 : 1)),
     b: common_vendor.p({
       name: "arrow-left"
     }),

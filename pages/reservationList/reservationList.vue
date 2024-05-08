@@ -8,7 +8,8 @@
 		</u-navbar>
 		<u-tabs class="tabs" :list="titleList" @change="onChange" lineColor="#0077FF" lineWidth="40"></u-tabs>
 		<scroll-view :scroll-y="true" v-if="active == 0" class="orderList"
-			:style="'height: ' + (scrollViewHeight + 'px') + ';'" :class="reservationList.length == 0?'emptyFlex':''">
+			:style="'height: ' + (scrollViewHeight + 'px') + ';'" :class="reservationList.length == 0?'emptyFlex':''"
+			refresher-enabled :refresher-triggered="triggered" @refresherrefresh="onRefresh" @scrolltolower="lower">
 			<u-empty text="暂无预约" v-if="reservationList.length == 0" />
 			<view v-else>
 				<view class="orderItem" :data-item="item" v-for="(item, index1) in reservationList" :key="index1">
@@ -39,7 +40,7 @@
 					</view>
 
 					<view class="flex align-center justify-end stateBox">
-						<view v-if="item.status == 'finished'" class="redText">已使用</view>
+						<view v-if="item.status == 'U'" class="grayText">已使用</view>
 						<view v-else-if="item.status == 'Y'" class="blueText">待使用</view>
 						<view v-else-if="item.status == 'N'" class="redText">待支付</view>
 						<view v-else-if="item.status == 'C'" class="grayText">已取消</view>
@@ -53,7 +54,8 @@
 		</scroll-view>
 
 		<scroll-view :scroll-y="true" v-else-if="active == 1" class="orderList"
-			:style="'height: ' + (scrollViewHeight + 'px') + ';'" :class="waitUsedList.length == 0?'emptyFlex':''">
+			:style="'height: ' + (scrollViewHeight + 'px') + ';'" :class="waitUsedList.length == 0?'emptyFlex':''"
+			:refresher-triggered="triggered1" refresher-enabled @refresherrefresh="onRefresh" @scrolltolower="lower">
 			<u-empty text="暂无待使用预约" v-if="waitUsedList.length == 0" />
 			<view v-else>
 				<view class="orderItem" :data-item="item" v-for="(item, index1) in waitUsedList" :key="index1">
@@ -96,7 +98,8 @@
 		</scroll-view>
 
 		<scroll-view :scroll-y="true" v-else class="orderList" :style="'height: ' + (scrollViewHeight + 'px') + ';'"
-			:class="alreadyUsedList.length == 0?'emptyFlex':''">
+			:class="alreadyUsedList.length == 0?'emptyFlex':''" :refresher-triggered="triggered2" refresher-enabled
+			@refresherrefresh="onRefresh" @scrolltolower="lower">
 			<u-empty text="暂无已使用预约" v-if="alreadyUsedList.length == 0" />
 			<view v-else>
 				<view class="orderItem" :data-item="item" v-for="(item, index1) in alreadyUsedList" :key="index1">
@@ -119,7 +122,7 @@
 					</view>
 
 					<view class="flex align-center justify-end stateBox">
-						<view class="redText">已使用</view>
+						<view class="grayText">已使用</view>
 					</view>
 
 					<view class="detailBox flex align-center" @tap="toDetail" :data-item="item">
@@ -160,7 +163,19 @@
 				con: {
 					date: '',
 					timeRange: ''
-				}
+				},
+				searchInfo: {
+					pageObj: {
+						firstPage: 1,
+						secondPage: 1,
+						thirdPage: 1
+					},
+					size: 10,
+					status: ''
+				},
+				triggered: false,
+				triggered1: false,
+				triggered2: false
 			};
 		},
 		/**
@@ -205,33 +220,40 @@
 			onClickLeft() {
 				uni.navigateBack();
 			},
-
+			// 去详情页
 			toDetail(e) {
 				let order_no = e.currentTarget.dataset.item.order_no;
 				uni.navigateTo({
-					url: '/pages/reservationInfo/reservationInfo?order_no=' + order_no
+					url: '/pages/reservationInfo/reservationInfo?order_no=' + order_no,
+					events: {
+						toChangeReservationState: (order_no) => {
+							this.dealWithOrderState(order_no)
+						}
+					}
 				});
 			},
-
+			// tab栏切换
 			onChange(e) {
 				this.active = e.index
-				if (this.active == 0) {
-					// this.setData({
-					//     processedList: this.data.orderList
-					// })
-				} else if (this.active == 1) {
-					// let arr = this.data.orderList.filter(con => con.state == 'wait')
-					// this.setData({
-					//     processedList: arr
-					// })
-				} else {
-					// let arr = this.data.orderList.filter(con => con.state == 'payed')
-					// this.setData({
-					//     processedList: arr
-					// })
+				switch (e.index) {
+					case 0:
+						this.searchInfo.status = ''
+						break;
+					case 1:
+						this.searchInfo.status = 'Y'
+						if (this.waitUsedList.length == 0) {
+							this.initData()
+						}
+						break;
+					case 2:
+						this.searchInfo.status = 'U'
+						if (this.alreadyUsedList.length == 0) {
+							this.initData()
+						}
+						break;
 				}
 			},
-
+			// 计算scroll-view高度
 			calculate() {
 				let sysInfo = uni.getSystemInfoSync()
 				var screenHeight = sysInfo.windowHeight;
@@ -243,18 +265,22 @@
 				this.scrollViewHeight = screenHeight - 88 - sysInfo.statusBarHeight
 				// #endif
 			},
-
-			async initData() {
+			// 初始化数据
+			async initData(type = '') {
 				let userInfo = await this.app.getUserInfo();
 				request({
 					url: 'wx/get/my/reserve/list',
 					method: 'POST',
 					data: {
-						user_ouid: userInfo.ouid
+						user_ouid: userInfo.ouid,
+						page: this.active == 0 ? this.searchInfo.pageObj.firstPage : (this.active == 1 ?
+							this.searchInfo.pageObj.secondPage : this.searchInfo.pageObj.thirdPage),
+						size: this.searchInfo.size,
+						status: this.searchInfo.status
 					}
 				}).then(async (res) => {
 					let enumInfo = await this.app.getEnum();
-					let reservationList = res.data.reverse();
+					let reservationList = res.data.list ? res.data.list : [];
 					reservationList.forEach((con) => {
 						let siteNum = 0; //预约场地数
 						let hour = 0; //所有预约的时间总和
@@ -265,7 +291,7 @@
 							hour = content.time_enum.length + hour;
 							content.time_enum.forEach((contentItem) => {
 								timeList.push({
-									date: con.gmt_create,
+									date: con.reserve_date,
 									timeRange: enumInfo[contentItem]
 								});
 							});
@@ -273,15 +299,100 @@
 						con.siteNum = siteNum;
 						con.hour = hour;
 						con.timeList = timeList;
-						con.shop_avatar = this.app.globalData.httpUrl+con.shop_avatar
+						con.shop_avatar = this.app.globalData.httpUrl + con.shop_avatar
 					});
-					this.reservationList = reservationList
-					let waitUsedList = this.reservationList.filter((item) => item.status == 'Y');
-					let alreadyUsedList = this.reservationList.filter((item) => item.status ==
-						'finished');
-					this.waitUsedList = waitUsedList
-					this.alreadyUsedList = alreadyUsedList
+					if (reservationList.length < 10 && type == 'lower') {
+						uni.showToast({
+							icon: 'none',
+							title: '没有更多数据了'
+						})
+					}
+					switch (this.active) {
+						case 0:
+							this.reservationList = (type == 'refresh' ? reservationList : this
+								.reservationList.concat(
+									reservationList))
+							this.triggered = false
+							break;
+						case 1:
+							this.waitUsedList = (type == 'refresh' ? reservationList : this
+								.waitUsedList
+								.concat(reservationList))
+							this.triggered1 = false
+							break;
+						case 2:
+							this.alreadyUsedList = (type == 'refresh' ? reservationList : this
+								.alreadyUsedList.concat(
+									reservationList))
+							this.triggered2 = false
+							break;
+					}
 				});
+			},
+			// 下拉刷新
+			onRefresh() {
+				switch (this.active) {
+					case 0:
+						this.searchInfo.pageObj.firstPage = 1;
+						this.triggered = true
+						break;
+					case 1:
+						this.searchInfo.pageObj.secondPage = 1;
+						this.triggered1 = true
+						break;
+					case 2:
+						this.searchInfo.pageObj.thirdPage = 1;
+						this.triggered2 = true
+						break;
+				}
+				this.initData('refresh');
+			},
+			// 上拉加载
+			lower() {
+				switch (this.active) {
+					case 0:
+						this.searchInfo.pageObj.firstPage = this.searchInfo.pageObj.firstPage + 1;
+						break;
+					case 1:
+						this.searchInfo.pageObj.secondPage = this.searchInfo.pageObj.secondPage + 1;
+						break;
+					case 2:
+						this.searchInfo.pageObj.thirdPage = this.searchInfo.pageObj.thirdPage + 1;
+						break;
+				}
+				this.initData('lower')
+			},
+			// 修改预约状态
+			dealWithOrderState(order_no) {
+				// 全部模块
+				if (this.active == 0) {
+					let index = this.reservationList.findIndex(item=>{
+						return item.order_no == order_no;
+					})
+					if(index>-1){
+						this.reservationList[index].status = 'C';
+						let resI = this.waitUsedList.findIndex(item=>{
+							return item.order_no == order_no;
+						})
+						if(resI>-1){
+							this.waitUsedList.splice(resI,1)
+						}
+					}
+				} else {
+					// 待使用模块
+					let index = this.waitUsedList.findIndex(item=>{
+						return item.order_no == order_no;
+					})
+					if(index>-1){
+						this.waitUsedList.splice(index,1)
+						let resI = this.reservationList.findIndex(item=>{
+							return item.order_no == order_no;
+						})
+						if(resI>-1){
+							this.reservationList[resI].status = 'C'
+						}
+					}
+				}
 			}
 		}
 	});

@@ -118,3 +118,6 @@
 		box-sizing: border-box;
 		margin-bottom: 10rpx;
 }
+.data-v-2139706a .input-placeholder{
+		font-size:14px;color:#9e9e9e
+}

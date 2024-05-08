@@ -42,12 +42,13 @@
 						<view class="priceText">￥ {{ item.money/100 }}</view>
 					</view>
 
-					<view class="w-full flex align-center" style="justify-content: flex-end" v-if="item.status == 'C'||item.status == 'U'">
+					<view class="w-full flex align-center" style="justify-content: flex-end"
+						v-if="item.status == 'C'||item.status == 'U'">
 						<view class="borderBtn" @tap.stop="toDetail" :data-item="item">查看详情</view>
 					</view>
 					<view class="w-full flex align-center" style="justify-content: flex-end" v-if="item.status == 'N'">
 						<view class="borderBtn" @tap.stop="toCancel" :data-item="item">取消订单</view>
-						<view class="payBtn" @tap.stop="toDetail" :data-item="item">去支付</view>
+						<view class="payBtn" @tap.stop="toPay" :data-item="item">去支付</view>
 					</view>
 					<view class="w-full flex align-center" style="justify-content: flex-end" v-if="item.status == 'Y'">
 						<view class="borderBtn" @tap.stop="toCancel" :data-item="item">取消订单</view>
@@ -64,8 +65,7 @@
 
 		<scroll-view :scroll-y="true" v-else-if="active == 1" class="orderList"
 			:style="'height: ' + (scrollViewHeight + 'px') + ';'" :class="waitPayedList.length == 0?'emptyFlex':''"
-			:refresher-triggered="triggered1" refresher-enabled
-			@refresherrefresh="onRefresh" @scrolltolower="lower">
+			:refresher-triggered="triggered1" refresher-enabled @refresherrefresh="onRefresh" @scrolltolower="lower">
 			<u-empty text="暂无待支付订单" v-if="waitPayedList.length == 0" />
 			<view v-else>
 				<view class="orderItem" :data-item="item" v-for="(item, index1) in waitPayedList" :key="index1"
@@ -93,7 +93,7 @@
 
 					<view class="w-full flex align-center" style="justify-content: flex-end" v-if="item.status == 'N'">
 						<view class="borderBtn" @tap.stop="toCancel" :data-item="item">取消订单</view>
-						<view class="payBtn" @tap.stop="toDetail" :data-item="item">去支付</view>
+						<view class="payBtn" @tap.stop="toPay" :data-item="item">去支付</view>
 					</view>
 
 					<view class="w-full flex align-center" style="justify-content: flex-end" v-if="item.status == 'Y'">
@@ -110,8 +110,7 @@
 		</scroll-view>
 
 		<scroll-view :scroll-y="true" v-else class="orderList" :style="'height: ' + (scrollViewHeight + 'px') + ';'"
-			:class="waitUsedList.length == 0?'emptyFlex':''"
-			:refresher-triggered="triggered2" refresher-enabled
+			:class="waitUsedList.length == 0?'emptyFlex':''" :refresher-triggered="triggered2" refresher-enabled
 			@refresherrefresh="onRefresh" @scrolltolower="lower">
 			<u-empty text="暂无待使用订单" v-if="waitUsedList.length == 0" />
 			<view v-else>
@@ -119,7 +118,7 @@
 					:key="index1">
 					<view class="flex align-center justify-between">
 						<view class="orderNoText">订单编号： {{ item.order_no }}</view>
-						<view  class="blueText">待使用</view>
+						<view class="blueText">待使用</view>
 					</view>
 					<view class="flex align-center justify-between">
 						<view class="flex align-center">
@@ -136,13 +135,7 @@
 						</view>
 						<view class="priceText">￥ {{ item.money/100 }}</view>
 					</view>
-
-					<view class="w-full flex align-center" style="justify-content: flex-end" v-if="item.status == 'N'">
-						<view class="borderBtn" @tap.stop="toCancel" :data-item="item">取消订单</view>
-						<view class="payBtn">去支付</view>
-					</view>
-
-					<view class="w-full flex align-center" style="justify-content: flex-end" v-if="item.status == 'Y'">
+					<view class="w-full flex align-center" style="justify-content: flex-end">
 						<view class="borderBtn" @tap.stop="toCancel" :data-item="item">取消订单</view>
 						<view class="useBtn" @tap.stop="toUse" :data-item="item">去使用</view>
 					</view>
@@ -248,13 +241,13 @@
 						break;
 					case 1:
 						this.searchInfo.status = 'N'
-						if(this.waitPayedList.length==0){
+						if (this.waitPayedList.length == 0) {
 							this.initData()
 						}
 						break;
 					case 2:
 						this.searchInfo.status = 'Y'
-						if(this.waitUsedList.length==0){
+						if (this.waitUsedList.length == 0) {
 							this.initData()
 						}
 						break;
@@ -276,10 +269,9 @@
 				let order_no = e.currentTarget.dataset.item.order_no;
 				uni.navigateTo({
 					url: '/pages/orderDetail/orderDetail?order_no=' + order_no,
-					events:{
-						toCancelOrder:(order_no)=>{
-							console.log(999,order_no)
-							this.dealWithCancel(order_no)
+					events: {
+						toChangeOrderState: (order_no, type) => {
+							this.dealWithOrderState(order_no, type)
 						}
 					}
 				});
@@ -302,7 +294,7 @@
 						icon: 'none',
 						duration: 2000,
 						success: () => {
-							this.dealWithCancel(this.order_no)
+							this.dealWithOrderState(this.order_no, 'C')
 							this.show = false
 						}
 					});
@@ -311,7 +303,25 @@
 			toCancel(e) {
 				this.show = true;
 				this.order_no = e.currentTarget.dataset.item.order_no
-
+			},
+			// 去支付
+			toPay(e) {
+				request({
+					url: 'wx/pay',
+					method: 'POST',
+					data: {
+						order_no: e.currentTarget.dataset.item.order_no,
+					}
+				}).then((res) => {
+					uni.showToast({
+						title: '支付成功',
+						icon: 'none',
+						duration: 2000,
+						success: () => {
+							this.dealWithOrderState(e.currentTarget.dataset.item.order_no, 'Y')
+						}
+					});
+				});
 			},
 			// 去使用
 			toUse(e) {
@@ -328,7 +338,8 @@
 					method: 'POST',
 					data: {
 						user_ouid: userInfo.ouid,
-						page: this.active==0?this.searchInfo.pageObj.firstPage:(this.active==1?this.searchInfo.pageObj.secondPage:this.searchInfo.pageObj.thirdPage),
+						page: this.active == 0 ? this.searchInfo.pageObj.firstPage : (this.active == 1 ?
+							this.searchInfo.pageObj.secondPage : this.searchInfo.pageObj.thirdPage),
 						size: this.searchInfo.size,
 						status: this.searchInfo.status
 					}
@@ -403,25 +414,76 @@
 				}
 				this.initData('lower')
 			},
-			// 处理取消订单
-			dealWithCancel(order_no){
-				let index = this.orderList.findIndex((item)=>{
-					return item.order_no == this.order_no
-				})
-				if(index>-1){
-					this.orderList[index].status = 'C'
-				}
-				let index1 = this.waitPayedList.findIndex((item)=>{
-					return item.order_no == this.order_no
-				})
-				if(index1>-1){
-					this.waitPayedList[index].status = 'C'
-				}
-				let index2 = this.waitUsedList.findIndex((item)=>{
-					return item.order_no == this.order_no
-				})
-				if(index2>-1){
-					this.waitUsedList[index].status = 'C'
+			// 处理订单  取消 或者 支付成功
+			dealWithOrderState(order_no, type) {
+				// 全部模块
+				if (this.active == 0) {
+					let index = this.orderList.findIndex((item) => {
+						return item.order_no == order_no
+					})
+					if (index > -1) {
+						// 支付成功
+						if (type == 'Y') {
+							this.waitUsedList.unshift(this.orderList[index])
+							let resI = this.waitPayedList.findIndex((item)=>{
+								return item.order_no == order_no
+							})
+							if(resI>-1){
+								this.waitPayedList.splice(resI,1)
+							}
+						} else {
+							// 取消订单
+							if(this.orderList[index].status == 'N'){
+								let resI = this.waitPayedList.findIndex((item)=>{
+									return item.order_no == order_no
+								})
+								if(resI>-1){
+									this.waitPayedList.splice(resI,1)
+								}
+							}else if(this.orderList[index].status == 'Y'){
+								let resI1 = this.waitUsedList.findIndex((item)=>{
+									return item.order_no == order_no
+								})
+								if(resI1>-1){
+									this.waitPayedList.splice(resI1,1)
+								}
+							}
+						}
+						this.orderList[index].status = type
+					}
+				} else if (this.active == 1) {
+					// 待支付模块
+					let index1 = this.waitPayedList.findIndex((item) => {
+						return item.order_no == order_no
+					})
+					if (index1 > -1) {
+						this.waitPayedList[index1].status = type;
+						let deleteItem = this.waitPayedList.splice(index1, 1);
+						if (type == 'Y') {
+							this.waitUsedList.unshift(deleteItem[0])
+						}else{
+							let resI = this.orderList.findIndex(item=>{
+								return item.order_no == order_no
+							})
+							if(resI>-1){
+								this.orderList[resI].status = 'C'
+							}
+						}
+					}
+				} else {
+					// 待使用模块
+					let index2 = this.waitUsedList.findIndex((item) => {
+						return item.order_no == order_no
+					})
+					if (index2 > -1) {
+						this.waitUsedList.splice(index2, 1);
+						let resI = this.orderList.findIndex(item=>{
+							return item.order_no == order_no
+						})
+						if(resI>-1){
+							this.orderList[resI].status = 'C'
+						}
+					}
 				}
 			}
 		}

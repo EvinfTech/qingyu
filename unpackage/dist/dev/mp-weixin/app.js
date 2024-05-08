@@ -252,10 +252,12 @@ const _sfc_main = {
       });
     },
     // 返回
-    toBack() {
+    toBack(num) {
       let canNavBack = getCurrentPages();
       if (canNavBack && canNavBack.length > 1) {
-        common_vendor.index.navigateBack();
+        common_vendor.index.navigateBack({
+          delta: num ? num : 1
+        });
       } else {
         history.back();
       }

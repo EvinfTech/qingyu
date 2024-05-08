@@ -12,15 +12,15 @@
 				</view>
 				<view class="flex align-center" style="margin-top: 11px;">
 					<view class="commonInfoLabel">姓名</view>
-					<input type="text" placeholder="预约人姓名" v-model="userName" placeholder-style="font-size:14px;color:#9e9e9e">
+					<input type="text" placeholder="预约人姓名" v-model="userName">
 				</view>
 				<view class="flex align-center" style="margin-top: 11px;">
 					<view class="commonInfoLabel">手机</view>
-					<input type="text" placeholder="预约人手机号码" v-model="phone" placeholder-style="font-size:14px;color:#9e9e9e">
+					<input type="text" placeholder="预约人手机号码" v-model="phone" >
 				</view>
 				<view class="flex align-center" style="margin-top: 11px;">
 					<view class="commonInfoLabel">备注</view>
-					<input type="text" placeholder="备注信息" v-model="remark" placeholder-style="font-size:14px;color:#9e9e9e">
+					<input type="text" placeholder="备注信息" v-model="remark" >
 				</view>
 			</view>
 			<view class="gymnasiumInfoBox">
@@ -195,7 +195,7 @@
 							setTimeout(() => {
 								uni.removeStorageSync('orderInfo')
 								uni.redirectTo({
-									url:'/pages/orderDetail/orderDetail?order_no=' + this.order_no
+									url:'/pages/orderDetail/orderDetail?order_no=' + this.order_no+'&type=new'
 								})
 							}, 2000);
 						}
@@ -206,7 +206,7 @@
 				this.show = false;
 				uni.removeStorageSync('orderInfo')
 				uni.redirectTo({
-					url:'/pages/orderDetail/orderDetail?order_no=' + this.order_no
+					url:'/pages/orderDetail/orderDetail?order_no=' + this.order_no+'&type=new'
 				})
 			}
 		}
@@ -341,5 +341,8 @@
 		padding: 28rpx;
 		box-sizing: border-box;
 		margin-bottom: 10rpx;
+	}
+	::v-deep .input-placeholder{
+		font-size:14px;color:#9e9e9e
 	}
 </style>

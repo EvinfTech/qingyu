@@ -244,12 +244,14 @@
 				})
 			},
 			// 返回
-			toBack() {
+			toBack(num) {
 				let canNavBack = getCurrentPages()
 				if (canNavBack && canNavBack.length > 1) {
-					uni.navigateBack()
+					uni.navigateBack({
+						delta:num?num:1
+					})
 				} else {
-					history.back();
+					history.back()
 				}
 			}
 		},

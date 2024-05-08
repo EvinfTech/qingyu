@@ -4,12 +4,13 @@
 		<u-navbar class="nav-bar" :title="detailType == 'add' ? '确认订单' : '订单详情'" :safeAreaInsetTop="true"
 			:autoBack="false" :fixed="false">
 			<template #left>
-				<up-icon name="arrow-left" @click="app.toBack"></up-icon>
+				<up-icon name="arrow-left" @click="app.toBack((type?2:1))"></up-icon>
 			</template>
 		</u-navbar>
 		<u-modal :show="show" title="提示" content="确定要取消此订单？" :showCancelButton="true" @confirm="confirm"
 			@cancel="cancel"></u-modal>
-		<scroll-view :scroll-y="true" class="w-full" :style="'height: ' + (scrollViewHeight + 'px') + ';'" style="padding-top: 14rpx;">
+		<scroll-view :scroll-y="true" class="w-full" :style="'height: ' + (scrollViewHeight + 'px') + ';'"
+			style="padding-top: 14rpx;">
 			<view class="payStateBox flex align-center justify-center" v-if="detailType == 'detail' && payState == 'N'">
 				<image src="/static/images/order/timeLine.svg" mode=""
 					style="width: 94rpx; height: 94rpx; margin-right: 20rpx" />
@@ -159,7 +160,8 @@
 				con: {
 					date: '',
 					timeRange: ''
-				}
+				},
+				type:'',
 			};
 		},
 		/**
@@ -167,6 +169,7 @@
 		 */
 		onLoad(options) {
 			this.order_no = options.order_no;
+			this.type = options.type?options.type:''
 			this.detailType = options.type;
 			this.$nextTick(() => {
 				this.getNavBarHeight();
@@ -218,7 +221,7 @@
 						let timeList = [];
 						con.time_enum.forEach((content) => {
 							timeList.push({
-								date: data.gmt_create,
+								date: data.reserve_date,
 								timeRange: enumInfo[content]
 							});
 						});
@@ -302,8 +305,10 @@
 						duration: 2000,
 						success: () => {
 							this.show = false
-							const eventChannel = this.getOpenerEventChannel();
-							eventChannel.emit('toCancelOrder',this.order_no)
+							if(!this.type){
+								const eventChannel = this.getOpenerEventChannel();
+								eventChannel.emit('toChangeOrderState', this.order_no,'C')
+							}
 							setTimeout(() => {
 								this.initData();
 							}, 2000);
@@ -316,6 +321,28 @@
 			},
 			// 去支付
 			toPay() {
+				request({
+					url: 'wx/pay',
+					method: 'POST',
+					data: {
+						order_no: this.order_no,
+					}
+				}).then((res) => {
+					uni.showToast({
+						title: '支付成功',
+						icon: 'none',
+						duration: 2000,
+						success: () => {
+							if(!this.type){
+								const eventChannel = this.getOpenerEventChannel();
+								eventChannel.emit('toChangeOrderState', this.order_no,'Y')
+							}
+							setTimeout(() => {
+								this.initData();
+							}, 2000);
+						}
+					});
+				});
 
 			},
 			// 去使用
