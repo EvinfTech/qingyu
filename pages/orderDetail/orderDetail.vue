@@ -126,11 +126,9 @@
 </template>
 
 <script>
-	// pages/orderDetail/orderDetail.ts
 	import {
 		request
 	} from '../../utils/request';
-	// import Dialog from '@/wxcomponents/vant/dialog/dialog';
 	export default ({
 		data() {
 			return {
@@ -176,34 +174,6 @@
 			})
 			this.initData();
 		},
-		/**
-		 * 生命周期函数--监听页面初次渲染完成
-		 */
-		onReady() {},
-		/**
-		 * 生命周期函数--监听页面显示
-		 */
-		onShow() {},
-		/**
-		 * 生命周期函数--监听页面隐藏
-		 */
-		onHide() {},
-		/**
-		 * 生命周期函数--监听页面卸载
-		 */
-		onUnload() {},
-		/**
-		 * 页面相关事件处理函数--监听用户下拉动作
-		 */
-		onPullDownRefresh() {},
-		/**
-		 * 页面上拉触底事件的处理函数
-		 */
-		onReachBottom() {},
-		/**
-		 * 用户点击右上角分享
-		 */
-		onShareAppMessage() {},
 		methods: {
 			async initData() {
 				let enumInfo = await this.app.getEnum();
@@ -280,16 +250,17 @@
 					name: this.gymnasiumInfo.location
 				});
 			},
-
 			// 复制订单编号
 			tocopy() {
 				uni.setClipboardData({
 					data: this.order_no
 				});
 			},
+			// 取消 取消订单
 			cancel() {
 				this.show = false
 			},
+			// 确认 取消订单
 			confirm() {
 				request({
 					url: 'wx/cancel/order',
@@ -316,6 +287,7 @@
 					});
 				});
 			},
+			// 取消订单
 			cancelOrder() {
 				this.show = true;
 			},
@@ -351,9 +323,6 @@
 					url: '/pages/reservationInfo/reservationInfo?order_no=' + this.order_no
 				})
 			},
-			onClickLeft() {
-				uni.navigateBack();
-			}
 		}
 	});
 </script>

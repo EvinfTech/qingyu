@@ -2,7 +2,7 @@
 const common_vendor = require("../../../../common/vendor.js");
 const _sfc_main = {
   name: "u-tabs",
-  mixins: [common_vendor.mpMixin, common_vendor.mixin, common_vendor.props$5],
+  mixins: [common_vendor.mpMixin, common_vendor.mixin, common_vendor.props$13],
   data() {
     return {
       firstTime: true,

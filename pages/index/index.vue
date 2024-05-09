@@ -77,6 +77,7 @@
 				that.scrollViewHeight = screenHeight - 60 - (screenHeight - saveBottom)
 				// #endif
 			}, 
+			// 验证登录状态 然后跳转
 			async checkLoginState() {
 				this.app.getUserInfo();
 				if (!this.app.globalData.userInfo.ouid) {
@@ -85,6 +86,7 @@
 					});
 				} 
 			},
+			// tabbar切换
 			tabbarChange(name) {
 				this.active = name;
 				uni.setStorageSync('tabbarIndex', name)

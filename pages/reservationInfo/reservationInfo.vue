@@ -72,10 +72,10 @@
 		data() {
 			return {
 				app: getApp(),
-				show: false,
-				order_no: '',
-				code: '',
-				codeImg: '',
+				show: false,//控制弹框
+				order_no: '',//订单号
+				code: '',//二维码值
+				codeImg: '',//二维码
 				scrollViewHeight: 0,
 				gymnasiumInfo: {
 					name: '',
@@ -90,7 +90,7 @@
 					status: '',
 					siteNum: '',
 					remark:''
-				}
+				}//场馆信息
 			};
 		},
 		/**
@@ -98,42 +98,15 @@
 		 */
 		onLoad(options) {
 			this.$nextTick(() => {
-				this.getNavBarHeight();
+				this.getCenterHeight();
 			})
 			if (options.order_no) {
 				this.order_no = options.order_no
 			}
 			this.initData();
 		},
-		/**
-		 * 生命周期函数--监听页面初次渲染完成
-		 */
-		onReady() {},
-		/**
-		 * 生命周期函数--监听页面显示
-		 */
-		onShow() {},
-		/**
-		 * 生命周期函数--监听页面隐藏
-		 */
-		onHide() {},
-		/**
-		 * 生命周期函数--监听页面卸载
-		 */
-		onUnload() {},
-		/**
-		 * 页面相关事件处理函数--监听用户下拉动作
-		 */
-		onPullDownRefresh() {},
-		/**
-		 * 页面上拉触底事件的处理函数
-		 */
-		onReachBottom() {},
-		/**
-		 * 用户点击右上角分享
-		 */
-		onShareAppMessage() {},
 		methods: {
+			// 初始化数据
 			initData() {
 				let enumInfo = this.app.globalData.enumInfo;
 				request({
@@ -174,17 +147,15 @@
 					this.gymnasiumInfo.remark = data.remark
 				});
 			},
-
+			// 取消预约
 			toCancel() {
 				this.show = true
 			},
-
-			onClickLeft() {
-				uni.navigateBack();
-			},
+			// 取消 取消预约
 			cancel() {
 				this.show = false
 			},
+			// 确定 取消预约
 			confirm() {
 				request({
 					url: 'wx/cancel/order',
@@ -208,8 +179,8 @@
 					});
 				});
 			},
-
-			getNavBarHeight() {
+			// 获取中间内容高度
+			getCenterHeight() {
 				let sysInfo = uni.getSystemInfoSync()
 				var screenHeight = sysInfo.windowHeight;
 				let that = this;
@@ -226,16 +197,13 @@
 						that.scrollViewHeight = screenHeight - 44 - bottomRect
 							.height - sysInfo.statusBarHeight
 						// #endif
-
 					})
 					.exec();
-
 			}
 		}
 	});
 </script>
 <style scoped>
-	/* pages/reservationInfo/reservationInfo.wxss */
 	.page {
 		width: 100%;
 		height: 100vh;

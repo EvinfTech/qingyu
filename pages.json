@@ -31,12 +31,6 @@
 			}
 		},
 		{
-			"path": "pages/reservation/reservation",
-			"style": {
-				"usingComponents": {}
-			}
-		},
-		{
 			"path": "pages/mine/mine",
 			"style": {
 				"usingComponents": {}

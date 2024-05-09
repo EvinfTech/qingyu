@@ -12,11 +12,17 @@ const _sfc_main = {
       }, {
         name: "已使用"
       }],
+      //tab数据
       active: 0,
+      //tab当前选中
       waitUsedList: [],
+      //待使用列表
       alreadyUsedList: [],
+      //已使用列表
       reservationList: [],
+      //全部列表
       scrollViewHeight: "",
+      //列表页高度
       j: "",
       con: {
         date: "",
@@ -31,9 +37,13 @@ const _sfc_main = {
         size: 10,
         status: ""
       },
+      //搜索条件
       triggered: false,
+      //控制全部列表 下拉刷新
       triggered1: false,
+      //控制待使用列表 下拉刷新
       triggered2: false
+      //控制已使用列表 下拉刷新
     };
   },
   /**
@@ -50,52 +60,7 @@ const _sfc_main = {
       this.calculate();
     });
   },
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow() {
-  },
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide() {
-  },
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload() {
-  },
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh() {
-  },
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom() {
-  },
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage() {
-  },
   methods: {
-    onClickLeft() {
-      common_vendor.index.navigateBack();
-    },
-    // 去详情页
-    toDetail(e) {
-      let order_no = e.currentTarget.dataset.item.order_no;
-      common_vendor.index.navigateTo({
-        url: "/pages/reservationInfo/reservationInfo?order_no=" + order_no,
-        events: {
-          toChangeReservationState: (order_no2) => {
-            this.dealWithOrderState(order_no2);
-          }
-        }
-      });
-    },
     // tab栏切换
     onChange(e) {
       this.active = e.index;
@@ -246,6 +211,18 @@ const _sfc_main = {
           }
         }
       }
+    },
+    // 去详情页
+    toDetail(e) {
+      let order_no = e.currentTarget.dataset.item.order_no;
+      common_vendor.index.navigateTo({
+        url: "/pages/reservationInfo/reservationInfo?order_no=" + order_no,
+        events: {
+          toChangeReservationState: (order_no2) => {
+            this.dealWithOrderState(order_no2);
+          }
+        }
+      });
     }
   }
 };
@@ -382,5 +359,4 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
   });
 }
 const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-9e63185c"], ["__file", "C:/project/轻羽项目/qingyu-client/pages/reservationList/reservationList.vue"]]);
-_sfc_main.__runtimeHooks = 2;
 wx.createPage(MiniProgramPage);

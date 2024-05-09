@@ -47,39 +47,8 @@
 				timer: null
 			};
 		},
-		/**
-		 * 生命周期函数--监听页面加载
-		 */
-		onLoad() {},
-		/**
-		 * 生命周期函数--监听页面初次渲染完成
-		 */
-		onReady() {},
-		/**
-		 * 生命周期函数--监听页面显示
-		 */
-		onShow() {},
-		/**
-		 * 生命周期函数--监听页面隐藏
-		 */
-		onHide() {},
-		/**
-		 * 生命周期函数--监听页面卸载
-		 */
-		onUnload() {},
-		/**
-		 * 页面相关事件处理函数--监听用户下拉动作
-		 */
-		onPullDownRefresh() {},
-		/**
-		 * 页面上拉触底事件的处理函数
-		 */
-		onReachBottom() {},
-		/**
-		 * 用户点击右上角分享
-		 */
-		onShareAppMessage() {},
 		methods: {
+			// 校验手机号
 			validatePhoneNumber(phone) {
 				if (!phone) {
 					return 'empty' //手机号为空
@@ -93,6 +62,7 @@
 					return 'no'; // 不符合手机号格式要求
 				}
 			},
+			// 点击获取验证码
 			async getCode() {
 				if (this.codeState) {
 					return false;
@@ -148,6 +118,7 @@
 				})
 
 			},
+			// 去登录
 			toLogin() {
 				let result = this.validatePhoneNumber(this.phone);
 				if(result !='ok'){
@@ -204,18 +175,13 @@
 				})
 				
 			},
-
+			// 去用户协议页
 			toArrgement() {
 				uni.navigateTo({
 					url: '/pages/arrgement/arrgement'
 				});
 			},
-
-			wechatLogin() {
-				uni.navigateTo({
-					url: '/pages/wechatLogin/wechatLogin'
-				});
-			}
+			
 		}
 	});
 </script>

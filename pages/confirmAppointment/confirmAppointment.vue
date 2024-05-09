@@ -202,6 +202,7 @@
 					});
 				});
 			},
+			// 取消支付
 			cancel(){
 				this.show = false;
 				uni.removeStorageSync('orderInfo')

@@ -1,5 +1,4 @@
 <template>
-	<!-- pages/orderList/orderList.wxml -->
 	<view class="page">
 		<u-navbar class="nav-bar" title="我的预约" :safeAreaInsetTop="true" :autoBack="false" :fixed="false">
 			<template #left>
@@ -52,7 +51,6 @@
 				</view>
 			</view>
 		</scroll-view>
-
 		<scroll-view :scroll-y="true" v-else-if="active == 1" class="orderList"
 			:style="'height: ' + (scrollViewHeight + 'px') + ';'" :class="waitUsedList.length == 0?'emptyFlex':''"
 			:refresher-triggered="triggered1" refresher-enabled @refresherrefresh="onRefresh" @scrolltolower="lower">
@@ -84,11 +82,9 @@
 							</view>
 						</view>
 					</view>
-
 					<view class="flex align-center justify-end stateBox">
 						<view class="blueText">待使用</view>
 					</view>
-
 					<view class="detailBox flex align-center" @tap="toDetail" :data-item="item">
 						查看预约
 						<image src="/static/images/mine/rightArrow.svg" style="width: 28rpx; height: 28rpx" mode="" />
@@ -96,7 +92,6 @@
 				</view>
 			</view>
 		</scroll-view>
-
 		<scroll-view :scroll-y="true" v-else class="orderList" :style="'height: ' + (scrollViewHeight + 'px') + ';'"
 			:class="alreadyUsedList.length == 0?'emptyFlex':''" :refresher-triggered="triggered2" refresher-enabled
 			@refresherrefresh="onRefresh" @scrolltolower="lower">
@@ -136,7 +131,6 @@
 </template>
 
 <script>
-	// pages/orderList/orderList.ts
 	import {
 		request
 	} from '../../utils/request';
@@ -150,16 +144,13 @@
 					name: '待使用'
 				}, {
 					name: '已使用'
-				}, ],
-				active: 0,
-				waitUsedList: [],
-				alreadyUsedList: [],
-
-				reservationList: [],
-
-				scrollViewHeight: '',
+				}], //tab数据
+				active: 0, //tab当前选中
+				waitUsedList: [], //待使用列表
+				alreadyUsedList: [], //已使用列表
+				reservationList: [], //全部列表
+				scrollViewHeight: '', //列表页高度
 				j: '',
-
 				con: {
 					date: '',
 					timeRange: ''
@@ -172,10 +163,10 @@
 					},
 					size: 10,
 					status: ''
-				},
-				triggered: false,
-				triggered1: false,
-				triggered2: false
+				}, //搜索条件
+				triggered: false, //控制全部列表 下拉刷新
+				triggered1: false, //控制待使用列表 下拉刷新
+				triggered2: false //控制已使用列表 下拉刷新
 			};
 		},
 		/**
@@ -192,46 +183,7 @@
 				this.calculate();
 			})
 		},
-		/**
-		 * 生命周期函数--监听页面显示
-		 */
-		onShow() {},
-		/**
-		 * 生命周期函数--监听页面隐藏
-		 */
-		onHide() {},
-		/**
-		 * 生命周期函数--监听页面卸载
-		 */
-		onUnload() {},
-		/**
-		 * 页面相关事件处理函数--监听用户下拉动作
-		 */
-		onPullDownRefresh() {},
-		/**
-		 * 页面上拉触底事件的处理函数
-		 */
-		onReachBottom() {},
-		/**
-		 * 用户点击右上角分享
-		 */
-		onShareAppMessage() {},
 		methods: {
-			onClickLeft() {
-				uni.navigateBack();
-			},
-			// 去详情页
-			toDetail(e) {
-				let order_no = e.currentTarget.dataset.item.order_no;
-				uni.navigateTo({
-					url: '/pages/reservationInfo/reservationInfo?order_no=' + order_no,
-					events: {
-						toChangeReservationState: (order_no) => {
-							this.dealWithOrderState(order_no)
-						}
-					}
-				});
-			},
 			// tab栏切换
 			onChange(e) {
 				this.active = e.index
@@ -366,39 +318,50 @@
 			dealWithOrderState(order_no) {
 				// 全部模块
 				if (this.active == 0) {
-					let index = this.reservationList.findIndex(item=>{
+					let index = this.reservationList.findIndex(item => {
 						return item.order_no == order_no;
 					})
-					if(index>-1){
+					if (index > -1) {
 						this.reservationList[index].status = 'C';
-						let resI = this.waitUsedList.findIndex(item=>{
+						let resI = this.waitUsedList.findIndex(item => {
 							return item.order_no == order_no;
 						})
-						if(resI>-1){
-							this.waitUsedList.splice(resI,1)
+						if (resI > -1) {
+							this.waitUsedList.splice(resI, 1)
 						}
 					}
 				} else {
 					// 待使用模块
-					let index = this.waitUsedList.findIndex(item=>{
+					let index = this.waitUsedList.findIndex(item => {
 						return item.order_no == order_no;
 					})
-					if(index>-1){
-						this.waitUsedList.splice(index,1)
-						let resI = this.reservationList.findIndex(item=>{
+					if (index > -1) {
+						this.waitUsedList.splice(index, 1)
+						let resI = this.reservationList.findIndex(item => {
 							return item.order_no == order_no;
 						})
-						if(resI>-1){
+						if (resI > -1) {
 							this.reservationList[resI].status = 'C'
 						}
 					}
 				}
-			}
+			},
+			// 去详情页
+			toDetail(e) {
+				let order_no = e.currentTarget.dataset.item.order_no;
+				uni.navigateTo({
+					url: '/pages/reservationInfo/reservationInfo?order_no=' + order_no,
+					events: {
+						toChangeReservationState: (order_no) => {
+							this.dealWithOrderState(order_no)
+						}
+					}
+				});
+			},
 		}
 	});
 </script>
 <style scoped>
-	/* pages/reservationList/reservationList.wxss */
 	.page {
 		width: 100%;
 		height: 100vh;

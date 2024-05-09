@@ -12,47 +12,8 @@ const _sfc_main = {
       timer: null
     };
   },
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad() {
-  },
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady() {
-  },
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow() {
-  },
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide() {
-  },
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload() {
-  },
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh() {
-  },
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom() {
-  },
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage() {
-  },
   methods: {
+    // 校验手机号
     validatePhoneNumber(phone) {
       if (!phone) {
         return "empty";
@@ -64,6 +25,7 @@ const _sfc_main = {
         return "no";
       }
     },
+    // 点击获取验证码
     async getCode() {
       if (this.codeState) {
         return false;
@@ -117,6 +79,7 @@ const _sfc_main = {
         });
       });
     },
+    // 去登录
     toLogin() {
       let result = this.validatePhoneNumber(this.phone);
       if (result != "ok") {
@@ -169,14 +132,10 @@ const _sfc_main = {
         }
       });
     },
+    // 去用户协议页
     toArrgement() {
       common_vendor.index.navigateTo({
         url: "/pages/arrgement/arrgement"
-      });
-    },
-    wechatLogin() {
-      common_vendor.index.navigateTo({
-        url: "/pages/wechatLogin/wechatLogin"
       });
     }
   }
@@ -209,5 +168,4 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
   };
 }
 const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-e4e4508d"], ["__file", "C:/project/轻羽项目/qingyu-client/pages/login/login.vue"]]);
-_sfc_main.__runtimeHooks = 2;
 wx.createPage(MiniProgramPage);

@@ -8,38 +8,33 @@ const _sfc_main = {
     };
   },
   methods: {
-    /**
-     * 生命周期函数--监听页面加载
-     */
-    onClickLeft() {
-      common_vendor.index.navigateBack();
-    },
+    // 账号与安全
     toAccountSecurity() {
       common_vendor.index.navigateTo({
         url: "/pages/accountSecurity/accountSecurity"
       });
     },
+    // 用户协议
     toUserAgreement() {
       common_vendor.index.navigateTo({
         url: "/pages/userAgreement/userAgreement"
       });
     },
+    // 关于我们
     toAboutUs() {
       common_vendor.index.navigateTo({
         url: "/pages/aboutUs/aboutUs"
       });
     },
-    toFeedBack() {
-      common_vendor.index.navigateTo({
-        url: "/pages/feedback/feedback"
-      });
-    },
+    // 退出登录
     logout() {
       this.show = true;
     },
+    // 取消退出登录
     cancel() {
       this.show = false;
     },
+    // 确认退出登录
     confirm() {
       this.show = false;
       this.app.logout();

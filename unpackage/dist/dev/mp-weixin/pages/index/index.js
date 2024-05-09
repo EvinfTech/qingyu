@@ -54,6 +54,7 @@ const _sfc_main = {
       let saveBottom = info.safeArea.bottom;
       that.scrollViewHeight = screenHeight - 50 - (screenHeight - saveBottom);
     },
+    // 验证登录状态 然后跳转
     async checkLoginState() {
       this.app.getUserInfo();
       if (!this.app.globalData.userInfo.ouid) {
@@ -62,6 +63,7 @@ const _sfc_main = {
         });
       }
     },
+    // tabbar切换
     tabbarChange(name) {
       this.active = name;
       common_vendor.index.setStorageSync("tabbarIndex", name);

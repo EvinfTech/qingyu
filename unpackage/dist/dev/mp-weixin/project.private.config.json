@@ -55,6 +55,13 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/reservation/reservation",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

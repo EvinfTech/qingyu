@@ -15,10 +15,15 @@ const _sfc_main = {
       }],
       active: 0,
       waitPayedList: [],
+      //等待支付列表
       waitUsedList: [],
+      //等待使用列表
       order_no: "",
+      //订单号
       orderList: [],
+      //全部订单列表
       scrollViewHeight: "",
+      //中间内容高度
       searchInfo: {
         pageObj: {
           firstPage: 1,
@@ -28,9 +33,13 @@ const _sfc_main = {
         size: 10,
         status: ""
       },
+      //搜索条件
       triggered: false,
+      //控制全部 下拉刷新
       triggered1: false,
+      //控制待支付 下拉刷新
       triggered2: false
+      //控制待使用 下拉刷新
     };
   },
   /**
@@ -47,40 +56,8 @@ const _sfc_main = {
       this.calculate();
     });
   },
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow() {
-  },
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide() {
-  },
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload() {
-  },
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh() {
-  },
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom() {
-  },
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage() {
-  },
   methods: {
-    onClickLeft() {
-      common_vendor.index.navigateBack();
-    },
+    // tab栏切换
     onChange(e) {
       this.active = e.index;
       switch (e.index) {
@@ -101,11 +78,13 @@ const _sfc_main = {
           break;
       }
     },
+    // 计算中间内容高度
     calculate() {
       let sysInfo = common_vendor.index.getSystemInfoSync();
       var screenHeight = sysInfo.windowHeight;
       this.scrollViewHeight = screenHeight - 88 - sysInfo.statusBarHeight;
     },
+    // 去订单详情
     toDetail(e) {
       let order_no = e.currentTarget.dataset.item.order_no;
       common_vendor.index.navigateTo({
@@ -117,11 +96,11 @@ const _sfc_main = {
         }
       });
     },
-    // 取消
+    // 取消 取消订单
     cancel() {
       this.show = false;
     },
-    // 确定取消
+    // 确定 取消订单
     confirm() {
       utils_request.request({
         url: "wx/cancel/order",
@@ -141,6 +120,7 @@ const _sfc_main = {
         });
       });
     },
+    // 取消订单
     toCancel(e) {
       this.show = true;
       this.order_no = e.currentTarget.dataset.item.order_no;
@@ -500,5 +480,4 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
   });
 }
 const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-1d51308d"], ["__file", "C:/project/轻羽项目/qingyu-client/pages/orderList/orderList.vue"]]);
-_sfc_main.__runtimeHooks = 2;
 wx.createPage(MiniProgramPage);

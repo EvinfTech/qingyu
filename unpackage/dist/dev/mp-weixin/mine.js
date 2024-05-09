@@ -134,27 +134,32 @@ const _sfc_main = {
         this.reservationInfo = reservationInfo;
       });
     },
+    // 去预约详情页
     toDetail() {
       common_vendor.index.navigateTo({
         url: "/pages/reservationInfo/reservationInfo?order_no=" + this.reservationInfo[0].order_no
       });
     },
+    // 获取高度
     getTopHeight() {
       let res = common_vendor.index.getSystemInfoSync();
       let buttonInfo = common_vendor.index.getMenuButtonBoundingClientRect();
       let navBarHeight = (buttonInfo.top - res.statusBarHeight) * 2 + buttonInfo.height + res.statusBarHeight;
       this.topHeight = navBarHeight;
     },
+    // 去预约列表页
     toReservationList() {
       common_vendor.index.navigateTo({
         url: "/pages/reservationList/reservationList"
       });
     },
+    // 去编辑信息页
     toInfoEdit() {
       common_vendor.index.navigateTo({
         url: "/pages/infoEdit/infoEdit"
       });
     },
+    // 点击我的服务操作
     chooseServiceItem(e) {
       let url = "";
       switch (e.currentTarget.dataset.item) {
@@ -184,34 +189,7 @@ const _sfc_main = {
       common_vendor.index.navigateTo({
         url
       });
-    },
-    chooseServiceItem1(e) {
-      let url = "";
-      switch (e.currentTarget.dataset.item) {
-        case 0:
-          url = "/pages/releaseActivity/releaseActivity";
-          break;
-        case 1:
-          url = "/pages/publicationList/publicationList";
-          break;
-        case 2:
-          url = "/pages/income/income";
-          break;
-      }
-      common_vendor.index.navigateTo({
-        url
-      });
-    },
-    chooseServiceItem2(e) {
-      let url = "";
-      switch (e.currentTarget.dataset.item) {
-      }
-      common_vendor.index.navigateTo({
-        url
-      });
     }
-  },
-  created: function() {
   }
 };
 function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {

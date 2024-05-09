@@ -152,38 +152,15 @@
 				}, 500)
 			})
 		},
-		/**
-		 * 生命周期函数--监听页面显示
-		 */
-		onShow() {},
-		/**
-		 * 生命周期函数--监听页面隐藏
-		 */
-		onHide() {},
-		/**
-		 * 生命周期函数--监听页面卸载
-		 */
-		onUnload() {},
-		/**
-		 * 页面相关事件处理函数--监听用户下拉动作
-		 */
-		onPullDownRefresh() {},
-		/**
-		 * 页面上拉触底事件的处理函数
-		 */
-		onReachBottom() {},
-		/**
-		 * 用户点击右上角分享
-		 */
-		onShareAppMessage() {},
 		methods: {
+			// 获取现在时间
 			getNowTime() {
 				let date = new Date();
 				let hour = date.getHours();
 				let minute = date.getMinutes();
 				return [hour, minute];
 			},
-
+			// 初始化可预约时间数据
 			initEnumInfo() {
 				let enumInfo = this.app.globalData.enumInfo;
 				let timeArr = [];
@@ -234,12 +211,14 @@
 				}
 				this.timeList = arr
 			},
+			// 删除已预约场地
 			deleteItem(index) {
 				this.siteList[this.choosedList[index].siteIndex].timeList[this.choosedList[index].siteTimeIndex]
 					.checked = false
 				this.totalPrice = this.totalPrice - (this.choosedList[index].price) / 100
 				this.choosedList.splice(index, 1)
 			},
+			// 初始化数据
 			initData(date) {
 				let siteList = [];
 				if (this.dateList[this.active].isRequest == false) {
@@ -279,7 +258,7 @@
 					this.setTimeList();
 				}
 			},
-
+			// 设置选中日期
 			setAciveDate(date) {
 				this.dateList = this.et7Days()
 				let index = this.dateList.findIndex((item) => item.date == date);
@@ -359,7 +338,7 @@
 				});
 				this.siteList = siteList
 			},
-
+			// 获取中间内容高度、上方日期选择器的宽度
 			getTabItemWidth() {
 				let that = this;
 				let sysInfo = uni.getSystemInfoSync()
@@ -402,7 +381,7 @@
 					})
 					.exec();
 			},
-
+			// 选择日期
 			chooseTab(e) {
 				let index;
 				if (e.hasOwnProperty('currentTarget')) {
@@ -419,11 +398,6 @@
 				this.translateDistance = distance
 				this.initData(this.dateList[index].fullDate);
 			},
-
-			onClickLeft() {
-				uni.navigateBack();
-			},
-
 			// 选择场地
 			chooseSite(e) {
 				let data = e.currentTarget.dataset;
@@ -475,6 +449,7 @@
 					this.totalPrice = this.totalPrice - data.item.price / 100
 				}
 			},
+			// 获取7天内的时间日期列表
 			et7Days() {
 				//获取系统当前时间
 				let dateList = [];
@@ -502,7 +477,6 @@
 	});
 </script>
 <style scoped>
-	/* pages/reservationDetail/reservationDetail.wxss */
 	.page {
 		width: 100%;
 		height: 100vh;

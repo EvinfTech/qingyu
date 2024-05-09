@@ -46,41 +46,6 @@ const _sfc_main = {
     });
     this.initData();
   },
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady() {
-  },
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow() {
-  },
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide() {
-  },
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload() {
-  },
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh() {
-  },
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom() {
-  },
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage() {
-  },
   methods: {
     async initData() {
       let enumInfo = await this.app.getEnum();
@@ -154,9 +119,11 @@ const _sfc_main = {
         data: this.order_no
       });
     },
+    // 取消 取消订单
     cancel() {
       this.show = false;
     },
+    // 确认 取消订单
     confirm() {
       utils_request.request({
         url: "wx/cancel/order",
@@ -183,6 +150,7 @@ const _sfc_main = {
         });
       });
     },
+    // 取消订单
     cancelOrder() {
       this.show = true;
     },
@@ -216,9 +184,6 @@ const _sfc_main = {
       common_vendor.index.navigateTo({
         url: "/pages/reservationInfo/reservationInfo?order_no=" + this.order_no
       });
-    },
-    onClickLeft() {
-      common_vendor.index.navigateBack();
     }
   }
 };
@@ -305,5 +270,4 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
   });
 }
 const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-1353b6cf"], ["__file", "C:/project/轻羽项目/qingyu-client/pages/orderDetail/orderDetail.vue"]]);
-_sfc_main.__runtimeHooks = 2;
 wx.createPage(MiniProgramPage);

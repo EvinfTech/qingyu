@@ -6,9 +6,13 @@ const _sfc_main = {
     return {
       app: getApp(),
       show: false,
+      //控制弹框
       order_no: "",
+      //订单号
       code: "",
+      //二维码值
       codeImg: "",
+      //二维码
       scrollViewHeight: 0,
       gymnasiumInfo: {
         name: "",
@@ -24,6 +28,7 @@ const _sfc_main = {
         siteNum: "",
         remark: ""
       }
+      //场馆信息
     };
   },
   /**
@@ -31,49 +36,15 @@ const _sfc_main = {
    */
   onLoad(options) {
     this.$nextTick(() => {
-      this.getNavBarHeight();
+      this.getCenterHeight();
     });
     if (options.order_no) {
       this.order_no = options.order_no;
     }
     this.initData();
   },
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady() {
-  },
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow() {
-  },
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide() {
-  },
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload() {
-  },
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh() {
-  },
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom() {
-  },
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage() {
-  },
   methods: {
+    // 初始化数据
     initData() {
       let enumInfo = this.app.globalData.enumInfo;
       utils_request.request({
@@ -114,15 +85,15 @@ const _sfc_main = {
         this.gymnasiumInfo.remark = data.remark;
       });
     },
+    // 取消预约
     toCancel() {
       this.show = true;
     },
-    onClickLeft() {
-      common_vendor.index.navigateBack();
-    },
+    // 取消 取消预约
     cancel() {
       this.show = false;
     },
+    // 确定 取消预约
     confirm() {
       utils_request.request({
         url: "wx/cancel/order",
@@ -146,7 +117,8 @@ const _sfc_main = {
         });
       });
     },
-    getNavBarHeight() {
+    // 获取中间内容高度
+    getCenterHeight() {
       let sysInfo = common_vendor.index.getSystemInfoSync();
       var screenHeight = sysInfo.windowHeight;
       let that = this;
@@ -223,5 +195,4 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
   });
 }
 const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-ba7f838c"], ["__file", "C:/project/轻羽项目/qingyu-client/pages/reservationInfo/reservationInfo.vue"]]);
-_sfc_main.__runtimeHooks = 2;
 wx.createPage(MiniProgramPage);

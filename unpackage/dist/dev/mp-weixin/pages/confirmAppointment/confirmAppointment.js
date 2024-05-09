@@ -109,6 +109,7 @@ const _sfc_main = {
         });
       });
     },
+    // 取消支付
     cancel() {
       this.show = false;
       common_vendor.index.removeStorageSync("orderInfo");
