@@ -7,7 +7,7 @@
 		  </template>
 	  </u-navbar>
         <view class="content">
-            我觉得总体来说平台还是一个非常不错的平台，但是可能在用户反馈这一块还有一些欠缺。我觉得总体来说平台还是一个非常不错的平台，但是可能在用户反馈这一块还有一些欠缺。我觉得总体来说平台还是一个非常不错的平台，但是可能在用户反馈这一块还有一些欠缺。我觉得总体来说平台还是一个非常不错的平台，但是可能在用户反馈这一块还有一些欠缺。
+			{{aboutUs}}
         </view>
     </view>
 </template>
@@ -17,41 +17,19 @@
 export default({
     data() {
         return {
-			app:getApp()
+			app:getApp(),
+			aboutUs:'',
+			
 		};
     },
     /**
      * 生命周期函数--监听页面加载
      */
-    onLoad() {},
-    /**
-     * 生命周期函数--监听页面初次渲染完成
-     */
-    onReady() {},
-    /**
-     * 生命周期函数--监听页面显示
-     */
-    onShow() {},
-    /**
-     * 生命周期函数--监听页面隐藏
-     */
-    onHide() {},
-    /**
-     * 生命周期函数--监听页面卸载
-     */
-    onUnload() {},
-    /**
-     * 页面相关事件处理函数--监听用户下拉动作
-     */
-    onPullDownRefresh() {},
-    /**
-     * 页面上拉触底事件的处理函数
-     */
-    onReachBottom() {},
-    /**
-     * 用户点击右上角分享
-     */
-    onShareAppMessage() {},
+   async onLoad() {
+		let commonInfo = await this.app.getCommonInfo();
+		this.aboutUs = commonInfo.about_us
+	},
+  
     methods: {
         onClickLeft() {
             uni.navigateBack();

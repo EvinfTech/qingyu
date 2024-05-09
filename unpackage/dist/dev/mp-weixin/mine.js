@@ -147,16 +147,34 @@ const _sfc_main = {
       let navBarHeight = (buttonInfo.top - res.statusBarHeight) * 2 + buttonInfo.height + res.statusBarHeight;
       this.topHeight = navBarHeight;
     },
+    // 去编辑信息页
+    toInfoEdit() {
+      common_vendor.index.navigateTo({
+        url: "/pages/infoEdit/infoEdit"
+      });
+    },
+    // 去订单列表页
+    toOrderList() {
+      common_vendor.index.navigateTo({
+        url: "/pages/orderList/orderList"
+      });
+    },
     // 去预约列表页
     toReservationList() {
       common_vendor.index.navigateTo({
         url: "/pages/reservationList/reservationList"
       });
     },
-    // 去编辑信息页
-    toInfoEdit() {
+    // 去意见反馈页
+    toFeedBack() {
       common_vendor.index.navigateTo({
-        url: "/pages/infoEdit/infoEdit"
+        url: "/pages/feedback/feedback"
+      });
+    },
+    // 去关于我们
+    toAboutUs() {
+      common_vendor.index.navigateTo({
+        url: "/pages/aboutUs/aboutUs"
       });
     },
     // 点击我的服务操作
@@ -193,58 +211,19 @@ const _sfc_main = {
   }
 };
 function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
-  return common_vendor.e({
+  return {
     a: $data.userInfo.avatar,
     b: common_vendor.t($data.userInfo.name),
     c: common_vendor.t($data.userInfo.phone ? $data.userInfo.phone : ""),
     d: common_vendor.o((...args) => $options.toInfoEdit && $options.toInfoEdit(...args)),
     e: common_vendor.o((...args) => $options.toInfoEdit && $options.toInfoEdit(...args)),
-    f: common_vendor.f($data.statisticsList, (item, index, i0) => {
-      return {
-        a: common_vendor.t(item.num),
-        b: common_vendor.t(item.title),
-        c: index
-      };
-    }),
+    f: common_vendor.o((...args) => $options.toOrderList && $options.toOrderList(...args)),
     g: common_vendor.o((...args) => $options.toReservationList && $options.toReservationList(...args)),
-    h: $data.reservationInfo.length > 0
-  }, $data.reservationInfo.length > 0 ? {
-    i: common_vendor.f($data.reservationInfo, (item, index, i0) => {
-      return {
-        a: common_vendor.t(item.gymnasiumName),
-        b: common_vendor.t(item.day),
-        c: common_vendor.t(item.date),
-        d: common_vendor.f(item.siteList, (con, j, i1) => {
-          return {
-            a: common_vendor.t(con.siteNo),
-            b: common_vendor.t(con.startTime),
-            c: common_vendor.t(con.endTime),
-            d: j
-          };
-        }),
-        e: common_vendor.o((...args) => $options.toDetail && $options.toDetail(...args), index),
-        f: index
-      };
-    })
-  } : {}, {
-    j: common_vendor.f($data.serviceList, (con, j, i0) => {
-      return common_vendor.e({
-        a: con.title == "联系客服"
-      }, con.title == "联系客服" ? {
-        b: con.icon,
-        c: common_vendor.t(con.title),
-        d: common_vendor.o((...args) => $options.handleContact && $options.handleContact(...args), j)
-      } : {
-        e: con.icon,
-        f: common_vendor.t(con.title)
-      }, {
-        g: j,
-        h: common_vendor.o((...args) => $options.chooseServiceItem && $options.chooseServiceItem(...args), j),
-        i: j
-      });
-    }),
+    h: common_vendor.o((...args) => $options.toFeedBack && $options.toFeedBack(...args)),
+    i: common_vendor.o((...args) => $options.toAboutUs && $options.toAboutUs(...args)),
+    j: common_vendor.o((...args) => $options.handleContact && $options.handleContact(...args)),
     k: common_vendor.s("padding-top: " + ($data.topHeight + "px") + ";")
-  });
+  };
 }
 const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-7c2ebfa5"], ["__file", "C:/project/轻羽项目/qingyu-client/pages/mine/mine.vue"]]);
 exports.MiniProgramPage = MiniProgramPage;

@@ -1,8 +1,8 @@
 <script>
 	export default {
 		globalData: {
-			httpUrl: 'https://qingyu.evinf.cn/',
-			// httpUrl: 'http://172.16.8.5:8002/',
+			// httpUrl: 'https://qingyu.evinf.cn/',
+			httpUrl: 'http://172.16.8.5:8002/',
 			uploadAvatarUrl: 'https://qingyu.evinf.cn/common/upload/avatar',
 			uploadImgUrl: 'https://qingyu.evinf.cn/common/upload/photo',
 			userInfo: {
@@ -28,8 +28,10 @@
 				//运动时长
 				sport_day: '' //运动天数
 			},
-			enumInfo: {},
-			gymnasiumInfo: {}
+			enumInfo: {}, //时间枚举
+			gymnasiumInfo: {}, //场馆信息
+			aboutUs:'',//关于我们
+			agreement:'',//用户协议
 		},
 		methods: {
 			getLocation() {
@@ -130,8 +132,27 @@
 						}
 					});
 				})
-
-
+			},
+			// 获取用户协议和关于我们
+			getCommonInfo(){
+					return new Promise((resolve, reject) => {
+						let commonInfo = uni.getStorageSync("commonInfo")
+						if (commonInfo) {
+							commonInfo = JSON.parse(commonInfo)
+							this.globalData.aboutUs = commonInfo.about_us;
+							this.globalData.agreement = commonInfo.agreement;
+							resolve(commonInfo)
+							return false;
+						}
+						uni.request({
+							url: this.globalData.httpUrl + 'wx/get/agreement/about',
+							method: 'POST'
+						}).then((res) => {
+							let commonInfo = res.data.data;
+							uni.setStorageSync("commonInfo", JSON.stringify(commonInfo))
+							resolve(commonInfo)
+						});
+					})
 			},
 			// 获取门店信息
 			getStoreInfo(type = '') {

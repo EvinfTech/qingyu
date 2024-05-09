@@ -71,17 +71,28 @@ const _sfc_main = {
           remark: this.remark
         }
       }).then((res) => {
-        common_vendor.index.showToast({
-          title: "提交成功",
-          icon: "none",
-          duration: 2e3,
-          success: () => {
-            setTimeout(() => {
-              this.show = true;
-              this.order_no = res.data.order;
-            }, 2e3);
-          }
-        });
+        if (res.code == "200") {
+          common_vendor.index.showToast({
+            title: "提交成功",
+            icon: "none",
+            duration: 2e3,
+            success: () => {
+              setTimeout(() => {
+                this.show = true;
+                this.order_no = res.data.order;
+              }, 2e3);
+            }
+          });
+        } else {
+          common_vendor.index.showToast({
+            title: res.msg,
+            icon: "none"
+          });
+          setTimeout(() => {
+            const eventChannel = this.getOpenerEventChannel();
+            eventChannel.emit("updateSiteInfo");
+          }, 1500);
+        }
       });
     },
     // 确定支付订单

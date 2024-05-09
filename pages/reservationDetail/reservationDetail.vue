@@ -57,9 +57,9 @@
 		</view>
 		<view class="bottomCon">
 			<view class="choosedListBox w-full">
-				<view class="w-full h-full" style="overflow-x: auto;height: auto;">
+				<scroll-view scroll-x="true" class="w-full h-full" :scroll-left="scrollLeftDistance">
 					<view class="w-full flex align-center">
-						<view v-if="choosedList.length == 0" style="color: #ccc; padding-left: 20rpx">暂未选择场地</view>
+						<view v-if="choosedList.length == 0" class="flex align-center emptyText" >暂未选择场地</view>
 						<view v-else class="w-full flex align-center">
 							<view class="choosedItem flex flex-direction" v-for="(item, index) in choosedList"
 								:key="index">
@@ -76,7 +76,9 @@
 							</view>
 						</view>
 					</view>
-				</view>
+				</scroll-view>
+
+
 			</view>
 			<view class="flex align-center justify-between">
 				<view>
@@ -129,7 +131,8 @@
 					price: ''
 				},
 				j: '',
-				currentDate: ''
+				currentDate: '',
+				scrollLeftDistance:0
 			};
 		},
 		/**
@@ -280,7 +283,7 @@
 				for (var key in site_obj) {
 					let time_enum = [];
 					let money = 0;
-					let site_name=''
+					let site_name = ''
 					for (var item of site_obj[key]) {
 						time_enum.push(Number(item.enumInfoIndex));
 						money = money + item.price
@@ -290,7 +293,7 @@
 						site_id: Number(key),
 						time_enum: time_enum,
 						money,
-						site_name:site_name
+						site_name: site_name
 					});
 				}
 				uni.setStorageSync("orderInfo", JSON.stringify({
@@ -302,7 +305,13 @@
 					totalPrice: this.totalPrice
 				}))
 				uni.navigateTo({
-					url: '/pages/confirmAppointment/confirmAppointment'
+					url: '/pages/confirmAppointment/confirmAppointment',
+					events:{
+						updateSiteInfo:()=>{
+							// this.dateList[this.active].isRequest = false
+							// this.initData(this.dateList[this.active].fullDate);
+						}
+					}
 				})
 			},
 
@@ -448,6 +457,9 @@
 					this.choosedList = dataList
 					this.totalPrice = this.totalPrice - data.item.price / 100
 				}
+				this.$nextTick(()=>{
+					this.scrollLeftDistance = 9999 + this.scrollLeftDistance
+				})
 			},
 			// 获取7天内的时间日期列表
 			et7Days() {
@@ -514,7 +526,13 @@
 		font-feature-settings: 'kern' on;
 		color: #b1b4c3;
 	}
-
+	.emptyText{
+		margin-top: 10px;
+		color: #ccc; 
+		padding-left: 20rpx;
+		height: 100rpx;
+	}
+	
 	.bottomCon {
 		padding: 0 24rpx 74rpx;
 		position: fixed;

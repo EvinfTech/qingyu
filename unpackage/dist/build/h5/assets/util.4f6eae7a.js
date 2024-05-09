@@ -1,0 +1,1 @@
+const t=t=>{const e=t.toString();return e[1]?e:"0"+e},e=e=>{let r=new Date;return`${r.getFullYear()}${e}${t(r.getMonth()+1)}${e}${t(r.getDate())}`},r=(t,e)=>t.reduce((function(t,r){var n=r[e];return t[n]||(t[n]=[]),t[n].push(r),t}),{});export{r as a,t as f,e as g};

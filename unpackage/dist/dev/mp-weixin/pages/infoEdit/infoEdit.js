@@ -17,7 +17,9 @@ const _sfc_main = {
       dealCurrentDate: "",
       minDate: 0,
       maxDate: 0,
-      fileList: []
+      fileList: [],
+      showLogout: false,
+      phone: ""
     };
   },
   /**
@@ -32,6 +34,7 @@ const _sfc_main = {
     this.sex = String(userInfo.sex);
     this.dealCurrentDate = userInfo.birthday;
     this.personalProfile = userInfo.introduce;
+    this.phone = userInfo.phone;
   },
   methods: {
     // 删除头像
@@ -56,6 +59,7 @@ const _sfc_main = {
           this.initAvatarUrl = JSON.parse(res.data).data;
           this.fileList = fileList;
           this.avatarUrl = fileList[0].url;
+          this.save();
         }
       });
     },
@@ -76,6 +80,20 @@ const _sfc_main = {
       this.currentDate = e.value;
       this.dealCurrentDate = `${year}${month}${day}`;
       this.show = false;
+      this.save();
+    },
+    // 处理生日 2020-02-08
+    dealWithBirth(birthday) {
+      let birth = String(birthday);
+      return birth.slice(0, 4) + "-" + birth.slice(4, 6) + "-" + birth.slice(6, 8);
+    },
+    // 昵称失去焦点
+    nickNameBlur(e) {
+      this.save();
+    },
+    // 性别修改
+    sexChange(e) {
+      this.save();
     },
     // 保存
     save() {
@@ -100,12 +118,20 @@ const _sfc_main = {
           icon: "none",
           duration: 2e3
         });
-        setTimeout(() => {
-          common_vendor.index.redirectTo({
-            url: "/pages/index/index"
-          });
-        }, 1500);
       });
+    },
+    // 退出登录
+    logout() {
+      this.showLogout = true;
+    },
+    // 取消退出登录
+    cancel() {
+      this.showLogout = false;
+    },
+    // 确认退出登录
+    confirm() {
+      this.showLogout = false;
+      this.app.logout();
     }
   }
 };
@@ -119,8 +145,8 @@ if (!Array) {
   const _easycom_u_radio_group2 = common_vendor.resolveComponent("u-radio-group");
   const _easycom_u_cell_group2 = common_vendor.resolveComponent("u-cell-group");
   const _easycom_u_datetime_picker2 = common_vendor.resolveComponent("u-datetime-picker");
-  const _easycom_u_textarea2 = common_vendor.resolveComponent("u-textarea");
-  (_easycom_up_icon2 + _easycom_u_navbar2 + _easycom_u_icon2 + _easycom_u_upload2 + _easycom_u_cell2 + _easycom_u_radio2 + _easycom_u_radio_group2 + _easycom_u_cell_group2 + _easycom_u_datetime_picker2 + _easycom_u_textarea2)();
+  const _easycom_u_modal2 = common_vendor.resolveComponent("u-modal");
+  (_easycom_up_icon2 + _easycom_u_navbar2 + _easycom_u_icon2 + _easycom_u_upload2 + _easycom_u_cell2 + _easycom_u_radio2 + _easycom_u_radio_group2 + _easycom_u_cell_group2 + _easycom_u_datetime_picker2 + _easycom_u_modal2)();
 }
 const _easycom_up_icon = () => "../../node-modules/uview-plus/components/u-icon/u-icon.js";
 const _easycom_u_navbar = () => "../../node-modules/uview-plus/components/u-navbar/u-navbar.js";
@@ -131,9 +157,9 @@ const _easycom_u_radio = () => "../../node-modules/uview-plus/components/u-radio
 const _easycom_u_radio_group = () => "../../node-modules/uview-plus/components/u-radio-group/u-radio-group.js";
 const _easycom_u_cell_group = () => "../../node-modules/uview-plus/components/u-cell-group/u-cell-group.js";
 const _easycom_u_datetime_picker = () => "../../node-modules/uview-plus/components/u-datetime-picker/u-datetime-picker.js";
-const _easycom_u_textarea = () => "../../node-modules/uview-plus/components/u-textarea/u-textarea.js";
+const _easycom_u_modal = () => "../../node-modules/uview-plus/components/u-modal/u-modal.js";
 if (!Math) {
-  (_easycom_up_icon + _easycom_u_navbar + _easycom_u_icon + _easycom_u_upload + _easycom_u_cell + _easycom_u_radio + _easycom_u_radio_group + _easycom_u_cell_group + _easycom_u_datetime_picker + _easycom_u_textarea)();
+  (_easycom_up_icon + _easycom_u_navbar + _easycom_u_icon + _easycom_u_upload + _easycom_u_cell + _easycom_u_radio + _easycom_u_radio_group + _easycom_u_cell_group + _easycom_u_datetime_picker + _easycom_u_modal)();
 }
 function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
   return common_vendor.e({
@@ -165,51 +191,60 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
       title: "头像",
       ["is-link"]: true
     }),
-    k: $data.nickname,
-    l: common_vendor.o(($event) => $data.nickname = $event.detail.value),
-    m: common_vendor.p({
+    k: common_vendor.o((...args) => $options.nickNameBlur && $options.nickNameBlur(...args)),
+    l: $data.nickname,
+    m: common_vendor.o(($event) => $data.nickname = $event.detail.value),
+    n: common_vendor.p({
       title: "昵称"
     }),
-    n: common_vendor.p({
+    o: common_vendor.p({
       name: "1",
       label: "男"
     }),
-    o: common_vendor.p({
+    p: common_vendor.p({
       name: "2",
       label: "女"
     }),
-    p: common_vendor.o(($event) => $data.sex = $event),
-    q: common_vendor.p({
+    q: common_vendor.o($options.sexChange),
+    r: common_vendor.o(($event) => $data.sex = $event),
+    s: common_vendor.p({
       modelValue: $data.sex
     }),
-    r: common_vendor.p({
+    t: common_vendor.p({
       title: "性别"
     }),
-    s: common_vendor.t(!$data.dealCurrentDate ? "请选择" : $data.dealCurrentDate),
-    t: common_vendor.o($options.chooseAge),
-    v: common_vendor.p({
+    v: common_vendor.t(!$data.dealCurrentDate ? "请选择" : $options.dealWithBirth($data.dealCurrentDate)),
+    w: common_vendor.o($options.chooseAge),
+    x: common_vendor.p({
       title: "生日",
       ["is-link"]: true
     }),
-    w: common_vendor.p({
+    y: common_vendor.t($data.phone),
+    z: common_vendor.p({
+      title: "手机"
+    }),
+    A: common_vendor.p({
       ["custom-class"]: "userinfo-group"
     }),
-    x: common_vendor.o($options.onConfirm),
-    y: common_vendor.o($options.onCancel),
-    z: common_vendor.o(($event) => $data.currentDate = $event),
-    A: common_vendor.p({
+    B: common_vendor.o($options.onConfirm),
+    C: common_vendor.o($options.onCancel),
+    D: common_vendor.o(($event) => $data.currentDate = $event),
+    E: common_vendor.p({
       show: $data.show,
       mode: "date",
       ["min-date"]: $data.minDate,
       ["max-date"]: $data.maxDate,
       modelValue: $data.currentDate
     }),
-    B: common_vendor.o(($event) => $data.personalProfile = $event),
-    C: common_vendor.p({
-      placeholder: "请输入...",
-      modelValue: $data.personalProfile
-    }),
-    D: common_vendor.o((...args) => $options.save && $options.save(...args))
+    F: common_vendor.o((...args) => $options.logout && $options.logout(...args)),
+    G: common_vendor.o($options.confirm),
+    H: common_vendor.o($options.cancel),
+    I: common_vendor.p({
+      show: $data.showLogout,
+      title: "提示",
+      content: "确定要退出登录吗？",
+      showCancelButton: true
+    })
   });
 }
 const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-516de732"], ["__file", "C:/project/轻羽项目/qingyu-client/pages/infoEdit/infoEdit.vue"]]);

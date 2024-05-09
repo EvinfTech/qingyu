@@ -22,8 +22,8 @@ if (!Math) {
 }
 const _sfc_main = {
   globalData: {
-    httpUrl: "https://qingyu.evinf.cn/",
-    // httpUrl: 'http://172.16.8.5:8002/',
+    // httpUrl: 'https://qingyu.evinf.cn/',
+    httpUrl: "http://172.16.8.5:8002/",
     uploadAvatarUrl: "https://qingyu.evinf.cn/common/upload/avatar",
     uploadImgUrl: "https://qingyu.evinf.cn/common/upload/photo",
     userInfo: {
@@ -51,7 +51,13 @@ const _sfc_main = {
       //运动天数
     },
     enumInfo: {},
-    gymnasiumInfo: {}
+    //时间枚举
+    gymnasiumInfo: {},
+    //场馆信息
+    aboutUs: "",
+    //关于我们
+    agreement: ""
+    //用户协议
   },
   methods: {
     getLocation() {
@@ -145,6 +151,27 @@ const _sfc_main = {
               resolve(userInfo2);
             }
           }
+        });
+      });
+    },
+    // 获取用户协议和关于我们
+    getCommonInfo() {
+      return new Promise((resolve, reject) => {
+        let commonInfo = common_vendor.index.getStorageSync("commonInfo");
+        if (commonInfo) {
+          commonInfo = JSON.parse(commonInfo);
+          this.globalData.aboutUs = commonInfo.about_us;
+          this.globalData.agreement = commonInfo.agreement;
+          resolve(commonInfo);
+          return false;
+        }
+        common_vendor.index.request({
+          url: this.globalData.httpUrl + "wx/get/agreement/about",
+          method: "POST"
+        }).then((res) => {
+          let commonInfo2 = res.data.data;
+          common_vendor.index.setStorageSync("commonInfo", JSON.stringify(commonInfo2));
+          resolve(commonInfo2);
         });
       });
     },

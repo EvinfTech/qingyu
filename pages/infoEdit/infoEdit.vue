@@ -21,12 +21,12 @@
 			<u-cell title="昵称">
 				<template #value>
 					<input v-model="nickname" placeholder="请输入8个字以内的昵称" style="text-align: right;"
-						placeholder-style="font-size:28rpx;color: #B1B4C3;" />
+						placeholder-style="font-size:28rpx;color: #B1B4C3;" @blur="nickNameBlur" />
 				</template>
 			</u-cell>
 			<u-cell title="性别">
 				<template #value>
-					<u-radio-group v-model="sex">
+					<u-radio-group v-model="sex" @change="sexChange">
 						<u-radio name="1" label="男" style="margin-right: 48rpx"></u-radio>
 						<u-radio name="2" label="女"></u-radio>
 					</u-radio-group>
@@ -34,21 +34,32 @@
 			</u-cell>
 			<u-cell title="生日" is-link @tap.native="chooseAge">
 				<template #value>
-					<view style="font-size: 28rpx; color: #b1b4c3">
-						{{ !dealCurrentDate ? '请选择' : dealCurrentDate }}
+					<view style="font-size: 28rpx;">
+						{{ !dealCurrentDate ? '请选择' : dealWithBirth(dealCurrentDate)}}
 					</view>
 				</template>
 
 			</u-cell>
+			<u-cell title="手机"  >
+				<template #value>
+					<view style="font-size: 28rpx;">
+						{{phone}}
+					</view>
+				</template>
+			
+			</u-cell>
 		</u-cell-group>
 		<u-datetime-picker :show="show" mode="date" :min-date="minDate" :max-date="maxDate" v-model="currentDate"
 			@confirm="onConfirm" @cancel="onCancel" />
-		<view class="devide"></view>
+	<!-- 	<view class="devide"></view>
 		<view class="personalProfile">
 			<view class="personalProfileTitle">个人简介</view>
 			<u-textarea v-model="personalProfile" placeholder="请输入..." />
-		</view>
-		<view class="saveBtn flex align-center justify-center" @tap="save">保存</view>
+		</view> -->
+		<!-- <view class="saveBtn flex align-center justify-center" @tap="save">保存</view> -->
+		<view class="logoutBtn flex align-center justify-center" @tap="logout">退出登录</view>
+		<u-modal :show="showLogout" title="提示" content="确定要退出登录吗？" :showCancelButton="true" @confirm="confirm"
+			@cancel="cancel"></u-modal>
 	</view>
 </template>
 
@@ -64,7 +75,7 @@
 		data() {
 			return {
 				app: getApp(),
-				initAvatarUrl:'',
+				initAvatarUrl: '',
 				avatarUrl: '',
 				nickname: '',
 				sex: '',
@@ -76,6 +87,8 @@
 				minDate: 0,
 				maxDate: 0,
 				fileList: [],
+				showLogout:false,
+				phone:''
 			};
 		},
 		/**
@@ -90,6 +103,7 @@
 			this.sex = String(userInfo.sex)
 			this.dealCurrentDate = userInfo.birthday
 			this.personalProfile = userInfo.introduce
+			this.phone = userInfo.phone
 
 		},
 		methods: {
@@ -110,13 +124,14 @@
 					success: (res) => {
 						let fileList = this.fileList;
 						fileList.push({
-							url: this.app.globalData.httpUrl  + JSON.parse(res.data)
+							url: this.app.globalData.httpUrl + JSON.parse(res.data)
 								.data
 						});
 						this.initAvatarUrl = JSON.parse(res.data)
-								.data
+							.data
 						this.fileList = fileList
 						this.avatarUrl = fileList[0].url
+						this.save()
 					}
 				});
 			},
@@ -137,8 +152,21 @@
 				this.currentDate = e.value
 				this.dealCurrentDate = `${year}${month}${day}`
 				this.show = false
+				this.save()
 			},
-
+			// 处理生日 2020-02-08
+			dealWithBirth(birthday) {
+				let birth = String(birthday)
+				return birth.slice(0, 4) + '-' + (birth.slice(4, 6)) + '-' + (birth.slice(6, 8))
+			},
+			// 昵称失去焦点
+			nickNameBlur(e) {
+				this.save()
+			},
+			// 性别修改
+			sexChange(e) {
+				this.save()
+			},
 			// 保存
 			save() {
 				request({
@@ -161,12 +189,21 @@
 						icon: 'none',
 						duration: 2000
 					});
-					setTimeout(() => {
-						uni.redirectTo({
-							url: '/pages/index/index'
-						})
-					}, 1500)
+
 				});
+			},
+			// 退出登录
+			logout() {
+				this.showLogout = true;
+			},
+			// 取消退出登录
+			cancel() {
+				this.showLogout = false
+			},
+			// 确认退出登录
+			confirm() {
+				this.showLogout = false
+				this.app.logout()
 			}
 		}
 	});
@@ -246,5 +283,21 @@
 		width: 40px;
 		height: 40px;
 		border-radius: 50%;
+	}
+
+	.logoutBtn {
+		width: 686rpx;
+		height: 84rpx;
+		border-radius: 12rpx;
+		background: #ffe6e6;
+		font-family: Alibaba PuHuiTi 2;
+		font-size: 32rpx;
+		font-weight: 500;
+		color: #f44336;
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		bottom: 100rpx;
+		z-index: 9;
 	}
 </style>

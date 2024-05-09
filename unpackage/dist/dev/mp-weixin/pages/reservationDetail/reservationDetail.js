@@ -31,7 +31,8 @@ const _sfc_main = {
         price: ""
       },
       j: "",
-      currentDate: ""
+      currentDate: "",
+      scrollLeftDistance: 0
     };
   },
   /**
@@ -194,7 +195,11 @@ const _sfc_main = {
         totalPrice: this.totalPrice
       }));
       common_vendor.index.navigateTo({
-        url: "/pages/confirmAppointment/confirmAppointment"
+        url: "/pages/confirmAppointment/confirmAppointment",
+        events: {
+          updateSiteInfo: () => {
+          }
+        }
       });
     },
     // 设置预约场地列表
@@ -316,6 +321,9 @@ const _sfc_main = {
         this.choosedList = dataList;
         this.totalPrice = this.totalPrice - data.item.price / 100;
       }
+      this.$nextTick(() => {
+        this.scrollLeftDistance = 9999 + this.scrollLeftDistance;
+      });
     },
     // 获取7天内的时间日期列表
     et7Days() {
@@ -417,8 +425,9 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
       size: "14"
     })
   }, {
-    m: common_vendor.t($data.totalPrice),
-    n: common_vendor.o((...args) => $options.submitOrder && $options.submitOrder(...args))
+    m: $data.scrollLeftDistance,
+    n: common_vendor.t($data.totalPrice),
+    o: common_vendor.o((...args) => $options.submitOrder && $options.submitOrder(...args))
   });
 }
 const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-71ac0ae8"], ["__file", "C:/project/轻羽项目/qingyu-client/pages/reservationDetail/reservationDetail.vue"]]);

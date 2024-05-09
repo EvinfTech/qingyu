@@ -32,6 +32,12 @@
 		font-feature-settings: 'kern' on;
 		color: #b1b4c3;
 }
+.emptyText.data-v-71ac0ae8{
+		margin-top: 10px;
+		color: #ccc; 
+		padding-left: 20rpx;
+		height: 100rpx;
+}
 .bottomCon.data-v-71ac0ae8 {
 		padding: 0 24rpx 74rpx;
 		position: fixed;

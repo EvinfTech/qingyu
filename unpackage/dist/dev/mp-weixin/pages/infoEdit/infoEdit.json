@@ -9,6 +9,6 @@
     "u-radio-group": "../../node-modules/uview-plus/components/u-radio-group/u-radio-group",
     "u-cell-group": "../../node-modules/uview-plus/components/u-cell-group/u-cell-group",
     "u-datetime-picker": "../../node-modules/uview-plus/components/u-datetime-picker/u-datetime-picker",
-    "u-textarea": "../../node-modules/uview-plus/components/u-textarea/u-textarea"
+    "u-modal": "../../node-modules/uview-plus/components/u-modal/u-modal"
   }
 }

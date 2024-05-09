@@ -11969,6 +11969,129 @@ dayjs.Ls = Ls;
 dayjs.p = {};
 const props$c = {
   props: {
+    // 滑块的移动过渡时间，单位ms
+    duration: {
+      type: Number,
+      default: defprops.tabs.duration
+    },
+    // tabs标签数组
+    list: {
+      type: Array,
+      default: defprops.tabs.list
+    },
+    // 滑块颜色
+    lineColor: {
+      type: String,
+      default: defprops.tabs.lineColor
+    },
+    // 菜单选择中时的样式
+    activeStyle: {
+      type: [String, Object],
+      default: defprops.tabs.activeStyle
+    },
+    // 菜单非选中时的样式
+    inactiveStyle: {
+      type: [String, Object],
+      default: defprops.tabs.inactiveStyle
+    },
+    // 滑块长度
+    lineWidth: {
+      type: [String, Number],
+      default: defprops.tabs.lineWidth
+    },
+    // 滑块高度
+    lineHeight: {
+      type: [String, Number],
+      default: defprops.tabs.lineHeight
+    },
+    // 滑块背景显示大小，当滑块背景设置为图片时使用
+    lineBgSize: {
+      type: String,
+      default: defprops.tabs.lineBgSize
+    },
+    // 菜单item的样式
+    itemStyle: {
+      type: [String, Object],
+      default: defprops.tabs.itemStyle
+    },
+    // 菜单是否可滚动
+    scrollable: {
+      type: Boolean,
+      default: defprops.tabs.scrollable
+    },
+    // 当前选中标签的索引
+    current: {
+      type: [Number, String],
+      default: defprops.tabs.current
+    },
+    // 默认读取的键名
+    keyName: {
+      type: String,
+      default: defprops.tabs.keyName
+    }
+  }
+};
+const props$b = {
+  props: {
+    // 内置图标名称，或图片路径，建议绝对路径
+    icon: {
+      type: String,
+      default: defprops.empty.icon
+    },
+    // 提示文字
+    text: {
+      type: String,
+      default: defprops.empty.text
+    },
+    // 文字颜色
+    textColor: {
+      type: String,
+      default: defprops.empty.textColor
+    },
+    // 文字大小
+    textSize: {
+      type: [String, Number],
+      default: defprops.empty.textSize
+    },
+    // 图标的颜色
+    iconColor: {
+      type: String,
+      default: defprops.empty.iconColor
+    },
+    // 图标的大小
+    iconSize: {
+      type: [String, Number],
+      default: defprops.empty.iconSize
+    },
+    // 选择预置的图标类型
+    mode: {
+      type: String,
+      default: defprops.empty.mode
+    },
+    //  图标宽度，单位px
+    width: {
+      type: [String, Number],
+      default: defprops.empty.width
+    },
+    // 图标高度，单位px
+    height: {
+      type: [String, Number],
+      default: defprops.empty.height
+    },
+    // 是否显示组件
+    show: {
+      type: Boolean,
+      default: defprops.empty.show
+    },
+    // 组件距离上一个元素之间的距离，默认px单位
+    marginTop: {
+      type: [String, Number],
+      default: defprops.empty.marginTop
+    }
+  }
+};
+const props$a = {
+  props: {
     // 输入框的内容
     value: {
       type: [String, Number],
@@ -12088,129 +12211,6 @@ const props$c = {
     ignoreCompositionEvent: {
       type: Boolean,
       default: true
-    }
-  }
-};
-const props$b = {
-  props: {
-    // 滑块的移动过渡时间，单位ms
-    duration: {
-      type: Number,
-      default: defprops.tabs.duration
-    },
-    // tabs标签数组
-    list: {
-      type: Array,
-      default: defprops.tabs.list
-    },
-    // 滑块颜色
-    lineColor: {
-      type: String,
-      default: defprops.tabs.lineColor
-    },
-    // 菜单选择中时的样式
-    activeStyle: {
-      type: [String, Object],
-      default: defprops.tabs.activeStyle
-    },
-    // 菜单非选中时的样式
-    inactiveStyle: {
-      type: [String, Object],
-      default: defprops.tabs.inactiveStyle
-    },
-    // 滑块长度
-    lineWidth: {
-      type: [String, Number],
-      default: defprops.tabs.lineWidth
-    },
-    // 滑块高度
-    lineHeight: {
-      type: [String, Number],
-      default: defprops.tabs.lineHeight
-    },
-    // 滑块背景显示大小，当滑块背景设置为图片时使用
-    lineBgSize: {
-      type: String,
-      default: defprops.tabs.lineBgSize
-    },
-    // 菜单item的样式
-    itemStyle: {
-      type: [String, Object],
-      default: defprops.tabs.itemStyle
-    },
-    // 菜单是否可滚动
-    scrollable: {
-      type: Boolean,
-      default: defprops.tabs.scrollable
-    },
-    // 当前选中标签的索引
-    current: {
-      type: [Number, String],
-      default: defprops.tabs.current
-    },
-    // 默认读取的键名
-    keyName: {
-      type: String,
-      default: defprops.tabs.keyName
-    }
-  }
-};
-const props$a = {
-  props: {
-    // 内置图标名称，或图片路径，建议绝对路径
-    icon: {
-      type: String,
-      default: defprops.empty.icon
-    },
-    // 提示文字
-    text: {
-      type: String,
-      default: defprops.empty.text
-    },
-    // 文字颜色
-    textColor: {
-      type: String,
-      default: defprops.empty.textColor
-    },
-    // 文字大小
-    textSize: {
-      type: [String, Number],
-      default: defprops.empty.textSize
-    },
-    // 图标的颜色
-    iconColor: {
-      type: String,
-      default: defprops.empty.iconColor
-    },
-    // 图标的大小
-    iconSize: {
-      type: [String, Number],
-      default: defprops.empty.iconSize
-    },
-    // 选择预置的图标类型
-    mode: {
-      type: String,
-      default: defprops.empty.mode
-    },
-    //  图标宽度，单位px
-    width: {
-      type: [String, Number],
-      default: defprops.empty.width
-    },
-    // 图标高度，单位px
-    height: {
-      type: [String, Number],
-      default: defprops.empty.height
-    },
-    // 是否显示组件
-    show: {
-      type: Boolean,
-      default: defprops.empty.show
-    },
-    // 组件距离上一个元素之间的距离，默认px单位
-    marginTop: {
-      type: [String, Number],
-      default: defprops.empty.marginTop
     }
   }
 };

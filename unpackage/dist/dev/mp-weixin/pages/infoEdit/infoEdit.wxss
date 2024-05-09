@@ -64,3 +64,18 @@
 		height: 40px;
 		border-radius: 50%;
 }
+.logoutBtn.data-v-516de732 {
+		width: 686rpx;
+		height: 84rpx;
+		border-radius: 12rpx;
+		background: #ffe6e6;
+		font-family: Alibaba PuHuiTi 2;
+		font-size: 32rpx;
+		font-weight: 500;
+		color: #f44336;
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		bottom: 100rpx;
+		z-index: 9;
+}
