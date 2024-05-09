@@ -21,7 +21,8 @@ const _sfc_main = {
         phone: "",
         createTime: "",
         status: "",
-        siteNum: ""
+        siteNum: "",
+        remark: ""
       }
     };
   },
@@ -110,6 +111,7 @@ const _sfc_main = {
         this.gymnasiumInfo.siteNum = siteNum;
         this.gymnasiumInfo.hour = hour;
         this.gymnasiumInfo.status = data.status;
+        this.gymnasiumInfo.remark = data.remark;
       });
     },
     toCancel() {
@@ -199,19 +201,20 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     }),
     n: common_vendor.t($data.gymnasiumInfo.person),
     o: common_vendor.t($data.gymnasiumInfo.phone),
-    p: common_vendor.t($data.gymnasiumInfo.createTime),
-    q: common_vendor.s("height: " + ($data.scrollViewHeight + "px") + ";"),
-    r: $data.gymnasiumInfo.status == "C"
+    p: common_vendor.t($data.gymnasiumInfo.remark),
+    q: common_vendor.t($data.gymnasiumInfo.createTime),
+    r: common_vendor.s("height: " + ($data.scrollViewHeight + "px") + ";"),
+    s: $data.gymnasiumInfo.status == "C"
   }, $data.gymnasiumInfo.status == "C" ? {} : {}, {
-    s: $data.gymnasiumInfo.status == "U"
+    t: $data.gymnasiumInfo.status == "U"
   }, $data.gymnasiumInfo.status == "U" ? {} : {}, {
-    t: $data.gymnasiumInfo.status != "U" && $data.gymnasiumInfo.status != "C"
+    v: $data.gymnasiumInfo.status != "U" && $data.gymnasiumInfo.status != "C"
   }, $data.gymnasiumInfo.status != "U" && $data.gymnasiumInfo.status != "C" ? {
-    v: common_vendor.o((...args) => $options.toCancel && $options.toCancel(...args))
+    w: common_vendor.o((...args) => $options.toCancel && $options.toCancel(...args))
   } : {}, {
-    w: common_vendor.o($options.confirm),
-    x: common_vendor.o($options.cancel),
-    y: common_vendor.p({
+    x: common_vendor.o($options.confirm),
+    y: common_vendor.o($options.cancel),
+    z: common_vendor.p({
       show: $data.show,
       title: "提示",
       content: "确定要取消预约吗？",

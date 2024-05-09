@@ -48,6 +48,7 @@
 			<view class="personInfo">
 				<view style="margin-bottom: 18rpx">预约人：{{ gymnasiumInfo.person }}</view>
 				<view style="margin-bottom: 18rpx">手机号码：{{ gymnasiumInfo.phone }}</view>
+				<view style="margin-bottom: 18rpx">备注：{{ gymnasiumInfo.remark }}</view>
 				<view>创建时间：{{ gymnasiumInfo.createTime }}</view>
 			</view>
 		</scroll-view>
@@ -87,7 +88,8 @@
 					phone: '',
 					createTime: '',
 					status: '',
-					siteNum: ''
+					siteNum: '',
+					remark:''
 				}
 			};
 		},
@@ -169,6 +171,7 @@
 					this.gymnasiumInfo.siteNum = siteNum
 					this.gymnasiumInfo.hour = hour
 					this.gymnasiumInfo.status = data.status
+					this.gymnasiumInfo.remark = data.remark
 				});
 			},
 
