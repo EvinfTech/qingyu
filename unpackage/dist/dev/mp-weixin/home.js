@@ -186,15 +186,15 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     g: common_vendor.t($data.storeInfo.gymnasiumName),
     h: common_vendor.t($data.storeInfo.businessHours),
     i: common_vendor.p({
-      name: "map-fill"
-    }),
-    j: common_vendor.t($data.storeInfo.location),
-    k: common_vendor.o((...args) => $options.toMap && $options.toMap(...args)),
-    l: common_vendor.p({
       name: "phone-fill"
     }),
-    m: common_vendor.t($data.storeInfo.phone),
-    n: common_vendor.o((...args) => $options.toCall && $options.toCall(...args)),
+    j: common_vendor.t($data.storeInfo.phone),
+    k: common_vendor.o((...args) => $options.toCall && $options.toCall(...args)),
+    l: common_vendor.p({
+      name: "map-fill"
+    }),
+    m: common_vendor.t($data.storeInfo.location),
+    n: common_vendor.o((...args) => $options.toMap && $options.toMap(...args)),
     o: common_vendor.t($data.storeInfo.desc),
     p: common_vendor.t($data.storeInfo.facility ? $data.storeInfo.facility.replace(/\\n/, "\n") : ""),
     q: common_vendor.t($data.storeInfo.serve ? $data.storeInfo.serve.replace(/\\n/, "\n") : ""),

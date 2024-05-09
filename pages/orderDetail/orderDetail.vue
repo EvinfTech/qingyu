@@ -35,18 +35,16 @@
 					{{ gymnasiumInfo.name }}
 				</view>
 				<view class="flex align-center justify-between" style="margin-bottom: 8rpx; height: 38rpx">
-					<view class="commonLeftLabel">
-						<text>场馆电话：</text>
-						<text>{{ gymnasiumInfo.phone }}</text>
+					<view class="commonLeftLabel" @tap="toCall">
+						<text>电话：</text>
+						<text style="color: #409EFF;">{{ gymnasiumInfo.phone }}</text>
 					</view>
-					<view class="commonRightOpe" @tap="toCall">拨打</view>
 				</view>
 				<view class="flex align-center justify-between" style="height: 38rpx">
-					<view class="commonLeftLabel">
-						<text>场馆地址：</text>
-						<text>{{ gymnasiumInfo.location }}</text>
+					<view class="commonLeftLabel"  @tap="toMap">
+						<text>地址：</text>
+						<text style="color: #409EFF;">{{ gymnasiumInfo.location }}</text>
 					</view>
-					<view class="commonRightOpe" @tap="toMap">查看</view>
 				</view>
 			</view>
 			<view class="siteList">

@@ -25,18 +25,7 @@
 						</view>
 					</view>
 				</view>
-				<view class="flex align-start" @click="toMap" style="margin:10px 0 8px 0">
-					<view class="flex  operateItem1 align-center  flex-shirnk">
-						<u-icon name="map-fill"></u-icon>
-						<view class="operateItem">
-							地址
-						</view>
-					</view>
-					<view class="location" style="color: #409EFF;">
-						{{storeInfo.location}}
-					</view>
-				</view>
-				<view class="flex align-start" @click="toCall">
+				<view class="flex align-start" @click="toCall" style="margin:10px 0 8px 0">
 					<view class="flex align-center justify-between  flex-shirnk">
 						<view class="flex align-center operateItem1">
 							<u-icon name="phone-fill"></u-icon>
@@ -47,6 +36,17 @@
 					</view>
 					<view class="location" style="color: #409EFF;">
 						{{storeInfo.phone}}
+					</view>
+				</view>
+				<view class="flex align-start" @click="toMap" >
+					<view class="flex  operateItem1 align-center  flex-shirnk">
+						<u-icon name="map-fill"></u-icon>
+						<view class="operateItem">
+							地址
+						</view>
+					</view>
+					<view class="location" style="color: #409EFF;">
+						{{storeInfo.location}}
 					</view>
 				</view>
 			</view>
