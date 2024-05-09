@@ -9,7 +9,7 @@
 						{{ userInfo.name }}
 					</view>
 					<view class="phone">
-						{{ userInfo.phone ? '+86-' + userInfo.phone : '' }}
+						{{ userInfo.phone ? userInfo.phone : '' }}
 					</view>
 				</view>
 			</view>
@@ -192,6 +192,9 @@
 						user_ouid: this.app.globalData.userInfo.ouid
 					}
 				}).then((res) => {
+					if(!res.data){
+						return false
+					}
 					let data = res.data;
 					let date = data.data.slice(0, 10);
 					let dateInfo = this.dealWithDate(date);
@@ -346,7 +349,7 @@
 
 	.phone {
 		font-family: Alibaba PuHuiTi 2;
-		font-size: 22rpx;
+		font-size: 24rpx;
 		font-weight: normal;
 		line-height: normal;
 		color: #aab0ba;

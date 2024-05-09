@@ -180,13 +180,15 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
       fixed: false
     }),
     d: $data.codeImg,
-    e: common_vendor.t($data.code),
-    f: $data.gymnasiumInfo.img,
-    g: common_vendor.t($data.gymnasiumInfo.name),
-    h: common_vendor.t($data.gymnasiumInfo.address),
-    i: common_vendor.t($data.gymnasiumInfo.siteNum),
-    j: common_vendor.t($data.gymnasiumInfo.hour),
-    k: common_vendor.f($data.gymnasiumInfo.siteList, (item, index, i0) => {
+    e: $data.gymnasiumInfo.status == "U" || $data.gymnasiumInfo.status == "C" ? "0.2" : "1",
+    f: common_vendor.t($data.code),
+    g: common_vendor.n($data.gymnasiumInfo.status == "U" || $data.gymnasiumInfo.status == "C" ? "disabledText" : "codeText"),
+    h: $data.gymnasiumInfo.img,
+    i: common_vendor.t($data.gymnasiumInfo.name),
+    j: common_vendor.t($data.gymnasiumInfo.address),
+    k: common_vendor.t($data.gymnasiumInfo.siteNum),
+    l: common_vendor.t($data.gymnasiumInfo.hour),
+    m: common_vendor.f($data.gymnasiumInfo.siteList, (item, index, i0) => {
       return {
         a: common_vendor.t(item.siteName),
         b: common_vendor.t(item.date),
@@ -195,17 +197,21 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
         e: index
       };
     }),
-    l: common_vendor.t($data.gymnasiumInfo.person),
-    m: common_vendor.t($data.gymnasiumInfo.phone),
-    n: common_vendor.t($data.gymnasiumInfo.createTime),
-    o: common_vendor.s("height: " + ($data.scrollViewHeight + "px") + ";"),
-    p: $data.gymnasiumInfo.status == "C"
-  }, $data.gymnasiumInfo.status == "C" ? {} : {
-    q: common_vendor.o((...args) => $options.toCancel && $options.toCancel(...args))
-  }, {
-    r: common_vendor.o($options.confirm),
-    s: common_vendor.o($options.cancel),
-    t: common_vendor.p({
+    n: common_vendor.t($data.gymnasiumInfo.person),
+    o: common_vendor.t($data.gymnasiumInfo.phone),
+    p: common_vendor.t($data.gymnasiumInfo.createTime),
+    q: common_vendor.s("height: " + ($data.scrollViewHeight + "px") + ";"),
+    r: $data.gymnasiumInfo.status == "C"
+  }, $data.gymnasiumInfo.status == "C" ? {} : {}, {
+    s: $data.gymnasiumInfo.status == "U"
+  }, $data.gymnasiumInfo.status == "U" ? {} : {}, {
+    t: $data.gymnasiumInfo.status != "U" && $data.gymnasiumInfo.status != "C"
+  }, $data.gymnasiumInfo.status != "U" && $data.gymnasiumInfo.status != "C" ? {
+    v: common_vendor.o((...args) => $options.toCancel && $options.toCancel(...args))
+  } : {}, {
+    w: common_vendor.o($options.confirm),
+    x: common_vendor.o($options.cancel),
+    y: common_vendor.p({
       show: $data.show,
       title: "提示",
       content: "确定要取消预约吗？",

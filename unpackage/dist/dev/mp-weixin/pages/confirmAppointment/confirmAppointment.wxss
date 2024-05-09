@@ -29,11 +29,11 @@
 		margin-top: 8px;
 }
 .gymnasiumInfoBoxName.data-v-2139706a{
-		font-size: 16px;
+		font-size: 17px;
 }
 .gymnasiumInfoBoxText.data-v-2139706a{
-		font-size: 12px;
-		margin-top: 6px;
+		font-size: 14px;
+		margin-top: 11px;
 }
 .payMethodBox.data-v-2139706a {
 		height: 94rpx;

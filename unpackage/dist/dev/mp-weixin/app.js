@@ -24,24 +24,10 @@ if (!Math) {
 const _sfc_main = {
   globalData: {
     // httpUrl: 'http://172.16.7.99:8002/',
-    // httpUrl: 'https://qingyu.evinf.cn/',
-    httpUrl: "http://172.16.8.5:8002/",
+    httpUrl: "https://qingyu.evinf.cn/",
+    // httpUrl: 'http://172.16.8.5:8002/',
     uploadAvatarUrl: "https://qingyu.evinf.cn/common/upload/avatar",
     uploadImgUrl: "https://qingyu.evinf.cn/common/upload/photo",
-    iconObj: {
-      "培训": "/static/images/common/training.svg",
-      "停车场": "/static/images/common/park.svg",
-      "VIP": "/static/images/common/VIP.svg",
-      "wifi": "/static/images/common/WIFI.svg",
-      "商店": "/static/images/common/shop.svg",
-      "淋浴房": "/static/images/common/shower.svg",
-      "储物柜": "/static/images/common/storageCabinet.svg",
-      "24小时": "/static/images/common/allDay.svg",
-      "茶水间": "/static/images/common/tea.svg",
-      "餐饮": "/static/images/common/food.svg",
-      "洗手间": "/static/images/common/toilet.svg",
-      "空调": "/static/images/common/air-conditioning.svg"
-    },
     userInfo: {
       longitude: "",
       //经度
@@ -107,6 +93,7 @@ const _sfc_main = {
         });
       }
     },
+    // 去分享
     toShare() {
       common_vendor.index.onAppRoute((res) => {
         let pages = getCurrentPages();
@@ -209,21 +196,6 @@ const _sfc_main = {
         });
       });
     },
-    // 退出登录
-    logout() {
-      this.globalData.userInfo = {
-        longitude: "",
-        latitude: "",
-        ouid: ""
-      };
-      common_vendor.index.removeStorageSync("userInfo");
-      common_vendor.index.removeStorageSync("gymnasiumInfo");
-      common_vendor.index.removeStorageSync("tabbarIndex");
-      common_vendor.index.removeStorageSync("album");
-      common_vendor.index.reLaunch({
-        url: "/pages/login/login"
-      });
-    },
     // 获取枚举信息
     getEnum() {
       return new Promise((resolve, reject) => {
@@ -261,6 +233,21 @@ const _sfc_main = {
       } else {
         history.back();
       }
+    },
+    // 退出登录
+    logout() {
+      this.globalData.userInfo = {
+        longitude: "",
+        latitude: "",
+        ouid: ""
+      };
+      common_vendor.index.removeStorageSync("userInfo");
+      common_vendor.index.removeStorageSync("gymnasiumInfo");
+      common_vendor.index.removeStorageSync("tabbarIndex");
+      common_vendor.index.removeStorageSync("album");
+      common_vendor.index.reLaunch({
+        url: "/pages/login/login"
+      });
     }
   },
   onLaunch: function() {

@@ -2,24 +2,10 @@
 	export default {
 		globalData: {
 			// httpUrl: 'http://172.16.7.99:8002/',
-			// httpUrl: 'https://qingyu.evinf.cn/',
-			httpUrl: 'http://172.16.8.5:8002/',
+			httpUrl: 'https://qingyu.evinf.cn/',
+			// httpUrl: 'http://172.16.8.5:8002/',
 			uploadAvatarUrl: 'https://qingyu.evinf.cn/common/upload/avatar',
 			uploadImgUrl: 'https://qingyu.evinf.cn/common/upload/photo',
-			iconObj: {
-				'培训': '/static/images/common/training.svg',
-				'停车场': '/static/images/common/park.svg',
-				'VIP': '/static/images/common/VIP.svg',
-				'wifi': '/static/images/common/WIFI.svg',
-				'商店': '/static/images/common/shop.svg',
-				'淋浴房': '/static/images/common/shower.svg',
-				'储物柜': '/static/images/common/storageCabinet.svg',
-				'24小时': '/static/images/common/allDay.svg',
-				'茶水间': '/static/images/common/tea.svg',
-				'餐饮': '/static/images/common/food.svg',
-				'洗手间': '/static/images/common/toilet.svg',
-				'空调': '/static/images/common/air-conditioning.svg'
-			},
 			userInfo: {
 				longitude: '',
 				//经度
@@ -43,7 +29,6 @@
 				//运动时长
 				sport_day: '' //运动天数
 			},
-
 			enumInfo: {},
 			gymnasiumInfo: {}
 		},
@@ -59,7 +44,6 @@
 					}
 				});
 			},
-
 			checkVersion() {
 				// 获取小程序版本
 				const miniProgram = uni.getAccountInfoSync();
@@ -92,7 +76,7 @@
 					});
 				}
 			},
-
+			// 去分享
 			toShare() {
 				uni.onAppRoute((res) => {
 					let pages = getCurrentPages();
@@ -129,7 +113,7 @@
 						success: (res) => {
 							if (res.statusCode == 200) {
 								let userInfo = res.data.data;
-								userInfo.avatar = this.globalData.httpUrl +userInfo.avatar;
+								userInfo.avatar = this.globalData.httpUrl + userInfo.avatar;
 								this.globalData.userInfo.avatar = userInfo.avatar; //头像
 								this.globalData.userInfo.birthday = userInfo.birthday; //生日
 								this.globalData.userInfo.name = userInfo.name; //昵称
@@ -164,7 +148,7 @@
 						url: this.globalData.httpUrl + 'wx/get/shop/detail',
 						method: 'POST'
 					}).then((res) => {
-						let tag = res.data.data.tag?res.data.data.tag:[];
+						let tag = res.data.data.tag ? res.data.data.tag : [];
 						let tagList = [];
 						tag.forEach((item) => {
 							tagList.push({
@@ -183,7 +167,7 @@
 						gymnasiumInfo.facility = res.data.data.facility
 						gymnasiumInfo.serve = res.data.data.serve
 						gymnasiumInfo.hardwareFacilities = tagList
-						gymnasiumInfo.shop_avatar = this.globalData.httpUrl+res.data.data.shop_avatar;
+						gymnasiumInfo.shop_avatar = this.globalData.httpUrl + res.data.data.shop_avatar;
 						gymnasiumInfo.desc = res.data.data.desc
 						let gymnasiumImgList = [];
 						let list = JSON.parse(res.data.data.shop_photo)
@@ -198,22 +182,6 @@
 				})
 
 			},
-			// 退出登录
-			logout() {
-				this.globalData.userInfo = {
-					longitude: '',
-					latitude: '',
-					ouid: ''
-				};
-				uni.removeStorageSync('userInfo');
-				uni.removeStorageSync('gymnasiumInfo');
-				uni.removeStorageSync("tabbarIndex");
-				uni.removeStorageSync('album');
-				uni.reLaunch({
-					url: '/pages/login/login'
-				});
-			},
-
 			// 获取枚举信息
 			getEnum() {
 				return new Promise((resolve, reject) => {
@@ -248,12 +216,27 @@
 				let canNavBack = getCurrentPages()
 				if (canNavBack && canNavBack.length > 1) {
 					uni.navigateBack({
-						delta:num?num:1
+						delta: num ? num : 1
 					})
 				} else {
 					history.back()
 				}
-			}
+			},
+			// 退出登录
+			logout() {
+				this.globalData.userInfo = {
+					longitude: '',
+					latitude: '',
+					ouid: ''
+				};
+				uni.removeStorageSync('userInfo');
+				uni.removeStorageSync('gymnasiumInfo');
+				uni.removeStorageSync("tabbarIndex");
+				uni.removeStorageSync('album');
+				uni.reLaunch({
+					url: '/pages/login/login'
+				});
+			},
 		},
 
 		onLaunch: function() {

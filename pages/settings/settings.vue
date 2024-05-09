@@ -11,26 +11,10 @@
 			<u-cell title="用户协议" center custom-class="userinfo-cell" is-link @tap.native="toUserAgreement"></u-cell>
 			<u-cell title="隐私协议" center custom-class="userinfo-cell" is-link></u-cell>
 		</u-cell-group>
-		<view class="devide"></view>
 		<u-cell-group custom-class="userinfo-group">
 			<u-cell title="使用帮助" center custom-class="userinfo-cell" is-link></u-cell>
 			<u-cell title="关于我们" center custom-class="userinfo-cell" is-link @tap.native="toAboutUs"></u-cell>
-			<u-cell title="意见反馈" center custom-class="userinfo-cell" is-link @tap.native="toFeedBack"></u-cell>
-			<!-- #ifdef MP-WEIXIN -->
-			<u-cell title="联系客服" is-link>
-				<template #value>
-					<u-button :showMessageCard="true" openType="contact" :plain="true"
-						:customStyle="{'width':'100rpx','borderWidth':'0','backgroundColor':'transparent'}" class="btn"></u-button>
-				</template>
-			</u-cell>
-				<!-- #endif -->
 		</u-cell-group>
-		<!-- <view class="devide"></view>
-		<u-cell-group>
-			<u-cell title="清除缓存" center custom-class="userinfo-cell" @tap.native="clearCache">
-				<view class="clearRight">立即清除</view>
-			</u-cell>
-		</u-cell-group> -->
 		<view class="logoutBtn flex align-center justify-center" @tap="logout">退出登录</view>
 		<u-modal :show="show" title="提示" content="确定要退出登录吗？" :showCancelButton="true" @confirm="confirm" @cancel="cancel"></u-modal>
 	</view>
@@ -38,7 +22,6 @@
 
 <script>
 	// pages/settings/settings.ts
-	// import Dialog from '@/wxcomponents/vant/dialog/dialog';
 	export default ({
 		data() {
 			return {
@@ -46,35 +29,6 @@
 				show:false
 			};
 		},
-		onLoad() { },
-		/**
-		 * 生命周期函数--监听页面初次渲染完成
-		 */
-		onReady() { },
-		/**
-		 * 生命周期函数--监听页面显示
-		 */
-		onShow() { },
-		/**
-		 * 生命周期函数--监听页面隐藏
-		 */
-		onHide() { },
-		/**
-		 * 生命周期函数--监听页面卸载
-		 */
-		onUnload() { },
-		/**
-		 * 页面相关事件处理函数--监听用户下拉动作
-		 */
-		onPullDownRefresh() { },
-		/**
-		 * 页面上拉触底事件的处理函数
-		 */
-		onReachBottom() { },
-		/**
-		 * 用户点击右上角分享
-		 */
-		onShareAppMessage() { },
 		methods: {
 			/**
 			 * 生命周期函数--监听页面加载
@@ -82,7 +36,6 @@
 			onClickLeft() {
 				uni.navigateBack();
 			},
-
 			toAccountSecurity() {
 				uni.navigateTo({
 					url: '/pages/accountSecurity/accountSecurity'
@@ -114,8 +67,7 @@
 			confirm(){
 				this.show = false
 				this.app.logout()
-			},
-			clearCache() {}
+			}
 		}
 	});
 </script>

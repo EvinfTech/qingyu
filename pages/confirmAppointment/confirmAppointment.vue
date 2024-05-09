@@ -245,11 +245,11 @@
 		margin-top: 8px;
 	}
 	.gymnasiumInfoBoxName{
-		font-size: 16px;
+		font-size: 17px;
 	}
 	.gymnasiumInfoBoxText{
-		font-size: 12px;
-		margin-top: 6px;
+		font-size: 14px;
+		margin-top: 11px;
 	}
 	
 	.payMethodBox {

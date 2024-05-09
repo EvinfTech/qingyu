@@ -8,8 +8,10 @@
 		</u-navbar>
 		<scroll-view :scroll-y="true" :style="'height: ' + (scrollViewHeight + 'px') + ';'" style="padding-top: 14rpx;">
 			<view class="codeBox flex flex-direction align-center justify-center">
-				<image :src="codeImg" style="width: 296rpx; height: 296rpx" mode="" />
-				<view class="codeText">
+				<view class="codeImg" :style="{'opacity':(gymnasiumInfo.status == 'U'||gymnasiumInfo.status == 'C')?'0.2':'1'}">
+					<image :src="codeImg" class="w-full h-full" mode="" />
+				</view>
+				<view :class="(gymnasiumInfo.status == 'U'||gymnasiumInfo.status == 'C')? 'disabledText' : 'codeText'">
 					{{ code }}
 				</view>
 			</view>
@@ -51,7 +53,9 @@
 		</scroll-view>
 		<view class="bottomBox flex align-center justify-end">
 			<view class="cancelBtn flex align-center justify-center" v-if="gymnasiumInfo.status == 'C'">已取消</view>
-			<view v-else class="cancelBtn flex align-center justify-center" @tap="toCancel">取消预约</view>
+			<view class="cancelBtn flex align-center justify-center" v-if="gymnasiumInfo.status == 'U'">已使用</view>
+			<view v-if="gymnasiumInfo.status != 'U'&&gymnasiumInfo.status != 'C'"
+				class="cancelBtn flex align-center justify-center" @tap="toCancel">取消预约</view>
 		</view>
 		<u-modal :show="show" title="提示" content="确定要取消预约吗？" :showCancelButton="true" @confirm="confirm"
 			@cancel="cancel"></u-modal>
@@ -70,7 +74,7 @@
 				show: false,
 				order_no: '',
 				code: '',
-				codeImg:'',
+				codeImg: '',
 				scrollViewHeight: 0,
 				gymnasiumInfo: {
 					name: '',
@@ -212,14 +216,14 @@
 					.select('.bottomBox')
 					.boundingClientRect((bottomRect) => {
 						// #ifdef H5
-						that.scrollViewHeight = screenHeight -44 - bottomRect
+						that.scrollViewHeight = screenHeight - 44 - bottomRect
 							.height
 						// #endif
 						// #ifdef MP-WEIXIN || APP-PLUS
-						that.scrollViewHeight = screenHeight -44 - bottomRect
+						that.scrollViewHeight = screenHeight - 44 - bottomRect
 							.height - sysInfo.statusBarHeight
 						// #endif
-						
+
 					})
 					.exec();
 
@@ -240,12 +244,25 @@
 		background-color: #fff;
 	}
 
+	.codeImg {
+		width: 296rpx;
+		height: 296rpx;
+	}
+
 	.codeText {
 		font-family: Alibaba PuHuiTi 2;
 		font-size: 40rpx;
 		font-weight: 600;
 		font-feature-settings: 'kern' on;
 		color: #333333;
+	}
+
+	.disabledText {
+		font-family: Alibaba PuHuiTi 2;
+		font-size: 40rpx;
+		font-feature-settings: 'kern' on;
+		color: #ddd;
+		text-decoration: line-through;
 	}
 
 	.gymnasiumBox {

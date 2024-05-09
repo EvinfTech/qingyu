@@ -9,12 +9,23 @@
 		height: 420rpx;
 		background-color: #fff;
 }
+.codeImg.data-v-ba7f838c {
+		width: 296rpx;
+		height: 296rpx;
+}
 .codeText.data-v-ba7f838c {
 		font-family: Alibaba PuHuiTi 2;
 		font-size: 40rpx;
 		font-weight: 600;
 		font-feature-settings: 'kern' on;
 		color: #333333;
+}
+.disabledText.data-v-ba7f838c {
+		font-family: Alibaba PuHuiTi 2;
+		font-size: 40rpx;
+		font-feature-settings: 'kern' on;
+		color: #ddd;
+		text-decoration: line-through;
 }
 .gymnasiumBox.data-v-ba7f838c {
 		padding: 20rpx;

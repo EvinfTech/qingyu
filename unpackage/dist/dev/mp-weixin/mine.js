@@ -101,6 +101,9 @@ const _sfc_main = {
           user_ouid: this.app.globalData.userInfo.ouid
         }
       }).then((res) => {
+        if (!res.data) {
+          return false;
+        }
         let data = res.data;
         let date = data.data.slice(0, 10);
         let dateInfo = this.dealWithDate(date);
@@ -215,7 +218,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
   return common_vendor.e({
     a: $data.userInfo.avatar,
     b: common_vendor.t($data.userInfo.name),
-    c: common_vendor.t($data.userInfo.phone ? "+86-" + $data.userInfo.phone : ""),
+    c: common_vendor.t($data.userInfo.phone ? $data.userInfo.phone : ""),
     d: common_vendor.o((...args) => $options.toInfoEdit && $options.toInfoEdit(...args)),
     e: common_vendor.o((...args) => $options.toInfoEdit && $options.toInfoEdit(...args)),
     f: common_vendor.f($data.statisticsList, (item, index, i0) => {

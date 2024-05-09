@@ -7,43 +7,6 @@ const _sfc_main = {
       show: false
     };
   },
-  onLoad() {
-  },
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady() {
-  },
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow() {
-  },
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide() {
-  },
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload() {
-  },
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh() {
-  },
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom() {
-  },
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage() {
-  },
   methods: {
     /**
      * 生命周期函数--监听页面加载
@@ -80,8 +43,6 @@ const _sfc_main = {
     confirm() {
       this.show = false;
       this.app.logout();
-    },
-    clearCache() {
     }
   }
 };
@@ -90,18 +51,16 @@ if (!Array) {
   const _easycom_u_navbar2 = common_vendor.resolveComponent("u-navbar");
   const _easycom_u_cell2 = common_vendor.resolveComponent("u-cell");
   const _easycom_u_cell_group2 = common_vendor.resolveComponent("u-cell-group");
-  const _easycom_u_button2 = common_vendor.resolveComponent("u-button");
   const _easycom_u_modal2 = common_vendor.resolveComponent("u-modal");
-  (_easycom_up_icon2 + _easycom_u_navbar2 + _easycom_u_cell2 + _easycom_u_cell_group2 + _easycom_u_button2 + _easycom_u_modal2)();
+  (_easycom_up_icon2 + _easycom_u_navbar2 + _easycom_u_cell2 + _easycom_u_cell_group2 + _easycom_u_modal2)();
 }
 const _easycom_up_icon = () => "../../node-modules/uview-plus/components/u-icon/u-icon.js";
 const _easycom_u_navbar = () => "../../node-modules/uview-plus/components/u-navbar/u-navbar.js";
 const _easycom_u_cell = () => "../../node-modules/uview-plus/components/u-cell/u-cell.js";
 const _easycom_u_cell_group = () => "../../node-modules/uview-plus/components/u-cell-group/u-cell-group.js";
-const _easycom_u_button = () => "../../node-modules/uview-plus/components/u-button/u-button.js";
 const _easycom_u_modal = () => "../../node-modules/uview-plus/components/u-modal/u-modal.js";
 if (!Math) {
-  (_easycom_up_icon + _easycom_u_navbar + _easycom_u_cell + _easycom_u_cell_group + _easycom_u_button + _easycom_u_modal)();
+  (_easycom_up_icon + _easycom_u_navbar + _easycom_u_cell + _easycom_u_cell_group + _easycom_u_modal)();
 }
 function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
   return {
@@ -151,34 +110,13 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
       ["custom-class"]: "userinfo-cell",
       ["is-link"]: true
     }),
-    m: common_vendor.o($options.toFeedBack),
-    n: common_vendor.p({
-      title: "意见反馈",
-      center: true,
-      ["custom-class"]: "userinfo-cell",
-      ["is-link"]: true
-    }),
-    o: common_vendor.p({
-      showMessageCard: true,
-      openType: "contact",
-      plain: true,
-      customStyle: {
-        "width": "100rpx",
-        "borderWidth": "0",
-        "backgroundColor": "transparent"
-      }
-    }),
-    p: common_vendor.p({
-      title: "联系客服",
-      ["is-link"]: true
-    }),
-    q: common_vendor.p({
+    m: common_vendor.p({
       ["custom-class"]: "userinfo-group"
     }),
-    r: common_vendor.o((...args) => $options.logout && $options.logout(...args)),
-    s: common_vendor.o($options.confirm),
-    t: common_vendor.o($options.cancel),
-    v: common_vendor.p({
+    n: common_vendor.o((...args) => $options.logout && $options.logout(...args)),
+    o: common_vendor.o($options.confirm),
+    p: common_vendor.o($options.cancel),
+    q: common_vendor.p({
       show: $data.show,
       title: "提示",
       content: "确定要退出登录吗？",
@@ -187,5 +125,4 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
   };
 }
 const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-7fad0a1c"], ["__file", "C:/project/轻羽项目/qingyu-client/pages/settings/settings.vue"]]);
-_sfc_main.__runtimeHooks = 2;
 wx.createPage(MiniProgramPage);
