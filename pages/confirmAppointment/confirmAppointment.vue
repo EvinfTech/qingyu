@@ -224,6 +224,7 @@
 
 	.centerContent {
 		background-color: #f6f8fa;
+		overflow-y:auto;
 	}
 	.reservationInfo{
 		background-color: #fff;
@@ -263,6 +264,7 @@
 	.footer {
 		height: 78px;
 		padding: 0 20rpx 0 32rpx;
+		background-color:#fff;
 	}
 
 	.totalText {

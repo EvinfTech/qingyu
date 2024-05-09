@@ -7,6 +7,7 @@
 }
 .centerContent.data-v-2139706a {
 		background-color: #f6f8fa;
+		overflow-y:auto;
 }
 .reservationInfo.data-v-2139706a{
 		background-color: #fff;
@@ -44,6 +45,7 @@
 .footer.data-v-2139706a {
 		height: 78px;
 		padding: 0 20rpx 0 32rpx;
+		background-color:#fff;
 }
 .totalText.data-v-2139706a {
 		font-family: Alibaba PuHuiTi 2;
