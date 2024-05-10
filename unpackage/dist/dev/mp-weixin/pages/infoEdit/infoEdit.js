@@ -118,6 +118,8 @@ const _sfc_main = {
           icon: "none",
           duration: 2e3
         });
+        const eventChannel = this.getOpenerEventChannel();
+        eventChannel.emit("updateInfo");
       });
     },
     // 退出登录

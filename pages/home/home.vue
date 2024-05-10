@@ -6,7 +6,7 @@
 				<block v-for="(item, index) in swiperList" :key="index">
 					<swiper-item>
 						<view class="swiper-item h-full">
-							<image :src="item" class="w-full h-full" mode=""  @click="previewImg(item)"/>
+							<image :src="item" class="w-full h-full" mode="" @click="previewImg(item)" />
 						</view>
 					</swiper-item>
 				</block>
@@ -38,7 +38,7 @@
 						{{storeInfo.phone}}
 					</view>
 				</view>
-				<view class="flex align-start" @click="toMap" >
+				<view class="flex align-start" @click="toMap">
 					<view class="flex  operateItem1 align-center  flex-shirnk">
 						<u-icon name="map-fill"></u-icon>
 						<view class="operateItem">
@@ -78,8 +78,7 @@
 				<scroll-view :scroll-x="true" class="h-full w-full">
 					<view class="w-full" style="white-space: nowrap">
 						<view :class="'venueReservationItem ' + (item.residue == 0 ? 'isFullBorder' : '')"
-							 @tap="toDetail(item)"
-							v-for="(item, index) in venueReservationList" :key="index">
+							@tap="toDetail(item)" v-for="(item, index) in venueReservationList" :key="index">
 							<view
 								:class="'venueReservationItemTop flex flex-direction align-center justify-center ' + (item.residue == 0 ? 'isFullBg' : '')">
 								<view>
@@ -87,7 +86,7 @@
 								</view>
 								<view>({{ item.date }})</view>
 							</view>
-			
+
 							<view class="venueReservationItemBottom">
 								<view class="w-full flex align-center justify-between"
 									:style="'margin-bottom: 12rpx;color: ' + (item.residue == 0 ? '#5F5F5F' : '#0077FF')">
@@ -129,7 +128,7 @@
 				viewHeight: 0,
 				storeInfo: {},
 				venueReservationList: [],
-				currentImgIndex:-1,
+				currentImgIndex: -1,
 			};
 		},
 		/**
@@ -251,15 +250,15 @@
 			// 去场地预约详情
 			toDetail(e) {
 				let date = e.fullDate;
-				if(e.residue==0){
+				if (e.residue == 0) {
 					uni.showToast({
-						icon:'none',
-						title:'暂无场地'
+						icon: 'none',
+						title: '暂无场地'
 					})
 					return false
 				}
 				uni.navigateTo({
-					url: '/pages/reservationDetail/reservationDetail?date=' + date 
+					url: '/pages/reservationDetail/reservationDetail?date=' + date
 				});
 			},
 			// 预览图片
@@ -271,10 +270,15 @@
 				});
 			},
 		},
-	
+
 		created: async function() {
 			// 获取门店信息
 			let gymnasiumInfo = await this.app.getStoreInfo('reGet')
+			// #ifdef H5
+			uni.setNavigationBarTitle({
+				title: gymnasiumInfo.gymnasiumName
+			})
+			// #endif
 			let serveList = [];
 			let facilityList = [];
 			if (gymnasiumInfo.facility.includes('设施:')) {

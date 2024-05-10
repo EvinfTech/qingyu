@@ -260,7 +260,13 @@
 			// 去编辑信息页
 			toInfoEdit() {
 				uni.navigateTo({
-					url: '/pages/infoEdit/infoEdit'
+					url: '/pages/infoEdit/infoEdit',
+					events:{
+						updateInfo:async()=>{
+							let userInfo = await getApp().getUserInfo('reGet')
+							this.userInfo = userInfo;
+						}
+					}
 				});
 			},
 			// 去订单列表页

@@ -189,6 +189,8 @@
 						icon: 'none',
 						duration: 2000
 					});
+					const eventChannel = this.getOpenerEventChannel();
+					eventChannel.emit('updateInfo')
 
 				});
 			},

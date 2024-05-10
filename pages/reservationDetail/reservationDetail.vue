@@ -308,7 +308,7 @@
 					url: '/pages/confirmAppointment/confirmAppointment',
 					events:{
 						updateSiteInfo:(list)=>{
-  							list.forEach(con=>{
+							list.forEach(con=>{
 								let index = this.siteList.findIndex(item=>{
 									return item.siteId == con.site_id
 								})
