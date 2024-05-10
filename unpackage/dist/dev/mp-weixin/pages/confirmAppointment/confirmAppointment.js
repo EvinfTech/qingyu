@@ -71,7 +71,7 @@ const _sfc_main = {
           remark: this.remark
         }
       }).then((res) => {
-        if (res.code == "200") {
+        if (res.msg == "操作成功") {
           common_vendor.index.showToast({
             title: "提交成功",
             icon: "none",
@@ -85,12 +85,15 @@ const _sfc_main = {
           });
         } else {
           common_vendor.index.showToast({
-            title: res.msg,
+            title: res.msg + ",请重选",
             icon: "none"
           });
           setTimeout(() => {
             const eventChannel = this.getOpenerEventChannel();
-            eventChannel.emit("updateSiteInfo");
+            eventChannel.emit("updateSiteInfo", res.data.site);
+            setTimeout(() => {
+              this.app.toBack();
+            }, 200);
           }, 1500);
         }
       });

@@ -307,9 +307,27 @@
 				uni.navigateTo({
 					url: '/pages/confirmAppointment/confirmAppointment',
 					events:{
-						updateSiteInfo:()=>{
-							// this.dateList[this.active].isRequest = false
-							// this.initData(this.dateList[this.active].fullDate);
+						updateSiteInfo:(list)=>{
+  							list.forEach(con=>{
+								let index = this.siteList.findIndex(item=>{
+									return item.siteId == con.site_id
+								})
+								con.time_enum.forEach(timeTime=>{
+									let index1 = this.timeList.findIndex(content=>{
+										return content.index == timeTime
+									})
+									index1 = index1==0?0:index1-1
+									let choosedIndex = this.choosedList.findIndex(choosedItem=>{
+										return choosedItem.siteId == con.site_id && choosedItem.enumInfoIndex == timeTime
+									})
+									this.siteList[index].timeList[index1].already = true
+									this.totalPrice = this.totalPrice - (this.choosedList[choosedIndex].price/100)
+									this.siteList[index].timeList[index1].price = '不可订'
+									this.choosedList.splice(choosedIndex,1)
+								})
+								
+							})
+							
 						}
 					}
 				})

@@ -197,7 +197,25 @@ const _sfc_main = {
       common_vendor.index.navigateTo({
         url: "/pages/confirmAppointment/confirmAppointment",
         events: {
-          updateSiteInfo: () => {
+          updateSiteInfo: (list) => {
+            list.forEach((con) => {
+              let index = this.siteList.findIndex((item2) => {
+                return item2.siteId == con.site_id;
+              });
+              con.time_enum.forEach((timeTime) => {
+                let index1 = this.timeList.findIndex((content) => {
+                  return content.index == timeTime;
+                });
+                index1 = index1 == 0 ? 0 : index1 - 1;
+                let choosedIndex = this.choosedList.findIndex((choosedItem) => {
+                  return choosedItem.siteId == con.site_id && choosedItem.enumInfoIndex == timeTime;
+                });
+                this.siteList[index].timeList[index1].already = true;
+                this.totalPrice = this.totalPrice - this.choosedList[choosedIndex].price / 100;
+                this.siteList[index].timeList[index1].price = "不可订";
+                this.choosedList.splice(choosedIndex, 1);
+              });
+            });
           }
         }
       });

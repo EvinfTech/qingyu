@@ -1,8 +1,8 @@
 <script>
 	export default {
 		globalData: {
-			// httpUrl: 'https://qingyu.evinf.cn/',
-			httpUrl: 'http://172.16.8.5:8002/',
+			httpUrl: 'https://qingyu.evinf.cn/',
+			// httpUrl: 'http://172.16.8.5:8002/',
 			uploadAvatarUrl: 'https://qingyu.evinf.cn/common/upload/avatar',
 			uploadImgUrl: 'https://qingyu.evinf.cn/common/upload/photo',
 			userInfo: {
