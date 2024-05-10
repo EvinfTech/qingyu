@@ -287,7 +287,8 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
         j: common_vendor.o((...args) => $options.toDetail && $options.toDetail(...args), index1),
         k: item,
         l: item,
-        m: index1
+        m: index1,
+        n: common_vendor.o((...args) => $options.toDetail && $options.toDetail(...args), index1)
       });
     })
   }, {
@@ -319,7 +320,8 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
         f: common_vendor.o((...args) => $options.toDetail && $options.toDetail(...args), index1),
         g: item,
         h: item,
-        i: index1
+        i: index1,
+        j: common_vendor.o((...args) => $options.toDetail && $options.toDetail(...args), index1)
       };
     })
   }, {
@@ -345,7 +347,8 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
         f: common_vendor.o((...args) => $options.toDetail && $options.toDetail(...args), index1),
         g: item,
         h: item,
-        i: index1
+        i: index1,
+        j: common_vendor.o((...args) => $options.toDetail && $options.toDetail(...args), index1)
       };
     })
   }, {

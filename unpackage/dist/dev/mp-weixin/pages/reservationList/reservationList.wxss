@@ -119,6 +119,6 @@
 		font-feature-settings: 'kern' on;
 		color: #b1b4c3;
 		position: absolute;
-		right: 16rpx;
+		right: 8rpx;
 		bottom: 18rpx;
 }

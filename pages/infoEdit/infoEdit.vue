@@ -42,7 +42,7 @@
 			</u-cell>
 			<u-cell title="手机"  >
 				<template #value>
-					<view style="font-size: 28rpx;">
+					<view style="font-size: 28rpx;color: #aaa;">
 						{{phone}}
 					</view>
 				</template>

@@ -75,6 +75,24 @@
 			</view>
 			<view class="orderInfoBox flex flex-direction justify-center">
 				<view class="flex align-center">
+					<view class="leftLabel">预约人：</view>
+					<view class="leftLabel flex align-center">
+						<text>{{ person }}</text>
+					</view>
+				</view>
+				<view class="flex align-center"  style="margin-top: 12rpx">
+					<view class="leftLabel">手机号码：</view>
+					<view class="leftLabel flex align-center">
+						<text>{{ phone }}</text>
+					</view>
+				</view>
+				<view class="flex align-center"  style="margin-top: 12rpx">
+					<view class="leftLabel">备注：</view>
+					<view class="leftLabel flex align-center">
+						<text>{{ remark }}</text>
+					</view>
+				</view>
+				<view class="flex align-center"  style="margin-top: 12rpx">
 					<view class="leftLabel">订单编号：</view>
 					<view class="leftLabel flex align-center">
 						<text>{{ order_no }}</text>
@@ -158,6 +176,9 @@
 					timeRange: ''
 				},
 				type:'',
+				person:'',
+				phone:'',
+				remark:''
 			};
 		},
 		/**
@@ -210,6 +231,9 @@
 					this.totalPrice = data.money
 					this.payState = data.status
 					this.sessionList = sessionList
+					this.person = data.user_name
+					this.phone = data.user_phone
+					this.remark = data.remark
 				});
 			},
 

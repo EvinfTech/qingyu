@@ -357,7 +357,7 @@
 
 	.phone {
 		font-family: Alibaba PuHuiTi 2;
-		font-size: 24rpx;
+		font-size: 26rpx;
 		font-weight: normal;
 		line-height: normal;
 		color: #aab0ba;

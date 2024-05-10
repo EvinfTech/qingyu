@@ -11,7 +11,7 @@
 			refresher-enabled :refresher-triggered="triggered" @refresherrefresh="onRefresh" @scrolltolower="lower">
 			<u-empty text="暂无预约" v-if="reservationList.length == 0" />
 			<view v-else>
-				<view class="orderItem" :data-item="item" v-for="(item, index1) in reservationList" :key="index1">
+				<view class="orderItem" :data-item="item" v-for="(item, index1) in reservationList" :key="index1" @tap="toDetail">
 					<view class="flex align-center justify-between">
 						<view class="flex align-center">
 							<view class="leftPhoto">
@@ -56,7 +56,7 @@
 			:refresher-triggered="triggered1" refresher-enabled @refresherrefresh="onRefresh" @scrolltolower="lower">
 			<u-empty text="暂无待使用预约" v-if="waitUsedList.length == 0" />
 			<view v-else>
-				<view class="orderItem" :data-item="item" v-for="(item, index1) in waitUsedList" :key="index1">
+				<view class="orderItem" :data-item="item" v-for="(item, index1) in waitUsedList" :key="index1" @tap="toDetail">
 					<view class="flex align-center justify-between">
 						<view class="flex align-center">
 							<view class="leftPhoto">
@@ -97,7 +97,7 @@
 			@refresherrefresh="onRefresh" @scrolltolower="lower">
 			<u-empty text="暂无已使用预约" v-if="alreadyUsedList.length == 0" />
 			<view v-else>
-				<view class="orderItem" :data-item="item" v-for="(item, index1) in alreadyUsedList" :key="index1">
+				<view class="orderItem" :data-item="item" v-for="(item, index1) in alreadyUsedList" :key="index1" @tap="toDetail">
 					<view class="flex align-center justify-between">
 						<view class="flex align-center">
 							<view class="leftPhoto">
@@ -498,7 +498,7 @@
 		font-feature-settings: 'kern' on;
 		color: #b1b4c3;
 		position: absolute;
-		right: 16rpx;
+		right: 8rpx;
 		bottom: 18rpx;
 	}
 </style>

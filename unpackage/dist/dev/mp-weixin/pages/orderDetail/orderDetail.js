@@ -31,7 +31,10 @@ const _sfc_main = {
         date: "",
         timeRange: ""
       },
-      type: ""
+      type: "",
+      person: "",
+      phone: "",
+      remark: ""
     };
   },
   /**
@@ -84,6 +87,9 @@ const _sfc_main = {
         this.totalPrice = data.money;
         this.payState = data.status;
         this.sessionList = sessionList;
+        this.person = data.user_name;
+        this.phone = data.user_phone;
+        this.remark = data.remark;
       });
     },
     getNavBarHeight() {
@@ -243,30 +249,33 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     }),
     n: common_vendor.t($data.sessionList.length),
     o: common_vendor.t($data.totalPrice / 100),
-    p: common_vendor.t($data.order_no),
-    q: common_vendor.o((...args) => $options.tocopy && $options.tocopy(...args)),
-    r: common_vendor.t($data.orderTime),
-    s: $data.payState == "Y"
+    p: common_vendor.t($data.person),
+    q: common_vendor.t($data.phone),
+    r: common_vendor.t($data.remark),
+    s: common_vendor.t($data.order_no),
+    t: common_vendor.o((...args) => $options.tocopy && $options.tocopy(...args)),
+    v: common_vendor.t($data.orderTime),
+    w: $data.payState == "Y"
   }, $data.payState == "Y" ? {
-    t: common_vendor.t($data.payTime)
+    x: common_vendor.t($data.payTime)
   } : {}, {
-    v: $data.payState == "N"
+    y: $data.payState == "N"
   }, $data.payState == "N" ? {} : {}, {
-    w: common_vendor.t($data.totalPrice / 100),
-    x: $data.payState == "N" || $data.payState == "Y"
+    z: common_vendor.t($data.totalPrice / 100),
+    A: $data.payState == "N" || $data.payState == "Y"
   }, $data.payState == "N" || $data.payState == "Y" ? {
-    y: common_vendor.o((...args) => $options.cancelOrder && $options.cancelOrder(...args))
+    B: common_vendor.o((...args) => $options.cancelOrder && $options.cancelOrder(...args))
   } : {}, {
-    z: $data.payState == "Y"
+    C: $data.payState == "Y"
   }, $data.payState == "Y" ? {
-    A: common_vendor.o((...args) => $options.toUse && $options.toUse(...args))
+    D: common_vendor.o((...args) => $options.toUse && $options.toUse(...args))
   } : {}, {
-    B: $data.payState == "N"
+    E: $data.payState == "N"
   }, $data.payState == "N" ? {
-    C: common_vendor.o((...args) => $options.toPay && $options.toPay(...args))
+    F: common_vendor.o((...args) => $options.toPay && $options.toPay(...args))
   } : $data.payState == "C" ? {} : {}, {
-    D: $data.payState == "C",
-    E: common_vendor.s("height: " + ($data.scrollViewHeight + "px") + ";")
+    G: $data.payState == "C",
+    H: common_vendor.s("height: " + ($data.scrollViewHeight + "px") + ";")
   });
 }
 const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-1353b6cf"], ["__file", "C:/project/轻羽项目/qingyu-client/pages/orderDetail/orderDetail.vue"]]);
