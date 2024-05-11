@@ -8,6 +8,7 @@ const _sfc_main = {
       app: getApp(),
       initAvatarUrl: "",
       avatarUrl: "",
+      ouid: "",
       nickname: "",
       sex: "",
       personalProfile: "",
@@ -28,13 +29,14 @@ const _sfc_main = {
   async onLoad() {
     let userInfo = await this.app.getUserInfo();
     this.maxDate = Date.now();
-    this.currentDate = Date.now();
+    this.currentDate = userInfo.birthday ? new Date(this.dealWithBirth(userInfo.birthday)).getTime() : Date.now();
     this.nickname = userInfo.name;
     this.avatarUrl = userInfo.avatar;
     this.sex = String(userInfo.sex);
     this.dealCurrentDate = userInfo.birthday;
     this.personalProfile = userInfo.introduce;
     this.phone = userInfo.phone;
+    this.ouid = userInfo.ouid;
   },
   methods: {
     // 删除头像
@@ -96,12 +98,12 @@ const _sfc_main = {
       this.save();
     },
     // 保存
-    save() {
+    async save() {
       utils_request.request({
         url: "wx/update/user/info",
         method: "POST",
         data: {
-          user_ouid: this.app.globalData.userInfo.ouid,
+          user_ouid: this.ouid,
           name: this.nickname,
           avatar: this.initAvatarUrl,
           phone: "",
@@ -111,8 +113,6 @@ const _sfc_main = {
           introduce: this.personalProfile
         }
       }).then(() => {
-        common_vendor.index.removeStorageSync("userInfo");
-        this.app.getUserInfo();
         common_vendor.index.showToast({
           title: "保存成功",
           icon: "none",

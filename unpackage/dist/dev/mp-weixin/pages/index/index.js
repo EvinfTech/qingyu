@@ -55,9 +55,9 @@ const _sfc_main = {
       that.scrollViewHeight = screenHeight - 50 - (screenHeight - saveBottom);
     },
     // 验证登录状态 然后跳转
-    async checkLoginState() {
-      this.app.getUserInfo();
-      if (!this.app.globalData.userInfo.ouid) {
+    checkLoginState() {
+      let userInfo = common_vendor.index.getStorageSync("userInfo");
+      if (!userInfo) {
         common_vendor.index.reLaunch({
           url: "/pages/login/login"
         });

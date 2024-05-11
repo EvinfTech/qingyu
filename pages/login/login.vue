@@ -149,10 +149,10 @@
 						phone: this.phone,
 						code: this.code
 					}
-				}).then((res) => {
+				}).then(async(res) => {
 					if (res.code == 200) {
 						this.app.globalData.userInfo.ouid = res.data.ouid;
-						this.app.getUserInfo()
+						await this.app.getUserInfo()
 						uni.showToast({
 							icon: 'none',
 							title: '登录成功',

@@ -58,9 +58,9 @@ const _sfc_main = {
     };
   },
   async mounted() {
-    this.$nextTick(() => this.ready());
     let userInfo = await getApp().getUserInfo("reGet");
     this.userInfo = userInfo;
+    this.$nextTick(() => this.ready());
     this.statisticsList[0].num = userInfo.total_length;
     this.statisticsList[1].num = userInfo.sport_day;
     this.statisticsList[2].num = userInfo.total_count;
@@ -92,13 +92,13 @@ const _sfc_main = {
       console.log(e.detail.query);
     },
     // 获取最近的预约信息
-    getRecentlyReserve() {
-      let enumInfo = this.app.globalData.enumInfo;
+    async getRecentlyReserve() {
+      let enumInfo = await this.app.getEnum();
       utils_request.request({
         url: "wx/recently/reserve",
         method: "POST",
         data: {
-          user_ouid: this.app.globalData.userInfo.ouid
+          user_ouid: this.userInfo.ouid
         }
       }).then((res) => {
         if (!res.data) {

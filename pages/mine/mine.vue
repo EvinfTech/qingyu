@@ -157,9 +157,9 @@
 		},
 		async mounted() {
 			// 处理小程序 ready 生命周期
-			this.$nextTick(() => this.ready());
 			let userInfo = await getApp().getUserInfo('reGet')
 			this.userInfo = userInfo;
+			this.$nextTick(() => this.ready());
 			this.statisticsList[0].num = userInfo.total_length
 			this.statisticsList[1].num = userInfo.sport_day
 			this.statisticsList[2].num = userInfo.total_count
@@ -196,13 +196,13 @@
 			},
 
 			// 获取最近的预约信息
-			getRecentlyReserve() {
-				let enumInfo = this.app.globalData.enumInfo;
+			async getRecentlyReserve() {
+				let enumInfo = await this.app.getEnum();
 				request({
 					url: 'wx/recently/reserve',
 					method: 'POST',
 					data: {
-						user_ouid: this.app.globalData.userInfo.ouid
+						user_ouid: this.userInfo.ouid
 					}
 				}).then((res) => {
 					if (!res.data) {
@@ -261,8 +261,8 @@
 			toInfoEdit() {
 				uni.navigateTo({
 					url: '/pages/infoEdit/infoEdit',
-					events:{
-						updateInfo:async()=>{
+					events: {
+						updateInfo: async () => {
 							let userInfo = await getApp().getUserInfo('reGet')
 							this.userInfo = userInfo;
 						}
@@ -403,6 +403,7 @@
 		line-height: 34rpx;
 		margin-top: 8rpx;
 	}
+
 	.myReservation {
 		margin: 0rpx 38rpx 0rpx 34rpx;
 		background-color: #fff;

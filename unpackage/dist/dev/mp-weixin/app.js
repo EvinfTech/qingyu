@@ -122,13 +122,13 @@ const _sfc_main = {
           this.globalData.userInfo = userInfo;
           common_vendor.index.setStorageSync("userInfo", JSON.stringify(userInfo));
           resolve(userInfo);
-          return;
+          return false;
         }
         common_vendor.index.request({
           url: this.globalData.httpUrl + "wx/get/user/info",
           method: "POST",
           data: {
-            user_ouid: this.globalData.userInfo.ouid
+            user_ouid: this.globalData.userInfo.ouid ? this.globalData.userInfo.ouid : userInfo.ouid
           },
           header: {
             "content-type": "application/json"
@@ -146,6 +146,7 @@ const _sfc_main = {
               this.globalData.userInfo.total_length = userInfo2.total_length;
               this.globalData.userInfo.sport_day = userInfo2.sport_day;
               this.globalData.userInfo.introduce = userInfo2.introduce;
+              this.globalData.userInfo.ouid = userInfo2.ouid;
               common_vendor.index.removeStorageSync("userInfo");
               common_vendor.index.setStorageSync("userInfo", JSON.stringify(this.globalData.userInfo));
               resolve(userInfo2);

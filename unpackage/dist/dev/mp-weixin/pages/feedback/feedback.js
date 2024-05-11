@@ -33,7 +33,7 @@ const _sfc_main = {
         });
       });
     },
-    submit() {
+    async submit() {
       if (!this.error) {
         common_vendor.index.showToast({
           title: "请输入反馈问题",
@@ -47,11 +47,12 @@ const _sfc_main = {
       list.forEach((item) => {
         photos.push(item.url);
       });
+      let userInfo = await this.app.getUserInfo();
       utils_request.request({
         url: "wx/add/feedback",
         method: "POST",
         data: {
-          user_ouid: this.app.globalData.userInfo.ouid,
+          user_ouid: userInfo.ouid,
           content: this.error,
           //反馈内容
           photo: photos
@@ -64,7 +65,7 @@ const _sfc_main = {
           duration: 2e3,
           success: () => {
             setTimeout(() => {
-              common_vendor.index.navigateBack();
+              this.app.toBack();
             }, 2e3);
           }
         });

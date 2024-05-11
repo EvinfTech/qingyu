@@ -100,13 +100,13 @@
 						this.globalData.userInfo = userInfo;
 						uni.setStorageSync('userInfo', JSON.stringify(userInfo));
 						resolve(userInfo)
-						return;
+						return false;
 					}
 					uni.request({
 						url: this.globalData.httpUrl + 'wx/get/user/info',
 						method: 'POST',
 						data: {
-							user_ouid: this.globalData.userInfo.ouid
+							user_ouid: this.globalData.userInfo.ouid?this.globalData.userInfo.ouid:userInfo.ouid
 						},
 						header: {
 							'content-type': 'application/json'
@@ -124,6 +124,7 @@
 								this.globalData.userInfo.total_length = userInfo.total_length; //运动时长
 								this.globalData.userInfo.sport_day = userInfo.sport_day; //运动天数
 								this.globalData.userInfo.introduce = userInfo.introduce; //个人简介
+								this.globalData.userInfo.ouid = userInfo.ouid; //个人ouid
 								uni.removeStorageSync('userInfo');
 								uni.setStorageSync('userInfo', JSON.stringify(this.globalData
 									.userInfo));

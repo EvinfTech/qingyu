@@ -2,7 +2,7 @@
 	<!-- index.wxml -->
 	<view class="page">
 		<scroll-view class="content" :scroll-y="true" :style="'height: ' + scrollViewHeight + 'px;'">
-			<Home v-if="active == 0" :scrollViewHeight="scrollViewHeight" @navigate="navigate" ></Home>
+			<Home v-if="active == 0" :scrollViewHeight="scrollViewHeight" @navigate="navigate"></Home>
 			<Mine ref="mine" id="mine" v-else></Mine>
 		</scroll-view>
 		<u-tabbar :value="active" @change="tabbarChange" :border="true" :fixed="false" :placeholder="false">
@@ -30,7 +30,7 @@
 		},
 		data() {
 			return {
-				app:getApp(),
+				app: getApp(),
 				active: 0,
 				scrollViewHeight: 0,
 				tabbarList: [{
@@ -44,7 +44,7 @@
 						selectedIconPath: '/static/images/index/mineActive.svg'
 					}
 				],
-				gymnasiumInfo:{}
+				gymnasiumInfo: {}
 			};
 		},
 		onLoad() {
@@ -53,8 +53,7 @@
 			// 判断登录状态进行页面跳转
 			this.checkLoginState();
 		},
-		onShow() {
-		},
+		onShow() {},
 		onReady() {},
 		methods: {
 			getTabbarIndex() {
@@ -76,15 +75,15 @@
 				// #ifdef H5
 				that.scrollViewHeight = screenHeight - 60 - (screenHeight - saveBottom)
 				// #endif
-			}, 
+			},
 			// 验证登录状态 然后跳转
-			async checkLoginState() {
-				this.app.getUserInfo();
-				if (!this.app.globalData.userInfo.ouid) {
+			checkLoginState() {
+				let userInfo = uni.getStorageSync('userInfo');
+				if (!userInfo) {
 					uni.reLaunch({
 						url: '/pages/login/login'
 					});
-				} 
+				}
 			},
 			// tabbar切换
 			tabbarChange(name) {
@@ -108,11 +107,13 @@
 		line-height: 50rpx;
 		color: #000000;
 	}
+
 	/* #ifdef H5 */
-	.u-tabbar{
-		height: 60px!important;
-		padding: 5px 0!important;
-		box-sizing: border-box!important;
+	.u-tabbar {
+		height: 60px !important;
+		padding: 5px 0 !important;
+		box-sizing: border-box !important;
 	}
+
 	/* #endif */
 </style>

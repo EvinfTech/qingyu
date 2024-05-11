@@ -65,7 +65,7 @@
 				});
 			},
 
-			submit() {
+			async submit() {
 				if (!this.error) {
 					uni.showToast({
 						title: '请输入反馈问题',
@@ -79,11 +79,12 @@
 				list.forEach((item) => {
 					photos.push(item.url);
 				});
+				let userInfo = await this.app.getUserInfo();
 				request({
 					url: 'wx/add/feedback',
 					method: 'POST',
 					data: {
-						user_ouid: this.app.globalData.userInfo.ouid,
+						user_ouid: userInfo.ouid,
 						content: this.error,
 						//反馈内容
 						photo: photos //照片
@@ -95,7 +96,7 @@
 						duration: 2000,
 						success: () => {
 							setTimeout(() => {
-								uni.navigateBack();
+								this.app.toBack()
 							}, 2000);
 						}
 					});
