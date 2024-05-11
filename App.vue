@@ -136,20 +136,11 @@
 			// 获取用户协议和关于我们
 			getCommonInfo(){
 					return new Promise((resolve, reject) => {
-						let commonInfo = uni.getStorageSync("commonInfo")
-						if (commonInfo) {
-							commonInfo = JSON.parse(commonInfo)
-							this.globalData.aboutUs = commonInfo.about_us;
-							this.globalData.agreement = commonInfo.agreement;
-							resolve(commonInfo)
-							return false;
-						}
 						uni.request({
 							url: this.globalData.httpUrl + 'wx/get/agreement/about',
 							method: 'POST'
 						}).then((res) => {
 							let commonInfo = res.data.data;
-							uni.setStorageSync("commonInfo", JSON.stringify(commonInfo))
 							resolve(commonInfo)
 						});
 					})

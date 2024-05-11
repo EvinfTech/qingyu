@@ -157,21 +157,12 @@ const _sfc_main = {
     // 获取用户协议和关于我们
     getCommonInfo() {
       return new Promise((resolve, reject) => {
-        let commonInfo = common_vendor.index.getStorageSync("commonInfo");
-        if (commonInfo) {
-          commonInfo = JSON.parse(commonInfo);
-          this.globalData.aboutUs = commonInfo.about_us;
-          this.globalData.agreement = commonInfo.agreement;
-          resolve(commonInfo);
-          return false;
-        }
         common_vendor.index.request({
           url: this.globalData.httpUrl + "wx/get/agreement/about",
           method: "POST"
         }).then((res) => {
-          let commonInfo2 = res.data.data;
-          common_vendor.index.setStorageSync("commonInfo", JSON.stringify(commonInfo2));
-          resolve(commonInfo2);
+          let commonInfo = res.data.data;
+          resolve(commonInfo);
         });
       });
     },
