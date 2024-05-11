@@ -50,15 +50,15 @@
 					</view>
 				</view>
 			</view>
-			<view>
+			<view v-if="storeInfo.desc">
 				<view class="commonTitle">
-					场馆介绍
+					场馆简介
 				</view>
 				<view class="commonValue">
 					<text>{{ storeInfo.desc}}</text>
 				</view>
 			</view>
-			<view>
+			<view v-if="storeInfo.facility">
 				<view class="commonTitle">
 					场馆设施
 				</view>
@@ -66,7 +66,7 @@
 					<text>{{ storeInfo.facility?(storeInfo.facility).replace(/\\n/,'\n'):'' }}</text>
 				</view>
 			</view>
-			<view>
+			<view v-if="storeInfo.serve">
 				<view class="commonTitle">
 					场馆服务
 				</view>

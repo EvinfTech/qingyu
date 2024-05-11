@@ -170,7 +170,7 @@ if (!Math) {
   _easycom_u_icon();
 }
 function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
-  return {
+  return common_vendor.e({
     a: common_vendor.f($data.swiperList, (item, index, i0) => {
       return {
         a: item,
@@ -195,10 +195,19 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     }),
     m: common_vendor.t($data.storeInfo.location),
     n: common_vendor.o((...args) => $options.toMap && $options.toMap(...args)),
-    o: common_vendor.t($data.storeInfo.desc),
-    p: common_vendor.t($data.storeInfo.facility ? $data.storeInfo.facility.replace(/\\n/, "\n") : ""),
-    q: common_vendor.t($data.storeInfo.serve ? $data.storeInfo.serve.replace(/\\n/, "\n") : ""),
-    r: common_vendor.f($data.venueReservationList, (item, index, i0) => {
+    o: $data.storeInfo.desc
+  }, $data.storeInfo.desc ? {
+    p: common_vendor.t($data.storeInfo.desc)
+  } : {}, {
+    q: $data.storeInfo.facility
+  }, $data.storeInfo.facility ? {
+    r: common_vendor.t($data.storeInfo.facility ? $data.storeInfo.facility.replace(/\\n/, "\n") : "")
+  } : {}, {
+    s: $data.storeInfo.serve
+  }, $data.storeInfo.serve ? {
+    t: common_vendor.t($data.storeInfo.serve ? $data.storeInfo.serve.replace(/\\n/, "\n") : "")
+  } : {}, {
+    v: common_vendor.f($data.venueReservationList, (item, index, i0) => {
       return {
         a: common_vendor.t(item.day),
         b: common_vendor.t(item.date),
@@ -211,8 +220,8 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
         i: index
       };
     }),
-    s: $data.viewHeight + "px"
-  };
+    w: $data.viewHeight + "px"
+  });
 }
 const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-07e72d3c"], ["__file", "C:/project/轻羽项目/qingyu-client/pages/home/home.vue"]]);
 exports.MiniProgramPage = MiniProgramPage;
