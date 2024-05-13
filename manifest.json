@@ -50,7 +50,8 @@
         },
         /* 模块配置 */
         "modules" : {
-            "Maps" : {}
+            "Maps" : {},
+            "Payment" : {}
         },
         /* 应用发布信息 */
         "distribute" : {
@@ -89,7 +90,8 @@
                         "appkey_ios" : "301faa5c145d26fa8d0dbf0f7b0fec05",
                         "appkey_android" : "301faa5c145d26fa8d0dbf0f7b0fec05"
                     }
-                }
+                },
+                "payment" : {}
             }
         }
     },
@@ -97,7 +99,7 @@
     "quickapp" : {},
     /* 小程序特有相关 */
     "mp-weixin" : {
-        "appid" : "",
+        "appid" : "wx00fb6cbcfab5e4b1",
         "setting" : {
             "urlCheck" : false
         },
