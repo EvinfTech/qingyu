@@ -1,7 +1,10 @@
 "use strict";
 const common_vendor = require("../../common/vendor.js");
 const utils_request = require("../../utils/request.js");
+const utils_util = require("../../utils/util.js");
+const mixins_pay = require("../../mixins/pay.js");
 const _sfc_main = {
+  mixins: [mixins_pay.payment],
   data() {
     return {
       app: getApp(),
@@ -33,8 +36,15 @@ const _sfc_main = {
       },
       type: "",
       person: "",
+      //预约人
       phone: "",
-      remark: ""
+      //预约人联系电话
+      remark: "",
+      //备注
+      emptyTime: "15:00",
+      //支付剩余时间
+      timer: null
+      //定时器
     };
   },
   /**
@@ -48,6 +58,12 @@ const _sfc_main = {
       this.getNavBarHeight();
     });
     this.initData();
+  },
+  onUnload() {
+    if (this.timer) {
+      clearInterval(this.timer);
+      this.timer = null;
+    }
   },
   methods: {
     async initData() {
@@ -90,7 +106,37 @@ const _sfc_main = {
         this.person = data.user_name;
         this.phone = data.user_phone;
         this.remark = data.remark;
+        if (data.status == "N") {
+          this.setPayTimer(data.gmt_creat_order);
+        } else {
+          clearInterval(this.timer);
+          this.timer = null;
+          this.emptyTime = "15:00";
+        }
       });
+    },
+    // 设置支付倒计时
+    setPayTimer(createTime) {
+      this.calateTimeDiff(createTime);
+      this.timer = setInterval(() => {
+        this.calateTimeDiff(createTime);
+      }, 500);
+    },
+    // 计算时间差
+    calateTimeDiff(createTime) {
+      let createTimeStamp = new Date(createTime).getTime();
+      let nowTime = Date.now();
+      let diff = Math.floor((nowTime - createTimeStamp) / 1e3);
+      if (diff <= 15 * 60) {
+        let minutes = utils_util.formatNumber(Math.floor((15 * 60 - diff) / 60));
+        let seconds = utils_util.formatNumber((15 * 60 - diff) % 60);
+        this.emptyTime = `${minutes}:${seconds}`;
+      } else {
+        clearInterval(this.timer);
+        this.timer = null;
+        this.payState = "C";
+        this.emptyTime = "15:00";
+      }
     },
     getNavBarHeight() {
       var screenHeight = common_vendor.index.getSystemInfoSync().windowHeight;
@@ -160,29 +206,34 @@ const _sfc_main = {
     cancelOrder() {
       this.show = true;
     },
+    // 支付完成 或支付取消
+    payComplete(type) {
+      common_vendor.index.showToast({
+        title: type == "success" ? "支付成功" : "支付取消",
+        icon: "none",
+        duration: 2e3,
+        success: () => {
+          if (!this.type && type == "success") {
+            const eventChannel = this.getOpenerEventChannel();
+            eventChannel.emit("toChangeOrderState", this.order_no, "Y");
+          }
+          setTimeout(() => {
+            this.initData();
+          }, 2e3);
+        }
+      });
+    },
     // 去支付
     toPay() {
       utils_request.request({
         url: "wx/pay",
         method: "POST",
         data: {
-          order_no: this.order_no
+          order_no: this.order_no,
+          type: "web"
         }
       }).then((res) => {
-        common_vendor.index.showToast({
-          title: "支付成功",
-          icon: "none",
-          duration: 2e3,
-          success: () => {
-            if (!this.type) {
-              const eventChannel = this.getOpenerEventChannel();
-              eventChannel.emit("toChangeOrderState", this.order_no, "Y");
-            }
-            setTimeout(() => {
-              this.initData();
-            }, 2e3);
-          }
-        });
+        this.wxPay(res.data.per_pay, this.payComplete);
       });
     },
     // 去使用
@@ -225,14 +276,16 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
       content: "确定要取消此订单？",
       showCancelButton: true
     }),
-    g: $data.detailType == "detail" && $data.payState == "N"
-  }, $data.detailType == "detail" && $data.payState == "N" ? {} : {}, {
-    h: common_vendor.t($data.gymnasiumInfo.name),
-    i: common_vendor.t($data.gymnasiumInfo.phone),
-    j: common_vendor.o((...args) => $options.toCall && $options.toCall(...args)),
-    k: common_vendor.t($data.gymnasiumInfo.location),
-    l: common_vendor.o((...args) => $options.toMap && $options.toMap(...args)),
-    m: common_vendor.f($data.sessionList, (item, index, i0) => {
+    g: $data.payState == "N"
+  }, $data.payState == "N" ? {
+    h: common_vendor.t($data.emptyTime)
+  } : {}, {
+    i: common_vendor.t($data.gymnasiumInfo.name),
+    j: common_vendor.t($data.gymnasiumInfo.phone),
+    k: common_vendor.o((...args) => $options.toCall && $options.toCall(...args)),
+    l: common_vendor.t($data.gymnasiumInfo.location),
+    m: common_vendor.o((...args) => $options.toMap && $options.toMap(...args)),
+    n: common_vendor.f($data.sessionList, (item, index, i0) => {
       return {
         a: common_vendor.t(item.siteName),
         b: common_vendor.t(item.hour),
@@ -247,35 +300,35 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
         e: index
       };
     }),
-    n: common_vendor.t($data.sessionList.length),
-    o: common_vendor.t($data.totalPrice / 100),
-    p: common_vendor.t($data.person),
-    q: common_vendor.t($data.phone),
-    r: common_vendor.t($data.remark),
-    s: common_vendor.t($data.order_no),
-    t: common_vendor.o((...args) => $options.tocopy && $options.tocopy(...args)),
-    v: common_vendor.t($data.orderTime),
-    w: $data.payState == "Y"
+    o: common_vendor.t($data.sessionList.length),
+    p: common_vendor.t($data.totalPrice / 100),
+    q: common_vendor.t($data.person),
+    r: common_vendor.t($data.phone),
+    s: common_vendor.t($data.remark),
+    t: common_vendor.t($data.order_no),
+    v: common_vendor.o((...args) => $options.tocopy && $options.tocopy(...args)),
+    w: common_vendor.t($data.orderTime),
+    x: $data.payState == "Y"
   }, $data.payState == "Y" ? {
-    x: common_vendor.t($data.payTime)
+    y: common_vendor.t($data.payTime)
   } : {}, {
-    y: $data.payState == "N"
+    z: $data.payState == "N"
   }, $data.payState == "N" ? {} : {}, {
-    z: common_vendor.t($data.totalPrice / 100),
-    A: $data.payState == "N" || $data.payState == "Y"
+    A: common_vendor.t($data.totalPrice / 100),
+    B: $data.payState == "N" || $data.payState == "Y"
   }, $data.payState == "N" || $data.payState == "Y" ? {
-    B: common_vendor.o((...args) => $options.cancelOrder && $options.cancelOrder(...args))
+    C: common_vendor.o((...args) => $options.cancelOrder && $options.cancelOrder(...args))
   } : {}, {
-    C: $data.payState == "Y"
+    D: $data.payState == "Y"
   }, $data.payState == "Y" ? {
-    D: common_vendor.o((...args) => $options.toUse && $options.toUse(...args))
+    E: common_vendor.o((...args) => $options.toUse && $options.toUse(...args))
   } : {}, {
-    E: $data.payState == "N"
+    F: $data.payState == "N"
   }, $data.payState == "N" ? {
-    F: common_vendor.o((...args) => $options.toPay && $options.toPay(...args))
+    G: common_vendor.o((...args) => $options.toPay && $options.toPay(...args))
   } : $data.payState == "C" ? {} : {}, {
-    G: $data.payState == "C",
-    H: common_vendor.s("height: " + ($data.scrollViewHeight + "px") + ";")
+    H: $data.payState == "C",
+    I: common_vendor.s("height: " + ($data.scrollViewHeight + "px") + ";")
   });
 }
 const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-1353b6cf"], ["__file", "C:/project/轻羽项目/qingyu-client/pages/orderDetail/orderDetail.vue"]]);

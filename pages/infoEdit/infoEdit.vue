@@ -40,13 +40,26 @@
 				</template>
 
 			</u-cell>
-			<u-cell title="手机"  >
+			<u-cell title="手机">
 				<template #value>
 					<view style="font-size: 28rpx;color: #aaa;">
 						{{phone}}
 					</view>
 				</template>
-			
+			</u-cell>
+			<u-cell title="会员类型">
+				<template #value>
+					<view style="font-size: 28rpx;">
+						普通会员
+					</view>
+				</template>
+			</u-cell>
+			<u-cell title="储值金额">
+				<template #value>
+					<view style="font-size: 28rpx;">
+						1000
+					</view>
+				</template>
 			</u-cell>
 		</u-cell-group>
 		<u-datetime-picker :show="show" mode="date" :min-date="minDate" :max-date="maxDate" v-model="currentDate"

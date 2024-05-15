@@ -155,7 +155,9 @@
 	import {
 		request
 	} from '../../utils/request';
+	import payment from '@/mixins/pay.js';
 	export default ({
+		mixins:[payment],
 		data() {
 			return {
 				show: false,
@@ -277,6 +279,20 @@
 				this.show = true;
 				this.order_no = e.currentTarget.dataset.item.order_no
 			},
+			// 支付完成 或支付取消
+			payComplete(type){
+				uni.showToast({
+					title: type=='success'?'支付成功':'支付取消',
+					icon: 'none',
+					duration: 2000,
+					success: () => {
+						if ( type=='success') {
+							this.dealWithOrderState(this.order_no, 'Y')
+						}
+					
+					}
+				});
+			},
 			// 去支付
 			toPay(e) {
 				request({
@@ -284,16 +300,23 @@
 					method: 'POST',
 					data: {
 						order_no: e.currentTarget.dataset.item.order_no,
+						type: 'web'
 					}
 				}).then((res) => {
-					uni.showToast({
-						title: '支付成功',
-						icon: 'none',
-						duration: 2000,
-						success: () => {
-							this.dealWithOrderState(e.currentTarget.dataset.item.order_no, 'Y')
-						}
-					});
+					this.order_no = e.currentTarget.dataset.item.order_no
+					// #ifdef MP-WEIXIN
+					this.wxPay(res.data.per_pay,this.payComplete)
+					// #endif
+					// #ifdef H5
+					let flag = this.isWeiXin()
+					if (flag) {
+						// 走微信内置浏览器支付
+						this.weChatInside()
+					} else {
+						// 走外置浏览器支付
+						this.toPayOutside()
+					}
+					// #endif
 				});
 			},
 			// 去使用

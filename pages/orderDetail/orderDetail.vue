@@ -11,12 +11,12 @@
 			@cancel="cancel"></u-modal>
 		<scroll-view :scroll-y="true" class="w-full" :style="'height: ' + (scrollViewHeight + 'px') + ';'"
 			style="padding-top: 14rpx;">
-			<view class="payStateBox flex align-center justify-center" v-if="detailType == 'detail' && payState == 'N'">
+			<view class="payStateBox flex align-center justify-center" v-if="payState == 'N'">
 				<image src="/static/images/order/timeLine.svg" mode=""
 					style="width: 94rpx; height: 94rpx; margin-right: 20rpx" />
 				<view class="flex flex-direction align-start">
 					<view class="waitPayText">等待支付</view>
-					<view class="waitPayTitle">订单已生成，请在15分钟之内支付完成</view>
+					<view class="waitPayTitle">订单已生成，请在{{emptyTime}}内支付完成</view>
 				</view>
 			</view>
 			<!-- <view class="codeBox flex flex-direction align-center" v-if="payState == 'Y'"
@@ -41,7 +41,7 @@
 					</view>
 				</view>
 				<view class="flex align-center justify-between" style="height: 38rpx">
-					<view class="commonLeftLabel"  @tap="toMap">
+					<view class="commonLeftLabel" @tap="toMap">
 						<text>地址：</text>
 						<text style="color: #409EFF;">{{ gymnasiumInfo.location }}</text>
 					</view>
@@ -80,19 +80,19 @@
 						<text>{{ person }}</text>
 					</view>
 				</view>
-				<view class="flex align-center"  style="margin-top: 12rpx">
+				<view class="flex align-center" style="margin-top: 12rpx">
 					<view class="leftLabel">手机号码：</view>
 					<view class="leftLabel flex align-center">
 						<text>{{ phone }}</text>
 					</view>
 				</view>
-				<view class="flex align-center"  style="margin-top: 12rpx">
+				<view class="flex align-center" style="margin-top: 12rpx">
 					<view class="leftLabel">备注：</view>
 					<view class="leftLabel flex align-center">
 						<text>{{ remark }}</text>
 					</view>
 				</view>
-				<view class="flex align-center"  style="margin-top: 12rpx">
+				<view class="flex align-center" style="margin-top: 12rpx">
 					<view class="leftLabel">订单编号：</view>
 					<view class="leftLabel flex align-center">
 						<text>{{ order_no }}</text>
@@ -145,7 +145,13 @@
 	import {
 		request
 	} from '../../utils/request';
+	import {
+		formatNumber
+	} from '../../utils/util';
+	// 引入支付混入
+	import payment from '@/mixins/pay.js';
 	export default ({
+		mixins:[payment],
 		data() {
 			return {
 				app: getApp(),
@@ -175,10 +181,12 @@
 					date: '',
 					timeRange: ''
 				},
-				type:'',
-				person:'',
-				phone:'',
-				remark:''
+				type: '',
+				person: '', //预约人
+				phone: '', //预约人联系电话
+				remark: '', //备注
+				emptyTime: '15:00', //支付剩余时间
+				timer: null, //定时器
 			};
 		},
 		/**
@@ -186,12 +194,19 @@
 		 */
 		onLoad(options) {
 			this.order_no = options.order_no;
-			this.type = options.type?options.type:''
+			this.type = options.type ? options.type : ''
 			this.detailType = options.type;
 			this.$nextTick(() => {
 				this.getNavBarHeight();
 			})
 			this.initData();
+		},
+		onUnload(){
+			// 页面销毁如果有定时器存在，清除定时器
+			if(this.timer){
+				clearInterval(this.timer)
+				this.timer = null
+			}
 		},
 		methods: {
 			async initData() {
@@ -234,9 +249,38 @@
 					this.person = data.user_name
 					this.phone = data.user_phone
 					this.remark = data.remark
+					if (data.status == 'N') {
+						this.setPayTimer(data.gmt_creat_order)
+					}else{
+						clearInterval(this.timer);
+						this.timer = null;
+						this.emptyTime = '15:00';
+					}
 				});
 			},
-
+			// 设置支付倒计时
+			setPayTimer(createTime) {
+				this.calateTimeDiff(createTime)
+				this.timer = setInterval(() => {
+					this.calateTimeDiff(createTime)
+				}, 500)
+			},
+			// 计算时间差
+			calateTimeDiff(createTime){
+				let createTimeStamp = (new Date(createTime)).getTime();
+				let nowTime = Date.now();
+				let diff = Math.floor((nowTime - createTimeStamp)/1000);
+				if (diff <= 15 * 60) {
+					let minutes = formatNumber(Math.floor((15*60-diff) / 60));
+					let seconds = formatNumber((15*60-diff) % 60);
+					this.emptyTime = `${minutes}:${seconds}`;
+				} else {
+					clearInterval(this.timer)
+					this.timer = null;
+					this.payState = 'C';
+					this.emptyTime = '15:00'
+				}
+			},
 			getNavBarHeight() {
 				var screenHeight = uni.getSystemInfoSync().windowHeight;
 				let that = this;
@@ -298,9 +342,9 @@
 						duration: 2000,
 						success: () => {
 							this.show = false
-							if(!this.type){
+							if (!this.type) {
 								const eventChannel = this.getOpenerEventChannel();
-								eventChannel.emit('toChangeOrderState', this.order_no,'C')
+								eventChannel.emit('toChangeOrderState', this.order_no, 'C')
 							}
 							setTimeout(() => {
 								this.initData();
@@ -313,6 +357,23 @@
 			cancelOrder() {
 				this.show = true;
 			},
+			// 支付完成 或支付取消
+			payComplete(type){
+				uni.showToast({
+					title: type=='success'?'支付成功':'支付取消',
+					icon: 'none',
+					duration: 2000,
+					success: () => {
+						if (!this.type && type=='success') {
+							const eventChannel = this.getOpenerEventChannel();
+							eventChannel.emit('toChangeOrderState', this.order_no, 'Y')
+						}
+						setTimeout(() => {
+							this.initData();
+						}, 2000);
+					}
+				});
+			},
 			// 去支付
 			toPay() {
 				request({
@@ -320,22 +381,23 @@
 					method: 'POST',
 					data: {
 						order_no: this.order_no,
+						type: 'web'
 					}
 				}).then((res) => {
-					uni.showToast({
-						title: '支付成功',
-						icon: 'none',
-						duration: 2000,
-						success: () => {
-							if(!this.type){
-								const eventChannel = this.getOpenerEventChannel();
-								eventChannel.emit('toChangeOrderState', this.order_no,'Y')
-							}
-							setTimeout(() => {
-								this.initData();
-							}, 2000);
-						}
-					});
+					// #ifdef MP-WEIXIN
+					this.wxPay(res.data.per_pay,this.payComplete)
+					// #endif
+					// #ifdef H5
+					let flag = this.isWeiXin()
+					if (flag) {
+						// 走微信内置浏览器支付
+						this.weChatInside()
+					} else {
+						// 走外置浏览器支付
+						this.toPayOutside()
+					}
+					// #endif
+					
 				});
 
 			},

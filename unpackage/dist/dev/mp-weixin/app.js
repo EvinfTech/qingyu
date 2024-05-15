@@ -22,8 +22,9 @@ if (!Math) {
 }
 const _sfc_main = {
   globalData: {
-    httpUrl: "https://qingyu.evinf.cn/",
-    // httpUrl: 'http://172.16.8.5:8002/',
+    // httpUrl: 'https://qingyu.evinf.cn/',
+    httpUrl: "http://172.16.8.5:8002/",
+    // httpUrl: 'http://sport1.evinf.cn/',
     uploadAvatarUrl: "https://qingyu.evinf.cn/common/upload/avatar",
     uploadImgUrl: "https://qingyu.evinf.cn/common/upload/photo",
     userInfo: {
@@ -56,8 +57,12 @@ const _sfc_main = {
     //场馆信息
     aboutUs: "",
     //关于我们
-    agreement: ""
+    agreement: "",
     //用户协议
+    appId: "wx00fb6cbcfab5e4b1",
+    //小程序appId
+    officialAppId: "wx14f6a5a5933aca21"
+    //公众号appId
   },
   methods: {
     getLocation() {

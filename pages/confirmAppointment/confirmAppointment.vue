@@ -16,11 +16,11 @@
 				</view>
 				<view class="flex align-center" style="margin-top: 11px;">
 					<view class="commonInfoLabel">手机</view>
-					<input type="text" placeholder="预约人手机号码" v-model="phone" >
+					<input type="text" placeholder="预约人手机号码" v-model="phone">
 				</view>
 				<view class="flex align-center" style="margin-top: 11px;">
 					<view class="commonInfoLabel">备注</view>
-					<input type="text" placeholder="备注信息" v-model="remark" >
+					<input type="text" placeholder="备注信息" v-model="remark">
 				</view>
 			</view>
 			<view class="gymnasiumInfoBox">
@@ -39,7 +39,7 @@
 							</view>
 							<view class="grayText">{{ item.hour }}小时</view>
 						</view>
-			
+
 						<view class="flex align-center justify-between" style="margin-top: 12rpx">
 							<view class="flex flex-direction">
 								<view class="grayText" v-for="(con, j) in item.timeList" :key="j">
@@ -55,7 +55,7 @@
 					<view class="priceText">￥{{orderInfo.totalPrice }}</view>
 				</view>
 			</view>
-			<view class="flex align-center justify-between payMethodBox" >
+			<view class="flex align-center justify-between payMethodBox">
 				<view class="methodText">支付方式</view>
 				<view class="flex align-center">
 					<image src="/static/images/order/wechatIcon.svg" mode=""
@@ -87,20 +87,25 @@
 	import {
 		request
 	} from '../../utils/request';
+	// 引入weixin-js-sdk
+	import * as jweixin from 'weixin-js-sdk'
+	// 引入支付混入
+	import payment from '@/mixins/pay.js';
 	export default {
+		mixins:[payment],
 		data() {
 			return {
 				app: getApp(),
 				centerHeight: 0,
 				orderInfo: {},
-				gymnasiumInfo:{},
-				userName:'',
-				phone:'',
-				remark:'',
-				userInfo:{},
-				sessionList:[],
-				show:false,
-				order_no:''
+				gymnasiumInfo: {},
+				userName: '',
+				phone: '',
+				remark: '',
+				userInfo: {},
+				sessionList: [],
+				show: false,
+				order_no: ''
 			}
 		},
 		async onLoad() {
@@ -108,7 +113,7 @@
 			orderInfo = JSON.parse(orderInfo)
 			this.orderInfo = orderInfo;
 			this.gymnasiumInfo = await this.app.getStoreInfo()
-			this.userInfo  = await this.app.getUserInfo()
+			this.userInfo = await this.app.getUserInfo()
 			let enumInfo = await this.app.getEnum();
 			this.userName = this.userInfo.name;
 			this.phone = this.userInfo.phone;
@@ -135,7 +140,18 @@
 			this.$nextTick(() => {
 				this.calculate();
 			})
-
+		},
+		onShow() {
+			// #ifdef H5
+			// 微信内置浏览器且code存在
+			let flag = this.isWeiXin()
+			if (flag) {
+				const code = this.getUrlParam("code")
+				if (code) {
+					this.toPayInside()
+				}
+			}
+			// #endif
 		},
 		methods: {
 			calculate() {
@@ -159,73 +175,93 @@
 						//用户ouid
 						site_detail: this.orderInfo.site_detail,
 						gmt_site_use: this.orderInfo.gmt_site_use,
-						reserve_name:this.userName,
-						reserve_phone:this.phone,
-						remark:this.remark
+						reserve_name: this.userName,
+						reserve_phone: this.phone,
+						remark: this.remark
 					}
 				}).then((res) => {
-					if(res.msg=='操作成功'){
+					if (res.msg == '操作成功') {
 						uni.showToast({
 							title: '提交成功',
 							icon: 'none',
 							duration: 2000,
 							success: () => {
 								setTimeout(() => {
-									this.show = true
-									this.order_no =  res.data.order
+									// this.show = true
+									this.order_no = res.data.order;
+									this.confirm()
 								}, 2000);
 							}
 						});
-					}else{
+					} else {
 						uni.showToast({
-							title:res.msg+',请重选',
-							icon:'none'
+							title: res.msg + ',请重选',
+							icon: 'none'
 						})
-						setTimeout(()=>{
+						setTimeout(() => {
 							const eventChannel = this.getOpenerEventChannel();
-							eventChannel.emit('updateSiteInfo',res.data.site)
-							setTimeout(()=>{
+							eventChannel.emit('updateSiteInfo', res.data.site)
+							setTimeout(() => {
 								this.app.toBack()
-							},200)
-						},1500)
-						
+							}, 200)
+						}, 1500)
+
 					}
-					
+
 				});
 			},
 			// 确定支付订单
-			confirm(){
+			confirm() {
 				request({
 					url: 'wx/pay',
 					method: 'POST',
 					data: {
 						order_no: this.order_no,
+						type: 'web'
 					}
 				}).then((res) => {
-					uni.showToast({
-						title: '支付成功',
-						icon: 'none',
-						duration: 2000,
-						success: () => {
-							this.show = false
-							setTimeout(() => {
-								uni.removeStorageSync('orderInfo')
-								uni.redirectTo({
-									url:'/pages/orderDetail/orderDetail?order_no=' + this.order_no+'&type=new'
-								})
-							}, 2000);
-						}
-					});
+					// #ifdef MP-WEIXIN
+					this.wxPay(res.data.per_pay,this.payComplete)
+					// #endif
+					// #ifdef H5
+					let flag = this.isWeiXin()
+					if (flag) {
+						// 走微信内置浏览器支付
+						this.weChatInside()
+					} else {
+						// 走外置浏览器支付
+						this.toPayOutside()
+					}
+					// #endif
+
 				});
 			},
 			// 取消支付
-			cancel(){
+			cancel() {
 				this.show = false;
 				uni.removeStorageSync('orderInfo')
 				uni.redirectTo({
-					url:'/pages/orderDetail/orderDetail?order_no=' + this.order_no+'&type=new'
+					url: '/pages/orderDetail/orderDetail?order_no=' + this.order_no + '&type=new'
 				})
-			}
+			},
+			// 支付完成 或支付取消
+			payComplete(type){
+				uni.showToast({
+					title: type=='success'?'支付成功':'支付取消',
+					icon: 'none',
+					duration: 2000,
+					success: () => {
+						setTimeout(() => {
+							uni.removeStorageSync('orderInfo')
+							uni.redirectTo({
+								url: '/pages/orderDetail/orderDetail?order_no=' +
+									this.order_no + '&type=new'
+							})
+						}, 2000);
+					}
+				});
+			},
+
 		}
 	}
 </script>
@@ -240,47 +276,53 @@
 
 	.centerContent {
 		background-color: #f6f8fa;
-		overflow-y:auto;
+		overflow-y: auto;
 	}
-	.reservationInfo{
+
+	.reservationInfo {
 		background-color: #fff;
 		padding: 10px;
 	}
-	.reservationInfoTitle{
+
+	.reservationInfoTitle {
 		font-family: Alibaba PuHuiTi 2.0;
 		font-size: 17px;
 		color: #000000;
 	}
-	.commonInfoLabel{
+
+	.commonInfoLabel {
 		font-family: Alibaba PuHuiTi 2.0;
 		font-size: 14px;
 		color: #000000;
 		margin-right: 31px;
 	}
-	.gymnasiumInfoBox{
+
+	.gymnasiumInfoBox {
 		background-color: #fff;
 		padding: 10px;
 		margin-top: 8px;
 	}
-	.gymnasiumInfoBoxName{
+
+	.gymnasiumInfoBoxName {
 		font-size: 17px;
 	}
-	.gymnasiumInfoBoxText{
+
+	.gymnasiumInfoBoxText {
 		font-size: 14px;
 		margin-top: 11px;
 	}
-	
+
 	.payMethodBox {
 		height: 94rpx;
 		background-color: #fff;
 		padding: 0 20rpx;
 		margin-top: 20rpx;
 	}
-	
+
 	.footer {
 		height: 78px;
 		padding: 0 20rpx 0 32rpx;
-		background-color:#fff;
+		background-color: #fff;
 	}
 
 	.totalText {
@@ -298,7 +340,7 @@
 		font-feature-settings: 'kern' on;
 		color: #ff5634;
 	}
-	
+
 	.payBtn {
 		width: 200rpx;
 		height: 70rpx;
@@ -312,12 +354,13 @@
 		font-weight: 500;
 		color: #ffffff;
 	}
+
 	.siteList {
 		background-color: #fff;
 		margin-top: 14rpx;
 		box-sizing: border-box;
 	}
-	
+
 	.siteListTitle {
 		padding: 20rpx 20rpx 0;
 		font-family: Alibaba PuHuiTi 2;
@@ -329,6 +372,7 @@
 		color: #333333;
 		margin-bottom: 24rpx;
 	}
+
 	.blackText {
 		font-family: Alibaba PuHuiTi 2;
 		font-size: 28rpx;
@@ -338,7 +382,7 @@
 		font-feature-settings: 'kern' on;
 		color: #333333;
 	}
-	
+
 	.grayText {
 		font-family: Alibaba PuHuiTi 2;
 		font-size: 24rpx;
@@ -349,7 +393,7 @@
 		font-feature-settings: 'kern' on;
 		color: #9e9e9e;
 	}
-	
+
 	.siteListItem {
 		width: 100%;
 		min-height: 140rpx;
@@ -361,7 +405,9 @@
 		box-sizing: border-box;
 		margin-bottom: 10rpx;
 	}
-	::v-deep .input-placeholder{
-		font-size:14px;color:#9e9e9e
+
+	::v-deep .input-placeholder {
+		font-size: 14px;
+		color: #9e9e9e
 	}
 </style>
