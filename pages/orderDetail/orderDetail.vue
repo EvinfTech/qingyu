@@ -151,7 +151,7 @@
 	// 引入支付混入
 	import payment from '@/mixins/pay.js';
 	export default ({
-		mixins:[payment],
+		mixins: [payment],
 		data() {
 			return {
 				app: getApp(),
@@ -201,9 +201,9 @@
 			})
 			this.initData();
 		},
-		onUnload(){
+		onUnload() {
 			// 页面销毁如果有定时器存在，清除定时器
-			if(this.timer){
+			if (this.timer) {
 				clearInterval(this.timer)
 				this.timer = null
 			}
@@ -251,7 +251,7 @@
 					this.remark = data.remark
 					if (data.status == 'N') {
 						this.setPayTimer(data.gmt_creat_order)
-					}else{
+					} else {
 						clearInterval(this.timer);
 						this.timer = null;
 						this.emptyTime = '15:00';
@@ -266,13 +266,13 @@
 				}, 500)
 			},
 			// 计算时间差
-			calateTimeDiff(createTime){
+			calateTimeDiff(createTime) {
 				let createTimeStamp = (new Date(createTime)).getTime();
 				let nowTime = Date.now();
-				let diff = Math.floor((nowTime - createTimeStamp)/1000);
+				let diff = Math.floor((nowTime - createTimeStamp) / 1000);
 				if (diff <= 15 * 60) {
-					let minutes = formatNumber(Math.floor((15*60-diff) / 60));
-					let seconds = formatNumber((15*60-diff) % 60);
+					let minutes = formatNumber(Math.floor((15 * 60 - diff) / 60));
+					let seconds = formatNumber((15 * 60 - diff) % 60);
 					this.emptyTime = `${minutes}:${seconds}`;
 				} else {
 					clearInterval(this.timer)
@@ -358,13 +358,13 @@
 				this.show = true;
 			},
 			// 支付完成 或支付取消
-			payComplete(type){
+			payComplete(type) {
 				uni.showToast({
-					title: type=='success'?'支付成功':'支付取消',
+					title: type == 'success' ? '支付成功' : '支付取消',
 					icon: 'none',
 					duration: 2000,
 					success: () => {
-						if (!this.type && type=='success') {
+						if (!this.type && type == 'success') {
 							const eventChannel = this.getOpenerEventChannel();
 							eventChannel.emit('toChangeOrderState', this.order_no, 'Y')
 						}
@@ -385,7 +385,7 @@
 					}
 				}).then((res) => {
 					// #ifdef MP-WEIXIN
-					this.wxPay(res.data.per_pay,this.payComplete)
+					this.wxPay(res.data.per_pay, this.payComplete)
 					// #endif
 					// #ifdef H5
 					let flag = this.isWeiXin()
@@ -397,7 +397,7 @@
 						this.toPayOutside()
 					}
 					// #endif
-					
+
 				});
 
 			},

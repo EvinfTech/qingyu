@@ -33,6 +33,7 @@ const payment = {
       });
     },
     // 微信内置浏览器授权获取code
+    // 网页授权 https://developers.weixin.qq.com/doc/offiaccount/OA_Web_Apps/Wechat_webpage_authorization.html
     wechatGetCode() {
       const appId = this.app.globalData.officialAppId;
       const local = window.location.href;

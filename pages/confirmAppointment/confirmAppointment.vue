@@ -92,7 +92,7 @@
 	// 引入支付混入
 	import payment from '@/mixins/pay.js';
 	export default {
-		mixins:[payment],
+		mixins: [payment],
 		data() {
 			return {
 				app: getApp(),
@@ -221,7 +221,7 @@
 					}
 				}).then((res) => {
 					// #ifdef MP-WEIXIN
-					this.wxPay(res.data.per_pay,this.payComplete)
+					this.wxPay(res.data.per_pay, this.payComplete)
 					// #endif
 					// #ifdef H5
 					let flag = this.isWeiXin()
@@ -245,9 +245,9 @@
 				})
 			},
 			// 支付完成 或支付取消
-			payComplete(type){
+			payComplete(type) {
 				uni.showToast({
-					title: type=='success'?'支付成功':'支付取消',
+					title: type == 'success' ? '支付成功' : '支付取消',
 					icon: 'none',
 					duration: 2000,
 					success: () => {

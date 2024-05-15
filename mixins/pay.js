@@ -1,6 +1,6 @@
 export default {
 	data() {
-		app:getApp()
+		app: getApp()
 	},
 	methods: {
 		// 判断是微信浏览器打开 还是 外部浏览器打开
@@ -13,7 +13,7 @@ export default {
 			}
 		},
 		// 微信小程序支付
-		wxPay(data,callback) {
+		wxPay(data, callback) {
 			wx.requestPayment({
 				"timeStamp": data.timeStamp,
 				"nonceStr": data.nonceStr,
@@ -30,8 +30,9 @@ export default {
 			})
 		},
 		// 微信内置浏览器授权获取code
+		// 网页授权 https://developers.weixin.qq.com/doc/offiaccount/OA_Web_Apps/Wechat_webpage_authorization.html
 		wechatGetCode() {
-			//应用的appid
+			//公众号的appid
 			const appId = this.app.globalData.officialAppId;
 			//重定向的地址，重定向回当前页面
 			const local = window.location.href
@@ -62,7 +63,7 @@ export default {
 				//这里走支付的操作，下面详写
 				this.toPayInside()
 			}
-		
+
 		},
 		// 微信内置浏览器支付方法
 		toPayInside(prepay_id) {

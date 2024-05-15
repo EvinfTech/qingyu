@@ -166,11 +166,12 @@
 												method: 'POST',
 												data: {
 													code: result.code,
-													user_ouid: res.data.ouid,
-													type:'A'
+													user_ouid: res.data
+														.ouid,
+													type: 'A', //A:微信小程序 B:微信内置浏览器
 												}
-											}).then(()=>{
-												
+											}).then(() => {
+
 											})
 										} else {}
 									}

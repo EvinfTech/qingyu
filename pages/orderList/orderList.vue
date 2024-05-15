@@ -157,7 +157,7 @@
 	} from '../../utils/request';
 	import payment from '@/mixins/pay.js';
 	export default ({
-		mixins:[payment],
+		mixins: [payment],
 		data() {
 			return {
 				show: false,
@@ -170,11 +170,11 @@
 					name: '待使用'
 				}, ],
 				active: 0,
-				waitPayedList: [],//等待支付列表
-				waitUsedList: [],//等待使用列表
-				order_no: '',//订单号
-				orderList: [],//全部订单列表
-				scrollViewHeight: '',//中间内容高度
+				waitPayedList: [], //等待支付列表
+				waitUsedList: [], //等待使用列表
+				order_no: '', //订单号
+				orderList: [], //全部订单列表
+				scrollViewHeight: '', //中间内容高度
 				searchInfo: {
 					pageObj: {
 						firstPage: 1,
@@ -183,10 +183,10 @@
 					},
 					size: 10,
 					status: ''
-				},//搜索条件
-				triggered: false,//控制全部 下拉刷新
-				triggered1: false,//控制待支付 下拉刷新
-				triggered2: false//控制待使用 下拉刷新
+				}, //搜索条件
+				triggered: false, //控制全部 下拉刷新
+				triggered1: false, //控制待支付 下拉刷新
+				triggered2: false //控制待使用 下拉刷新
 			};
 		},
 		/**
@@ -280,16 +280,16 @@
 				this.order_no = e.currentTarget.dataset.item.order_no
 			},
 			// 支付完成 或支付取消
-			payComplete(type){
+			payComplete(type) {
 				uni.showToast({
-					title: type=='success'?'支付成功':'支付取消',
+					title: type == 'success' ? '支付成功' : '支付取消',
 					icon: 'none',
 					duration: 2000,
 					success: () => {
-						if ( type=='success') {
+						if (type == 'success') {
 							this.dealWithOrderState(this.order_no, 'Y')
 						}
-					
+
 					}
 				});
 			},
@@ -305,7 +305,7 @@
 				}).then((res) => {
 					this.order_no = e.currentTarget.dataset.item.order_no
 					// #ifdef MP-WEIXIN
-					this.wxPay(res.data.per_pay,this.payComplete)
+					this.wxPay(res.data.per_pay, this.payComplete)
 					// #endif
 					// #ifdef H5
 					let flag = this.isWeiXin()
@@ -421,27 +421,27 @@
 						// 支付成功
 						if (type == 'Y') {
 							this.waitUsedList.unshift(this.orderList[index])
-							let resI = this.waitPayedList.findIndex((item)=>{
+							let resI = this.waitPayedList.findIndex((item) => {
 								return item.order_no == order_no
 							})
-							if(resI>-1){
-								this.waitPayedList.splice(resI,1)
+							if (resI > -1) {
+								this.waitPayedList.splice(resI, 1)
 							}
 						} else {
 							// 取消订单
-							if(this.orderList[index].status == 'N'){
-								let resI = this.waitPayedList.findIndex((item)=>{
+							if (this.orderList[index].status == 'N') {
+								let resI = this.waitPayedList.findIndex((item) => {
 									return item.order_no == order_no
 								})
-								if(resI>-1){
-									this.waitPayedList.splice(resI,1)
+								if (resI > -1) {
+									this.waitPayedList.splice(resI, 1)
 								}
-							}else if(this.orderList[index].status == 'Y'){
-								let resI1 = this.waitUsedList.findIndex((item)=>{
+							} else if (this.orderList[index].status == 'Y') {
+								let resI1 = this.waitUsedList.findIndex((item) => {
 									return item.order_no == order_no
 								})
-								if(resI1>-1){
-									this.waitPayedList.splice(resI1,1)
+								if (resI1 > -1) {
+									this.waitPayedList.splice(resI1, 1)
 								}
 							}
 						}
@@ -457,11 +457,11 @@
 						let deleteItem = this.waitPayedList.splice(index1, 1);
 						if (type == 'Y') {
 							this.waitUsedList.unshift(deleteItem[0])
-						}else{
-							let resI = this.orderList.findIndex(item=>{
+						} else {
+							let resI = this.orderList.findIndex(item => {
 								return item.order_no == order_no
 							})
-							if(resI>-1){
+							if (resI > -1) {
 								this.orderList[resI].status = 'C'
 							}
 						}
@@ -473,10 +473,10 @@
 					})
 					if (index2 > -1) {
 						this.waitUsedList.splice(index2, 1);
-						let resI = this.orderList.findIndex(item=>{
+						let resI = this.orderList.findIndex(item => {
 							return item.order_no == order_no
 						})
-						if(resI>-1){
+						if (resI > -1) {
 							this.orderList[resI].status = 'C'
 						}
 					}
