@@ -1,7 +1,9 @@
 "use strict";
 const common_vendor = require("../../common/vendor.js");
 const utils_request = require("../../utils/request.js");
+const mixins_pay = require("../../mixins/pay.js");
 const _sfc_main = {
+  mixins: [mixins_pay.payment],
   data() {
     return {
       show: false,
@@ -125,23 +127,31 @@ const _sfc_main = {
       this.show = true;
       this.order_no = e.currentTarget.dataset.item.order_no;
     },
+    // 支付完成 或支付取消
+    payComplete(type) {
+      common_vendor.index.showToast({
+        title: type == "success" ? "支付成功" : "支付取消",
+        icon: "none",
+        duration: 2e3,
+        success: () => {
+          if (type == "success") {
+            this.dealWithOrderState(this.order_no, "Y");
+          }
+        }
+      });
+    },
     // 去支付
     toPay(e) {
       utils_request.request({
         url: "wx/pay",
         method: "POST",
         data: {
-          order_no: e.currentTarget.dataset.item.order_no
+          order_no: e.currentTarget.dataset.item.order_no,
+          type: "web"
         }
       }).then((res) => {
-        common_vendor.index.showToast({
-          title: "支付成功",
-          icon: "none",
-          duration: 2e3,
-          success: () => {
-            this.dealWithOrderState(e.currentTarget.dataset.item.order_no, "Y");
-          }
-        });
+        this.order_no = e.currentTarget.dataset.item.order_no;
+        this.wxPay(res.data.per_pay, this.payComplete);
       });
     },
     // 去使用

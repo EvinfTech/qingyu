@@ -7,32 +7,32 @@
 }
 .centerContent.data-v-2139706a {
 		background-color: #f6f8fa;
-		overflow-y:auto;
+		overflow-y: auto;
 }
-.reservationInfo.data-v-2139706a{
+.reservationInfo.data-v-2139706a {
 		background-color: #fff;
 		padding: 10px;
 }
-.reservationInfoTitle.data-v-2139706a{
+.reservationInfoTitle.data-v-2139706a {
 		font-family: Alibaba PuHuiTi 2.0;
 		font-size: 17px;
 		color: #000000;
 }
-.commonInfoLabel.data-v-2139706a{
+.commonInfoLabel.data-v-2139706a {
 		font-family: Alibaba PuHuiTi 2.0;
 		font-size: 14px;
 		color: #000000;
 		margin-right: 31px;
 }
-.gymnasiumInfoBox.data-v-2139706a{
+.gymnasiumInfoBox.data-v-2139706a {
 		background-color: #fff;
 		padding: 10px;
 		margin-top: 8px;
 }
-.gymnasiumInfoBoxName.data-v-2139706a{
+.gymnasiumInfoBoxName.data-v-2139706a {
 		font-size: 17px;
 }
-.gymnasiumInfoBoxText.data-v-2139706a{
+.gymnasiumInfoBoxText.data-v-2139706a {
 		font-size: 14px;
 		margin-top: 11px;
 }
@@ -45,7 +45,7 @@
 .footer.data-v-2139706a {
 		height: 78px;
 		padding: 0 20rpx 0 32rpx;
-		background-color:#fff;
+		background-color: #fff;
 }
 .totalText.data-v-2139706a {
 		font-family: Alibaba PuHuiTi 2;
@@ -120,6 +120,7 @@
 		box-sizing: border-box;
 		margin-bottom: 10rpx;
 }
-.data-v-2139706a .input-placeholder{
-		font-size:14px;color:#9e9e9e
+.data-v-2139706a .input-placeholder {
+		font-size: 14px;
+		color: #9e9e9e
 }

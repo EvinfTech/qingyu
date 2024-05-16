@@ -1,7 +1,9 @@
 "use strict";
 const common_vendor = require("../../common/vendor.js");
 const utils_request = require("../../utils/request.js");
+const mixins_pay = require("../../mixins/pay.js");
 const _sfc_main = {
+  mixins: [mixins_pay.payment],
   data() {
     return {
       app: getApp(),
@@ -50,6 +52,8 @@ const _sfc_main = {
       this.calculate();
     });
   },
+  onShow() {
+  },
   methods: {
     calculate() {
       let sysInfo = common_vendor.index.getSystemInfoSync();
@@ -78,8 +82,8 @@ const _sfc_main = {
             duration: 2e3,
             success: () => {
               setTimeout(() => {
-                this.show = true;
                 this.order_no = res.data.order;
+                this.confirm();
               }, 2e3);
             }
           });
@@ -104,23 +108,11 @@ const _sfc_main = {
         url: "wx/pay",
         method: "POST",
         data: {
-          order_no: this.order_no
+          order_no: this.order_no,
+          type: "web"
         }
       }).then((res) => {
-        common_vendor.index.showToast({
-          title: "支付成功",
-          icon: "none",
-          duration: 2e3,
-          success: () => {
-            this.show = false;
-            setTimeout(() => {
-              common_vendor.index.removeStorageSync("orderInfo");
-              common_vendor.index.redirectTo({
-                url: "/pages/orderDetail/orderDetail?order_no=" + this.order_no + "&type=new"
-              });
-            }, 2e3);
-          }
-        });
+        this.wxPay(res.data.per_pay, this.payComplete);
       });
     },
     // 取消支付
@@ -129,6 +121,22 @@ const _sfc_main = {
       common_vendor.index.removeStorageSync("orderInfo");
       common_vendor.index.redirectTo({
         url: "/pages/orderDetail/orderDetail?order_no=" + this.order_no + "&type=new"
+      });
+    },
+    // 支付完成 或支付取消
+    payComplete(type) {
+      common_vendor.index.showToast({
+        title: type == "success" ? "支付成功" : "支付取消",
+        icon: "none",
+        duration: 2e3,
+        success: () => {
+          setTimeout(() => {
+            common_vendor.index.removeStorageSync("orderInfo");
+            common_vendor.index.redirectTo({
+              url: "/pages/orderDetail/orderDetail?order_no=" + this.order_no + "&type=new"
+            });
+          }, 2e3);
+        }
       });
     }
   }

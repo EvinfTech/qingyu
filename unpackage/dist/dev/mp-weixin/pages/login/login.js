@@ -13,6 +13,12 @@ const _sfc_main = {
     };
   },
   methods: {
+    // 微信登录
+    toWechatLogin() {
+      common_vendor.index.navigateTo({
+        url: "/pages/wechatLogin/wechatLogin"
+      });
+    },
     // 校验手机号
     validatePhoneNumber(phone) {
       if (!phone) {
@@ -117,6 +123,23 @@ const _sfc_main = {
             icon: "none",
             title: "登录成功",
             success: () => {
+              common_vendor.wx$1.login({
+                success: function(result2) {
+                  if (result2.code) {
+                    utils_request.request({
+                      url: "wx/get/wx/id",
+                      method: "POST",
+                      data: {
+                        code: result2.code,
+                        user_ouid: res.data.ouid,
+                        type: "A"
+                        //A:微信小程序 B:微信内置浏览器
+                      }
+                    }).then(() => {
+                    });
+                  }
+                }
+              });
               setTimeout(() => {
                 common_vendor.index.redirectTo({
                   url: "/pages/index/index"
@@ -142,11 +165,13 @@ const _sfc_main = {
 };
 if (!Array) {
   const _easycom_u_button2 = common_vendor.resolveComponent("u-button");
-  _easycom_u_button2();
+  const _easycom_up_divider2 = common_vendor.resolveComponent("up-divider");
+  (_easycom_u_button2 + _easycom_up_divider2)();
 }
 const _easycom_u_button = () => "../../node-modules/uview-plus/components/u-button/u-button.js";
+const _easycom_up_divider = () => "../../node-modules/uview-plus/components/u-divider/u-divider.js";
 if (!Math) {
-  _easycom_u_button();
+  (_easycom_u_button + _easycom_up_divider)();
 }
 function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
   return {
@@ -164,7 +189,11 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
       color: "#0077FF",
       ["custom-style"]: "margin-top: 134rpx;border-radius: 12rpx;"
     }),
-    j: common_vendor.o((...args) => $options.toArrgement && $options.toArrgement(...args))
+    j: common_vendor.p({
+      text: "其他登录方式"
+    }),
+    k: common_vendor.o((...args) => $options.toWechatLogin && $options.toWechatLogin(...args)),
+    l: common_vendor.o((...args) => $options.toArrgement && $options.toArrgement(...args))
   };
 }
 const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-e4e4508d"], ["__file", "C:/project/轻羽开源项目客户端/qingyu-client/pages/login/login.vue"]]);

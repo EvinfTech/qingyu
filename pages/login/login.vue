@@ -21,6 +21,14 @@
 			</view>
 			<u-button @tap.native="toLogin" type="primary" size="large" color="#0077FF"
 				custom-style="margin-top: 134rpx;border-radius: 12rpx;">登录</u-button>
+			<!-- #ifdef MP-WEIXIN -->
+			<view style="margin-top: 30px;">
+				<up-divider text="其他登录方式"></up-divider>
+				<view class="wechatBox flex align-center justify-center" @click="toWechatLogin">
+					<image src="../../static/images/login/wechat.svg" style="width: 28px;"></image>
+				</view>
+			</view>
+			<!-- #endif -->
 		</view>
 		<view class="bottomTitle flex flex-direction align-center">
 			<view>未注册手机号登录后将自动生成账号且代表您</view>
@@ -39,7 +47,7 @@
 	export default ({
 		data() {
 			return {
-				app:getApp(),
+				app: getApp(),
 				phone: '',
 				code: '',
 				codeState: false,
@@ -48,6 +56,12 @@
 			};
 		},
 		methods: {
+			// 微信登录
+			toWechatLogin(){
+				uni.navigateTo({
+					url:'/pages/wechatLogin/wechatLogin'
+				})
+			},
 			// 校验手机号
 			validatePhoneNumber(phone) {
 				if (!phone) {
@@ -71,10 +85,10 @@
 					clearInterval(this.timer);
 				}
 				let result = this.validatePhoneNumber(this.phone);
-				if(result !='ok'){
+				if (result != 'ok') {
 					uni.showToast({
 						icon: 'none',
-						title: result=='no'?'手机号格式错误':'请输入手机号'
+						title: result == 'no' ? '手机号格式错误' : '请输入手机号'
 					})
 					return false
 				}
@@ -121,21 +135,20 @@
 			// 去登录
 			toLogin() {
 				let result = this.validatePhoneNumber(this.phone);
-				if(result !='ok'){
+				if (result != 'ok') {
 					uni.showToast({
 						icon: 'none',
-						title: result=='no'?'手机号格式错误':'请输入手机号'
+						title: result == 'no' ? '手机号格式错误' : '请输入手机号'
 					})
 					return false
 				}
-				if(!this.code){
+				if (!this.code) {
 					uni.showToast({
 						icon: 'none',
 						title: '验证码不能为空'
 					})
 					return false
-				}
-				else if(this.code.length!=6){
+				} else if (this.code.length != 6) {
 					uni.showToast({
 						icon: 'none',
 						title: '验证码长度为6位'
@@ -149,31 +162,52 @@
 						phone: this.phone,
 						code: this.code
 					}
-				}).then(async(res) => {
+				}).then(async (res) => {
 					if (res.code == 200) {
 						this.app.globalData.userInfo.ouid = res.data.ouid;
 						await this.app.getUserInfo()
 						uni.showToast({
 							icon: 'none',
 							title: '登录成功',
-							success:()=>{
-								setTimeout(()=>{
+							success: () => {
+								// #ifdef MP-WEIXIN
+								wx.login({
+									success: function(result) {
+										if (result.code) {
+											// code已经获取到了，可以将其发送给后台服务器	
+											request({
+												url: 'wx/get/wx/id',
+												method: 'POST',
+												data: {
+													code: result.code,
+													user_ouid: res.data
+														.ouid,
+													type: 'A', //A:微信小程序 B:微信内置浏览器
+												}
+											}).then(() => {
+
+											})
+										} else {}
+									}
+								});
+								// #endif
+								setTimeout(() => {
 									uni.redirectTo({
 										url: '/pages/index/index'
 									});
-								},1000)
-								
+								}, 1000)
+
 							}
 						})
-						
-					}else if(res.code == 500){
+
+					} else if (res.code == 500) {
 						uni.showToast({
 							icon: 'none',
 							title: res.msg
 						})
 					}
 				})
-				
+
 			},
 			// 去用户协议页
 			toArrgement() {
@@ -181,7 +215,7 @@
 					url: '/pages/arrgement/arrgement'
 				});
 			},
-			
+
 		}
 	});
 </script>
@@ -258,6 +292,7 @@
 		height: 96rpx;
 		background: rgba(177, 180, 195, 0.3);
 		margin: 0 auto;
+		border-radius: 50%;
 	}
 
 	.bottomTitle {

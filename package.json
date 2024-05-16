@@ -6,7 +6,8 @@
 	"scripts": {},
 	"author": "",
 	"dependencies": {
-		"uview-plus": "^3.1.45"
+		"uview-plus": "^3.1.45",
+		"weixin-js-sdk": "^1.6.5"
 	},
 	"license": "",
 	"keywords": [],

@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "u-line": "../u-line/u-line"
+  }
+}

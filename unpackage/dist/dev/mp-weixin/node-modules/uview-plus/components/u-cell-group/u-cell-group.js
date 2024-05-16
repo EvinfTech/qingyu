@@ -2,7 +2,7 @@
 const common_vendor = require("../../../../common/vendor.js");
 const _sfc_main = {
   name: "u-cell-group",
-  mixins: [common_vendor.mpMixin, common_vendor.mixin, common_vendor.props$10]
+  mixins: [common_vendor.mpMixin, common_vendor.mixin, common_vendor.props$11]
 };
 if (!Array) {
   const _easycom_u_line2 = common_vendor.resolveComponent("u-line");

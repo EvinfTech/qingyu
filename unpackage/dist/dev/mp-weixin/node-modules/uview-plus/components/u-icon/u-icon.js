@@ -6,7 +6,7 @@ const _sfc_main = {
     return {};
   },
   emits: ["click"],
-  mixins: [common_vendor.mpMixin, common_vendor.mixin, common_vendor.props$3],
+  mixins: [common_vendor.mpMixin, common_vendor.mixin, common_vendor.props$4],
   computed: {
     uClasses() {
       let classes = [];

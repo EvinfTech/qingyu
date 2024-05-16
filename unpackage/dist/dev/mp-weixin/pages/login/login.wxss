@@ -61,6 +61,7 @@
 		height: 96rpx;
 		background: rgba(177, 180, 195, 0.3);
 		margin: 0 auto;
+		border-radius: 50%;
 }
 .bottomTitle.data-v-e4e4508d {
 		position: fixed;

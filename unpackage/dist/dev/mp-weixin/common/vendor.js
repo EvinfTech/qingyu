@@ -9054,7 +9054,7 @@ const Icon = {
     stop: false
   }
 };
-const Image = {
+const Image$1 = {
   // image组件
   image: {
     src: "",
@@ -10003,7 +10003,7 @@ const defprops = {
   ...Grid,
   ...GridItem,
   ...Icon,
-  ...Image,
+  ...Image$1,
   ...IndexAnchor,
   ...IndexList,
   ...Input,
@@ -10110,7 +10110,716 @@ const install = (Vue) => {
 const uviewPlus = {
   install
 };
-const props$o = {
+!function(e2, n2) {
+  n2(e2);
+}(typeof window === "object" && window, function(r, e2) {
+  if (!r) {
+    console.warn("can't use weixin-js-sdk in server side");
+    return;
+  }
+  var a, c, n2, i, t2, o2, s2, d, l, u, p2, f2, m, g, h, S2, y, I, v, _, w, T;
+  if (!r.jWeixin)
+    return a = {
+      config: "preVerifyJSAPI",
+      onMenuShareTimeline: "menu:share:timeline",
+      onMenuShareAppMessage: "menu:share:appmessage",
+      onMenuShareQQ: "menu:share:qq",
+      onMenuShareWeibo: "menu:share:weiboApp",
+      onMenuShareQZone: "menu:share:QZone",
+      previewImage: "imagePreview",
+      getLocation: "geoLocation",
+      openProductSpecificView: "openProductViewWithPid",
+      addCard: "batchAddCard",
+      openCard: "batchViewCard",
+      chooseWXPay: "getBrandWCPayRequest",
+      openEnterpriseRedPacket: "getRecevieBizHongBaoRequest",
+      startSearchBeacons: "startMonitoringBeacons",
+      stopSearchBeacons: "stopMonitoringBeacons",
+      onSearchBeacons: "onBeaconsInRange",
+      consumeAndShareCard: "consumedShareCard",
+      openAddress: "editAddress"
+    }, c = function() {
+      var e3, n3 = {};
+      for (e3 in a)
+        n3[a[e3]] = e3;
+      return n3;
+    }(), n2 = r.document, i = n2.title, t2 = navigator.userAgent.toLowerCase(), f2 = navigator.platform.toLowerCase(), o2 = !(!f2.match("mac") && !f2.match("win")), s2 = -1 != t2.indexOf("wxdebugger"), d = -1 != t2.indexOf("micromessenger"), l = -1 != t2.indexOf("android"), u = -1 != t2.indexOf("iphone") || -1 != t2.indexOf("ipad"), p2 = (f2 = t2.match(/micromessenger\/(\d+\.\d+\.\d+)/) || t2.match(/micromessenger\/(\d+\.\d+)/)) ? f2[1] : "", m = {
+      initStartTime: L2(),
+      initEndTime: 0,
+      preVerifyStartTime: 0,
+      preVerifyEndTime: 0
+    }, g = {
+      version: 1,
+      appId: "",
+      initTime: 0,
+      preVerifyTime: 0,
+      networkType: "",
+      isPreVerifyOk: 1,
+      systemType: u ? 1 : l ? 2 : -1,
+      clientVersion: p2,
+      url: encodeURIComponent(location.href)
+    }, h = {}, S2 = { _completes: [] }, y = { state: 0, data: {} }, O(function() {
+      m.initEndTime = L2();
+    }), I = false, v = [], _ = {
+      config: function(e3) {
+        C("config", h = e3);
+        var o3 = false !== h.check;
+        O(function() {
+          if (o3)
+            k(
+              a.config,
+              {
+                verifyJsApiList: A(h.jsApiList),
+                verifyOpenTagList: A(h.openTagList)
+              },
+              (S2._complete = function(e5) {
+                m.preVerifyEndTime = L2(), y.state = 1, y.data = e5;
+              }, S2.success = function(e5) {
+                g.isPreVerifyOk = 0;
+              }, S2.fail = function(e5) {
+                S2._fail ? S2._fail(e5) : y.state = -1;
+              }, (t3 = S2._completes).push(function() {
+                B();
+              }), S2.complete = function(e5) {
+                for (var n4 = 0, i3 = t3.length; n4 < i3; ++n4)
+                  t3[n4]();
+                S2._completes = [];
+              }, S2)
+            ), m.preVerifyStartTime = L2();
+          else {
+            y.state = 1;
+            for (var e4 = S2._completes, n3 = 0, i2 = e4.length; n3 < i2; ++n3)
+              e4[n3]();
+            S2._completes = [];
+          }
+          var t3;
+        }), _.invoke || (_.invoke = function(e4, n3, i2) {
+          r.WeixinJSBridge && WeixinJSBridge.invoke(e4, P(n3), i2);
+        }, _.on = function(e4, n3) {
+          r.WeixinJSBridge && WeixinJSBridge.on(e4, n3);
+        });
+      },
+      ready: function(e3) {
+        (0 != y.state || (S2._completes.push(e3), !d && h.debug)) && e3();
+      },
+      error: function(e3) {
+        p2 < "6.0.2" || (-1 == y.state ? e3(y.data) : S2._fail = e3);
+      },
+      checkJsApi: function(e3) {
+        k(
+          "checkJsApi",
+          { jsApiList: A(e3.jsApiList) },
+          (e3._complete = function(e4) {
+            l && (i2 = e4.checkResult) && (e4.checkResult = JSON.parse(i2));
+            var n3, i2 = e4, t3 = i2.checkResult;
+            for (n3 in t3) {
+              var o3 = c[n3];
+              o3 && (t3[o3] = t3[n3], delete t3[n3]);
+            }
+          }, e3)
+        );
+      },
+      onMenuShareTimeline: function(e3) {
+        M2(
+          a.onMenuShareTimeline,
+          {
+            complete: function() {
+              k(
+                "shareTimeline",
+                {
+                  title: e3.title || i,
+                  desc: e3.title || i,
+                  img_url: e3.imgUrl || "",
+                  link: e3.link || location.href,
+                  type: e3.type || "link",
+                  data_url: e3.dataUrl || ""
+                },
+                e3
+              );
+            }
+          },
+          e3
+        );
+      },
+      onMenuShareAppMessage: function(n3) {
+        M2(
+          a.onMenuShareAppMessage,
+          {
+            complete: function(e3) {
+              "favorite" === e3.scene ? k("sendAppMessage", {
+                title: n3.title || i,
+                desc: n3.desc || "",
+                link: n3.link || location.href,
+                img_url: n3.imgUrl || "",
+                type: n3.type || "link",
+                data_url: n3.dataUrl || ""
+              }) : k(
+                "sendAppMessage",
+                {
+                  title: n3.title || i,
+                  desc: n3.desc || "",
+                  link: n3.link || location.href,
+                  img_url: n3.imgUrl || "",
+                  type: n3.type || "link",
+                  data_url: n3.dataUrl || ""
+                },
+                n3
+              );
+            }
+          },
+          n3
+        );
+      },
+      onMenuShareQQ: function(e3) {
+        M2(
+          a.onMenuShareQQ,
+          {
+            complete: function() {
+              k(
+                "shareQQ",
+                {
+                  title: e3.title || i,
+                  desc: e3.desc || "",
+                  img_url: e3.imgUrl || "",
+                  link: e3.link || location.href
+                },
+                e3
+              );
+            }
+          },
+          e3
+        );
+      },
+      onMenuShareWeibo: function(e3) {
+        M2(
+          a.onMenuShareWeibo,
+          {
+            complete: function() {
+              k(
+                "shareWeiboApp",
+                {
+                  title: e3.title || i,
+                  desc: e3.desc || "",
+                  img_url: e3.imgUrl || "",
+                  link: e3.link || location.href
+                },
+                e3
+              );
+            }
+          },
+          e3
+        );
+      },
+      onMenuShareQZone: function(e3) {
+        M2(
+          a.onMenuShareQZone,
+          {
+            complete: function() {
+              k(
+                "shareQZone",
+                {
+                  title: e3.title || i,
+                  desc: e3.desc || "",
+                  img_url: e3.imgUrl || "",
+                  link: e3.link || location.href
+                },
+                e3
+              );
+            }
+          },
+          e3
+        );
+      },
+      updateTimelineShareData: function(e3) {
+        k(
+          "updateTimelineShareData",
+          { title: e3.title, link: e3.link, imgUrl: e3.imgUrl },
+          e3
+        );
+      },
+      updateAppMessageShareData: function(e3) {
+        k(
+          "updateAppMessageShareData",
+          { title: e3.title, desc: e3.desc, link: e3.link, imgUrl: e3.imgUrl },
+          e3
+        );
+      },
+      startRecord: function(e3) {
+        k("startRecord", {}, e3);
+      },
+      stopRecord: function(e3) {
+        k("stopRecord", {}, e3);
+      },
+      onVoiceRecordEnd: function(e3) {
+        M2("onVoiceRecordEnd", e3);
+      },
+      playVoice: function(e3) {
+        k("playVoice", { localId: e3.localId }, e3);
+      },
+      pauseVoice: function(e3) {
+        k("pauseVoice", { localId: e3.localId }, e3);
+      },
+      stopVoice: function(e3) {
+        k("stopVoice", { localId: e3.localId }, e3);
+      },
+      onVoicePlayEnd: function(e3) {
+        M2("onVoicePlayEnd", e3);
+      },
+      uploadVoice: function(e3) {
+        k(
+          "uploadVoice",
+          {
+            localId: e3.localId,
+            isShowProgressTips: 0 == e3.isShowProgressTips ? 0 : 1
+          },
+          e3
+        );
+      },
+      downloadVoice: function(e3) {
+        k(
+          "downloadVoice",
+          {
+            serverId: e3.serverId,
+            isShowProgressTips: 0 == e3.isShowProgressTips ? 0 : 1
+          },
+          e3
+        );
+      },
+      translateVoice: function(e3) {
+        k(
+          "translateVoice",
+          {
+            localId: e3.localId,
+            isShowProgressTips: 0 == e3.isShowProgressTips ? 0 : 1
+          },
+          e3
+        );
+      },
+      chooseImage: function(e3) {
+        k(
+          "chooseImage",
+          {
+            scene: "1|2",
+            count: e3.count || 9,
+            sizeType: e3.sizeType || ["original", "compressed"],
+            sourceType: e3.sourceType || ["album", "camera"]
+          },
+          (e3._complete = function(e4) {
+            if (l) {
+              var n3 = e4.localIds;
+              try {
+                n3 && (e4.localIds = JSON.parse(n3));
+              } catch (e5) {
+              }
+            }
+          }, e3)
+        );
+      },
+      getLocation: function(e3) {
+        e3 = e3 || {}, k(
+          a.getLocation,
+          { type: e3.type || "wgs84" },
+          (e3._complete = function(e4) {
+            delete e4.type;
+          }, e3)
+        );
+      },
+      previewImage: function(e3) {
+        k(a.previewImage, { current: e3.current, urls: e3.urls }, e3);
+      },
+      uploadImage: function(e3) {
+        k(
+          "uploadImage",
+          {
+            localId: e3.localId,
+            isShowProgressTips: 0 == e3.isShowProgressTips ? 0 : 1
+          },
+          e3
+        );
+      },
+      downloadImage: function(e3) {
+        k(
+          "downloadImage",
+          {
+            serverId: e3.serverId,
+            isShowProgressTips: 0 == e3.isShowProgressTips ? 0 : 1
+          },
+          e3
+        );
+      },
+      getLocalImgData: function(e3) {
+        false === I ? (I = true, k(
+          "getLocalImgData",
+          { localId: e3.localId },
+          (e3._complete = function(e4) {
+            var n3;
+            I = false, 0 < v.length && (n3 = v.shift(), wx$1.getLocalImgData(n3));
+          }, e3)
+        )) : v.push(e3);
+      },
+      getNetworkType: function(e3) {
+        k(
+          "getNetworkType",
+          {},
+          (e3._complete = function(e4) {
+            var n3 = e4, e4 = n3.errMsg, i2 = (n3.errMsg = "getNetworkType:ok", n3.subtype);
+            if (delete n3.subtype, i2)
+              n3.networkType = i2;
+            else {
+              var i2 = e4.indexOf(":"), t3 = e4.substring(i2 + 1);
+              switch (t3) {
+                case "wifi":
+                case "edge":
+                case "wwan":
+                  n3.networkType = t3;
+                  break;
+                default:
+                  n3.errMsg = "getNetworkType:fail";
+              }
+            }
+          }, e3)
+        );
+      },
+      openLocation: function(e3) {
+        k(
+          "openLocation",
+          {
+            latitude: e3.latitude,
+            longitude: e3.longitude,
+            name: e3.name || "",
+            address: e3.address || "",
+            scale: e3.scale || 28,
+            infoUrl: e3.infoUrl || ""
+          },
+          e3
+        );
+      },
+      hideOptionMenu: function(e3) {
+        k("hideOptionMenu", {}, e3);
+      },
+      showOptionMenu: function(e3) {
+        k("showOptionMenu", {}, e3);
+      },
+      closeWindow: function(e3) {
+        k("closeWindow", {}, e3 = e3 || {});
+      },
+      hideMenuItems: function(e3) {
+        k("hideMenuItems", { menuList: e3.menuList }, e3);
+      },
+      showMenuItems: function(e3) {
+        k("showMenuItems", { menuList: e3.menuList }, e3);
+      },
+      hideAllNonBaseMenuItem: function(e3) {
+        k("hideAllNonBaseMenuItem", {}, e3);
+      },
+      showAllNonBaseMenuItem: function(e3) {
+        k("showAllNonBaseMenuItem", {}, e3);
+      },
+      scanQRCode: function(e3) {
+        k(
+          "scanQRCode",
+          {
+            needResult: (e3 = e3 || {}).needResult || 0,
+            scanType: e3.scanType || ["qrCode", "barCode"]
+          },
+          (e3._complete = function(e4) {
+            var n3;
+            u && (n3 = e4.resultStr) && (n3 = JSON.parse(n3), e4.resultStr = n3 && n3.scan_code && n3.scan_code.scan_result);
+          }, e3)
+        );
+      },
+      openAddress: function(e3) {
+        k(
+          a.openAddress,
+          {},
+          (e3._complete = function(e4) {
+            (e4 = e4).postalCode = e4.addressPostalCode, delete e4.addressPostalCode, e4.provinceName = e4.proviceFirstStageName, delete e4.proviceFirstStageName, e4.cityName = e4.addressCitySecondStageName, delete e4.addressCitySecondStageName, e4.countryName = e4.addressCountiesThirdStageName, delete e4.addressCountiesThirdStageName, e4.detailInfo = e4.addressDetailInfo, delete e4.addressDetailInfo;
+          }, e3)
+        );
+      },
+      openProductSpecificView: function(e3) {
+        k(
+          a.openProductSpecificView,
+          {
+            pid: e3.productId,
+            view_type: e3.viewType || 0,
+            ext_info: e3.extInfo
+          },
+          e3
+        );
+      },
+      addCard: function(e3) {
+        for (var n3 = e3.cardList, i2 = [], t3 = 0, o3 = n3.length; t3 < o3; ++t3) {
+          var r2 = n3[t3], r2 = { card_id: r2.cardId, card_ext: r2.cardExt };
+          i2.push(r2);
+        }
+        k(
+          a.addCard,
+          { card_list: i2 },
+          (e3._complete = function(e4) {
+            if (n4 = e4.card_list) {
+              for (var n4, i3 = 0, t4 = (n4 = JSON.parse(n4)).length; i3 < t4; ++i3) {
+                var o4 = n4[i3];
+                o4.cardId = o4.card_id, o4.cardExt = o4.card_ext, o4.isSuccess = !!o4.is_succ, delete o4.card_id, delete o4.card_ext, delete o4.is_succ;
+              }
+              e4.cardList = n4, delete e4.card_list;
+            }
+          }, e3)
+        );
+      },
+      chooseCard: function(e3) {
+        k(
+          "chooseCard",
+          {
+            app_id: h.appId,
+            location_id: e3.shopId || "",
+            sign_type: e3.signType || "SHA1",
+            card_id: e3.cardId || "",
+            card_type: e3.cardType || "",
+            card_sign: e3.cardSign,
+            time_stamp: e3.timestamp + "",
+            nonce_str: e3.nonceStr
+          },
+          (e3._complete = function(e4) {
+            e4.cardList = e4.choose_card_info, delete e4.choose_card_info;
+          }, e3)
+        );
+      },
+      openCard: function(e3) {
+        for (var n3 = e3.cardList, i2 = [], t3 = 0, o3 = n3.length; t3 < o3; ++t3) {
+          var r2 = n3[t3], r2 = { card_id: r2.cardId, code: r2.code };
+          i2.push(r2);
+        }
+        k(a.openCard, { card_list: i2 }, e3);
+      },
+      consumeAndShareCard: function(e3) {
+        k(
+          a.consumeAndShareCard,
+          { consumedCardId: e3.cardId, consumedCode: e3.code },
+          e3
+        );
+      },
+      chooseWXPay: function(e3) {
+        k(a.chooseWXPay, x(e3), e3), B({ jsApiName: "chooseWXPay" });
+      },
+      openEnterpriseRedPacket: function(e3) {
+        k(a.openEnterpriseRedPacket, x(e3), e3);
+      },
+      startSearchBeacons: function(e3) {
+        k(a.startSearchBeacons, { ticket: e3.ticket }, e3);
+      },
+      stopSearchBeacons: function(e3) {
+        k(a.stopSearchBeacons, {}, e3);
+      },
+      onSearchBeacons: function(e3) {
+        M2(a.onSearchBeacons, e3);
+      },
+      openEnterpriseChat: function(e3) {
+        k(
+          "openEnterpriseChat",
+          { useridlist: e3.userIds, chatname: e3.groupName },
+          e3
+        );
+      },
+      launchMiniProgram: function(e3) {
+        k(
+          "launchMiniProgram",
+          {
+            targetAppId: e3.targetAppId,
+            path: function(e4) {
+              var n3;
+              if ("string" == typeof e4 && 0 < e4.length)
+                return n3 = e4.split("?")[0], n3 += ".html", void 0 !== (e4 = e4.split("?")[1]) ? n3 + "?" + e4 : n3;
+            }(e3.path),
+            envVersion: e3.envVersion
+          },
+          e3
+        );
+      },
+      openBusinessView: function(e3) {
+        k(
+          "openBusinessView",
+          {
+            businessType: e3.businessType,
+            queryString: e3.queryString || "",
+            envVersion: e3.envVersion
+          },
+          (e3._complete = function(n3) {
+            if (l) {
+              var e4 = n3.extraData;
+              if (e4)
+                try {
+                  n3.extraData = JSON.parse(e4);
+                } catch (e5) {
+                  n3.extraData = {};
+                }
+            }
+          }, e3)
+        );
+      },
+      miniProgram: {
+        navigateBack: function(e3) {
+          e3 = e3 || {}, O(function() {
+            k(
+              "invokeMiniProgramAPI",
+              { name: "navigateBack", arg: { delta: e3.delta || 1 } },
+              e3
+            );
+          });
+        },
+        navigateTo: function(e3) {
+          O(function() {
+            k(
+              "invokeMiniProgramAPI",
+              { name: "navigateTo", arg: { url: e3.url } },
+              e3
+            );
+          });
+        },
+        redirectTo: function(e3) {
+          O(function() {
+            k(
+              "invokeMiniProgramAPI",
+              { name: "redirectTo", arg: { url: e3.url } },
+              e3
+            );
+          });
+        },
+        switchTab: function(e3) {
+          O(function() {
+            k(
+              "invokeMiniProgramAPI",
+              { name: "switchTab", arg: { url: e3.url } },
+              e3
+            );
+          });
+        },
+        reLaunch: function(e3) {
+          O(function() {
+            k(
+              "invokeMiniProgramAPI",
+              { name: "reLaunch", arg: { url: e3.url } },
+              e3
+            );
+          });
+        },
+        postMessage: function(e3) {
+          O(function() {
+            k(
+              "invokeMiniProgramAPI",
+              { name: "postMessage", arg: e3.data || {} },
+              e3
+            );
+          });
+        },
+        getEnv: function(e3) {
+          O(function() {
+            e3({ miniprogram: "miniprogram" === r.__wxjs_environment });
+          });
+        }
+      }
+    }, w = 1, T = {}, n2.addEventListener(
+      "error",
+      function(e3) {
+        var n3, i2, t3;
+        l || (t3 = (n3 = e3.target).tagName, i2 = n3.src, "IMG" != t3 && "VIDEO" != t3 && "AUDIO" != t3 && "SOURCE" != t3) || -1 != i2.indexOf("wxlocalresource://") && (e3.preventDefault(), e3.stopPropagation(), (t3 = n3["wx-id"]) || (t3 = w++, n3["wx-id"] = t3), T[t3] || (T[t3] = true, wx$1.ready(function() {
+          wx$1.getLocalImgData({
+            localId: i2,
+            success: function(e4) {
+              n3.src = e4.localData;
+            }
+          });
+        })));
+      },
+      true
+    ), n2.addEventListener(
+      "load",
+      function(e3) {
+        var n3;
+        l || (n3 = (e3 = e3.target).tagName, e3.src, "IMG" != n3 && "VIDEO" != n3 && "AUDIO" != n3 && "SOURCE" != n3) || (n3 = e3["wx-id"]) && (T[n3] = false);
+      },
+      true
+    ), e2 && (r.wx = r.jWeixin = _), _;
+  else
+    return r.jWeixin;
+  function k(n3, e3, i2) {
+    r.WeixinJSBridge ? WeixinJSBridge.invoke(n3, P(e3), function(e4) {
+      V(n3, e4, i2);
+    }) : C(n3, i2);
+  }
+  function M2(n3, i2, t3) {
+    r.WeixinJSBridge ? WeixinJSBridge.on(n3, function(e3) {
+      t3 && t3.trigger && t3.trigger(e3), V(n3, e3, i2);
+    }) : C(n3, t3 || i2);
+  }
+  function P(e3) {
+    return (e3 = e3 || {}).appId = h.appId, e3.verifyAppId = h.appId, e3.verifySignType = "sha1", e3.verifyTimestamp = h.timestamp + "", e3.verifyNonceStr = h.nonceStr, e3.verifySignature = h.signature, e3;
+  }
+  function x(e3) {
+    return {
+      timeStamp: e3.timestamp + "",
+      nonceStr: e3.nonceStr,
+      package: e3.package,
+      paySign: e3.paySign,
+      signType: e3.signType || "SHA1"
+    };
+  }
+  function V(e3, n3, i2) {
+    "openEnterpriseChat" != e3 && "openBusinessView" !== e3 || (n3.errCode = n3.err_code), delete n3.err_code, delete n3.err_desc, delete n3.err_detail;
+    var t3 = n3.errMsg, e3 = (t3 || (t3 = n3.err_msg, delete n3.err_msg, t3 = function(e4, n4) {
+      var i3 = c[e4];
+      i3 && (e4 = i3);
+      i3 = "ok";
+      {
+        var t4;
+        n4 && (t4 = n4.indexOf(":"), "access denied" != (i3 = (i3 = (i3 = -1 != (i3 = -1 != (i3 = "failed" == (i3 = "confirm" == (i3 = n4.substring(t4 + 1)) ? "ok" : i3) ? "fail" : i3).indexOf("failed_") ? i3.substring(7) : i3).indexOf("fail_") ? i3.substring(5) : i3).replace(/_/g, " ")).toLowerCase()) && "no permission to execute" != i3 || (i3 = "permission denied"), "" == (i3 = "config" == e4 && "function not exist" == i3 ? "ok" : i3)) && (i3 = "fail");
+      }
+      return n4 = e4 + ":" + i3;
+    }(e3, t3), n3.errMsg = t3), (i2 = i2 || {})._complete && (i2._complete(n3), delete i2._complete), t3 = n3.errMsg || "", h.debug && !i2.isInnerInvoke && alert(JSON.stringify(n3)), t3.indexOf(":"));
+    switch (t3.substring(e3 + 1)) {
+      case "ok":
+        i2.success && i2.success(n3);
+        break;
+      case "cancel":
+        i2.cancel && i2.cancel(n3);
+        break;
+      default:
+        i2.fail && i2.fail(n3);
+    }
+    i2.complete && i2.complete(n3);
+  }
+  function A(e3) {
+    if (e3) {
+      for (var n3 = 0, i2 = e3.length; n3 < i2; ++n3) {
+        var t3 = e3[n3], t3 = a[t3];
+        t3 && (e3[n3] = t3);
+      }
+      return e3;
+    }
+  }
+  function C(e3, n3) {
+    var i2;
+    !h.debug || n3 && n3.isInnerInvoke || ((i2 = c[e3]) && (e3 = i2), n3 && n3._complete && delete n3._complete, console.log('"' + e3 + '",', n3 || ""));
+  }
+  function B(n3) {
+    var i2;
+    o2 || s2 || h.debug || p2 < "6.0.2" || g.systemType < 0 || (i2 = new Image(), g.appId = h.appId, g.initTime = m.initEndTime - m.initStartTime, g.preVerifyTime = m.preVerifyEndTime - m.preVerifyStartTime, _.getNetworkType({
+      isInnerInvoke: true,
+      success: function(e3) {
+        g.networkType = e3.networkType;
+        e3 = "https://open.weixin.qq.com/sdk/report?v=" + g.version + "&o=" + g.isPreVerifyOk + "&s=" + g.systemType + "&c=" + g.clientVersion + "&a=" + g.appId + "&n=" + g.networkType + "&i=" + g.initTime + "&p=" + g.preVerifyTime + "&u=" + g.url + "&jsapi_name=" + (n3 ? n3.jsApiName : "");
+        i2.src = e3;
+      }
+    }));
+  }
+  function L2() {
+    return (/* @__PURE__ */ new Date()).getTime();
+  }
+  function O(e3) {
+    d && (r.WeixinJSBridge ? e3() : n2.addEventListener && n2.addEventListener("WeixinJSBridgeReady", e3, false));
+  }
+});
+const props$p = {
   props: {
     // item标签的名称，作为与u-tabbar的value参数匹配的标识符
     name: {
@@ -10144,7 +10853,7 @@ const props$o = {
     }
   }
 };
-const props$n = {
+const props$o = {
   props: {
     // 当前匹配项的name
     value: {
@@ -10226,7 +10935,7 @@ const openType = {
     }
   }
 };
-const props$m = {
+const props$n = {
   props: {
     // 是否细边框
     hairline: {
@@ -10375,6 +11084,50 @@ const props$m = {
     color: {
       type: String,
       default: defprops.button.color
+    }
+  }
+};
+const props$m = {
+  props: {
+    // 是否虚线
+    dashed: {
+      type: Boolean,
+      default: defprops.divider.dashed
+    },
+    // 是否细线
+    hairline: {
+      type: Boolean,
+      default: defprops.divider.hairline
+    },
+    // 是否以点替代文字，优先于text字段起作用
+    dot: {
+      type: Boolean,
+      default: defprops.divider.dot
+    },
+    // 内容文本的位置，left-左边，center-中间，right-右边
+    textPosition: {
+      type: String,
+      default: defprops.divider.textPosition
+    },
+    // 文本内容
+    text: {
+      type: [String, Number],
+      default: defprops.divider.text
+    },
+    // 文本大小
+    textSize: {
+      type: [String, Number],
+      default: defprops.divider.textSize
+    },
+    // 文本颜色
+    textColor: {
+      type: String,
+      default: defprops.divider.textColor
+    },
+    // 线条颜色
+    lineColor: {
+      type: String,
+      default: defprops.divider.lineColor
     }
   }
 };
@@ -12355,14 +13108,6 @@ const props$7 = {
 };
 const props$6 = {
   props: {
-    bgColor: {
-      type: String,
-      default: defprops.statusBar.bgColor
-    }
-  }
-};
-const props$5 = {
-  props: {
     color: {
       type: String,
       default: defprops.line.color
@@ -12391,6 +13136,14 @@ const props$5 = {
     dashed: {
       type: Boolean,
       default: defprops.line.dashed
+    }
+  }
+};
+const props$5 = {
+  props: {
+    bgColor: {
+      type: String,
+      default: defprops.statusBar.bgColor
     }
   }
 };
@@ -12712,31 +13465,32 @@ exports.n = n;
 exports.o = o;
 exports.openType = openType;
 exports.p = p;
-exports.props = props$o;
-exports.props$1 = props$n;
-exports.props$10 = props$e;
-exports.props$11 = props$d;
-exports.props$12 = props$c;
-exports.props$13 = props$b;
-exports.props$14 = props$a;
-exports.props$15 = props$9;
-exports.props$16 = props$8;
-exports.props$17 = props$7;
-exports.props$18 = props$6;
-exports.props$19 = props$5;
-exports.props$2 = props$m;
-exports.props$20 = props$4;
-exports.props$21 = props$3;
-exports.props$22 = props$2;
-exports.props$23 = props$1;
-exports.props$24 = props;
-exports.props$3 = props$l;
-exports.props$4 = props$k;
-exports.props$5 = props$j;
-exports.props$6 = props$i;
-exports.props$7 = props$h;
-exports.props$8 = props$g;
-exports.props$9 = props$f;
+exports.props = props$p;
+exports.props$1 = props$o;
+exports.props$10 = props$f;
+exports.props$11 = props$e;
+exports.props$12 = props$d;
+exports.props$13 = props$c;
+exports.props$14 = props$b;
+exports.props$15 = props$a;
+exports.props$16 = props$9;
+exports.props$17 = props$8;
+exports.props$18 = props$7;
+exports.props$19 = props$6;
+exports.props$2 = props$n;
+exports.props$20 = props$5;
+exports.props$21 = props$4;
+exports.props$22 = props$3;
+exports.props$23 = props$2;
+exports.props$24 = props$1;
+exports.props$25 = props;
+exports.props$3 = props$m;
+exports.props$4 = props$l;
+exports.props$5 = props$k;
+exports.props$6 = props$j;
+exports.props$7 = props$i;
+exports.props$8 = props$h;
+exports.props$9 = props$g;
 exports.resolveComponent = resolveComponent;
 exports.s = s;
 exports.sr = sr;

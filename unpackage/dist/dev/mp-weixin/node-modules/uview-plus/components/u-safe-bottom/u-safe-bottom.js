@@ -2,7 +2,7 @@
 const common_vendor = require("../../../../common/vendor.js");
 const _sfc_main = {
   name: "u-safe-bottom",
-  mixins: [common_vendor.mpMixin, common_vendor.mixin, common_vendor.props$16],
+  mixins: [common_vendor.mpMixin, common_vendor.mixin, common_vendor.props$17],
   data() {
     return {
       safeAreaBottomHeight: 0,

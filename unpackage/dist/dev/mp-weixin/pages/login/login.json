@@ -1,5 +1,6 @@
 {
   "usingComponents": {
-    "u-button": "../../node-modules/uview-plus/components/u-button/u-button"
+    "u-button": "../../node-modules/uview-plus/components/u-button/u-button",
+    "up-divider": "../../node-modules/uview-plus/components/u-divider/u-divider"
   }
 }
