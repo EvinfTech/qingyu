@@ -6,7 +6,9 @@
 				<up-icon name="arrow-left" @click="app.toBack"></up-icon>
 			</template>
 		</u-navbar>
-		<view class="arrgementBox">{{agreement}}</view>
+		<view class="arrgementBox">
+			<view v-html="agreement"></view>
+		</view>
 	</view>
 </template>
 

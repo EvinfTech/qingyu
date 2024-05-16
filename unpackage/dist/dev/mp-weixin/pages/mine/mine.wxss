@@ -77,6 +77,8 @@
 		font-size: 32rpx;
 		font-weight: 500;
 		color: #121836;
+		display: flex;
+		align-items: center;
 }
 .reservationBox.data-v-7c2ebfa5 {
 		padding: 10rpx;

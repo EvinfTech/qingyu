@@ -216,6 +216,14 @@ const _sfc_main = {
     }
   }
 };
+if (!Array) {
+  const _easycom_u_icon2 = common_vendor.resolveComponent("u-icon");
+  _easycom_u_icon2();
+}
+const _easycom_u_icon = () => "./node-modules/uview-plus/components/u-icon/u-icon.js";
+if (!Math) {
+  _easycom_u_icon();
+}
 function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
   return {
     a: $data.userInfo.avatar,
@@ -223,12 +231,32 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     c: common_vendor.t($data.userInfo.phone ? $data.userInfo.phone : ""),
     d: common_vendor.o((...args) => $options.toInfoEdit && $options.toInfoEdit(...args)),
     e: common_vendor.o((...args) => $options.toInfoEdit && $options.toInfoEdit(...args)),
-    f: common_vendor.o((...args) => $options.toOrderList && $options.toOrderList(...args)),
-    g: common_vendor.o((...args) => $options.toReservationList && $options.toReservationList(...args)),
-    h: common_vendor.o((...args) => $options.toFeedBack && $options.toFeedBack(...args)),
-    i: common_vendor.o((...args) => $options.toAboutUs && $options.toAboutUs(...args)),
-    j: common_vendor.o((...args) => $options.handleContact && $options.handleContact(...args)),
-    k: common_vendor.s("padding-top: " + ($data.topHeight + "px") + ";")
+    f: common_vendor.p({
+      name: "order",
+      size: "22"
+    }),
+    g: common_vendor.o((...args) => $options.toOrderList && $options.toOrderList(...args)),
+    h: common_vendor.p({
+      name: "hourglass",
+      size: "22"
+    }),
+    i: common_vendor.o((...args) => $options.toReservationList && $options.toReservationList(...args)),
+    j: common_vendor.p({
+      name: "question-circle",
+      size: "22"
+    }),
+    k: common_vendor.o((...args) => $options.toFeedBack && $options.toFeedBack(...args)),
+    l: common_vendor.p({
+      name: "more-circle",
+      size: "22"
+    }),
+    m: common_vendor.o((...args) => $options.toAboutUs && $options.toAboutUs(...args)),
+    n: common_vendor.p({
+      name: "kefu-ermai",
+      size: "22"
+    }),
+    o: common_vendor.o((...args) => $options.handleContact && $options.handleContact(...args)),
+    p: common_vendor.s("padding-top: " + ($data.topHeight + "px") + ";")
   };
 }
 const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-7c2ebfa5"], ["__file", "C:/project/轻羽开源项目客户端/qingyu-client/pages/mine/mine.vue"]]);

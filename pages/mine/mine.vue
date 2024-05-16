@@ -31,7 +31,10 @@
 		</view> -->
 		<view class="myReservation" style="margin-top: 50rpx;">
 			<view class="flex align-center justify-between" @tap="toOrderList">
-				<view class="myReservationTitle">我的订单</view>
+				<view class="myReservationTitle">
+					<u-icon  name="order" size="22"></u-icon>
+					<text style="margin-left:3px;">我的订单</text>
+				</view>
 				<view>
 					<image src="/static/images/mine/editIcon.svg" style="width: 32rpx; height: 32rpx" mode="" />
 				</view>
@@ -39,7 +42,10 @@
 		</view>
 		<view class="myReservation">
 			<view class="flex align-center justify-between" @tap="toReservationList">
-				<view class="myReservationTitle">我的预约</view>
+				<view class="myReservationTitle">
+					<u-icon  name="hourglass" size="22"></u-icon>
+					<text style="margin-left:3px;">我的预约</text>
+				</view>
 				<view>
 					<image src="/static/images/mine/editIcon.svg" style="width: 32rpx; height: 32rpx" mode="" />
 				</view>
@@ -66,7 +72,10 @@
 		</view>
 		<view class="myReservation">
 			<view class="flex align-center justify-between" @tap="toFeedBack">
-				<view class="myReservationTitle">意见反馈</view>
+				<view class="myReservationTitle">
+					<u-icon  name="question-circle" size="22"></u-icon>
+					<text style="margin-left:3px;">意见反馈</text>
+				</view>
 				<view>
 					<image src="/static/images/mine/editIcon.svg" style="width: 32rpx; height: 32rpx" mode="" />
 				</view>
@@ -74,7 +83,10 @@
 		</view>
 		<view class="myReservation">
 			<view class="flex align-center justify-between" @tap="toAboutUs">
-				<view class="myReservationTitle">关于我们</view>
+				<view class="myReservationTitle">
+					<u-icon  name="more-circle" size="22"></u-icon>
+					<text style="margin-left:3px;">关于我们</text>
+				</view>
 				<view>
 					<image src="/static/images/mine/editIcon.svg" style="width: 32rpx; height: 32rpx" mode="" />
 				</view>
@@ -84,7 +96,10 @@
 		<view class="myReservation" style="border: none;">
 			<button :show-message-card="true" open-type="contact" @contact="handleContact"
 				class="specialBtn flex align-center justify-between">
-				<view class="myReservationTitle">联系客服</view>
+				<view class="myReservationTitle">
+					<u-icon  name="kefu-ermai" size="22"></u-icon>
+					<text style="margin-left:3px;">联系客服</text>
+				</view>
 				<view>
 					<image src="/static/images/mine/editIcon.svg" style="width: 32rpx; height: 32rpx" mode="" />
 				</view>
@@ -417,6 +432,8 @@
 		font-size: 32rpx;
 		font-weight: 500;
 		color: #121836;
+		display: flex;
+		align-items: center;
 	}
 
 	.reservationBox {

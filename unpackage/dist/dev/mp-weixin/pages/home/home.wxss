@@ -142,7 +142,7 @@
 .indexInfo.data-v-07e72d3c {
 		background-color: #fff;
 		box-sizing: border-box;
-		padding: 36rpx 18rpx;
+		padding: 36rpx 24rpx;
 		overflow-y: auto;
 }
 .gymnasiumName.data-v-07e72d3c {
