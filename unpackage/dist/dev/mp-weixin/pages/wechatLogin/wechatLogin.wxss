@@ -1,0 +1,37 @@
+
+    	/* pages/wechatLogin/wechatLogin.wxss */
+.page.data-v-1a4ac2b7 {
+    		width: 100vw;
+    		height: 100vh;
+    		background-color: #fff;
+}
+.loginBox.data-v-1a4ac2b7 {
+    		margin-top: 240rpx;
+}
+.imgBox.data-v-1a4ac2b7 {
+    		width: 160rpx;
+    		height: 160rpx;
+    		border-radius: 40rpx;
+}
+.title.data-v-1a4ac2b7 {
+    		font-family: PingFang SC;
+    		font-size: 52rpx;
+    		font-weight: 600;
+    		line-height: 20px;
+    		text-align: center;
+    		color: #000000;
+    		margin-top: 114rpx;
+}
+.btn-wechat-login.data-v-1a4ac2b7 {
+    		width: 684rpx;
+    		height: 100rpx;
+    		border-radius: 24rpx;
+    		opacity: 1;
+    		background: #0077ff;
+    		display: flex;
+    		align-items: center;
+    		justify-content: center;
+    		color: #fff;
+    		margin-top: 80rpx;
+}
+    

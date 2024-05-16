@@ -2,7 +2,7 @@
 const common_vendor = require("../../../../common/vendor.js");
 const _sfc_main = {
   name: "u-tabs",
-  mixins: [common_vendor.mpMixin, common_vendor.mixin, common_vendor.props$12],
+  mixins: [common_vendor.mpMixin, common_vendor.mixin, common_vendor.props$13],
   data() {
     return {
       firstTime: true,
@@ -199,5 +199,5 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     f: $data.scrollLeft
   };
 }
-const Component = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-0546c3e4"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-tabs/u-tabs.vue"]]);
+const Component = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-0546c3e4"], ["__file", "C:/project/轻羽开源项目客户端/qingyu-client/node_modules/uview-plus/components/u-tabs/u-tabs.vue"]]);
 wx.createComponent(Component);

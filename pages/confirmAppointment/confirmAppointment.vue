@@ -220,18 +220,26 @@
 						type: 'web'
 					}
 				}).then((res) => {
+					// 微信小程序支付已走通，其余场景请自行进行支付对接
 					// #ifdef MP-WEIXIN
 					this.wxPay(res.data.per_pay, this.payComplete)
 					// #endif
 					// #ifdef H5
-					let flag = this.isWeiXin()
-					if (flag) {
-						// 走微信内置浏览器支付
-						this.weChatInside()
-					} else {
-						// 走外置浏览器支付
-						this.toPayOutside()
-					}
+					// let flag = this.isWeiXin()
+					// if (flag) {
+					// 	// 走微信内置浏览器支付
+					// 	this.weChatInside()
+					// } else {
+					// 	// 走外置浏览器支付
+					// 	this.toPayOutside()
+					// }
+					setTimeout(() => {
+						uni.removeStorageSync('orderInfo')
+						uni.redirectTo({
+							url: '/pages/orderDetail/orderDetail?order_no=' +
+								this.order_no + '&type=new'
+						})
+					}, 1000);
 					// #endif
 
 				});

@@ -2,7 +2,7 @@
 const common_vendor = require("../../../../common/vendor.js");
 const _sfc_main = {
   name: "u-badge",
-  mixins: [common_vendor.mpMixin, common_vendor.props$15, common_vendor.mixin],
+  mixins: [common_vendor.mpMixin, common_vendor.props$16, common_vendor.mixin],
   computed: {
     // 是否将badge中心与父组件右上角重合
     boxStyle() {
@@ -56,5 +56,5 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     h: common_vendor.s($options.badgeStyle)
   } : {});
 }
-const Component = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-aa9883b1"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-badge/u-badge.vue"]]);
+const Component = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-aa9883b1"], ["__file", "C:/project/轻羽开源项目客户端/qingyu-client/node_modules/uview-plus/components/u-badge/u-badge.vue"]]);
 wx.createComponent(Component);

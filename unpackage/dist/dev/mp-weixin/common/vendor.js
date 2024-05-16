@@ -10819,7 +10819,7 @@ const uviewPlus = {
     d && (r.WeixinJSBridge ? e3() : n2.addEventListener && n2.addEventListener("WeixinJSBridgeReady", e3, false));
   }
 });
-const props$o = {
+const props$p = {
   props: {
     // item标签的名称，作为与u-tabbar的value参数匹配的标识符
     name: {
@@ -10853,7 +10853,7 @@ const props$o = {
     }
   }
 };
-const props$n = {
+const props$o = {
   props: {
     // 当前匹配项的name
     value: {
@@ -10935,7 +10935,7 @@ const openType = {
     }
   }
 };
-const props$m = {
+const props$n = {
   props: {
     // 是否细边框
     hairline: {
@@ -11084,6 +11084,50 @@ const props$m = {
     color: {
       type: String,
       default: defprops.button.color
+    }
+  }
+};
+const props$m = {
+  props: {
+    // 是否虚线
+    dashed: {
+      type: Boolean,
+      default: defprops.divider.dashed
+    },
+    // 是否细线
+    hairline: {
+      type: Boolean,
+      default: defprops.divider.hairline
+    },
+    // 是否以点替代文字，优先于text字段起作用
+    dot: {
+      type: Boolean,
+      default: defprops.divider.dot
+    },
+    // 内容文本的位置，left-左边，center-中间，right-右边
+    textPosition: {
+      type: String,
+      default: defprops.divider.textPosition
+    },
+    // 文本内容
+    text: {
+      type: [String, Number],
+      default: defprops.divider.text
+    },
+    // 文本大小
+    textSize: {
+      type: [String, Number],
+      default: defprops.divider.textSize
+    },
+    // 文本颜色
+    textColor: {
+      type: String,
+      default: defprops.divider.textColor
+    },
+    // 线条颜色
+    lineColor: {
+      type: String,
+      default: defprops.divider.lineColor
     }
   }
 };
@@ -13064,14 +13108,6 @@ const props$7 = {
 };
 const props$6 = {
   props: {
-    bgColor: {
-      type: String,
-      default: defprops.statusBar.bgColor
-    }
-  }
-};
-const props$5 = {
-  props: {
     color: {
       type: String,
       default: defprops.line.color
@@ -13100,6 +13136,14 @@ const props$5 = {
     dashed: {
       type: Boolean,
       default: defprops.line.dashed
+    }
+  }
+};
+const props$5 = {
+  props: {
+    bgColor: {
+      type: String,
+      default: defprops.statusBar.bgColor
     }
   }
 };
@@ -13421,31 +13465,32 @@ exports.n = n;
 exports.o = o;
 exports.openType = openType;
 exports.p = p;
-exports.props = props$o;
-exports.props$1 = props$n;
-exports.props$10 = props$e;
-exports.props$11 = props$d;
-exports.props$12 = props$c;
-exports.props$13 = props$b;
-exports.props$14 = props$a;
-exports.props$15 = props$9;
-exports.props$16 = props$8;
-exports.props$17 = props$7;
-exports.props$18 = props$6;
-exports.props$19 = props$5;
-exports.props$2 = props$m;
-exports.props$20 = props$4;
-exports.props$21 = props$3;
-exports.props$22 = props$2;
-exports.props$23 = props$1;
-exports.props$24 = props;
-exports.props$3 = props$l;
-exports.props$4 = props$k;
-exports.props$5 = props$j;
-exports.props$6 = props$i;
-exports.props$7 = props$h;
-exports.props$8 = props$g;
-exports.props$9 = props$f;
+exports.props = props$p;
+exports.props$1 = props$o;
+exports.props$10 = props$f;
+exports.props$11 = props$e;
+exports.props$12 = props$d;
+exports.props$13 = props$c;
+exports.props$14 = props$b;
+exports.props$15 = props$a;
+exports.props$16 = props$9;
+exports.props$17 = props$8;
+exports.props$18 = props$7;
+exports.props$19 = props$6;
+exports.props$2 = props$n;
+exports.props$20 = props$5;
+exports.props$21 = props$4;
+exports.props$22 = props$3;
+exports.props$23 = props$2;
+exports.props$24 = props$1;
+exports.props$25 = props;
+exports.props$3 = props$m;
+exports.props$4 = props$l;
+exports.props$5 = props$k;
+exports.props$6 = props$j;
+exports.props$7 = props$i;
+exports.props$8 = props$h;
+exports.props$9 = props$g;
 exports.resolveComponent = resolveComponent;
 exports.s = s;
 exports.sr = sr;

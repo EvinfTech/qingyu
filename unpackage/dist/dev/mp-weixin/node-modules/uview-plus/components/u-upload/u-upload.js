@@ -2,7 +2,7 @@
 const common_vendor = require("../../../../common/vendor.js");
 const _sfc_main = {
   name: "u-upload",
-  mixins: [common_vendor.mpMixin, common_vendor.mixin, common_vendor.mixinUp, common_vendor.props$6],
+  mixins: [common_vendor.mpMixin, common_vendor.mixin, common_vendor.mixinUp, common_vendor.props$7],
   data() {
     return {
       lists: [],
@@ -287,5 +287,5 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     m: common_vendor.s(_ctx.$u.addStyle(_ctx.customStyle))
   });
 }
-const Component = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-cafe0b2a"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-upload/u-upload.vue"]]);
+const Component = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-cafe0b2a"], ["__file", "C:/project/轻羽开源项目客户端/qingyu-client/node_modules/uview-plus/components/u-upload/u-upload.vue"]]);
 wx.createComponent(Component);

@@ -13,6 +13,12 @@ const _sfc_main = {
     };
   },
   methods: {
+    // 微信登录
+    toWechatLogin() {
+      common_vendor.index.navigateTo({
+        url: "/pages/wechatLogin/wechatLogin"
+      });
+    },
     // 校验手机号
     validatePhoneNumber(phone) {
       if (!phone) {
@@ -159,11 +165,13 @@ const _sfc_main = {
 };
 if (!Array) {
   const _easycom_u_button2 = common_vendor.resolveComponent("u-button");
-  _easycom_u_button2();
+  const _easycom_up_divider2 = common_vendor.resolveComponent("up-divider");
+  (_easycom_u_button2 + _easycom_up_divider2)();
 }
 const _easycom_u_button = () => "../../node-modules/uview-plus/components/u-button/u-button.js";
+const _easycom_up_divider = () => "../../node-modules/uview-plus/components/u-divider/u-divider.js";
 if (!Math) {
-  _easycom_u_button();
+  (_easycom_u_button + _easycom_up_divider)();
 }
 function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
   return {
@@ -181,8 +189,12 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
       color: "#0077FF",
       ["custom-style"]: "margin-top: 134rpx;border-radius: 12rpx;"
     }),
-    j: common_vendor.o((...args) => $options.toArrgement && $options.toArrgement(...args))
+    j: common_vendor.p({
+      text: "其他登录方式"
+    }),
+    k: common_vendor.o((...args) => $options.toWechatLogin && $options.toWechatLogin(...args)),
+    l: common_vendor.o((...args) => $options.toArrgement && $options.toArrgement(...args))
   };
 }
-const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-e4e4508d"], ["__file", "C:/project/轻羽项目/qingyu-client/pages/login/login.vue"]]);
+const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-e4e4508d"], ["__file", "C:/project/轻羽开源项目客户端/qingyu-client/pages/login/login.vue"]]);
 wx.createPage(MiniProgramPage);

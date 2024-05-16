@@ -2,7 +2,7 @@
 const common_vendor = require("../../../../common/vendor.js");
 const _sfc_main = {
   name: "u-radio",
-  mixins: [common_vendor.mpMixin, common_vendor.mixin, common_vendor.props$8],
+  mixins: [common_vendor.mpMixin, common_vendor.mixin, common_vendor.props$9],
   data() {
     return {
       checked: false,
@@ -184,5 +184,5 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     m: common_vendor.n($data.parentData.borderBottom && $data.parentData.placement === "column" && "u-border-bottom")
   };
 }
-const Component = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-edf95844"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-radio/u-radio.vue"]]);
+const Component = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-edf95844"], ["__file", "C:/project/轻羽开源项目客户端/qingyu-client/node_modules/uview-plus/components/u-radio/u-radio.vue"]]);
 wx.createComponent(Component);

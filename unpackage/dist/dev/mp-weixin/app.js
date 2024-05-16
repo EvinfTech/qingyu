@@ -19,6 +19,7 @@ if (!Math) {
   "./pages/accountSecurity/accountSecurity.js";
   "./pages/userAgreement/userAgreement.js";
   "./pages/confirmAppointment/confirmAppointment.js";
+  "./pages/wechatLogin/wechatLogin.js";
 }
 const _sfc_main = {
   globalData: {
@@ -284,7 +285,7 @@ const _sfc_main = {
     console.log("App Hide");
   }
 };
-const App = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__file", "C:/project/轻羽项目/qingyu-client/App.vue"]]);
+const App = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__file", "C:/project/轻羽开源项目客户端/qingyu-client/App.vue"]]);
 function createApp() {
   const app = common_vendor.createSSRApp(App);
   app.use(common_vendor.uviewPlus);

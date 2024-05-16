@@ -16,7 +16,8 @@
     "pages/reservationInfo/reservationInfo",
     "pages/accountSecurity/accountSecurity",
     "pages/userAgreement/userAgreement",
-    "pages/confirmAppointment/confirmAppointment"
+    "pages/confirmAppointment/confirmAppointment",
+    "pages/wechatLogin/wechatLogin"
   ],
   "subPackages": [],
   "usingComponents": {},

@@ -21,6 +21,14 @@
 			</view>
 			<u-button @tap.native="toLogin" type="primary" size="large" color="#0077FF"
 				custom-style="margin-top: 134rpx;border-radius: 12rpx;">登录</u-button>
+			<!-- #ifdef MP-WEIXIN -->
+			<view style="margin-top: 30px;">
+				<up-divider text="其他登录方式"></up-divider>
+				<view class="wechatBox flex align-center justify-center" @click="toWechatLogin">
+					<image src="../../static/images/login/wechat.svg" style="width: 28px;"></image>
+				</view>
+			</view>
+			<!-- #endif -->
 		</view>
 		<view class="bottomTitle flex flex-direction align-center">
 			<view>未注册手机号登录后将自动生成账号且代表您</view>
@@ -48,6 +56,12 @@
 			};
 		},
 		methods: {
+			// 微信登录
+			toWechatLogin(){
+				uni.navigateTo({
+					url:'/pages/wechatLogin/wechatLogin'
+				})
+			},
 			// 校验手机号
 			validatePhoneNumber(phone) {
 				if (!phone) {
@@ -278,6 +292,7 @@
 		height: 96rpx;
 		background: rgba(177, 180, 195, 0.3);
 		margin: 0 auto;
+		border-radius: 50%;
 	}
 
 	.bottomTitle {

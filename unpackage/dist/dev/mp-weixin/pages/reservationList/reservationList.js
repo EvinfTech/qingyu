@@ -361,5 +361,5 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     o: $data.active == 1
   });
 }
-const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-9e63185c"], ["__file", "C:/project/轻羽项目/qingyu-client/pages/reservationList/reservationList.vue"]]);
+const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-9e63185c"], ["__file", "C:/project/轻羽开源项目客户端/qingyu-client/pages/reservationList/reservationList.vue"]]);
 wx.createPage(MiniProgramPage);
