@@ -18,11 +18,7 @@
     }
   },
   "compileType": "miniprogram",
-<<<<<<< HEAD
   "libVersion": "3.4.4",
-=======
-  "libVersion": "3.4.3",
->>>>>>> e566c9076bfeb6a940c9f91da2d33af9888916a8
   "appid": "wx00fb6cbcfab5e4b1",
   "projectname": "qingyu-client",
   "condition": {
