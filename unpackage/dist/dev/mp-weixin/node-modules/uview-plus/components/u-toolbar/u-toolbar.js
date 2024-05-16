@@ -32,5 +32,5 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     j: common_vendor.o((...args) => _ctx.noop && _ctx.noop(...args))
   }) : {});
 }
-const Component = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-3fd495d6"], ["__file", "C:/project/轻羽项目/qingyu-client/node_modules/uview-plus/components/u-toolbar/u-toolbar.vue"]]);
+const Component = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-3fd495d6"], ["__file", "C:/project/轻羽开源项目客户端/qingyu-client/node_modules/uview-plus/components/u-toolbar/u-toolbar.vue"]]);
 wx.createComponent(Component);
