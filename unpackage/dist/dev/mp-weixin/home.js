@@ -223,5 +223,5 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     w: $data.viewHeight + "px"
   });
 }
-const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-07e72d3c"], ["__file", "C:/project/轻羽项目/qingyu-client/pages/home/home.vue"]]);
+const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-07e72d3c"], ["__file", "C:/project/轻羽开源项目/pages/home/home.vue"]]);
 exports.MiniProgramPage = MiniProgramPage;

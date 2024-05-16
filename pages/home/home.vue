@@ -458,7 +458,7 @@
 	.indexInfo {
 		background-color: #fff;
 		box-sizing: border-box;
-		padding: 36rpx 18rpx;
+		padding: 36rpx 24rpx;
 		overflow-y: auto;
 	}
 
