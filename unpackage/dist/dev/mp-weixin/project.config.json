@@ -15,11 +15,10 @@
       "ignore": [],
       "disablePlugins": [],
       "outputPath": ""
-    },
-    "ignoreUploadUnusedFiles": true
+    }
   },
   "compileType": "miniprogram",
-  "libVersion": "3.3.4",
+  "libVersion": "3.4.3",
   "appid": "wx00fb6cbcfab5e4b1",
   "projectname": "qingyu-client",
   "condition": {

@@ -84,5 +84,5 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     })
   };
 }
-const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-ee0a2e80"], ["__file", "C:/project/轻羽项目/qingyu-client/pages/accountSecurity/accountSecurity.vue"]]);
+const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-ee0a2e80"], ["__file", "C:/project/轻羽开源项目/pages/accountSecurity/accountSecurity.vue"]]);
 wx.createPage(MiniProgramPage);

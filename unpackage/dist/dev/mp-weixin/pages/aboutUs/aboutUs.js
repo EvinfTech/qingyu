@@ -42,8 +42,8 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
       autoBack: false,
       fixed: false
     }),
-    d: common_vendor.t($data.aboutUs)
+    d: $data.aboutUs
   };
 }
-const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-d8855c81"], ["__file", "C:/project/轻羽项目/qingyu-client/pages/aboutUs/aboutUs.vue"]]);
+const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-d8855c81"], ["__file", "C:/project/轻羽开源项目/pages/aboutUs/aboutUs.vue"]]);
 wx.createPage(MiniProgramPage);

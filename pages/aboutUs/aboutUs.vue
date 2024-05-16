@@ -7,7 +7,7 @@
 		  </template>
 	  </u-navbar>
         <view class="content">
-			{{aboutUs}}
+			<view v-html="aboutUs"></view>
         </view>
     </view>
 </template>
