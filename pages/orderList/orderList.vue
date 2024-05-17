@@ -304,18 +304,19 @@
 					}
 				}).then((res) => {
 					this.order_no = e.currentTarget.dataset.item.order_no
+					// 微信小程序支付已走通，其余场景请自行进行支付对接
 					// #ifdef MP-WEIXIN
 					this.wxPay(res.data.per_pay, this.payComplete)
 					// #endif
 					// #ifdef H5
-					let flag = this.isWeiXin()
-					if (flag) {
-						// 走微信内置浏览器支付
-						this.weChatInside()
-					} else {
-						// 走外置浏览器支付
-						this.toPayOutside()
-					}
+					// let flag = this.isWeiXin()
+					// if (flag) {
+					// 	// 走微信内置浏览器支付
+					// 	this.weChatInside()
+					// } else {
+					// 	// 走外置浏览器支付
+					// 	this.toPayOutside()
+					// }
 					// #endif
 				});
 			},

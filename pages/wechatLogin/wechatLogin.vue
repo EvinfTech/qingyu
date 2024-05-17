@@ -11,9 +11,19 @@
     				<image src="/static/images/common/logo.png" mode="" class="h-full w-full" />
     			</view>
     			<view class="title">欢迎登录轻羽</view>
-    			<!-- <button class="btn-wechat-login" @tap="onWechatLogin">微信快捷登录</button> -->
-    			<button class="btn-wechat-login" open-type="getPhoneNumber" @getphonenumber="getPhoneNumber">手机号快捷登录</button>
+    			<button class="btn-wechat-login" @tap="onWechatLogin('')">微信快捷登录</button>
+
     		</view>
+    		<up-popup :show="show" @close="close" @open="open" mode="center" round="10" :safeAreaInsetBottom="false">
+    			<view class="popBox">
+    				<view class="popTitle">新用户登录，请授权手机号进行注册登录</view>
+    				<view class="flex align-center justify-around">
+    					<view class="btn-cancel-login" @click="cancelShow">取消</view>
+    					<button class="btn-phone-login" open-type="getPhoneNumber" @getphonenumber="getPhoneNumber"
+    						@click="ensure">确定</button>
+    				</view>
+    			</view>
+    		</up-popup>
     	</view>
     </template>
 
@@ -25,46 +35,11 @@
     	export default ({
     		data() {
     			return {
-    				app: getApp()
+    				app: getApp(),
+    				show: false,
     			};
     		},
-    		/**
-    		 * 生命周期函数--监听页面加载
-    		 */
-    		onLoad() {},
-    		/**
-    		 * 生命周期函数--监听页面初次渲染完成
-    		 */
-    		onReady() {},
-    		/**
-    		 * 生命周期函数--监听页面显示
-    		 */
-    		onShow() {},
-    		/**
-    		 * 生命周期函数--监听页面隐藏
-    		 */
-    		onHide() {},
-    		/**
-    		 * 生命周期函数--监听页面卸载
-    		 */
-    		onUnload() {},
-    		/**
-    		 * 页面相关事件处理函数--监听用户下拉动作
-    		 */
-    		onPullDownRefresh() {},
-    		/**
-    		 * 页面上拉触底事件的处理函数
-    		 */
-    		onReachBottom() {},
-    		/**
-    		 * 用户点击右上角分享
-    		 */
-    		onShareAppMessage() {},
     		methods: {
-    			onClickLeft() {
-    				uni.navigateBack();
-    			},
-
     			// 微信方登录
     			wechatLogin() {
     				return new Promise((resolve) => {
@@ -75,44 +50,54 @@
     					});
     				});
     			},
-
-    			getPhoneNumberAjax(code) {
-    				request({
-    					url: 'wx/get/phone',
-    					method: 'POST',
-    					data: {
-    						phone_code: code,
-    						user_ouid: this.app.globalData.userInfo.ouid
-    					}
-    				}).then((res) => {
-    					uni.reLaunch({
-    						url: '/pages/index/index'
-    					});
-    				});
+    			// 授权手机号
+    			async getPhoneNumber(e) {
+    				if (e.detail.errMsg === 'getPhoneNumber:ok') {
+    					this.onWechatLogin(e.detail.code);
+    				} else {
+    					uni.showToast({
+    						title: '手机号授权失败',
+    						icon: 'none'
+    					})
+    				}
     			},
-
-    			// 获取手机号
-    			getPhoneNumber(e) {
-    				this.onWechatLogin(e.detail.code);
-    			},
-
     			// 服务器登录
-    			async onWechatLogin(phoneCode) {
+    			async onWechatLogin(phone_code = '') {
     				let code = await this.wechatLogin();
     				request({
     					url: 'wx/login',
     					method: 'POST',
     					data: {
-    						code
+    						code,
+    						phone_code
     					}
     				}).then(async (res) => {
-    					this.app.globalData.userInfo.ouid = res.data.ouid;
-    					await this.app.getUserInfo('reGet');
-    					uni.reLaunch({
-    						url: '/pages/index/index'
-    					});
-    					//   this.getPhoneNumberAjax(phoneCode)
+    					if (res.data.ouid) {
+    						this.app.globalData.userInfo.ouid = res.data.ouid;
+    						await this.app.getUserInfo('reGet');
+    						uni.reLaunch({
+    							url: '/pages/index/index'
+    						});
+    					} else {
+    						this.show = true
+    					}
     				});
+    			},
+    			// 弹框打开
+    			open() {
+
+    			},
+    			// 弹框关闭
+    			close() {
+
+    			},
+    			// 确定
+    			ensure() {
+    				this.show = false
+    			},
+    			//取消
+    			cancelShow() {
+    				this.show = false
     			}
     		}
     	});
@@ -156,5 +141,37 @@
     		justify-content: center;
     		color: #fff;
     		margin-top: 80rpx;
+    	}
+
+    	.popBox {
+    		padding: 40px 15px 30px;
+    	}
+
+    	.popTitle {
+    		margin-bottom: 30px;
+    	}
+
+    	.btn-cancel-login {
+    		width: 45%;
+    		height: 70rpx;
+    		border-radius: 18rpx;
+    		opacity: 1;
+    		background: #fff;
+    		display: flex;
+    		align-items: center;
+    		justify-content: center;
+    		border: 1px solid #ddd;
+    	}
+
+    	.btn-phone-login {
+    		width: 45%;
+    		height: 70rpx;
+    		border-radius: 18rpx;
+    		opacity: 1;
+    		background: #0077ff;
+    		display: flex;
+    		align-items: center;
+    		justify-content: center;
+    		color: #fff;
     	}
     </style>

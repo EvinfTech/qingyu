@@ -27,7 +27,9 @@
 				//运动次数
 				total_length: '',
 				//运动时长
-				sport_day: '' //运动天数
+				sport_day: '' ,//运动天数
+				memberType:'',//会员类型
+				accumulatedAmount:'',//储值金额
 			},
 			enumInfo: {}, //时间枚举
 			gymnasiumInfo: {}, //场馆信息
@@ -128,6 +130,8 @@
 								this.globalData.userInfo.sport_day = userInfo.sport_day; //运动天数
 								this.globalData.userInfo.introduce = userInfo.introduce; //个人简介
 								this.globalData.userInfo.ouid = userInfo.ouid; //个人ouid
+								this.globalData.userInfo.memberType = userInfo.vip_type; //会员类型
+								this.globalData.userInfo.accumulatedAmount = userInfo.balance; //储值金额
 								uni.removeStorageSync('userInfo');
 								uni.setStorageSync('userInfo', JSON.stringify(this.globalData
 									.userInfo));

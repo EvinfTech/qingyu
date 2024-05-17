@@ -16,7 +16,8 @@
 			<u-cell title="关于我们" center custom-class="userinfo-cell" is-link @tap.native="toAboutUs"></u-cell>
 		</u-cell-group>
 		<view class="logoutBtn flex align-center justify-center" @tap="logout">退出登录</view>
-		<u-modal :show="show" title="提示" content="确定要退出登录吗？" :showCancelButton="true" @confirm="confirm" @cancel="cancel"></u-modal>
+		<u-modal :show="show" title="提示" content="确定要退出登录吗？" :showCancelButton="true" @confirm="confirm"
+			@cancel="cancel"></u-modal>
 	</view>
 </template>
 
@@ -25,8 +26,8 @@
 	export default ({
 		data() {
 			return {
-				app:getApp(),
-				show:false
+				app: getApp(),
+				show: false
 			};
 		},
 		methods: {
@@ -37,9 +38,9 @@
 				});
 			},
 			// 用户协议
-			toUserAgreement(){
+			toUserAgreement() {
 				uni.navigateTo({
-					url:'/pages/userAgreement/userAgreement'
+					url: '/pages/userAgreement/userAgreement'
 				})
 			},
 			// 关于我们
@@ -53,11 +54,11 @@
 				this.show = true;
 			},
 			// 取消退出登录
-			cancel(){
+			cancel() {
 				this.show = false
 			},
 			// 确认退出登录
-			confirm(){
+			confirm() {
 				this.show = false
 				this.app.logout()
 			}

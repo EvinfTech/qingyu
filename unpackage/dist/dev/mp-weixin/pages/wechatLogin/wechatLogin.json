@@ -3,6 +3,7 @@
   "enablePullDownRefresh": false,
   "usingComponents": {
     "up-icon": "../../node-modules/uview-plus/components/u-icon/u-icon",
-    "u-navbar": "../../node-modules/uview-plus/components/u-navbar/u-navbar"
+    "u-navbar": "../../node-modules/uview-plus/components/u-navbar/u-navbar",
+    "up-popup": "../../node-modules/uview-plus/components/u-popup/u-popup"
   }
 }

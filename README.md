@@ -14,10 +14,10 @@
 
 客户端：
 
-1. 登录：手机验证码一键登录。
+1. 登录：手机验证码一键登录，小程序端支持微信一键登录。
 2. 球馆订场：展示球馆详细信息、未来一周内的可用场地、订场订单的锁定与支付。
 3. 个人信息：对个人信息的一些展示以及修改。
-4. 订单管理：展示订单记录，并可以对订单进行支付取消等操作。
+4. 订单管理：展示订单记录，并可以对订单进行支付取消等操作（小程序支付已走通，其余支付请自行配置）。
 5. 预约管理：展示预约记录，并可以对预约进行取消等操作。
 6. 意见反馈：用户可以对球馆存在的一些问题进行反馈，同时支持在线联系客服。
 
@@ -53,27 +53,29 @@
 <table>
     <tr>
         <td><img src="https://qingyu.evinf.cn/photo/17155704410.jpg"/></td>
+        <td><img src="https://qingyu.evinf.cn/photo/17159093930.jpg"/></td>
+    </tr>
+    <tr>
         <td><img src="https://qingyu.evinf.cn/photo/17155703760.jpg"/></td>
-    </tr>
-    <tr>
         <td><img src="https://qingyu.evinf.cn/photo/17155704500.jpg"/></td>
+    </tr>
+     <tr>
         <td><img src="https://qingyu.evinf.cn/photo/17155704640.jpg"/></td>
-    </tr>
-     <tr>
         <td><img src="https://qingyu.evinf.cn/photo/17155704810.jpg"/></td>
-        <td><img src="https://qingyu.evinf.cn/photo/17155704950.jpg"/></td>
     </tr>
      <tr>
+        <td><img src="https://qingyu.evinf.cn/photo/17155704950.jpg"/></td>
         <td><img src="https://qingyu.evinf.cn/photo/17155705090.jpg"/></td>
-        <td><img src="https://qingyu.evinf.cn/photo/17155705200.jpg"/></td>
     </tr>
     <tr>
+        <td><img src="https://qingyu.evinf.cn/photo/17155705200.jpg"/></td>
         <td><img src="https://qingyu.evinf.cn/photo/17155705370.jpg"/></td>
-        <td><img src="https://qingyu.evinf.cn/photo/17155705520.jpg"/></td>
     </tr>
         <td><img src="https://qingyu.evinf.cn/photo/17155705660.jpg"/></td>
+        <td><img src="https://qingyu.evinf.cn/photo/17155705520.jpg"/></td>
 	</tr>
 </table>
+
 
 
 管理端：

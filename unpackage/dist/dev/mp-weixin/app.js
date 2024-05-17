@@ -49,8 +49,12 @@ const _sfc_main = {
       //运动次数
       total_length: "",
       //运动时长
-      sport_day: ""
+      sport_day: "",
       //运动天数
+      memberType: "",
+      //会员类型
+      accumulatedAmount: ""
+      //储值金额
     },
     enumInfo: {},
     //时间枚举
@@ -153,6 +157,8 @@ const _sfc_main = {
               this.globalData.userInfo.sport_day = userInfo2.sport_day;
               this.globalData.userInfo.introduce = userInfo2.introduce;
               this.globalData.userInfo.ouid = userInfo2.ouid;
+              this.globalData.userInfo.memberType = userInfo2.vip_type;
+              this.globalData.userInfo.accumulatedAmount = userInfo2.balance;
               common_vendor.index.removeStorageSync("userInfo");
               common_vendor.index.setStorageSync("userInfo", JSON.stringify(this.globalData.userInfo));
               resolve(userInfo2);

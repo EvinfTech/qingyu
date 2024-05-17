@@ -57,9 +57,9 @@
 		},
 		methods: {
 			// 微信登录
-			toWechatLogin(){
+			toWechatLogin() {
 				uni.navigateTo({
-					url:'/pages/wechatLogin/wechatLogin'
+					url: '/pages/wechatLogin/wechatLogin'
 				})
 			},
 			// 校验手机号
@@ -165,31 +165,34 @@
 				}).then(async (res) => {
 					if (res.code == 200) {
 						this.app.globalData.userInfo.ouid = res.data.ouid;
-						await this.app.getUserInfo()
+						let userInfo = await this.app.getUserInfo()
 						uni.showToast({
 							icon: 'none',
 							title: '登录成功',
 							success: () => {
 								// #ifdef MP-WEIXIN
-								wx.login({
-									success: function(result) {
-										if (result.code) {
-											// code已经获取到了，可以将其发送给后台服务器	
-											request({
-												url: 'wx/get/wx/id',
-												method: 'POST',
-												data: {
-													code: result.code,
-													user_ouid: res.data
-														.ouid,
-													type: 'A', //A:微信小程序 B:微信内置浏览器
-												}
-											}).then(() => {
+								// 如果userInfo中没有返回wx_openid,则请求微信登录传递code给后端
+								if (!userInfo.wx_openid) {
+									wx.login({
+										success: function(result) {
+											if (result.code) {
+												// code已经获取到了，可以将其发送给后台服务器	
+												request({
+													url: 'wx/get/wx/id',
+													method: 'POST',
+													data: {
+														code: result.code,
+														user_ouid: res.data
+															.ouid,
+														type: 'A', //A:微信小程序 
+													}
+												}).then(() => {
 
-											})
-										} else {}
-									}
-								});
+												})
+											} else {}
+										}
+									});
+								}
 								// #endif
 								setTimeout(() => {
 									uni.redirectTo({

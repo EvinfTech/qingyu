@@ -34,4 +34,32 @@
     		color: #fff;
     		margin-top: 80rpx;
 }
+.popBox.data-v-1a4ac2b7 {
+    		padding: 40px 15px 30px;
+}
+.popTitle.data-v-1a4ac2b7 {
+    		margin-bottom: 30px;
+}
+.btn-cancel-login.data-v-1a4ac2b7 {
+    		width: 45%;
+    		height: 70rpx;
+    		border-radius: 18rpx;
+    		opacity: 1;
+    		background: #fff;
+    		display: flex;
+    		align-items: center;
+    		justify-content: center;
+    		border: 1px solid #ddd;
+}
+.btn-phone-login.data-v-1a4ac2b7 {
+    		width: 45%;
+    		height: 70rpx;
+    		border-radius: 18rpx;
+    		opacity: 1;
+    		background: #0077ff;
+    		display: flex;
+    		align-items: center;
+    		justify-content: center;
+    		color: #fff;
+}
     

@@ -20,7 +20,9 @@ const _sfc_main = {
       maxDate: 0,
       fileList: [],
       showLogout: false,
-      phone: ""
+      phone: "",
+      memberType: "",
+      accumulatedAmount: ""
     };
   },
   /**
@@ -37,6 +39,8 @@ const _sfc_main = {
     this.personalProfile = userInfo.introduce;
     this.phone = userInfo.phone;
     this.ouid = userInfo.ouid;
+    this.memberType = userInfo.memberType;
+    this.accumulatedAmount = userInfo.accumulatedAmount;
   },
   methods: {
     // 删除头像
@@ -225,29 +229,31 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     z: common_vendor.p({
       title: "手机"
     }),
-    A: common_vendor.p({
+    A: common_vendor.t($data.memberType),
+    B: common_vendor.p({
       title: "会员类型"
     }),
-    B: common_vendor.p({
+    C: common_vendor.t($data.accumulatedAmount),
+    D: common_vendor.p({
       title: "储值金额"
     }),
-    C: common_vendor.p({
+    E: common_vendor.p({
       ["custom-class"]: "userinfo-group"
     }),
-    D: common_vendor.o($options.onConfirm),
-    E: common_vendor.o($options.onCancel),
-    F: common_vendor.o(($event) => $data.currentDate = $event),
-    G: common_vendor.p({
+    F: common_vendor.o($options.onConfirm),
+    G: common_vendor.o($options.onCancel),
+    H: common_vendor.o(($event) => $data.currentDate = $event),
+    I: common_vendor.p({
       show: $data.show,
       mode: "date",
       ["min-date"]: $data.minDate,
       ["max-date"]: $data.maxDate,
       modelValue: $data.currentDate
     }),
-    H: common_vendor.o((...args) => $options.logout && $options.logout(...args)),
-    I: common_vendor.o($options.confirm),
-    J: common_vendor.o($options.cancel),
-    K: common_vendor.p({
+    J: common_vendor.o((...args) => $options.logout && $options.logout(...args)),
+    K: common_vendor.o($options.confirm),
+    L: common_vendor.o($options.cancel),
+    M: common_vendor.p({
       show: $data.showLogout,
       title: "提示",
       content: "确定要退出登录吗？",

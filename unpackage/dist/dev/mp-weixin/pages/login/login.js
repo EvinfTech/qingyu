@@ -118,28 +118,30 @@ const _sfc_main = {
       }).then(async (res) => {
         if (res.code == 200) {
           this.app.globalData.userInfo.ouid = res.data.ouid;
-          await this.app.getUserInfo();
+          let userInfo = await this.app.getUserInfo();
           common_vendor.index.showToast({
             icon: "none",
             title: "登录成功",
             success: () => {
-              common_vendor.wx$1.login({
-                success: function(result2) {
-                  if (result2.code) {
-                    utils_request.request({
-                      url: "wx/get/wx/id",
-                      method: "POST",
-                      data: {
-                        code: result2.code,
-                        user_ouid: res.data.ouid,
-                        type: "A"
-                        //A:微信小程序 B:微信内置浏览器
-                      }
-                    }).then(() => {
-                    });
+              if (!userInfo.wx_openid) {
+                common_vendor.wx$1.login({
+                  success: function(result2) {
+                    if (result2.code) {
+                      utils_request.request({
+                        url: "wx/get/wx/id",
+                        method: "POST",
+                        data: {
+                          code: result2.code,
+                          user_ouid: res.data.ouid,
+                          type: "A"
+                          //A:微信小程序 
+                        }
+                      }).then(() => {
+                      });
+                    }
                   }
-                }
-              });
+                });
+              }
               setTimeout(() => {
                 common_vendor.index.redirectTo({
                   url: "/pages/index/index"

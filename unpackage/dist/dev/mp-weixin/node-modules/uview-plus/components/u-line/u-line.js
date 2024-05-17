@@ -2,7 +2,7 @@
 const common_vendor = require("../../../../common/vendor.js");
 const _sfc_main = {
   name: "u-line",
-  mixins: [common_vendor.mpMixin, common_vendor.mixin, common_vendor.props$19],
+  mixins: [common_vendor.mpMixin, common_vendor.mixin, common_vendor.props$20],
   computed: {
     lineStyle() {
       const style = {};

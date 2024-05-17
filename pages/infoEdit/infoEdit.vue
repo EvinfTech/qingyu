@@ -50,21 +50,21 @@
 			<u-cell title="会员类型">
 				<template #value>
 					<view style="font-size: 28rpx;">
-						普通会员
+						{{memberType}}
 					</view>
 				</template>
 			</u-cell>
 			<u-cell title="储值金额">
 				<template #value>
 					<view style="font-size: 28rpx;">
-						1000
+						{{accumulatedAmount}}
 					</view>
 				</template>
 			</u-cell>
 		</u-cell-group>
 		<u-datetime-picker :show="show" mode="date" :min-date="minDate" :max-date="maxDate" v-model="currentDate"
 			@confirm="onConfirm" @cancel="onCancel" />
-	<!-- 	<view class="devide"></view>
+		<!-- 	<view class="devide"></view>
 		<view class="personalProfile">
 			<view class="personalProfileTitle">个人简介</view>
 			<u-textarea v-model="personalProfile" placeholder="请输入..." />
@@ -90,7 +90,7 @@
 				app: getApp(),
 				initAvatarUrl: '',
 				avatarUrl: '',
-				ouid:'',
+				ouid: '',
 				nickname: '',
 				sex: '',
 				personalProfile: '',
@@ -101,8 +101,10 @@
 				minDate: 0,
 				maxDate: 0,
 				fileList: [],
-				showLogout:false,
-				phone:''
+				showLogout: false,
+				phone: '',
+				memberType: '',
+				accumulatedAmount: ''
 			};
 		},
 		/**
@@ -111,7 +113,8 @@
 		async onLoad() {
 			let userInfo = await this.app.getUserInfo()
 			this.maxDate = Date.now()
-			this.currentDate = userInfo.birthday? (new Date(this.dealWithBirth( userInfo.birthday))).getTime():Date.now()
+			this.currentDate = userInfo.birthday ? (new Date(this.dealWithBirth(userInfo.birthday))).getTime() :
+				Date.now()
 			this.nickname = userInfo.name
 			this.avatarUrl = userInfo.avatar
 			this.sex = String(userInfo.sex)
@@ -119,6 +122,8 @@
 			this.personalProfile = userInfo.introduce
 			this.phone = userInfo.phone
 			this.ouid = userInfo.ouid;
+			this.memberType = userInfo.memberType;
+			this.accumulatedAmount = userInfo.accumulatedAmount
 
 		},
 		methods: {

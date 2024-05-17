@@ -26,7 +26,7 @@ const _sfc_main = {
       totalPrice: 0,
       //总价
       payState: "",
-      code: 812356,
+      code: "",
       //验证码
       //scrollview高度
       scrollViewHeight: 0,
@@ -136,6 +136,10 @@ const _sfc_main = {
         this.timer = null;
         this.payState = "C";
         this.emptyTime = "15:00";
+        if (!this.type) {
+          const eventChannel = this.getOpenerEventChannel();
+          eventChannel.emit("toChangeOrderState", this.order_no, "C");
+        }
       }
     },
     getNavBarHeight() {

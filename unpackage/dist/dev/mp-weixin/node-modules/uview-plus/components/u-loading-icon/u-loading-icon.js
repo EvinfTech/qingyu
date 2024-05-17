@@ -2,7 +2,7 @@
 const common_vendor = require("../../../../common/vendor.js");
 const _sfc_main = {
   name: "u-loading-icon",
-  mixins: [common_vendor.mpMixin, common_vendor.mixin, common_vendor.props$18],
+  mixins: [common_vendor.mpMixin, common_vendor.mixin, common_vendor.props$19],
   data() {
     return {
       // Array.form可以通过一个伪数组对象创建指定长度的数组

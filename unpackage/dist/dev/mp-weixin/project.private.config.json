@@ -62,6 +62,13 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/wechatLogin/wechatLogin",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

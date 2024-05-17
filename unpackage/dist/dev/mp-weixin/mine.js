@@ -24,37 +24,7 @@ const _sfc_main = {
           num: 0
         }
       ],
-      reservationInfo: [],
-      serviceList: [
-        {
-          icon: "/static/images/mine/orderIcon.svg",
-          title: "我的订单"
-        },
-        {
-          icon: "/static/images/mine/orderIcon.svg",
-          title: "我的预约"
-        },
-        {
-          icon: "/static/images/mine/setIcon.svg",
-          title: "设置"
-        },
-        {
-          icon: "/static/images/mine/agreementIcon.svg",
-          title: "意见反馈"
-        },
-        {
-          icon: "/static/images/mine/contactIcon.svg",
-          title: "联系客服"
-        }
-      ],
-      num: "",
-      con: {
-        siteNo: "",
-        startTime: "",
-        endTime: "",
-        title: "",
-        icon: ""
-      }
+      reservationInfo: []
     };
   },
   async mounted() {

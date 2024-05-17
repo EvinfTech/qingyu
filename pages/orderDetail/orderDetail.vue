@@ -173,7 +173,7 @@
 				totalPrice: 0,
 				//总价
 				payState: '',
-				code: 812356,
+				code: '',
 				//验证码
 				//scrollview高度
 				scrollViewHeight: 0,
@@ -279,6 +279,10 @@
 					this.timer = null;
 					this.payState = 'C';
 					this.emptyTime = '15:00'
+					if (!this.type) {
+						const eventChannel = this.getOpenerEventChannel();
+						eventChannel.emit('toChangeOrderState', this.order_no, 'C')
+					}
 				}
 			},
 			getNavBarHeight() {
@@ -384,18 +388,19 @@
 						type: 'web'
 					}
 				}).then((res) => {
+					// 微信小程序支付已走通，其余场景请自行进行支付对接
 					// #ifdef MP-WEIXIN
 					this.wxPay(res.data.per_pay, this.payComplete)
 					// #endif
 					// #ifdef H5
-					let flag = this.isWeiXin()
-					if (flag) {
-						// 走微信内置浏览器支付
-						this.weChatInside()
-					} else {
-						// 走外置浏览器支付
-						this.toPayOutside()
-					}
+					// let flag = this.isWeiXin()
+					// if (flag) {
+					// 	// 走微信内置浏览器支付
+					// 	this.weChatInside()
+					// } else {
+					// 	// 走外置浏览器支付
+					// 	this.toPayOutside()
+					// }
 					// #endif
 
 				});
