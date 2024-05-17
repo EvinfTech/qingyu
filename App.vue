@@ -1,8 +1,8 @@
 <script>
 	export default {
 		globalData: {
-			// httpUrl: 'https://qingyu.evinf.cn/',
-			httpUrl: 'http://172.16.8.5:8002/',
+			httpUrl: 'https://qingyu.evinf.cn/',
+			// httpUrl: 'http://172.16.8.5:8002/',
 			// httpUrl: 'http://sport1.evinf.cn/',
 			uploadAvatarUrl: 'https://qingyu.evinf.cn/common/upload/avatar',
 			uploadImgUrl: 'https://qingyu.evinf.cn/common/upload/photo',
@@ -35,8 +35,7 @@
 			gymnasiumInfo: {}, //场馆信息
 			aboutUs:'',//关于我们
 			agreement:'',//用户协议
-			appId:'wx00fb6cbcfab5e4b1',//小程序appId
-			officialAppId:'wx14f6a5a5933aca21'//公众号appId
+			officialAppId:''//公众号appId
 		},
 		methods: {
 			getLocation() {

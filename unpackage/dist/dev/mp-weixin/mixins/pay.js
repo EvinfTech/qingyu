@@ -66,7 +66,7 @@ const payment = {
       WeixinJSBridge.invoke(
         "getBrandWCPayRequest",
         {
-          "appId": "wx14f6a5a5933aca21",
+          "appId": "",
           //公众号ID，由商户传入    
           "timeStamp": "1395712654",
           //时间戳，自1970年以来的秒数    
