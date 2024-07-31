@@ -1,0 +1,20 @@
+{
+	"name": "miniprogram-ts-less-quickstart",
+	"version": "1.0.0",
+	"description": "",
+	"main": "main.js",
+	"scripts": {},
+	"author": "",
+	"dependencies": {
+		"@vitejs/plugin-vue": "^5.1.1",
+		"uview-ui": "^2.0.36",
+		"weixin-js-sdk": "^1.6.5"
+	},
+	"license": "",
+	"keywords": [],
+	"devDependencies": {
+		"miniprogram-api-typings": "^2.12.0",
+		"sass": "^1.71.1",
+		"sass-loader": "^10.5.2"
+	}
+}

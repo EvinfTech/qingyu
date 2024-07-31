@@ -1,0 +1,153 @@
+{
+	"pages": [
+		{
+			"path": "pages/index/index",
+			"style": {
+				// "usingComponents": {
+				// 	"Home": "/pages/home/home",
+				// 	"Reservation": "/pages/reservation/reservation",
+				// 	"Activity": "/pages/activity/activity",
+				// 	"Mine": "/pages/mine/mine"
+				// },
+				"backgroundColor": "#ffffff"
+			}
+		},
+		{
+			"path": "pages/login/login",
+			"style": {
+				"usingComponents": {}
+			}
+		},
+		{
+			"path": "pages/arrgement/arrgement",
+			"style": {
+				"usingComponents": {}
+			}
+		},
+		{
+			"path": "pages/home/home",
+			"style": {
+				"usingComponents": {}
+			}
+		},
+		{
+			"path": "pages/mine/mine",
+			"style": {
+				"usingComponents": {}
+			}
+		},
+		{
+			"path": "pages/reservationDetail/reservationDetail",
+			"style": {
+				"usingComponents": {}
+			}
+		},
+		{
+			"path": "pages/orderDetail/orderDetail",
+			"style": {
+				"usingComponents": {}
+			}
+		},
+		{
+			"path": "pages/infoEdit/infoEdit",
+			"style": {
+				"usingComponents": {}
+			}
+		},
+		{
+			"path": "pages/orderList/orderList",
+			"style": {
+				"usingComponents": {}
+			}
+		},
+		{
+			"path": "pages/feedback/feedback",
+			"style": {
+				"usingComponents": {}
+			}
+		},
+		{
+			"path": "pages/settings/settings",
+			"style": {
+				"usingComponents": {}
+			}
+		},
+		{
+			"path": "pages/aboutUs/aboutUs",
+			"style": {
+				"usingComponents": {}
+			}
+		},
+		{
+			"path": "pages/reservationList/reservationList",
+			"style": {
+				"usingComponents": {}
+			}
+		},
+		{
+			"path": "pages/reservationInfo/reservationInfo",
+			"style": {
+				"usingComponents": {}
+			}
+		},
+		{
+			"path": "pages/accountSecurity/accountSecurity",
+			"style": {
+				"usingComponents": {}
+			}
+		},
+		{
+			"path" : "pages/userAgreement/userAgreement",
+			"style" : 
+			{
+				"navigationBarTitleText" : "",
+				"enablePullDownRefresh" : false
+			}
+		},
+		{
+			"path" : "pages/confirmAppointment/confirmAppointment",
+			"style" : 
+			{
+				"navigationBarTitleText" : "",
+				"enablePullDownRefresh" : false
+			}
+		},
+		{
+			"path" : "pages/wechatLogin/wechatLogin",
+			"style" : 
+			{
+				"navigationBarTitleText" : "",
+				"enablePullDownRefresh" : false
+			}
+		},
+		{
+			"path" : "pages/voucherCenter/voucherCenter",
+			"style" : 
+			{
+				"navigationBarTitleText" : "",
+				"enablePullDownRefresh" : false
+			}
+		}
+	],
+	"sitemapLocation": "sitemap.json",
+	"permission": {
+		"scope.userLocation": {
+			"desc": "你的位置信息将用于小程序位置接口的效果展示"
+		}
+	},
+	"requiredPrivateInfos": [
+		"getLocation"
+	],
+	"easycom": {
+		"^u-(.*)": "uview-ui/components/u-$1/u-$1.vue"
+	},
+	"globalStyle": {
+		"backgroundTextStyle": "light",
+		"navigationBarBackgroundColor": "#fff",
+		"navigationBarTitleText": "轻羽订场",
+		"navigationBarTextStyle": "black",
+		"navigationStyle": "custom",
+		"usingComponents": {}
+	},
+	"subPackages": []
+}
