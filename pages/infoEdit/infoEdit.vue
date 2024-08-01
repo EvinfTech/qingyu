@@ -48,7 +48,7 @@
 			</u-cell>
 			<u-cell title="性别">
 				<template #value>
-					<u-radio-group v-model="sex" @change="sexChange">
+					<u-radio-group v-model="sex" @change="sexChange" style="display: flex;justify-content: flex-end;">
 						<u-radio name="1" label="男" style="margin-right: 48rpx"></u-radio>
 						<u-radio name="2" label="女"></u-radio>
 					</u-radio-group>
