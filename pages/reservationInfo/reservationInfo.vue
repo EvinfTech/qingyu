@@ -71,7 +71,7 @@
 	export default ({
 		data() {
 			return {
-				app: getApp(),
+				app:null,
 				show: false,//控制弹框
 				order_no: '',//订单号
 				code: '',//二维码值
@@ -97,6 +97,7 @@
 		 * 生命周期函数--监听页面加载
 		 */
 		onLoad(options) {
+			this.app = getApp()
 			this.$nextTick(() => {
 				this.getCenterHeight();
 			})

@@ -1,0 +1,201 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* pages/feedback/feedback.wxss */
+.page.data-v-91bba7b4 {
+	width: 100%;
+	height: 100vh;
+	background-color: #fff;
+	position: relative;
+}
+.errorBox.data-v-91bba7b4 {
+	padding: 24rpx 32rpx;
+}
+.title.data-v-91bba7b4 {
+	font-family: Alibaba PuHuiTi 2;
+	font-size: 36rpx;
+	font-weight: 500;
+	color: #333333;
+}
+.errorItemBox.data-v-91bba7b4 {
+	font-family: Alibaba PuHuiTi 2;
+	font-size: 28rpx;
+	font-weight: normal;
+	color: #b1b4c3;
+	width: 140rpx;
+}
+.radioRight.data-v-91bba7b4 {
+	margin-bottom: 40rpx;
+}
+.radioRight.data-v-91bba7b4:nth-child(2n + 1) {
+	margin-right: 186rpx;
+}
+.describeBox.data-v-91bba7b4,
+.uploadBox.data-v-91bba7b4 {
+	margin-top: 42rpx;
+	font-family: Alibaba PuHuiTi 2;
+	font-size: 28rpx;
+	font-weight: normal;
+	line-height: 40rpx;
+
+	color: #5d667b;
+}
+.uploadBox.data-v-91bba7b4 {
+	margin-top: 66rpx;
+}
+.input-class.data-v-91bba7b4 {}
+.uploadBorder.data-v-91bba7b4 {
+	width: 160rpx;
+	height: 160rpx;
+	border-radius: 12rpx;
+	border: 1px dashed #e3e8f2;
+}
+.submitBtn.data-v-91bba7b4 {
+	position: absolute;
+	left: 50%;
+	-webkit-transform: translateX(-50%);
+	        transform: translateX(-50%);
+	bottom: 94rpx;
+}
+.textarea.data-v-91bba7b4 {
+	max-height: 100rpx !important;
+	min-height: 100rpx !important;
+}
+.submitBtn.data-v-91bba7b4 {
+	width: 686rpx;
+	border-radius: 12rpx;
+	position: absolute !important;
+	left: 50%;
+	-webkit-transform: translateX(-50%);
+	        transform: translateX(-50%);
+	bottom: 130rpx !important;
+	background-color: #0077ff;
+	color: #fff;
+}
+.uploadText.data-v-91bba7b4 {
+	font-family: Alibaba PuHuiTi 2;
+	font-size: 24rpx;
+	margin-top: 20rpx;
+	color: #b1b4c3
+}
+

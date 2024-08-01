@@ -34,10 +34,13 @@
 	export default ({
 		data() {
 			return {
-				app: getApp(),
+				app: null,
 				error: '',
 				fileList: []
 			};
+		},
+		onLoad(){
+			this.app = getApp()
 		},
 		methods: {
 			onClickLeft() {

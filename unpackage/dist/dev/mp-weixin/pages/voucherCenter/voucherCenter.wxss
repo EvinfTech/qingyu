@@ -1,0 +1,67 @@
+
+.page.data-v-83bc1a64 {
+	width: 100%;
+	height: 100vh;
+	background-color: #f6f8fa;
+}
+.content.data-v-83bc1a64 {
+	padding: 10px 13px 0;
+}
+.priceBox.data-v-83bc1a64 {
+	height: 109px;
+	border-radius: 10px;
+	background: #5ABF62;
+	padding-left: 18px;
+}
+.balanceTitle.data-v-83bc1a64 {
+	font-family: PingFang SC;
+	font-size: 18px;
+	font-weight: 600;
+	font-variation-settings: "opsz" auto;
+	color: #FFFFFF;
+}
+.balanceText.data-v-83bc1a64 {
+	font-family: PingFang SC;
+	font-size: 32px;
+	font-weight: 600;
+	font-variation-settings: "opsz" auto;
+	color: #FFFFFF;
+}
+.packageBox.data-v-83bc1a64 {
+	margin-top: 17px;
+}
+.packageItem.data-v-83bc1a64 {
+	border: 1px solid #787878;
+	height: 50px;
+	width: 46%;
+	margin-bottom: 10px;
+}
+.packageItem.data-v-83bc1a64:nth-child(2n) {
+	margin-left: 16px;
+}
+.packageActive.data-v-83bc1a64 {
+	border-color: #5ABF62;
+	color: #5ABF62;
+}
+.actualReceipt.data-v-83bc1a64 {
+	font-family: PingFang SC;
+	font-size: 14px;
+	font-weight: 500;
+	font-variation-settings: "opsz" auto;
+	color: #000000;
+	margin: 10px 0;
+}
+.payMethodBox.data-v-83bc1a64 {
+	height: 94rpx;
+	background-color: #fff;
+	padding: 0 20rpx;
+	margin-top: 20rpx;
+}
+.toPayBtn.data-v-83bc1a64 {
+	height: 48px;
+	border-radius: 10px;
+	background: #5ABF62;
+	color: #fff;
+	margin: 18px 13px;
+}
+

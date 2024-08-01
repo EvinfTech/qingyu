@@ -1,0 +1,112 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* pages/settings/settings.wxss */
+.page.data-v-57211de6 {
+	width: 100%;
+	height: 100vh;
+	background-color: #fff;
+	position: relative;
+}
+.devide.data-v-57211de6 {
+	width: 100%;
+	height: 20rpx;
+	background: #f6f8fa;
+}
+.clearRight.data-v-57211de6 {
+	font-family: Alibaba PuHuiTi 2;
+	font-size: 28rpx;
+	color: #f44336;
+}
+.logoutBtn.data-v-57211de6 {
+	width: 686rpx;
+	height: 84rpx;
+	border-radius: 12rpx;
+	background: #ffe6e6;
+	font-family: Alibaba PuHuiTi 2;
+	font-size: 32rpx;
+	font-weight: 500;
+	color: #f44336;
+	position: absolute;
+	left: 50%;
+	-webkit-transform: translateX(-50%);
+	        transform: translateX(-50%);
+	bottom: 100rpx;
+	z-index: 9;
+}
+.specialBtn.data-v-57211de6::after {
+	border: none;
+}
+.u-cell__title.data-v-57211de6 {
+	text-align: left;
+	font-size: 15px;
+}
+

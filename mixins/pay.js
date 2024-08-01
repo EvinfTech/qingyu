@@ -1,10 +1,13 @@
-import  PaymentMethod from '@/components/paymentMethod.vue'
+// import  PaymentMethod from '@/components/paymentMethod.vue'
 export default {
-	components:{
-		PaymentMethod
+	// components:{
+	// 	PaymentMethod
+	// },
+	onLoad(){
+		this.app = getApp()
 	},
 	data() {
-		app: getApp()
+		app: null
 	},
 	methods: {
 		// 判断是微信浏览器打开 还是 外部浏览器打开

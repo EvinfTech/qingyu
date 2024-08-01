@@ -48,7 +48,7 @@
 		},
 		data() {
 			return {
-				app: getApp(),
+				app: null,
 				methodIndex: 0,
 				methodList: ['余额支付', '微信支付'],
 				balance: 0
@@ -56,14 +56,16 @@
 		},
 		watch: {
 			async show(val) {
+				console.log('状态=======',val)
 				if (val) {
+					this.app = getApp()
 					let userInfo = await this.app.getUserInfo()
 					this.balance = userInfo.balance
 					if (this.price > this.balance) {
 						this.methodIndex = 1
 					}
 				}
-			}
+			},
 		},
 		methods: {
 			// 选择支付方式

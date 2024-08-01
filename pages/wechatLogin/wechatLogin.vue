@@ -35,10 +35,13 @@
     	export default ({
     		data() {
     			return {
-    				app: getApp(),
+    				app:null,
     				show: false,
     			};
     		},
+			onLoad(){
+				this.app = getApp()
+			},
     		methods: {
     			// 微信方登录
     			wechatLogin() {

@@ -109,7 +109,7 @@
 	export default ({
 		data() {
 			return {
-				app: getApp(),
+				app: null,
 				initAvatarUrl: '',
 				avatarUrl: '',
 				ouid: '',
@@ -134,6 +134,7 @@
 		 * 生命周期函数--监听页面加载
 		 */
 		async onLoad() {
+			this.app = getApp()
 			let userInfo = await this.app.getUserInfo()
 			this.maxDate = Date.now()
 			this.currentDate = userInfo.birthday ? (new Date(this.dealWithBirth(userInfo.birthday))).getTime() :

@@ -1,0 +1,54 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* pages/aboutUs/aboutUs.wxss */
+.page.data-v-f55465c4 {
+	width: 100%;
+	height: 100vh;
+	background-color: #fff;
+}
+.content.data-v-f55465c4 {
+	padding: 28rpx 32rpx;
+	font-family: Alibaba PuHuiTi 2;
+	font-size: 32rpx;
+	color: #0b1526;
+}
+

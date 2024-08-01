@@ -1,0 +1,50 @@
+
+.popupBox.data-v-8f619448 {
+	width: 60vw;
+	padding: 18px;
+}
+.popTitle.data-v-8f619448 {
+	margin-bottom: 10px;
+}
+.radioBox.data-v-8f619448 {
+	width: 18px;
+	height: 18px;
+	border-radius: 50%;
+	border: 1px solid #ccc;
+	margin-top: 12px;
+}
+.active.data-v-8f619448 {
+	background-color: #0077ff;
+	border-color: #0077ff;
+}
+.iconClass.data-v-8f619448 {
+	width: 20px;
+	height: 20px;
+	margin-right: 3px;
+}
+.cancelBtn.data-v-8f619448 {
+	width: 90%;
+	height: 70rpx;
+	border-radius: 40rpx;
+	opacity: 1;
+	font-family: Alibaba PuHuiTi 2;
+	font-size: 32rpx;
+	font-weight: 500;
+	margin: 20px 0 0;
+	margin-right: 10px;
+	border: 1px solid #ccc;
+	color: #323233;
+}
+.ensureBtn.data-v-8f619448 {
+	background-color: #0077ff;
+	width: 90%;
+	height: 70rpx;
+	border-radius: 40rpx;
+	opacity: 1;
+	font-family: Alibaba PuHuiTi 2;
+	font-size: 32rpx;
+	font-weight: 500;
+	color: #ffffff;
+	margin: 20px 0 0;
+}
+

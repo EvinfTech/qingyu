@@ -129,7 +129,7 @@
 	export default ({
 		data() {
 			return {
-				app: getApp(),
+				app: null,
 				topHeight: 0,
 				userInfo: {},
 				nickName: '',
@@ -152,6 +152,7 @@
 			};
 		},
 		async mounted() {
+			this.app = getApp()
 			// 处理小程序 ready 生命周期
 			let userInfo = await getApp().getUserInfo('reGet')
 			this.userInfo = userInfo;

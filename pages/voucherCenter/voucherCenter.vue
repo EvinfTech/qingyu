@@ -47,7 +47,7 @@
 		mixins: [payment],
 		data() {
 			return {
-				app: getApp(),
+				app: null,
 				balance: 0,
 				active: 0,
 				actualReceipt: 0,
@@ -91,6 +91,7 @@
 			// #endif
 		},
 		async onLoad() {
+			this.app = getApp()
 			this.getPackageList()
 			let userInfo = await this.app.getUserInfo();
 			this.userInfo = userInfo;

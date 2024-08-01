@@ -1,0 +1,15 @@
+
+.page.data-v-051cfcf4 {
+	width: 100vw;
+	height: 100vh;
+	background-color: #fff;
+	box-sizing: border-box;
+}
+.content.data-v-051cfcf4 {
+	padding: 30rpx;
+}
+.title.data-v-051cfcf4{
+	font-weight: bold;
+	margin: 30rpx 0;
+}
+

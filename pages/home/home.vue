@@ -118,7 +118,7 @@
 	export default ({
 		data() {
 			return {
-				app: getApp(),
+				app: null,
 				indicatorDots: true,
 				vertical: false,
 				autoplay: true,
@@ -272,6 +272,7 @@
 		},
 
 		created: async function() {
+			this.app = getApp()
 			// 获取门店信息
 			let gymnasiumInfo = await this.app.getStoreInfo('reGet')
 			// #ifdef H5

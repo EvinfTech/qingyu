@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "u-safe-bottom": "/node-modules/uview-ui/components/u-safe-bottom/u-safe-bottom"
+  },
+  "component": true
+}

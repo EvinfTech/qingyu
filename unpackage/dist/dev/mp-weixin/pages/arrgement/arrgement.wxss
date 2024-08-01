@@ -1,0 +1,63 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* pages/arrgement/arrgement.wxss */
+.page.data-v-23060c7c {
+	width: 100vw;
+	height: 100vh;
+	box-sizing: border-box;
+	background-color: #fff;
+}
+.pageTitle.data-v-23060c7c {
+	font-size: 34rpx;
+	font-weight: 600;
+	color: #26292c;
+}
+.arrgementBox.data-v-23060c7c {
+	padding: 0 32rpx;
+
+	margin-top: 28rpx;
+	font-family: Alibaba PuHuiTi 2;
+	font-size: 32rpx;
+	line-height: 48rpx;
+	color: #0b1526;
+}
+

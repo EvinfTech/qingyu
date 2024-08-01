@@ -137,7 +137,7 @@
 	export default ({
 		data() {
 			return {
-				app: getApp(),
+				app:null,
 				titleList: [{
 					name: '全部'
 				}, {
@@ -173,6 +173,7 @@
 		 * 生命周期函数--监听页面加载
 		 */
 		onLoad() {
+			this.app = getApp()
 			this.initData();
 		},
 		/**

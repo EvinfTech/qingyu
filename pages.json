@@ -148,6 +148,5 @@
 		"navigationBarTextStyle": "black",
 		"navigationStyle": "custom",
 		"usingComponents": {}
-	},
-	"subPackages": []
+	}
 }

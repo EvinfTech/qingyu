@@ -30,7 +30,7 @@
 		},
 		data() {
 			return {
-				app: getApp(),
+				app: null,
 				active: 0,
 				scrollViewHeight: 0,
 				tabbarList: [{
@@ -48,12 +48,14 @@
 			};
 		},
 		onLoad() {
+			this.app = getApp()
 			// this.getTabbarIndex();
 			this.calculatePageHeight();
 			// 判断登录状态进行页面跳转
 			this.checkLoginState();
 		},
-		onShow() {},
+		onShow() {
+		},
 		onReady() {},
 		methods: {
 			getTabbarIndex() {

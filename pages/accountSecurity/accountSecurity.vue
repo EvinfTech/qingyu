@@ -26,11 +26,12 @@ export default({
             phone: '',
             status: '已绑定',
 			show:false,
-			app:getApp(),
+			app:null,
 			userInfo:null
         };
     },
 	async onLoad() {
+		this.app = getApp()
 		let userInfo = await this.app.getUserInfo()
 		this.userInfo = userInfo;
 		this.phone = userInfo.phone

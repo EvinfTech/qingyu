@@ -1,0 +1,700 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* pages/orderList/orderList.wxss */
+.page.data-v-40959460 {
+	width: 100%;
+	height: 100vh;
+	background-color: #f6f8fa;
+}
+.orderList.data-v-40959460 {
+	padding: 10rpx 20rpx;
+	box-sizing: border-box;
+}
+.emptyFlex.data-v-40959460 {
+	padding-top: 100px;
+	box-sizing: border-box;
+}
+.orderItem.data-v-40959460 {
+	height: 300rpx;
+	border-radius: 10rpx;
+	background: #ffffff;
+	background-color: #fff;
+	margin-bottom: 10rpx;
+	padding: 20rpx;
+	box-sizing: border-box;
+}
+.orderNoText.data-v-40959460 {
+	font-family: Alibaba PuHuiTi 2;
+	font-size: 24rpx;
+	display: flex;
+	color: #b1b4c3;
+}
+.leftPhoto.data-v-40959460 {
+	width: 132rpx;
+	height: 132rpx;
+	border-radius: 4rpx;
+	margin: 20rpx 20rpx 24rpx 0;
+}
+.gymnasiumName.data-v-40959460 {
+	font-family: Alibaba PuHuiTi 2;
+	font-size: 32rpx;
+	font-weight: 500;
+	-webkit-font-feature-settings: 'kern' on;
+	        font-feature-settings: 'kern' on;
+	color: #333333;
+	margin-bottom: 12rpx;
+}
+.reservationInfo.data-v-40959460 {
+	font-family: Alibaba PuHuiTi 2;
+	font-size: 20rpx;
+	font-weight: 500;
+	-webkit-font-feature-settings: 'kern' on;
+	        font-feature-settings: 'kern' on;
+	color: #9e9e9e;
+}
+.borderBtn.data-v-40959460 {
+	width: 152rpx;
+	height: 50rpx;
+	border-radius: 40rpx;
+	border: 1px solid #b1b4c3;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-family: Alibaba PuHuiTi 2;
+	font-size: 28rpx;
+	color: #b1b4c3;
+}
+.payBtn.data-v-40959460 {
+	width: 152rpx;
+	height: 50rpx;
+	border-radius: 40rpx;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 28rpx;
+	color: #fff;
+	background-color: #ff5634;
+	margin-left: 12rpx;
+}
+.useBtn.data-v-40959460 {
+	width: 152rpx;
+	height: 50rpx;
+	border-radius: 40rpx;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #0077ff;
+	margin-left: 12rpx;
+	color: #fff;
+}
+.redText.data-v-40959460 {
+	font-family: Alibaba PuHuiTi 2;
+	font-size: 24rpx;
+	-webkit-font-feature-settings: 'kern' on;
+	        font-feature-settings: 'kern' on;
+	color: #ff5634;
+}
+.blueText.data-v-40959460 {
+	font-family: Alibaba PuHuiTi 2;
+	font-size: 24rpx;
+	-webkit-font-feature-settings: 'kern' on;
+	        font-feature-settings: 'kern' on;
+	color: #0077ff;
+}
+.grayText.data-v-40959460 {
+	font-family: Alibaba PuHuiTi 2;
+	font-size: 24rpx;
+	-webkit-font-feature-settings: 'kern' on;
+	        font-feature-settings: 'kern' on;
+	color: #b1b4c3;
+}
+

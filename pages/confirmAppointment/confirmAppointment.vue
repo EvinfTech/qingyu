@@ -2,7 +2,7 @@
 	<view class="page">
 		<u-navbar class="nav-bar" :safeAreaInsetTop="true" :fixed="false" title="确认预约" :autoBack="false">
 			<template #left>
-				<u-icon name="arrow-left" @click="app.toBack"></u-icon>
+				<u-icon name="arrow-left" @click="toBackPage"></u-icon>
 			</template>
 		</u-navbar>
 		<view class="centerContent" :style="'height: ' + (centerHeight + 'px') + ';'">
@@ -88,7 +88,9 @@
 		request
 	} from '../../utils/request';
 	// 引入weixin-js-sdk
+	// #ifdef H5
 	import * as jweixin from 'weixin-js-sdk'
+	// #endif
 	// 引入支付混入
 	import payment from '@/mixins/pay.js';
 	import PaymentMethod from '@/components/paymentMethod.vue'
@@ -99,7 +101,7 @@
 		},
 		data() {
 			return {
-				app: getApp(),
+				app: null,
 				centerHeight: 0,
 				orderInfo: {},
 				gymnasiumInfo: {},
@@ -115,6 +117,7 @@
 			}
 		},
 		async onLoad() {
+			this.app = getApp()
 			let orderInfo = uni.getStorageSync('orderInfo')
 			orderInfo = JSON.parse(orderInfo)
 			this.orderInfo = orderInfo;
@@ -174,6 +177,9 @@
 			// #endif
 		},
 		methods: {
+			toBackPage(){
+				this.app.toBack()
+			},
 			calculate() {
 				let sysInfo = uni.getSystemInfoSync()
 				var screenHeight = sysInfo.windowHeight;

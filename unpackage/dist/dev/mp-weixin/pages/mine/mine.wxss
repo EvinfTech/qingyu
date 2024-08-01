@@ -1,0 +1,525 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* pages/mine/mine.wxss */
+.page.data-v-dcbcfe34 {
+	width: 100% !important;
+	height: 100% !important;
+	overflow-y: auto;
+	background-color: #fafafe;
+	background-size: 100%;
+	box-sizing: border-box;
+}
+.basicTop.data-v-dcbcfe34 {
+	box-sizing: border-box;
+	padding-left: 64rpx;
+	padding-right: 48rpx;
+}
+.nickName.data-v-dcbcfe34 {
+	font-family: Alibaba PuHuiTi 2;
+	font-size: 42rpx;
+	height: 60rpx;
+	line-height: 60rpx;
+	font-weight: normal;
+	line-height: normal;
+	color: #121836;
+}
+.phone.data-v-dcbcfe34 {
+	font-family: Alibaba PuHuiTi 2;
+	font-size: 26rpx;
+	font-weight: normal;
+	line-height: normal;
+	color: #aab0ba;
+	margin-top: 8rpx;
+}
+.vipBox.data-v-dcbcfe34 {
+	height: 65px;
+	background-color: #333450;
+	border-radius: 10px;
+	margin: 28rpx 20rpx;
+	padding: 0 26rpx;
+}
+.priceText.data-v-dcbcfe34 {
+	font-family: PingFang SC;
+	font-size: 10px;
+	font-variation-settings: "opsz" auto;
+	color: #9E9E9E;
+	margin-top: -8px;
+}
+.openBtn.data-v-dcbcfe34 {
+	width: 88px;
+	height: 27px;
+	border-radius: 50px;
+	background: #05D003;
+	color: #fff;
+	font-family: PingFang SC;
+	font-size: 12px;
+}
+.statisticsBox.data-v-dcbcfe34 {
+	padding: 0 64rpx;
+	margin-top: 38rpx;
+}
+.statisticsItem.data-v-dcbcfe34 {
+	width: 112rpx;
+	height: 116rpx;
+	margin-right: 144rpx;
+}
+.statisticsItem.data-v-dcbcfe34:nth-child(3) {
+	margin-right: 0;
+}
+.numBox.data-v-dcbcfe34 {
+	font-family: D-DIN;
+	font-size: 42rpx;
+	font-weight: bold;
+	line-height: normal;
+	letter-spacing: 0em;
+	/* fonts/主色/深蓝色 */
+	color: #282c38;
+	height: 46rpx;
+	line-height: 46rpx;
+}
+.titleBox.data-v-dcbcfe34 {
+	font-family: Alibaba PuHuiTi 2;
+	font-size: 24rpx;
+	font-weight: normal;
+	line-height: normal;
+	text-align: center;
+	letter-spacing: 0em;
+	color: #aab0ba;
+	height: 34rpx;
+	line-height: 34rpx;
+	margin-top: 8rpx;
+}
+.myReservation.data-v-dcbcfe34 {
+	margin: 0rpx 38rpx 0rpx 34rpx;
+	background-color: #fff;
+	padding: 28rpx 20rpx;
+	border-bottom: 1rpx solid #eee;
+	/* border-radius: 20rpx; */
+}
+.myReservationTitle.data-v-dcbcfe34 {
+	font-family: Alibaba PuHuiTi 2;
+	font-size: 32rpx;
+	font-weight: 500;
+	color: #121836;
+	display: flex;
+	align-items: center;
+}
+.reservationBox.data-v-dcbcfe34 {
+	padding: 10rpx;
+	background-color: #f6f8fa;
+	margin-top: 24rpx;
+	border-radius: 6rpx;
+}
+.gymnasiumName.data-v-dcbcfe34 {
+	font-family: Alibaba PuHuiTi 2;
+	font-size: 32rpx;
+	font-weight: normal;
+	line-height: normal;
+	-webkit-font-feature-settings: 'kern' on;
+	        font-feature-settings: 'kern' on;
+	color: #151515;
+}
+.reservationDate.data-v-dcbcfe34 {
+	font-family: Alibaba PuHuiTi 2;
+	font-size: 24rpx;
+	font-weight: normal;
+	line-height: normal;
+	text-align: right;
+	letter-spacing: 0em;
+
+	-webkit-font-feature-settings: 'kern' on;
+
+	        font-feature-settings: 'kern' on;
+	color: #6d737c;
+}
+.siteText.data-v-dcbcfe34 {
+	font-family: Alibaba PuHuiTi 2;
+	font-size: 24rpx;
+	font-weight: normal;
+	line-height: normal;
+	letter-spacing: 0em;
+	-webkit-font-feature-settings: 'kern' on;
+	        font-feature-settings: 'kern' on;
+	color: #b1b4c3;
+	width: 104rpx;
+	margin-right: 16rpx;
+}
+.siteItem.data-v-dcbcfe34 {
+	font-family: Alibaba PuHuiTi 2;
+	font-size: 24rpx;
+	font-weight: normal;
+	line-height: normal;
+	letter-spacing: 0em;
+	-webkit-font-feature-settings: 'kern' on;
+	        font-feature-settings: 'kern' on;
+	color: #0077ff;
+	margin-right: 42rpx;
+	height: 34rpx;
+	line-height: 34rpx;
+}
+.siteItem.data-v-dcbcfe34:nth-child(2n) {
+	margin-right: 0;
+}
+.serviceItem.data-v-dcbcfe34 {
+	margin-right: 70rpx;
+	width: 100rpx;
+	height: 90rpx;
+	margin-bottom: 34rpx;
+}
+.serviceItem.data-v-dcbcfe34:nth-child(4n) {
+	margin-right: 0;
+}
+.serviceItemTitle.data-v-dcbcfe34 {
+	margin-top: 16rpx;
+	font-family: Alibaba PuHuiTi 2;
+	font-size: 24rpx;
+	font-weight: normal;
+	line-height: normal;
+	letter-spacing: 0em;
+	color: #121836;
+}
+.specialBtn.data-v-dcbcfe34 {
+	width: 100%;
+	height: 42rpx;
+	background-color: #fff;
+	padding: 0;
+}
+.specialBtn.data-v-dcbcfe34::after {
+	border: none;
+}
+

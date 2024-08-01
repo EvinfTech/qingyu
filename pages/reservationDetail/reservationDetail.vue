@@ -3,7 +3,7 @@
 	<view class="page">
 		<u-navbar class="nav-bar" :safeAreaInsetTop="true" :fixed="false" title="预约" :autoBack="false">
 			<template #left>
-				<u-icon name="arrow-left" @click="app.toBack"></u-icon>
+				<u-icon name="arrow-left" @click="toBack"></u-icon>
 			</template>
 		</u-navbar>
 		<view class="customerTab">
@@ -105,7 +105,7 @@
 	export default ({
 		data() {
 			return {
-				app: getApp(),
+				app:null,
 				active: 0,
 				//当前选中的日期索引
 				dateList: [],
@@ -139,6 +139,7 @@
 		 * 生命周期函数--监听页面加载
 		 */
 		onLoad(options) {
+			this.app = getApp()
 			let date = options.date.slice(5);
 			this.currentDate = date
 		},
@@ -156,6 +157,9 @@
 			})
 		},
 		methods: {
+			toBack(){
+				this.app.toBack()
+			},
 			// 获取现在时间
 			getNowTime() {
 				let date = new Date();

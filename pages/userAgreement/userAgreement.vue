@@ -22,8 +22,11 @@
 	export default {
 		data() {
 			return {
-				app:getApp()
+				app:null
 			}
+		},
+		onLoad(){
+			this.app = getApp()
 		},
 		methods: {
 

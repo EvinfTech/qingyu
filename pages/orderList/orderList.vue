@@ -3,7 +3,7 @@
 	<view class="page">
 		<u-navbar class="nav-bar" title="我的订单" :safeAreaInsetTop="true" :autoBack="false" :fixed="false">
 			<template #left>
-				<u-icon name="arrow-left" @click="app.toBack"></u-icon>
+				<u-icon name="arrow-left" @click="toBack"></u-icon>
 			</template>
 		</u-navbar>
 		<u-modal :show="show" title="提示" content="确定要取消此订单？" :showCancelButton="true" @confirm="confirm"
@@ -166,7 +166,7 @@
 		data() {
 			return {
 				show: false,
-				app: getApp(),
+				app:null,
 				titleList: [{
 					name: '全部'
 				}, {
@@ -223,6 +223,7 @@
 		 * 生命周期函数--监听页面加载
 		 */
 		onLoad() {
+			this.app = getApp()
 			this.initData();
 
 		},
@@ -235,6 +236,9 @@
 			})
 		},
 		methods: {
+			toBack(){
+				this.app.toBack()
+			},
 			// tab栏切换
 			onChange(e) {
 				this.active = e.index;
@@ -417,7 +421,6 @@
 				this.order_no = e.currentTarget.dataset.item.order_no
 				this.payMoney = e.currentTarget.dataset.item.money / 100
 				this.showPop = true;
-
 			},
 			// 去使用
 			toUse(e) {

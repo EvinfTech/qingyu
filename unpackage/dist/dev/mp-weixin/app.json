@@ -1,0 +1,32 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/login/login",
+    "pages/arrgement/arrgement",
+    "pages/home/home",
+    "pages/mine/mine",
+    "pages/reservationDetail/reservationDetail",
+    "pages/orderDetail/orderDetail",
+    "pages/infoEdit/infoEdit",
+    "pages/orderList/orderList",
+    "pages/feedback/feedback",
+    "pages/settings/settings",
+    "pages/aboutUs/aboutUs",
+    "pages/reservationList/reservationList",
+    "pages/reservationInfo/reservationInfo",
+    "pages/accountSecurity/accountSecurity",
+    "pages/userAgreement/userAgreement",
+    "pages/confirmAppointment/confirmAppointment",
+    "pages/wechatLogin/wechatLogin",
+    "pages/voucherCenter/voucherCenter"
+  ],
+  "subPackages": [],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "轻羽订场",
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "custom"
+  },
+  "usingComponents": {}
+}

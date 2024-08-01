@@ -1,0 +1,804 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* pages/orderDetail/orderDetail.wxss */
+.page.data-v-c547daf4 {
+	width: 100%;
+	height: 100vh;
+	background-color: #f6f8fa;
+}
+.payStateBox.data-v-c547daf4 {
+	height: 180rpx;
+	background: #ffffff;
+	margin-bottom: 14rpx;
+}
+.waitPayText.data-v-c547daf4 {
+	font-family: Alibaba PuHuiTi 2;
+	font-size: 40rpx;
+	font-weight: 600;
+	height: 56rpx;
+	line-height: 56rpx;
+	letter-spacing: 0px;
+	-webkit-font-feature-settings: 'kern' on;
+	        font-feature-settings: 'kern' on;
+	color: #333333;
+}
+.waitPayTitle.data-v-c547daf4 {
+	font-family: Alibaba PuHuiTi 2;
+	font-size: 20rpx;
+	height: 28rpx;
+	line-height: 28rpx;
+	font-weight: normal;
+	line-height: normal;
+	letter-spacing: 0px;
+	-webkit-font-feature-settings: 'kern' on;
+	        font-feature-settings: 'kern' on;
+	color: #b1b4c3;
+}
+.codeBox.data-v-c547daf4 {
+	background-color: #fff;
+}
+.codeTextBox.data-v-c547daf4 {
+	font-family: Alibaba PuHuiTi 2;
+	font-size: 36rpx;
+	color: #9e9e9e;
+	-webkit-font-feature-settings: 'kern' on;
+	        font-feature-settings: 'kern' on;
+}
+.paySuccessText.data-v-c547daf4 {
+	font-family: Alibaba PuHuiTi 2;
+	font-size: 40rpx;
+	font-weight: 600;
+	line-height: normal;
+	letter-spacing: 0px;
+	-webkit-font-feature-settings: 'kern' on;
+	        font-feature-settings: 'kern' on;
+	color: #333333;
+	margin-top: 40rpx;
+}
+.topBox.data-v-c547daf4 {
+	padding: 20rpx;
+	background-color: #fff;
+}
+.topName.data-v-c547daf4 {
+	font-family: Alibaba PuHuiTi 2;
+	font-size: 32rpx;
+	font-weight: 500;
+	line-height: normal;
+	letter-spacing: 0px;
+	-webkit-font-feature-settings: 'kern' on;
+	        font-feature-settings: 'kern' on;
+	color: #333333;
+	margin-bottom: 8rpx;
+	height: 44rpx;
+}
+.commonLeftLabel.data-v-c547daf4 {
+	font-family: Alibaba PuHuiTi 2;
+	font-size: 24rpx;
+	font-weight: normal;
+	line-height: normal;
+	letter-spacing: 0em;
+	-webkit-font-feature-settings: 'kern' on;
+	        font-feature-settings: 'kern' on;
+	color: #b1b4c3;
+}
+.commonRightOpe.data-v-c547daf4 {
+	font-family: Alibaba PuHuiTi 2;
+	font-size: 24rpx;
+	font-weight: normal;
+	line-height: normal;
+	text-align: right;
+	letter-spacing: 0em;
+	text-decoration: underline;
+	-webkit-font-feature-settings: 'kern' on;
+	        font-feature-settings: 'kern' on;
+	color: #0077ff;
+	flex-shrink: 0;
+}
+.siteList.data-v-c547daf4 {
+	background-color: #fff;
+	margin-top: 14rpx;
+	box-sizing: border-box;
+}
+.siteListTitle.data-v-c547daf4 {
+	padding: 20rpx 20rpx 0;
+	font-family: Alibaba PuHuiTi 2;
+	font-size: 32rpx;
+	font-weight: 500;
+	line-height: normal;
+	letter-spacing: 0px;
+	-webkit-font-feature-settings: 'kern' on;
+	        font-feature-settings: 'kern' on;
+	color: #333333;
+	margin-bottom: 24rpx;
+}
+.blackText.data-v-c547daf4 {
+	font-family: Alibaba PuHuiTi 2;
+	font-size: 28rpx;
+	font-weight: 500;
+	line-height: normal;
+	letter-spacing: 0px;
+	-webkit-font-feature-settings: 'kern' on;
+	        font-feature-settings: 'kern' on;
+	color: #333333;
+}
+.grayText.data-v-c547daf4 {
+	font-family: Alibaba PuHuiTi 2;
+	font-size: 24rpx;
+	font-weight: normal;
+	line-height: normal;
+	text-align: right;
+	letter-spacing: 0px;
+	-webkit-font-feature-settings: 'kern' on;
+	        font-feature-settings: 'kern' on;
+	color: #9e9e9e;
+}
+.siteListItem.data-v-c547daf4 {
+	width: 100%;
+	min-height: 140rpx;
+	height: auto;
+	border-radius: 10rpx;
+	opacity: 1;
+	background-color: #f6f8fa;
+	padding: 28rpx;
+	box-sizing: border-box;
+	margin-bottom: 10rpx;
+}
+.orderInfoBox.data-v-c547daf4 {
+	background-color: #fff;
+	margin-top: 16rpx;
+	padding: 20rpx;
+}
+.leftLabel.data-v-c547daf4 {
+	font-family: Alibaba PuHuiTi 2;
+	font-size: 24rpx;
+	font-weight: normal;
+	line-height: normal;
+	letter-spacing: 0em;
+	-webkit-font-feature-settings: 'kern' on;
+	        font-feature-settings: 'kern' on;
+	color: #b1b4c3;
+}
+.copyText.data-v-c547daf4 {
+	font-family: Alibaba PuHuiTi 2;
+	font-size: 20rpx;
+	font-weight: normal;
+	line-height: normal;
+	letter-spacing: 0em;
+	-webkit-font-feature-settings: 'kern' on;
+	        font-feature-settings: 'kern' on;
+	color: #5f5f5f;
+	margin-left: 18rpx;
+}
+.payMethodBox.data-v-c547daf4 {
+	height: 94rpx;
+	background-color: #fff;
+	padding: 0 20rpx;
+	margin-top: 20rpx;
+}
+.methodText.data-v-c547daf4 {
+	font-family: Alibaba PuHuiTi 2;
+	font-size: 28rpx;
+	font-weight: normal;
+	line-height: normal;
+	letter-spacing: 0px;
+	-webkit-font-feature-settings: 'kern' on;
+	        font-feature-settings: 'kern' on;
+	color: #5f5f5f;
+}
+.wechatText.data-v-c547daf4 {
+	font-family: Alibaba PuHuiTi 2;
+	font-size: 24rpx;
+	font-weight: normal;
+	line-height: normal;
+	letter-spacing: 0px;
+	-webkit-font-feature-settings: 'kern' on;
+	        font-feature-settings: 'kern' on;
+	color: #9e9e9e;
+}
+.bottomBox.data-v-c547daf4 {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	z-index: 99;
+	background-color: #fff;
+	height: 78px;
+	padding: 0 20rpx 0 32rpx;
+	box-sizing: border-box;
+}
+.totalText.data-v-c547daf4 {
+	font-family: Alibaba PuHuiTi 2;
+	font-size: 28rpx;
+	font-weight: normal;
+	line-height: normal;
+	-webkit-font-feature-settings: 'kern' on;
+	        font-feature-settings: 'kern' on;
+	color: #9e9e9e;
+}
+.priceText.data-v-c547daf4 {
+	font-family: Alibaba PuHuiTi 2;
+	font-size: 36rpx;
+	-webkit-font-feature-settings: 'kern' on;
+	        font-feature-settings: 'kern' on;
+	color: #ff5634;
+}
+.payBtn.data-v-c547daf4 {
+	width: 200rpx;
+	height: 70rpx;
+	border-radius: 40rpx;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #ff5634;
+	font-family: Alibaba PuHuiTi 2;
+	font-size: 32rpx;
+	font-weight: 500;
+	color: #ffffff;
+}
+.cancelBtn.data-v-c547daf4 {
+	width: 200rpx;
+	height: 70rpx;
+	border-radius: 40rpx;
+	opacity: 1;
+	border: 1px solid #b1b4c3;
+	font-family: Alibaba PuHuiTi 2;
+	font-size: 32rpx;
+	font-weight: 500;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #b1b4c3;
+	margin-right: 8rpx;
+}
+.useBtn.data-v-c547daf4 {
+	width: 200rpx;
+	height: 70rpx;
+	border-radius: 40rpx;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #0077ff;
+	font-family: Alibaba PuHuiTi 2;
+	font-size: 32rpx;
+	font-weight: 500;
+	color: #ffffff;
+}
+

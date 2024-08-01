@@ -161,7 +161,7 @@
 		mixins: [payment],
 		data() {
 			return {
-				app: getApp(),
+				app: null,
 				order_no: '',
 				detailType: '',
 				//订单详情类型
@@ -231,6 +231,7 @@
 		 * 生命周期函数--监听页面加载
 		 */
 		onLoad(options) {
+			this.app = getApp()
 			this.order_no = options.order_no;
 			this.type = options.type ? options.type : ''
 			this.detailType = options.type;

@@ -1,0 +1,355 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* pages/infoEdit/infoEdit.wxss */
+.page.data-v-5a3aa986 {
+	width: 100vw;
+	height: 100vh;
+	background-color: #fff;
+	position: relative;
+}
+.data-v-5a3aa986 uni-image>._img {
+	width: 40px !important;
+	height: 40px !important;
+}
+.data-v-5a3aa986 .u-upload__wrap__preview__image {
+	width: 40px !important;
+	height: 40px !important;
+}
+.data-v-5a3aa986 .u-upload__wrap {
+	justify-content: flex-end !important;
+}
+.data-v-5a3aa986 .u-radio-grou--row {
+	justify-content: flex-end !important;
+}
+.avatar-wrapper.data-v-5a3aa986 {
+	padding: 0 !important;
+	background-color: transparent !important;
+	border: none !important;
+	margin-right: 0;
+}
+.devide.data-v-5a3aa986 {
+	width: 100%;
+	height: 20rpx;
+	background-color: #f6f8fa;
+}
+.personalProfile.data-v-5a3aa986 {
+	height: 290rpx;
+	width: 100%;
+	background-color: #fff;
+	padding: 30rpx;
+	box-sizing: border-box;
+}
+.personalProfileTitle.data-v-5a3aa986 {
+	font-family: Alibaba PuHuiTi 2;
+	font-size: 28rpx;
+	font-weight: normal;
+	color: #5d667b;
+	margin-bottom: 16rpx;
+}
+.saveBtn.data-v-5a3aa986 {
+	width: 686rpx;
+	height: 84rpx;
+	border-radius: 12rpx;
+	position: absolute;
+	left: 50%;
+	-webkit-transform: translateX(-50%);
+	        transform: translateX(-50%);
+	bottom: 100rpx;
+	background-color: #0077ff;
+	font-family: Alibaba PuHuiTi 2;
+	font-size: 32rpx;
+	font-weight: 500;
+	color: #ffffff;
+}
+.avatarBox.data-v-5a3aa986 {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+}
+.logoutBtn.data-v-5a3aa986 {
+	width: 686rpx;
+	height: 84rpx;
+	border-radius: 12rpx;
+	background: #ffe6e6;
+	font-family: Alibaba PuHuiTi 2;
+	font-size: 32rpx;
+	font-weight: 500;
+	color: #f44336;
+	position: absolute;
+	left: 50%;
+	-webkit-transform: translateX(-50%);
+	        transform: translateX(-50%);
+	bottom: 100rpx;
+	z-index: 9;
+}
+.specialBtn.data-v-5a3aa986::after {
+	border: none;
+}
+

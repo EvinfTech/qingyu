@@ -17,7 +17,7 @@
 	export default ({
 		data() {
 			return {
-				app: getApp(),
+				app: null,
 				aboutUs: '',
 
 			};
@@ -26,6 +26,7 @@
 		 * 生命周期函数--监听页面加载
 		 */
 		async onLoad() {
+			this.app = getApp()
 			let commonInfo = await this.app.getCommonInfo();
 			this.aboutUs = commonInfo.about_us
 		},

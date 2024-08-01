@@ -1,0 +1,172 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	/* pages/wechatLogin/wechatLogin.wxss */
+.page.data-v-3a46c464 {
+		width: 100vw;
+		height: 100vh;
+		background-color: #fff;
+}
+.loginBox.data-v-3a46c464 {
+		margin-top: 240rpx;
+}
+.imgBox.data-v-3a46c464 {
+		width: 160rpx;
+		height: 160rpx;
+		border-radius: 40rpx;
+}
+.title.data-v-3a46c464 {
+		font-family: PingFang SC;
+		font-size: 52rpx;
+		font-weight: 600;
+		line-height: 20px;
+		text-align: center;
+		color: #000000;
+		margin-top: 114rpx;
+}
+.btn-wechat-login.data-v-3a46c464 {
+		width: 684rpx;
+		height: 100rpx;
+		border-radius: 24rpx;
+		opacity: 1;
+		background: #0077ff;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: #fff;
+		margin-top: 80rpx;
+}
+.popBox.data-v-3a46c464 {
+		padding: 40px 15px 30px;
+}
+.popTitle.data-v-3a46c464 {
+		margin-bottom: 30px;
+}
+.btn-cancel-login.data-v-3a46c464 {
+		width: 45%;
+		height: 70rpx;
+		border-radius: 18rpx;
+		opacity: 1;
+		background: #fff;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border: 1px solid #ddd;
+}
+.btn-phone-login.data-v-3a46c464 {
+		width: 45%;
+		height: 70rpx;
+		border-radius: 18rpx;
+		opacity: 1;
+		background: #0077ff;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: #fff;
+}
+

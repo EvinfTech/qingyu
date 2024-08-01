@@ -47,13 +47,16 @@
 	export default ({
 		data() {
 			return {
-				app: getApp(),
+				app: null,
 				phone: '',
 				code: '',
 				codeState: false,
 				seconds: 60,
 				timer: null
 			};
+		},
+		onLoad(){
+			this.app = getApp()
 		},
 		methods: {
 			// 微信登录
